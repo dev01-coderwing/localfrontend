@@ -1,0 +1,27 @@
+.slick-slide {
+  transition: all 0.4s ease;
+}
+
+.slick-slide img {
+  transition: all 0.4s ease;
+}
+
+/* Side cards */
+.slick-slide:not(.slick-center) {
+  opacity: 0.5;
+  transform: scale(0.9);
+}
+
+.slick-slide:not(.slick-center) img {
+  filter: blur(6px);
+}
+
+/* Center card */
+.slick-center {
+  opacity: 1 !important;
+  transform: scale(1);
+}
+
+.slick-center img {
+  filter: blur(0px);
+}
