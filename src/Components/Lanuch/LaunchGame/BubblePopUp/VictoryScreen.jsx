@@ -2,19 +2,14 @@ import React from "react";
 import { X, Heart } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { submitSoloGameResultThunk } from "../../../Redux/gameSlice";
-
+import { submitBubblePopResultThunk } from "../../../Redux/allgameSclice";
 
 const VictoryScreen = ({ score, onClaim, onRestart, onClose }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const handleClaimReward = async () => {
-
+const handleClaimReward = async () => {
   const result = await dispatch(
-    submitSoloGameResultThunk({
-      gameId: "BUBBLE_POP_LOVE",
-      result: "WIN",
-    })
+    submitBubblePopResultThunk("WIN")
   );
 
   console.log(result);

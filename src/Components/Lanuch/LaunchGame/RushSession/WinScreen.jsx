@@ -3,21 +3,23 @@ import { X, PartyPopper } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { submitEmojiRushResultThunk } from "../../../Redux/gameSlice";
-
 const WinScreen = ({ score, onClaim, onRestart, onClose }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleClaimReward = async () => {
+  try {
+    const result = await dispatch(
+      submitEmojiRushResultThunk({
+        result: "WIN",
+      })
+    ).unwrap();
 
-const result = await dispatch(
-  submitEmojiRushResultThunk({
-    result: "WIN",
-  })
-);
+    console.log("API Success:", result);
 
-  console.log(result);
-
-  navigate("/homepage");
+    navigate("/homepage");
+  } catch (error) {
+    console.log("API Error:", error);
+  }
 };
   return (
     <div className="absolute inset-0 bg-[var(--bg)]/40 backdrop-blur-sm flex items-center justify-center z-50 p-6">

@@ -1,65 +1,35 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import api from "../../api";
+import api from "../../api"; // tumhara axios instance
 
 export const submitEmojiRushResultThunk = createAsyncThunk(
   "game/submitEmojiRushResult",
-
-  async (resultData, { rejectWithValue }) => {
+  async (payload, { rejectWithValue }) => {
     try {
-      const response = await api.post("/game/emoji-rush/result", resultData);
+      const response = await api.post(
+        "/game/emoji-rush/result",
+        payload
+      );
 
       return response.data;
     } catch (error) {
-      return rejectWithValue(error.response?.data || "Something went wrong");
+      return rejectWithValue(
+        error.response?.data || error.message
+      );
     }
-  },
-);
-
-export const submitSoloGameResultThunk = createAsyncThunk(
-  "game/submitSoloResult",
-
-  async (gameData, { rejectWithValue }) => {
-    try {
-      const response = await api.post("/game/solo/result", gameData);
-
-      return response.data;
-    } catch (error) {
-      return rejectWithValue(error.response?.data || "Something went wrong");
-    }
-  },
+  }
 );
 
 const gameSlice = createSlice({
   name: "game",
-
   initialState: {
     loading: false,
-    success: false,
-    error: null,
     resultData: null,
+    error: null,
   },
-
   reducers: {},
 
   extraReducers: (builder) => {
     builder
-
-      .addCase(submitSoloGameResultThunk.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-
-      .addCase(submitSoloGameResultThunk.fulfilled, (state, action) => {
-        state.loading = false;
-        state.success = true;
-        state.resultData = action.payload;
-      })
-
-      .addCase(submitSoloGameResultThunk.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload;
-      })
-
       .addCase(submitEmojiRushResultThunk.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -67,7 +37,6 @@ const gameSlice = createSlice({
 
       .addCase(submitEmojiRushResultThunk.fulfilled, (state, action) => {
         state.loading = false;
-        state.success = true;
         state.resultData = action.payload;
       })
 

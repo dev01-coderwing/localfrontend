@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import api from "../../api";
+import { disconnectSocket } from "../../socket";
+import { resetChatState } from "./chatRequestSlice";
 
 // Initialize user from localStorage
 export const initializeAuth = createAsyncThunk(
@@ -145,14 +147,17 @@ export const forgotPassword = createAsyncThunk(
 
 export const LogoutUser = createAsyncThunk(
   "auth/LogoutUser",
-  async (_, { rejectWithValue }) => {
+  async (_, { dispatch, rejectWithValue }) => {
     try {
       // Optional API call
       // await api.post("/user/logout");
 
-      // ✅ Clear localStorage
+      disconnectSocket();
+      dispatch(resetChatState());
+
       localStorage.removeItem("isLoggedIn");
       localStorage.removeItem("user");
+      localStorage.removeItem("token");
 
       return true;
     } catch (err) {

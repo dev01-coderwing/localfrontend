@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { initializeAuth } from "./Components/Redux/authSlice";
+import { connectSocket, joinUserRoom } from "./socket";
 
 import LanguagePage from "./Components/languagePage/languagePage";
 import Singup from "./Components/Singup/Singup";
@@ -64,7 +65,7 @@ import EarnMeons from "./Components/Wallet/EarnMeons.jsx";
 import SpendMeons from "./Components/Wallet/SpendMeons.jsx";
 import ChatRulesModal from "./Components/Cards/ChatRulesModal.jsx";
 import VerifyModal from "./Components/UserProfile/verification/VerifyModal.jsx";
-import PopupOne from "./Components/UserProfile/verification/Popupone.jsx";
+import PopupOne from "./Components/UserProfile/verification/PopupOne.jsx";
 import PopupTwo from "./Components/UserProfile/verification/PopupTwo.jsx";
 import GetVerify from "./Components/UserProfile/verification/GetVerify.jsx"
 import Selfie from "./Components/UserProfile/verification/Selfie.jsx"
@@ -81,7 +82,7 @@ import InviteFriendsModal from "./Components/realCurrencyWallet/InviteFriendsMod
 import InviteConnectionsModal from "./Components/realCurrencyWallet/InviteConnectionsModal.jsx";
 import ShareInviteModal from "./Components/realCurrencyWallet/ShareInviteModal.jsx";
 import Share from "./Components/realCurrencyWallet/Share.jsx";
-import GetVerified from "./Components/UserProfile/GetVerified/Getverified.jsx";
+import GetVerified from "./Components/UserProfile/GetVerified/GetVerified.jsx";
 import TakeSelfie from "./Components/UserProfile/GetVerified/TakeSelfie.jsx";
 import Identify from "./Components/UserProfile/GetVerified/Identify.jsx";
 import Complete from "./Components/UserProfile/GetVerified/Complete.jsx";
@@ -89,11 +90,24 @@ import Complete from "./Components/UserProfile/GetVerified/Complete.jsx";
 import SplashScreen from "./Components/SplashScreen/SplashScreen.jsx";
 function App() {
   const dispatch = useDispatch();
+  const token = useSelector((state) => state.auth.token);
+  const user = useSelector((state) => state.auth.user);
 
   useEffect(() => {
     // Initialize authentication state from localStorage on app start
     dispatch(initializeAuth());
   }, [dispatch]);
+
+  useEffect(() => {
+    if (token) {
+      connectSocket(token);
+    }
+
+    if (token && user?.id) {
+      connectSocket(token);
+      joinUserRoom(user.id);
+    }
+  }, [token, user]);
 
   return (
     <Router>

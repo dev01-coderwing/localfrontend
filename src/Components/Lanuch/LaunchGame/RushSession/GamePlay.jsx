@@ -30,7 +30,11 @@ const EmojiButton = memo(({ emoji, onClick }) => {
         fontSize: `${emoji.size * 0.6}px`
       }}
     >
-      {emoji.symbol}
+       <img
+    src={emoji.symbol}
+    alt=""
+    className="w-full h-full object-contain"
+  />
     </button>
   );
 });

@@ -5,17 +5,22 @@ import GamePlay from "./GamePlay";
 import WinScreen from "./WinScreen";
 import TimeUpScreen from "./TimeUpScreen";
 import { useNavigate } from "react-router-dom";
-
+import p1ng from "/public/Image/p1.png";
+import p2ng from "/public/Image/p2.png";
+import p3ng from "/public/Image/p3.png";
+import n1ng from "/public/Image/n1.png";
+import n2ng from "/public/Image/n2.png";
+import n3ng from "/public/Image/n3.png";
 const DEFAULT_CONFIG = {
   duration: 15,
   targetScore: 20,
   initialEmojiCount: 18, // Ultra High Density
-  refreshInterval: 250, // Ultra Fast Refresh (Streaming Effect)
+  refreshInterval: 500, // Ultra Fast Refresh (Streaming Effect)
   positiveRatio: 0.7,
-  bonusTime: 1,
+  bonusTime: 0,
   emojis: {
-    positive: ["😊", "😄", "😎", "❤️", "🔥"],
-    negative: ["😢", "💔", "🥺",],
+    positive: [p1ng, p2ng, p3ng],
+    negative: [n1ng, n2ng, n3ng],
   }
 };
 
@@ -41,7 +46,7 @@ function RushSession() {
       x: Math.random() * 88 + 6, // Maximize board usage
       y: Math.random() * 88 + 6,
       size: Math.random() * 12 + 48,
-      speed: Math.random() * 1.2 + 0.8, // Ultra Fast potential
+      speed: Math.random() * 0.8 + 0.8, // Ultra Fast potential
     };
   }, []);
 

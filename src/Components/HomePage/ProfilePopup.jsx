@@ -1,18 +1,28 @@
 import { useState } from "react";
-
+import { BadgeCheck } from "lucide-react";
+import Voice from "/Image/Voice-coin.png";
+import noto from "/Image/noto-icon.png";
+import Heart from "/Image/Heart-icon.png";
+import infinite from "/Image/infinet.png"
+import { Infinity } from "lucide-react";
+import silver from "/Image/silver-icon.png"
 const interests = ["Art", "Travel", "Music", "Fitness", "Cooking", "Reading"];
 
-const photos = [
-  "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&q=80",
-  "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&q=80",
-  "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&q=80",
-];
 
-function ProfilePopup({ onClose }) {
+function ProfilePopup({ profile, onClose }) {
   const [currentPhoto, setCurrentPhoto] = useState(0);
   const [roseSent, setRoseSent] = useState(false);
   const [inviteSent, setInviteSent] = useState(false);
-
+  const photos =
+    profile?.photos?.length > 0
+      ? profile.photos.map(
+        (photo) => `http://35.180.139.208:3000/${photo}`
+      )
+      : [
+        profile?.profileImage
+          ? `http://35.180.139.208:3000/${profile.profileImage}`
+          : "https://via.placeholder.com/400x520?text=No+Image",
+      ];
   const prevPhoto = () =>
     setCurrentPhoto((p) => (p - 1 + photos.length) % photos.length);
   const nextPhoto = () =>
@@ -27,7 +37,7 @@ function ProfilePopup({ onClose }) {
           <span className="text-xl font-bold text-[var(--text-dim)] tracking-tight">Profile</span>
           <button
             onClick={onClose}
-            className="w-9 h-9 rounded-full bg-[var(--bg-card)] flex items-center justify-center hover:bg-[var(--hover)] transition-colors"
+            className="w-9 h-9 rounded-full bg-[var(--bg-card)]/10 flex items-center justify-center hover:bg-[var(--hover)] transition-colors"
           >
             <svg className="w-4 h-4 text-[var(--text-dim)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -42,7 +52,7 @@ function ProfilePopup({ onClose }) {
           <div className="relative w-52 h-64 flex-shrink-0 rounded-2xl overflow-hidden shadow-lg group">
             <img
               src={photos[currentPhoto]}
-              alt="Nicole Jennifer"
+              alt={profile?.fullName}
               className="w-full h-full object-cover transition-all duration-500"
             />
 
@@ -90,14 +100,21 @@ function ProfilePopup({ onClose }) {
             {/* Name & Location */}
             <div className="absolute bottom-3 left-3">
               <div className="flex items-center gap-1">
-                <span className="text-[var(--text)] font-bold text-base leading-tight">Nicole Jennifer</span>
-                <span className="text-base">💙🏅⚪</span>
+                <span className="text-[var(--text-dim)] font-bold text-base leading-tight">  {profile?.fullName}</span>
+                <span className="text-base flex items-center  ">
+                  <span className="text-blue-500"><BadgeCheck /></span>
+                  <img src={Voice} alt="Voice Coin" className="w-12" />
+                  <img src={silver} alt="Noto Icon" className="w-6" />
+                  </span>
               </div>
               <div className="flex items-center gap-1 mt-0.5">
                 <svg className="w-3 h-3 text-[var(--text-dim)]" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                 </svg>
-                <span className="text-white/80 text-xs">2.3 km away</span>
+                <span className="text-[var(--text-dim2)] text-xs">
+                  {profile?.city || "Unknown City"}
+                  {profile?.country ? `, ${profile.country}` : ""}
+                </span>
               </div>
             </div>
           </div>
@@ -107,39 +124,38 @@ function ProfilePopup({ onClose }) {
             {/* Match stats */}
             <div className="flex items-center gap-4 mb-4">
               <div className="flex items-center gap-1.5">
-                <span className="text-xl">❤️</span>
-                <span className="font-bold text-[var(--text-dim)] text-sm">35%</span>
+                <span className="flex gap-2 text-[#FF6467]"><img src={Heart} alt="" className="w-8 " /> 80%</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <span className="text-xl">🍑</span>
-                <span className="font-bold text-[var(--text-dim)] text-sm">50%</span>
+                <span className="flex gap-2 text-[#FB64B6]"><img src={noto} alt="" className="w-8" /> 50%</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <span className="text-xl">🎭</span>
-                <span className="font-bold text-[var(--text-dim)] text-sm">∞</span>
+                <span className="flex gap-2  text-[#C27AFF]"><img src={infinite} alt="" className="w-8" /><Infinity className="mt-2" /></span>
               </div>
             </div>
 
             {/* Bio */}
             <div className="mb-4">
               <p className="text-xs font-semibold text-[var(--text-dim)] uppercase tracking-wider mb-1.5">Bio</p>
-              <p className="text-[var(--text-dim2)] text-sm leading-relaxed">
-                Architect by day, Vinyl collect by night. I'm a firm believer that the best conversations happen over a late-night pasta dinner. Looking for someone who can appreciate a good building and an even better sense of humor.
-              </p>
+              <p className="text-[var(--text-dim2)] text-sm leading-relaxed"> {profile?.bio || "No bio available"}</p>
             </div>
 
             {/* Interests */}
             <div>
-              <p className="text-xs font-semibold text-[var(--text-dim)] uppercase tracking-wider mb-2">Interests</p>
+              <p className="text-xs font-semibold text-[var(--text-dim)]  uppercase tracking-wider mb-2">Interests</p>
               <div className="flex flex-wrap gap-2">
-                {interests.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 rounded-full border border-[var(--border)] text-[var(--text-dim2)] text-xs font-medium hover:border-[var(--hover)] transition-colors cursor-default"
-                  >
-                    {tag}
-                  </span>
-                ))}
+                {profile?.interests?.length > 0 ? (
+                  profile.interests.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 rounded-full bg-[var(--bg-card)]/10 border  border-[var(--border)] text-[var(--text-dim2)] text-xs font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))
+                ) : (
+                  <span>No Interests</span>
+                )}
               </div>
             </div>
           </div>
@@ -152,8 +168,8 @@ function ProfilePopup({ onClose }) {
             <button
               onClick={() => setRoseSent(true)}
               className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-2xl font-semibold text-sm transition-all duration-200 shadow-md ${roseSent
-                  ? "bg-red-400 text-white scale-95"
-                  : "bg-gradient-to-r from-red-300 to-rose-600 text-white hover:from-red-600 hover:to-rose-700 hover:shadow-lg active:scale-95"
+                ? "bg-red-400 text-white scale-95"
+                : "bg-gradient-to-r from-red-300 to-rose-600 text-white hover:from-red-600 hover:to-rose-700 hover:shadow-lg active:scale-95"
                 }`}
             >
               <span className="text-base">🌹</span>
@@ -163,8 +179,8 @@ function ProfilePopup({ onClose }) {
             <button
               onClick={() => setInviteSent(true)}
               className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-2xl font-semibold text-sm transition-all duration-200 shadow-md ${inviteSent
-                  ? "bg-purple-400 text-white scale-95"
-                  : "bg-gradient-to-r from-pink-400 to-indigo-500 text-white hover:from-pink-500 hover:to-indigo-600 hover:shadow-lg active:scale-95"
+                ? "bg-purple-400 text-white scale-95"
+                : "bg-gradient-to-r from-pink-400 to-indigo-500 text-white hover:from-pink-500 hover:to-indigo-600 hover:shadow-lg active:scale-95"
                 }`}
             >
               {inviteSent ? "Invitation Sent!" : "Send Invitation"}

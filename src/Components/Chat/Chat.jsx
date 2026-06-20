@@ -9,64 +9,16 @@ import ChatRequest from "./ChatRequest";
 import ChatSidebar from "./ChatSidebar";
 import ChatWindow from "./ChatWindow";
 import { useDispatch, useSelector } from "react-redux";
-import { getChatRequests } from "../../Components/Redux/chatRequestSlice";
-const contacts = [
-  {
-    id: 1,
-    name: "Sarah",
-    avatar: "https://i.pravatar.cc/150?img=47",
-    lastMessage: "See you tomorrow! 😊",
-    time: "2m ago",
-    unread: 3,
-    active: true,
-    messages: [
-      { id: 1, text: "Hey! How are you?", time: "10:30 AM", sent: false },
-      {
-        id: 2,
-        text: "Hi! I'm great, thanks! How about you?",
-        time: "10:32 AM",
-        sent: true,
-        seen: true,
-      },
-      {
-        id: 3,
-        text: "Doing well! Want to grab coffee sometime?",
-        time: "10:35 AM",
-        sent: false,
-      },
-    ],
-  },
-  {
-    id: 2,
-    name: "Emma",
-    avatar: "https://i.pravatar.cc/150?img=44",
-    lastMessage: "That sounds amazing!",
-    time: "1h ago",
-    unread: 0,
-    active: false,
-    messages: [
-      {
-        id: 1,
-        text: "Did you see the new movie?",
-        time: "9:00 AM",
-        sent: false,
-      },
-      {
-        id: 2,
-        text: "Not yet, is it good?",
-        time: "9:05 AM",
-        sent: true,
-        seen: true,
-      },
-      {
-        id: 3,
-        text: "That sounds amazing!",
-        time: "9:10 AM",
-        sent: false,
-      },
-    ],
-  },
-];
+import {
+  getChatRequests,
+  getConversationMessages,
+  sendMessageApi,
+  getSidebarConversations,
+  setOnlineUsers,
+} from "../../Components/Redux/chatRequestSlice";
+import api from "../../api";
+import { getSocket, SOCKET_EVENTS, joinConversationRoom, leaveConversationRoom } from "../../socket";
+const apiBaseUrl = "http://35.180.139.208:3000/api/v1";
 
 function Chat() {
   const [search, setSearch] = useState("");
@@ -76,106 +28,269 @@ function Chat() {
   const [activeModal, setActiveModal] = useState(null);
   const [showLucas, setShowLucas] = useState(false);
   const [showRequest, setShowRequest] = useState(false);
-
+  const [selectedId, setSelectedId] = useState(null);
+  const [messages, setMessages] = useState([]);
   const bottomRef = useRef(null);
 
   const dispatch = useDispatch();
 
-  const { requests, loading, error } = useSelector(
+  const { selectedConversation, loading, error, sidebarConversations, onlineUsers } = useSelector(
     (state) => state.chatRequests
   );
 
+  const currentUser = useSelector((state) => state.auth.user?.id);
   useEffect(() => {
-    dispatch(getChatRequests());
-  }, [dispatch]);
-
-  // Transform API data to chat format (memoized to prevent infinite loops)
-  const transformedChats = useMemo(
-    () =>
-      requests.map((request) => ({
-        id: request.conversationId,
-        name: request.otherUser.fullName,
-        avatar: request.otherUser.profileImage,
-        lastMessage: request.lastMessage || "Say hello! 👋",
-        time: new Date(request.updatedAt).toLocaleDateString(),
-        unread: 0,
-        active: request.otherUser.isVerified,
-        isMuted: request.isMuted,
-        isVerified: request.otherUser.isVerified,
-        messages: [],
-      })),
-    [requests]
-  );
-
-  const [selectedId, setSelectedId] = useState(null);
-
-  // Memoize displayChats to prevent recalculation on every render
-  const displayChats = useMemo(
-    () => (transformedChats.length > 0 ? transformedChats : contacts),
-    [transformedChats]
-  );
-
-  // Local state for message updates
-  const [localChats, setLocalChats] = useState(() => displayChats);
-
-  // Set first chat as selected when data is loaded
-  useEffect(() => {
-    if (transformedChats.length > 0 && !selectedId) {
-      setSelectedId(transformedChats[0].id);
+    if (currentUser) {
+      dispatch(
+        getSidebarConversations(currentUser)
+      );
     }
-  }, [transformedChats, selectedId]);
+  }, [currentUser, dispatch]);
+
+
+
+  const selectedConversationIdRef = useRef(null);
 
   useEffect(() => {
-    setLocalChats(displayChats);
-  }, [displayChats]);
+    const socket = getSocket();
+    if (!socket) return;
 
-  const selectedChat = localChats.find((c) => c.id === selectedId);
+    const handleNewMessage = (message) => {
+      console.log("newMessage event received:", message);
 
-  const filtered = localChats.filter(
-    (c) =>
-      c.name.toLowerCase().includes(search.toLowerCase()) ||
-      c.lastMessage.toLowerCase().includes(search.toLowerCase())
+      if (Number(message.conversationId) === Number(selectedId)) {
+        dispatch(getConversationMessages(selectedId));
+      }
+    };
+
+    const handleActiveUsers = ({ users }) => {
+      dispatch(setOnlineUsers(users));
+    };
+
+    // const handleUserOnline = ({ userId }) => {
+    //   dispatch(addOnlineUser(userId));
+    // };
+
+    // const handleUserOffline = ({ userId }) => {
+    //   dispatch(removeOnlineUser(userId));
+    // };
+
+    socket.on("newMessage", handleNewMessage);
+    socket.on(
+      SOCKET_EVENTS.ACTIVE_USERS,
+      ({ users }) => {
+        console.log("ACTIVE_USERS", users);
+
+        dispatch(
+          setOnlineUsers(users)
+        );
+      }
+    );
+
+    // return () => {
+    //   socket.off("newMessage", handleNewMessage);
+    //   socket.off(SOCKET_EVENTS.ACTIVE_USERS, handleActiveUsers);
+    //   socket.off(SOCKET_EVENTS.USER_ONLINE, handleUserOnline);
+    //   socket.off(SOCKET_EVENTS.USER_OFFLINE, handleUserOffline);
+    // };
+  }, [selectedId, dispatch]);
+
+  useEffect(() => {
+    if (!selectedConversation) return;
+
+    setMessages(
+      selectedConversation.data || []
+    );
+  }, [selectedConversation]);
+
+  useEffect(() => {
+    if (!selectedId) return;
+
+    if (selectedConversationIdRef.current && selectedConversationIdRef.current !== selectedId) {
+      leaveConversationRoom(selectedConversationIdRef.current);
+    }
+
+    joinConversationRoom(selectedId);
+    selectedConversationIdRef.current = selectedId;
+
+    return () => {
+      leaveConversationRoom(selectedId);
+    };
+  }, [selectedId]);
+
+  useEffect(() => {
+    const socket = getSocket();
+    if (!socket) return;
+
+    const handleConnect = () => {
+      console.log("Socket Connected:", socket.id);
+    };
+
+    const handleConnectError = (error) => {
+      console.error("Socket connect_error:", error);
+    };
+
+    const handleDisconnect = (reason) => {
+      console.warn("Socket disconnected:", reason);
+    };
+
+    const handleConnectTimeout = () => {
+      console.error("Socket connect_timeout");
+    };
+
+    console.log("Socket initial status:", {
+      connected: socket.connected,
+      id: socket.id,
+      uri: socket.io?.uri,
+    });
+
+    socket.on("connect", handleConnect);
+    socket.on("connect_error", handleConnectError);
+    socket.on("disconnect", handleDisconnect);
+    socket.on("connect_timeout", handleConnectTimeout);
+
+    return () => {
+      socket.off("connect", handleConnect);
+      socket.off("connect_error", handleConnectError);
+      socket.off("disconnect", handleDisconnect);
+      socket.off("connect_timeout", handleConnectTimeout);
+    };
+  }, []);
+  useEffect(() => {
+    if (showRequest) {
+      dispatch(getChatRequests());
+    }
+  }, [showRequest, dispatch]);
+
+  const sidebarChats = useMemo(
+    () =>
+      sidebarConversations.map((item) => {
+        const user = item.frontUser;
+        const avatar = user?.profileImage
+          ? `http://35.180.139.208:3000/${user.profileImage}`
+          : "https://i.pravatar.cc/150";
+        const userId = user?.id;
+        return {
+          id: item.conversationId,
+          userId,
+          name: user?.fullName,
+          avatar,
+          active:
+            userId
+              ? onlineUsers.some(
+                (id) =>
+                  Number(id) ===
+                  Number(userId)
+              )
+              : false,
+        };
+      }),
+    [sidebarConversations, onlineUsers]
   );
+  useEffect(() => {
+    console.log("onlineUsers", onlineUsers);
+  }, [onlineUsers]);
+  useEffect(() => {
+    if (sidebarChats.length && !selectedId) {
+      setSelectedId(sidebarChats[0].id);
+    }
+  }, [sidebarChats, selectedId]);
+  useEffect(() => {
+    if (selectedId) {
+      dispatch(
+        getConversationMessages(
+          selectedId
+        )
+      );
+    }
+  }, [selectedId, dispatch]);
+
+  const selectedChat = useMemo(() => {
+    if (!selectedConversation)
+      return null;
+
+    const user =
+      selectedConversation.frontUser;
+
+    const avatar = user?.profileImage
+      ? `http://35.180.139.208:3000/${user.profileImage}`
+      : "https://i.pravatar.cc/150";
+
+    return {
+      id:
+        selectedConversation.conversationId,
+      userId: user?.id,
+      name: user?.fullName,
+      avatar,
+      active: user?.id ? onlineUsers.includes(user.id) : false,
+      messages: (
+        messages || []
+      ).map((msg) => ({
+        id: msg.id,
+        text: msg.content,
+        time: new Date(
+          msg.createdAt
+        ).toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+        sent:
+          msg.senderId ===
+          currentUser,
+        seen: msg.isRead,
+      })),
+    };
+  }, [
+    selectedConversation,
+    currentUser,
+    apiBaseUrl,
+  ]);
+
+  const filtered =
+    sidebarChats.filter((c) =>
+      c.name
+        ?.toLowerCase()
+        .includes(
+          search.toLowerCase()
+        )
+    );
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [selectedChat?.messages, selectedId]);
 
-  const sendMessage = () => {
+  const sendMessage = async () => {
+    console.log("Button Clicked");
+
     const text = input.trim();
 
-    if (!text) return;
+    console.log("Text:", text);
+    console.log("SelectedChat:", selectedChat);
 
-    const now = new Date();
+    if (!text || !selectedChat) return;
 
-    const time = now.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
+    try {
+      const res = await dispatch(
+        sendMessageApi({
+          conversationId: selectedChat.id,
+          content: text,
+        })
+      ).unwrap();
 
-    setLocalChats((prev) =>
-      prev.map((c) =>
-        c.id === selectedId
-          ? {
-            ...c,
-            lastMessage: text,
-            time: "now",
-            messages: [
-              ...c.messages,
-              {
-                id: Date.now(),
-                text,
-                time,
-                sent: true,
-                seen: false,
-              },
-            ],
-          }
-          : c
-      )
-    );
+      console.log("Sent:", res);
 
-    setInput("");
+      dispatch(
+        getConversationMessages(
+          selectedChat.id
+        )
+      );
+
+      setInput("");
+    } catch (error) {
+      console.log("Status:", error.response?.status);
+      console.log("Data:", error.response?.data);
+      console.log("Error:", error);
+    }
   };
 
   const handleKey = (e) => {
@@ -184,7 +299,7 @@ function Chat() {
       sendMessage();
     }
   };
-
+  // console.log(JSON.stringify(sidebarConversations, null, 2));
   return (
     <>
       <Navbar />
@@ -199,7 +314,7 @@ function Chat() {
         ) : error ? (
           <div className="text-center">
             <p className="text-red-500 mb-4">Error: {error}</p>
-            <button 
+            <button
               onClick={() => dispatch(getChatRequests())}
               className="px-4 py-2 bg-[var(--accent)] text-white rounded-lg hover:opacity-90"
             >

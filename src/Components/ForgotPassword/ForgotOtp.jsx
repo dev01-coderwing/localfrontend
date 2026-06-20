@@ -79,7 +79,7 @@ function ForgotOtp() {
     
      <Navbar />
  
-      <div className="min-h-screen flex items-center justify-center text-[var(--text)] px-4">
+      <div className="min-h-screen flex items-center justify-center  px-4">
         <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl shadow-lg w-full max-w-lg p-8 text-center">
  
           <h1 className="text-4xl mb-2  text-[var(--text-dim)]">

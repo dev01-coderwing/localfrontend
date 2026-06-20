@@ -18,6 +18,7 @@ import {
 import Filter from "../HomePage/Filter";
 import BoostModal from "../Boost/BoostModal";
 import { LogoutUser } from "../Redux/authSlice";
+import { disconnectSocket } from "../../socket";
  
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -166,10 +167,11 @@ function Navbar() {
                     onClick={async () => {
                       try {
                         await dispatch(LogoutUser());
- 
+                        disconnectSocket();
+
                         setIsDropdownOpen(false);
                         setIsLoggedIn(false);
- 
+
                         navigate("/login");
                       } catch (err) {
                         console.log("Logout error:", err);

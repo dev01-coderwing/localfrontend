@@ -22,6 +22,7 @@ function Avatar({ src, name, size = "md", active = false }) {
         className={`${sizeMap[size]} rounded-full object-cover border border-[var(--border)]`}
       />
 
+
       {active && (
         <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-400 border-2 border-[var(--card)] rounded-full" />
       )}
@@ -34,11 +35,10 @@ function MessageBubble({ msg }) {
     <div className={`flex ${msg.sent ? "justify-end" : "justify-start"} mb-4`}>
 
       <div
-        className={`max-w-[75%] px-4 py-2.5 rounded-2xl text-sm ${
-          msg.sent
-            ? "bg-[var(--accent)] text-[var(--text-dim)] rounded-br-sm"
-            : "bg-[var(--bg-card)]/10 text-[var(--text-dim)] border border-[var(--border)] rounded-bl-sm"
-        }`}
+        className={`max-w-[75%] px-4 py-2.5 rounded-2xl text-sm ${msg.sent
+          ? "bg-[var(--accent)] text-[var(--text-dim)] rounded-br-sm"
+          : "bg-[var(--bg-card)]/10 text-[var(--text-dim)] border border-[var(--border)] rounded-bl-sm"
+          }`}
       >
 
         <p>{msg.text}</p>
@@ -56,8 +56,13 @@ const ActionModal = ({ type, onClose, selectedChat }) => {
 
   const data = {
     mute: {
-      title: "Mute Conversation",
-      btn: "Mute",
+      title: selectedChat?.isMuted
+        ? "Unmute Conversation"
+        : "Mute Conversation",
+
+      btn: selectedChat?.isMuted
+        ? "Unmute"
+        : "Mute",
     },
     report: {
       title: "Report User",
@@ -76,30 +81,30 @@ const ActionModal = ({ type, onClose, selectedChat }) => {
       dispatch(
         muteConversation({
           conversationId: selectedChat.id,
-          isMuted: true,
+          isMuted: !selectedChat.isMuted,
         })
       );
     }
-
     if (type === "block") {
-      dispatch(blockUser(selectedChat.id));
+      dispatch(blockUser(selectedChat.userId));
     }
 
     if (type === "report") {
       dispatch(
         reportUser({
-          reportedId: selectedChat.id,
+          reportedId: selectedChat.userId,
           reason: "Spam",
         })
       );
     }
-console.log("selectedChat =>", selectedChat);
+    console.log("selectedChat =>", selectedChat);
     onClose();
   };
-
+  console.log("ChatWindow Rendered");
+  console.log(selectedChat);
   return (
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-      <div className="bg-[var(--bg)] rounded-2xl p-6 w-[320px]">
+      <div className="bg-[var(--bg-background)] rounded-2xl p-6 w-[320px]">
         <h2 className="text-lg font-semibold">
           {current.title}
         </h2>
@@ -150,7 +155,9 @@ function ChatWindow({
   activeModal,
   setActiveModal,
   setShowLucas,
+
 }) {
+  console.log("selectedChat", selectedChat);
   // Handle when no chat is selected
   if (!selectedChat) {
     return (
@@ -216,7 +223,7 @@ function ChatWindow({
                 }}
                 className="w-full text-left px-4 py-2"
               >
-                Mute
+                {selectedChat?.isMuted ? "Unmute" : "Mute"}
               </button>
 
               <button
@@ -246,9 +253,13 @@ function ChatWindow({
       {/* MESSAGES */}
       <div className="flex-1 overflow-y-auto px-6 py-6 ">
 
-        {selectedChat.messages.map((msg) => (
-          <MessageBubble key={msg.id} msg={msg} />
-        ))}
+        {Array.isArray(selectedChat.messages) ? (
+          selectedChat.messages.map((msg) => (
+            <MessageBubble key={msg.id} msg={msg} />
+          ))
+        ) : (
+          <p className="text-sm text-[var(--text-dim2)]">No messages yet.</p>
+        )}
 
         <div ref={bottomRef} />
       </div>
@@ -293,6 +304,7 @@ function ChatWindow({
         <ActionModal
           type={activeModal}
           onClose={() => setActiveModal(null)}
+          selectedChat={selectedChat}
         />
       )}
     </div>

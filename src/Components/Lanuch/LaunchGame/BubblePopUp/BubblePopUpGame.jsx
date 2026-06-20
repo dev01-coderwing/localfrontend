@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import GetReadyScreen from "./GetReadyScreen";
-import ColorMatchEngine, { COLORS } from "./ColorMatchEngine";
+import ColorMatchEngine from "./ColorMatchEngine";
 import VictoryScreen from "./VictoryScreen";
 import GameOverScreen from "./GameOverScreen";
 import { useNavigate } from "react-router-dom";
 
 const CONFIG = {
   duration: 15,
-  targetScore: 12, // As shown in design "8 out of 12"
+  targetScore: 10, // As shown in design "8 out of 12"
 };
 
 function BubblePopUpGame() {
@@ -15,25 +15,19 @@ function BubblePopUpGame() {
   const [status, setStatus] = useState("idle"); // "idle" | "playing" | "won" | "failed"
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(CONFIG.duration);
-  const [targetColor, setTargetColor] = useState(COLORS[0]);
-  
   const timerRef = useRef(null);
-
-  const selectNewTarget = useCallback(() => {
-    setTargetColor(COLORS[Math.floor(Math.random() * COLORS.length)]);
-  }, []);
-
-  const startGame = useCallback(() => {
-    setScore(0);
-    setTimeLeft(CONFIG.duration);
-    selectNewTarget();
-    setStatus("playing");
-  }, [selectNewTarget]);
 
   const stopTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = null;
   }, []);
+
+  const startGame = useCallback(() => {
+    stopTimer();
+    setScore(0);
+    setTimeLeft(CONFIG.duration);
+    setStatus("playing");
+  }, [stopTimer]);
 
   useEffect(() => {
     if (status === "playing") {
@@ -54,14 +48,16 @@ function BubblePopUpGame() {
     return () => stopTimer();
   }, [status, stopTimer]);
 
-  const handleMatch = () => {
-    setScore(prev => {
-      const newScore = prev + 1;
-      // Change target color occasionally to keep it challenging
-      if (newScore % 3 === 0) selectNewTarget();
-      return newScore;
+  const handleMatch = useCallback(() => {
+    setScore((prev) => {
+      const nextScore = prev + 1;
+      if (nextScore >= CONFIG.targetScore) {
+        stopTimer();
+        setStatus("won");
+      }
+      return nextScore;
     });
-  };
+  }, [stopTimer]);
 
   const handleExit = () => navigate("/Lanuch");
 
@@ -77,7 +73,6 @@ function BubblePopUpGame() {
             targetScore={CONFIG.targetScore}
             timeLeft={timeLeft}
             totalTime={CONFIG.duration}
-            targetColor={targetColor}
             onMatch={handleMatch}
             onFail={() => {}} // No penalty requested
           />

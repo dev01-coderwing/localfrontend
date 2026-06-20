@@ -18,7 +18,6 @@ const ChatRequest = ({ onClose }) => {
   const handleDecline = (id) => {
     dispatch(declineChatRequest(id));
   };
-
   return (
     <div className="fixed inset-0  z-50 flex justify-center items-start pt-10">
       <div className="w-[380px] bg-[var(--bg-background)] rounded-2xl p-4 shadow-xl max-h-[80vh] overflow-y-auto">
@@ -38,46 +37,52 @@ const ChatRequest = ({ onClose }) => {
           </p>
         ) : (
           <div className="space-y-3">
-            {requests.map((item) => (
-              <div
-                key={item.id}
-                className="flex items-center gap-3 p-3 rounded-xl bg-[var(--bg-card)]/10 border border-[var(--border)]"
-              >
-                <img
-                  src={`http://35.180.139.208:3000/${item.sender?.profileImage}`}
-                  alt={item.sender?.fullName}
-                  className="w-14 h-14 rounded-full object-cover"
-                />
+            {requests.map((item) => {
+              const requestId = item.id ?? item._id;
 
-                <div className="flex-1">
-                  <h3 className="font-semibold text-[var(--text-dim)]">
-                    {item.sender?.fullName}
-                  </h3>
+              return (
+                <div
+                  key={requestId || item.sender?.id || item.sender?.fullName}
+                  className="flex items-center gap-3 p-3 rounded-xl bg-[var(--bg-card)]/10 border border-[var(--border)]"
+                >
+                  <img
+                    src={`http://35.180.139.208:3000/${item.sender?.profileImage}`}
+                    alt={item.sender?.fullName}
+                    className="w-14 h-14 rounded-full object-cover"
+                  />
 
-                  <p className="text-sm text-[var(--text-dim2)]">
-                    {item.sender?.gender}
-                  </p>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-[var(--text-dim)]">
+                      {item.sender?.fullName}
+                    </h3>
 
-                  <p className="text-xs text-[var(--text-dim)] capitalize">
-                    {item.status}
-                  </p>
+                    <p className="text-sm text-[var(--text-dim2)]">
+                      {item.sender?.gender}
+                    </p>
+
+                    <p className="text-xs text-[var(--text-dim)] capitalize">
+                      {item.status}
+                    </p>
+                  </div>
+
+                  <button
+                    onClick={() => handleAccept(requestId)}
+                    disabled={!requestId}
+                    className="px-3 py-1 rounded-lg bg-green-500 text-white text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    Accept
+                  </button>
+
+                  <button
+                    onClick={() => handleDecline(requestId)}
+                    disabled={!requestId}
+                    className="px-3 py-1 rounded-lg bg-red-500 text-white text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    Decline
+                  </button>
                 </div>
-
-                <button
-                  onClick={() => handleAccept(item.id)}
-                  className="px-3 py-1 rounded-lg bg-green-500 text-white text-sm"
-                >
-                  Accept
-                </button>
-
-                <button
-                  onClick={() => handleDecline(item.id)}
-                  className="px-3 py-1 rounded-lg bg-red-500 text-white text-sm"
-                >
-                  Decline
-                </button>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>

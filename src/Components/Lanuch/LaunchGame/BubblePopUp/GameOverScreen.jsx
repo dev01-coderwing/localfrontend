@@ -2,6 +2,13 @@ import React from "react";
 import { X, TimerOff } from "lucide-react";
 
 const GameOverScreen = ({ score, onRestart, onClose }) => {
+  const handleExit = async () => {
+  await dispatch(
+    submitBubblePopResultThunk("LOSS")
+  );
+
+  onClose();
+};
   return (
     <div className="absolute inset-0 bg-[var(--bg)]/60 backdrop-blur-md flex items-center justify-center z-50 p-6">
       <div className="w-full max-w-sm bg-[var(--card)] rounded-[40px] shadow-[0_30px_80px_rgba(0,0,0,0.12)] p-10 relative flex flex-col items-center text-center border border-[var(--border)]">
@@ -41,8 +48,8 @@ const GameOverScreen = ({ score, onRestart, onClose }) => {
             Try Again
           </button>
           <button
-            onClick={onClose}
-            className="w-full bg-[var(--card)] border border-[var(--border)] text-[var(--text-dim)] py-5 rounded-full font-bold text-lg hover:bg-[var(--hover)] transition-all transform active:scale-[0.98]"
+ onClick={handleExit}  
+           className="w-full bg-[var(--card)] border border-[var(--border)] text-[var(--text-dim)] py-5 rounded-full font-bold text-lg hover:bg-[var(--hover)] transition-all transform active:scale-[0.98]"
           >
             Exit
           </button>

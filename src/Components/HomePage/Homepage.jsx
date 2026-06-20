@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import Navbar from "../Navbar/Navbar";
 import infinite from "/Image/infinet.png"
-import Heart from "/Image/Heart.png"
+import Heart from "/Image/Heart-icon.png";
 import noto from "/Image/noto.png"
 import icon from "/Image/icon.png"
 // import { Heart } from 'lucide-react';
@@ -13,36 +13,16 @@ import LucasLabOverview from "./LucasLabOverview";
 import FreeChatModal from "../Cards/FreeChatModal";
 import ProfilePopup from "./ProfilePopup";
 import "./Homepage.css";
-import {BadgeCheck , MessageCircle , Infinity} from "lucide-react";
+import { BadgeCheck, MessageCircle, Infinity } from "lucide-react";
+import { useDispatch, useSelector } from "react-redux";
+import { getProfiles } from "../../Components/Redux/discoverySlice";
 
 
 
-const profiles = [
-  {
-    id: 1,
-    name: "Chad",
-    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1",
-    like: 50,
-    match: 92,
-  },
-  {
-    id: 2,
-    name: "Alexa",
-    image: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe",
-    like: 60,
-    match: 85,
-  },
-  {
-    id: 3,
-    name: "Emma",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
-    like: 70,
-    match: 95,
-  },
-];
 
 function Homepage() {
   const [activeModal, setActiveModal] = useState(null);
+  const [selectedProfile, setSelectedProfile] = useState(null);
   const navigate = useNavigate();
   const settings = {
     centerMode: true,
@@ -54,9 +34,40 @@ function Homepage() {
   };
 
   const [flowOpen, setFlowOpen] = useState(false);
+  const dispatch = useDispatch();
 
+  const { profiles, loading } = useSelector(
+    (state) => state.discovery
+  );
+  useEffect(() => {
+    dispatch(getProfiles());
+  }, [dispatch]);
+  console.log("Profiles:", profiles);
+  console.log("Loading:", loading);
+  if (loading) {
+    return (
+      <div className="h-screen flex items-center justify-center">
+        Loading...
+      </div>
+    );
+  }
 
+  const calculateAge = (dob) => {
+    const birthDate = new Date(dob);
+    const today = new Date();
 
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const month = today.getMonth() - birthDate.getMonth();
+
+    if (
+      month < 0 ||
+      (month === 0 && today.getDate() < birthDate.getDate())
+    ) {
+      age--;
+    }
+
+    return age;
+  };
   return (
     <>
       <Navbar />
@@ -66,15 +77,26 @@ function Homepage() {
 
           <Slider {...settings}>
             {profiles.map((item) => (
-              <div key={item.id} className="px-4 shadow-2xl rounded-2xl">
+              <div
+                key={item.id}
+                className="px-4 shadow-2xl rounded-2xl cursor-pointer"
+                onClick={() => {
+                  setSelectedProfile(item);
+                  setActiveModal("profile");
+                }}
+              >
 
                 <div className="relative rounded-3xl overflow-hidden shadow-xl w-80 ">
 
                   {/* Image */}
                   <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-[520px] object-cover items-center"
+                    src={
+                      item.profileImage
+                        ? `http://35.180.139.208:3000/${item.profileImage}`
+                        : "https://i.pravatar.cc/150"
+                    }
+                    alt={item.fullName}
+                    className="w-full h-[520px] object-cover"
                   />
 
                   {/* Overlay */}
@@ -82,15 +104,17 @@ function Homepage() {
 
                     <div className="flex justify-between items-center">
                       <h2 className="text-xl font-semibold flex items-center gap-2">
-                        {item.name}
-                        <span className="text-blue-500"><BadgeCheck /></span>
+                        {item.fullName}, {calculateAge(item.dob)}
+                        <span className="text-blue-500">
+                          <BadgeCheck />
+                        </span>
                       </h2>
 
                       <button
                         onClick={() => setActiveModal("rules")}
                         className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center overflow-hidden hover:scale-110 transition"
                       >
-                     <MessageCircle />
+                        <MessageCircle />
 
                       </button>
                     </div>
@@ -146,16 +170,9 @@ function Homepage() {
             {/* ❤️ LikeButton  */}
             <button
               onClick={() => setActiveModal("profile")}
-              className="
-    w-14 h-14
-    rounded-full
-    bg-gradient-to-r from-[#A000F0] to-[#8A38F5]
-    flex items-center justify-center
-    hover:scale-105
-    transition-all duration-300
-  "
+              className="   w-14 h-14  rounded-full   bg-gradient-to-r from-[#A000F0] to-[#8A38F5]   flex items-center justify-center  hover:scale-105 transition-all duration-300 "
             >
-                         <img src={Heart} alt="" />
+              <img src={Heart} alt="" />
 
             </button>
           </div>
@@ -175,9 +192,11 @@ function Homepage() {
       {activeModal === "free" && (
         <FreeChatModal onClose={() => setActiveModal(null)} />
       )}
-
       {activeModal === "profile" && (
-        <ProfilePopup onClose={() => setActiveModal(null)} />
+        <ProfilePopup
+          profile={selectedProfile}
+          onClose={() => setActiveModal(null)}
+        />
       )}
     </>
   );

@@ -9,6 +9,7 @@ import compatibilityReducer from "../Redux/compatibilitySlice";
 import verifyReducer from "../Redux/verifySlice";
 import profileReducer from "./profileSlice";
 import chatRequestReducer from "./chatRequestSlice";
+import discoveryReducer from "./discoverySlice";
 
 export const store = configureStore({
   reducer: {
@@ -22,6 +23,7 @@ export const store = configureStore({
     verify: verifyReducer,
     profile: profileReducer,
     chatRequests: chatRequestReducer,
+    discovery: discoveryReducer,
 
   },
 });

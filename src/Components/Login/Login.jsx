@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../Navbar/Navbar";
 import Animation from "../Animation/Animation";
 import { LoginUser } from "../Redux/authSlice";
+import { connectSocket } from "../../socket";
  
 function Login() {
   const navigate = useNavigate();
@@ -39,34 +40,14 @@ function Login() {
       const resultAction = await dispatch(
         LoginUser({ email, password })
       );
- 
-      //  SUCCESS
-  if (LoginUser.fulfilled.match(resultAction)) {
-  console.log("Login Success:", resultAction.payload);
 
-  //  Store authentication data
-  localStorage.setItem("isLoggedIn", "true");
+      if (LoginUser.fulfilled.match(resultAction)) {
+        console.log("Login Success:", resultAction.payload);
 
-  // token save
-  localStorage.setItem(
-    "token",
-    resultAction.payload.token
-  );
+        connectSocket(resultAction.payload.token);
 
-  //  ONLY user object save
-  localStorage.setItem(
-    "user",
-    JSON.stringify(resultAction.payload.user)
-  );
-
-  // redirect
-  navigate("/homepage");
-
-  window.location.reload();
-}
- 
-      // ❌ ERROR
-      else {
+        navigate("/homepage");
+      } else {
         console.log("Login Failed:", resultAction.payload);
       }
     } catch (err) {

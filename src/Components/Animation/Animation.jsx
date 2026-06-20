@@ -325,7 +325,7 @@ const applyTheme = (themeName) => {
       </div>
       
       {/* ====== 2. THEME SELECTOR ====== */}
-      <div className="fixed top-5 right-5 z-50 flex gap-2">
+      {/* <div className="fixed top-5 right-5 z-50 flex gap-2">
         {Object.keys(themes).map((themeKey) => (
           <span
             key={themeKey}
@@ -341,7 +341,7 @@ const applyTheme = (themeName) => {
             }}
           />
         ))}
-      </div>
+      </div> */}
       {/* ====== PAGE CONTENT ====== */}
       <div className="relative z-10 w-full">
         {children}

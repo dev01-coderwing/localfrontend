@@ -81,11 +81,11 @@ const OTPVerify = () => {
       <div className="min-h-screen flex items-center justify-center text-[var(--text)] px-4">
         <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl shadow-lg w-full max-w-lg p-8 text-center">
 
-          <h1 className="text-2xl mb-2">
+          <h1 className="text-2xl mb-2 text-[var(--text-dim)]">
             Verification Code
           </h1>
 
-          <p className="text-sm mb-6 opacity-70">
+          <p className="text-sm mb-6 opacity-70 text-[var(--text-dim2)]">
             We’ve sent a 6-digit verification code to
             <br />
             <span className="font-semibold underline">
@@ -93,11 +93,11 @@ const OTPVerify = () => {
             </span>
           </p>
 
-          <p className="text-left text-sm mb-2">
+          <p className="text-left text-sm mb-2 text-[var(--text-dim)]">
             Enter OTP
           </p>
 
-          <div className="flex justify-between gap-2 mb-3">
+          <div className="flex justify-between gap-2 mb-3  ">
             {otp.map((data, index) => (
               <input
                 key={index}
@@ -107,7 +107,7 @@ const OTPVerify = () => {
                 ref={(el) => (inputs.current[index] = el)}
                 onChange={(e) => handleChange(e.target, index)}
                 onKeyDown={(e) => handleKeyDown(e, index)}
-                className="w-12 h-12 border border-[var(--border)] rounded-lg text-center text-lg bg-[var(--card)] text-[var(--text)]"
+                className="w-12 h-12 border border-[var(--border)]  rounded-lg text-center text-lg bg-[var(--card)] text-[var(--text-dim)]"
               />
             ))}
           </div>
@@ -127,7 +127,7 @@ const OTPVerify = () => {
             Submit
           </button>
 
-          <p className="text-xs mt-5 opacity-60">
+          <p className="text-xs mt-5 opacity-60 text-[var(--text-dim)]">
             By continuing, you agree to our
             <span className="text-blue-500 underline"> Terms of Service </span>
             and
