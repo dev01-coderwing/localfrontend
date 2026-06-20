@@ -334,7 +334,7 @@ function Right() {
                   {/* Header */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <h4 className="text-sm font-semibold text-[#2D1B45]">
+                      <h4 className="text-sm font-semibold text-[#2D1B45] ">
                         Invisible Mode
                       </h4>
 

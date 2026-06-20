@@ -88,6 +88,29 @@ import Identify from "./Components/UserProfile/GetVerified/Identify.jsx";
 import Complete from "./Components/UserProfile/GetVerified/Complete.jsx";
 // import InfluencerDashborad from "./Components/UserProfile/verification/InfluencerDashboard.jsx"
 import SplashScreen from "./Components/SplashScreen/SplashScreen.jsx";
+
+
+
+
+import Introduction from "./Components/UserProfile/InfluencerPage/Introduction"
+import RegistrationPopup from "./Components/UserProfile/InfluencerPage/RegistrationPopup.jsx"
+import SubmitApplication from "./Components/UserProfile/InfluencerPage/SubmitApplication.jsx"
+import InfluencerDashborad from "./Components/UserProfile/InfluencerPage/InfluencerDashborad.jsx"
+import PromoCodeModal from "./Components/UserProfile/InfluencerPage/PromoCodeModal.jsx"
+import DeactivatedDashboard  from "./Components/UserProfile/InfluencerPage/DeactivatedDashboard.jsx"
+import WalletPopup from "./Components/UserProfile/InfluencerPage/WalletPopup.jsx";
+import AddBankPopup from "./Components/UserProfile/InfluencerPage/AddBankPopup.jsx"
+import SubmitTwo from "./Components/UserProfile/InfluencerPage/SubmitTwo.jsx";
+import InfluencerWallet from "./Components/UserProfile/InfluencerPage/InfluencerWallet.jsx"
+import Withdrawal from "./Components/UserProfile/InfluencerPage/Withdrawal.jsx"
+import ConfirmWithdrawal from "./Components/UserProfile/InfluencerPage/ConfirmWithdrawal.jsx"
+import PromoCodeList from "./Components/UserProfile/InfluencerPage/PromoCodeList.jsx"
+import ReferralPopup from "./Components/UserProfile/InfluencerPage/ReferralPopup.jsx"
+import SubmitPromoCode from "./Components/UserProfile/InfluencerPage/SubmitPromoCode.jsx";
+import Kycverified from "./Components/UserProfile/InfluencerPage/Kycverified.jsx"
+
+
+
 function App() {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.auth.token);
@@ -190,6 +213,7 @@ function App() {
         <Route path="/takeselfie" element={<TakeSelfie />} />
         <Route path="/identify" element={<Identify />} />
         <Route path="/complete" element={<Complete />} />
+        ``
         {/* <Route path="/convertToMeonsModal" element={<ConvertToMeonsModal/>}/>
         <Route path="/paymentMethodModal" element={<PaymentMethodModal/>}/>
         <Route path="/secureCheckoutModal" element={<SecureCheckoutModal/>}/>
@@ -199,9 +223,24 @@ function App() {
         <Route path="/inviteConnectionsModal" element={<InviteConnectionsModal/>}/>
         <Route path="/ShareInviteModal" element={<ShareInviteModal/>}/>
         <Route path="/share" element={<Share/>}/> */}
+{/* /////////////////////////////////////////////////////////////////////// */}
 
-
-
+<Route path="/introduction" element={<Introduction/>}/>
+        <Route path="/registrationpopup"element={<RegistrationPopup/>}/>
+        <Route path="/submitapplication" element={<SubmitApplication/>}/>
+        <Route path="/influencerdashborad" element={<InfluencerDashborad/>}/>
+        <Route path="/promocodemodal" element={<PromoCodeModal/>}/>
+        <Route path ="/deactivateddashboard" element={<DeactivatedDashboard/>}/>
+        <Route path ="/walletpopup" element={<WalletPopup/>}/>
+        <Route path ="/addbankpopup" element={<AddBankPopup/>}/>
+        <Route path="/submittwo" element={<SubmitTwo/>}/>
+        <Route path="/influencerwallet" element={<InfluencerWallet/>}/>
+        <Route path="/withdrawal" element={<Withdrawal/>}/>
+        <Route path="/confirmwithdrawal" element={<ConfirmWithdrawal/>}/>
+         <Route path="/promocodelist" element={<PromoCodeList/>}/>
+           <Route path="/submitpromocode" element={<SubmitPromoCode/>}/>
+          <Route path="/referralpopup" element={<ReferralPopup/>}/>
+          <Route path="kycverified" element={<Kycverified/>}/>
 
         {/* <Route path="/influencerdashborad" element={<InfluencerDashborad />} /> */}
       </Routes>
