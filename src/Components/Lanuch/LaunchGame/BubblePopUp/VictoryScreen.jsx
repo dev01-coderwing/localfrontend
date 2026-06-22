@@ -2,7 +2,7 @@ import React from "react";
 import { X, Heart } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { submitBubblePopResultThunk } from "../../../Redux/allgameSclice";
+import { submitBubblePopResultThunk } from "../../../Redux/AllgameSclice";
 
 const VictoryScreen = ({ score, onClaim, onRestart, onClose }) => {
   const dispatch = useDispatch();
