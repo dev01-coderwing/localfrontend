@@ -64,13 +64,13 @@ import WalletPage from "./Components/Wallet/WalletPage.jsx";
 import EarnMeons from "./Components/Wallet/EarnMeons.jsx";
 import SpendMeons from "./Components/Wallet/SpendMeons.jsx";
 import ChatRulesModal from "./Components/Cards/ChatRulesModal.jsx";
-import VerifyModal from "./Components/UserProfile/Verification/VerifyModal.jsx";
-import PopupOne from "./Components/UserProfile/Verification/PopupOne.jsx";
-import PopupTwo from "./Components/UserProfile/Verification/PopupTwo.jsx";
-import GetVerify from "./Components/UserProfile/Verification/GetVerify.jsx"
-import Selfie from "./Components/UserProfile/Verification/Selfie.jsx"
-import Submit from "./Components/UserProfile/Verification/Sumbit.jsx";
-import VerificationProgress from "./Components/UserProfile/Verification/VerificationProgress.jsx";
+import VerifyModal from "./Components/UserProfile/verification/VerifyModal.jsx";
+import PopupOne from "./Components/UserProfile/verification/PopupOne.jsx";
+import PopupTwo from "./Components/UserProfile/verification/PopupTwo.jsx";
+import GetVerify from "./Components/UserProfile/verification/GetVerify.jsx"
+import Selfie from "./Components/UserProfile/verification/Selfie.jsx"
+import Submit from "./Components/UserProfile/verification/Sumbit.jsx";
+import VerificationProgress from "./Components/UserProfile/verification/VerificationProgress.jsx";
 
 import RealCurrencyWallet from "./Components/RealCurrencyWallet/RealCurrencyWallet.jsx"
 import ConvertToMeonsModal from "./Components/RealCurrencyWallet/ConvertToMeonsModal.jsx";
