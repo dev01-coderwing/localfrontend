@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { initializeAuth } from "./Components/Redux/authSlice";
 import { connectSocket, joinUserRoom } from "./socket";
 
-import LanguagePage from "./Components/languagePage/languagePage";
+import LanguagePage from "./Components/languagePage/LanguagePage";
 import Singup from "./Components/Singup/Singup";
 import OTPVerify from "./Components/OTPVerify/OTPVerify";
 import Password from "./Components/Password/Password";
