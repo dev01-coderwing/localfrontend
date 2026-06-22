@@ -72,16 +72,16 @@ import Selfie from "./Components/UserProfile/verification/Selfie.jsx"
 import Submit from "./Components/UserProfile/verification/Sumbit.jsx";
 import VerificationProgress from "./Components/UserProfile/verification/VerificationProgress.jsx";
 
-import RealCurrencyWallet from "./Components/RealCurrencyWallet/RealCurrencyWallet.jsx"
-import ConvertToMeonsModal from "./Components/RealCurrencyWallet/ConvertToMeonsModal.jsx";
-import PaymentMethodModal from "./Components/RealCurrencyWallet/PaymentMethodModal.jsx";
-import SecureCheckoutModal from "./Components/RealCurrencyWallet/SecureCheckoutModal.jsx";
-import PaymentSuccessModal from "./Components/RealCurrencyWallet/PaymentSuccessModal.jsx";
-import PaymentFailedModal from "./Components/RealCurrencyWallet/PaymentFailedModal.jsx";
-import InviteFriendsModal from "./Components/RealCurrencyWallet/InviteFriendsModal.jsx";
-import InviteConnectionsModal from "./Components/RealCurrencyWallet/InviteConnectionsModal.jsx";
-import ShareInviteModal from "./Components/RealCurrencyWallet/ShareInviteModal.jsx";
-import Share from "./Components/RealCurrencyWallet/Share.jsx";
+import RealCurrencyWallet from "./Components/realCurrencyWallet/RealCurrencyWallet.jsx"
+import ConvertToMeonsModal from "./Components/realCurrencyWallet/ConvertToMeonsModal.jsx";
+import PaymentMethodModal from "./Components/realCurrencyWallet/PaymentMethodModal.jsx";
+import SecureCheckoutModal from "./Components/realCurrencyWallet/SecureCheckoutModal.jsx";
+import PaymentSuccessModal from "./Components/realCurrencyWallet/PaymentSuccessModal.jsx";
+import PaymentFailedModal from "./Components/realCurrencyWallet/PaymentFailedModal.jsx";
+import InviteFriendsModal from "./Components/realCurrencyWallet/InviteFriendsModal.jsx";
+import InviteConnectionsModal from "./Components/realCurrencyWallet/InviteConnectionsModal.jsx";
+import ShareInviteModal from "./Components/realCurrencyWallet/ShareInviteModal.jsx";
+import Share from "./Components/realCurrencyWallet/Share.jsx";
 import GetVerified from "./Components/UserProfile/GetVerified/GetVerified.jsx";
 import TakeSelfie from "./Components/UserProfile/GetVerified/TakeSelfie.jsx";
 import Identify from "./Components/UserProfile/GetVerified/Identify.jsx";
