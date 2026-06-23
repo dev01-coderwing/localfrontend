@@ -108,8 +108,7 @@ import PromoCodeList from "./Components/UserProfile/InfluencerPage/PromoCodeList
 import ReferralPopup from "./Components/UserProfile/InfluencerPage/ReferralPopup.jsx"
 import SubmitPromoCode from "./Components/UserProfile/InfluencerPage/SubmitPromoCode.jsx";
 import Kycverified from "./Components/UserProfile/InfluencerPage/Kycverified.jsx"
-
-
+import Banner from "./Components/HomePage/Banner.jsx"
 
 function App() {
   const dispatch = useDispatch();
@@ -241,7 +240,7 @@ function App() {
            <Route path="/submitpromocode" element={<SubmitPromoCode/>}/>
           <Route path="/referralpopup" element={<ReferralPopup/>}/>
           <Route path="kycverified" element={<Kycverified/>}/>
-
+         <Route path="/banner" element={<Banner />} />
         {/* <Route path="/influencerdashborad" element={<InfluencerDashborad />} /> */}
       </Routes>
     </Router>

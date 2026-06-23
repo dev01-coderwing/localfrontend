@@ -16,8 +16,7 @@ import "./Homepage.css";
 import { BadgeCheck, MessageCircle, Infinity } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProfiles } from "../../Components/Redux/discoverySlice";
-
-
+import Banner from "./Banner";
 
 
 function Homepage() {
@@ -71,7 +70,9 @@ function Homepage() {
   return (
     <>
       <Navbar />
-
+  <div className="p-6 bg-[var(--bg)]">
+    <Banner />
+  </div>
       <div className="w-full h-screen flex items-center justify-center bg-[var(--bg)]">
         <div className="w-[800px]">
 
