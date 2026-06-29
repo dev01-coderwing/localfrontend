@@ -56,8 +56,8 @@ const NotificationsModal = ({ onClose }) => {
               <div>
                 <p className="font-medium text-sm">Lucas AI</p>
                 <p className="text-xs text-gray-500">
-                  “You compatibility with NTR just went up! She just added
-                  photography to her interests.”
+                  "You compatibility with NTR just went up! She just added
+                  photography to her interests."
                 </p>
                 <span className="text-purple-500 text-xs cursor-pointer">
                   Analyze profile →

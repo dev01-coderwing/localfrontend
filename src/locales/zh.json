@@ -9,25 +9,322 @@
   "next": "下一步",
 
   "intro": {
-    "slide1": {
-      "title": "认识 Lucas —— 您的 AI 恋爱顾问",
-      "description": "Lucas 帮助您了解真正的契合度，而不仅仅是照片和第一印象。"
-    },
-    "slide2": {
-      "title": "IAMeetYou 背后的科学",
-      "description": "Lucas 会分析您的选择与声音之间的契合度，帮助建立真实而有意义的联系。"
-    },
-    "slide3": {
-      "title": "超越语言，感受真实的频率。",
-      "description": "大五人格 • MBTI • 爱的语言 • 依恋类型 —— 真正的契合，而不仅仅是滑动匹配。"
-    },
-    "slide4": {
-      "title": "您的情感 DNA",
-      "description": "就像灵魂的指南针，我们利用您的出生信息来了解您如何面对爱情与人生。"
-    },
-    "slide5": {
-      "title": "真实交友的港湾",
-      "description": "一个精心打造的社区，在这里每一个声音都真实，每一次匹配都充满意义。"
+    "slide1": { "title": "认识 Lucas —— 您的 AI 恋爱顾问", "description": "Lucas 帮助您了解真正的契合度，而不仅仅是照片和第一印象。" },
+    "slide2": { "title": "IAMeetYou 背后的科学", "description": "Lucas 会分析您的选择与声音之间的契合度，帮助建立真实而有意义的联系。" },
+    "slide3": { "title": "超越语言，感受真实的频率。", "description": "大五人格 • MBTI • 爱的语言 • 依恋类型 —— 真正的契合，而不仅仅是滑动匹配。" },
+    "slide4": { "title": "您的情感 DNA", "description": "就像灵魂的指南针，我们利用您的出生信息来了解您如何面对爱情与人生。" },
+    "slide5": { "title": "真实交友的港湾", "description": "一个精心打造的社区，在这里每一个声音都真实，每一次匹配都充满意义。" }
+  },
+
+  "login": {
+    "title": "登录您的账号",
+    "description": "加入 IAMeetYou，找到您一直在寻找的连接。",
+    "email": "电子邮件",
+    "password": "密码",
+    "enter_email": "请输入电子邮件",
+    "enter_password": "请输入密码",
+    "show": "显示",
+    "hide": "隐藏",
+    "forgot_password": "忘记密码？",
+    "login": "登录",
+    "logging_in": "登录中...",
+    "failed": "登录失败",
+    "validation": {
+      "fill_fields": "请填写所有字段",
+      "valid_email": "请输入有效的电子邮件地址"
     }
+  },
+
+  "signup": {
+    "headingLine1": "找到真正契合的",
+    "headingLine2": "人际连接",
+    "subheading": "由情感、声音与契合度引导",
+    "emailPlaceholder": "请输入您的电子邮件地址",
+    "sending": "发送中...",
+    "sendVerificationCode": "发送验证码",
+    "confirm": "确认",
+    "success": "✓ 欢迎！请查看您的收件箱。",
+    "or": "或",
+    "alreadyHaveAccount": "已有账号？",
+    "signIn": "登录",
+    "continueWithFacebook": "使用 Facebook 继续",
+    "continueWithGoogle": "使用 Google 继续",
+    "continueWithApple": "使用 Apple 继续",
+    "agreementText": "继续即表示您同意我们的",
+    "termsOfService": "服务条款",
+    "and": "和",
+    "privacyPolicy": "隐私政策",
+    "themeLight": "浅色",
+    "themeDark": "深色",
+    "themeBrown": "棕色"
+  },
+
+  "location": {
+    "title": "您的位置",
+    "subtitle": "帮助我们找到您附近的匹配",
+    "country": "国家",
+    "countryPlaceholder": "选择您的国家",
+    "city": "城市",
+    "cityPlaceholder": "例如：北京",
+    "continue": "继续"
+  },
+
+  "identity": {
+    "title": "选择您的身份",
+    "subtitle": "请选择您偏好的选项",
+    "selectPlaceholder": "选择身份",
+    "male": "男性",
+    "female": "女性",
+    "couple": "情侣",
+    "continue": "继续"
+  },
+
+  "basicInfo": {
+    "title": "基本信息",
+    "subtitle": "让我们更好地了解您",
+    "namePlaceholder": "请输入您的姓名",
+    "pronounsPlaceholder": "他/他, 她/她",
+    "men": "男性",
+    "women": "女性",
+    "everyone": "所有人",
+    "continue": "继续"
+  },
+
+  "story": {
+    "title": "讲述您的故事",
+    "bioPlaceholder": "告诉我们关于您的事情...",
+    "continue": "继续",
+    "interests": {
+      "travel": "旅行",
+      "music": "音乐",
+      "fitness": "健身",
+      "cooking": "烹饪",
+      "reading": "阅读",
+      "gaming": "游戏",
+      "yoga": "瑜伽",
+      "movies": "电影",
+      "photography": "摄影",
+      "dancing": "舞蹈",
+      "nature": "自然"
+    }
+  },
+
+  "photos": {
+    "title": "添加您的照片",
+    "subtitle": "请上传至少3张照片",
+    "alertMin": "请至少上传3张照片",
+    "alertSuccess": "照片上传成功",
+    "alertFailed": "上传失败",
+    "alertError": "出现了问题",
+    "continue": "继续"
+  },
+
+  "religionOptions": {
+    "title": "宗教",
+    "subtitle": "这是可选项，有助于提高匹配度",
+    "christian": "基督教",
+    "muslim": "伊斯兰教",
+    "hindu": "印度教",
+    "buddhist": "佛教",
+    "skip": "不，跳过此步骤",
+    "continue": "继续"
+  },
+
+  "astrology": {
+    "title": "占星（可选）",
+    "subtitle": "根据占星获取更好的匹配",
+    "birthPlacePlaceholder": "出生地",
+    "zodiacPlaceholder": "星座（可选）",
+    "continue": "继续",
+    "skip": "暂时跳过"
+  },
+
+  "religion": {
+    "title": "宗教",
+    "subtitle": "这是可选项，有助于提高匹配度",
+    "preferNotToSpecify": "不愿透露",
+    "christian": "基督教",
+    "muslim": "伊斯兰教",
+    "hindu": "印度教",
+    "buddhist": "佛教",
+    "skip": "不，跳过此步骤",
+    "continue": "继续"
+  },
+
+  "subscription": {
+    "title": "揭开您的完美匹配",
+    "subtitle": "选择订阅方案以解锁更精准的兼容性分析和专属功能。",
+    "monthly": "月付",
+    "annual": "年付",
+    "perYear": "/年",
+    "unlockMore": "解锁更多功能和兼容性",
+    "select": "选择",
+    "plan1": {
+      "name": "Dégustation",
+      "save": "节省17%",
+      "feature1": "50道问题",
+      "feature2": "5 Mode Acting",
+      "feature3": "无限滑动",
+      "feature4": "兼容度：0-50% 最高",
+      "feature5": "2个月 Iucasope",
+      "feature6": "2次移动/天",
+      "feature7": "赠品：1本 Iucasope 指南",
+      "feature8": "基础徽章"
+    },
+    "plan2": {
+      "name": "Privilège",
+      "save": "节省26%",
+      "feature1": "90道问题",
+      "feature2": "9 Mode Acting",
+      "feature3": "无限滑动",
+      "feature4": "兼容度：0-65% 最高",
+      "feature5": "4个月 Iucasope",
+      "feature6": "3次移动/天",
+      "feature7": "赠品：2本 Iucasope 指南",
+      "feature8": "特权徽章"
+    },
+    "plan3": {
+      "name": "Cercle Privé",
+      "save": "节省33%",
+      "feature1": "130道问题",
+      "feature2": "13 Mode Acting",
+      "feature3": "无限滑动",
+      "feature4": "兼容度：0-100% 最高",
+      "feature5": "6个月 Iucasope",
+      "feature6": "4次移动/天",
+      "feature7": "赠品：3本 Iucasope 指南",
+      "feature8": "精英徽章"
+    },
+    "secureCheckout": "安全结账",
+    "paymentMethod": "支付方式",
+    "paymentSubtitle": "选择您偏好的方式以获取高级访问权限",
+    "cardTab": "银行卡",
+    "applePayTab": "Apple Pay",
+    "pay": "立即支付",
+    "secureStripe": "Stripe 安全结账",
+    "encryptionActive": "加密已启用",
+    "encrypted": "已加密",
+    "bankGrade": "银行级别",
+    "private": "隐私保护",
+    "purchaseTerms": "完成此次购买即表示您同意我们的服务条款。您的数据受隐私框架保护。",
+    "confirmSubscription": "确认订阅",
+    "confirmQuestion": "您确定要使用所选方案继续吗？",
+    "confirm": "确认",
+    "cancel": "取消"
+  },
+
+  "launch": {
+    "badge": "Lucas 个人AI",
+    "voiceSyncLabel": "声音同步",
+    "voiceSyncValue": "100% 匹配",
+    "emotionalToneLabel": "情感基调",
+    "emotionalToneValue": "高度兼容",
+    "title": "启动",
+    "descriptionPart1": "您好！我是Lucas，您的个人AI向导。我在这里通过我们独特的情感和声音分析技术，帮助您找到深刻而有意义的连接。",
+    "descriptionPart2": "欢迎来到约会的未来。",
+    "begin": "开始体验"
+  },
+
+  "compatibility": {
+    "title": "兼容性测试",
+    "questionProgress": "问题进度",
+    "progress": "第{{current}}题，共{{total}}题",
+    "previous": "上一题",
+    "next": "下一题"
+  },
+
+  "voiceConsent": {
+    "title": "声音分析同意",
+    "description": "我们分析您声音中的情感基调以改善兼容性匹配。音频经过安全处理，分析后立即删除。只有您的匿名兼容性分数存储在我们的安全数据库中。",
+    "secureProcessing": "安全处理",
+    "autoDeletion": "自动删除",
+    "endToEnd": "端对端加密",
+    "agreementText": "我同意为兼容性分析处理声音，并承认我的数据受到保护。",
+    "agreeButton": "我同意并继续",
+    "textModeButton": "改用文字模式",
+    "cancel": "取消"
+  },
+
+  "voice": {
+    "title": "声音分析",
+    "questionProgress": "问题进度",
+    "progressText": "230题中第10题",
+    "sampleQuestion": "「您理想的周末是怎么度过的？」",
+    "tapToRecord": "点击录音",
+    "minimumSeconds": "最少需要5秒"
+  },
+
+  "subscription2": {
+    "title": "La Carte",
+    "heading": "开胃小食（附加功能）",
+    "headingDesc": "通过独特的附加功能定制您的体验，最大化您的机会。",
+    "meonsPackages": "Meons 套餐",
+    "meons": "Meons",
+    "tagBestValue": "最佳性价比",
+    "tagMostPopular": "最受欢迎",
+    "pkg": {
+      "mini": "迷你",
+      "small": "小号",
+      "medium": "中号",
+      "xl": "XL",
+      "large": "大号"
+    },
+    "visibilityBoosts": "曝光加速",
+    "singleBoosts": "单次加速",
+    "boost30min": "30分钟",
+    "boost1hour": "1小时",
+    "boost2hours": "2小时",
+    "boost4hours": "4小时",
+    "tagRecommend": "推荐",
+    "tagSave12": "节省12%",
+    "tagPopular": "热门",
+    "tagSave20": "节省20%",
+    "tagSave30": "节省30%",
+    "recommended": "推荐",
+    "boostPacks": "加速套包",
+    "packCharm": "魅力套包",
+    "packSeduction": "诱惑套包",
+    "packIrresistible": "无法抗拒套包",
+    "packCharmDesc": "3 x 30分钟",
+    "packSeductionDesc": "5 x 30分钟",
+    "packIrresistibleDesc": "10 x 30分钟",
+    "tagSave15": "节省15%",
+    "tagSave35": "节省35%",
+    "vipMode": "VIP模式 / 隐身",
+    "vip24hours": "24小时",
+    "vip7days": "7天",
+    "vip30days": "30天",
+    "rosesAndBouquets": "玫瑰与花束",
+    "singleRose": "单支玫瑰",
+    "smallBouquet": "小花束",
+    "mediumBouquet": "中花束",
+    "largeBouquet": "大花束",
+    "desc5roses": "5支玫瑰",
+    "desc12roses": "12支玫瑰",
+    "tagSave17": "节省17%",
+    "tagSave25": "节省25%",
+    "questionPaths": "问题路径",
+    "questionPathsDesc": "包含：问题 + 聊天 + 兼容性可见度",
+    "essentialPath": "基础路径",
+    "serenityPath": "宁静路径",
+    "elitePath": "精英路径",
+    "path30q": "30道问题",
+    "path40q": "40道问题",
+    "lucasTime": "Lucas时间",
+    "aiCoach": "AI教练",
+    "lucasTime1h": "1小时",
+    "lucasTime2h": "2小时",
+    "lucasTime5h": "5小时",
+    "lucasTime10h": "10小时",
+    "lucascopeGuide": "Lucascope指南",
+    "lucascopeGuideDesc": "+每月1小时占星和兼容性",
+    "lucascopeInfinity": "Lucascope Infinity",
+    "lucascopeInfinityDesc": "年度计划节省2个月",
+    "leDigestif": "Le Digestif",
+    "leDigestifDesc": "（一次性购买）",
+    "totalEur": "总计（EUR）",
+    "perMonth": "/月",
+    "totalMeons": "总Meons",
+    "continue": "继续"
   }
 }

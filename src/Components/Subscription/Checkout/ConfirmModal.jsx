@@ -1,7 +1,10 @@
 import React from "react";
 
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 const ConfirmModal = ({ isOpen, onConfirm, onCancel }) => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   if (!isOpen) return null;
 
@@ -16,12 +19,12 @@ const ConfirmModal = ({ isOpen, onConfirm, onCancel }) => {
 
     {/* Heading */}
     <h2 className="text-lg font-semibold mb-2 text-[var(--text-dim)]">
-      Confirm Subscription
+      {t("subscription.confirmSubscription")}
     </h2>
 
     {/* Description */}
     <p className="text-[var(--text-dim2)] text-sm mb-4 leading-relaxed">
-      Are you sure you want to proceed with your selected plan?
+      {t("subscription.confirmQuestion")}
     </p>
 
     {/* Confirm Button */}
@@ -29,7 +32,7 @@ const ConfirmModal = ({ isOpen, onConfirm, onCancel }) => {
       onClick={() => navigate("/Lanuch")}
       className="w-full py-3 rounded-xl text-white font-medium bg-gradient-to-r from-pink-400 to-blue-500 shadow-md hover:opacity-90 transition"
     >
-      Confirm
+      {t("subscription.confirm")}
     </button>
 
     {/* Cancel */}
@@ -37,7 +40,7 @@ const ConfirmModal = ({ isOpen, onConfirm, onCancel }) => {
       onClick={onCancel}
       className="mt-3 text-[var(--text-dim2)] text-sm hover:text-[var(--text-dim)] transition"
     >
-      Cancel
+      {t("subscription.cancel")}
     </button>
 
   </div>

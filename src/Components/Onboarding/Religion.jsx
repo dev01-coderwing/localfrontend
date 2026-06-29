@@ -3,7 +3,10 @@ import { useNavigate } from "react-router-dom";
 import logo from "/Image/IAMeetYou.png";
 import { useDispatch } from "react-redux";
 import { updateReligionThunk } from "../Redux/onboardingSlice";
+import { useTranslation } from "react-i18next";
+
 const Religion = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 const dispatch = useDispatch();
 
@@ -59,11 +62,11 @@ console.log(result);
         <div className="bg-[var(--card)] border border-[var(--border)] p-8 rounded-2xl shadow">
 
           <h2 className="text-xl mb-2 text-[var(--text-dim)] font-semibold">
-            Religion
+            {t("religion.title")}
           </h2>
 
           <p className="text-sm mb-6 opacity-70 text-[var(--text-dim2)]">
-            This is optional and helps with compatibility
+            {t("religion.subtitle")}
           </p>
 
           {/* Select */}
@@ -72,11 +75,11 @@ console.log(result);
             onChange={(e) => setReligion(e.target.value)}
             className="w-full border border-[var(--border)] rounded-lg px-3 py-2 mb-4 bg-[var(--bg-card)]/10 text-[var(--text-dim2)]"
           >
-            <option value="">Prefer not to specify</option>
-            <option value="Christian">Christian</option>
-            <option value="Muslim">Muslim</option>
-            <option value="Hindu">Hindu</option>
-            <option value="Buddhist">Buddhist</option>
+            <option value="">{t("religion.preferNotToSpecify")}</option>
+            <option value="Christian">{t("religion.christian")}</option>
+            <option value="Muslim">{t("religion.muslim")}</option>
+            <option value="Hindu">{t("religion.hindu")}</option>
+            <option value="Buddhist">{t("religion.buddhist")}</option>
           </select>
 
           {/* Skip */}
@@ -84,7 +87,7 @@ console.log(result);
             onClick={handleContinue}
             className="w-full mb-3 border border-[var(--border)] rounded-lg py-2 text-[var(--text-dim2)] hover:opacity-80"
           >
-            No, skip this step
+            {t("religion.skip")}
           </button>
 
           {/* Continue */}
@@ -92,7 +95,7 @@ console.log(result);
            onClick={handleContinue}
             className="w-full py-2 rounded-lg text-[var(--text)] bg-gradient-to-r from-[#D79098] to-[#5F7BF4]"
           >
-            Continue
+            {t("religion.continue")}
           </button>
 
         </div>

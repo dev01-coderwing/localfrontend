@@ -9,25 +9,207 @@
   "next": "التالي",
 
   "intro": {
-    "slide1": {
-      "title": "تعرّف على لوكاس — دليلك الذكي للمواعدة",
-      "description": "يساعدك لوكاس على فهم التوافق الحقيقي، بعيدًا عن الصور والانطباعات الأولى."
-    },
-    "slide2": {
-      "title": "العلم وراء IAMeetYou",
-      "description": "يكتشف لوكاس الانسجام بين اختياراتك وصوتك لضمان علاقات حقيقية وأصيلة."
-    },
-    "slide3": {
-      "title": "ما وراء الكلمات... تردد الحقيقة.",
-      "description": "العوامل الخمسة الكبرى • MBTI • لغات الحب • أنماط التعلق — توافق حقيقي، وليس مجرد التمرير."
-    },
-    "slide4": {
-      "title": "حمضك النووي العاطفي",
-      "description": "مثل بوصلة للروح، نستخدم بيانات ميلادك لفهم كيفية تعاملك مع الحب والزمن."
-    },
-    "slide5": {
-      "title": "ملاذ للأصالة",
-      "description": "مجتمع مختار بعناية حيث يكون كل صوت حقيقي وكل توافق يحمل هدفًا ومعنى."
+    "slide1": { "title": "تعرّف على لوكاس — دليلك الذكي للمواعدة", "description": "يساعدك لوكاس على فهم التوافق الحقيقي، بعيدًا عن الصور والانطباعات الأولى." },
+    "slide2": { "title": "العلم وراء IAMeetYou", "description": "يكتشف لوكاس الانسجام بين اختياراتك وصوتك لضمان علاقات حقيقية وأصيلة." },
+    "slide3": { "title": "ما وراء الكلمات... تردد الحقيقة.", "description": "العوامل الخمسة الكبرى • MBTI • لغات الحب • أنماط التعلق — توافق حقيقي، وليس مجرد التمرير." },
+    "slide4": { "title": "حمضك النووي العاطفي", "description": "مثل بوصلة للروح، نستخدم بيانات ميلادك لفهم كيفية تعاملك مع الحب والزمن." },
+    "slide5": { "title": "ملاذ للأصالة", "description": "مجتمع مختار بعناية حيث يكون كل صوت حقيقي وكل توافق يحمل هدفًا ومعنى." }
+  },
+
+  "login": {
+    "title": "تسجيل الدخول إلى حسابك",
+    "description": "انضم إلى IAMeetYou وابحث عن الاتصال الذي كنت تبحث عنه.",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "enter_email": "أدخل بريدك الإلكتروني",
+    "enter_password": "أدخل كلمة المرور",
+    "show": "إظهار",
+    "hide": "إخفاء",
+    "forgot_password": "نسيت كلمة المرور؟",
+    "login": "تسجيل الدخول",
+    "logging_in": "جارٍ تسجيل الدخول...",
+    "failed": "فشل تسجيل الدخول",
+    "validation": {
+      "fill_fields": "يرجى ملء جميع الحقول",
+      "valid_email": "أدخل بريدًا إلكترونيًا صحيحًا"
     }
+  },
+
+  "signup": {
+    "headingLine1": "ابحث عن روابط",
+    "headingLine2": "تتوافق حقاً",
+    "subheading": "موجَّه بالعاطفة والصوت والتوافق",
+    "emailPlaceholder": "أدخل عنوان بريدك الإلكتروني",
+    "sending": "جارٍ الإرسال...",
+    "sendVerificationCode": "إرسال رمز التحقق",
+    "confirm": "تأكيد",
+    "success": "✓ أهلاً بك! تحقق من بريدك الوارد.",
+    "or": "أو",
+    "alreadyHaveAccount": "هل لديك حساب بالفعل؟",
+    "signIn": "تسجيل الدخول",
+    "continueWithFacebook": "المتابعة مع Facebook",
+    "continueWithGoogle": "المتابعة مع Google",
+    "continueWithApple": "المتابعة مع Apple",
+    "agreementText": "بالمتابعة، فإنك توافق على",
+    "termsOfService": "شروط الخدمة",
+    "and": "و",
+    "privacyPolicy": "سياسة الخصوصية",
+    "themeLight": "فاتح",
+    "themeDark": "داكن",
+    "themeBrown": "بني"
+  },
+
+  "location": {
+    "title": "موقعك",
+    "subtitle": "ساعدنا في إيجاد مطابقات قريبة منك",
+    "country": "الدولة",
+    "countryPlaceholder": "اختر دولتك",
+    "city": "المدينة",
+    "cityPlaceholder": "مثال: الرياض",
+    "continue": "متابعة"
+  },
+
+  "identity": {
+    "title": "اختر هويتك",
+    "subtitle": "حدد خيارك المفضل",
+    "selectPlaceholder": "اختر الهوية",
+    "male": "ذكر",
+    "female": "أنثى",
+    "couple": "زوجان",
+    "continue": "متابعة"
+  },
+
+  "basicInfo": {
+    "title": "المعلومات الأساسية",
+    "subtitle": "دعنا نتعرف عليك أكثر",
+    "namePlaceholder": "أدخل اسمك",
+    "pronounsPlaceholder": "هو/هو، هي/هي",
+    "men": "رجال",
+    "women": "نساء",
+    "everyone": "الجميع",
+    "continue": "متابعة"
+  },
+
+  "story": {
+    "title": "احكِ قصتك",
+    "bioPlaceholder": "أخبرنا عن نفسك...",
+    "continue": "متابعة",
+    "interests": {
+      "travel": "السفر",
+      "music": "الموسيقى",
+      "fitness": "اللياقة البدنية",
+      "cooking": "الطبخ",
+      "reading": "القراءة",
+      "gaming": "الألعاب",
+      "yoga": "اليوغا",
+      "movies": "الأفلام",
+      "photography": "التصوير",
+      "dancing": "الرقص",
+      "nature": "الطبيعة"
+    }
+  },
+
+  "photos": {
+    "title": "أضف صورك",
+    "subtitle": "قم بتحميل 3 صور على الأقل",
+    "alertMin": "يرجى تحميل 3 صور على الأقل",
+    "alertSuccess": "تم تحميل الصور بنجاح",
+    "alertFailed": "فشل التحميل",
+    "alertError": "حدث خطأ ما",
+    "continue": "متابعة"
+  },
+
+  "religionOptions": {
+    "title": "الدين",
+    "subtitle": "هذا اختياري ويساعد في التوافق",
+    "christian": "مسيحي",
+    "muslim": "مسلم",
+    "hindu": "هندوسي",
+    "buddhist": "بوذي",
+    "skip": "لا، تخطَّ هذه الخطوة",
+    "continue": "متابعة"
+  },
+
+  "astrology": {
+    "title": "علم الأبراج (اختياري)",
+    "subtitle": "احصل على مطابقات أفضل بناءً على علم الأبراج",
+    "birthPlacePlaceholder": "مكان الميلاد",
+    "zodiacPlaceholder": "البرج (اختياري)",
+    "continue": "متابعة",
+    "skip": "تخطَّ في الوقت الحالي"
+  },
+
+  "religion": {
+    "title": "الدين",
+    "subtitle": "هذا اختياري ويساعد في التوافق",
+    "preferNotToSpecify": "أفضل عدم التحديد",
+    "christian": "مسيحي",
+    "muslim": "مسلم",
+    "hindu": "هندوسي",
+    "buddhist": "بوذي",
+    "skip": "لا، تخطَّ هذه الخطوة",
+    "continue": "متابعة"
+  },
+
+  "subscription": {
+    "title": "اكتشف مطابقتك المثالية",
+    "subtitle": "اختر اشتراكاً لفتح توافق أكثر دقة وميزات حصرية.",
+    "monthly": "شهري",
+    "annual": "سنوي",
+    "perYear": "/سنة",
+    "unlockMore": "افتح المزيد من الميزات والتوافق",
+    "select": "اختيار",
+    "plan1": {
+      "name": "Dégustation",
+      "save": "وفّر 17%",
+      "feature1": "50 سؤالاً",
+      "feature2": "5 Mode Acting",
+      "feature3": "تمريرات غير محدودة",
+      "feature4": "التوافق: 0-50% كحد أقصى",
+      "feature5": "شهران Iucasope",
+      "feature6": "2 حركة/يوم",
+      "feature7": "مكافأة: دليل Iucasope 1",
+      "feature8": "شارة الأساسيات"
+    },
+    "plan2": {
+      "name": "Privilège",
+      "save": "وفّر 26%",
+      "feature1": "90 سؤالاً",
+      "feature2": "9 Mode Acting",
+      "feature3": "تمريرات غير محدودة",
+      "feature4": "التوافق: 0-65% كحد أقصى",
+      "feature5": "4 أشهر Iucasope",
+      "feature6": "3 حركات/يوم",
+      "feature7": "مكافأة: 2 دليل Iucasope",
+      "feature8": "شارة الامتياز"
+    },
+    "plan3": {
+      "name": "Cercle Privé",
+      "save": "وفّر 33%",
+      "feature1": "130 سؤالاً",
+      "feature2": "13 Mode Acting",
+      "feature3": "تمريرات غير محدودة",
+      "feature4": "التوافق: 0-100% كحد أقصى",
+      "feature5": "6 أشهر Iucasope",
+      "feature6": "4 حركات/يوم",
+      "feature7": "مكافأة: 3 أدلة Iucasope",
+      "feature8": "شارة النخبة"
+    },
+    "secureCheckout": "دفع آمن",
+    "paymentMethod": "طريقة الدفع",
+    "paymentSubtitle": "اختر طريقتك المفضلة للوصول إلى الميزات المميزة",
+    "cardTab": "بطاقة",
+    "applePayTab": "Apple Pay",
+    "pay": "ادفع",
+    "secureStripe": "دفع آمن عبر Stripe",
+    "encryptionActive": "التشفير نشط",
+    "encrypted": "مشفّر",
+    "bankGrade": "أمان بنكي",
+    "private": "خاص",
+    "purchaseTerms": "بإتمام هذا الشراء، فإنك توافق على شروط الخدمة لدينا. بياناتك محمية وفقاً لإطار الخصوصية.",
+    "confirmSubscription": "تأكيد الاشتراك",
+    "confirmQuestion": "هل أنت متأكد من أنك تريد المتابعة مع الخطة المختارة؟",
+    "confirm": "تأكيد",
+    "cancel": "إلغاء"
   }
 }

@@ -115,7 +115,7 @@
 //                                     <div>
 //                                         <h2 className="font-semibold">How can we help?</h2>
 //                                         <p className="text-sm text-gray-600">
-//                                             We’re here to ensure your experience is safe and enjoyable.
+//                                             We're here to ensure your experience is safe and enjoyable.
 //                                         </p>
 //                                     </div>
 //                                 </div>

@@ -45,7 +45,7 @@ const ChatRulesModal = ({ onClose,onContinue }) => {
           {/* Card 2 */}
           <div className="bg-[var(--bg-card)]/10 rounded-xl p-4 text-center">
             <div className="mb-2 text-xl">☝️</div>
-            <h3 className="font-medium text-sm text-[var(--text-dim)]">Recipient’s choice</h3>
+            <h3 className="font-medium text-sm text-[var(--text-dim)]">Recipient's choice</h3>
             <p className="text-xs text-[var(--text-dim2)] mt-1">
               The recipient must accept or decline your request before you can chat.
             </p>

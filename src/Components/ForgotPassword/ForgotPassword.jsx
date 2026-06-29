@@ -52,7 +52,7 @@ function ForgotPassword() {
           </h1>
 
           <p className=" text-[var(--text-dim2)] text-center text-sm mb-6">
-            No worries! Enter your registered email and we’ll help you reset it.
+            No worries! Enter your registered email and we'll help you reset it.
           </p>
 
           <form onSubmit={handleSubmit}>

@@ -63,7 +63,7 @@ const ProfileModal = ({ onClose }) => {
             <div className="mb-4">
               <h4 className="font-medium mb-1">Bio</h4>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Architect by day, Vinyl collect by night. I’m a firm believer
+                Architect by day, Vinyl collect by night. I'm a firm believer
                 that the best conversations happen over a late-night pasta dinner.
                 Looking for someone who can appreciate a good building and an
                 even better sense of humor.

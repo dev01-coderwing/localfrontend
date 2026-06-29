@@ -3,9 +3,11 @@ import logo from "/Image/IAMeetYou.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { updateAstrologyThunk } from "../Redux/onboardingSlice";
+import { useTranslation } from "react-i18next";
 
 
 const Astrology = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 const dispatch = useDispatch();
 
@@ -66,11 +68,11 @@ console.log(result);
     <div className="bg-[var(--card)] border border-[var(--border)] p-8 rounded-2xl shadow">
 
       <h2 className="text-3xl text-[var(--text-dim)] mb-2">
-        Astrology (Optional)
+        {t("astrology.title")}
       </h2>
 
       <p className="text-sm mb-6 text-[var(--text-dim2)]">
-        Get better matches based on astrology
+        {t("astrology.subtitle")}
       </p>
 
       {/* Inputs */}
@@ -93,7 +95,7 @@ console.log(result);
       <input
         type="text"
         name="place"
-        placeholder="Birth place"
+        placeholder={t("astrology.birthPlacePlaceholder")}
         value={astro.place}
         onChange={handleChange}
         className="w-full border border-[var(--border)] rounded-lg px-3 py-2 mb-3 bg-[var(--card)] text-[var(--text-dim)] placeholder:text-[var(--text-dim2)]"
@@ -102,7 +104,7 @@ console.log(result);
       <input
         type="text"
         name="zodiac"
-        placeholder="Zodiac (optional)"
+        placeholder={t("astrology.zodiacPlaceholder")}
         value={astro.zodiac}
         onChange={handleChange}
         className="w-full border border-[var(--border)] rounded-lg px-3 py-2 mb-4 bg-[var(--card)] text-[var(--text-dim)] placeholder:text-[var(--text-dim2)]"
@@ -113,14 +115,14 @@ console.log(result);
         onClick={handleContinue}
         className="w-full py-2 rounded-lg text-white bg-gradient-to-r from-[#D79098] to-[#5F7BF4] mb-2"
       >
-        Continue
+        {t("astrology.continue")}
       </button>
 
       <button
         onClick={handleContinue}
         className="w-full text-sm text-[var(--text-dim2)] hover:opacity-80"
       >
-        Skip for now
+        {t("astrology.skip")}
       </button>
 
     </div>

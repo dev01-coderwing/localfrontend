@@ -62,7 +62,7 @@ const Setting = ({ isOpen, onClose }) => {
           {/* Quote Section */}
           <div className="pl-6 border-l-2 border-purple-600/50 mb-10">
             <p className="text-[17px] text-gray-200 leading-relaxed font-medium italic opacity-90">
-              “Because you're not looking for a partner, but your worldwide alter ego.”
+              "Because you're not looking for a partner, but your worldwide alter ego."
             </p>
           </div>
  

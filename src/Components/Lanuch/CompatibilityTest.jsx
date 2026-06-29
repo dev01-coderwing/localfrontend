@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft, ArrowLeft, ArrowRight } from 'lucide-react';
+import { useTranslation } from "react-i18next";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -15,6 +16,7 @@ export default function CompatibilityTest() {
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState({});
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const dispatch = useDispatch();
   const VOICE_INTERVAL = 9;
@@ -136,7 +138,7 @@ const next = async () => {
             </button>
 
             <h2 className="font-semibold text-lg text-[var(--text-dim)]">
-              Compatibility Test
+              {t("compatibility.title")}
             </h2>
 
           </div>
@@ -145,7 +147,7 @@ const next = async () => {
           <div className="mb-6">
 
             <p className="text-xs text-[var(--text-dim2)] mb-1">
-              Question progress
+              {t("compatibility.questionProgress")}
             </p>
 
             <div className="w-full h-1 bg-[var(--border)] rounded-full">
@@ -156,7 +158,7 @@ const next = async () => {
             </div>
 
             <p className="text-xs text-right text-[var(--text-dim2)] mt-1">
-              {current + 1} of {questions.length}
+              {t("compatibility.progress", { current: current + 1, total: questions.length })}
             </p>
 
           </div>
@@ -206,7 +208,7 @@ const next = async () => {
               className="px-4 py-2 text-sm bg-[var(--hover)] text-[var(--text-dim)] rounded-lg disabled:opacity-50 flex items-center gap-1"
             >
               <ChevronLeft size={16} />
-              Previous
+              {t("compatibility.previous")}
             </button>
 
             <button
@@ -214,7 +216,7 @@ const next = async () => {
               disabled={!answers[questions[current]?.id]}
               className="px-4 py-2 text-sm bg-[var(--accent)] text-white rounded-lg disabled:opacity-50 flex items-center gap-1"
             >
-              Next
+              {t("compatibility.next")}
               <ArrowRight size={16} />
             </button>
 

@@ -271,7 +271,7 @@ const SpendMeons = () => {
             {/* DESCRIPTION */}
             <p className="text-center text-[var(--text-dim2)] max-w-[500px] mx-auto mt-6 leading-8">
               A symbol of elegance and appreciation sending this item boosts the
-              recipient’s popularity score by 50 points and adds a special flair to
+              recipient's popularity score by 50 points and adds a special flair to
               their profile.
             </p>
 

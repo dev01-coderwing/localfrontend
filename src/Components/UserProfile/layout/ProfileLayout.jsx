@@ -183,7 +183,7 @@ export default function ProfileLayout() {
       stats: [
         { value: "87%", label: "Avg Match" },
         { value: 12, label: "Matches" },
-        { value: 5, label: "In Lab’s" },
+        { value: 5, label: "In Lab's" },
       ],
 
       compatibility: [

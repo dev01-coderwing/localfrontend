@@ -9,25 +9,322 @@
   "next": "次へ",
 
   "intro": {
-    "slide1": {
-      "title": "AI恋愛ガイド、Lucasをご紹介",
-      "description": "Lucasは、写真や第一印象だけではわからない本当の相性を理解するお手伝いをします。"
-    },
-    "slide2": {
-      "title": "IAMeetYouを支える科学",
-      "description": "Lucasはあなたの選択と声の調和を分析し、本物のつながりを実現します。"
-    },
-    "slide3": {
-      "title": "言葉を超えて、真実の周波数へ。",
-      "description": "ビッグファイブ・MBTI・愛の言語・愛着スタイル ― スワイプだけではない、本当の相性。"
-    },
-    "slide4": {
-      "title": "あなたの感情DNA",
-      "description": "魂のコンパスのように、あなたの出生データをもとに、愛と時間との向き合い方を読み解きます。"
-    },
-    "slide5": {
-      "title": "本物だけが集う場所",
-      "description": "すべての声が本物であり、すべての出会いに意味がある、厳選されたコミュニティです。"
+    "slide1": { "title": "AI恋愛ガイド、Lucasをご紹介", "description": "Lucasは、写真や第一印象だけではわからない本当の相性を理解するお手伝いをします。" },
+    "slide2": { "title": "IAMeetYouを支える科学", "description": "Lucasはあなたの選択と声の調和を分析し、本物のつながりを実現します。" },
+    "slide3": { "title": "言葉を超えて、真実の周波数へ。", "description": "ビッグファイブ・MBTI・愛の言語・愛着スタイル ― スワイプだけではない、本当の相性。" },
+    "slide4": { "title": "あなたの感情DNA", "description": "魂のコンパスのように、あなたの出生データをもとに、愛と時間との向き合い方を読み解きます。" },
+    "slide5": { "title": "本物だけが集う場所", "description": "すべての声が本物であり、すべての出会いに意味がある、厳選されたコミュニティです。" }
+  },
+
+  "login": {
+    "title": "アカウントにログイン",
+    "description": "IAMeetYouに参加して、探していたつながりを見つけましょう。",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "enter_email": "メールアドレスを入力",
+    "enter_password": "パスワードを入力",
+    "show": "表示",
+    "hide": "非表示",
+    "forgot_password": "パスワードをお忘れですか？",
+    "login": "ログイン",
+    "logging_in": "ログイン中...",
+    "failed": "ログインに失敗しました",
+    "validation": {
+      "fill_fields": "すべての項目を入力してください",
+      "valid_email": "有効なメールアドレスを入力してください"
     }
+  },
+
+  "signup": {
+    "headingLine1": "本当に合う",
+    "headingLine2": "繋がりを見つけよう",
+    "subheading": "感情、声、相性に導かれて",
+    "emailPlaceholder": "メールアドレスを入力してください",
+    "sending": "送信中...",
+    "sendVerificationCode": "確認コードを送信",
+    "confirm": "確認",
+    "success": "✓ ようこそ！受信トレイをご確認ください。",
+    "or": "または",
+    "alreadyHaveAccount": "すでにアカウントをお持ちですか？",
+    "signIn": "サインイン",
+    "continueWithFacebook": "Facebookで続ける",
+    "continueWithGoogle": "Googleで続ける",
+    "continueWithApple": "Appleで続ける",
+    "agreementText": "続けることで、以下に同意したことになります",
+    "termsOfService": "利用規約",
+    "and": "および",
+    "privacyPolicy": "プライバシーポリシー",
+    "themeLight": "ライト",
+    "themeDark": "ダーク",
+    "themeBrown": "ブラウン"
+  },
+
+  "location": {
+    "title": "あなたの場所",
+    "subtitle": "近くのマッチングを見つけるためにお知らせください",
+    "country": "国",
+    "countryPlaceholder": "国を選択してください",
+    "city": "都市",
+    "cityPlaceholder": "例：東京",
+    "continue": "続ける"
+  },
+
+  "identity": {
+    "title": "アイデンティティを選んでください",
+    "subtitle": "希望する選択肢を選んでください",
+    "selectPlaceholder": "アイデンティティを選択",
+    "male": "男性",
+    "female": "女性",
+    "couple": "カップル",
+    "continue": "続ける"
+  },
+
+  "basicInfo": {
+    "title": "基本情報",
+    "subtitle": "あなたのことをもっと知りましょう",
+    "namePlaceholder": "お名前を入力してください",
+    "pronounsPlaceholder": "彼/彼, 彼女/彼女",
+    "men": "男性",
+    "women": "女性",
+    "everyone": "全員",
+    "continue": "続ける"
+  },
+
+  "story": {
+    "title": "あなたのストーリーを話してください",
+    "bioPlaceholder": "自己紹介をしてください...",
+    "continue": "続ける",
+    "interests": {
+      "travel": "旅行",
+      "music": "音楽",
+      "fitness": "フィットネス",
+      "cooking": "料理",
+      "reading": "読書",
+      "gaming": "ゲーム",
+      "yoga": "ヨガ",
+      "movies": "映画",
+      "photography": "写真",
+      "dancing": "ダンス",
+      "nature": "自然"
+    }
+  },
+
+  "photos": {
+    "title": "写真を追加してください",
+    "subtitle": "3枚以上の写真をアップロードしてください",
+    "alertMin": "少なくとも3枚の写真をアップロードしてください",
+    "alertSuccess": "写真が正常にアップロードされました",
+    "alertFailed": "アップロードに失敗しました",
+    "alertError": "問題が発生しました",
+    "continue": "続ける"
+  },
+
+  "religionOptions": {
+    "title": "宗教",
+    "subtitle": "任意項目ですが、相性の向上に役立ちます",
+    "christian": "キリスト教",
+    "muslim": "イスラム教",
+    "hindu": "ヒンドゥー教",
+    "buddhist": "仏教",
+    "skip": "いいえ、このステップをスキップ",
+    "continue": "続ける"
+  },
+
+  "astrology": {
+    "title": "占星術（任意）",
+    "subtitle": "占星術に基づいてより良いマッチングを見つけましょう",
+    "birthPlacePlaceholder": "出生地",
+    "zodiacPlaceholder": "星座（任意）",
+    "continue": "続ける",
+    "skip": "今はスキップ"
+  },
+
+  "religion": {
+    "title": "宗教",
+    "subtitle": "任意項目ですが、相性の向上に役立ちます",
+    "preferNotToSpecify": "指定しない",
+    "christian": "キリスト教",
+    "muslim": "イスラム教",
+    "hindu": "ヒンドゥー教",
+    "buddhist": "仏教",
+    "skip": "いいえ、このステップをスキップ",
+    "continue": "続ける"
+  },
+
+  "subscription": {
+    "title": "完璧なマッチを見つけよう",
+    "subtitle": "サブスクリプションを選んで、より正確な相性と限定機能をアンロックしましょう。",
+    "monthly": "月払い",
+    "annual": "年払い",
+    "perYear": "/年",
+    "unlockMore": "さらに多くの機能と相性をアンロック",
+    "select": "選択",
+    "plan1": {
+      "name": "Dégustation",
+      "save": "17%お得",
+      "feature1": "50問",
+      "feature2": "5 Mode Acting",
+      "feature3": "無制限スワイプ",
+      "feature4": "相性: 0-50% 最大",
+      "feature5": "Iucasope 2ヶ月",
+      "feature6": "2 Moves/日",
+      "feature7": "ボーナス: Iucasope ガイド 1冊",
+      "feature8": "Essentialバッジ"
+    },
+    "plan2": {
+      "name": "Privilège",
+      "save": "26%お得",
+      "feature1": "90問",
+      "feature2": "9 Mode Acting",
+      "feature3": "無制限スワイプ",
+      "feature4": "相性: 0-65% 最大",
+      "feature5": "Iucasope 4ヶ月",
+      "feature6": "3 Moves/日",
+      "feature7": "ボーナス: Iucasope ガイド 2冊",
+      "feature8": "Privilègeバッジ"
+    },
+    "plan3": {
+      "name": "Cercle Privé",
+      "save": "33%お得",
+      "feature1": "130問",
+      "feature2": "13 Mode Acting",
+      "feature3": "無制限スワイプ",
+      "feature4": "相性: 0-100% 最大",
+      "feature5": "Iucasope 6ヶ月",
+      "feature6": "4 Moves/日",
+      "feature7": "ボーナス: Iucasope ガイド 3冊",
+      "feature8": "Eliteバッジ"
+    },
+    "secureCheckout": "セキュアチェックアウト",
+    "paymentMethod": "お支払い方法",
+    "paymentSubtitle": "プレミアムアクセスに使用する方法を選択してください",
+    "cardTab": "カード",
+    "applePayTab": "Apple Pay",
+    "pay": "支払う",
+    "secureStripe": "セキュアStripeチェックアウト",
+    "encryptionActive": "暗号化有効",
+    "encrypted": "暗号化済み",
+    "bankGrade": "銀行グレード",
+    "private": "プライベート",
+    "purchaseTerms": "この購入を完了することで、利用規約に同意したことになります。お客様のデータはプライバシーフレームワークのもとで保護されています。",
+    "confirmSubscription": "サブスクリプションの確認",
+    "confirmQuestion": "選択したプランで進めてよろしいですか？",
+    "confirm": "確認",
+    "cancel": "キャンセル"
+  },
+
+  "launch": {
+    "badge": "Lucas Personal AI",
+    "voiceSyncLabel": "ボイスシンク",
+    "voiceSyncValue": "100% マッチ",
+    "emotionalToneLabel": "感情トーン",
+    "emotionalToneValue": "高い相性",
+    "title": "ローンチ",
+    "descriptionPart1": "こんにちは！私はLucas、あなたのパーソナルAIガイドです。私たちの独自の感情・音声分析技術を通じて、深く意味のある出会いを見つけるお手伝いをします。",
+    "descriptionPart2": "デートの未来へようこそ。",
+    "begin": "体験を始める"
+  },
+
+  "compatibility": {
+    "title": "相性テスト",
+    "questionProgress": "質問の進捗",
+    "progress": "{{total}}問中{{current}}問",
+    "previous": "前へ",
+    "next": "次へ"
+  },
+
+  "voiceConsent": {
+    "title": "音声分析の同意",
+    "description": "相性マッチングを向上させるために、声から感情トーンを分析します。音声は安全に処理され、分析後すぐに削除されます。匿名の相性スコアのみ、安全なデータベースに保存されます。",
+    "secureProcessing": "安全な処理",
+    "autoDeletion": "自動削除",
+    "endToEnd": "エンドツーエンド暗号化",
+    "agreementText": "相性分析のための音声処理に同意し、データが保護されていることを認識します。",
+    "agreeButton": "同意して続ける",
+    "textModeButton": "テキストモードを使用する",
+    "cancel": "キャンセル"
+  },
+
+  "voice": {
+    "title": "音声分析",
+    "questionProgress": "質問の進捗",
+    "progressText": "230問中10問",
+    "sampleQuestion": "「週末の理想的な過ごし方は何ですか？」",
+    "tapToRecord": "タップして録音",
+    "minimumSeconds": "最低5秒必要です"
+  },
+
+  "subscription2": {
+    "title": "La Carte",
+    "heading": "アミューズ・ブーシュ（アドオン）",
+    "headingDesc": "ユニークなアドオンでチャンスを最大化し、体験をカスタマイズしましょう。",
+    "meonsPackages": "Meonsパッケージ",
+    "meons": "Meons",
+    "tagBestValue": "最高価値",
+    "tagMostPopular": "最も人気",
+    "pkg": {
+      "mini": "ミニ",
+      "small": "スモール",
+      "medium": "ミディアム",
+      "xl": "XL",
+      "large": "ラージ"
+    },
+    "visibilityBoosts": "可視性ブースト",
+    "singleBoosts": "シングルブースト",
+    "boost30min": "30分",
+    "boost1hour": "1時間",
+    "boost2hours": "2時間",
+    "boost4hours": "4時間",
+    "tagRecommend": "おすすめ",
+    "tagSave12": "12%お得",
+    "tagPopular": "人気",
+    "tagSave20": "20%お得",
+    "tagSave30": "30%お得",
+    "recommended": "おすすめ",
+    "boostPacks": "ブーストパック",
+    "packCharm": "チャームパック",
+    "packSeduction": "誘惑パック",
+    "packIrresistible": "魅力パック",
+    "packCharmDesc": "3 x 30分",
+    "packSeductionDesc": "5 x 30分",
+    "packIrresistibleDesc": "10 x 30分",
+    "tagSave15": "15%お得",
+    "tagSave35": "35%お得",
+    "vipMode": "VIPモード / 匿名",
+    "vip24hours": "24時間",
+    "vip7days": "7日間",
+    "vip30days": "30日間",
+    "rosesAndBouquets": "バラ & ブーケ",
+    "singleRose": "バラ一本",
+    "smallBouquet": "小さなブーケ",
+    "mediumBouquet": "中くらいのブーケ",
+    "largeBouquet": "大きなブーケ",
+    "desc5roses": "バラ5本",
+    "desc12roses": "バラ12本",
+    "tagSave17": "17%お得",
+    "tagSave25": "25%お得",
+    "questionPaths": "質問パス",
+    "questionPathsDesc": "含む：質問 + チャット + 相性の可視化",
+    "essentialPath": "エッセンシャルパス",
+    "serenityPath": "セレニティパス",
+    "elitePath": "エリートパス",
+    "path30q": "30問",
+    "path40q": "40問",
+    "lucasTime": "Lucas Time",
+    "aiCoach": "AIコーチ",
+    "lucasTime1h": "1時間",
+    "lucasTime2h": "2時間",
+    "lucasTime5h": "5時間",
+    "lucasTime10h": "10時間",
+    "lucascopeGuide": "Lucascopeガイド",
+    "lucascopeGuideDesc": "+1時間/月の占星術と相性",
+    "lucascopeInfinity": "Lucascope Infinity",
+    "lucascopeInfinityDesc": "年間プランで2ヶ月お得",
+    "leDigestif": "Le Digestif",
+    "leDigestifDesc": "（一回払い）",
+    "totalEur": "合計（EUR）",
+    "perMonth": "/月",
+    "totalMeons": "合計Meons",
+    "continue": "続ける"
   }
 }

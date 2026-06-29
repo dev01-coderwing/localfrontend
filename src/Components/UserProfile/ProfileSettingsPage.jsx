@@ -103,7 +103,7 @@ const [selectedPlan, setSelectedPlan] = useState(0);
 
             <div className="space-y-3 text-sm text-[var(--text-dim2)]">
               {[
-                "You won’t appear in ‘Who Viewed You’",
+                "You won't appear in 'Who Viewed You'",
                 "Last seen hidden",
                 "Online status hidden",
               ].map((item, index) => (

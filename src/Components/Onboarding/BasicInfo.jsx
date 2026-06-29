@@ -3,7 +3,10 @@ import { useNavigate } from "react-router-dom";
 import logo from "/Image/IAMeetYou.png";
 import { useDispatch } from "react-redux";
 import { updateBasicInfoThunk } from "../Redux/onboardingSlice";
+import { useTranslation } from "react-i18next";
+
 const BasicInfo = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
@@ -58,10 +61,10 @@ const BasicInfo = () => {
         {/* Card */}
         <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl shadow-lg p-8">
 
-          <h2 className="text-3xl mb-2  text-[var(--text-dim)]">Basic Information</h2>
+          <h2 className="text-3xl mb-2  text-[var(--text-dim)]">{t("basicInfo.title")}</h2>
 
           <p className="text-sm mb-6 opacity-70  text-[var(--text-dim2)]">
-            Let's get to know you better
+            {t("basicInfo.subtitle")}
           </p>
 
   <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
@@ -70,7 +73,7 @@ const BasicInfo = () => {
   <input
     type="text"
     name="name"
-    placeholder="Enter your name"
+    placeholder={t("basicInfo.namePlaceholder")}
     value={formData.name}
     onChange={handleChange}
     className="w-full border border-[var(--border)] rounded-lg px-3 py-2 bg-[var(--card)] text-[var(--text-dim)] placeholder:text-[var(--text-dim2)]"
@@ -89,7 +92,7 @@ const BasicInfo = () => {
   <input
     type="text"
     name="pronouns"
-    placeholder="he/him, she/her"
+    placeholder={t("basicInfo.pronounsPlaceholder")}
     value={formData.pronouns}
     onChange={handleChange}
     className="w-full border border-[var(--border)] rounded-lg px-3 py-2 bg-[var(--card)] text-[var(--text-dim)] placeholder:text-[var(--text-dim2)]"
@@ -111,7 +114,7 @@ const BasicInfo = () => {
             : "bg-[var(--card)] text-[var(--text-dim)]"
         }`}
       >
-        {item}
+        {t(`basicInfo.${item.toLowerCase()}`)}
       </button>
     ))}
   </div>
@@ -122,7 +125,7 @@ const BasicInfo = () => {
     onClick={handleContinue}
     className="w-full py-2 rounded-lg text-white bg-gradient-to-r from-[#D79098] to-[#5F7BF4]"
   >
-    Continue
+    {t("basicInfo.continue")}
   </button>
 
 </form>

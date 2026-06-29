@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "/Image/IAMeetYou.png";
+import { useTranslation } from "react-i18next";
 
 const Identity = () => {
+  const { t } = useTranslation();
   const [identity, setIdentity] = useState("");
   const navigate = useNavigate();
 
@@ -35,11 +37,11 @@ const Identity = () => {
         <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl shadow-lg p-8">
 
           <h2 className="text-3xl mb-2  text-[var(--text-dim)]">
-            Choose your identity
+            {t("identity.title")}
           </h2>
 
           <p className="text-sm mb-6 opacity-70  text-[var(--text-dim2)]">
-            Select your preferred choice
+            {t("identity.subtitle")}
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -50,19 +52,19 @@ const Identity = () => {
               className="w-full border border-[var(--border)] rounded-lg px-3 py-2 bg-[var(--bg)] text-[var(--text-dim)]"
             >
               <option className="bg-[var(--bg)] text-[var(--text-dim)]" value="">
-                Select identity
+                {t("identity.selectPlaceholder")}
               </option>
 
               <option className="bg-[var(--bg)] text-[var(--text-dim)]" value="male">
-                Male
+                {t("identity.male")}
               </option>
 
               <option className="bg-[var(--bg)] text-[var(--text-dim)]" value="female">
-                Female
+                {t("identity.female")}
               </option>
 
               <option className="bg-[var(--bg)] text-[var(--text-dim)]" value="couple">
-                Couple
+                {t("identity.couple")}
               </option>
             </select>
 
@@ -70,7 +72,7 @@ const Identity = () => {
               type="submit"
               className="w-full mt-4 py-2 rounded-lg text-white font-medium bg-gradient-to-r from-[#D79098] to-[#5F7BF4] hover:opacity-90"
             >
-              Continue
+              {t("identity.continue")}
             </button>
 
           </form>
@@ -81,4 +83,4 @@ const Identity = () => {
   );
 };
 
-export default Identity;  
+export default Identity;

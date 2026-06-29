@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import logo from "/Image/IAMeetYou.png";
 import { useDispatch } from "react-redux";
 import { updateStoryThunk } from "../Redux/onboardingSlice";
+import { useTranslation } from "react-i18next";
 
 const interestsList = [
   "Travel", "Music", "Fitness", "Cooking",
@@ -12,6 +13,7 @@ const interestsList = [
 
 
 const Story = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -79,13 +81,13 @@ const Story = () => {
         <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl shadow-lg p-8">
 
           <h2 className="text-3xl mb-2  text-[var(--text-dim)]">
-            Tell your story
+            {t("story.title")}
           </h2>
 
           {/* Textarea */}
          {/* Bio */}
 <textarea
-  placeholder="Tell us about yourself..."
+  placeholder={t("story.bioPlaceholder")}
   value={bio}
   onChange={(e) => setBio(e.target.value)}
   className="w-full border border-[var(--border)] rounded-lg px-3 py-2 h-24 mb-4 bg-[var(--card)] text-[var(--text-dim)] placeholder:text-[var(--text-dim2)]"
@@ -105,7 +107,7 @@ const Story = () => {
           : "bg-[var(--card)] text-[var(--text-dim)]"
       }`}
     >
-      {item}
+      {t(`story.interests.${item.toLowerCase()}`)}
     </button>
   ))}
 </div>
@@ -115,7 +117,7 @@ const Story = () => {
   onClick={handleContinue}
   className="w-full py-2 rounded-lg text-white bg-gradient-to-r from-[#D79098] to-[#5F7BF4]"
 >
-  Continue
+  {t("story.continue")}
 </button>
 
         </div>
@@ -124,4 +126,4 @@ const Story = () => {
   );
 };
 
-export default Story;                    
+export default Story;

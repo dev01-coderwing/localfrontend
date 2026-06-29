@@ -1,61 +1,68 @@
 import React, { useState } from "react";
 import Navbar from '../Navbar/Navbar'
 import Addons from "./Addons";
+import { useTranslation } from "react-i18next";
+
 const plansData = [
   {
     id: 1,
     name: "Dégustation",
+    nameKey: "subscription.plan1.name",
     priceMonthly: 19.99,
     priceYearly: 149.9,
-    save: "Save 17%",
+    save: "subscription.plan1.save",
     features: [
-      "50 questions",
-      "5 Mode Acting",
-      "Unlimited swipes",
-      "Compatibility: 0-50% max",
-      "2 months Iucasope",
-      "2 Moves/day",
-      "Bonus: 1 Iucasope Guide",
-      "Essential Badge",
+      "subscription.plan1.feature1",
+      "subscription.plan1.feature2",
+      "subscription.plan1.feature3",
+      "subscription.plan1.feature4",
+      "subscription.plan1.feature5",
+      "subscription.plan1.feature6",
+      "subscription.plan1.feature7",
+      "subscription.plan1.feature8",
     ],
   },
   {
     id: 2,
     name: "Privilège",
+    nameKey: "subscription.plan2.name",
     priceMonthly: 29.99,
     priceYearly: 269.91,
-    save: "Save 26%",
+    save: "subscription.plan2.save",
     popular: true,
     features: [
-      "90 questions",
-      "9 Mode Acting",
-      "Unlimited swipes",
-      "Compatibility: 0-65% max",
-      "4 months Iucasope",
-      "3 Moves/day",
-      "Bonus: 2 Iucasope Guides",
-      "Privilege Badge",
+      "subscription.plan2.feature1",
+      "subscription.plan2.feature2",
+      "subscription.plan2.feature3",
+      "subscription.plan2.feature4",
+      "subscription.plan2.feature5",
+      "subscription.plan2.feature6",
+      "subscription.plan2.feature7",
+      "subscription.plan2.feature8",
     ],
   },
   {
     id: 3,
     name: "Cercle Privé",
+    nameKey: "subscription.plan3.name",
     priceMonthly: 39.99,
     priceYearly: 359.99,
-    save: "Save 33%",
+    save: "subscription.plan3.save",
     features: [
-      "130 questions",
-      "13 Mode Acting",
-      "Unlimited swipes",
-      "Compatibility: 0-100% max",
-      "6 months Iucasope",
-      "4 Moves/day",
-      "Bonus: 3 Iucasope Guides",
-      "Elite Badge",
+      "subscription.plan3.feature1",
+      "subscription.plan3.feature2",
+      "subscription.plan3.feature3",
+      "subscription.plan3.feature4",
+      "subscription.plan3.feature5",
+      "subscription.plan3.feature6",
+      "subscription.plan3.feature7",
+      "subscription.plan3.feature8",
     ],
   },
 ];
+
 function Subscription() {
+  const { t } = useTranslation();
   const [isYearly, setIsYearly] = useState(true);
   const [selectedPlan, setSelectedPlan] = useState(1);
   const [activeTab, setActiveTab] = useState("Dégustation");
@@ -67,9 +74,9 @@ function Subscription() {
         <div className="min-h-screen bg-[var(--bg-background)] flex flex-col items-center py-10 px-4">
 
           {/* Header */}
-          <h1 className="text-2xl font-bold mb-2 text-[var(--text-dim)]">Reveal your perfect match</h1>
+          <h1 className="text-2xl font-bold mb-2 text-[var(--text-dim)]">{t("subscription.title")}</h1>
           <p className="text-[var(--text-dim2)] mb-6 text-center max-w-md">
-            Choose a subscription to unlock more accurate compatibility and exclusive features.
+            {t("subscription.subtitle")}
           </p>
           <div className="flex bg-[var(--bg-card)]/10  rounded-full p-1 mb-6">
             {plansData.map((plan) => (
@@ -81,7 +88,7 @@ function Subscription() {
                     : " text-[var(--text-dim)]"
                   }`}
               >
-                {plan.name}
+                {t(plan.nameKey)}
               </button>
             ))}
           </div>
@@ -90,13 +97,13 @@ function Subscription() {
           {/* Toggle */}
           <div className="flex items-center gap-3 mb-8 text-[var(--text-dim)]">
             <span className={!isYearly ? "font-semibold" : "text-[var(--text-dim2)]"}>
-              Monthly
+              {t("subscription.monthly")}
             </span>
 
             <div
               onClick={() => setIsYearly(!isYearly)}
               className="w-12 h-6 bg-[var(--bg-background)] border border-[var(--border)] rounded-full flex items-center cursor-pointer p-1"
-            > 
+            >
               <div
                 className={`w-4 h-4 bg-[var(--bg-card)] rounded-full shadow-md transform duration-300 ${isYearly ? "translate-x-6" : ""
                   }`}
@@ -104,7 +111,7 @@ function Subscription() {
             </div>
 
             <span className={isYearly ? "font-semibold" : "text-[var(--text-dim2)]"}>
-              Annual
+              {t("subscription.annual")}
             </span>
           </div>
 
@@ -125,20 +132,20 @@ function Subscription() {
                 >
                   {/* Save Badge */}
                   <span className="absolute top-4 right-4 bg-[#009C00] text-[var(--text)] text-xs px-2 py-1 rounded">
-                    {plan.save}
+                    {t(plan.save)}
                   </span>
 
                   {/* Title */}
-                  <h2 className="text-lg font-semibold mb-2 text-[var(--text-dim)]">{plan.name}</h2>
+                  <h2 className="text-lg font-semibold mb-2 text-[var(--text-dim)]">{t(plan.nameKey)}</h2>
 
                   {/* Price */}
                   <p className="text-2xl font-bold mb-1 text-[var(--text-dim)]">
                     €{price}
-                    <span className="text-sm  text-[var(--text-dim)]">/year</span>
+                    <span className="text-sm  text-[var(--text-dim)]">{t("subscription.perYear")}</span>
                   </p>
 
                   <p className="text-[var(--text-dim2)] text-sm mb-4">
-                    Unlock more features and compatibility
+                    {t("subscription.unlockMore")}
                   </p>
 
                   {/* Features */}
@@ -146,7 +153,7 @@ function Subscription() {
                     {plan.features.map((feature, index) => (
                       <li key={index} className="flex items-center text-sm text-[var(--text-dim2)]">
                         <span className="text-green-500 mr-2">✔</span>
-                        {feature}
+                        {t(feature)}
                       </li>
                     ))}
                   </ul>
@@ -158,7 +165,7 @@ function Subscription() {
                         ? "bg-gradient-to-r from-[#D79098] to-[#5F7BF4]" : "bg-gradient-to-r from-[#D79098] to-[#5F7BF4]"
                       }`}
                   >
-                    Select
+                    {t("subscription.select")}
                   </button>
                 </div>
               );

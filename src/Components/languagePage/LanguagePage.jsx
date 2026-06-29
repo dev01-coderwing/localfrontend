@@ -323,14 +323,11 @@ const languages = [
     { code: "es", name: "Spanish", flag: "🇪🇸", native: "Español" },
     { code: "fr", name: "French", flag: "🇫🇷", native: "Français" },
     { code: "de", name: "German", flag: "🇩🇪", native: "Deutsch" },
-    { code: "ja", name: "Japanese", flag: "🇯🇵", native: "日本語" },
-    { code: "zh", name: "Chinese", flag: "🇨🇳", native: "中文" },
-    { code: "ar", name: "Arabic", flag: "🇸🇦", native: "العربية" },
-    { code: "pt", name: "Portuguese", flag: "🇧🇷", native: "Português" },
-    { code: "hi", name: "Hindi", flag: "🇮🇳", native: "हिन्दी" },
-    { code: "ko", name: "Korean", flag: "🇰🇷", native: "한국어" },
     { code: "it", name: "Italian", flag: "🇮🇹", native: "Italiano" },
-    { code: "ru", name: "Russian", flag: "🇷🇺", native: "Русский" },
+    { code: "ja", name: "Japanese", flag: "🇯🇵", native: "日本語" },
+    { code: "ko", name: "Korean", flag: "🇰🇷", native: "한국어" },
+    { code: "pt", name: "Portuguese", flag: "🇧🇷", native: "Português" },
+    { code: "zh", name: "Chinese", flag: "🇨🇳", native: "中文" },
 ];
 import Navbar from '../Navbar/Navbar'
 import { useNavigate } from "react-router-dom";
@@ -673,5 +670,4 @@ border: 1px solid var(--border);
 }
 
 export default LanguagePage
-
 

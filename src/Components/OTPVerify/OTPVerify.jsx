@@ -86,7 +86,7 @@ const OTPVerify = () => {
           </h1>
 
           <p className="text-sm mb-6 opacity-70 text-[var(--text-dim2)]">
-            We’ve sent a 6-digit verification code to
+            We've sent a 6-digit verification code to
             <br />
             <span className="font-semibold underline">
               {email}
@@ -113,7 +113,7 @@ const OTPVerify = () => {
           </div>
 
           <p className="text-sm mb-6 opacity-70">
-            Didn’t receive the code?
+            Didn't receive the code?
             <span className="text-blue-500 cursor-pointer ml-1">
               Resend OTP
             </span>

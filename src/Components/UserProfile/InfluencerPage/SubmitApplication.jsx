@@ -59,7 +59,7 @@ function SubmitApplication({ closePopup, onConfirm }) {
             <span className="font-semibold text-[var(--text-dim)]">
               24–48 hours
             </span>
-            . We’ll notify you via push notification once your status is
+            . We'll notify you via push notification once your status is
             updated.
           </p>
         </div>

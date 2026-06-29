@@ -3,9 +3,10 @@ import { useNavigate } from "react-router-dom";
 import logo from "/Image/IAMeetYou.png";
 import { useDispatch } from "react-redux";
 import { uploadPhotosThunk } from "../Redux/onboardingSlice";
+import { useTranslation } from "react-i18next";
 
 const Photos = () => {
-
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -35,7 +36,7 @@ const Photos = () => {
 
       // CHECK MINIMUM 3 PHOTOS
       if (photos.length < 3) {
-        alert("Please upload at least 3 photos");
+        alert(t("photos.alertMin"));
         return;
       }
 
@@ -61,7 +62,7 @@ const Photos = () => {
       // SUCCESS
       if (result.meta.requestStatus === "fulfilled") {
 
-        alert("Photos Uploaded Successfully");
+        alert(t("photos.alertSuccess"));
 
         navigate("/religion");
       }
@@ -73,14 +74,14 @@ const Photos = () => {
 
         console.log(result.payload);
 
-        alert("Upload Failed");
+        alert(t("photos.alertFailed"));
       }
 
     } catch (error) {
 
       console.log("PHOTO API ERROR:", error);
 
-      alert("Something went wrong");
+      alert(t("photos.alertError"));
     }
   };
 
@@ -107,11 +108,11 @@ const Photos = () => {
     <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl shadow-lg p-8">
 
       <h2 className="text-3xl text-[var(--text-dim)] mb-2">
-        Add your photos
+        {t("photos.title")}
       </h2>
 
       <p className="text-sm mb-4 text-[var(--text-dim2)]">
-        Upload at least 3 photos
+        {t("photos.subtitle")}
       </p>
 
       {/* PHOTO GRID */}
@@ -149,7 +150,7 @@ const Photos = () => {
         onClick={handleContinue}
         className="w-full py-2 rounded-lg text-white bg-gradient-to-r from-[#D79098] to-[#5F7BF4]"
       >
-        Continue
+        {t("photos.continue")}
       </button>
 
     </div>

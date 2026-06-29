@@ -87,7 +87,7 @@ function ForgotOtp() {
           </h1>
  
           <p className="text-sm  text-[var(--text-dim2)] mb-6 opacity-70">
-            We’ve sent a 6-digit verification code to
+            We've sent a 6-digit verification code to
             <br />
             <span className="font-semibold underline">
               {email}
@@ -114,7 +114,7 @@ function ForgotOtp() {
           </div>
  
           <p className="text-sm mb-6 opacity-70">
-            Didn’t receive the code?
+            Didn't receive the code?
             <span className="text-[var(--text-dim2)] cursor-pointer ">
               Resend OTP
             </span>

@@ -93,7 +93,7 @@ const BoostFlowModal = ({ isOpen, onClose }) => {
         {step === 2 && (
           <>
             <h2 className="text-center text-xl font-semibold">
-              You’re Boosted!
+              You're Boosted!
             </h2>
 
             <p className="text-center text-gray-500 text-sm mt-1">

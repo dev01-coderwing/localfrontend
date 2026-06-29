@@ -9,25 +9,207 @@
   "next": "आगे",
 
   "intro": {
-    "slide1": {
-      "title": "लुकास से मिलिए — आपका AI डेटिंग गाइड",
-      "description": "लुकास आपको केवल तस्वीरों और पहली छाप से आगे बढ़कर वास्तविक अनुकूलता समझने में मदद करता है।"
-    },
-    "slide2": {
-      "title": "IAMeetYou के पीछे का विज्ञान",
-      "description": "लुकास आपके चुनावों और आपकी आवाज़ के बीच सामंजस्य का विश्लेषण करता है ताकि वास्तविक संबंध बनाए जा सकें।"
-    },
-    "slide3": {
-      "title": "शब्दों से परे, सच्चाई की आवृत्ति।",
-      "description": "बिग फाइव • MBTI • लव लैंग्वेज • अटैचमेंट स्टाइल — केवल स्वाइप नहीं, बल्कि वास्तविक अनुकूलता।"
-    },
-    "slide4": {
-      "title": "आपका भावनात्मक डीएनए",
-      "description": "आत्मा के कम्पास की तरह, हम आपके जन्म डेटा का उपयोग यह समझने के लिए करते हैं कि आप प्रेम और समय को कैसे जीते हैं।"
-    },
-    "slide5": {
-      "title": "प्रामाणिकता का एक सुरक्षित स्थान",
-      "description": "एक ऐसा समुदाय जहाँ हर आवाज़ वास्तविक है और हर रिश्ता उद्देश्यपूर्ण है।"
+    "slide1": { "title": "लुकास से मिलिए — आपका AI डेटिंग गाइड", "description": "लुकास आपको केवल तस्वीरों और पहली छाप से आगे बढ़कर वास्तविक अनुकूलता समझने में मदद करता है।" },
+    "slide2": { "title": "IAMeetYou के पीछे का विज्ञान", "description": "लुकास आपके चुनावों और आपकी आवाज़ के बीच सामंजस्य का विश्लेषण करता है ताकि वास्तविक संबंध बनाए जा सकें।" },
+    "slide3": { "title": "शब्दों से परे, सच्चाई की आवृत्ति।", "description": "बिग फाइव • MBTI • लव लैंग्वेज • अटैचमेंट स्टाइल — केवल स्वाइप नहीं, बल्कि वास्तविक अनुकूलता।" },
+    "slide4": { "title": "आपका भावनात्मक डीएनए", "description": "आत्मा के कम्पास की तरह, हम आपके जन्म डेटा का उपयोग यह समझने के लिए करते हैं कि आप प्रेम और समय को कैसे जीते हैं।" },
+    "slide5": { "title": "प्रामाणिकता का एक सुरक्षित स्थान", "description": "एक ऐसा समुदाय जहाँ हर आवाज़ वास्तविक है और हर रिश्ता उद्देश्यपूर्ण है।" }
+  },
+
+  "login": {
+    "title": "अपने खाते में लॉग इन करें",
+    "description": "IAMeetYou से जुड़ें और वह कनेक्शन खोजें जिसकी आप तलाश कर रहे थे।",
+    "email": "ईमेल आईडी",
+    "password": "पासवर्ड",
+    "enter_email": "ईमेल आईडी दर्ज करें",
+    "enter_password": "पासवर्ड दर्ज करें",
+    "show": "दिखाएं",
+    "hide": "छुपाएं",
+    "forgot_password": "पासवर्ड भूल गए?",
+    "login": "लॉग इन",
+    "logging_in": "लॉग इन हो रहा है...",
+    "failed": "लॉग इन विफल",
+    "validation": {
+      "fill_fields": "कृपया सभी फ़ील्ड भरें",
+      "valid_email": "वैध ईमेल दर्ज करें"
     }
+  },
+
+  "signup": {
+    "headingLine1": "ऐसे कनेक्शन खोजें जो",
+    "headingLine2": "सच में मेल खाएं",
+    "subheading": "भावना, आवाज़ और अनुकूलता से निर्देशित",
+    "emailPlaceholder": "अपना ईमेल पता दर्ज करें",
+    "sending": "भेजा जा रहा है...",
+    "sendVerificationCode": "सत्यापन कोड भेजें",
+    "confirm": "पुष्टि करें",
+    "success": "✓ स्वागत है! अपना इनबॉक्स जांचें।",
+    "or": "या",
+    "alreadyHaveAccount": "क्या आपके पास पहले से खाता है?",
+    "signIn": "साइन इन करें",
+    "continueWithFacebook": "Facebook से जारी रखें",
+    "continueWithGoogle": "Google से जारी रखें",
+    "continueWithApple": "Apple से जारी रखें",
+    "agreementText": "जारी रखने पर, आप हमारी",
+    "termsOfService": "सेवा की शर्तें",
+    "and": "और",
+    "privacyPolicy": "गोपनीयता नीति",
+    "themeLight": "हल्का",
+    "themeDark": "गहरा",
+    "themeBrown": "भूरा"
+  },
+
+  "location": {
+    "title": "आपका स्थान",
+    "subtitle": "हमें आपके पास मिलान खोजने में सहायता करें",
+    "country": "देश",
+    "countryPlaceholder": "अपना देश चुनें",
+    "city": "शहर",
+    "cityPlaceholder": "उदा. मुंबई",
+    "continue": "जारी रखें"
+  },
+
+  "identity": {
+    "title": "अपनी पहचान चुनें",
+    "subtitle": "अपनी पसंदीदा विकल्प चुनें",
+    "selectPlaceholder": "पहचान चुनें",
+    "male": "पुरुष",
+    "female": "महिला",
+    "couple": "जोड़ा",
+    "continue": "जारी रखें"
+  },
+
+  "basicInfo": {
+    "title": "बुनियादी जानकारी",
+    "subtitle": "आपको बेहतर जानते हैं",
+    "namePlaceholder": "अपना नाम दर्ज करें",
+    "pronounsPlaceholder": "वह/उनका, वह/उनकी",
+    "men": "पुरुष",
+    "women": "महिलाएं",
+    "everyone": "सभी",
+    "continue": "जारी रखें"
+  },
+
+  "story": {
+    "title": "अपनी कहानी बताएं",
+    "bioPlaceholder": "हमें अपने बारे में बताएं...",
+    "continue": "जारी रखें",
+    "interests": {
+      "travel": "यात्रा",
+      "music": "संगीत",
+      "fitness": "फिटनेस",
+      "cooking": "खाना पकाना",
+      "reading": "पढ़ना",
+      "gaming": "गेमिंग",
+      "yoga": "योग",
+      "movies": "फिल्में",
+      "photography": "फोटोग्राफी",
+      "dancing": "नृत्य",
+      "nature": "प्रकृति"
+    }
+  },
+
+  "photos": {
+    "title": "अपनी फ़ोटो जोड़ें",
+    "subtitle": "कम से कम 3 फ़ोटो अपलोड करें",
+    "alertMin": "कृपया कम से कम 3 फ़ोटो अपलोड करें",
+    "alertSuccess": "फ़ोटो सफलतापूर्वक अपलोड हुईं",
+    "alertFailed": "अपलोड विफल",
+    "alertError": "कुछ गलत हो गया",
+    "continue": "जारी रखें"
+  },
+
+  "religionOptions": {
+    "title": "धर्म",
+    "subtitle": "यह वैकल्पिक है और अनुकूलता में मदद करता है",
+    "christian": "ईसाई",
+    "muslim": "मुस्लिम",
+    "hindu": "हिंदू",
+    "buddhist": "बौद्ध",
+    "skip": "नहीं, इस चरण को छोड़ें",
+    "continue": "जारी रखें"
+  },
+
+  "astrology": {
+    "title": "ज्योतिष (वैकल्पिक)",
+    "subtitle": "ज्योतिष के आधार पर बेहतर मिलान पाएं",
+    "birthPlacePlaceholder": "जन्म स्थान",
+    "zodiacPlaceholder": "राशि (वैकल्पिक)",
+    "continue": "जारी रखें",
+    "skip": "अभी छोड़ें"
+  },
+
+  "religion": {
+    "title": "धर्म",
+    "subtitle": "यह वैकल्पिक है और अनुकूलता में मदद करता है",
+    "preferNotToSpecify": "बताना नहीं चाहता",
+    "christian": "ईसाई",
+    "muslim": "मुस्लिम",
+    "hindu": "हिंदू",
+    "buddhist": "बौद्ध",
+    "skip": "नहीं, इस चरण को छोड़ें",
+    "continue": "जारी रखें"
+  },
+
+  "subscription": {
+    "title": "अपना परफेक्ट मैच खोजें",
+    "subtitle": "अधिक सटीक अनुकूलता और एक्सक्लूसिव फीचर्स अनलॉक करने के लिए सदस्यता चुनें।",
+    "monthly": "मासिक",
+    "annual": "वार्षिक",
+    "perYear": "/वर्ष",
+    "unlockMore": "और अधिक फीचर्स और अनुकूलता अनलॉक करें",
+    "select": "चुनें",
+    "plan1": {
+      "name": "Dégustation",
+      "save": "17% बचाएं",
+      "feature1": "50 प्रश्न",
+      "feature2": "5 Mode Acting",
+      "feature3": "असीमित स्वाइप",
+      "feature4": "अनुकूलता: 0-50% अधिकतम",
+      "feature5": "2 महीने Iucasope",
+      "feature6": "2 Moves/दिन",
+      "feature7": "बोनस: 1 Iucasope गाइड",
+      "feature8": "Essential बैज"
+    },
+    "plan2": {
+      "name": "Privilège",
+      "save": "26% बचाएं",
+      "feature1": "90 प्रश्न",
+      "feature2": "9 Mode Acting",
+      "feature3": "असीमित स्वाइप",
+      "feature4": "अनुकूलता: 0-65% अधिकतम",
+      "feature5": "4 महीने Iucasope",
+      "feature6": "3 Moves/दिन",
+      "feature7": "बोनस: 2 Iucasope गाइड",
+      "feature8": "Privilege बैज"
+    },
+    "plan3": {
+      "name": "Cercle Privé",
+      "save": "33% बचाएं",
+      "feature1": "130 प्रश्न",
+      "feature2": "13 Mode Acting",
+      "feature3": "असीमित स्वाइप",
+      "feature4": "अनुकूलता: 0-100% अधिकतम",
+      "feature5": "6 महीने Iucasope",
+      "feature6": "4 Moves/दिन",
+      "feature7": "बोनस: 3 Iucasope गाइड",
+      "feature8": "Elite बैज"
+    },
+    "secureCheckout": "सुरक्षित चेकआउट",
+    "paymentMethod": "भुगतान विधि",
+    "paymentSubtitle": "प्रीमियम एक्सेस के लिए अपनी पसंदीदा विधि चुनें",
+    "cardTab": "कार्ड",
+    "applePayTab": "Apple Pay",
+    "pay": "भुगतान करें",
+    "secureStripe": "सुरक्षित Stripe चेकआउट",
+    "encryptionActive": "एन्क्रिप्शन सक्रिय",
+    "encrypted": "एन्क्रिप्टेड",
+    "bankGrade": "बैंक ग्रेड",
+    "private": "निजी",
+    "purchaseTerms": "यह खरीदारी पूरी करके आप हमारी सेवा की शर्तों से सहमत होते हैं। आपका डेटा गोपनीयता ढांचे के तहत सुरक्षित है।",
+    "confirmSubscription": "सदस्यता की पुष्टि करें",
+    "confirmQuestion": "क्या आप चुने हुए प्लान के साथ आगे बढ़ना चाहते हैं?",
+    "confirm": "पुष्टि करें",
+    "cancel": "रद्द करें"
   }
 }

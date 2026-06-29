@@ -3,8 +3,10 @@ import Navbar from "../Navbar/Navbar";
 import Brain1 from "../../../public/Image/Brain1.png";
 import { BadgeCheck } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 function Lanuch() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   return (
     <>
       <Navbar />
@@ -15,7 +17,7 @@ function Lanuch() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-semibold rounded-full bg-[var(--bg-card)]/10  text-[#E91E63] mb-8">
             <BadgeCheck className="w-4 h-4 fill-[var(--accent)] text-white" />
-            <span className="opacity-80">Lucas Personal AI</span>
+            <span className="opacity-80">{t("launch.badge")}</span>
           </div>
 
           {/* Avatar Circle */}
@@ -29,8 +31,8 @@ function Lanuch() {
                   <img src="/Image/voice.png" alt="" className="w-4 h-4" />
                 </div>
                 <div className="text-left">
-                  <p className="text-[7px] text-[var(--text-dim)] font-bold uppercase tracking-wider leading-none">Voice Sync</p>
-                  <p className="text-[10px] font-bold text-[var(--text-dim2)] leading-tight">100% Match</p>
+                  <p className="text-[7px] text-[var(--text-dim)] font-bold uppercase tracking-wider leading-none">{t("launch.voiceSyncLabel")}</p>
+                  <p className="text-[10px] font-bold text-[var(--text-dim2)] leading-tight">{t("launch.voiceSyncValue")}</p>
                 </div>
               </div>
 
@@ -40,8 +42,8 @@ function Lanuch() {
                   <img src="/Image/HeartIconLaunch.png" alt="" className="w-4 h-4" />
                 </div>
                 <div className="text-left">
-                  <p className="text-[7px] text-[var(--text-dim)] font-bold uppercase tracking-wider leading-none">Emotional Tone</p>
-                  <p className="text-[10px] font-bold text-[var(--text-dim2)] leading-tight">Highly Compatible</p>
+                  <p className="text-[7px] text-[var(--text-dim)] font-bold uppercase tracking-wider leading-none">{t("launch.emotionalToneLabel")}</p>
+                  <p className="text-[10px] font-bold text-[var(--text-dim2)] leading-tight">{t("launch.emotionalToneValue")}</p>
                 </div>
               </div>
             </div>
@@ -49,17 +51,15 @@ function Lanuch() {
 
           {/* Title */}
           <h2 className="text-[28px] font-bold text-[var(--text-dim)] mb-4">
-            The Launch
+            {t("launch.title")}
           </h2>
 
           {/* Description */}
           <div className="max-w-sm mx-auto">
             <p className="text-[var(--text-dim2)] text-sm leading-[1.6] mb-8 font-medium">
-              Hello! I am Lucas, your personal Ai guide. I'm here to help you find deep,
-              meaningful connections through our unique emotional and voice analysis
-              technology.
+              {t("launch.descriptionPart1")}
               <br /><br />
-              Welcome to the future of dating.
+              {t("launch.descriptionPart2")}
             </p>
           </div>
 
@@ -70,7 +70,7 @@ function Lanuch() {
                 navigate("/CompatibilityTest")
               }
             }>
-            Begin the Experience
+            {t("launch.begin")}
             <span className="text-xl">→</span>
           </button>
 

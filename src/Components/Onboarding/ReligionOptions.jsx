@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "/Image/IAMeetYou.png";
+import { useTranslation } from "react-i18next";
 
 const religions = [
   "Christian",
@@ -10,6 +11,7 @@ const religions = [
 ];
 
 const ReligionOptions = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [selected, setSelected] = useState("");
 
@@ -36,11 +38,11 @@ const ReligionOptions = () => {
     <div className="bg-[var(--card)] border border-[var(--border)] p-8 rounded-2xl shadow">
 
       <h2 className="text-xl text-[var(--text-dim)] mb-2">
-        Religion
+        {t("religionOptions.title")}
       </h2>
 
       <p className="text-sm mb-6 text-[var(--text-dim2)]">
-        This is optional and helps with compatibility
+        {t("religionOptions.subtitle")}
       </p>
 
       {/* Options */}
@@ -56,7 +58,7 @@ const ReligionOptions = () => {
                 : "bg-[var(--card)] text-[var(--text-dim)]"
             }`}
           >
-            {item}
+            {t(`religionOptions.${item.toLowerCase()}`)}
           </button>
         ))}
       </div>
@@ -66,7 +68,7 @@ const ReligionOptions = () => {
         onClick={() => navigate("/astrology")}
         className="w-full mb-3 border border-[var(--border)] rounded-lg py-2 bg-[var(--card)] text-[var(--text-dim)] hover:opacity-80"
       >
-        No, skip this step
+        {t("religionOptions.skip")}
       </button>
 
       {/* Continue */}
@@ -74,7 +76,7 @@ const ReligionOptions = () => {
         onClick={() => navigate("/astrology")}
         className="w-full py-2 rounded-lg text-white bg-gradient-to-r from-[#D79098] to-[#5F7BF4]"
       >
-        Continue
+        {t("religionOptions.continue")}
       </button>
 
     </div>

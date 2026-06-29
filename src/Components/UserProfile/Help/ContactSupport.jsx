@@ -26,7 +26,7 @@ const ContactSupport = ({ onNext }) => {
         <div className="bg-gradient-to-t from-[#7133A8] via-[#E4678C] to-[#FC9A86] p-4 rounded-xl text-white mb-6">
           <h2 className="text-lg font-semibold">How can we help?</h2>
           <p className="text-sm">
-            We’re here to ensure your experience is safe.
+            We're here to ensure your experience is safe.
           </p>
         </div>
 

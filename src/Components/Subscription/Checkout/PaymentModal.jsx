@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Navbar from "../../Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const SuccessPopup = ({ onClose }) => {
+  const { t } = useTranslation();
   return (
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
       <div className="bg-[var(--bg-background)] w-full max-w-sm rounded-2xl shadow-xl p-6 text-center">
@@ -14,11 +16,11 @@ const SuccessPopup = ({ onClose }) => {
 
         {/* Title */}
         <h2 className="text-lg font-semibold mt-4 text-[var(--text-dim)]">
-          Confirm Subscription
+          {t("subscription.confirmSubscription")}
         </h2>
 
         <p className="text-sm text-[var(--text-dim2)] mt-2">
-          Are you sure you want to proceed with your selected plan?
+          {t("subscription.confirmQuestion")}
         </p>
 
         {/* Button */}
@@ -26,13 +28,15 @@ const SuccessPopup = ({ onClose }) => {
           onClick={onClose}
           className="w-full mt-5 py-3 rounded-xl text-[var(--text)] font-medium bg-gradient-to-r from-pink-400 to-blue-500"
         >
-          Confirm
+          {t("subscription.confirm")}
         </button>
       </div>
     </div>
   );
 };
+
 const PaymentModal = () => {
+  const { t } = useTranslation();
   const [method, setMethod] = useState("card");
   const [showSuccess, setShowSuccess] = useState(false);
   const navigate = useNavigate();
@@ -49,15 +53,15 @@ const PaymentModal = () => {
 
           {/* Header */}
           <h2 className="text-sm text-[var(--text-dim2)]">
-            Secure Checkout
+            {t("subscription.secureCheckout")}
           </h2>
 
           <h1 className="text-xl font-semibold mt-1 text-[var(--text-dim)]">
-            Payment Method
+            {t("subscription.paymentMethod")}
           </h1>
 
           <p className="text-sm text-[var(--text-dim2)] mt-1">
-            Select your preferred method for premium access
+            {t("subscription.paymentSubtitle")}
           </p>
 
           {/* Tabs */}
@@ -71,7 +75,7 @@ const PaymentModal = () => {
                   : "text-[var(--text-dim2)]"
                 }`}
             >
-              Card
+              {t("subscription.cardTab")}
             </button>
 
             <button
@@ -82,7 +86,7 @@ const PaymentModal = () => {
                   : "text-[var(--text-dim2)]"
                 }`}
             >
-              Apple Pay
+              {t("subscription.applePayTab")}
             </button>
 
           </div>
@@ -136,29 +140,28 @@ const PaymentModal = () => {
             onClick={() => setShowSuccess(true)}
             className="bg-gradient-to-r from-pink-400 to-blue-500 text-white px-4 py-3 rounded-xl w-full mt-5 font-medium shadow-md hover:opacity-90 transition"
           >
-            Pay
+            {t("subscription.pay")}
           </button>
 
           {/* Footer */}
           <div className="mt-5 border-t border-[var(--border)] pt-4 text-center">
 
             <p className="text-sm font-medium text-[var(--text-dim)]">
-              Secure Stripe Checkout
+              {t("subscription.secureStripe")}
             </p>
 
             <p className="text-xs text-[var(--text-dim2)]">
-              encryption active
+              {t("subscription.encryptionActive")}
             </p>
 
             <div className="flex justify-around mt-3 text-S text-[var(--text-dim2)]">
-              <span> ENCRYPTED</span>
-              <span> BANK GRADE</span>
-              <span> PRIVATE</span>
+              <span> {t("subscription.encrypted")}</span>
+              <span> {t("subscription.bankGrade")}</span>
+              <span> {t("subscription.private")}</span>
             </div>
 
             <p className="text-[10px] text-[var(--text-dim2)] mt-3 leading-relaxed">
-              By completing this purchase you agree to our Terms of Service.
-              Your data is protected under privacy framework.
+              {t("subscription.purchaseTerms")}
             </p>
 
           </div>

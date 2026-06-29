@@ -9,25 +9,322 @@
   "next": "Próximo",
 
   "intro": {
-    "slide1": {
-      "title": "Conheça Lucas — seu guia de namoro com IA",
-      "description": "Lucas ajuda você a entender a verdadeira compatibilidade, além das fotos e das primeiras impressões."
-    },
-    "slide2": {
-      "title": "A ciência por trás do IAMeetYou",
-      "description": "Lucas identifica a harmonia entre suas escolhas e sua voz para garantir conexões autênticas."
-    },
-    "slide3": {
-      "title": "Além das palavras, a frequência da verdade.",
-      "description": "Big Five • MBTI • Linguagens do Amor • Estilos de Apego — Compatibilidade real, não apenas deslizar."
-    },
-    "slide4": {
-      "title": "Seu DNA emocional",
-      "description": "Como uma bússola para a alma, usamos seus dados de nascimento para entender como você vive o amor e o tempo."
-    },
-    "slide5": {
-      "title": "Um santuário de autenticidade",
-      "description": "Uma comunidade cuidadosamente selecionada onde cada voz é verdadeira e cada conexão é intencional."
+    "slide1": { "title": "Conheça Lucas — seu guia de namoro com IA", "description": "Lucas ajuda você a entender a verdadeira compatibilidade, além das fotos e das primeiras impressões." },
+    "slide2": { "title": "A ciência por trás do IAMeetYou", "description": "Lucas identifica a harmonia entre suas escolhas e sua voz para garantir conexões autênticas." },
+    "slide3": { "title": "Além das palavras, a frequência da verdade.", "description": "Big Five • MBTI • Linguagens do Amor • Estilos de Apego — Compatibilidade real, não apenas deslizar." },
+    "slide4": { "title": "Seu DNA emocional", "description": "Como uma bússola para a alma, usamos seus dados de nascimento para entender como você vive o amor e o tempo." },
+    "slide5": { "title": "Um santuário de autenticidade", "description": "Uma comunidade cuidadosamente selecionada onde cada voz é verdadeira e cada conexão é intencional." }
+  },
+
+  "login": {
+    "title": "Entre na sua conta",
+    "description": "Junte-se ao IAMeetYou e encontre a conexão que você estava procurando.",
+    "email": "E-mail",
+    "password": "Senha",
+    "enter_email": "Digite seu e-mail",
+    "enter_password": "Digite sua senha",
+    "show": "Mostrar",
+    "hide": "Ocultar",
+    "forgot_password": "Esqueceu a senha?",
+    "login": "Entrar",
+    "logging_in": "Entrando...",
+    "failed": "Falha no login",
+    "validation": {
+      "fill_fields": "Por favor, preencha todos os campos",
+      "valid_email": "Digite um e-mail válido"
     }
+  },
+
+  "signup": {
+    "headingLine1": "Encontre conexões que",
+    "headingLine2": "verdadeiramente se alinham",
+    "subheading": "Guiado por emoção, voz e compatibilidade",
+    "emailPlaceholder": "Digite seu endereço de e-mail",
+    "sending": "Enviando...",
+    "sendVerificationCode": "Enviar código de verificação",
+    "confirm": "Confirmar",
+    "success": "✓ Bem-vindo! Verifique sua caixa de entrada.",
+    "or": "Ou",
+    "alreadyHaveAccount": "Já tem uma conta?",
+    "signIn": "Entrar",
+    "continueWithFacebook": "Continuar com o Facebook",
+    "continueWithGoogle": "Continuar com o Google",
+    "continueWithApple": "Continuar com a Apple",
+    "agreementText": "Ao continuar, você concorda com nossos",
+    "termsOfService": "Termos de Serviço",
+    "and": "e",
+    "privacyPolicy": "Política de Privacidade",
+    "themeLight": "Claro",
+    "themeDark": "Escuro",
+    "themeBrown": "Marrom"
+  },
+
+  "location": {
+    "title": "Sua localização",
+    "subtitle": "Ajude-nos a encontrar correspondências perto de você",
+    "country": "País",
+    "countryPlaceholder": "Selecione seu país",
+    "city": "Cidade",
+    "cityPlaceholder": "ex. Lisboa",
+    "continue": "Continuar"
+  },
+
+  "identity": {
+    "title": "Escolha sua identidade",
+    "subtitle": "Selecione sua opção preferida",
+    "selectPlaceholder": "Selecionar identidade",
+    "male": "Masculino",
+    "female": "Feminino",
+    "couple": "Casal",
+    "continue": "Continuar"
+  },
+
+  "basicInfo": {
+    "title": "Informações básicas",
+    "subtitle": "Vamos nos conhecer melhor",
+    "namePlaceholder": "Digite seu nome",
+    "pronounsPlaceholder": "ele/dele, ela/dela",
+    "men": "Homens",
+    "women": "Mulheres",
+    "everyone": "Todos",
+    "continue": "Continuar"
+  },
+
+  "story": {
+    "title": "Conte sua história",
+    "bioPlaceholder": "Fale um pouco sobre você...",
+    "continue": "Continuar",
+    "interests": {
+      "travel": "Viagens",
+      "music": "Música",
+      "fitness": "Fitness",
+      "cooking": "Culinária",
+      "reading": "Leitura",
+      "gaming": "Jogos",
+      "yoga": "Yoga",
+      "movies": "Filmes",
+      "photography": "Fotografia",
+      "dancing": "Dança",
+      "nature": "Natureza"
+    }
+  },
+
+  "photos": {
+    "title": "Adicione suas fotos",
+    "subtitle": "Envie pelo menos 3 fotos",
+    "alertMin": "Por favor, envie pelo menos 3 fotos",
+    "alertSuccess": "Fotos enviadas com sucesso",
+    "alertFailed": "Falha no envio",
+    "alertError": "Algo deu errado",
+    "continue": "Continuar"
+  },
+
+  "religionOptions": {
+    "title": "Religião",
+    "subtitle": "Isso é opcional e ajuda na compatibilidade",
+    "christian": "Cristão",
+    "muslim": "Muçulmano",
+    "hindu": "Hindu",
+    "buddhist": "Budista",
+    "skip": "Não, pular esta etapa",
+    "continue": "Continuar"
+  },
+
+  "astrology": {
+    "title": "Astrologia (opcional)",
+    "subtitle": "Obtenha melhores correspondências com base na astrologia",
+    "birthPlacePlaceholder": "Local de nascimento",
+    "zodiacPlaceholder": "Signo (opcional)",
+    "continue": "Continuar",
+    "skip": "Pular por agora"
+  },
+
+  "religion": {
+    "title": "Religião",
+    "subtitle": "Isso é opcional e ajuda na compatibilidade",
+    "preferNotToSpecify": "Prefiro não especificar",
+    "christian": "Cristão",
+    "muslim": "Muçulmano",
+    "hindu": "Hindu",
+    "buddhist": "Budista",
+    "skip": "Não, pular esta etapa",
+    "continue": "Continuar"
+  },
+
+  "subscription": {
+    "title": "Revele seu match perfeito",
+    "subtitle": "Escolha uma assinatura para desbloquear maior compatibilidade e recursos exclusivos.",
+    "monthly": "Mensal",
+    "annual": "Anual",
+    "perYear": "/ano",
+    "unlockMore": "Desbloqueie mais recursos e compatibilidade",
+    "select": "Selecionar",
+    "plan1": {
+      "name": "Dégustation",
+      "save": "Economize 17%",
+      "feature1": "50 perguntas",
+      "feature2": "5 Mode Acting",
+      "feature3": "Swipes ilimitados",
+      "feature4": "Compatibilidade: 0-50% máx.",
+      "feature5": "2 meses Iucasope",
+      "feature6": "2 Movimentos/dia",
+      "feature7": "Bônus: 1 Guia Iucasope",
+      "feature8": "Selo Essencial"
+    },
+    "plan2": {
+      "name": "Privilège",
+      "save": "Economize 26%",
+      "feature1": "90 perguntas",
+      "feature2": "9 Mode Acting",
+      "feature3": "Swipes ilimitados",
+      "feature4": "Compatibilidade: 0-65% máx.",
+      "feature5": "4 meses Iucasope",
+      "feature6": "3 Movimentos/dia",
+      "feature7": "Bônus: 2 Guias Iucasope",
+      "feature8": "Selo Privilégio"
+    },
+    "plan3": {
+      "name": "Cercle Privé",
+      "save": "Economize 33%",
+      "feature1": "130 perguntas",
+      "feature2": "13 Mode Acting",
+      "feature3": "Swipes ilimitados",
+      "feature4": "Compatibilidade: 0-100% máx.",
+      "feature5": "6 meses Iucasope",
+      "feature6": "4 Movimentos/dia",
+      "feature7": "Bônus: 3 Guias Iucasope",
+      "feature8": "Selo Elite"
+    },
+    "secureCheckout": "Checkout Seguro",
+    "paymentMethod": "Método de pagamento",
+    "paymentSubtitle": "Selecione seu método preferido para acesso premium",
+    "cardTab": "Cartão",
+    "applePayTab": "Apple Pay",
+    "pay": "Pagar",
+    "secureStripe": "Checkout Seguro Stripe",
+    "encryptionActive": "criptografia ativa",
+    "encrypted": "CRIPTOGRAFADO",
+    "bankGrade": "NÍVEL BANCÁRIO",
+    "private": "PRIVADO",
+    "purchaseTerms": "Ao concluir esta compra, você concorda com nossos Termos de Serviço. Seus dados estão protegidos sob nossa estrutura de privacidade.",
+    "confirmSubscription": "Confirmar assinatura",
+    "confirmQuestion": "Tem certeza de que deseja prosseguir com o plano selecionado?",
+    "confirm": "Confirmar",
+    "cancel": "Cancelar"
+  },
+
+  "launch": {
+    "badge": "Lucas Personal AI",
+    "voiceSyncLabel": "Sincronização de Voz",
+    "voiceSyncValue": "100% Compatível",
+    "emotionalToneLabel": "Tom Emocional",
+    "emotionalToneValue": "Altamente Compatível",
+    "title": "O Lançamento",
+    "descriptionPart1": "Olá! Eu sou o Lucas, seu guia de IA pessoal. Estou aqui para ajudá-lo a encontrar conexões profundas e significativas através da nossa tecnologia única de análise emocional e de voz.",
+    "descriptionPart2": "Bem-vindo ao futuro dos encontros.",
+    "begin": "Iniciar a Experiência"
+  },
+
+  "compatibility": {
+    "title": "Teste de Compatibilidade",
+    "questionProgress": "Progresso das perguntas",
+    "progress": "{{current}} de {{total}}",
+    "previous": "Anterior",
+    "next": "Próximo"
+  },
+
+  "voiceConsent": {
+    "title": "Consentimento de Análise de Voz",
+    "description": "Analisamos o tom emocional da sua voz para melhorar a correspondência de compatibilidade. O áudio é processado com segurança e excluído imediatamente após a análise. Apenas a sua pontuação de compatibilidade anônima é armazenada em nosso banco de dados seguro.",
+    "secureProcessing": "Processamento seguro",
+    "autoDeletion": "Exclusão automática",
+    "endToEnd": "Criptografia de ponta a ponta",
+    "agreementText": "Concordo com o processamento de voz para análise de compatibilidade e reconheço que meus dados estão protegidos.",
+    "agreeButton": "Concordo & Continuar",
+    "textModeButton": "Usar modo de texto",
+    "cancel": "Cancelar"
+  },
+
+  "voice": {
+    "title": "Análise de Voz",
+    "questionProgress": "Progresso das perguntas",
+    "progressText": "10 de 230",
+    "sampleQuestion": "\"Qual é a sua forma ideal de passar um fim de semana?\"",
+    "tapToRecord": "Toque para gravar",
+    "minimumSeconds": "Mínimo de 5 segundos necessário"
+  },
+
+  "subscription2": {
+    "title": "La Carte",
+    "heading": "Amuse-Bouches (Complementos)",
+    "headingDesc": "Personalize sua experiência com complementos únicos para maximizar suas chances.",
+    "meonsPackages": "Pacotes Meons",
+    "meons": "meons",
+    "tagBestValue": "MELHOR CUSTO-BENEFÍCIO",
+    "tagMostPopular": "Mais Popular",
+    "pkg": {
+      "mini": "Mini",
+      "small": "Pequeno",
+      "medium": "Médio",
+      "xl": "XL",
+      "large": "Grande"
+    },
+    "visibilityBoosts": "Impulsos de Visibilidade",
+    "singleBoosts": "Impulsos Individuais",
+    "boost30min": "30 min",
+    "boost1hour": "1 hora",
+    "boost2hours": "2 horas",
+    "boost4hours": "4 horas",
+    "tagRecommend": "Recomendado",
+    "tagSave12": "Economize 12%",
+    "tagPopular": "Popular",
+    "tagSave20": "Economize 20%",
+    "tagSave30": "Economize 30%",
+    "recommended": "RECOMENDADO",
+    "boostPacks": "Pacotes de Impulsos",
+    "packCharm": "Pack Charme",
+    "packSeduction": "Pack Sedução",
+    "packIrresistible": "Pack Irresistível",
+    "packCharmDesc": "3 x 30min",
+    "packSeductionDesc": "5 x 30min",
+    "packIrresistibleDesc": "10 x 30min",
+    "tagSave15": "Economize 15%",
+    "tagSave35": "Economize 35%",
+    "vipMode": "Modo VIP / Incógnito",
+    "vip24hours": "24 horas",
+    "vip7days": "7 dias",
+    "vip30days": "30 dias",
+    "rosesAndBouquets": "Rosas & Buquês",
+    "singleRose": "Rosa Individual",
+    "smallBouquet": "Buquê Pequeno",
+    "mediumBouquet": "Buquê Médio",
+    "largeBouquet": "Buquê Grande",
+    "desc5roses": "5 rosas",
+    "desc12roses": "12 rosas",
+    "tagSave17": "Economize 17%",
+    "tagSave25": "Economize 25%",
+    "questionPaths": "Caminhos de Perguntas",
+    "questionPathsDesc": "Inclui: perguntas + chat + visibilidade de compatibilidade",
+    "essentialPath": "Caminho Essencial",
+    "serenityPath": "Caminho Serenidade",
+    "elitePath": "Caminho Elite",
+    "path30q": "30 Perguntas",
+    "path40q": "40 Perguntas",
+    "lucasTime": "Lucas Time",
+    "aiCoach": "Coach IA",
+    "lucasTime1h": "1 Hora",
+    "lucasTime2h": "2 Horas",
+    "lucasTime5h": "5 Horas",
+    "lucasTime10h": "10 Horas",
+    "lucascopeGuide": "Guia Lucascope",
+    "lucascopeGuideDesc": "+1h/mês de astrologia e compatibilidade",
+    "lucascopeInfinity": "Lucascope Infinity",
+    "lucascopeInfinityDesc": "Economize 2 meses no plano anual",
+    "leDigestif": "Le Digestif",
+    "leDigestifDesc": "(compra única)",
+    "totalEur": "Total (EUR)",
+    "perMonth": "/mês",
+    "totalMeons": "Total Meons",
+    "continue": "Continuar"
   }
 }

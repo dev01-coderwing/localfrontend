@@ -3,7 +3,9 @@ import Navbar from "../Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../Redux/authSlice";
+import { useTranslation } from "react-i18next";
 function Singup() {
+  const { t } = useTranslation();
   const [showEmail, setShowEmail] = useState(false);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -33,7 +35,7 @@ function Singup() {
   };
   return (
     <>
-   
+
 
       <div className="min-h-screen flex items-center justify-center  text-[var(--text-dim)]">
         <div
@@ -43,11 +45,11 @@ function Singup() {
           {/* Header */}
           <div className="text-center mb-7">
             <h1 className="text-3xl leading-snug mb-2">
-              Find connections that<br />truly align
+              {t("signup.headingLine1")}<br />{t("signup.headingLine2")}
             </h1>
 
             <p className="text-sm opacity-70  text-[var(--text-dim2)]">
-              Guided by emotion, voice & compatibility
+              {t("signup.subheading")}
             </p>
           </div>
 
@@ -64,7 +66,7 @@ function Singup() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email address"
+                placeholder={t("signup.emailPlaceholder")}
                 className="w-full px-4 py-3 rounded-xl border border-[var(--border)] text-sm outline-none bg-[var(--card)]  text-[var(--text-dim)]"
                 autoFocus={showEmail}
               />
@@ -82,29 +84,29 @@ function Singup() {
               }}
             >
               {loading
-                ? "Sending..."
+                ? t("signup.sending")
                 : showEmail
-                  ? "Send Verification Code"
-                  : "Confirm"}
+                  ? t("signup.sendVerificationCode")
+                  : t("signup.confirm")}
             </button>
           ) : (
             <div className="w-full py-3 rounded-xl text-center text-sm font-medium mb-5 text-green-600 bg-green-50 border border-green-200">
-              ✓ Welcome! Check your inbox.
+              {t("signup.success")}
             </div>
           )}
 
           {/* Divider */}
           <div className="flex items-center gap-3 mb-5">
             <div className="flex-1 h-px bg-[var(--bg)]" />
-            <span className="text-sm opacity-60">Or</span>
+            <span className="text-sm opacity-60">{t("signup.or")}</span>
             <div className="flex-1 h-px bg-[var(--bg)]" />
           </div>
 
           {/* Sign In */}
           <p className="text-center text-sm opacity-70 mb-4">
-            Already have an account?{" "}
+            {t("signup.alreadyHaveAccount")}{" "}
             <span className=" text-[var(--text-dim2)] font-medium cursor-pointer hover:underline">
-              Sign In
+              {t("signup.signIn")}
             </span>
           </p>
 
@@ -112,7 +114,7 @@ function Singup() {
     <div className="flex flex-col gap-3 mb-5">
   {[
     {
-      label: "Continue with Facebook",
+      labelKey: "signup.continueWithFacebook",
       icon: (
         <svg
           className="w-5 h-5 text-[var(--text-dim)]"
@@ -124,7 +126,7 @@ function Singup() {
       ),
     },
     {
-      label: "Continue with Google",
+      labelKey: "signup.continueWithGoogle",
       icon: (
         <svg className="w-5 h-5" viewBox="0 0 24 24">
           <path
@@ -147,7 +149,7 @@ function Singup() {
       ),
     },
     {
-      label: "Continue with Apple",
+      labelKey: "signup.continueWithApple",
       icon: (
         <svg
           className="w-5 h-5 text-[var(--text-dim)]"
@@ -158,35 +160,35 @@ function Singup() {
         </svg>
       ),
     },
-  ].map(({ label, icon }) => (
+  ].map(({ labelKey, icon }) => (
     <button
-      key={label}
+      key={labelKey}
       className="w-full py-3 px-4 rounded-xl border border-[var(--border)] flex items-center justify-center gap-3 text-sm text-[var(--text-dim)] hover:opacity-80 transition"
     >
       {icon}
-      <span>{label}</span>
+      <span>{t(labelKey)}</span>
     </button>
   ))}
 </div>
 
           {/* Footer */}
           <p className="text-center text-xs opacity-60">
-            By continuing, you agree to our{" "}
+            {t("signup.agreementText")}{" "}
             <span className=" text-[var(--text-dim2)] cursor-pointer hover:underline">
-              Terms of Service
+              {t("signup.termsOfService")}
             </span>{" "}
-            and{" "}
+            {t("signup.and")}{" "}
             <span className=" text-[var(--text-dim2)] cursor-pointer hover:underline">
-              Privacy Policy
+              {t("signup.privacyPolicy")}
             </span>
           </p>
 
           {/* Theme Buttons */}
-          <div className="flex gap-2 mt-4">
-            <button onClick={() => setTheme("light")}>Light</button>
-            <button onClick={() => setTheme("dark")}>Dark</button>
-            <button onClick={() => setTheme("brown")}>Brown</button>
-          </div>
+          {/* <div className="flex gap-2 mt-4">
+            <button onClick={() => setTheme("light")}>{t("signup.themeLight")}</button>
+            <button onClick={() => setTheme("dark")}>{t("signup.themeDark")}</button>
+            <button onClick={() => setTheme("brown")}>{t("signup.themeBrown")}</button>
+          </div> */}
         </div>
       </div>
     </>

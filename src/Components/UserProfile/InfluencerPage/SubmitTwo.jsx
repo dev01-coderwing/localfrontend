@@ -53,7 +53,7 @@ function SubmitTwo({ closePopup }) {
             <span className="font-semibold text-[var(--text-dim)] ">
               24–48 hours
             </span>
-            . We’ll notify you via push notification once your status is updated.
+            . We'll notify you via push notification once your status is updated.
           </p>
         </div>
 

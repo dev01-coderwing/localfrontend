@@ -9,25 +9,322 @@
   "next": "다음",
 
   "intro": {
-    "slide1": {
-      "title": "AI 데이팅 가이드 Lucas를 만나보세요",
-      "description": "Lucas는 사진과 첫인상을 넘어 진정한 궁합을 이해하도록 도와줍니다."
-    },
-    "slide2": {
-      "title": "IAMeetYou의 과학",
-      "description": "Lucas는 당신의 선택과 목소리의 조화를 분석하여 진정한 연결을 만들어 줍니다."
-    },
-    "slide3": {
-      "title": "말을 넘어, 진실의 주파수.",
-      "description": "Big Five • MBTI • 사랑의 언어 • 애착 유형 — 단순한 스와이프가 아닌 진정한 궁합."
-    },
-    "slide4": {
-      "title": "당신의 감정 DNA",
-      "description": "영혼의 나침반처럼 당신의 출생 정보를 활용하여 사랑과 시간을 어떻게 받아들이는지 이해합니다."
-    },
-    "slide5": {
-      "title": "진정성을 위한 공간",
-      "description": "모든 목소리가 진실되고 모든 만남이 의미 있는 특별한 커뮤니티입니다."
+    "slide1": { "title": "AI 데이팅 가이드 Lucas를 만나보세요", "description": "Lucas는 사진과 첫인상을 넘어 진정한 궁합을 이해하도록 도와줍니다." },
+    "slide2": { "title": "IAMeetYou의 과학", "description": "Lucas는 당신의 선택과 목소리의 조화를 분석하여 진정한 연결을 만들어 줍니다." },
+    "slide3": { "title": "말을 넘어, 진실의 주파수.", "description": "Big Five • MBTI • 사랑의 언어 • 애착 유형 — 단순한 스와이프가 아닌 진정한 궁합." },
+    "slide4": { "title": "당신의 감정 DNA", "description": "영혼의 나침반처럼 당신의 출생 정보를 활용하여 사랑과 시간을 어떻게 받아들이는지 이해합니다." },
+    "slide5": { "title": "진정성을 위한 공간", "description": "모든 목소리가 진실되고 모든 만남이 의미 있는 특별한 커뮤니티입니다." }
+  },
+
+  "login": {
+    "title": "계정에 로그인",
+    "description": "IAMeetYou에 가입하여 찾고 있던 인연을 만나보세요.",
+    "email": "이메일 ID",
+    "password": "비밀번호",
+    "enter_email": "이메일 ID 입력",
+    "enter_password": "비밀번호 입력",
+    "show": "표시",
+    "hide": "숨기기",
+    "forgot_password": "비밀번호를 잊으셨나요?",
+    "login": "로그인",
+    "logging_in": "로그인 중...",
+    "failed": "로그인 실패",
+    "validation": {
+      "fill_fields": "모든 필드를 입력해 주세요",
+      "valid_email": "유효한 이메일을 입력해 주세요"
     }
+  },
+
+  "signup": {
+    "headingLine1": "진정으로 맞는",
+    "headingLine2": "인연을 찾아보세요",
+    "subheading": "감정, 목소리, 궁합으로 이끌어드립니다",
+    "emailPlaceholder": "이메일 주소를 입력하세요",
+    "sending": "전송 중...",
+    "sendVerificationCode": "인증 코드 보내기",
+    "confirm": "확인",
+    "success": "✓ 환영합니다! 받은 편지함을 확인하세요.",
+    "or": "또는",
+    "alreadyHaveAccount": "이미 계정이 있으신가요?",
+    "signIn": "로그인",
+    "continueWithFacebook": "Facebook으로 계속하기",
+    "continueWithGoogle": "Google로 계속하기",
+    "continueWithApple": "Apple로 계속하기",
+    "agreementText": "계속 진행하면 다음에 동의하는 것으로 간주됩니다",
+    "termsOfService": "서비스 약관",
+    "and": "및",
+    "privacyPolicy": "개인정보 처리방침",
+    "themeLight": "라이트",
+    "themeDark": "다크",
+    "themeBrown": "브라운"
+  },
+
+  "location": {
+    "title": "내 위치",
+    "subtitle": "근처의 매칭을 찾을 수 있도록 알려주세요",
+    "country": "국가",
+    "countryPlaceholder": "국가를 선택하세요",
+    "city": "도시",
+    "cityPlaceholder": "예: 서울",
+    "continue": "계속"
+  },
+
+  "identity": {
+    "title": "정체성을 선택하세요",
+    "subtitle": "원하는 선택지를 선택하세요",
+    "selectPlaceholder": "정체성 선택",
+    "male": "남성",
+    "female": "여성",
+    "couple": "커플",
+    "continue": "계속"
+  },
+
+  "basicInfo": {
+    "title": "기본 정보",
+    "subtitle": "당신을 더 잘 알아봅시다",
+    "namePlaceholder": "이름을 입력하세요",
+    "pronounsPlaceholder": "그/그를, 그녀/그녀를",
+    "men": "남성",
+    "women": "여성",
+    "everyone": "모두",
+    "continue": "계속"
+  },
+
+  "story": {
+    "title": "당신의 이야기를 들려주세요",
+    "bioPlaceholder": "자신에 대해 알려주세요...",
+    "continue": "계속",
+    "interests": {
+      "travel": "여행",
+      "music": "음악",
+      "fitness": "피트니스",
+      "cooking": "요리",
+      "reading": "독서",
+      "gaming": "게임",
+      "yoga": "요가",
+      "movies": "영화",
+      "photography": "사진",
+      "dancing": "댄스",
+      "nature": "자연"
+    }
+  },
+
+  "photos": {
+    "title": "사진을 추가하세요",
+    "subtitle": "사진 3장 이상 업로드하세요",
+    "alertMin": "사진을 최소 3장 업로드해 주세요",
+    "alertSuccess": "사진이 성공적으로 업로드되었습니다",
+    "alertFailed": "업로드 실패",
+    "alertError": "문제가 발생했습니다",
+    "continue": "계속"
+  },
+
+  "religionOptions": {
+    "title": "종교",
+    "subtitle": "이 항목은 선택 사항이며 궁합에 도움이 됩니다",
+    "christian": "기독교",
+    "muslim": "이슬람교",
+    "hindu": "힌두교",
+    "buddhist": "불교",
+    "skip": "아니요, 이 단계 건너뛰기",
+    "continue": "계속"
+  },
+
+  "astrology": {
+    "title": "점성술 (선택 사항)",
+    "subtitle": "점성술을 기반으로 더 좋은 매칭을 찾아보세요",
+    "birthPlacePlaceholder": "출생지",
+    "zodiacPlaceholder": "별자리 (선택 사항)",
+    "continue": "계속",
+    "skip": "지금은 건너뛰기"
+  },
+
+  "religion": {
+    "title": "종교",
+    "subtitle": "이 항목은 선택 사항이며 궁합에 도움이 됩니다",
+    "preferNotToSpecify": "명시하지 않음",
+    "christian": "기독교",
+    "muslim": "이슬람교",
+    "hindu": "힌두교",
+    "buddhist": "불교",
+    "skip": "아니요, 이 단계 건너뛰기",
+    "continue": "계속"
+  },
+
+  "subscription": {
+    "title": "완벽한 매칭을 찾아보세요",
+    "subtitle": "구독을 선택하여 더 정확한 궁합과 독점 기능을 잠금 해제하세요.",
+    "monthly": "월간",
+    "annual": "연간",
+    "perYear": "/년",
+    "unlockMore": "더 많은 기능과 궁합 잠금 해제",
+    "select": "선택",
+    "plan1": {
+      "name": "Dégustation",
+      "save": "17% 절약",
+      "feature1": "50개 질문",
+      "feature2": "5 Mode Acting",
+      "feature3": "무제한 스와이프",
+      "feature4": "궁합: 0-50% 최대",
+      "feature5": "2개월 Iucasope",
+      "feature6": "2 Moves/일",
+      "feature7": "보너스: Iucasope 가이드 1권",
+      "feature8": "Essential 뱃지"
+    },
+    "plan2": {
+      "name": "Privilège",
+      "save": "26% 절약",
+      "feature1": "90개 질문",
+      "feature2": "9 Mode Acting",
+      "feature3": "무제한 스와이프",
+      "feature4": "궁합: 0-65% 최대",
+      "feature5": "4개월 Iucasope",
+      "feature6": "3 Moves/일",
+      "feature7": "보너스: Iucasope 가이드 2권",
+      "feature8": "Privilège 뱃지"
+    },
+    "plan3": {
+      "name": "Cercle Privé",
+      "save": "33% 절약",
+      "feature1": "130개 질문",
+      "feature2": "13 Mode Acting",
+      "feature3": "무제한 스와이프",
+      "feature4": "궁합: 0-100% 최대",
+      "feature5": "6개월 Iucasope",
+      "feature6": "4 Moves/일",
+      "feature7": "보너스: Iucasope 가이드 3권",
+      "feature8": "Elite 뱃지"
+    },
+    "secureCheckout": "안전한 결제",
+    "paymentMethod": "결제 방법",
+    "paymentSubtitle": "프리미엄 액세스를 위한 선호 방법을 선택하세요",
+    "cardTab": "카드",
+    "applePayTab": "Apple Pay",
+    "pay": "결제하기",
+    "secureStripe": "안전한 Stripe 결제",
+    "encryptionActive": "암호화 활성",
+    "encrypted": "암호화됨",
+    "bankGrade": "은행 수준 보안",
+    "private": "개인정보 보호",
+    "purchaseTerms": "이 구매를 완료하면 서비스 약관에 동의하는 것입니다. 귀하의 데이터는 개인정보 보호 프레임워크에 따라 보호됩니다.",
+    "confirmSubscription": "구독 확인",
+    "confirmQuestion": "선택한 플랜으로 진행하시겠습니까?",
+    "confirm": "확인",
+    "cancel": "취소"
+  },
+
+  "launch": {
+    "badge": "Lucas Personal AI",
+    "voiceSyncLabel": "음성 싱크",
+    "voiceSyncValue": "100% 매칭",
+    "emotionalToneLabel": "감정 톤",
+    "emotionalToneValue": "매우 호환",
+    "title": "더 런치",
+    "descriptionPart1": "안녕하세요! 저는 Lucas, 당신의 개인 AI 가이드입니다. 저희의 독특한 감정 및 음성 분석 기술을 통해 깊고 의미 있는 연결을 찾을 수 있도록 도와드리겠습니다.",
+    "descriptionPart2": "데이팅의 미래에 오신 것을 환영합니다.",
+    "begin": "체험 시작하기"
+  },
+
+  "compatibility": {
+    "title": "호환성 테스트",
+    "questionProgress": "질문 진행 상황",
+    "progress": "{{total}}개 중 {{current}}개",
+    "previous": "이전",
+    "next": "다음"
+  },
+
+  "voiceConsent": {
+    "title": "음성 분석 동의",
+    "description": "호환성 매칭 향상을 위해 목소리에서 감정 톤을 분석합니다. 오디오는 안전하게 처리되며 분석 후 즉시 삭제됩니다. 익명의 호환성 점수만 안전한 데이터베이스에 저장됩니다.",
+    "secureProcessing": "안전한 처리",
+    "autoDeletion": "자동 삭제",
+    "endToEnd": "엔드투엔드 암호화",
+    "agreementText": "호환성 분석을 위한 음성 처리에 동의하며 내 데이터가 보호됨을 인정합니다.",
+    "agreeButton": "동의하고 계속하기",
+    "textModeButton": "대신 텍스트 모드 사용",
+    "cancel": "취소"
+  },
+
+  "voice": {
+    "title": "음성 분석",
+    "questionProgress": "질문 진행 상황",
+    "progressText": "230개 중 10개",
+    "sampleQuestion": "\"주말을 보내는 이상적인 방법은 무엇인가요?\"",
+    "tapToRecord": "탭하여 녹음",
+    "minimumSeconds": "최소 5초 필요"
+  },
+
+  "subscription2": {
+    "title": "La Carte",
+    "heading": "아뮤즈부셰 (애드온)",
+    "headingDesc": "독특한 애드온으로 경험을 맞춤화하여 기회를 극대화하세요.",
+    "meonsPackages": "Meons 패키지",
+    "meons": "Meons",
+    "tagBestValue": "최고 가치",
+    "tagMostPopular": "가장 인기",
+    "pkg": {
+      "mini": "미니",
+      "small": "스몰",
+      "medium": "미디엄",
+      "xl": "XL",
+      "large": "라지"
+    },
+    "visibilityBoosts": "가시성 부스트",
+    "singleBoosts": "싱글 부스트",
+    "boost30min": "30분",
+    "boost1hour": "1시간",
+    "boost2hours": "2시간",
+    "boost4hours": "4시간",
+    "tagRecommend": "추천",
+    "tagSave12": "12% 절약",
+    "tagPopular": "인기",
+    "tagSave20": "20% 절약",
+    "tagSave30": "30% 절약",
+    "recommended": "추천",
+    "boostPacks": "부스트 팩",
+    "packCharm": "참 팩",
+    "packSeduction": "유혹 팩",
+    "packIrresistible": "매력 팩",
+    "packCharmDesc": "3 x 30분",
+    "packSeductionDesc": "5 x 30분",
+    "packIrresistibleDesc": "10 x 30분",
+    "tagSave15": "15% 절약",
+    "tagSave35": "35% 절약",
+    "vipMode": "VIP 모드 / 익명",
+    "vip24hours": "24시간",
+    "vip7days": "7일",
+    "vip30days": "30일",
+    "rosesAndBouquets": "장미 & 꽃다발",
+    "singleRose": "장미 한 송이",
+    "smallBouquet": "작은 꽃다발",
+    "mediumBouquet": "중간 꽃다발",
+    "largeBouquet": "큰 꽃다발",
+    "desc5roses": "장미 5송이",
+    "desc12roses": "장미 12송이",
+    "tagSave17": "17% 절약",
+    "tagSave25": "25% 절약",
+    "questionPaths": "질문 경로",
+    "questionPathsDesc": "포함: 질문 + 채팅 + 호환성 가시성",
+    "essentialPath": "에센셜 경로",
+    "serenityPath": "세레니티 경로",
+    "elitePath": "엘리트 경로",
+    "path30q": "30개 질문",
+    "path40q": "40개 질문",
+    "lucasTime": "Lucas Time",
+    "aiCoach": "AI 코치",
+    "lucasTime1h": "1시간",
+    "lucasTime2h": "2시간",
+    "lucasTime5h": "5시간",
+    "lucasTime10h": "10시간",
+    "lucascopeGuide": "Lucascope 가이드",
+    "lucascopeGuideDesc": "+월 1시간 점성술 및 호환성",
+    "lucascopeInfinity": "Lucascope Infinity",
+    "lucascopeInfinityDesc": "연간 플랜에서 2개월 절약",
+    "leDigestif": "Le Digestif",
+    "leDigestifDesc": "(일회성 구매)",
+    "totalEur": "총액 (EUR)",
+    "perMonth": "/월",
+    "totalMeons": "총 Meons",
+    "continue": "계속"
   }
 }

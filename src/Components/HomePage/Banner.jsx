@@ -95,24 +95,18 @@
 // }
 
 
-
-
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-
 import "swiper/css";
 
 import { getSeasonalBanners } from "../Redux/bannerSlice";
 
 export default function Banner() {
   const dispatch = useDispatch();
-
-  const { banners, loading } = useSelector(
-    (state) => state.banner
-  );
+const BASE_URL = "http://35.180.139.208:3000";
+  const { banners, loading } = useSelector((state) => state.banner);
 
   useEffect(() => {
     dispatch(getSeasonalBanners());
@@ -136,43 +130,58 @@ export default function Banner() {
         }}
       >
         {banners?.map((banner) => (
-          <SwiperSlide key={banner._id}>
-            <div
-              className={`bg-gradient-to-r from-green-800 via-green-900 to-black text-white relative min-h-[260px] p-8 md:p-12`}
-            >
-              <div className="flex flex-col md:flex-row justify-between gap-8">
+ <SwiperSlide key={banner.id}>
+  <div className="relative min-h-[260px] md:min-h-[350px] rounded-3xl overflow-hidden">
 
-                <div className="max-w-lg">
-                  <p className="text-sm text-white/80 mb-5">
-                    {banner.tag}
-                  </p>
+    {/* Background Image */}
+    <img
+      src={`${BASE_URL}/${banner.imageUrl}`}
+      alt={banner.title}
+      className="absolute inset-0 w-full h-full object-cover"
+    />
 
-                  <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-8">
-                    {banner.title}
-                  </h2>
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-black/40"></div>
 
-                  <button className="bg-red-500 hover:bg-red-600 transition px-6 py-3 rounded-xl font-semibold flex items-center gap-2">
-                    {banner.buttonText}
-                    <span>→</span>
-                  </button>
-                </div>
+    {/* Content */}
+    <div className="relative z-10 flex flex-col md:flex-row justify-between gap-8 h-full p-8 md:p-12 text-white">
 
-                <div className="bg-white/15 backdrop-blur-md rounded-3xl px-8 py-6 self-start">
-                  <h1 className="text-4xl md:text-5xl font-bold">
-                    {banner.discount}
-                  </h1>
+      {/* Left */}
+      <div className="max-w-lg flex flex-col justify-center">
+        <p className="text-sm text-white/80 mb-5">
+          🎉 Seasonal Offer
+        </p>
 
-                  <p className="text-sm text-white/80 mt-2">
-                    {banner.subText}
-                  </p>
-                </div>
-              </div>
+        <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-4">
+          {banner.title}
+        </h2>
 
-              <div className="absolute left-1/2 -translate-x-1/2 bottom-5 bg-white/10 backdrop-blur-lg rounded-full px-6 py-2 text-xs md:text-sm text-pink-200">
-                {banner.active}
-              </div>
-            </div>
-          </SwiperSlide>
+        {banner.subtitle && (
+          <p className="text-white/80 mb-4">
+            {banner.subtitle}
+          </p>
+        )}
+
+        {banner.description && (
+          <p className="text-white/70 mb-6">
+            {banner.description}
+          </p>
+        )}
+
+        <button className="bg-red-500 hover:bg-red-600 transition px-6 py-3 rounded-xl font-semibold w-fit">
+          Learn More →
+        </button>
+      </div>
+
+    </div>
+
+    {/* Bottom Badge */}
+    <div className="absolute left-1/2 -translate-x-1/2 bottom-5 bg-white/10 backdrop-blur-lg rounded-full px-6 py-2 text-xs md:text-sm text-pink-200 z-10">
+      Active From: {new Date(banner.startDate).toLocaleDateString()}
+    </div>
+
+  </div>
+</SwiperSlide>
         ))}
       </Swiper>
     </div>

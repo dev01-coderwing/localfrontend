@@ -41,7 +41,7 @@
 //           </h2>
 
 //           <p className="text-[var(--text-dim)] text-[15px] leading-[24px] mt-2 px-3">
-//             We’re reviewing your documents to ensure the safety of our
+//             We're reviewing your documents to ensure the safety of our
 //             community.
 //             <br />
 //             This Usually takes{" "}
@@ -141,7 +141,7 @@ function VerificationProgress({ closeModal }) {
           </h2>
 
           <p className="text-[13px] sm:text-[15px] text-[var(--text-dim2)] leading-6 sm:leading-[24px] mt-3 px-1 sm:px-3">
-            We’re reviewing your documents to ensure the safety of our
+            We're reviewing your documents to ensure the safety of our
             community.
             <br />
             This usually takes{" "}

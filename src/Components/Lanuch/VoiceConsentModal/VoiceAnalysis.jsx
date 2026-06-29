@@ -57,7 +57,7 @@
 
 //         {/* Question */}
 //         <div className="bg-purple-100 text-gray-700 rounded-xl py-6 px-4 mb-6">
-//           “What's your ideal way to spend a weekend?”
+//           "What's your ideal way to spend a weekend?"
 //         </div>
 
 //         {/* Wave */}
@@ -203,7 +203,7 @@
 
 //           {/* Question */}
 //           <div className="bg-purple-100 text-gray-700 rounded-xl py-6 px-4 mb-6">
-//             “What's your ideal way to spend a weekend?”
+//             "What's your ideal way to spend a weekend?"
 //           </div>
 
 //           {/* Wave */}
@@ -265,6 +265,7 @@ import { Mic, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import VoiceConsentModal from "./VoiceConsentModal";
 import Navbar from "../../Navbar/Navbar";
+import { useTranslation } from "react-i18next";
 
 const GAMES = [
   { name: "rush-session", path: "/voiceAnalysis/rushsessionhome" },
@@ -278,6 +279,7 @@ export default function VoiceAnalysis() {
   const [time, setTime] = useState(0);
 
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   // 🎯 Redirect Logic
   const handleGameRedirect = () => {
@@ -344,25 +346,25 @@ export default function VoiceAnalysis() {
             </button>
 
             <h2 className="font-semibold text-lg text-[var(--text-dim)]">
-              Voice Analysis
+              {t("voice.title")}
             </h2>
 
           </div>
 
           {/* Progress */}
           <div className="mb-6 bg-[var(--bg-card)]/10 p-4 rounded-xl">
-            <p className="text-xs text-[var(--text-dim2)] mb-1">Question progress</p>
+            <p className="text-xs text-[var(--text-dim2)] mb-1">{t("voice.questionProgress")}</p>
             <div className="w-full h-1 bg-[var(--border)] rounded-full">
               <div className="h-1 bg-[var(--accent)] rounded-full" style={{ width: "15%" }}></div>
             </div>
             <p className="text-xs text-right text-[var(--text-dim2)] mt-1">
-              10 of 230
+              {t("voice.progressText")}
             </p>
           </div>
 
           {/* Question */}
           <div className="bg-[var(--card)] text-[var(--text-dim)] rounded-xl py-6 px-4 mb-6">
-            “What's your ideal way to spend a weekend?”
+            {t("voice.sampleQuestion")}
           </div>
 
           {/* Wave */}
@@ -398,9 +400,9 @@ export default function VoiceAnalysis() {
               <Mic size={24} />
             </button>
 
-            <p className="text-xs text-[var(--text-dim)] mt-3">Tap to record</p>
+            <p className="text-xs text-[var(--text-dim)] mt-3">{t("voice.tapToRecord")}</p>
             <p className="text-[10px] text-[var(--text-dim2)]">
-              Minimum 5 seconds required
+              {t("voice.minimumSeconds")}
             </p>
           </div>
         </div>
