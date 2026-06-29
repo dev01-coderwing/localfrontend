@@ -5,49 +5,44 @@ import three from "/Image/assistant-rafiki.png";
 import four from "/Image/as.png";
 import five from "/Image/data.png";
 import { useNavigate } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
 const slides = [
   {
     id: 1,
     image: one,
-    title: "Meet Lucas — your AI dating guide",
-    description:
-      "Lucas helps you understand real compatibility — beyond photos and first impressions.",
+    title: "intro.slide1.title",
+    description: "intro.slide1.description",
   },
   {
     id: 2,
     image: two,
-    title: "The Science Behind IAMeetYou",
-    description:
-      "Lucas detects the harmony between your choices and your voice to ensure authentic connections.",
+    title: "intro.slide2.title",
+    description: "intro.slide2.description",
   },
   {
     id: 3,
     image: three,
-    title: "Beyond words, the frequency of truth.",
-    description:
-      "Big Five • MBTI • Love Languages • Attachment Styles — Real compatibility, not just swiping.",
+    title: "intro.slide3.title",
+    description: "intro.slide3.description",
   },
   {
     id: 4,
     image: four,
-    title: "Your emotional DNA",
-    description:
-      "Like a compass for the soul, we use your birth data to map how you navigate love and time.",
+    title: "intro.slide4.title",
+    description: "intro.slide4.description",
   },
   {
     id: 5,
     image: five,
-    title: "A Sanctuary of Authenticity",
-    description:
-      "A curated community where every voice is real and every match is intentional.",
+    title: "intro.slide5.title",
+    description: "intro.slide5.description",
   },
 ];
 
 function Intro() {
   const [current, setCurrent] = useState(0);
   const navigate = useNavigate();
-
+const { t } = useTranslation();
   const nextSlide = () => {
   if (current < slides.length - 1) {
     setCurrent(current + 1);
@@ -83,12 +78,12 @@ function Intro() {
 
           {/* Title */}
           <h2 className="text-2xl font-semibold mb-4 text-[var(--text-dim)]">
-            {slides[current].title}
+           {t(slides[current].title)}
           </h2>
 
           {/* Description */}
           <p className="text-md mb-8 opacity-70 text-[var(--text-dim2)]">
-            {slides[current].description}
+          {t(slides[current].description)}
           </p>
 
           {/* Dots */}
@@ -112,7 +107,7 @@ function Intro() {
             bg-gradient-to-r from-[#D79098] to-[#5F7BF4]
             hover:opacity-90 transition"
           >
-            Next
+            {t("next")}
           </button>
 
         </div>

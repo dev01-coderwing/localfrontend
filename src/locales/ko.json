@@ -5,5 +5,29 @@
   "search_language": "언어 검색...",
   "no_languages_found": "언어를 찾을 수 없습니다",
   "confirm": "확인",
-  "updating": "업데이트 중..."
+  "updating": "업데이트 중...",
+  "next": "다음",
+
+  "intro": {
+    "slide1": {
+      "title": "AI 데이팅 가이드 Lucas를 만나보세요",
+      "description": "Lucas는 사진과 첫인상을 넘어 진정한 궁합을 이해하도록 도와줍니다."
+    },
+    "slide2": {
+      "title": "IAMeetYou의 과학",
+      "description": "Lucas는 당신의 선택과 목소리의 조화를 분석하여 진정한 연결을 만들어 줍니다."
+    },
+    "slide3": {
+      "title": "말을 넘어, 진실의 주파수.",
+      "description": "Big Five • MBTI • 사랑의 언어 • 애착 유형 — 단순한 스와이프가 아닌 진정한 궁합."
+    },
+    "slide4": {
+      "title": "당신의 감정 DNA",
+      "description": "영혼의 나침반처럼 당신의 출생 정보를 활용하여 사랑과 시간을 어떻게 받아들이는지 이해합니다."
+    },
+    "slide5": {
+      "title": "진정성을 위한 공간",
+      "description": "모든 목소리가 진실되고 모든 만남이 의미 있는 특별한 커뮤니티입니다."
+    }
+  }
 }

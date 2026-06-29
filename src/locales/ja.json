@@ -1,9 +1,33 @@
 {
   "choose_language": "言語を選択してください",
-  "select_preferred_language": "ご希望の言語を選択してください",
+  "select_preferred_language": "希望する言語を選択してください",
   "select_language": "言語を選択",
   "search_language": "言語を検索...",
   "no_languages_found": "言語が見つかりません",
   "confirm": "確認",
-  "updating": "更新中..."
+  "updating": "更新中...",
+  "next": "次へ",
+
+  "intro": {
+    "slide1": {
+      "title": "AI恋愛ガイド、Lucasをご紹介",
+      "description": "Lucasは、写真や第一印象だけではわからない本当の相性を理解するお手伝いをします。"
+    },
+    "slide2": {
+      "title": "IAMeetYouを支える科学",
+      "description": "Lucasはあなたの選択と声の調和を分析し、本物のつながりを実現します。"
+    },
+    "slide3": {
+      "title": "言葉を超えて、真実の周波数へ。",
+      "description": "ビッグファイブ・MBTI・愛の言語・愛着スタイル ― スワイプだけではない、本当の相性。"
+    },
+    "slide4": {
+      "title": "あなたの感情DNA",
+      "description": "魂のコンパスのように、あなたの出生データをもとに、愛と時間との向き合い方を読み解きます。"
+    },
+    "slide5": {
+      "title": "本物だけが集う場所",
+      "description": "すべての声が本物であり、すべての出会いに意味がある、厳選されたコミュニティです。"
+    }
+  }
 }

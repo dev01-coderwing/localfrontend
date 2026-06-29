@@ -1,9 +1,33 @@
 {
-  "choose_language": "Wählen Sie Ihre Sprache",
-  "select_preferred_language": "Wählen Sie Ihre bevorzugte Sprache",
+  "choose_language": "Wähle deine Sprache",
+  "select_preferred_language": "Wähle deine bevorzugte Sprache",
   "select_language": "Sprache auswählen",
   "search_language": "Sprache suchen...",
   "no_languages_found": "Keine Sprachen gefunden",
   "confirm": "Bestätigen",
-  "updating": "Aktualisieren..."
+  "updating": "Wird aktualisiert...",
+  "next": "Weiter",
+
+  "intro": {
+    "slide1": {
+      "title": "Lerne Lucas kennen – deinen KI-Dating-Guide",
+      "description": "Lucas hilft dir, echte Kompatibilität zu verstehen – weit über Fotos und den ersten Eindruck hinaus."
+    },
+    "slide2": {
+      "title": "Die Wissenschaft hinter IAMeetYou",
+      "description": "Lucas erkennt die Harmonie zwischen deinen Entscheidungen und deiner Stimme, um authentische Verbindungen zu schaffen."
+    },
+    "slide3": {
+      "title": "Mehr als Worte – die Frequenz der Wahrheit.",
+      "description": "Big Five • MBTI • Liebessprachen • Bindungsstile – Echte Kompatibilität statt nur Wischen."
+    },
+    "slide4": {
+      "title": "Deine emotionale DNA",
+      "description": "Wie ein Kompass für die Seele nutzen wir deine Geburtsdaten, um zu verstehen, wie du Liebe und Zeit erlebst."
+    },
+    "slide5": {
+      "title": "Ein Ort der Authentizität",
+      "description": "Eine sorgfältig ausgewählte Gemeinschaft, in der jede Stimme echt und jede Verbindung bewusst ist."
+    }
+  }
 }

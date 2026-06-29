@@ -1,9 +1,33 @@
 {
   "choose_language": "选择您的语言",
-  "select_preferred_language": "选择您的首选语言",
+  "select_preferred_language": "选择您偏好的语言",
   "select_language": "选择语言",
   "search_language": "搜索语言...",
   "no_languages_found": "未找到语言",
   "confirm": "确认",
-  "updating": "更新中..."
+  "updating": "更新中...",
+  "next": "下一步",
+
+  "intro": {
+    "slide1": {
+      "title": "认识 Lucas —— 您的 AI 恋爱顾问",
+      "description": "Lucas 帮助您了解真正的契合度，而不仅仅是照片和第一印象。"
+    },
+    "slide2": {
+      "title": "IAMeetYou 背后的科学",
+      "description": "Lucas 会分析您的选择与声音之间的契合度，帮助建立真实而有意义的联系。"
+    },
+    "slide3": {
+      "title": "超越语言，感受真实的频率。",
+      "description": "大五人格 • MBTI • 爱的语言 • 依恋类型 —— 真正的契合，而不仅仅是滑动匹配。"
+    },
+    "slide4": {
+      "title": "您的情感 DNA",
+      "description": "就像灵魂的指南针，我们利用您的出生信息来了解您如何面对爱情与人生。"
+    },
+    "slide5": {
+      "title": "真实交友的港湾",
+      "description": "一个精心打造的社区，在这里每一个声音都真实，每一次匹配都充满意义。"
+    }
+  }
 }

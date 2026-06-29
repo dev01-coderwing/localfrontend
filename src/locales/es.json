@@ -5,5 +5,29 @@
   "search_language": "Buscar idioma...",
   "no_languages_found": "No se encontraron idiomas",
   "confirm": "Confirmar",
-  "updating": "Actualizando..."
+  "updating": "Actualizando...",
+  "next": "Siguiente",
+
+  "intro": {
+    "slide1": {
+      "title": "Conoce a Lucas — tu guía de citas con IA",
+      "description": "Lucas te ayuda a comprender la verdadera compatibilidad, más allá de las fotos y las primeras impresiones."
+    },
+    "slide2": {
+      "title": "La ciencia detrás de IAMeetYou",
+      "description": "Lucas detecta la armonía entre tus elecciones y tu voz para garantizar conexiones auténticas."
+    },
+    "slide3": {
+      "title": "Más allá de las palabras, la frecuencia de la verdad.",
+      "description": "Big Five • MBTI • Lenguajes del Amor • Estilos de Apego — Compatibilidad real, no solo deslizar."
+    },
+    "slide4": {
+      "title": "Tu ADN emocional",
+      "description": "Como una brújula para el alma, utilizamos tus datos de nacimiento para comprender cómo navegas por el amor y el tiempo."
+    },
+    "slide5": {
+      "title": "Un santuario de autenticidad",
+      "description": "Una comunidad cuidadosamente seleccionada donde cada voz es real y cada conexión tiene un propósito."
+    }
+  }
 }

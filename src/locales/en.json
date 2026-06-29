@@ -5,5 +5,50 @@
   "search_language": "Search language...",
   "no_languages_found": "No languages found",
   "confirm": "Confirm",
-  "updating": "Updating..."
+  "updating": "Updating...",
+  "next": "Next",
+
+  "intro": {
+    "slide1": {
+      "title": "Meet Lucas — your AI dating guide",
+      "description": "Lucas helps you understand real compatibility — beyond photos and first impressions."
+    },
+    "slide2": {
+      "title": "The Science Behind IAMeetYou",
+      "description": "Lucas detects the harmony between your choices and your voice to ensure authentic connections."
+    },
+    "slide3": {
+      "title": "Beyond words, the frequency of truth.",
+      "description": "Big Five • MBTI • Love Languages • Attachment Styles — Real compatibility, not just swiping."
+    },
+    "slide4": {
+      "title": "Your emotional DNA",
+      "description": "Like a compass for the soul, we use your birth data to map how you navigate love and time."
+    },
+    "slide5": {
+      "title": "A Sanctuary of Authenticity",
+      "description": "A curated community where every voice is real and every match is intentional."
+    }
+  },
+  
+  "login": {
+    "title": "Login your account",
+    "description": "Join IAMeetYou and find the connection you've been looking for.",
+    "email": "Email ID",
+    "password": "Password",
+    "enter_email": "Enter email ID",
+    "enter_password": "Enter Password",
+    "show": "Show",
+    "hide": "Hide",
+    "forgot_password": "Forgot Password?",
+    "login": "Login",
+    "logging_in": "Logging in...",
+    "failed": "Login failed",
+
+    "validation": {
+      "fill_fields": "Please fill all fields",
+      "valid_email": "Enter valid email"
+    }
+  }
+
 }
