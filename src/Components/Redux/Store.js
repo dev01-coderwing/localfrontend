@@ -10,6 +10,7 @@ import verifyReducer from "../Redux/verifySlice";
 import profileReducer from "./profileSlice";
 import chatRequestReducer from "./chatRequestSlice";
 import discoveryReducer from "./discoverySlice";
+import bannerReducer from "./bannerSlice";
 
 export const store = configureStore({
   reducer: {
@@ -24,6 +25,7 @@ export const store = configureStore({
     profile: profileReducer,
     chatRequests: chatRequestReducer,
     discovery: discoveryReducer,
+    banner: bannerReducer,
 
   },
 });
