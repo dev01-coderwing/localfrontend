@@ -176,6 +176,8 @@
 
 // export default Animation;
 
+
+// Now, let's implement the new version of the Animation component with the updated theme management and bubble animations.
 import React, { useState, useEffect } from 'react';
 import { useTheme } from "../../ThemeContext";
 
@@ -284,7 +286,7 @@ const applyTheme = (themeName) => {
       className="w-screen min-h-screen font-sans overflow-x-hidden relative flex items-center justify-center transition-all duration-500 ease-in-out"
     >
       {/* ====== INJECTED ANIMATIONS (For continuous smooth keyframe translation) ====== */}
-      <style>{`
+      {/* <style>{`
         @keyframes floatBubble1 { 0%,100%{transform:translate(0,0)} 33%{transform:translate(30px,50px)} 66%{transform:translate(-20px,-40px)} }
         @keyframes floatBubble2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-40px,40px)} }
         @keyframes floatBubble3 { 0%,100%{transform:translate(0,0)} 25%{transform:translate(30px,-30px)} 50%{transform:translate(-20px,-50px)} 75%{transform:translate(40px,20px)} }
@@ -296,7 +298,7 @@ const applyTheme = (themeName) => {
           background: radial-gradient(circle at 35% 35%, ${current.bubbleReflex} 0%, rgba(255, 255, 255, 0.4) 10%, transparent 30%);
           transform: rotate(45deg);
         }
-      `}</style>
+      `}</style> */}
 
       {/* ====== 1. BACKGROUND BUBBLES ====== */}
       <div className="fixed top-0 left-0 w-full height-full z-0 pointer-events-none">
