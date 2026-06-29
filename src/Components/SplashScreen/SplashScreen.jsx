@@ -69,6 +69,7 @@ export default function SplashScreen() {
       const delay = Math.random() * 5;
       const hasArc = Math.random() > 0.5;
 
+      
       const newBubble = {
         id,
         size,

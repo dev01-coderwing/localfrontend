@@ -315,7 +315,9 @@
 import { useState, useRef, useEffect } from "react";
 import Animation from "../Animation/Animation";
 import { useDispatch, useSelector } from "react-redux";
+import i18n from "../../i18n";
 import { updateLanguage } from "../../Components/Redux/bordingSlice";
+import { useTranslation } from "react-i18next";
 const languages = [
     { code: "en", name: "English", flag: "🇺🇸", native: "English" },
     { code: "es", name: "Spanish", flag: "🇪🇸", native: "Español" },
@@ -344,6 +346,7 @@ function LanguagePage() {
 const navigate = useNavigate();
     const { loading } = useSelector((state) => state.language);
     const { user } = useSelector((state) => state.auth);
+    const { t } = useTranslation();
     useEffect(() => {
         setMounted(true);
     }, []);
@@ -394,6 +397,12 @@ const navigate = useNavigate();
         console.log(result);
 
         if (updateLanguage.fulfilled.match(result)) {
+
+   // i18next language change
+            i18n.changeLanguage(selected.code);
+
+    // optional
+            localStorage.setItem("i18nextLng", selected.code);
 
             setConfirmed(true);
 
@@ -557,10 +566,10 @@ border: 1px solid var(--border);
                                 style={{ fontFamily: "Poppins", fontSize: "2.1rem", letterSpacing: "-0.02em" }}
                                 className="font-medium text-[var(--text-dim)]"
                             >
-                                Choose your language
+                              {t("choose_language")}
                             </h1>
                             <p style={{ fontSize: "1rem" }} className="font-medium opacity-70 text-[var(--text-dim2)]">
-                                Select your preferred language
+                              {t("select_preferred_language")}
                             </p>
                         </div>
 
@@ -580,7 +589,7 @@ border: 1px solid var(--border);
                                     </span>
                                 ) : (
                                     <span style={{ fontWeight: 500, fontSize: "" }} className="text-[var(--text-dim2)]">
-                                        Select language
+                                     {t("select_language")}
                                     </span>
                                 )}
                                 <svg
@@ -600,7 +609,7 @@ border: 1px solid var(--border);
                                             type="text"
                                             value={search}
                                             onChange={(e) => setSearch(e.target.value)}
-                                            placeholder="Search language..."
+                                          placeholder={t("search_language")}
                                             className="search-input  text-[var(--text-dim2)] w-full bg-transparent px-1 py-2 text-sm"
                                             style={{ fontFamily: "'DM Sans', sans-serif" }}
                                         />
@@ -610,7 +619,7 @@ border: 1px solid var(--border);
                                     <div style={{ maxHeight: "240px", overflowY: "auto" }}>
                                         {filtered.length === 0 ? (
                                             <div className="px-5 py-4 text-center" style={{ color: "#b0a0c8", fontSize: "0.9rem" }}>
-                                                No languages found
+                                         {t("no_languages_found")}
                                             </div>
                                         ) : (
                                             filtered.map((lang) => (
@@ -647,10 +656,10 @@ border: 1px solid var(--border);
                         >
                             {
                                 loading
-                                    ? "Updating..."
+                                    ? t("updating")
                                     : confirmed
                                         ? `✓ ${selected?.name} confirmed!`
-                                        : "Confirm"
+                                        : t("confirm")
                             }
                             </button>
                     </div>
