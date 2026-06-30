@@ -126,3 +126,4 @@ const BoostFlowModal = ({ isOpen, onClose }) => {
 };
 
 export default BoostFlowModal;
+
