@@ -97,6 +97,7 @@
 
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -104,6 +105,7 @@ import "swiper/css";
 import { getSeasonalBanners } from "../Redux/bannerSlice";
 
 export default function Banner() {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 const BASE_URL = "http://35.180.139.208:3000";
   const { banners, loading } = useSelector((state) => state.banner);
@@ -149,7 +151,7 @@ const BASE_URL = "http://35.180.139.208:3000";
       {/* Left */}
       <div className="max-w-lg flex flex-col justify-center">
         <p className="text-sm text-white/80 mb-5">
-          🎉 Seasonal Offer
+          {t('banner.seasonal_offer')}
         </p>
 
         <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-4">
@@ -169,7 +171,7 @@ const BASE_URL = "http://35.180.139.208:3000";
         )}
 
         <button className="bg-red-500 hover:bg-red-600 transition px-6 py-3 rounded-xl font-semibold w-fit">
-          Learn More →
+          {t('banner.learn_more')}
         </button>
       </div>
 
@@ -177,7 +179,7 @@ const BASE_URL = "http://35.180.139.208:3000";
 
     {/* Bottom Badge */}
     <div className="absolute left-1/2 -translate-x-1/2 bottom-5 bg-white/10 backdrop-blur-lg rounded-full px-6 py-2 text-xs md:text-sm text-pink-200 z-10">
-      Active From: {new Date(banner.startDate).toLocaleDateString()}
+      {t('banner.active_from')} {new Date(banner.startDate).toLocaleDateString()}
     </div>
 
   </div>

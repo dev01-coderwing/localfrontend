@@ -515,6 +515,7 @@
 
 import React from "react";
 import { X, Building2, Check } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ConfirmWithdrawal = ({
   amount = 100,
@@ -524,6 +525,7 @@ const ConfirmWithdrawal = ({
   onConfirm,
   onCancel,
 }) => {
+  const { t } = useTranslation();
   return (
     <div
       className="fixed inset-0 z-[99999] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
@@ -547,7 +549,7 @@ const ConfirmWithdrawal = ({
         {/* Header */}
         <div className="flex items-center justify-between px-5 pt-5">
           <h2 className="text-[15px] font-medium text-[var(--text-dim)]">
-            Confirm Withdrawal
+            {t('confirmWithdrawal.confirm_withdrawal')}
           </h2>
 
           <button
@@ -583,19 +585,18 @@ const ConfirmWithdrawal = ({
             </div>
 
             <h1 className="mt-5 text-[26px] font-bold text-[var(--text-dim)]">
-              Confirm Withdrawal
+              {t('confirmWithdrawal.confirm_withdrawal')}
             </h1>
 
             <p className="mt-2 max-w-[280px] text-center text-[12px] text-[var(--text-dim2)]">
-              Please review your payout details carefully before finalizing the
-              transaction.
+              {t('confirmWithdrawal.review_payout')}
             </p>
           </div>
 
           {/* Amount Card */}
           <div className="mt-6 rounded-2xl p-4 border border-[var(--border)] bg-[var(--bg-card)]/10">
             <p className="text-[12px] font-medium text-[var(--text-dim)]">
-              Withdrawal Amount
+              {t('confirmWithdrawal.withdrawal_amount')}
             </p>
 
             <h2 className="mt-2 text-[36px] font-bold text-[var(--text-dim)]">
@@ -638,7 +639,7 @@ const ConfirmWithdrawal = ({
               transition
             "
           >
-            Confirm Payout
+            {t('confirmWithdrawal.confirm_payout')}
           </button>
 
           {/* Cancel Button */}
@@ -655,7 +656,7 @@ const ConfirmWithdrawal = ({
               transition
             "
           >
-            Cancel
+            {t('confirmWithdrawal.cancel')}
           </button>
         </div>
       </div>

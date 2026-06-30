@@ -1,4 +1,5 @@
 import {React,useState }from "react";
+import { useTranslation } from "react-i18next";
 import InfluencerWallet from './InfluencerWallet';
 import { X } from "lucide-react";
 
@@ -11,7 +12,7 @@ import {
 } from "lucide-react";
 
 
-const Kycverified = ({ 
+const Kycverified = ({
   isOpen = true,
   onClose = () => {},
   balance = "82.50",
@@ -23,9 +24,9 @@ const Kycverified = ({
   onBankClick = () => {},
   onKycClick = () => {},
 }) => {
-
+  const { t } = useTranslation();
    const [openWalletPopup, setOpenWalletPopup] = useState(false);
-  
+
   if (!isOpen) return null;
 
   if (openWalletPopup) {
@@ -79,7 +80,7 @@ const Kycverified = ({
             "
           >
             <span className="w-2 h-2 rounded-full bg-[#5CFF72]" />
-            Subscription Active
+            {t('kycVerified.subscription_active')}
           </div>
 
           <div
@@ -95,14 +96,14 @@ const Kycverified = ({
             "
           >
             <Wallet size={13} />
-            Active Balance
+            {t('kycVerified.active_balance')}
           </div>
         </div>
 
         {/* Balance */}
         <div className="mb-7">
           <p className="  text-[var(--text-dim)] text-[15px] sm:text-[16px] font-semibold mb-2">
-            Available for withdrawal
+            {t('kycVerified.available_for_withdrawal')}
           </p>
 
           <h2 className="text-[var(--text-dim)] text-[42px] sm:text-[48px] font-bold tracking-tight">
@@ -175,7 +176,7 @@ const Kycverified = ({
                 shadow-md
               "
             >
-              Verified
+              {t('kycVerified.verified')}
             </div>
           )}
 
@@ -211,7 +212,7 @@ const Kycverified = ({
               {/* Text */}
               <div className="text-left">
                 <h3 className="text-[var(--text-dim)] text-[18px] font-bold">
-                  KYC Verification
+                  {t('kycVerified.kyc_verification')}
                 </h3>
 
                 <p
@@ -222,7 +223,7 @@ const Kycverified = ({
                     max-w-[230px]
                   "
                 >
-                  To unlock withdrawals, complete a quick identity check.
+                  {t('kycVerified.unlock_withdrawals')}
                 </p>
               </div>
             </div>
@@ -251,7 +252,7 @@ const Kycverified = ({
             active:scale-[0.99]
           "
         >
-          Wallet Details
+          {t('kycVerified.wallet_details')}
         </button>
       </div>
     </div>
@@ -259,7 +260,3 @@ const Kycverified = ({
 };
 
 export default Kycverified;
-
-
-
-

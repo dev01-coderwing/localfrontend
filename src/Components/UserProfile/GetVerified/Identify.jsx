@@ -4,9 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { ChevronLeft, Sparkles } from "lucide-react";
 import {detectFace,} from "../../Redux/verifySlice";
 import { useDispatch,useSelector,} from "react-redux";
+import { useTranslation } from "react-i18next";
 
 function Identify() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [progress, setProgress] = useState(0);
 const dispatch = useDispatch();
 
@@ -62,7 +64,7 @@ useEffect(() => {
           </button>
 
           <h2 className="text-[18px] font-semibold text-[var(--text-dim)]">
-            Identity Verification
+            {t('identify.identity_verification')}
           </h2>
         </div>
 
@@ -70,16 +72,15 @@ useEffect(() => {
         <div className="mx-auto  flex flex-col items-center bg-[var(--bg-card)]/10  px-6 py-8 w-full max-w-md">
 
           <p className="text-[12px] text-[var(--text-dim2)]">
-            Step 2 of 2
+            {t('identify.step_2_of_2')}
           </p>
 
           <h1 className="text-[24px] sm:text-[30px] font-bold text-[var(--text-dim)] mt-2 text-center whitespace-nowrap">
-            Verifying your details...
+            {t('identify.verifying_details')}
           </h1>
 
           <p className="text-center text-[var(--text-dim2)] text-sm mt-3 leading-6 max-w-[300px]">
-            Our AI is checking your photo and ID for a secure
-            match. This usually takes less than 2 minutes.
+            {t('identify.description')}
           </p>
 
           {/* Animated Icon */}
@@ -106,8 +107,8 @@ useEffect(() => {
           <div className="flex justify-between items-center mt-4 w-[310px]">
             <span className="text-[10px] text-[var(--text-dim2)]">
               {isCompleted
-                ? "Scanning Successful"
-                : "Scanning Identity"}
+                ? t('identify.scanning_successful')
+                : t('identify.scanning_identity')}
             </span>
 
             <span className="text-[10px] text-[var(--text-dim2)] font-medium">
@@ -121,7 +122,7 @@ useEffect(() => {
               onClick={() => navigate("/complete")}
               className="w-[330px] h-11 mt-5 rounded-lg text-white font-medium bg-gradient-to-r from-[#D58AA2] to-[#566CF5]"
             >
-              Continue
+              {t('identify.continue')}
             </button>
           )}
 

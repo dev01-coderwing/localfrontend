@@ -10,10 +10,12 @@ import { useEffect } from "react";
 import { getMeonBalanceThunk, getTransactionsThunk } from "../Redux/meonsSlice";
 
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const WalletPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 const [showAll, setShowAll] = React.useState(false);
   const { balance, transactions, loading, error } = useSelector(
     (state) => state.meon,
@@ -39,13 +41,13 @@ const [showAll, setShowAll] = React.useState(false);
               </button>
 
               <h2 className="text-2xl font-semibold text-[var(--text-dim)]">
-                Setting
+                {t('wallet.setting')}
               </h2>
             </div>
 
             {/* TITLE */}
             <h3 className="text-sm text-[var(--text-dim)] mb-4">
-              MEONS Wallet
+              {t('wallet.meons_wallet')}
             </h3>
 
             {/* WALLET CARD */}
@@ -53,7 +55,7 @@ const [showAll, setShowAll] = React.useState(false);
               {/* LEFT */}
               <div>
                 <p className="text-xs text-[var(--text-dim)] mb-2">
-                  MEONS BALANCE
+                  {t('wallet.meons_balance')}
                 </p>
 
                 <div className="flex items-center gap-3">
@@ -87,14 +89,14 @@ const [showAll, setShowAll] = React.useState(false);
                 onClick={() => navigate("/earn-meons")}
                 className="flex-1 py-3 rounded-xl border border-[#FCA5A5] text-[#F87171]"
               >
-                Earn Meons
+                {t('wallet.earn_meons')}
               </button>
 
               <button
                 onClick={() => navigate("/spend-meons")}
                 className="flex-1 py-3 rounded-xl text-white bg-gradient-to-r from-[#D79098] to-[#5F7BF4]"
               >
-                Spend Meons
+                {t('wallet.spend_meons')}
               </button>
             </div>
 
@@ -102,14 +104,14 @@ const [showAll, setShowAll] = React.useState(false);
             <div className="mt-6">
               <div className="flex justify-between items-center mb-3">
                 <h4 className="text-sm text-[var(--text-dim)]">
-                  Recent History
+                  {t('wallet.recent_history')}
                 </h4>
 
 <button
   onClick={() => setShowAll(!showAll)}
   className="text-xs text-blue-500"
 >
-  {showAll ? "Show Less" : "View All"}
+  {showAll ? t('wallet.show_less') : t('wallet.view_all')}
 </button>
               </div>
               {(showAll
@@ -148,8 +150,7 @@ const [showAll, setShowAll] = React.useState(false);
 
               {/* FOOTER NOTE */}
               <p className="text-xs text-[var(--text-dim)] text-center mt-4">
-                Meons cannot be withdrawn or converted to real money. Usage
-                subject to terms.
+                {t('wallet.disclaimer')}
               </p>
             </div>
           </div>

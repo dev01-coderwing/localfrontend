@@ -337,6 +337,7 @@
 
 import React, { useMemo, useState } from "react";
 import { X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const promoData = [
   {
@@ -377,6 +378,7 @@ const statusStyles = {
 };
 
 export default function PromoCodeList({onClose}) {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("All");
 
   const filteredData = useMemo(() => {
@@ -464,7 +466,7 @@ export default function PromoCodeList({onClose}) {
               pr-10
             "
           >
-            Promo Code History
+            {t('promoCodeList.promo_code_history')}
           </h2>
 
           {/* Tabs */}
@@ -503,7 +505,7 @@ export default function PromoCodeList({onClose}) {
                     }
                   `}
                 >
-                  {tab}
+                  {t(`promoCodeList.tab_${tab.toLowerCase()}`)}
                 </button>
               );
             })}
@@ -559,7 +561,7 @@ export default function PromoCodeList({onClose}) {
                             text-[var(--text-dim2)]
                           "
                         >
-                          Usage
+                          {t('promoCodeList.usage')}
                         </p>
 
                         <p
@@ -616,7 +618,7 @@ export default function PromoCodeList({onClose}) {
                             text-[var(--text-dim)]
                           "
                         >
-                          Total Earned
+                          {t('promoCodeList.total_earned')}
                         </p>
 
                         <p
@@ -652,7 +654,7 @@ export default function PromoCodeList({onClose}) {
                     text-gray-500
                   "
                 >
-                  No promo codes found.
+                  {t('promoCodeList.no_promo_codes')}
                 </div>
               )}
             </div>

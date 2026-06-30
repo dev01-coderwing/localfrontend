@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 import React, { useState } from "react";
 import { X, Building2, IdCard, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -13,9 +5,11 @@ import { useNavigate } from "react-router-dom";
 import PopupTwo from "./PopupTwo";
 import Selfie from "./Selfie";
 import VerificationProgress from "./VerificationProgress";
+import { useTranslation } from "react-i18next";
 
 function VerifyModal({ closeModal }) {
   const [step, setStep] = useState(1);
+  const { t } = useTranslation();
 
   const navigate = useNavigate();
 
@@ -24,7 +18,7 @@ function VerifyModal({ closeModal }) {
       {/* STEP 1 */}
       {step === 1 && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 px-3 sm:px-4 py-4 overflow-y-auto">
-          
+
           <div className="bg-[var(--bg-background)] w-full max-w-[480px] min-h-[500px] rounded-[20px] border border-[var(--border)] pt-5 sm:pt-6 px-4 sm:px-8 md:px-[43px] pb-6 relative flex flex-col gap-4">
 
             {/* Close Button */}
@@ -37,7 +31,7 @@ function VerifyModal({ closeModal }) {
 
             {/* Title */}
             <h2 className="text-[18px] sm:text-[20px] font-bold text-[var(--text-dim)]">
-              KYC Verification
+              {t('verifyModal.kyc_verification')}
             </h2>
 
             {/* Icon */}
@@ -52,13 +46,12 @@ function VerifyModal({ closeModal }) {
 
             {/* Heading */}
             <h3 className="text-center text-[22px] sm:text-[25px] leading-snug font-bold text-[var(--text-dim)]">
-              Quick Identity Check
+              {t('verifyModal.quick_identity_check')}
             </h3>
 
             {/* Description */}
             <p className="text-center text-[13px] sm:text-[15px] leading-6 sm:leading-7 text-[var(--text-dim2)]">
-              To keep our community safe and secure, we need to verify your
-              identity before your first withdrawal.
+              {t('verifyModal.description')}
             </p>
 
             {/* Info Box */}
@@ -72,11 +65,11 @@ function VerifyModal({ closeModal }) {
 
               <div>
                 <h4 className="font-semibold text-[14px] sm:text-[15px] text-[var(--text-dim)]">
-                  Only Government ID + Selfie required
+                  {t('verifyModal.only_gov_id')}
                 </h4>
 
                 <p className="text-[var(--text-dim2)] text-[13px] sm:text-sm mt-1">
-                  Takes 1-2 minutes.
+                  {t('verifyModal.takes_minutes')}
                 </p>
               </div>
             </div>
@@ -86,7 +79,7 @@ function VerifyModal({ closeModal }) {
               onClick={() => setStep(2)}
               className="w-full py-3 rounded-2xl text-white font-semibold text-[15px] sm:text-[16px] bg-gradient-to-r from-pink-300 to-blue-500 flex items-center justify-center gap-2"
             >
-              Start Verification <ArrowRight size={18} />
+              {t('verifyModal.start_verification')} <ArrowRight size={18} />
             </button>
 
             {/* Later Button */}
@@ -94,7 +87,7 @@ function VerifyModal({ closeModal }) {
               onClick={closeModal}
               className="w-full text-[14px] sm:text-[15px] text-[var(--text-dim)] font-medium"
             >
-              May Be Later
+              {t('verifyModal.may_be_later')}
             </button>
           </div>
         </div>

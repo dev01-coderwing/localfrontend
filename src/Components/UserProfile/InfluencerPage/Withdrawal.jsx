@@ -198,6 +198,7 @@
 
 import React, { useState } from "react";
 import { X, ShieldCheck } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import ConfirmWithdrawal from "./ConfirmWithdrawal";
 
 const Withdrawal = ({
@@ -208,6 +209,7 @@ const Withdrawal = ({
   minimumWithdraw = 20,
   onClose,
 }) => {
+  const { t } = useTranslation();
   const [showConfirmWithdrawal, setShowConfirmWithdrawal] = useState(false);
   console.log("showConfirmWithdrawal =", showConfirmWithdrawal);
 
@@ -231,7 +233,7 @@ const Withdrawal = ({
           {/* Header */}
           <div className="flex items-center justify-between px-4 sm:px-5 pt-4 sm:pt-5">
             <h2 className="text-[16px] sm:text-[18px] font-semibold text-[var(--text-dim)]">
-              Withdraw Amount
+              {t('withdrawal.withdraw_amount')}
             </h2>
 
             <button
@@ -255,7 +257,7 @@ const Withdrawal = ({
             {/* Balance Card */}
             <div className="mt-4 sm:mt-5 rounded-2xl bg-[var(--bg-card)]/10 p-3 sm:p-4 border border-[var(--border)]">
               <p className="text-[11px] sm:text-[12px] font-medium text-[var(--text-dim)]">
-                Available Balance
+                {t('withdrawal.available_balance')}
               </p>
 
               <h1 className="mt-2 text-[28px] sm:text-[34px] font-bold tracking-tight text-[var(--text-dim)]">
@@ -265,19 +267,18 @@ const Withdrawal = ({
 
               <div className="mt-2 flex items-start gap-1 text-[10px] sm:text-[11px] text-[var(--text-dim2)] leading-relaxed">
                 <div className="mt-[4px] h-[6px] w-[6px] rounded-full bg-black shrink-0" />
-                <span>Includes all cleared earnings as of today</span>
+                <span>{t('withdrawal.includes_earnings')}</span>
               </div>
             </div>
 
             <p className="mt-3 text-center text-[10px] leading-relaxed text-[var(--text-dim2)] px-1">
-              By submitting, you agree to our influencer Partnership Terms.
-              Approved codes usually go live {processingTime}.
+              {t('withdrawal.partnership_terms', { processingTime })}
             </p>
 
             {/* Amount Input */}
             <div className="mt-4 sm:mt-5">
               <label className="mb-2 block text-[12px] sm:text-[13px] font-medium text-[var(--text-dim)]">
-                Enter Amount
+                {t('withdrawal.enter_amount')}
               </label>
 
               <input
@@ -301,7 +302,7 @@ const Withdrawal = ({
               />
 
               <p className="mt-2 text-[10px] sm:text-[11px] text-[var(--text-dim2)]">
-                Minimum withdrawal amount is €{minimumWithdraw}.
+                {t('withdrawal.minimum_withdrawal', { amount: minimumWithdraw })}
               </p>
             </div>
 
@@ -325,12 +326,11 @@ const Withdrawal = ({
 
               <div>
                 <h4 className="text-[12px] sm:text-[13px] font-semibold text-[var(--text-dim)]">
-                  Verification Required
+                  {t('withdrawal.verification_required')}
                 </h4>
 
                 <p className="mt-1 text-[10px] sm:text-[11px] leading-relaxed text-[var(--text-dim2)]">
-                  First withdrawal requires identity verification.
-                  Allow 2-5 business days for processing after KYC approval.
+                  {t('withdrawal.verification_desc')}
                 </p>
               </div>
             </div>
@@ -368,11 +368,11 @@ const Withdrawal = ({
                 active:scale-[0.99]
               "
             >
-              Continue to Review
+              {t('withdrawal.continue_to_review')}
             </button>
 
             <div className="mt-4 text-center text-[10px] text-[var(--text-dim2)]">
-              🔒 End-to-end encrypted
+              {t('withdrawal.end_to_end_encrypted')}
             </div>
           </div>
         </div>

@@ -474,8 +474,10 @@ import {
 
 import Navbar from "../../Navbar/Navbar";
 import Right from "../layout/Right";
+import { useTranslation } from "react-i18next";
 
 function DeactivatedDashboard() {
+  const { t } = useTranslation();
   const statsData = [
     {
       title: "Total Referrals",
@@ -515,25 +517,25 @@ function DeactivatedDashboard() {
               </button>
 
               <h1 className="text-[20px] sm:text-[24px] font-semibold text-[var(--text-dim)]">
-                Setting
+                {t('deactivatedDashboard.setting')}
               </h1>
             </div>
 
             {/* Dashboard Title */}
             <div className="mb-4">
               <h2 className="text-[15px] font-semibold text-[var(--text-dim2)]">
-                Influencer Dashboard
+                {t('deactivatedDashboard.influencer_dashboard')}
               </h2>
             </div>
 
             {/* Subscription Alert */}
             <div className="bg-red-500 rounded-[14px] p-4 text-white mb-5">
               <p className="text-[13px] font-medium">
-                Your subscription is inactive. Reactivate to enable your promo code.
+                {t('deactivatedDashboard.subscription_inactive')}
               </p>
 
               <button className="w-full mt-3 h-[38px] rounded-full bg-white text-red-500 text-[13px] font-medium">
-                Renew Subscription 
+                {t('deactivatedDashboard.renew_subscription')}
               </button>
             </div>
 
@@ -553,7 +555,7 @@ function DeactivatedDashboard() {
                       </div>
 
                       <span className="text-[12px] text-[#888]">
-                        {item.title}
+                        {t(`deactivatedDashboard.stat_${index}_title`)}
                       </span>
                     </div>
 
@@ -575,16 +577,16 @@ function DeactivatedDashboard() {
               <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
                 <div>
                   <h3 className="text-[15px] font-semibold text-[var(--text-dim)]">
-                    Promo Code
+                    {t('deactivatedDashboard.promo_code')}
                   </h3>
 
                   <p className="text-[12px] text-[var(--text-dim2)] mt-1">
-                    Your Promo Code
+                    {t('deactivatedDashboard.your_promo_code')}
                   </p>
                 </div>
 
                 <button className="text-[12px] text-[var(--text-dim)] font-medium">
-                  View All
+                  {t('deactivatedDashboard.view_all')}
                 </button>
               </div>
 
@@ -598,14 +600,14 @@ function DeactivatedDashboard() {
                   </span>
 
                   <span className="absolute bottom-1 text-[10px] text-red-500">
-                    Tracking suspended
+                    {t('deactivatedDashboard.tracking_suspended')}
                   </span>
                 </div>
 
                 {/* Copy Button */}
                 <button className="h-[58px] px-6 rounded-[14px] bg-[#f1cb08] text-[#222] text-[14px] font-medium flex items-center justify-center gap-2 w-full lg:w-auto">
                   <Copy size={16} />
-                  Copy Code
+                  {t('deactivatedDashboard.copy_code')}
                 </button>
 
                 {/* Gift Button */}
@@ -615,7 +617,7 @@ function DeactivatedDashboard() {
               </div>
 
               <p className="text-[11px] text-red-500 mt-3 text-center">
-                Referrals are not being tracked currently
+                {t('deactivatedDashboard.referrals_not_tracked')}
               </p>
 
             {/* LIGHT BLURRED LOWER SECTION */}
@@ -634,29 +636,29 @@ function DeactivatedDashboard() {
 
         <div className="flex flex-wrap gap-2 mb-4">
           <span className="px-3 py-1 rounded-full bg-[#dff5e4] text-[#55a56a] text-[11px] whitespace-nowrap">
-            Subscription Active
+            {t('deactivatedDashboard.subscription_active')}
           </span>
 
           <span className="px-3 py-1 rounded-full bg-[#e7e4e4] text-[#777] text-[11px] whitespace-nowrap">
-            Withdrawal Locked
+            {t('deactivatedDashboard.withdrawal_locked')}
           </span>
         </div>
 
         <h3 className="text-[16px] font-semibold text-[#222]">
-          Eligibility progress
+          {t('deactivatedDashboard.eligibility_progress')}
         </h3>
 
         <p className="text-[13px] text-[#8a8a8a] mt-2">
-          Reach milestones to unlock premium features.
+          {t('deactivatedDashboard.reach_milestones')}
         </p>
 
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mt-4">
           <span className="text-[13px] font-medium">
-            Active Referrals Progress
+            {t('deactivatedDashboard.active_referrals_progress')}
           </span>
 
           <span className="text-[13px] font-semibold">
-            3/5 Needed
+            {t('deactivatedDashboard.needed')}
           </span>
         </div>
 
@@ -673,11 +675,11 @@ function DeactivatedDashboard() {
 
         <div className="min-w-0">
           <h4 className="text-[14px] font-semibold text-[#222]">
-            Unlock Bank Withdrawals
+            {t('deactivatedDashboard.unlock_bank_withdrawals')}
           </h4>
 
           <p className="text-[12px] text-[#888] mt-1">
-            Maintain 5 active referrals for 30 days.
+            {t('deactivatedDashboard.maintain_referrals')}
           </p>
         </div>
       </div>
@@ -686,11 +688,11 @@ function DeactivatedDashboard() {
 
   {/* KEEP BUTTON CLEAR */}
   <button className="w-full mt-4 h-[50px] rounded-[14px] text-white font-medium bg-gradient-to-r from-pink-300 to-indigo-500">
-    Renew Subscription
+    {t('deactivatedDashboard.renew_subscription')}
   </button>
 
   <p className="text-[11px] text-[var(--text-dim2)] text-center mt-3">
-    Reactivate now to restart your earning potential.
+    {t('deactivatedDashboard.reactivate_now')}
   </p>
 </div>
             </div>

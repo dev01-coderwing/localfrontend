@@ -9,8 +9,9 @@ import PaymentFailedModal from "./PaymentFailedModal";
 import InviteFriendsModal from "./InviteFriendsModal";
 import InviteConnectionsModal from "./InviteConnectionsModal";
 import ShareInviteModal from "./ShareInviteModal";
-import { useState } from 'react';   
+import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import {
   ArrowLeft,
@@ -28,6 +29,7 @@ import {
 
 const RealCurrencyWallet = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const earnItems = [
     {
@@ -125,13 +127,13 @@ const [showShareInvite, setShowShareInvite] =
               </button>
 
               <h2 className="text-2xl font-semibold text-[var(--text)]">
-                Setting
+                {t('realCurrencyWallet.setting')}
               </h2>
             </div>
 
             {/* TITLE */}
             <h3 className="text-sm font-semibold text-[var(--text-dim)] mb-4">
-              Real Currency Wallet
+              {t('realCurrencyWallet.real_currency_wallet')}
             </h3>
 
             {/* WALLET CARD */}
@@ -152,7 +154,7 @@ const [showShareInvite, setShowShareInvite] =
   <div className="relative z-10">
 
     <p className="text-white/70 text-xs tracking-wide">
-      AVAILABLE BALANCE
+      {t('realCurrencyWallet.available_balance')}
     </p>
 
     <h1 className="text-5xl font-bold text-white mt-2">
@@ -166,7 +168,7 @@ const [showShareInvite, setShowShareInvite] =
   onClick={() => setShowConvertModal(true)}
   className="px-4 py-2 rounded-full bg-[#4F6EF7] text-white text-sm"
 >
-  + Add Balance
+  {t('realCurrencyWallet.add_balance')}
 </button>
   </div>
 </div>
@@ -175,14 +177,14 @@ const [showShareInvite, setShowShareInvite] =
             <div className="grid grid-cols-2 gap-4 mt-5">
 
               <button className="py-3 rounded-full bg-gradient-to-r from-[#D79098] to-[#5F7BF4] text-white font-medium">
-                Use in Store
+                {t('realCurrencyWallet.use_in_store')}
               </button>
 
               <button
   onClick={() => setShowConvertModal(true)}
   className="py-3 rounded-full border border-purple-300 text-purple-500 font-medium"
 >
-  Convert to Meons
+  {t('realCurrencyWallet.convert_to_meons')}
 </button>
             </div>
 
@@ -190,7 +192,7 @@ const [showShareInvite, setShowShareInvite] =
             <div className="mt-8">
 
               <h4 className="text-sm font-semibold text-[var(--text-dim)] mb-4">
-                How to Earn
+                {t('realCurrencyWallet.how_to_earn')}
               </h4>
 
               <div className="bg-[var(--bg)] rounded-[22px] p-6 border border-[var(--border)]">
@@ -208,11 +210,11 @@ const [showShareInvite, setShowShareInvite] =
                       </div>
 
                       <h4 className="text-sm font-semibold text-[var(--text)]">
-                        {item.title}
+                        {t(`realCurrencyWallet.earn_${index}_title`)}
                       </h4>
 
                       <p className="text-[11px] text-[var(--text-dim)] mt-1 leading-4">
-                        {item.desc}
+                        {t(`realCurrencyWallet.earn_${index}_desc`)}
                       </p>
                     </div>
                   ))}
@@ -223,7 +225,7 @@ const [showShareInvite, setShowShareInvite] =
   onClick={() => setShowInviteFriends(true)}
   className="w-full mt-8 py-3 rounded-full bg-gradient-to-r from-[#D79098] to-[#5F7BF4] text-white font-medium"
 >
-  Invite Friends
+  {t('realCurrencyWallet.invite_friends')}
 </button>
               </div>
             </div>
@@ -232,7 +234,7 @@ const [showShareInvite, setShowShareInvite] =
             <div className="mt-8">
 
               <h4 className="text-sm font-semibold text-[var(--text-dim)] mb-4">
-                Where You Can Use It
+                {t('realCurrencyWallet.where_can_use')}
               </h4>
 
               <div className="bg-[var(--bg)] rounded-[22px] p-6 border border-[var(--border)]">
@@ -252,7 +254,7 @@ const [showShareInvite, setShowShareInvite] =
                       </div>
 
                       <p className="text-xs font-medium text-[var(--text)] leading-4">
-                        {item.label}
+                        {t(`realCurrencyWallet.use_${index}_label`)}
                       </p>
                     </div>
                   ))}

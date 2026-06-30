@@ -68,8 +68,8 @@
 //         </div>
 
 //         {/* Button */}
-//         <button 
-        
+//         <button
+
 //         className="w-full h-[45px] rounded-2xl mt-7 text-white font-semibold bg-gradient-to-r from-[#D9A5B3] to-[#5C6CFF]">
 //           Back to Dashboard
 //         </button>
@@ -93,10 +93,12 @@
 import React from "react";
 import { X, Clock3, Lock, ShieldCheck } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function VerificationProgress({ closeModal }) {
 
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div className="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50 px-3 sm:px-4 py-4 overflow-y-auto">
@@ -129,7 +131,7 @@ function VerificationProgress({ closeModal }) {
             <div className="w-2 h-2 rounded-full bg-[#D96A1B]"></div>
 
             <span className="text-[#D96A1B] text-[13px] sm:text-sm font-medium">
-              Under Review
+              {t('verificationProgress.under_review')}
             </span>
           </div>
         </div>
@@ -137,16 +139,15 @@ function VerificationProgress({ closeModal }) {
         {/* Heading */}
         <div className="text-center mt-4">
           <h2 className="text-[18px] sm:text-[20px] leading-snug font-bold text-[var(--text-dim)]">
-            Verification in Progress
+            {t('verificationProgress.verification_in_progress')}
           </h2>
 
           <p className="text-[13px] sm:text-[15px] text-[var(--text-dim2)] leading-6 sm:leading-[24px] mt-3 px-1 sm:px-3">
-            We're reviewing your documents to ensure the safety of our
-            community.
+            {t('verificationProgress.reviewing_note')}
             <br />
-            This usually takes{" "}
+            {t('verificationProgress.usually_takes')}{" "}
             <span className="font-semibold text-[var(--text-dim)]">
-              2-5 business days.
+              {t('verificationProgress.business_days')}
             </span>
           </p>
         </div>
@@ -163,7 +164,7 @@ function VerificationProgress({ closeModal }) {
             </div>
 
             <span className="text-[14px] sm:text-[16px] text-[var(--text-dim)] font-medium truncate">
-              Withdrawal Funds
+              {t('verificationProgress.withdrawal_funds')}
             </span>
           </div>
 
@@ -178,14 +179,14 @@ function VerificationProgress({ closeModal }) {
           onClick={() => navigate("/profile")}
           className="w-full min-h-[45px] rounded-2xl mt-7 text-white font-semibold text-[15px] sm:text-[16px] bg-gradient-to-r from-[#D9A5B3] to-[#5C6CFF]"
         >
-          Back to Dashboard
+          {t('verificationProgress.back_to_dashboard')}
         </button>
 
         {/* Footer */}
         <p className="text-center text-[13px] sm:text-sm text-[var(--text-dim)] leading-6 mt-5">
-          Need help?{" "}
+          {t('verificationProgress.need_help')}{" "}
           <span className="text-[#5C6CFF] cursor-pointer font-medium">
-            Contact Support
+            {t('verificationProgress.contact_support')}
           </span>
         </p>
 
@@ -195,4 +196,3 @@ function VerificationProgress({ closeModal }) {
 }
 
 export default VerificationProgress;
-

@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 import React, { useState } from "react";
 import {
   X,
@@ -15,10 +8,12 @@ import {
 import { useNavigate } from "react-router-dom";
 
 import Selfie from "./Selfie";
+import { useTranslation } from "react-i18next";
 
 function GetVerify({ closeModal }) {
 
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const [selectedDoc, setSelectedDoc] = useState("");
   const [previewUrl, setPreviewUrl] = useState(null);
@@ -56,18 +51,18 @@ function GetVerify({ closeModal }) {
 
   return (
     <>
-    
+
       <div className="w-full min-h-screen bg-[var(--bg-background)] px-4 sm:px-6 md:px-10 py-5 overflow-x-hidden">
 
         {/* ================= HEADER ================= */}
         <div className="flex items-start sm:items-center justify-between gap-4">
           <div>
             <h2 className="text-[20px] sm:text-[24px] font-bold text-[var(--text-dim)]">
-              KYC Verification
+              {t('getVerify.kyc_verification')}
             </h2>
 
             <p className="text-[14px] sm:text-[16px] font-medium text-[var(--text-dim2)] mt-1">
-              Upload document
+              {t('getVerify.upload_document')}
             </p>
           </div>
 
@@ -89,18 +84,18 @@ function GetVerify({ closeModal }) {
         {/* ================= TITLE ================= */}
         <div className="text-center mt-8 sm:mt-9">
           <h1 className="text-[26px] sm:text-[34px] leading-snug font-bold text-[var(--text-dim)]">
-            Verify Your Identity
+            {t('getVerify.verify_your_identity')}
           </h1>
 
           <p className="text-[14px] sm:text-[18px] text-[var(--text-dim2)] mt-3 leading-6 sm:leading-8 max-w-[800px] mx-auto">
-            To keep our community safe, we need to quickly verify who you are.
+            {t('getVerify.description')}
           </p>
         </div>
 
         {/* ================= DOCUMENT TYPES ================= */}
         <div className="mt-8 sm:mt-9">
           <h3 className="text-[22px] sm:text-[25px] font-bold text-[var(--text-dim)]">
-            Select Document Type
+            {t('getVerify.select_document_type')}
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
@@ -156,11 +151,11 @@ function GetVerify({ closeModal }) {
 
                 {/* Content */}
                 <h4 className="text-[19px] sm:text-[22px] text-center font-semibold text-[var(--text-dim)] mt-5">
-                  {doc.title}
+                  {t(`getVerify.doc_${doc.id}_title`)}
                 </h4>
 
                 <p className="text-[13px] sm:text-[15px] text-center text-[var(--text-dim2)] mt-3 leading-6">
-                  {doc.desc}
+                  {t(`getVerify.doc_${doc.id}_desc`)}
                 </p>
               </div>
             ))}
@@ -170,7 +165,7 @@ function GetVerify({ closeModal }) {
         {/* ================= DOCUMENT UPLOAD ================= */}
         <div className="mt-10 sm:mt-14">
           <h3 className="text-[22px] sm:text-[25px] font-bold text-[var(--text-dim)] mt-5">
-            Upload Document
+            {t('getVerify.upload_document_heading')}
           </h3>
 
           <div className="mt-6 border-2 border-dashed border-[var(--accent)] bg-[var(--bg-card)]/10 rounded-[28px] min-h-[300px] sm:min-h-[340px] flex flex-col items-center justify-center text-center px-4 sm:px-10 relative overflow-hidden">
@@ -199,19 +194,18 @@ function GetVerify({ closeModal }) {
                 </div>
 
                 <h4 className="text-[21px] sm:text-[25px] font-semibold text-[var(--text-dim)] mt-6">
-                  Upload Government ID
+                  {t('getVerify.upload_gov_id')}
                 </h4>
 
                 <p className="text-[14px] sm:text-[16px] text-[var(--text-dim2)] mt-4 leading-6 sm:leading-7">
-                  High-quality JPG, JPEG, PNG or PDF <br />
-                  formats supported
+                  {t('getVerify.formats_supported')}
                 </p>
 
                 <label
                   htmlFor="docUpload"
                   className="mt-7 px-6 sm:px-7 py-3 border border-[var(--accent)] rounded-xl bg-[var(--bg-background)] text-[var(--text-dim)] font-medium cursor-pointer"
                 >
-                  Select File
+                  {t('getVerify.select_file')}
                 </label>
               </>
             )}
@@ -221,8 +215,7 @@ function GetVerify({ closeModal }) {
         {/* ================= INFO BOX ================= */}
         <div className="text-[var(--text-dim2)] mt-8 w-full border border-[var(--border)] rounded-xl min-h-[52px] flex items-center justify-center px-4 py-3">
           <p className="text-center text-[13px] sm:text-[15px] leading-6">
-            Ensure the document is well-lit and all four corners are visible.
-            Avoid shadows and glare for faster verification.
+            {t('getVerify.info_note')}
           </p>
         </div>
 
@@ -231,7 +224,7 @@ function GetVerify({ closeModal }) {
           onClick={() => setShowSelfie(true)}
           className="w-full mt-8 py-3 rounded-2xl bg-gradient-to-r from-pink-300 to-blue-500 text-white text-[15px] sm:text-[16px] font-medium"
         >
-          Continue
+          {t('getVerify.continue')}
         </button>
       </div>
 
@@ -247,4 +240,3 @@ function GetVerify({ closeModal }) {
 }
 
 export default GetVerify;
-

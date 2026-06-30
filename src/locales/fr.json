@@ -626,5 +626,443 @@
     "five_minutes": "5 minutes",
     "dismiss": "Ignorer",
     "extend": "Prolonger"
+  },
+
+  "wallet": {
+    "setting": "Paramètres",
+    "meons_wallet": "Portefeuille MEONS",
+    "meons_balance": "SOLDE MEONS",
+    "earn_meons": "Gagner des Meons",
+    "spend_meons": "Dépenser des Meons",
+    "recent_history": "Historique Récent",
+    "show_less": "Voir Moins",
+    "view_all": "Voir Tout",
+    "disclaimer": "Les Meons ne peuvent pas être retirés ou convertis en argent réel. Utilisation soumise aux conditions."
+  },
+
+  "earnMeons": {
+    "setting": "Paramètres",
+    "how_to_earn": "Comment Gagner des Meons",
+    "meons_balance": "SOLDE MEONS",
+    "available_tasks": "Tâches Disponibles",
+    "task_1_title": "Connexion Quotidienne",
+    "task_1_desc": "Revenez demain pour plus",
+    "task_2_title": "Mini Jeux",
+    "task_2_desc": "Défiez les autres et gagnez des récompenses.",
+    "task_3_title": "Compléter le Profil",
+    "task_3_desc": "70% Complété",
+    "play_now": "Jouer Maintenant",
+    "finish_setup": "Terminer la Configuration",
+    "disclaimer": "Les Meons peuvent être utilisés pour des boosts, des mises en avant de profil et des cadeaux. Conditions Générales applicables."
+  },
+
+  "spendMeons": {
+    "setting": "Paramètres",
+    "spend_meons": "Dépenser des Meons",
+    "meons_balance": "SOLDE MEONS",
+    "buy": "Acheter",
+    "item_details": "Détails de l'Article",
+    "rare_item": "ARTICLE RARE",
+    "description": "Un symbole d'élégance et d'appréciation, l'envoi de cet article augmente le score de popularité du destinataire de 50 points et ajoute une touche spéciale à son profil.",
+    "price_per_unit": "Prix par unité",
+    "your_current_balance": "Votre Solde Actuel",
+    "quantity": "Quantité",
+    "total_cost": "Coût Total",
+    "confirm_purchase": "Confirmer l'Achat",
+    "purchase_successful": "Achat Réussi",
+    "deducted": "{{amount}} déduit de votre portefeuille",
+    "use_now": "Utiliser Maintenant",
+    "back_to_wallet": "Retour au Portefeuille",
+    "not_enough_meons": "Pas assez de Meons",
+    "purchase_failed": "Achat Échoué",
+    "something_went_wrong": "Une erreur s'est produite",
+    "disclaimer": "Les achats d'articles virtuels sont définitifs et non remboursables. Conditions Générales applicables.",
+    "product_0_name": "Rose Rouge",
+    "product_1_name": "Boost de Profil",
+    "product_2_name": "VIP Or",
+    "product_3_name": "Super Like",
+    "product_4_name": "Diamant de Cristal",
+    "product_5_name": "Mode Invisible"
+  },
+
+  "verifyModal": {
+    "kyc_verification": "Vérification KYC",
+    "quick_identity_check": "Vérification Rapide d'Identité",
+    "description": "Pour maintenir la sécurité de notre communauté, nous devons vérifier votre identité avant votre premier retrait.",
+    "only_gov_id": "Seulement une pièce d'identité + Selfie requis",
+    "takes_minutes": "Prend 1-2 minutes.",
+    "start_verification": "Commencer la Vérification",
+    "may_be_later": "Peut-être Plus Tard"
+  },
+
+  "popupOne": {
+    "kyc_verification": "Vérification KYC",
+    "quick_identity_check": "Vérification Rapide d'Identité",
+    "description": "Pour maintenir la sécurité de notre communauté, nous devons vérifier votre identité avant votre premier retrait.",
+    "only_gov_id": "Seulement une pièce d'identité + Selfie requis",
+    "takes_minutes": "Prend 1-2 minutes.",
+    "start_verification": "Commencer la Vérification",
+    "may_be_later": "Peut-être Plus Tard"
+  },
+
+  "popupTwo": {
+    "kyc_verification": "Vérification KYC",
+    "verify_your_identity": "Vérifiez Votre Identité",
+    "description": "Pour maintenir la sécurité de notre communauté, nous devons vérifier rapidement qui vous êtes.",
+    "upload_gov_id": "Télécharger une Pièce d'Identité",
+    "id_types": "Permis de conduire, Passeport",
+    "take_selfie": "Prendre un Selfie",
+    "quick_photo": "Une photo rapide pour correspondre à votre pièce d'identité",
+    "continue": "Continuer",
+    "privacy_note": "En continuant, vous acceptez notre processus de vérification d'identité et notre politique de confidentialité."
+  },
+
+  "getVerify": {
+    "kyc_verification": "Vérification KYC",
+    "upload_document": "Télécharger un document",
+    "verify_your_identity": "Vérifiez Votre Identité",
+    "description": "Pour maintenir la sécurité de notre communauté, nous devons vérifier rapidement qui vous êtes.",
+    "select_document_type": "Sélectionner le Type de Document",
+    "doc_passport_title": "Passeport",
+    "doc_passport_desc": "Document de voyage international",
+    "doc_national_title": "Carte Nationale d'Identité",
+    "doc_national_desc": "Carte d'identité délivrée par le gouvernement",
+    "doc_license_title": "Permis de Conduire",
+    "doc_license_desc": "Permis de conduire valide",
+    "upload_document_heading": "Télécharger un Document",
+    "upload_gov_id": "Télécharger une Pièce d'Identité",
+    "formats_supported": "Formats JPG, JPEG, PNG ou PDF de haute qualité pris en charge",
+    "select_file": "Sélectionner un Fichier",
+    "info_note": "Assurez-vous que le document est bien éclairé et que les quatre coins sont visibles. Évitez les ombres et les reflets pour une vérification plus rapide.",
+    "continue": "Continuer"
+  },
+
+  "selfie": {
+    "kyc_verification": "Vérification KYC",
+    "take_a_selfie": "Prendre un Selfie",
+    "step_2_of_3": "Étape 2 sur 3",
+    "identity_verification": "Vérification d'Identité",
+    "hold_steady": "Tenez votre téléphone stable et regardez directement la caméra",
+    "ensure_face": "Assurez-vous que votre visage est bien éclairé et entre dans le guide.",
+    "open_camera": "Ouvrir la Caméra",
+    "do_later": "Je le ferai plus tard",
+    "capture": "Capturer",
+    "retake": "Reprendre",
+    "re_capture": "Re-Capturer",
+    "confirm": "Confirmer"
+  },
+
+  "verificationProgress": {
+    "under_review": "En Cours de Révision",
+    "verification_in_progress": "Vérification en Cours",
+    "reviewing_note": "Nous examinons vos documents pour assurer la sécurité de notre communauté.",
+    "usually_takes": "Cela prend généralement",
+    "business_days": "2 à 5 jours ouvrables.",
+    "withdrawal_funds": "Retirer des Fonds",
+    "back_to_dashboard": "Retour au Tableau de Bord",
+    "need_help": "Besoin d'aide ?",
+    "contact_support": "Contacter le Support"
+  },
+
+  "realCurrencyWallet": {
+    "setting": "Paramètres",
+    "real_currency_wallet": "Portefeuille en Monnaie Réelle",
+    "available_balance": "SOLDE DISPONIBLE",
+    "add_balance": "+ Ajouter du Solde",
+    "use_in_store": "Utiliser en Boutique",
+    "convert_to_meons": "Convertir en Meons",
+    "how_to_earn": "Comment Gagner",
+    "where_can_use": "Où Vous Pouvez l'Utiliser",
+    "invite_friends": "Inviter des Amis",
+    "earn_0_title": "Invitez un ami",
+    "earn_0_desc": "Partagez votre lien de parrainage unique",
+    "earn_1_title": "L'ami s'abonne",
+    "earn_1_desc": "Quand il rejoint la communauté premium",
+    "earn_2_title": "L'ami bénéficie de 10% de réduction",
+    "earn_2_desc": "Un cadeau de bienvenue instantané pour eux",
+    "earn_3_title": "Vous gagnez 10% de cashback",
+    "earn_3_desc": "Crédité directement sur ce portefeuille",
+    "use_0_label": "Acheter des Meons",
+    "use_1_label": "Améliorer l'Abonnement",
+    "use_2_label": "Lucascope",
+    "use_3_label": "Q-Bonus / Temps Lucas",
+    "use_4_label": "Lettres"
+  },
+
+  "getVerified": {
+    "get_verified": "Se Vérifier",
+    "description": "Augmentez la confiance et la sécurité en vérifiant votre profil.",
+    "step_1_title": "Prendre un selfie",
+    "step_1_desc": "Photo rapide pour vérifier que c'est vous",
+    "step_2_title": "Révision par IA",
+    "step_2_desc": "Vérifié en moins de 2 minutes",
+    "start_verification": "Commencer la Vérification",
+    "privacy_note": "Vos données sont chiffrées et gérées conformément à notre politique de confidentialité."
+  },
+
+  "takeSelfie": {
+    "step_1_of_2": "Étape 1 sur 2",
+    "take_a_selfie": "Prendre un Selfie",
+    "compare_note": "Nous comparerons cette photo avec votre pièce d'identité officielle.",
+    "face_detection": "● Détection Faciale Active",
+    "center_face": "Centrez votre visage dans le cercle",
+    "retake_photo": "Reprendre la Photo",
+    "uploading": "Téléchargement...",
+    "capture": "Capturer",
+    "upload_failed": "Échec du Téléchargement",
+    "focus_note": "Attendez que votre photo soit nette. Gardez une expression neutre."
+  },
+
+  "identify": {
+    "step_2_of_2": "Étape 2 sur 2",
+    "identity_verification": "Vérification d'Identité",
+    "verifying_details": "Vérification de vos informations...",
+    "description": "Notre IA vérifie votre photo et votre pièce d'identité pour une correspondance sécurisée. Cela prend généralement moins de 2 minutes.",
+    "scanning_successful": "Numérisation Réussie",
+    "scanning_identity": "Numérisation de l'Identité",
+    "continue": "Continuer"
+  },
+
+  "complete": {
+    "verification_complete": "Vérification Terminée",
+    "description": "Votre profil est maintenant vérifié. Vous avez gagné votre badge bleu, aidant les autres à se sentir plus en sécurité en se connectant avec vous.",
+    "trust_score": "{{score}}% Score de Confiance",
+    "go_to_profile": "Aller au Profil"
+  },
+
+  "introduction": {
+    "setting": "Paramètres",
+    "influencer_program": "Programme Influenceur",
+    "register_as_influencer": "S'inscrire comme Influenceur",
+    "become_an": "Devenez un",
+    "influencer": "Influenceur",
+    "hero_desc": "Rejoignez notre cercle élite de créateurs et développez votre source de revenus passifs.",
+    "get_approved": "Être Approuvé",
+    "quick_review": "Processus de révision rapide",
+    "create_promo": "Créer une Promo",
+    "your_custom_code": "Votre code personnalisé",
+    "global_policy": "Politique Mondiale",
+    "fixed_discount": "Remise Fixe",
+    "commission_structure": "Structure des Commissions",
+    "commission": "Commission",
+    "eligibility_0_title": "5 Parrainages Actifs",
+    "eligibility_0_desc": "Exigence mensuelle minimale pour déclencher des paiements récurrents.",
+    "eligibility_1_title": "Abonnement Actif",
+    "eligibility_1_desc": "Les influenceurs doivent maintenir leur propre compte premium.",
+    "eligibility_2_title": "Plafond de Croissance Annuel de 10%",
+    "eligibility_2_desc": "Plafond de rétention annuel pour votre rétention annuelle de base.",
+    "eligibility_3_title": "Retrait Minimum de €30",
+    "eligibility_3_desc": "Les commissions sont versées une fois que votre solde atteint €30.",
+    "register_btn": "S'inscrire comme Influenceur →"
+  },
+
+  "registrationPopup": {
+    "influencer_registration": "Inscription Influenceur",
+    "join_the_elite": "Rejoindre l'Élite",
+    "complete_registration": "Complétez votre inscription pour commencer à gagner des commissions.",
+    "personal_info": "Informations Personnelles",
+    "full_name": "Nom Complet",
+    "full_name_placeholder": "Neetesh",
+    "email_address": "Adresse E-mail",
+    "email_placeholder": "neeteshiuixdesigner@gmail.com",
+    "agreement": "Accord",
+    "agreement_0_title": "Accepter les Conditions d'Influenceur",
+    "agreement_0_desc": "J'ai lu et j'accepte les conditions générales d'utilisation et les directives de conduite des influenceurs.",
+    "agreement_1_title": "Accepter la Politique de Commission",
+    "agreement_1_desc": "J'accepte le calendrier de paiement et la structure de commission basée sur les performances.",
+    "agreement_2_title": "Exigence de vérification KYC",
+    "agreement_2_desc": "Je comprends que la vérification d'identité est obligatoire pour les paiements.",
+    "submit_application": "Soumettre la Candidature"
+  },
+
+  "submitApplication": {
+    "submit_question": "Soumettre la Candidature ?",
+    "review_prefix": "Votre demande d'Influenceur sera examinée dans",
+    "review_hours": "24–48 heures",
+    "review_suffix": ". Nous vous notifierons par notification push une fois votre statut mis à jour.",
+    "confirm": "Confirmer",
+    "cancel": "Annuler"
+  },
+
+  "influencerDashboard": {
+    "setting": "Paramètres",
+    "influencer_dashboard": "Tableau de Bord Influenceur",
+    "stat_0_title": "Total des Parrainages",
+    "stat_1_title": "Actifs Maintenant",
+    "stat_2_title": "Gains Totaux",
+    "promo_code": "Code Promo",
+    "your_promo_code": "Votre Code Promo",
+    "view_all": "Tout Voir",
+    "copied": "Copié !",
+    "copy_code": "Copier le Code",
+    "share_title": "Code Promo",
+    "share_text": "Utilisez mon code promo {{code}} et obtenez {{discount}} de réduction",
+    "eligibility_progress": "Progression d'Éligibilité",
+    "needed": "3/5 Nécessaires",
+    "reach_milestones": "Atteignez des jalons pour débloquer des fonctionnalités premium.",
+    "unlock_bank_withdrawals": "Débloquer les Retraits Bancaires",
+    "maintain_referrals": "Maintenez 5 parrainages actifs pendant 30 jours.",
+    "recent_activity": "Activité Récente"
+  },
+
+  "promoCodeModal": {
+    "create_promo_code": "Créer un Code Promo",
+    "code_name": "Nom du Code",
+    "available": "Disponible",
+    "live_preview": "Aperçu en Direct",
+    "client_discount": "Remise Client",
+    "commission_info": "Les taux de commission sont fixes et appliqués automatiquement à votre tableau de bord des gains.",
+    "secure_payouts": "Paiements Sécurisés",
+    "real_time_analytics": "Analyses en temps réel",
+    "submit_for_approval": "Soumettre pour Approbation",
+    "terms_note": "En soumettant, vous acceptez nos Conditions de Partenariat Influenceur. Les codes approuvés sont généralement mis en ligne dans les 24 heures."
+  },
+
+  "deactivatedDashboard": {
+    "setting": "Paramètres",
+    "influencer_dashboard": "Tableau de Bord Influenceur",
+    "subscription_inactive": "Votre abonnement est inactif. Réactivez pour activer votre code promo.",
+    "renew_subscription": "Renouveler l'Abonnement",
+    "stat_0_title": "Total des Parrainages",
+    "stat_1_title": "Actifs Maintenant",
+    "stat_2_title": "Gains Totaux",
+    "promo_code": "Code Promo",
+    "your_promo_code": "Votre Code Promo",
+    "view_all": "Tout Voir",
+    "tracking_suspended": "Suivi suspendu",
+    "referrals_not_tracked": "Les parrainages ne sont pas suivis actuellement",
+    "copy_code": "Copier le Code",
+    "subscription_active": "Abonnement Actif",
+    "withdrawal_locked": "Retrait Bloqué",
+    "eligibility_progress": "Progression d'éligibilité",
+    "reach_milestones": "Atteignez des jalons pour débloquer des fonctionnalités premium.",
+    "active_referrals_progress": "Progression des Parrainages Actifs",
+    "needed": "3/5 Nécessaires",
+    "unlock_bank_withdrawals": "Débloquer les Retraits Bancaires",
+    "maintain_referrals": "Maintenez 5 parrainages actifs pendant 30 jours.",
+    "reactivate_now": "Réactivez maintenant pour relancer votre potentiel de gains."
+  },
+
+  "walletPopup": {
+    "subscription_active": "Abonnement Actif",
+    "active_balance": "Solde Actif",
+    "available_for_withdrawal": "Disponible pour retrait",
+    "add_bank_details": "Ajouter les Coordonnées Bancaires",
+    "kyc_verification": "Vérification KYC",
+    "unlock_withdrawals": "Pour débloquer les retraits, effectuez une vérification d'identité rapide.",
+    "wallet_details": "Détails du Portefeuille"
+  },
+
+  "addBankPopup": {
+    "add_bank_details": "Ajouter les Coordonnées Bancaires",
+    "payout_details": "Détails du Paiement",
+    "complete_registration": "Complétez votre inscription pour commencer à gagner des commissions.",
+    "account_holder_name": "Nom du Titulaire du Compte",
+    "enter_name": "Entrez le nom",
+    "account_number": "Numéro de Compte",
+    "enter_account_number": "Entrez le numéro de compte",
+    "bank_name": "Nom de la Banque",
+    "enter_bank_name": "Entrez le nom de la banque",
+    "disclaimer_text": "Des frais de virement bancaire peuvent s'appliquer pour les retraits hors EUR. Vos données financières sont cryptées et gérées conformément à notre",
+    "privacy_policy": "Politique de Confidentialité.",
+    "save_bank_account": "Enregistrer le Compte Bancaire",
+    "end_to_end_encrypted": "Chiffrement de bout en bout"
+  },
+
+  "submitTwo": {
+    "submit_question": "Soumettre la Candidature ?",
+    "review_prefix": "Votre demande d'Influenceur sera examinée dans",
+    "review_hours": "24–48 heures",
+    "review_suffix": ". Nous vous notifierons par notification push une fois votre statut mis à jour.",
+    "confirm_submission": "Confirmer la Soumission",
+    "cancel": "Annuler"
+  },
+
+  "influencerWallet": {
+    "my_referrals": "Mes Parrainages",
+    "subscription_active": "• Abonnement Actif",
+    "active_balance": "• Solde Actif",
+    "available_balance": "Solde Disponible",
+    "bank_detail": "Détail Bancaire",
+    "verified": "Vérifié",
+    "kyc_verification": "Vérification KYC",
+    "unlock_withdrawals": "Pour débloquer les retraits, effectuez une vérification d'identité rapide.",
+    "withdraw": "Retirer",
+    "currency_information": "Informations sur la Devise",
+    "currency_info_desc": "Les retraits dans des devises autres que l'EUR entraîneront des frais bancaires. Nous recommandons de retirer en EUR pour éviter les frais.",
+    "total_amount": "Montant Total : €125.99",
+    "transaction_id": "ID de Transaction : #WB-562-31",
+    "processing": "• En cours",
+    "progress_0": "Demande",
+    "progress_1": "En cours",
+    "progress_2": "Envoyé à la Banque",
+    "withdraw_history": "Historique des Retraits",
+    "view_all": "Tout Voir",
+    "commission": "Commission"
+  },
+
+  "withdrawal": {
+    "withdraw_amount": "Montant du Retrait",
+    "available_balance": "Solde Disponible",
+    "includes_earnings": "Inclut tous les gains liquidés à ce jour",
+    "partnership_terms": "En soumettant, vous acceptez nos Conditions de Partenariat Influenceur. Les codes approuvés sont généralement mis en ligne {{processingTime}}.",
+    "enter_amount": "Entrer le Montant",
+    "minimum_withdrawal": "Le montant minimum de retrait est €{{amount}}.",
+    "verification_required": "Vérification Requise",
+    "verification_desc": "Le premier retrait nécessite une vérification d'identité. Prévoyez 2 à 5 jours ouvrables pour le traitement après l'approbation KYC.",
+    "continue_to_review": "Continuer vers la Révision",
+    "end_to_end_encrypted": "🔒 Chiffrement de bout en bout"
+  },
+
+  "confirmWithdrawal": {
+    "confirm_withdrawal": "Confirmer le Retrait",
+    "review_payout": "Veuillez vérifier attentivement les détails de votre paiement avant de finaliser la transaction.",
+    "withdrawal_amount": "Montant du Retrait",
+    "confirm_payout": "Confirmer le Paiement",
+    "cancel": "Annuler"
+  },
+
+  "promoCodeList": {
+    "promo_code_history": "Historique des Codes Promo",
+    "tab_all": "Tous",
+    "tab_active": "Actifs",
+    "tab_expired": "Expirés",
+    "tab_request": "Demande",
+    "usage": "Utilisation",
+    "total_earned": "Total Gagné",
+    "no_promo_codes": "Aucun code promo trouvé."
+  },
+
+  "submitPromoCode": {
+    "submit_promo_code": "Soumettre le Code Promo ?",
+    "review_before_activation": "Votre code sera examiné avant activation.",
+    "usually_takes": "Cela prend généralement moins de 24 heures",
+    "submit_now": "Soumettre Maintenant",
+    "cancel": "Annuler"
+  },
+
+  "referralPopup": {
+    "my_referrals": "Mes Parrainages",
+    "tracking": "Suivi de {{count}} parrainages actifs",
+    "search_placeholder": "Rechercher par nom...",
+    "active_duration": "Durée Active",
+    "total_earned": "Total Gagné",
+    "no_referrals": "Aucun parrainage trouvé"
+  },
+
+  "kycVerified": {
+    "subscription_active": "Abonnement Actif",
+    "active_balance": "Solde Actif",
+    "available_for_withdrawal": "Disponible pour retrait",
+    "verified": "Vérifié",
+    "kyc_verification": "Vérification KYC",
+    "unlock_withdrawals": "Pour débloquer les retraits, effectuez une vérification d'identité rapide.",
+    "wallet_details": "Détails du Portefeuille"
+  },
+
+  "banner": {
+    "seasonal_offer": "🎉 Offre Saisonnière",
+    "learn_more": "En Savoir Plus →",
+    "active_from": "Actif à partir de :"
   }
 }

@@ -5,9 +5,11 @@ import { ArrowLeft, CalendarDays, Gamepad2, UserCheck } from "lucide-react";
 import coins from "/Image/coins.png"; // your coins image
 import coin from "/Image/coin.png"
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const EarnMeons = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [balance, setBalance] = React.useState(1240);
 
   const [tasks, setTasks] = React.useState([
@@ -56,13 +58,13 @@ const EarnMeons = () => {
               </button>
 
               <h2 className="text-2xl font-semibold text-[var(--text-dim)]">
-                Setting
+                {t('earnMeons.setting')}
               </h2>
             </div>
 
             {/* TITLE */}
             <p className="text-sm font-semibold text-[var(--text-dim)] mb-4">
-              How to Earn Meons
+              {t('earnMeons.how_to_earn')}
             </p>
 
             {/* WALLET CARD */}
@@ -71,7 +73,7 @@ const EarnMeons = () => {
               {/* LEFT */}
               <div>
                 <p className="text-xs text-[var(--text-dim)] mb-2">
-                  MEONS BALANCE
+                  {t('earnMeons.meons_balance')}
                 </p>
 
                 <div className="flex items-center gap-3">
@@ -101,7 +103,7 @@ const EarnMeons = () => {
 
             {/* AVAILABLE TASKS */}
             <h3 className="text-sm font-semibold text-[var(--text-dim)] mb-3">
-              Available Tasks
+              {t('earnMeons.available_tasks')}
             </h3>
 
             <div className="space-y-4">
@@ -117,7 +119,7 @@ const EarnMeons = () => {
                     <div className="flex items-center gap-3">
 
                       {/* ICON */}
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center 
+                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center
           ${task.type === "login" ? "bg-blue-100" :
                           task.type === "game" ? "bg-indigo-100" :
                             "bg-purple-100"}`}>
@@ -138,10 +140,10 @@ const EarnMeons = () => {
                       {/* TEXT */}
                       <div>
                         <p className="font-semibold text-[var(--text-dim)]">
-                          {task.title}
+                          {t(`earnMeons.task_${task.id}_title`)}
                         </p>
                         <p className="text-xs text-[var(--text-dim2)]">
-                          {task.description}
+                          {t(`earnMeons.task_${task.id}_desc`)}
                         </p>
                       </div>
 
@@ -161,7 +163,7 @@ const EarnMeons = () => {
                       }}
                       className="w-full py-3 rounded-xl text-white bg-gradient-to-r from-[#D79098] to-[#5F7BF4]"
                     >
-                      Play Now
+                      {t('earnMeons.play_now')}
                     </button>
                   )}
 
@@ -180,7 +182,7 @@ const EarnMeons = () => {
                         }}
                         className="w-full py-3 rounded-xl bg-[var(--bg-card)]/10 text-[var(--text-dim)]"
                       >
-                        Finish Setup
+                        {t('earnMeons.finish_setup')}
                       </button>
                     </>
                   )}
@@ -191,7 +193,7 @@ const EarnMeons = () => {
 
             {/* FOOTER */}
             <p className="text-xs text-gray-400 text-center mt-6">
-              Meons can be used for boosts, profile highlights, and gifts. Terms and Conditions apply.
+              {t('earnMeons.disclaimer')}
             </p>
 
           </div>

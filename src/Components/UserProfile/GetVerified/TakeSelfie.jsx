@@ -1,9 +1,3 @@
-
-
-
-
-
-
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -14,8 +8,11 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { uploadSelfie } from "../../Redux/verifySlice";
 import Navbar from "../../Navbar/Navbar";
+import { useTranslation } from "react-i18next";
+
 function TakeSelfie() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
@@ -131,19 +128,19 @@ const stopCamera = () => {
         {/* Header */}
         <div className="text-center">
           <p className="text-[11px] text-[var(--text-dim2)]">
-            Step 1 of 2
+            {t('takeSelfie.step_1_of_2')}
           </p>
 
           <h1 className="text-[28px] font-bold text-[var(--text-dim)] mt-1">
-            Take a Selfie
+            {t('takeSelfie.take_a_selfie')}
           </h1>
 
           <p className="text-sm text-[var(--text-dim2)] mt-2">
-            We'll compare this photo with your official ID.
+            {t('takeSelfie.compare_note')}
           </p>
 
           <div className="mt-2 inline-flex items-center px-4 py-2 rounded-full bg-[#DFF2D8] text-[#4A9A4A] text-xs font-medium">
-            ● Face Detection Active
+            {t('takeSelfie.face_detection')}
           </div>
         </div>
 
@@ -180,7 +177,7 @@ const stopCamera = () => {
           <canvas ref={canvasRef} className="hidden" />
 
           <div className="mt-3 bg-[var(--bg-background)] px-4 py-2 rounded-full text-xs text-[var(--text-dim)]">
-            Center your face in the circle
+            {t('takeSelfie.center_face')}
           </div>
 
           <div className="flex gap-10 mt-3 mb-4">
@@ -203,7 +200,7 @@ const stopCamera = () => {
               onClick={retakePhoto}
               className="w-full h-11 rounded-lg bg-gray-800 text-white font-medium"
             >
-              Retake Photo
+              {t('takeSelfie.retake_photo')}
             </button>
           ) : (
             <button
@@ -211,16 +208,16 @@ const stopCamera = () => {
               disabled={loading}
               className="w-full h-11 rounded-lg text-white font-medium bg-gradient-to-r from-[#D58AA2] to-[#566CF5]"
             >
-              {loading ? "Uploading..." : "Capture"}
+              {loading ? t('takeSelfie.uploading') : t('takeSelfie.capture')}
             </button>
           )}{error && (
             <p className="text-red-500 text-xs text-center mt-2">
-              {error?.message || error || "Upload Failed"}
+              {error?.message || error || t('takeSelfie.upload_failed')}
             </p>
           )}
 
           <p className="text-center text-[11px] text-[var(--text-dim)] mt-2">
-            Wait for your photo to focus. Keep a neutral expression.
+            {t('takeSelfie.focus_note')}
           </p>
 
         </div>

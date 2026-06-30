@@ -259,8 +259,10 @@ import {
 import Navbar from "../../Navbar/Navbar";
 import Right from "../layout/Right";
 import RegistrationPopup from "./RegistrationPopup";
+import { useTranslation } from "react-i18next";
 
 const Introduction = () => {
+  const { t } = useTranslation();
   const [showPopup, setShowPopup] = useState(false);
 
   const commissionData = [
@@ -320,7 +322,7 @@ const Introduction = () => {
               </button>
 
               <h1 className="text-[20px] sm:text-[24px] font-semibold text-[var(--text-dim)]">
-                Setting
+                {t('introduction.setting')}
               </h1>
             </div>
 
@@ -329,14 +331,14 @@ const Introduction = () => {
 
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
                 <h2 className="text-[15px] font-semibold text-[var(--text-dim2)]">
-                  Influencer Program
+                  {t('introduction.influencer_program')}
                 </h2>
 
                 <button
                   onClick={openPopup}
                   className="px-4 py-2 rounded-full text-white text-xs font-medium bg-gradient-to-r from-pink-300 to-indigo-500 w-full sm:w-auto"
                 >
-                  Register as Influencer
+                  {t('introduction.register_as_influencer')}
                 </button>
               </div>
 
@@ -356,14 +358,13 @@ const Introduction = () => {
                 <div className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 text-white">
 
                   <h2 className="text-[22px] sm:text-[28px] md:text-[34px] font-semibold leading-tight">
-                    Become an
+                    {t('introduction.become_an')}
                     <br />
-                    Influencer
+                    {t('introduction.influencer')}
                   </h2>
 
                   <p className="text-xs sm:text-sm mt-3 text-white/80 max-w-[300px]">
-                    Join our elite circle of creators and grow your passive
-                    income stream.
+                    {t('introduction.hero_desc')}
                   </p>
                 </div>
 
@@ -378,12 +379,12 @@ const Introduction = () => {
 
                       <div>
                         <h4 className="text-white text-sm font-semibold">
-                          Get Approved
+                          {t('introduction.get_approved')}
                         </h4>
 
 
                         <p className="text-white/70 text-xs">
-                          Quick review process
+                          {t('introduction.quick_review')}
                         </p>
                       </div>
                     </div>
@@ -399,11 +400,11 @@ const Introduction = () => {
 
                       <div>
                         <h4 className="text-white text-sm font-semibold">
-                          Create Promo
+                          {t('introduction.create_promo')}
                         </h4>
 
                         <p className="text-white/70 text-xs">
-                          Your custom code
+                          {t('introduction.your_custom_code')}
                         </p>
                       </div>
                     </div>
@@ -419,11 +420,11 @@ const Introduction = () => {
 
                 <div>
                   <p className="text-[11px] text-[var(--text-dim2)]">
-                    Global Policy
+                    {t('introduction.global_policy')}
                   </p>
 
                   <h3 className="text-[16px] font-semibold text-[var(--text-dim)]">
-                    Fixed Discount
+                    {t('introduction.fixed_discount')}
                   </h3>
                 </div>
 
@@ -438,8 +439,8 @@ const Introduction = () => {
                 <div className="min-w-[500px]">
 
                   <div className="grid grid-cols-2 px-4 py-3 text-[13px] font-semibold text-[var(--text-dim)]">
-                    <p>Commission Structure</p>
-                    <p className="text-right">Commission</p>
+                    <p>{t('introduction.commission_structure')}</p>
+                    <p className="text-right">{t('introduction.commission')}</p>
                   </div>
 
                   {commissionData.map((item, index) => (
@@ -474,11 +475,11 @@ const Introduction = () => {
                       />
 
                       <h4 className="text-[14px] font-semibold text-[var(--text-dim)]">
-                        {item.title}
+                        {t(`introduction.eligibility_${index}_title`)}
                       </h4>
 
                       <p className="text-[12px] text-[var(--text-dim2)] mt-2 leading-relaxed">
-                        {item.desc}
+                        {t(`introduction.eligibility_${index}_desc`)}
                       </p>
                     </div>
                   );
@@ -490,7 +491,7 @@ const Introduction = () => {
                 onClick={openPopup}
                 className="w-full mt-6 h-[52px] rounded-[14px] text-white font-medium bg-gradient-to-r from-pink-300 to-indigo-500"
               >
-                Register as Influencer →
+                {t('introduction.register_btn')}
               </button>
             </div>
           </div>

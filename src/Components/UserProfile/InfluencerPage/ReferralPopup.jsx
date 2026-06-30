@@ -1,9 +1,6 @@
-
-
-
-
 import React, { useState, useMemo } from "react";
 import { Search, SlidersHorizontal, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ReferralPopup = ({
   isOpen = true,
@@ -31,6 +28,7 @@ const ReferralPopup = ({
     },
   ],
 }) => {
+  const { t } = useTranslation();
   const [search, setSearch] = useState("");
 
   const filteredReferrals = useMemo(() => {
@@ -44,7 +42,7 @@ const ReferralPopup = ({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-3 sm:p-5">
       <div className="relative w-full max-w-[900px] rounded-[28px] bg-[var(--bg-background)] shadow-2xl overflow-hidden">
-        
+
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -55,16 +53,16 @@ const ReferralPopup = ({
 
         {/* Main Content */}
         <div className="p-5 sm:p-7 md:p-10">
-          
+
           {/* Header */}
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div>
               <h2 className="text-[24px] font-semibold text-[var(--text-dim)]">
-                My Referrals
+                {t('referralPopup.my_referrals')}
               </h2>
 
               <p className="mt-3 text-[17px] text-[var(--text-dim)]">
-                Tracking {totalReferrals} active referrals
+                {t('referralPopup.tracking', { count: totalReferrals })}
               </p>
             </div>
 
@@ -81,11 +79,11 @@ const ReferralPopup = ({
               <input
               onClick={() => console.log("input clicked")}
                 type="text"
-                placeholder="Search by name..."
+                placeholder={t('referralPopup.search_placeholder')}
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className="ml-3 w-full bg-transparent text-[16px] text-[var(--text-dim)] outline-none placeholder:text-[var(--text-dim2)]"
-              
+
               />
             </div>
 
@@ -99,10 +97,10 @@ const ReferralPopup = ({
             {filteredReferrals.map((item, index) => (
               <div key={item.id}>
                 <div className="flex flex-col gap-5 py-5">
-                  
+
                   {/* Top Section */}
                   <div className="flex items-start justify-between gap-4">
-                    
+
                     {/* Left */}
                     <div className="flex gap-4">
                       <div className="h-[42px] w-[42px] rounded-full bg-black shrink-0" />
@@ -132,11 +130,11 @@ const ReferralPopup = ({
 
                   {/* Bottom Section */}
                   <div className="flex items-end justify-between">
-                    
+
                     {/* Duration */}
                     <div>
                       <p className="text-[15px] text-[var(--text-dim2)]">
-                        Active Duration
+                        {t('referralPopup.active_duration')}
                       </p>
 
                       <h4 className="mt-1 text-[20px] leading-none font-semibold text-[var(--text-dim)]">
@@ -147,7 +145,7 @@ const ReferralPopup = ({
                     {/* Earnings */}
                     <div className="text-right">
                       <p className="text-[15px] text-[var(--text-dim)]">
-                        Total Earned
+                        {t('referralPopup.total_earned')}
                       </p>
 
                       <h4 className="mt-1 text-[28px] leading-none font-semibold text-[#D89A24]">
@@ -167,7 +165,7 @@ const ReferralPopup = ({
             {/* Empty State */}
             {filteredReferrals.length === 0 && (
               <div className="py-14 text-center text-[18px] text-[#8A8A8A]">
-                No referrals found
+                {t('referralPopup.no_referrals')}
               </div>
             )}
           </div>

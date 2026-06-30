@@ -626,5 +626,443 @@
     "five_minutes": "5分",
     "dismiss": "閉じる",
     "extend": "延長"
+  },
+
+  "wallet": {
+    "setting": "設定",
+    "meons_wallet": "MEONSウォレット",
+    "meons_balance": "MEONSバランス",
+    "earn_meons": "Meonsを稼ぐ",
+    "spend_meons": "Meonsを使う",
+    "recent_history": "最近の履歴",
+    "show_less": "少なく表示",
+    "view_all": "すべて表示",
+    "disclaimer": "Meonsは現金への引き出しや換金はできません。利用は利用規約に従います。"
+  },
+
+  "earnMeons": {
+    "setting": "設定",
+    "how_to_earn": "Meonsの稼ぎ方",
+    "meons_balance": "MEONSバランス",
+    "available_tasks": "利用可能なタスク",
+    "task_1_title": "毎日ログイン",
+    "task_1_desc": "明日も戻ってきてください",
+    "task_2_title": "ミニゲーム",
+    "task_2_desc": "他のユーザーに挑戦して報酬を獲得しましょう。",
+    "task_3_title": "プロフィールを完成させる",
+    "task_3_desc": "70%完了",
+    "play_now": "今すぐプレイ",
+    "finish_setup": "設定を完了する",
+    "disclaimer": "Meonsはブースト、プロフィールのハイライト、ギフトに使用できます。利用規約が適用されます。"
+  },
+
+  "spendMeons": {
+    "setting": "設定",
+    "spend_meons": "Meonsを使う",
+    "meons_balance": "MEONSバランス",
+    "buy": "購入",
+    "item_details": "アイテム詳細",
+    "rare_item": "レアアイテム",
+    "description": "優雅さと感謝のシンボルです。このアイテムを送ると、受取人の人気スコアが50ポイント上昇し、プロフィールに特別な魅力が加わります。",
+    "price_per_unit": "単価",
+    "your_current_balance": "現在の残高",
+    "quantity": "数量",
+    "total_cost": "合計金額",
+    "confirm_purchase": "購入を確認",
+    "purchase_successful": "購入成功",
+    "deducted": "{{amount}}がウォレットから差し引かれました",
+    "use_now": "今すぐ使用",
+    "back_to_wallet": "ウォレットに戻る",
+    "not_enough_meons": "Meonsが不足しています",
+    "purchase_failed": "購入失敗",
+    "something_went_wrong": "問題が発生しました",
+    "disclaimer": "仮想アイテムの購入は確定であり、返金不可です。利用規約が適用されます。",
+    "product_0_name": "赤いバラ",
+    "product_1_name": "プロフィールブースト",
+    "product_2_name": "VIPゴールド",
+    "product_3_name": "スーパーライク",
+    "product_4_name": "クリスタルダイヤモンド",
+    "product_5_name": "インビジブルモード"
+  },
+
+  "verifyModal": {
+    "kyc_verification": "KYC認証",
+    "quick_identity_check": "クイック本人確認",
+    "description": "コミュニティの安全を保つため、初回出金前に本人確認が必要です。",
+    "only_gov_id": "政府発行のID＋自撮り写真のみ必要",
+    "takes_minutes": "1〜2分で完了します。",
+    "start_verification": "認証を開始",
+    "may_be_later": "後でする"
+  },
+
+  "popupOne": {
+    "kyc_verification": "KYC認証",
+    "quick_identity_check": "クイック本人確認",
+    "description": "コミュニティの安全を保つため、初回出金前に本人確認が必要です。",
+    "only_gov_id": "政府発行のID＋自撮り写真のみ必要",
+    "takes_minutes": "1〜2分で完了します。",
+    "start_verification": "認証を開始",
+    "may_be_later": "後でする"
+  },
+
+  "popupTwo": {
+    "kyc_verification": "KYC認証",
+    "verify_your_identity": "本人確認",
+    "description": "コミュニティの安全を保つため、あなたが誰であるかを迅速に確認する必要があります。",
+    "upload_gov_id": "政府発行のIDをアップロード",
+    "id_types": "運転免許証、パスポート",
+    "take_selfie": "自撮りする",
+    "quick_photo": "IDと照合するための写真",
+    "continue": "続ける",
+    "privacy_note": "続行することで、本人確認プロセスとプライバシーポリシーに同意したことになります。"
+  },
+
+  "getVerify": {
+    "kyc_verification": "KYC認証",
+    "upload_document": "書類をアップロード",
+    "verify_your_identity": "本人確認",
+    "description": "コミュニティの安全を保つため、あなたが誰であるかを迅速に確認する必要があります。",
+    "select_document_type": "書類の種類を選択",
+    "doc_passport_title": "パスポート",
+    "doc_passport_desc": "国際渡航書類",
+    "doc_national_title": "マイナンバーカード",
+    "doc_national_desc": "政府発行の身分証明書",
+    "doc_license_title": "運転免許証",
+    "doc_license_desc": "有効な運転許可証",
+    "upload_document_heading": "書類をアップロード",
+    "upload_gov_id": "政府発行のIDをアップロード",
+    "formats_supported": "高品質のJPG、JPEG、PNGまたはPDF形式に対応",
+    "select_file": "ファイルを選択",
+    "info_note": "書類が明るく照らされており、四隅がすべて見えることを確認してください。影や反射を避けて、より速い認証を実現してください。",
+    "continue": "続ける"
+  },
+
+  "selfie": {
+    "kyc_verification": "KYC認証",
+    "take_a_selfie": "自撮りする",
+    "step_2_of_3": "ステップ2/3",
+    "identity_verification": "本人確認",
+    "hold_steady": "スマートフォンをしっかり持ち、カメラをまっすぐ見てください",
+    "ensure_face": "顔が明るく照らされており、ガイド内に収まっていることを確認してください。",
+    "open_camera": "カメラを開く",
+    "do_later": "後でする",
+    "capture": "撮影",
+    "retake": "撮り直し",
+    "re_capture": "再撮影",
+    "confirm": "確認"
+  },
+
+  "verificationProgress": {
+    "under_review": "審査中",
+    "verification_in_progress": "認証進行中",
+    "reviewing_note": "コミュニティの安全を確保するために書類を確認しています。",
+    "usually_takes": "通常かかる時間は",
+    "business_days": "2〜5営業日です。",
+    "withdrawal_funds": "資金を引き出す",
+    "back_to_dashboard": "ダッシュボードに戻る",
+    "need_help": "お困りですか？",
+    "contact_support": "サポートに連絡"
+  },
+
+  "realCurrencyWallet": {
+    "setting": "設定",
+    "real_currency_wallet": "リアルマネーウォレット",
+    "available_balance": "利用可能残高",
+    "add_balance": "+ 残高を追加",
+    "use_in_store": "ストアで使用",
+    "convert_to_meons": "Meonsに変換",
+    "how_to_earn": "稼ぎ方",
+    "where_can_use": "使用できる場所",
+    "invite_friends": "友達を招待",
+    "earn_0_title": "友達を招待する",
+    "earn_0_desc": "ユニークな紹介リンクを共有",
+    "earn_1_title": "友達が登録する",
+    "earn_1_desc": "プレミアムコミュニティに参加したとき",
+    "earn_2_title": "友達が10%割引を獲得",
+    "earn_2_desc": "友達へのインスタントウェルカムギフト",
+    "earn_3_title": "10%キャッシュバックを獲得",
+    "earn_3_desc": "このウォレットに直接クレジット",
+    "use_0_label": "Meonsを購入",
+    "use_1_label": "サブスクリプションをアップグレード",
+    "use_2_label": "Lucascope",
+    "use_3_label": "Qボーナス / ルーカスタイム",
+    "use_4_label": "レター"
+  },
+
+  "getVerified": {
+    "get_verified": "認証する",
+    "description": "プロフィールを認証して信頼性とセキュリティを高めましょう。",
+    "step_1_title": "自撮りする",
+    "step_1_desc": "本人確認のための簡単な写真",
+    "step_2_title": "AIレビュー",
+    "step_2_desc": "2分以内に認証完了",
+    "start_verification": "認証を開始",
+    "privacy_note": "お客様のデータは暗号化され、プライバシーポリシーに従って管理されます。"
+  },
+
+  "takeSelfie": {
+    "step_1_of_2": "ステップ1/2",
+    "take_a_selfie": "自撮りする",
+    "compare_note": "この写真を公式IDと照合します。",
+    "face_detection": "● 顔検出アクティブ",
+    "center_face": "円の中に顔を合わせてください",
+    "retake_photo": "撮り直し",
+    "uploading": "アップロード中...",
+    "capture": "撮影",
+    "upload_failed": "アップロード失敗",
+    "focus_note": "写真がピントが合うまでお待ちください。無表情を維持してください。"
+  },
+
+  "identify": {
+    "step_2_of_2": "ステップ2/2",
+    "identity_verification": "本人確認",
+    "verifying_details": "詳細を確認中...",
+    "description": "AIが写真とIDを安全に照合しています。通常2分以内で完了します。",
+    "scanning_successful": "スキャン成功",
+    "scanning_identity": "身元確認中",
+    "continue": "続ける"
+  },
+
+  "complete": {
+    "verification_complete": "認証完了",
+    "description": "プロフィールが認証されました。ブルーバッジを獲得し、他のユーザーが安心してつながれるようになりました。",
+    "trust_score": "{{score}}% 信頼スコア",
+    "go_to_profile": "プロフィールへ"
+  },
+
+  "introduction": {
+    "setting": "設定",
+    "influencer_program": "インフルエンサープログラム",
+    "register_as_influencer": "インフルエンサーとして登録",
+    "become_an": "なろう",
+    "influencer": "インフルエンサーに",
+    "hero_desc": "エリートクリエイターサークルに参加して、パッシブインカムを増やしましょう。",
+    "get_approved": "承認を受ける",
+    "quick_review": "迅速な審査プロセス",
+    "create_promo": "プロモを作成",
+    "your_custom_code": "カスタムコード",
+    "global_policy": "グローバルポリシー",
+    "fixed_discount": "固定割引",
+    "commission_structure": "コミッション構造",
+    "commission": "コミッション",
+    "eligibility_0_title": "5つのアクティブな紹介",
+    "eligibility_0_desc": "定期的な支払いを開始するための月間最低要件。",
+    "eligibility_1_title": "アクティブなサブスクリプション",
+    "eligibility_1_desc": "インフルエンサーは自身のプレミアムアカウントを維持する必要があります。",
+    "eligibility_2_title": "年間成長率10%上限",
+    "eligibility_2_desc": "ベース年間維持率の年間維持率上限。",
+    "eligibility_3_title": "最低引き出し額€30",
+    "eligibility_3_desc": "残高が€30に達した時点でコミッションが支払われます。",
+    "register_btn": "インフルエンサーとして登録 →"
+  },
+
+  "registrationPopup": {
+    "influencer_registration": "インフルエンサー登録",
+    "join_the_elite": "エリートに参加",
+    "complete_registration": "コミッションの獲得を開始するために登録を完了してください。",
+    "personal_info": "個人情報",
+    "full_name": "フルネーム",
+    "full_name_placeholder": "Neetesh",
+    "email_address": "メールアドレス",
+    "email_placeholder": "neeteshiuixdesigner@gmail.com",
+    "agreement": "同意",
+    "agreement_0_title": "インフルエンサー規約に同意",
+    "agreement_0_desc": "一般利用規約およびインフルエンサー行動ガイドラインを読み、同意します。",
+    "agreement_1_title": "コミッションポリシーに同意",
+    "agreement_1_desc": "支払いスケジュールおよびパフォーマンスベースのコミッション構造に同意します。",
+    "agreement_2_title": "KYC確認要件",
+    "agreement_2_desc": "支払いには本人確認が必須であることを理解しています。",
+    "submit_application": "申請を送信"
+  },
+
+  "submitApplication": {
+    "submit_question": "申請を送信しますか？",
+    "review_prefix": "インフルエンサーリクエストは",
+    "review_hours": "24〜48時間",
+    "review_suffix": "以内に審査されます。ステータスが更新されるとプッシュ通知でお知らせします。",
+    "confirm": "確認",
+    "cancel": "キャンセル"
+  },
+
+  "influencerDashboard": {
+    "setting": "設定",
+    "influencer_dashboard": "インフルエンサーダッシュボード",
+    "stat_0_title": "総紹介数",
+    "stat_1_title": "現在アクティブ",
+    "stat_2_title": "総収益",
+    "promo_code": "プロモコード",
+    "your_promo_code": "あなたのプロモコード",
+    "view_all": "すべて表示",
+    "copied": "コピーしました！",
+    "copy_code": "コードをコピー",
+    "share_title": "プロモコード",
+    "share_text": "私のプロモコード {{code}} を使って {{discount}} 割引を受けましょう",
+    "eligibility_progress": "資格進捗",
+    "needed": "3/5 必要",
+    "reach_milestones": "マイルストーンに達してプレミアム機能をアンロック。",
+    "unlock_bank_withdrawals": "銀行引き出しをアンロック",
+    "maintain_referrals": "30日間、5つのアクティブな紹介を維持。",
+    "recent_activity": "最近のアクティビティ"
+  },
+
+  "promoCodeModal": {
+    "create_promo_code": "プロモコードを作成",
+    "code_name": "コード名",
+    "available": "利用可能",
+    "live_preview": "ライブプレビュー",
+    "client_discount": "クライアント割引",
+    "commission_info": "コミッション率は固定されており、収益ダッシュボードに自動的に適用されます。",
+    "secure_payouts": "安全な支払い",
+    "real_time_analytics": "リアルタイム分析",
+    "submit_for_approval": "承認のために送信",
+    "terms_note": "送信することで、インフルエンサーパートナーシップ規約に同意します。承認されたコードは通常24時間以内に有効になります。"
+  },
+
+  "deactivatedDashboard": {
+    "setting": "設定",
+    "influencer_dashboard": "インフルエンサーダッシュボード",
+    "subscription_inactive": "サブスクリプションが無効です。プロモコードを有効にするために再アクティブ化してください。",
+    "renew_subscription": "サブスクリプションを更新",
+    "stat_0_title": "総紹介数",
+    "stat_1_title": "現在アクティブ",
+    "stat_2_title": "総収益",
+    "promo_code": "プロモコード",
+    "your_promo_code": "あなたのプロモコード",
+    "view_all": "すべて表示",
+    "tracking_suspended": "追跡が停止中",
+    "referrals_not_tracked": "紹介は現在追跡されていません",
+    "copy_code": "コードをコピー",
+    "subscription_active": "サブスクリプションアクティブ",
+    "withdrawal_locked": "引き出しロック中",
+    "eligibility_progress": "資格進捗",
+    "reach_milestones": "マイルストーンに達してプレミアム機能をアンロック。",
+    "active_referrals_progress": "アクティブ紹介の進捗",
+    "needed": "3/5 必要",
+    "unlock_bank_withdrawals": "銀行引き出しをアンロック",
+    "maintain_referrals": "30日間、5つのアクティブな紹介を維持。",
+    "reactivate_now": "今すぐ再アクティブ化して収益ポテンシャルを再起動。"
+  },
+
+  "walletPopup": {
+    "subscription_active": "サブスクリプションアクティブ",
+    "active_balance": "アクティブ残高",
+    "available_for_withdrawal": "引き出し可能",
+    "add_bank_details": "銀行詳細を追加",
+    "kyc_verification": "KYC確認",
+    "unlock_withdrawals": "引き出しをアンロックするには、簡単な本人確認を完了してください。",
+    "wallet_details": "ウォレット詳細"
+  },
+
+  "addBankPopup": {
+    "add_bank_details": "銀行詳細を追加",
+    "payout_details": "支払い詳細",
+    "complete_registration": "コミッションの獲得を開始するために登録を完了してください。",
+    "account_holder_name": "口座名義人名",
+    "enter_name": "名前を入力",
+    "account_number": "口座番号",
+    "enter_account_number": "口座番号を入力",
+    "bank_name": "銀行名",
+    "enter_bank_name": "銀行名を入力",
+    "disclaimer_text": "EUR以外の通貨での引き出しには銀行手数料がかかる場合があります。財務データは暗号化され、当社の",
+    "privacy_policy": "プライバシーポリシーに従って処理されます。",
+    "save_bank_account": "銀行口座を保存",
+    "end_to_end_encrypted": "エンドツーエンド暗号化"
+  },
+
+  "submitTwo": {
+    "submit_question": "申請を送信しますか？",
+    "review_prefix": "インフルエンサーリクエストは",
+    "review_hours": "24〜48時間",
+    "review_suffix": "以内に審査されます。ステータスが更新されるとプッシュ通知でお知らせします。",
+    "confirm_submission": "送信を確認",
+    "cancel": "キャンセル"
+  },
+
+  "influencerWallet": {
+    "my_referrals": "マイ紹介",
+    "subscription_active": "• サブスクリプションアクティブ",
+    "active_balance": "• アクティブ残高",
+    "available_balance": "利用可能残高",
+    "bank_detail": "銀行詳細",
+    "verified": "確認済み",
+    "kyc_verification": "KYC確認",
+    "unlock_withdrawals": "引き出しをアンロックするには、簡単な本人確認を完了してください。",
+    "withdraw": "引き出す",
+    "currency_information": "通貨情報",
+    "currency_info_desc": "EUR以外の通貨での引き出しには銀行手数料がかかります。手数料を避けるためにEURでの引き出しをお勧めします。",
+    "total_amount": "合計金額: €125.99",
+    "transaction_id": "取引ID: #WB-562-31",
+    "processing": "• 処理中",
+    "progress_0": "リクエスト",
+    "progress_1": "処理中",
+    "progress_2": "銀行に送信済み",
+    "withdraw_history": "引き出し履歴",
+    "view_all": "すべて表示",
+    "commission": "コミッション"
+  },
+
+  "withdrawal": {
+    "withdraw_amount": "引き出し金額",
+    "available_balance": "利用可能残高",
+    "includes_earnings": "本日時点のすべてのクリアされた収益を含む",
+    "partnership_terms": "送信することで、インフルエンサーパートナーシップ規約に同意します。承認されたコードは通常{{processingTime}}に有効になります。",
+    "enter_amount": "金額を入力",
+    "minimum_withdrawal": "最低引き出し額は€{{amount}}です。",
+    "verification_required": "確認が必要",
+    "verification_desc": "最初の引き出しには本人確認が必要です。KYC承認後、処理に2〜5営業日かかります。",
+    "continue_to_review": "確認へ進む",
+    "end_to_end_encrypted": "🔒 エンドツーエンド暗号化"
+  },
+
+  "confirmWithdrawal": {
+    "confirm_withdrawal": "引き出しを確認",
+    "review_payout": "取引を確定する前に、支払い詳細を注意深くご確認ください。",
+    "withdrawal_amount": "引き出し金額",
+    "confirm_payout": "支払いを確認",
+    "cancel": "キャンセル"
+  },
+
+  "promoCodeList": {
+    "promo_code_history": "プロモコード履歴",
+    "tab_all": "すべて",
+    "tab_active": "アクティブ",
+    "tab_expired": "期限切れ",
+    "tab_request": "リクエスト",
+    "usage": "使用状況",
+    "total_earned": "総収益",
+    "no_promo_codes": "プロモコードが見つかりません。"
+  },
+
+  "submitPromoCode": {
+    "submit_promo_code": "プロモコードを送信しますか？",
+    "review_before_activation": "コードは有効化前に審査されます。",
+    "usually_takes": "通常24時間未満かかります",
+    "submit_now": "今すぐ送信",
+    "cancel": "キャンセル"
+  },
+
+  "referralPopup": {
+    "my_referrals": "マイ紹介",
+    "tracking": "{{count}}件のアクティブな紹介を追跡中",
+    "search_placeholder": "名前で検索...",
+    "active_duration": "アクティブ期間",
+    "total_earned": "総収益",
+    "no_referrals": "紹介が見つかりません"
+  },
+
+  "kycVerified": {
+    "subscription_active": "サブスクリプションアクティブ",
+    "active_balance": "アクティブ残高",
+    "available_for_withdrawal": "引き出し可能",
+    "verified": "確認済み",
+    "kyc_verification": "KYC確認",
+    "unlock_withdrawals": "引き出しをアンロックするには、簡単な本人確認を完了してください。",
+    "wallet_details": "ウォレット詳細"
+  },
+
+  "banner": {
+    "seasonal_offer": "🎉 季節限定オファー",
+    "learn_more": "詳細はこちら →",
+    "active_from": "開始日："
   }
 }

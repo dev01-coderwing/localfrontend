@@ -1,7 +1,10 @@
 import React from "react";
 import { Check } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 function SubmitPromoCode({ closeModal }) {
+  const { t } = useTranslation();
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-[3px] p-4">
 
@@ -44,13 +47,13 @@ function SubmitPromoCode({ closeModal }) {
         {/* Content */}
         <div className="mt-6 text-center">
           <h2 className="text-[24px] sm:text-[28px] font-semibold text-[var(--text-dim)]">
-            Submit Promo Code?
+            {t('submitPromoCode.submit_promo_code')}
           </h2>
 
           <p className="mt-4 text-[14px] sm:text-[15px] leading-6 text-[var(--text-dim2)] px-1">
-           Your code will be reviewed before activation.{" "}
+           {t('submitPromoCode.review_before_activation')}{" "}
             <span >
-              This usually takes less than 24 hours
+              {t('submitPromoCode.usually_takes')}
             </span>
             </p>
         </div>
@@ -74,7 +77,7 @@ function SubmitPromoCode({ closeModal }) {
               transition
             "
           >
-            Submit Now
+            {t('submitPromoCode.submit_now')}
           </button>
 
           <button
@@ -93,7 +96,7 @@ function SubmitPromoCode({ closeModal }) {
               transition
             "
           >
-            Cancel
+            {t('submitPromoCode.cancel')}
           </button>
 
         </div>

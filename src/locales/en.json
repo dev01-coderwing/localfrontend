@@ -626,5 +626,443 @@
     "five_minutes": "5 minutes",
     "dismiss": "Dismiss",
     "extend": "Extend"
+  },
+
+  "wallet": {
+    "setting": "Setting",
+    "meons_wallet": "MEONS Wallet",
+    "meons_balance": "MEONS BALANCE",
+    "earn_meons": "Earn Meons",
+    "spend_meons": "Spend Meons",
+    "recent_history": "Recent History",
+    "show_less": "Show Less",
+    "view_all": "View All",
+    "disclaimer": "Meons cannot be withdrawn or converted to real money. Usage subject to terms."
+  },
+
+  "earnMeons": {
+    "setting": "Setting",
+    "how_to_earn": "How to Earn Meons",
+    "meons_balance": "MEONS BALANCE",
+    "available_tasks": "Available Tasks",
+    "task_1_title": "Daily Login",
+    "task_1_desc": "Come back tomorrow for more",
+    "task_2_title": "Mini Games",
+    "task_2_desc": "Challenge others and win rewards.",
+    "task_3_title": "Complete Profile",
+    "task_3_desc": "70% Completed",
+    "play_now": "Play Now",
+    "finish_setup": "Finish Setup",
+    "disclaimer": "Meons can be used for boosts, profile highlights, and gifts. Terms and Conditions apply."
+  },
+
+  "spendMeons": {
+    "setting": "Setting",
+    "spend_meons": "Spend Meons",
+    "meons_balance": "MEONS BALANCE",
+    "buy": "Buy",
+    "item_details": "Item Details",
+    "rare_item": "RARE ITEM",
+    "description": "A symbol of elegance and appreciation sending this item boosts the recipient's popularity score by 50 points and adds a special flair to their profile.",
+    "price_per_unit": "Price per unit",
+    "your_current_balance": "Your Current Balance",
+    "quantity": "Quantity",
+    "total_cost": "Total Cost",
+    "confirm_purchase": "Confirm Purchase",
+    "purchase_successful": "Purchase Successful",
+    "deducted": "{{amount}} deducted from your wallet",
+    "use_now": "Use Now",
+    "back_to_wallet": "Back to Wallet",
+    "not_enough_meons": "Not enough Meons",
+    "purchase_failed": "Purchase Failed",
+    "something_went_wrong": "Something went wrong",
+    "disclaimer": "Purchases of virtual items are final and non-refundable. Terms and Conditions apply.",
+    "product_0_name": "Red Rose",
+    "product_1_name": "Profile Boost",
+    "product_2_name": "VIP Gold",
+    "product_3_name": "Super Like",
+    "product_4_name": "Crystal Diamond",
+    "product_5_name": "Invisible Mode"
+  },
+
+  "verifyModal": {
+    "kyc_verification": "KYC Verification",
+    "quick_identity_check": "Quick Identity Check",
+    "description": "To keep our community safe and secure, we need to verify your identity before your first withdrawal.",
+    "only_gov_id": "Only Government ID + Selfie required",
+    "takes_minutes": "Takes 1-2 minutes.",
+    "start_verification": "Start Verification",
+    "may_be_later": "May Be Later"
+  },
+
+  "popupOne": {
+    "kyc_verification": "KYC Verification",
+    "quick_identity_check": "Quick Identity Check",
+    "description": "To keep our community safe and secure, we need to verify your identity before your first withdrawal.",
+    "only_gov_id": "Only Government ID + Selfie required",
+    "takes_minutes": "Takes 1-2 minutes.",
+    "start_verification": "Start Verification",
+    "may_be_later": "May Be Later"
+  },
+
+  "popupTwo": {
+    "kyc_verification": "KYC Verification",
+    "verify_your_identity": "Verify Your Identity",
+    "description": "To keep our community safe, we need to quickly verify who you are.",
+    "upload_gov_id": "Upload Government-ID",
+    "id_types": "Driver's license, Passport",
+    "take_selfie": "Take a Selfie",
+    "quick_photo": "A quick photo to match your ID",
+    "continue": "Continue",
+    "privacy_note": "By continuing, you agree to our identity verification process and privacy policy."
+  },
+
+  "getVerify": {
+    "kyc_verification": "KYC Verification",
+    "upload_document": "Upload document",
+    "verify_your_identity": "Verify Your Identity",
+    "description": "To keep our community safe, we need to quickly verify who you are.",
+    "select_document_type": "Select Document Type",
+    "doc_passport_title": "Passport",
+    "doc_passport_desc": "International travel document",
+    "doc_national_title": "National ID",
+    "doc_national_desc": "Government issued identity card",
+    "doc_license_title": "Driver's License",
+    "doc_license_desc": "Valid driving permit",
+    "upload_document_heading": "Upload Document",
+    "upload_gov_id": "Upload Government ID",
+    "formats_supported": "High-quality JPG, JPEG, PNG or PDF formats supported",
+    "select_file": "Select File",
+    "info_note": "Ensure the document is well-lit and all four corners are visible. Avoid shadows and glare for faster verification.",
+    "continue": "Continue"
+  },
+
+  "selfie": {
+    "kyc_verification": "KYC Verification",
+    "take_a_selfie": "Take a Selfie",
+    "step_2_of_3": "Step 2 of 3",
+    "identity_verification": "Identity Verification",
+    "hold_steady": "Hold your phone steady and look straight at the camera",
+    "ensure_face": "Ensure your face is well-lit and fits within the guide.",
+    "open_camera": "Open Camera",
+    "do_later": "I'll do this later",
+    "capture": "Capture",
+    "retake": "Retake",
+    "re_capture": "Re-Capture",
+    "confirm": "Confirm"
+  },
+
+  "verificationProgress": {
+    "under_review": "Under Review",
+    "verification_in_progress": "Verification in Progress",
+    "reviewing_note": "We're reviewing your documents to ensure the safety of our community.",
+    "usually_takes": "This usually takes",
+    "business_days": "2-5 business days.",
+    "withdrawal_funds": "Withdrawal Funds",
+    "back_to_dashboard": "Back to Dashboard",
+    "need_help": "Need help?",
+    "contact_support": "Contact Support"
+  },
+
+  "realCurrencyWallet": {
+    "setting": "Setting",
+    "real_currency_wallet": "Real Currency Wallet",
+    "available_balance": "AVAILABLE BALANCE",
+    "add_balance": "+ Add Balance",
+    "use_in_store": "Use in Store",
+    "convert_to_meons": "Convert to Meons",
+    "how_to_earn": "How to Earn",
+    "where_can_use": "Where You Can Use It",
+    "invite_friends": "Invite Friends",
+    "earn_0_title": "Invite a friend",
+    "earn_0_desc": "Share your unique referral link",
+    "earn_1_title": "Friend subscribes",
+    "earn_1_desc": "When they join the premium community",
+    "earn_2_title": "Friend gets 10% discount",
+    "earn_2_desc": "An instant welcome gift for them",
+    "earn_3_title": "You earn 10% cashback",
+    "earn_3_desc": "Credited directly to this wallet",
+    "use_0_label": "buy Meons",
+    "use_1_label": "Upgrade Subscription",
+    "use_2_label": "Lucascope",
+    "use_3_label": "Q-Bonus / Lucas Time",
+    "use_4_label": "Letters"
+  },
+
+  "getVerified": {
+    "get_verified": "Get Verified",
+    "description": "Increase trust and security by verifying your profile.",
+    "step_1_title": "Take a selfie",
+    "step_1_desc": "Quick photo to verify it's you",
+    "step_2_title": "AI review",
+    "step_2_desc": "Verified in less than 2 minutes",
+    "start_verification": "Start Verification",
+    "privacy_note": "Your data is encrypted and handled according to our privacy policy."
+  },
+
+  "takeSelfie": {
+    "step_1_of_2": "Step 1 of 2",
+    "take_a_selfie": "Take a Selfie",
+    "compare_note": "We'll compare this photo with your official ID.",
+    "face_detection": "● Face Detection Active",
+    "center_face": "Center your face in the circle",
+    "retake_photo": "Retake Photo",
+    "uploading": "Uploading...",
+    "capture": "Capture",
+    "upload_failed": "Upload Failed",
+    "focus_note": "Wait for your photo to focus. Keep a neutral expression."
+  },
+
+  "identify": {
+    "step_2_of_2": "Step 2 of 2",
+    "identity_verification": "Identity Verification",
+    "verifying_details": "Verifying your details...",
+    "description": "Our AI is checking your photo and ID for a secure match. This usually takes less than 2 minutes.",
+    "scanning_successful": "Scanning Successful",
+    "scanning_identity": "Scanning Identity",
+    "continue": "Continue"
+  },
+
+  "complete": {
+    "verification_complete": "Verification Complete",
+    "description": "Your profile is now verified. You've earned your blue badge, helping others feel safer connecting with you.",
+    "trust_score": "{{score}}% Trust Score",
+    "go_to_profile": "Go to Profile"
+  },
+
+  "introduction": {
+    "setting": "Setting",
+    "influencer_program": "Influencer Program",
+    "register_as_influencer": "Register as Influencer",
+    "become_an": "Become an",
+    "influencer": "Influencer",
+    "hero_desc": "Join our elite circle of creators and grow your passive income stream.",
+    "get_approved": "Get Approved",
+    "quick_review": "Quick review process",
+    "create_promo": "Create Promo",
+    "your_custom_code": "Your custom code",
+    "global_policy": "Global Policy",
+    "fixed_discount": "Fixed Discount",
+    "commission_structure": "Commission Structure",
+    "commission": "Commission",
+    "eligibility_0_title": "5 Active Referrals",
+    "eligibility_0_desc": "Minimum monthly requirement to trigger recurring payouts.",
+    "eligibility_1_title": "Active Subscription",
+    "eligibility_1_desc": "Influencers must maintain their own premium account.",
+    "eligibility_2_title": "10% Annual Growth Cap",
+    "eligibility_2_desc": "Annual retention cap for your based annual retention.",
+    "eligibility_3_title": "€30 Minimum Withdrawal",
+    "eligibility_3_desc": "Commissions are paid once your balance reaches €30.",
+    "register_btn": "Register as Influencer →"
+  },
+
+  "registrationPopup": {
+    "influencer_registration": "Influencer Registration",
+    "join_the_elite": "Join the Elite",
+    "complete_registration": "Complete your registration to start earning commission.",
+    "personal_info": "Personal Info",
+    "full_name": "Full Name",
+    "full_name_placeholder": "Neetesh",
+    "email_address": "Email Address",
+    "email_placeholder": "neeteshiuixdesigner@gmail.com",
+    "agreement": "Agreement",
+    "agreement_0_title": "Accept Influencer Term",
+    "agreement_0_desc": "I have read and agree to the general terms of service and influencer conduct guidelines.",
+    "agreement_1_title": "Accept Commission Policy",
+    "agreement_1_desc": "I agree to the payout schedule and performance-based commission structure.",
+    "agreement_2_title": "KYC verification requirement",
+    "agreement_2_desc": "I understand identity verification is mandatory for payouts.",
+    "submit_application": "Submit Application"
+  },
+
+  "submitApplication": {
+    "submit_question": "Submit Application?",
+    "review_prefix": "Your Influencer request will be reviewed within",
+    "review_hours": "24–48 hours",
+    "review_suffix": ". We'll notify you via push notification once your status is updated.",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
+  },
+
+  "influencerDashboard": {
+    "setting": "Setting",
+    "influencer_dashboard": "Influencer Dashboard",
+    "stat_0_title": "Total Referrals",
+    "stat_1_title": "Active Now",
+    "stat_2_title": "Total Earnings",
+    "promo_code": "Promo Code",
+    "your_promo_code": "Your Promo Code",
+    "view_all": "View All",
+    "copied": "Copied!",
+    "copy_code": "Copy Code",
+    "share_title": "Promo Code",
+    "share_text": "Use my promo code {{code}} and get {{discount}} off",
+    "eligibility_progress": "Eligibility Progress",
+    "needed": "3/5 Needed",
+    "reach_milestones": "Reach milestones to unlock premium features.",
+    "unlock_bank_withdrawals": "Unlock Bank Withdrawals",
+    "maintain_referrals": "Maintain 5 active referrals for 30 days.",
+    "recent_activity": "Recent Activity"
+  },
+
+  "promoCodeModal": {
+    "create_promo_code": "Create Promo Code",
+    "code_name": "Code Name",
+    "available": "Available",
+    "live_preview": "Live Preview",
+    "client_discount": "Client Discount",
+    "commission_info": "Commission rates are fixed and applied automatically to your earning dashboard.",
+    "secure_payouts": "Secure Payouts",
+    "real_time_analytics": "Real-time analytics",
+    "submit_for_approval": "Submit for Approval",
+    "terms_note": "By submitting, you agree to our Influencer Partnership Terms. Approved codes usually go live within 24 hours."
+  },
+
+  "deactivatedDashboard": {
+    "setting": "Setting",
+    "influencer_dashboard": "Influencer Dashboard",
+    "subscription_inactive": "Your subscription is inactive. Reactivate to enable your promo code.",
+    "renew_subscription": "Renew Subscription",
+    "stat_0_title": "Total Referrals",
+    "stat_1_title": "Active Now",
+    "stat_2_title": "Total Earnings",
+    "promo_code": "Promo Code",
+    "your_promo_code": "Your Promo Code",
+    "view_all": "View All",
+    "tracking_suspended": "Tracking suspended",
+    "referrals_not_tracked": "Referrals are not being tracked currently",
+    "copy_code": "Copy Code",
+    "subscription_active": "Subscription Active",
+    "withdrawal_locked": "Withdrawal Locked",
+    "eligibility_progress": "Eligibility progress",
+    "reach_milestones": "Reach milestones to unlock premium features.",
+    "active_referrals_progress": "Active Referrals Progress",
+    "needed": "3/5 Needed",
+    "unlock_bank_withdrawals": "Unlock Bank Withdrawals",
+    "maintain_referrals": "Maintain 5 active referrals for 30 days.",
+    "reactivate_now": "Reactivate now to restart your earning potential."
+  },
+
+  "walletPopup": {
+    "subscription_active": "Subscription Active",
+    "active_balance": "Active Balance",
+    "available_for_withdrawal": "Available for withdrawal",
+    "add_bank_details": "Add Bank Details",
+    "kyc_verification": "KYC Verification",
+    "unlock_withdrawals": "To unlock withdrawals, complete a quick identity check.",
+    "wallet_details": "Wallet Details"
+  },
+
+  "addBankPopup": {
+    "add_bank_details": "Add Bank Details",
+    "payout_details": "Payout Details",
+    "complete_registration": "Complete your registration to start earning commission.",
+    "account_holder_name": "Account Holder Name",
+    "enter_name": "Enter name",
+    "account_number": "Account Number",
+    "enter_account_number": "Enter account number",
+    "bank_name": "Bank Name",
+    "enter_bank_name": "Enter Bank Name",
+    "disclaimer_text": "Bank transfer fees may apply for non-EUR withdrawals. Your financial data is encrypted and handled according to our",
+    "privacy_policy": "Privacy Policy.",
+    "save_bank_account": "Save Bank Account",
+    "end_to_end_encrypted": "End-to-end encrypted"
+  },
+
+  "submitTwo": {
+    "submit_question": "Submit Application?",
+    "review_prefix": "Your Influencer request will be reviewed within",
+    "review_hours": "24–48 hours",
+    "review_suffix": ". We'll notify you via push notification once your status is updated.",
+    "confirm_submission": "Confirm Submission",
+    "cancel": "Cancel"
+  },
+
+  "influencerWallet": {
+    "my_referrals": "My Referrals",
+    "subscription_active": "• Subscription Active",
+    "active_balance": "• Active Balance",
+    "available_balance": "Available Balance",
+    "bank_detail": "Bank Detail",
+    "verified": "Verified",
+    "kyc_verification": "KYC Verification",
+    "unlock_withdrawals": "To unlock withdrawals, complete a quick identity check.",
+    "withdraw": "Withdraw",
+    "currency_information": "Currency information",
+    "currency_info_desc": "Withdrawals in currencies other than EUR will incur bank amount. We recommend withdrawing in EUR to avoid fees.",
+    "total_amount": "Total Amount: €125.99",
+    "transaction_id": "Transaction ID: #WB-562-31",
+    "processing": "• Processing",
+    "progress_0": "Request",
+    "progress_1": "Processing",
+    "progress_2": "Sent To Bank",
+    "withdraw_history": "Withdraw History",
+    "view_all": "View All",
+    "commission": "Commission"
+  },
+
+  "withdrawal": {
+    "withdraw_amount": "Withdraw Amount",
+    "available_balance": "Available Balance",
+    "includes_earnings": "Includes all cleared earnings as of today",
+    "partnership_terms": "By submitting, you agree to our influencer Partnership Terms. Approved codes usually go live {{processingTime}}.",
+    "enter_amount": "Enter Amount",
+    "minimum_withdrawal": "Minimum withdrawal amount is €{{amount}}.",
+    "verification_required": "Verification Required",
+    "verification_desc": "First withdrawal requires identity verification. Allow 2-5 business days for processing after KYC approval.",
+    "continue_to_review": "Continue to Review",
+    "end_to_end_encrypted": "🔒 End-to-end encrypted"
+  },
+
+  "confirmWithdrawal": {
+    "confirm_withdrawal": "Confirm Withdrawal",
+    "review_payout": "Please review your payout details carefully before finalizing the transaction.",
+    "withdrawal_amount": "Withdrawal Amount",
+    "confirm_payout": "Confirm Payout",
+    "cancel": "Cancel"
+  },
+
+  "promoCodeList": {
+    "promo_code_history": "Promo Code History",
+    "tab_all": "All",
+    "tab_active": "Active",
+    "tab_expired": "Expired",
+    "tab_request": "Request",
+    "usage": "Usage",
+    "total_earned": "Total Earned",
+    "no_promo_codes": "No promo codes found."
+  },
+
+  "submitPromoCode": {
+    "submit_promo_code": "Submit Promo Code?",
+    "review_before_activation": "Your code will be reviewed before activation.",
+    "usually_takes": "This usually takes less than 24 hours",
+    "submit_now": "Submit Now",
+    "cancel": "Cancel"
+  },
+
+  "referralPopup": {
+    "my_referrals": "My Referrals",
+    "tracking": "Tracking {{count}} active referrals",
+    "search_placeholder": "Search by name...",
+    "active_duration": "Active Duration",
+    "total_earned": "Total Earned",
+    "no_referrals": "No referrals found"
+  },
+
+  "kycVerified": {
+    "subscription_active": "Subscription Active",
+    "active_balance": "Active Balance",
+    "available_for_withdrawal": "Available for withdrawal",
+    "verified": "Verified",
+    "kyc_verification": "KYC Verification",
+    "unlock_withdrawals": "To unlock withdrawals, complete a quick identity check.",
+    "wallet_details": "Wallet Details"
+  },
+
+  "banner": {
+    "seasonal_offer": "🎉 Seasonal Offer",
+    "learn_more": "Learn More →",
+    "active_from": "Active From:"
   }
 }

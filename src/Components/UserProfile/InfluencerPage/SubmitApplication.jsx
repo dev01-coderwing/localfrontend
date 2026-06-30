@@ -1,18 +1,15 @@
-
-
-
-
 import React from "react";
 import { Check } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import InfluencerDashboard from "./InfluencerDashborad";
+import { useTranslation } from "react-i18next";
 
 function SubmitApplication({ closePopup, onConfirm }) {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-[3px] p-4">
-      {/* Popup Card (NO UI CHANGED) */}
+      {/* Popup Card */}
       <div
         className="
           bg-[var(--bg-background)]
@@ -29,7 +26,7 @@ function SubmitApplication({ closePopup, onConfirm }) {
           pb-5 sm:pb-6
         "
       >
-        {/* Floating Dots (UNCHANGED) */}
+        {/* Floating Dots */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-[48px] left-[34%] h-1 w-1 rounded-full bg-pink-300" />
           <div className="absolute top-[28px] left-[48%] h-1.5 w-1.5 rounded-full bg-purple-500" />
@@ -39,7 +36,7 @@ function SubmitApplication({ closePopup, onConfirm }) {
           <div className="absolute top-[104px] left-[40%] h-2 w-2 rounded-full bg-purple-600" />
         </div>
 
-        {/* Success Icon (UNCHANGED) */}
+        {/* Success Icon */}
         <div className="flex justify-center">
           <div className="h-[60px] w-[60px] sm:h-[72px] sm:w-[72px] rounded-full bg-[#3f46f0] flex items-center justify-center shadow-lg">
             <div className="h-[28px] w-[28px] rounded-full bg-white flex items-center justify-center">
@@ -48,19 +45,18 @@ function SubmitApplication({ closePopup, onConfirm }) {
           </div>
         </div>
 
-        {/* Content (UNCHANGED) */}
+        {/* Content */}
         <div className="mt-6 text-center">
           <h2 className="text-[24px] sm:text-[28px] font-semibold text-[var(--text-dim)]">
-            Submit Application?
+            {t('submitApplication.submit_question')}
           </h2>
 
           <p className="mt-4 text-[14px] sm:text-[15px] leading-6 text-[var(--text-dim2)] px-1">
-            Your Influencer request will be reviewed within{" "}
+            {t('submitApplication.review_prefix')}{" "}
             <span className="font-semibold text-[var(--text-dim)]">
-              24–48 hours
+              {t('submitApplication.review_hours')}
             </span>
-            . We'll notify you via push notification once your status is
-            updated.
+            {t('submitApplication.review_suffix')}
           </p>
         </div>
 
@@ -82,7 +78,7 @@ function SubmitApplication({ closePopup, onConfirm }) {
               transition
             "
           >
-            Confirm
+            {t('submitApplication.confirm')}
           </button>
 
           <button
@@ -101,7 +97,7 @@ function SubmitApplication({ closePopup, onConfirm }) {
               transition
             "
           >
-            Cancel
+            {t('submitApplication.cancel')}
           </button>
         </div>
       </div>

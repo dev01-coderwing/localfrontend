@@ -1,5 +1,6 @@
  import {React,useState} from "react";
  import Withdrawal from "./Withdrawal";
+import { useTranslation } from "react-i18next";
 import {
   ArrowLeft,
   ChevronRight,
@@ -25,7 +26,7 @@ const withdrawHistory = [
 ];
 
 function InfluencerWallet({onClose}) {
-
+  const { t } = useTranslation();
   const [showWithdrawal, setShowWithdrawal] = useState(false);
   return (
     // <div className="min-h-screen bg-[#1f1f1f] flex items-center justify-center p-2 sm:p-4 md:p-6">
@@ -33,7 +34,7 @@ function InfluencerWallet({onClose}) {
   className="fixed inset-0 z-[9999] bg-black/60 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 md:p-6"
   onClick={onClose}
 >
-      
+
       {/* MAIN POPUP */}
      <div
        onClick={(e) => e.stopPropagation()}
@@ -50,15 +51,13 @@ function InfluencerWallet({onClose}) {
     shadow-2xl
     overflow-hidden
     bg-[var(--bg-background)]
-    
+
   "
 >
-     
+
         {/* HEADER */}
         <div className="px-4 sm:px-5 pt-4 sm:pt-5 pb-3 sm:pb-4">
           <div className="flex items-center gap-3">
-            
-            
 
 
 <button
@@ -66,10 +65,10 @@ function InfluencerWallet({onClose}) {
   className="h-8 w-8 rounded-full flex items-center text-[var(--text-dim)] justify-center hover:bg-gray-200 transition border border-[var(--border)]"
 >
   <ArrowLeft size={18} />
-</button> 
+</button>
 
             <h2 className="text-[14px] sm:text-[15px] font-semibold text-[var(--text-dim)]">
-              My Referrals
+              {t('influencerWallet.my_referrals')}
             </h2>
 
           </div>
@@ -84,18 +83,18 @@ function InfluencerWallet({onClose}) {
             {/* TAGS */}
             <div className="flex flex-wrap gap-2">
               <span className="px-2 py-[5px] rounded-full bg-[#b9efb8] text-[9px] sm:text-[10px] font-medium text-[#1c7a1c] whitespace-nowrap">
-                • Subscription Active
+                {t('influencerWallet.subscription_active')}
               </span>
 
               <span className="px-2 py-[5px] rounded-full bg-[#d9d5d5] text-[9px] sm:text-[10px] font-medium text-[#555] whitespace-nowrap">
-                • Active Balance
+                {t('influencerWallet.active_balance')}
               </span>
             </div>
 
             {/* BALANCE */}
             <div className="mt-4">
               <p className="text-[11px] sm:text-[12px]  text-[var(--text-dim2)]">
-                Available Balance
+                {t('influencerWallet.available_balance')}
               </p>
 
               <h1 className="text-[30px] sm:text-[34px] md:text-[38px] font-bold text-[var(--text-dim)] mt-1 leading-none">
@@ -105,16 +104,16 @@ function InfluencerWallet({onClose}) {
 
             {/* BANK DETAIL */}
             <div className="mt-5  bg-[var(--bg-card)]/10  rounded-[14px] border border-[var(--border)] sm:rounded-[16px] px-3 sm:px-4 py-3 flex items-center justify-between">
-              
+
               <div className="flex items-center gap-3 min-w-0">
-                
+
                 <div className="h-10 w-10 min-w-[40px] text-[var(--text-dim)]  bg-[var(--bg-background)] border border-[var(--border)] rounded-full  flex items-center justify-center">
                   <Building2 size={18} />
                 </div>
 
                 <div className="min-w-0">
                   <h4 className="text-[12px] sm:text-[13px] font-semibold text-[var(--text-dim)]">
-                    Bank Detail
+                    {t('influencerWallet.bank_detail')}
                   </h4>
 
                   <p className="text-[10px] sm:text-[11px] text-[var(--text-dim2)] truncate">
@@ -125,31 +124,31 @@ function InfluencerWallet({onClose}) {
 
               <ChevronRight
                 size={18}
-                className="text-[#777] min-w-[18px] text-[var(--text-dim)]" 
+                className="text-[#777] min-w-[18px] text-[var(--text-dim)]"
               />
             </div>
 
             {/* VERIFICATION */}
             <div className="mt-3 bg-[var(--bg-card)]/10  rounded-[14px] border border-[var(--border)] sm:rounded-[16px] px-3 sm:px-4 py-3 flex items-center justify-between">
-              
+
               <div className="flex items-start gap-3 min-w-0 ">
-                
+
                 <div className="h-10 w-10 min-w-[40px] text-[var(--text-dim)] bg-[var(--bg-background)] rounded-full border border-[var(--border)] flex items-center justify-center">
                   <BadgeCheck size={18} />
                 </div>
 
                 <div className="min-w-0">
-                  
+
                   <span className="inline-block px-2 py-[2px] rounded-full bg-[#b9efb8] text-[8px] sm:text-[9px] text-[#1c7a1c] font-semibold">
-                    Verified
+                    {t('influencerWallet.verified')}
                   </span>
 
                   <h4 className="text-[12px] sm:text-[13px] font-semibold text-[var(--text-dim)] mt-1">
-                    KYC Verification
+                    {t('influencerWallet.kyc_verification')}
                   </h4>
 
                   <p className="text-[10px] sm:text-[11px] text-[var(--text-dim2)] leading-4 sm:leading-5">
-                    To unlock withdrawals, complete a quick identity check.
+                    {t('influencerWallet.unlock_withdrawals')}
                   </p>
 
                 </div>
@@ -181,27 +180,26 @@ function InfluencerWallet({onClose}) {
                 transition
               "
             >
-              Withdraw
+              {t('influencerWallet.withdraw')}
             </button>
           </div>
 
           {/* CURRENCY INFO */}
           <div className="mt-4 bg-[var(--bg-card)]/10 border border-[var(--border)]  bg-[var(--bg-card)]/10 rounded-[16px] sm:rounded-[18px] p-3 sm:p-4">
-            
+
             <div className="flex gap-3">
-              
+
               <div className="mt-1 min-w-[16px]">
                 <Info size={16} className="text-[var(--text-dim)]" />
               </div>
 
               <div>
                 <h4 className="text-[12px] sm:text-[13px] font-semibold text-[var(--text-dim)]">
-                  Currency information
+                  {t('influencerWallet.currency_information')}
                 </h4>
 
                 <p className="text-[10px] sm:text-[11px] text-[var(--text-dim2)] leading-5 mt-1">
-                  Withdrawals in currencies other than EUR will incur bank
-                  amount. We recommend withdrawing in EUR to avoid fees.
+                  {t('influencerWallet.currency_info_desc')}
                 </p>
               </div>
             </div>
@@ -211,19 +209,19 @@ function InfluencerWallet({onClose}) {
           <div className="mt-5">
 
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              
+
               <div>
                 <h3 className="text-[12px] sm:text-[13px] font-semibold text-[var(--text-dim)]">
-                  Total Amount: €125.99
+                  {t('influencerWallet.total_amount')}
                 </h3>
 
                 <p className="text-[9px] sm:text-[10px] text-[var(--text-dim)] mt-1">
-                  Transaction ID: #WB-562-31
+                  {t('influencerWallet.transaction_id')}
                 </p>
               </div>
 
               <span className="w-fit px-3 py-1 rounded-full bg-[#e7e5ff] text-[#6b63ff] text-[9px] sm:text-[10px] font-medium">
-                • Processing
+                {t('influencerWallet.processing')}
               </span>
 
             </div>
@@ -258,7 +256,7 @@ function InfluencerWallet({onClose}) {
                     </div>
 
                     <p className="text-[9px] sm:text-[10px] text-[#777] mt-2 text-center leading-4">
-                      {item.label}
+                      {t(`influencerWallet.progress_${index}`)}
                     </p>
                   </div>
                 ))}
@@ -271,31 +269,31 @@ function InfluencerWallet({onClose}) {
           <div className="mt-6 sm:mt-7">
 
             <div className="flex items-center justify-between">
-              
+
               <h3 className="text-[14px] sm:text-[15px] font-semibold text-[var(--text-dim)]">
-                Withdraw History
+                {t('influencerWallet.withdraw_history')}
               </h3>
 
               <button className="text-[11px] sm:text-[12px] text-[var(--text-dim)] font-medium">
-                View All
+                {t('influencerWallet.view_all')}
               </button>
 
             </div>
 
             <div className="mt-4 flex flex-col gap-3">
-              
+
               {withdrawHistory.map((item) => (
                 <div
                   key={item.id}
                   className=" rounded-[16px] sm:rounded-[18px] px-3 text-[var(--text-dim)] bg-[var(--bg-card)]/10 sm:px-4 py-3 flex items-center justify-between border border-[var(--border)]"
                 >
-                  
+
                   <div className="flex items-center gap-3 min-w-0  ">
-                    
+
                     <div className="h-10 p-2 w-10 sm:h-11 sm:w-11 rounded-full border border-[var(--border)] bg-[var(--bg-background)] min-w-[40px]"><User /></div>
-                     
+
                     <div className="min-w-0">
-                      
+
                       <h4 className="text-[12px] sm:text-[13px] font-semibold text-[var(--text-dim)] truncate  ">
                         {item.name}
                       </h4>
@@ -313,7 +311,7 @@ function InfluencerWallet({onClose}) {
                     </h4>
 
                     <p className="text-[9px] sm:text-[10px] text-[var(--text-dim)]">
-                      Commission
+                      {t('influencerWallet.commission')}
                     </p>
                   </div>
 
@@ -332,12 +330,9 @@ function InfluencerWallet({onClose}) {
 )}
     </div>
 
-    
-    
+
+
   );
 }
 
 export default InfluencerWallet;
-
-
-

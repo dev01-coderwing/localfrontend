@@ -19,8 +19,10 @@ import { getMeonBalanceThunk } from "../Redux/meonsSlice";
 
 import { useDispatch } from "react-redux";
 import { spendMeonsThunk } from "../Redux/meonsSlice";
+import { useTranslation } from "react-i18next";
 
 const SpendMeons = () => {
+  const { t } = useTranslation();
 
   const [selectedItem, setSelectedItem] = React.useState(null);
 
@@ -55,7 +57,7 @@ const SpendMeons = () => {
     // CHECK BALANCE
     if (currentBalance < total) {
 
-      alert("Not enough Meons");
+      alert(t('spendMeons.not_enough_meons'));
 
       return;
     }
@@ -91,14 +93,14 @@ const SpendMeons = () => {
 
         console.log(result.payload);
 
-        alert("Purchase Failed");
+        alert(t('spendMeons.purchase_failed'));
       }
 
     } catch (error) {
 
       console.log(error);
 
-      alert("Something went wrong");
+      alert(t('spendMeons.something_went_wrong'));
     }
   };
   const products = [
@@ -132,13 +134,13 @@ const SpendMeons = () => {
               </button>
 
               <h2 className="text-2xl font-semibold text-[var(--text-dim)]">
-                Setting
+                {t('spendMeons.setting')}
               </h2>
             </div>
 
             {/* TITLE */}
             <p className="text-sm font-semibold text-[var(--text-dim2)] mb-4">
-              Spend Meons
+              {t('spendMeons.spend_meons')}
             </p>
 
             {/* WALLET CARD (REUSE SAME) */}
@@ -146,7 +148,7 @@ const SpendMeons = () => {
 
               <div>
                 <p className="text-xs text-[var(--text-dim)] mb-2">
-                  MEONS BALANCE
+                  {t('spendMeons.meons_balance')}
                 </p>
 
                 <div className="flex items-center gap-3">
@@ -186,7 +188,7 @@ const SpendMeons = () => {
 
                   {/* NAME */}
                   <p className="text-[var(--text-dim)] font-medium text-sm">
-                    {item.name}
+                    {t(`spendMeons.product_${i}_name`)}
                   </p>
 
                   {/* PRICE */}
@@ -205,7 +207,7 @@ const SpendMeons = () => {
                     }}
                     className="w-full py-2 rounded-lg text-white text-sm bg-gradient-to-r from-[#D79098] to-[#5F7BF4]"
                   >
-                    Buy
+                    {t('spendMeons.buy')}
                   </button>
 
                 </div>
@@ -215,7 +217,7 @@ const SpendMeons = () => {
 
             {/* FOOTER */}
             <p className="text-xs text-center text-[var(--text-dim)] mt-4">
-              Purchases of virtual items are final and non-refundable. Terms and Conditions apply.
+              {t('spendMeons.disclaimer')}
             </p>
 
           </div>
@@ -243,7 +245,7 @@ const SpendMeons = () => {
 
             {/* TITLE */}
             <h2 className="text-xl font-semibold text-[var(--text-dim)] mb-8">
-              Item Details
+              {t('spendMeons.item_details')}
             </h2>
 
             {/* IMAGE */}
@@ -264,15 +266,13 @@ const SpendMeons = () => {
             {/* BADGE */}
             <div className="flex justify-center mt-3">
               <span className="px-4 py-1 border border-[var(--border)] rounded-full text-sm text-[var(--text-dim2)]">
-                RARE ITEM
+                {t('spendMeons.rare_item')}
               </span>
             </div>
 
             {/* DESCRIPTION */}
             <p className="text-center text-[var(--text-dim2)] max-w-[500px] mx-auto mt-6 leading-8">
-              A symbol of elegance and appreciation sending this item boosts the
-              recipient's popularity score by 50 points and adds a special flair to
-              their profile.
+              {t('spendMeons.description')}
             </p>
 
             {/* PRICE BOX */}
@@ -281,7 +281,7 @@ const SpendMeons = () => {
               {/* PRICE */}
               <div className="text-center">
                 <p className="text-2xl font-semibold text-[var(--text-dim)]">
-                  Price per unit
+                  {t('spendMeons.price_per_unit')}
                 </p>
 
                 <div className="flex items-center justify-center gap-1 mt-3">
@@ -299,7 +299,7 @@ const SpendMeons = () => {
               {/* BALANCE */}
               <div className="text-center">
                 <p className="text-xl font-semibold text-[var(--text-dim)]">
-                  Your Current Balance
+                  {t('spendMeons.your_current_balance')}
                 </p>
 
                 <div className="flex items-center justify-center gap-1 mt-2">
@@ -317,7 +317,7 @@ const SpendMeons = () => {
               <div className="flex items-center justify-between">
 
                 <p className="text-xl font-medium text-[var(--text-dim)]">
-                  Quantity
+                  {t('spendMeons.quantity')}
                 </p>
 
                 <div className="flex items-center gap-4">
@@ -354,7 +354,7 @@ const SpendMeons = () => {
 
               <div className="flex items-center justify-between mb-4">
                 <p className="text-lg font-medium text-[var(--text-dim)]">
-                  Total Cost
+                  {t('spendMeons.total_cost')}
                 </p>
 
                 <div className="flex items-center gap-1">
@@ -370,7 +370,7 @@ const SpendMeons = () => {
                 onClick={handlePurchase}
                 className="w-full py-3 rounded-xl text-white text-lg font-medium bg-gradient-to-r from-[#D79098] via-[#9B85C6] to-[#5F7BF4]"
               >
-                Confirm Purchase
+                {t('spendMeons.confirm_purchase')}
               </button>
 
             </div>
@@ -418,7 +418,7 @@ const SpendMeons = () => {
 
             {/* TITLE */}
             <h2 className="text-center text-4xl font-bold text-[var(--text)] mt-6">
-              Purchase Successful
+              {t('spendMeons.purchase_successful')}
             </h2>
 
             {/* DEDUCTED */}
@@ -431,7 +431,7 @@ const SpendMeons = () => {
               />
 
               <span className="text-black text-sm font-medium">
-                {lastPurchase} deducted from your wallet
+                {t('spendMeons.deducted', { amount: lastPurchase })}
               </span>
 
             </div>
@@ -443,7 +443,7 @@ const SpendMeons = () => {
               <button
                 className="w-full py-3 rounded-xl text-white text-lg font-medium bg-gradient-to-r from-[#D79098] via-[#9B85C6] to-[#5F7BF4]"
               >
-                Use Now
+                {t('spendMeons.use_now')}
               </button>
 
               {/* BACK */}
@@ -451,7 +451,7 @@ const SpendMeons = () => {
                 onClick={() => setShowSuccess(false)}
                 className="w-full py-3 rounded-xl border border-[#FFB39F] text-[#FFB39F] text-lg font-medium"
               >
-                Back to Wallet
+                {t('spendMeons.back_to_wallet')}
               </button>
 
             </div>

@@ -1,7 +1,9 @@
 import React from "react";
 import { X, Building2, IdCard, ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 function PopupOne({ closeModal, goNext }) {
+  const { t } = useTranslation();
   return (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 px-4">
     <div className="bg-[var(--bg)]  w-[480px] h-[500px] rounded-[20px] border border-gray-200 pt-[24px] pr-[43px] pb-[24px] pl-[43px] relative flex flex-col gap-4">
@@ -16,7 +18,7 @@ function PopupOne({ closeModal, goNext }) {
 
       {/* Title */}
       <h2 className="text-[21px] font-bold text-[var(--text)]">
-        KYC Verification
+        {t('popupOne.kyc_verification')}
       </h2>
 
       {/* Icon */}
@@ -28,13 +30,12 @@ function PopupOne({ closeModal, goNext }) {
 
       {/* Heading */}
       <h3 className="text-center text-[25px] font-bold text-[var(--text)]">
-        Quick Identity Check
+        {t('popupOne.quick_identity_check')}
       </h3>
 
       {/* Description */}
       <p className="text-center text-[var(--text-dim)] text-[15px] leading-7">
-        To keep our community safe and secure, we need to verify your identity
-        before your first withdrawal.
+        {t('popupOne.description')}
       </p>
 
       {/* Info Box */}
@@ -44,9 +45,9 @@ function PopupOne({ closeModal, goNext }) {
         </div>
         <div>
           <h4 className="font-semibold text-[var(--text)] text-[15px]">
-            Only Government ID + Selfie required
+            {t('popupOne.only_gov_id')}
           </h4>
-          <p className="text-[var(--text-dim)] text-sm mt-1">Takes 1-2 minutes.</p>
+          <p className="text-[var(--text-dim)] text-sm mt-1">{t('popupOne.takes_minutes')}</p>
         </div>
       </div>
 
@@ -55,7 +56,7 @@ function PopupOne({ closeModal, goNext }) {
         onClick={goNext}
         className="w-full py-2 rounded-2xl text-white font-semibold text-[16px] bg-gradient-to-r from-pink-300 to-blue-500 flex items-center justify-center gap-2"
       >
-        Start Verification <ArrowRight size={18} />
+        {t('popupOne.start_verification')} <ArrowRight size={18} />
       </button>
 
       {/* Later Button */}
@@ -63,7 +64,7 @@ function PopupOne({ closeModal, goNext }) {
         onClick={closeModal}
         className="w-full text-[var(--text-dim)]  font-medium text-[15px]"
       >
-        May Be Later
+        {t('popupOne.may_be_later')}
       </button>
     </div>
     </div>

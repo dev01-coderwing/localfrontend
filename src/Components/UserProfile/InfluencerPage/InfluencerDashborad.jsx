@@ -1,10 +1,7 @@
-
-
-
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Copy, Gift, Lock, User } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PromoCodeList from "./PromoCodeList";
 import ReferralPopup from "./ReferralPopup";
 import PromoCodeModal from "./PromoCodeModal";
@@ -14,7 +11,8 @@ import Right from "../layout/Right";
 import WalletPopup from "./WalletPopup";
 
 function InfluencerDashboard() {
-    const navigate = useNavigate();
+  const { t } = useTranslation();
+  const navigate = useNavigate();
   const [copied, setCopied] = useState(false);
   const [showWalletPopup, setShowWalletPopup] = useState(false);
   const [showPromoCodeList, setShowPromoCodeList] = useState(false);
@@ -51,8 +49,8 @@ function InfluencerDashboard() {
   const handleShareCode = async () => {
     if (navigator.share) {
       await navigator.share({
-        title: "Promo Code",
-        text: `Use my promo code ${promoData.code} and get ${promoData.discount} off`,
+        title: t('influencerDashboard.share_title'),
+        text: t('influencerDashboard.share_text', { code: promoData.code, discount: promoData.discount }),
       });
     }
   };
@@ -74,19 +72,19 @@ function InfluencerDashboard() {
 
               {/* HEADER */}
               <div className="flex items-center gap-3 mb-6">
-                <button 
+                <button
                  onClick={() => navigate(-1)}
                 className="h-10 w-10  text-[var(--text-dim)] rounded-full  border border-[var(--border)] flex items-center bg-[var(--bg-background)] justify-center shrink-0">
                   <ArrowLeft size={18} />
                 </button>
 
                 <h1 className="text-[22px] sm:text-[28px] font-semibold text-[var(--text-dim)]">
-                  Setting
+                  {t('influencerDashboard.setting')}
                 </h1>
               </div>
 
               <h2 className="text-[16px] font-semibold mb-5 text-[var(--text-dim2)]">
-                Influencer Dashboard
+                {t('influencerDashboard.influencer_dashboard')}
               </h2>
 
               {/* STATS */}
@@ -102,7 +100,7 @@ function InfluencerDashboard() {
                       </div>
 
                       <span className="text-[13px] text-[var(--text-dim2)]">
-                        {item.title}
+                        {t(`influencerDashboard.stat_${index}_title`)}
                       </span>
                     </div>
 
@@ -120,23 +118,21 @@ function InfluencerDashboard() {
               {/* PROMO CARD */}
               <div className="bg-[var(--bg-card)]/10  border border-[var(--border)] rounded-[22px] p-5 mb-5">
 
-              
-
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <h3 className="text-[18px] font-semibold text-[var(--text-dim)]">
-                      Promo Code
+                      {t('influencerDashboard.promo_code')}
                     </h3>
 
                     <p className="text-[13px] text-[var(--text-dim2)] mt-1">
-                      Your Promo Code
+                      {t('influencerDashboard.your_promo_code')}
                     </p>
                   </div>
 
-                  <button 
+                  <button
                     onClick={() => setShowPromoCodeList(true)}
                   className="text-[13px] font-medium text-[#4F6BFF] hover:underline">
-                    View All
+                    {t('influencerDashboard.view_all')}
                   </button>
                 </div>
 
@@ -158,7 +154,7 @@ function InfluencerDashboard() {
                     className="h-[68px] px-7 rounded-[18px] bg-[#f1cb08] flex items-center justify-center gap-2 font-medium"
                   >
                     <Copy size={18} />
-                    {copied ? "Copied!" : "Copy Code"}
+                    {copied ? t('influencerDashboard.copied') : t('influencerDashboard.copy_code')}
                   </button>
 
                   {/* SHARE */}
@@ -173,22 +169,22 @@ function InfluencerDashboard() {
 
               {/* ELIGIBILITY */}
               <div className="bg-[var(--bg-card)]/10  border border-[var(--border)] rounded-[22px] p-5 mb-5">
-                {/* 
+                {/*
                 <h3 className="text-[18px] font-semibold text-[var(--text-dim)]">
                   Eligibility Progress
                 </h3> */}
                 <div className="flex items-center justify-between">
                   <h3 className="text-[18px] font-semibold text-[var(--text-dim)]">
-                    Eligibility Progress
+                    {t('influencerDashboard.eligibility_progress')}
                   </h3>
 
                   <span className="text-[13px] font-medium text-[var(--text-dim)]">
-                    3/5 Needed
+                    {t('influencerDashboard.needed')}
                   </span>
                 </div>
 
                 <p className="text-[14px] text-[var(--text-dim2)] mt-2">
-                  Reach milestones to unlock premium features.
+                  {t('influencerDashboard.reach_milestones')}
                 </p>
 
                 <div className="h-[10px] rounded-full bg-[#f4d5cb] overflow-hidden mt-4">
@@ -205,11 +201,11 @@ function InfluencerDashboard() {
 
                   <div>
                     <h4 className="text-[15px] font-semibold text-[var(--text-dim)]">
-                      Unlock Bank Withdrawals
+                      {t('influencerDashboard.unlock_bank_withdrawals')}
                     </h4>
 
                     <p className="text-[13px] text-[var(--text-dim2)] mt-1">
-                      Maintain 5 active referrals for 30 days.
+                      {t('influencerDashboard.maintain_referrals')}
                     </p>
                   </div>
                 </div>
@@ -223,13 +219,13 @@ function InfluencerDashboard() {
             </h3> */}
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-[18px] font-semibold text-[var(--text-dim)]">
-                    Recent Activity
+                    {t('influencerDashboard.recent_activity')}
                   </h3>
 
                   <button
                     onClick={() => setShowReferralPopup(true)}
                    className="text-[13px] font-medium text-[#4F6BFF] hover:underline">
-                    View All
+                    {t('influencerDashboard.view_all')}
                   </button>
                 </div>
 

@@ -1,10 +1,13 @@
 
 
+
 import React, { useState } from "react";
 import { X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import SubmitApplication from "./SubmitApplication";
 
 function RegistrationPopup({ closePopup }) {
+  const { t } = useTranslation();
   const [showSubmitPopup, setShowSubmitPopup] = useState(false);
 
   const agreementData = [
@@ -58,7 +61,7 @@ function RegistrationPopup({ closePopup }) {
             {/* Top Row */}
             <div className="flex items-start justify-between gap-3">
               <h2 className="text-[16px] sm:text-[18px] font-semibold  text-[var(--text-dim)]">
-                Influencer Registration
+                {t('registrationPopup.influencer_registration')}
               </h2>
 
               <button
@@ -72,12 +75,11 @@ function RegistrationPopup({ closePopup }) {
             {/* Center Text */}
             <div className="mt-2 text-center">
               <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-semibold text-[var(--text-dim)]">
-                Join the Elite
+                {t('registrationPopup.join_the_elite')}
               </h3>
 
               <p className="mt-1 text-[12px] sm:text-[13px]  text-[var(--text-dim2)] leading-5">
-                Complete your registration to start earning
-                commission.
+                {t('registrationPopup.complete_registration')}
               </p>
             </div>
           </div>
@@ -94,7 +96,7 @@ function RegistrationPopup({ closePopup }) {
                 </div>
 
                 <h4 className="text-[14px] sm:text-[15px] font-semibold  text-[var(--text-dim)]">
-                  Personal Info
+                  {t('registrationPopup.personal_info')}
                 </h4>
               </div>
 
@@ -104,12 +106,12 @@ function RegistrationPopup({ closePopup }) {
                 {/* Full Name */}
                 <div className="w-full">
                   <label className="text-[12px] font-medium  text-[var(--text-dim)] block mb-1">
-                    Full Name
+                    {t('registrationPopup.full_name')}
                   </label>
 
                   <input
                     type="text"
-                    placeholder="Neetesh"
+                    placeholder={t('registrationPopup.full_name_placeholder')}
                     className="
                     text-[var(--text-dim)]
                       w-full
@@ -129,12 +131,12 @@ function RegistrationPopup({ closePopup }) {
                 {/* Email */}
                 <div className="w-full">
                   <label className="text-[12px] font-medium text-[var(--text-dim)] block mb-1">
-                    Email Address
+                    {t('registrationPopup.email_address')}
                   </label>
 
                   <input
                     type="email"
-                    placeholder="neeteshiuixdesigner@gmail.com"
+                    placeholder={t('registrationPopup.email_placeholder')}
                     className="
                       w-full
                        text-[var(--text-dim)]
@@ -162,7 +164,7 @@ function RegistrationPopup({ closePopup }) {
                 </div>
 
                 <h4 className="text-[14px] sm:text-[15px] font-semibold  text-[var(--text-dim)]">
-                  Agreement
+                  {t('registrationPopup.agreement')}
                 </h4>
               </div>
 
@@ -176,11 +178,11 @@ function RegistrationPopup({ closePopup }) {
 
                     <div className="min-w-0">
                       <h5 className="text-[13px] font-semibold text-[var(--text-dim)] ">
-                        {item.title}
+                        {t(`registrationPopup.agreement_${index}_title`)}
                       </h5>
 
                       <p className="text-[11px] sm:text-[12px] text-[var(--text-dim2)]  mt-0.5 leading-4">
-                        {item.desc}
+                        {t(`registrationPopup.agreement_${index}_desc`)}
                       </p>
                     </div>
                   </div>
@@ -206,7 +208,7 @@ function RegistrationPopup({ closePopup }) {
                 transition
               "
             >
-              Submit Application
+              {t('registrationPopup.submit_application')}
             </button>
           </div>
         </div>

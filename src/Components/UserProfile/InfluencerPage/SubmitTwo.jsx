@@ -1,7 +1,10 @@
 import React from "react";
 import { Check } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 function SubmitTwo({ closePopup }) {
+  const { t } = useTranslation();
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-[3px] p-4">
 
@@ -45,15 +48,15 @@ function SubmitTwo({ closePopup }) {
         {/* Content */}
         <div className="mt-6 text-center">
           <h2 className="text-[24px] sm:text-[28px] font-semibold text-[var(--text-dim)]">
-            Submit Application?
+            {t('submitTwo.submit_question')}
           </h2>
 
           <p className="mt-4 text-[14px] sm:text-[15px] leading-6 text-[var(--text-dim2)] px-1">
-            Your Influencer request will be reviewed within{" "}
+            {t('submitTwo.review_prefix')}{" "}
             <span className="font-semibold text-[var(--text-dim)] ">
-              24–48 hours
+              {t('submitTwo.review_hours')}
             </span>
-            . We'll notify you via push notification once your status is updated.
+            {t('submitTwo.review_suffix')}
           </p>
         </div>
 
@@ -76,7 +79,7 @@ function SubmitTwo({ closePopup }) {
               transition
             "
           >
-            Confirm Submission
+            {t('submitTwo.confirm_submission')}
           </button>
 
           <button
@@ -91,11 +94,11 @@ function SubmitTwo({ closePopup }) {
               text-white
               text-[15px]
               font-medium
-             
+
               transition
             "
           >
-            Cancel
+            {t('submitTwo.cancel')}
           </button>
 
         </div>

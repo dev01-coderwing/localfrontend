@@ -1,7 +1,3 @@
-
-
-
-
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft, Camera, Sparkles, Check } from "lucide-react";
@@ -9,6 +5,7 @@ import TakeSelfie from "./TakeSelfie";
 import {getVerificationStatus} from "../../Redux/verifySlice";
 
 import { useDispatch,useSelector,} from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const verificationSteps = [
   {
@@ -27,6 +24,7 @@ const verificationSteps = [
 
 function GetVerified({ onBack }) {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 const dispatch = useDispatch();
 
 const {
@@ -70,13 +68,11 @@ useEffect(() => {
             </div>
 
             <h1 className="mt-6 text-[34px] font-bold text-[var(--text-dim)]">
-              Get Verified
+              {t('getVerified.get_verified')}
             </h1>
 
             <p className="text-center text-[var(--text-dim2)] text-sm mt-3 leading-relaxed">
-              Increase trust and security by
-              <br />
-              verifying your profile.
+              {t('getVerified.description')}
             </p>
           </div>
 
@@ -97,11 +93,11 @@ useEffect(() => {
 
                     <div>
                       <h3 className="text-sm font-semibold text-[var(--text-dim)]">
-                        {step.title}
+                        {t(`getVerified.step_${step.id}_title`)}
                       </h3>
 
                       <p className="text-xs text-[var(--text-dim2)] mt-1">
-                        {step.description}
+                        {t(`getVerified.step_${step.id}_desc`)}
                       </p>
                     </div>
                   </div>
@@ -120,13 +116,12 @@ useEffect(() => {
             onClick={handleStartVerification}
             className="mt-6 w-full h-14 rounded-xl text-white font-semibold bg-gradient-to-r from-[#D68AA3] to-[#566CF5]"
           >
-            Start Verification
+            {t('getVerified.start_verification')}
           </button>
 
           {/* Footer */}
           <p className="text-center text-[11px] text-[var(--text-dim2)]  mt-4 px-4">
-            Your data is encrypted and handled according to our privacy
-            policy.
+            {t('getVerified.privacy_note')}
           </p>
 
         </div>

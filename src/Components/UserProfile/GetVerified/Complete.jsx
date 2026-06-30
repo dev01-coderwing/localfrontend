@@ -1,10 +1,6 @@
-
-
-
-
-
 import React from "react";
 import { Check, Heart } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 function Complete({
   userName = "Neetesh",
@@ -13,6 +9,7 @@ function Complete({
   profileImage,
   onGoToProfile,
 }) {
+  const { t } = useTranslation();
   return (
     <div className="min-h-dvh bg-[var(--bg-background)] overflow-hidden">
       <div className="max-w-md mx-auto h-dvh flex flex-col px-4 py-4">
@@ -33,13 +30,12 @@ function Complete({
 
           {/* Heading */}
           <h1 className="text-[28px] font-bold text-[var(--text-dim)] mt-4 text-center whitespace-nowrap">
-            Verification Complete
+            {t('complete.verification_complete')}
           </h1>
 
           {/* Description */}
           <p className="text-center text-[var(--text-dim2)] text-sm leading-6 mt-3 max-w-[320px]">
-            Your profile is now verified. You've earned your blue badge,
-            helping others feel safer connecting with you.
+            {t('complete.description')}
           </p>
 
           {/* Profile Card */}
@@ -82,7 +78,7 @@ function Complete({
             </div>
 
             <span className="text-sm font-semibold text-[var(--text-dim)]">
-              {trustScore}% Trust Score
+              {t('complete.trust_score', { score: trustScore })}
             </span>
           </div>
 
@@ -91,7 +87,7 @@ function Complete({
             onClick={onGoToProfile}
             className="w-full mt-6 h-11 rounded-lg text-white font-medium bg-gradient-to-r from-[#D58AA2] to-[#566CF5]"
           >
-            Go to Profile
+            {t('complete.go_to_profile')}
           </button>
 
         </div>

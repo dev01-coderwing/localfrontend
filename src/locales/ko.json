@@ -626,5 +626,443 @@
     "five_minutes": "5분",
     "dismiss": "닫기",
     "extend": "연장"
+  },
+
+  "wallet": {
+    "setting": "설정",
+    "meons_wallet": "MEONS 지갑",
+    "meons_balance": "MEONS 잔액",
+    "earn_meons": "Meons 획득",
+    "spend_meons": "Meons 사용",
+    "recent_history": "최근 내역",
+    "show_less": "적게 보기",
+    "view_all": "모두 보기",
+    "disclaimer": "Meons는 인출하거나 실제 돈으로 전환할 수 없습니다. 이용 약관에 따라 사용됩니다."
+  },
+
+  "earnMeons": {
+    "setting": "설정",
+    "how_to_earn": "Meons 획득 방법",
+    "meons_balance": "MEONS 잔액",
+    "available_tasks": "이용 가능한 작업",
+    "task_1_title": "매일 로그인",
+    "task_1_desc": "내일 다시 방문하세요",
+    "task_2_title": "미니 게임",
+    "task_2_desc": "다른 사용자에게 도전하고 보상을 획득하세요.",
+    "task_3_title": "프로필 완성",
+    "task_3_desc": "70% 완료",
+    "play_now": "지금 플레이",
+    "finish_setup": "설정 완료",
+    "disclaimer": "Meons는 부스트, 프로필 강조 및 선물에 사용할 수 있습니다. 이용 약관이 적용됩니다."
+  },
+
+  "spendMeons": {
+    "setting": "설정",
+    "spend_meons": "Meons 사용",
+    "meons_balance": "MEONS 잔액",
+    "buy": "구매",
+    "item_details": "아이템 세부 정보",
+    "rare_item": "희귀 아이템",
+    "description": "우아함과 감사의 상징입니다. 이 아이템을 보내면 수신자의 인기 점수가 50점 상승하고 프로필에 특별한 매력이 더해집니다.",
+    "price_per_unit": "단가",
+    "your_current_balance": "현재 잔액",
+    "quantity": "수량",
+    "total_cost": "총 비용",
+    "confirm_purchase": "구매 확인",
+    "purchase_successful": "구매 성공",
+    "deducted": "{{amount}}이 지갑에서 차감되었습니다",
+    "use_now": "지금 사용",
+    "back_to_wallet": "지갑으로 돌아가기",
+    "not_enough_meons": "Meons가 부족합니다",
+    "purchase_failed": "구매 실패",
+    "something_went_wrong": "문제가 발생했습니다",
+    "disclaimer": "가상 아이템 구매는 최종적이며 환불이 불가합니다. 이용 약관이 적용됩니다.",
+    "product_0_name": "빨간 장미",
+    "product_1_name": "프로필 부스트",
+    "product_2_name": "VIP 골드",
+    "product_3_name": "슈퍼 라이크",
+    "product_4_name": "크리스탈 다이아몬드",
+    "product_5_name": "투명 모드"
+  },
+
+  "verifyModal": {
+    "kyc_verification": "KYC 인증",
+    "quick_identity_check": "빠른 신원 확인",
+    "description": "커뮤니티의 안전을 위해 첫 출금 전에 신원 확인이 필요합니다.",
+    "only_gov_id": "정부 발급 ID + 셀피만 필요",
+    "takes_minutes": "1~2분이 소요됩니다.",
+    "start_verification": "인증 시작",
+    "may_be_later": "나중에 하기"
+  },
+
+  "popupOne": {
+    "kyc_verification": "KYC 인증",
+    "quick_identity_check": "빠른 신원 확인",
+    "description": "커뮤니티의 안전을 위해 첫 출금 전에 신원 확인이 필요합니다.",
+    "only_gov_id": "정부 발급 ID + 셀피만 필요",
+    "takes_minutes": "1~2분이 소요됩니다.",
+    "start_verification": "인증 시작",
+    "may_be_later": "나중에 하기"
+  },
+
+  "popupTwo": {
+    "kyc_verification": "KYC 인증",
+    "verify_your_identity": "신원 확인",
+    "description": "커뮤니티의 안전을 위해 귀하가 누구인지 빠르게 확인해야 합니다.",
+    "upload_gov_id": "정부 발급 ID 업로드",
+    "id_types": "운전면허증, 여권",
+    "take_selfie": "셀피 촬영",
+    "quick_photo": "ID와 일치하는 빠른 사진",
+    "continue": "계속",
+    "privacy_note": "계속하면 신원 확인 프로세스 및 개인정보 보호 정책에 동의하는 것입니다."
+  },
+
+  "getVerify": {
+    "kyc_verification": "KYC 인증",
+    "upload_document": "서류 업로드",
+    "verify_your_identity": "신원 확인",
+    "description": "커뮤니티의 안전을 위해 귀하가 누구인지 빠르게 확인해야 합니다.",
+    "select_document_type": "서류 유형 선택",
+    "doc_passport_title": "여권",
+    "doc_passport_desc": "국제 여행 서류",
+    "doc_national_title": "주민등록증",
+    "doc_national_desc": "정부 발급 신분증",
+    "doc_license_title": "운전면허증",
+    "doc_license_desc": "유효한 운전 허가증",
+    "upload_document_heading": "서류 업로드",
+    "upload_gov_id": "정부 발급 ID 업로드",
+    "formats_supported": "고화질 JPG, JPEG, PNG 또는 PDF 형식 지원",
+    "select_file": "파일 선택",
+    "info_note": "서류가 밝게 조명되어 있고 네 모서리가 모두 보이는지 확인하세요. 빠른 인증을 위해 그림자와 반사를 피하세요.",
+    "continue": "계속"
+  },
+
+  "selfie": {
+    "kyc_verification": "KYC 인증",
+    "take_a_selfie": "셀피 촬영",
+    "step_2_of_3": "3단계 중 2단계",
+    "identity_verification": "신원 확인",
+    "hold_steady": "스마트폰을 안정적으로 들고 카메라를 똑바로 보세요",
+    "ensure_face": "얼굴이 밝게 조명되어 가이드 안에 들어오는지 확인하세요.",
+    "open_camera": "카메라 열기",
+    "do_later": "나중에 하기",
+    "capture": "촬영",
+    "retake": "다시 찍기",
+    "re_capture": "재촬영",
+    "confirm": "확인"
+  },
+
+  "verificationProgress": {
+    "under_review": "검토 중",
+    "verification_in_progress": "인증 진행 중",
+    "reviewing_note": "커뮤니티의 안전을 보장하기 위해 서류를 검토하고 있습니다.",
+    "usually_takes": "보통 소요 시간은",
+    "business_days": "영업일 기준 2~5일입니다.",
+    "withdrawal_funds": "자금 출금",
+    "back_to_dashboard": "대시보드로 돌아가기",
+    "need_help": "도움이 필요하신가요?",
+    "contact_support": "고객 지원 연락"
+  },
+
+  "realCurrencyWallet": {
+    "setting": "설정",
+    "real_currency_wallet": "실제 화폐 지갑",
+    "available_balance": "사용 가능한 잔액",
+    "add_balance": "+ 잔액 추가",
+    "use_in_store": "스토어에서 사용",
+    "convert_to_meons": "Meons로 전환",
+    "how_to_earn": "획득 방법",
+    "where_can_use": "사용 가능한 곳",
+    "invite_friends": "친구 초대",
+    "earn_0_title": "친구 초대하기",
+    "earn_0_desc": "고유한 추천 링크 공유",
+    "earn_1_title": "친구가 구독",
+    "earn_1_desc": "프리미엄 커뮤니티에 참여할 때",
+    "earn_2_title": "친구가 10% 할인 획득",
+    "earn_2_desc": "친구를 위한 즉각적인 환영 선물",
+    "earn_3_title": "10% 캐시백 획득",
+    "earn_3_desc": "이 지갑에 직접 적립",
+    "use_0_label": "Meons 구매",
+    "use_1_label": "구독 업그레이드",
+    "use_2_label": "Lucascope",
+    "use_3_label": "Q-보너스 / 루카스 타임",
+    "use_4_label": "편지"
+  },
+
+  "getVerified": {
+    "get_verified": "인증하기",
+    "description": "프로필을 인증하여 신뢰와 보안을 높이세요.",
+    "step_1_title": "셀피 촬영",
+    "step_1_desc": "본인 확인을 위한 빠른 사진",
+    "step_2_title": "AI 검토",
+    "step_2_desc": "2분 이내에 인증 완료",
+    "start_verification": "인증 시작",
+    "privacy_note": "귀하의 데이터는 암호화되어 개인정보 보호 정책에 따라 처리됩니다."
+  },
+
+  "takeSelfie": {
+    "step_1_of_2": "2단계 중 1단계",
+    "take_a_selfie": "셀피 촬영",
+    "compare_note": "이 사진을 공식 ID와 비교합니다.",
+    "face_detection": "● 얼굴 감지 활성",
+    "center_face": "원 안에 얼굴을 맞추세요",
+    "retake_photo": "사진 다시 찍기",
+    "uploading": "업로드 중...",
+    "capture": "촬영",
+    "upload_failed": "업로드 실패",
+    "focus_note": "사진이 초점이 맞을 때까지 기다리세요. 무표정을 유지하세요."
+  },
+
+  "identify": {
+    "step_2_of_2": "2단계 중 2단계",
+    "identity_verification": "신원 확인",
+    "verifying_details": "세부 정보 확인 중...",
+    "description": "AI가 사진과 ID를 안전하게 대조하고 있습니다. 보통 2분 이내로 완료됩니다.",
+    "scanning_successful": "스캔 성공",
+    "scanning_identity": "신원 스캔 중",
+    "continue": "계속"
+  },
+
+  "complete": {
+    "verification_complete": "인증 완료",
+    "description": "프로필이 인증되었습니다. 파란색 배지를 획득하여 다른 사람들이 더 안심하고 연결할 수 있게 되었습니다.",
+    "trust_score": "{{score}}% 신뢰 점수",
+    "go_to_profile": "프로필로 이동"
+  },
+
+  "introduction": {
+    "setting": "설정",
+    "influencer_program": "인플루언서 프로그램",
+    "register_as_influencer": "인플루언서로 등록",
+    "become_an": "이 되세요",
+    "influencer": "인플루언서",
+    "hero_desc": "엘리트 크리에이터 서클에 참여하여 수동적 수입을 늘리세요.",
+    "get_approved": "승인 받기",
+    "quick_review": "빠른 검토 프로세스",
+    "create_promo": "프로모 생성",
+    "your_custom_code": "맞춤 코드",
+    "global_policy": "글로벌 정책",
+    "fixed_discount": "고정 할인",
+    "commission_structure": "커미션 구조",
+    "commission": "커미션",
+    "eligibility_0_title": "활성 추천 5건",
+    "eligibility_0_desc": "반복 지급을 시작하기 위한 월간 최소 요건.",
+    "eligibility_1_title": "활성 구독",
+    "eligibility_1_desc": "인플루언서는 자체 프리미엄 계정을 유지해야 합니다.",
+    "eligibility_2_title": "연간 성장 한도 10%",
+    "eligibility_2_desc": "기본 연간 유지율에 대한 연간 유지율 한도.",
+    "eligibility_3_title": "최소 출금액 €30",
+    "eligibility_3_desc": "잔액이 €30에 도달하면 커미션이 지급됩니다.",
+    "register_btn": "인플루언서로 등록 →"
+  },
+
+  "registrationPopup": {
+    "influencer_registration": "인플루언서 등록",
+    "join_the_elite": "엘리트에 합류",
+    "complete_registration": "커미션 획득을 시작하려면 등록을 완료하세요.",
+    "personal_info": "개인 정보",
+    "full_name": "성명",
+    "full_name_placeholder": "Neetesh",
+    "email_address": "이메일 주소",
+    "email_placeholder": "neeteshiuixdesigner@gmail.com",
+    "agreement": "동의",
+    "agreement_0_title": "인플루언서 약관 동의",
+    "agreement_0_desc": "일반 서비스 약관 및 인플루언서 행동 지침을 읽고 동의합니다.",
+    "agreement_1_title": "커미션 정책 동의",
+    "agreement_1_desc": "지급 일정 및 성과 기반 커미션 구조에 동의합니다.",
+    "agreement_2_title": "KYC 인증 요건",
+    "agreement_2_desc": "지급을 위해 본인 인증이 필수임을 이해합니다.",
+    "submit_application": "신청서 제출"
+  },
+
+  "submitApplication": {
+    "submit_question": "신청서를 제출하시겠습니까?",
+    "review_prefix": "인플루언서 요청은",
+    "review_hours": "24~48시간",
+    "review_suffix": " 내에 검토됩니다. 상태가 업데이트되면 푸시 알림으로 알려드립니다.",
+    "confirm": "확인",
+    "cancel": "취소"
+  },
+
+  "influencerDashboard": {
+    "setting": "설정",
+    "influencer_dashboard": "인플루언서 대시보드",
+    "stat_0_title": "총 추천수",
+    "stat_1_title": "현재 활성",
+    "stat_2_title": "총 수익",
+    "promo_code": "프로모 코드",
+    "your_promo_code": "내 프로모 코드",
+    "view_all": "모두 보기",
+    "copied": "복사됨!",
+    "copy_code": "코드 복사",
+    "share_title": "프로모 코드",
+    "share_text": "내 프로모 코드 {{code}}를 사용하여 {{discount}} 할인을 받으세요",
+    "eligibility_progress": "자격 진행 상황",
+    "needed": "3/5 필요",
+    "reach_milestones": "마일스톤을 달성하여 프리미엄 기능을 잠금 해제하세요.",
+    "unlock_bank_withdrawals": "은행 출금 잠금 해제",
+    "maintain_referrals": "30일 동안 활성 추천 5건을 유지하세요.",
+    "recent_activity": "최근 활동"
+  },
+
+  "promoCodeModal": {
+    "create_promo_code": "프로모 코드 생성",
+    "code_name": "코드 이름",
+    "available": "사용 가능",
+    "live_preview": "라이브 미리보기",
+    "client_discount": "클라이언트 할인",
+    "commission_info": "커미션 비율은 고정되어 있으며 수익 대시보드에 자동으로 적용됩니다.",
+    "secure_payouts": "안전한 지급",
+    "real_time_analytics": "실시간 분석",
+    "submit_for_approval": "승인 요청 제출",
+    "terms_note": "제출함으로써 인플루언서 파트너십 약관에 동의합니다. 승인된 코드는 일반적으로 24시간 이내에 활성화됩니다."
+  },
+
+  "deactivatedDashboard": {
+    "setting": "설정",
+    "influencer_dashboard": "인플루언서 대시보드",
+    "subscription_inactive": "구독이 비활성 상태입니다. 프로모 코드를 활성화하려면 다시 활성화하세요.",
+    "renew_subscription": "구독 갱신",
+    "stat_0_title": "총 추천수",
+    "stat_1_title": "현재 활성",
+    "stat_2_title": "총 수익",
+    "promo_code": "프로모 코드",
+    "your_promo_code": "내 프로모 코드",
+    "view_all": "모두 보기",
+    "tracking_suspended": "추적 중지됨",
+    "referrals_not_tracked": "현재 추천이 추적되지 않고 있습니다",
+    "copy_code": "코드 복사",
+    "subscription_active": "구독 활성",
+    "withdrawal_locked": "출금 잠금됨",
+    "eligibility_progress": "자격 진행 상황",
+    "reach_milestones": "마일스톤을 달성하여 프리미엄 기능을 잠금 해제하세요.",
+    "active_referrals_progress": "활성 추천 진행 상황",
+    "needed": "3/5 필요",
+    "unlock_bank_withdrawals": "은행 출금 잠금 해제",
+    "maintain_referrals": "30일 동안 활성 추천 5건을 유지하세요.",
+    "reactivate_now": "지금 다시 활성화하여 수익 잠재력을 재시작하세요."
+  },
+
+  "walletPopup": {
+    "subscription_active": "구독 활성",
+    "active_balance": "활성 잔액",
+    "available_for_withdrawal": "출금 가능",
+    "add_bank_details": "은행 정보 추가",
+    "kyc_verification": "KYC 인증",
+    "unlock_withdrawals": "출금을 잠금 해제하려면 빠른 신원 확인을 완료하세요.",
+    "wallet_details": "지갑 세부 정보"
+  },
+
+  "addBankPopup": {
+    "add_bank_details": "은행 정보 추가",
+    "payout_details": "지급 세부 정보",
+    "complete_registration": "커미션 획득을 시작하려면 등록을 완료하세요.",
+    "account_holder_name": "계좌 명의인",
+    "enter_name": "이름 입력",
+    "account_number": "계좌 번호",
+    "enter_account_number": "계좌 번호 입력",
+    "bank_name": "은행명",
+    "enter_bank_name": "은행명 입력",
+    "disclaimer_text": "EUR 이외의 통화로 출금 시 은행 수수료가 부과될 수 있습니다. 귀하의 금융 데이터는 암호화되어 당사",
+    "privacy_policy": "개인정보처리방침에 따라 처리됩니다.",
+    "save_bank_account": "은행 계좌 저장",
+    "end_to_end_encrypted": "엔드투엔드 암호화"
+  },
+
+  "submitTwo": {
+    "submit_question": "신청서를 제출하시겠습니까?",
+    "review_prefix": "인플루언서 요청은",
+    "review_hours": "24~48시간",
+    "review_suffix": " 내에 검토됩니다. 상태가 업데이트되면 푸시 알림으로 알려드립니다.",
+    "confirm_submission": "제출 확인",
+    "cancel": "취소"
+  },
+
+  "influencerWallet": {
+    "my_referrals": "내 추천",
+    "subscription_active": "• 구독 활성",
+    "active_balance": "• 활성 잔액",
+    "available_balance": "사용 가능 잔액",
+    "bank_detail": "은행 정보",
+    "verified": "인증됨",
+    "kyc_verification": "KYC 인증",
+    "unlock_withdrawals": "출금을 잠금 해제하려면 빠른 신원 확인을 완료하세요.",
+    "withdraw": "출금",
+    "currency_information": "통화 정보",
+    "currency_info_desc": "EUR 이외의 통화로 출금 시 은행 수수료가 발생합니다. 수수료를 피하려면 EUR로 출금하는 것을 권장합니다.",
+    "total_amount": "총 금액: €125.99",
+    "transaction_id": "거래 ID: #WB-562-31",
+    "processing": "• 처리 중",
+    "progress_0": "요청",
+    "progress_1": "처리 중",
+    "progress_2": "은행에 전송됨",
+    "withdraw_history": "출금 내역",
+    "view_all": "모두 보기",
+    "commission": "커미션"
+  },
+
+  "withdrawal": {
+    "withdraw_amount": "출금 금액",
+    "available_balance": "사용 가능 잔액",
+    "includes_earnings": "오늘까지의 모든 정산된 수익 포함",
+    "partnership_terms": "제출함으로써 인플루언서 파트너십 약관에 동의합니다. 승인된 코드는 일반적으로 {{processingTime}} 활성화됩니다.",
+    "enter_amount": "금액 입력",
+    "minimum_withdrawal": "최소 출금액은 €{{amount}}입니다.",
+    "verification_required": "인증 필요",
+    "verification_desc": "첫 번째 출금에는 본인 인증이 필요합니다. KYC 승인 후 처리에 2-5 영업일이 소요됩니다.",
+    "continue_to_review": "검토 계속",
+    "end_to_end_encrypted": "🔒 엔드투엔드 암호화"
+  },
+
+  "confirmWithdrawal": {
+    "confirm_withdrawal": "출금 확인",
+    "review_payout": "거래를 확정하기 전에 지급 세부 정보를 주의 깊게 검토하세요.",
+    "withdrawal_amount": "출금 금액",
+    "confirm_payout": "지급 확인",
+    "cancel": "취소"
+  },
+
+  "promoCodeList": {
+    "promo_code_history": "프로모 코드 내역",
+    "tab_all": "전체",
+    "tab_active": "활성",
+    "tab_expired": "만료됨",
+    "tab_request": "요청",
+    "usage": "사용량",
+    "total_earned": "총 수익",
+    "no_promo_codes": "프로모 코드를 찾을 수 없습니다."
+  },
+
+  "submitPromoCode": {
+    "submit_promo_code": "프로모 코드를 제출하시겠습니까?",
+    "review_before_activation": "코드는 활성화 전에 검토됩니다.",
+    "usually_takes": "일반적으로 24시간 미만이 소요됩니다",
+    "submit_now": "지금 제출",
+    "cancel": "취소"
+  },
+
+  "referralPopup": {
+    "my_referrals": "내 추천",
+    "tracking": "활성 추천 {{count}}건 추적 중",
+    "search_placeholder": "이름으로 검색...",
+    "active_duration": "활성 기간",
+    "total_earned": "총 수익",
+    "no_referrals": "추천을 찾을 수 없습니다"
+  },
+
+  "kycVerified": {
+    "subscription_active": "구독 활성",
+    "active_balance": "활성 잔액",
+    "available_for_withdrawal": "출금 가능",
+    "verified": "인증됨",
+    "kyc_verification": "KYC 인증",
+    "unlock_withdrawals": "출금을 잠금 해제하려면 빠른 신원 확인을 완료하세요.",
+    "wallet_details": "지갑 세부 정보"
+  },
+
+  "banner": {
+    "seasonal_offer": "🎉 시즌 특가",
+    "learn_more": "자세히 알아보기 →",
+    "active_from": "활성 시작일:"
   }
 }

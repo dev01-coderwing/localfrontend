@@ -1,14 +1,10 @@
-
-
-
-
-
 import React, { useState } from "react";
 import { X, CheckCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import SubmitPromoCode from "./SubmitPromoCode";
 
 const PromoCodeModal = ({ open = true, onClose = () => {} }) => {
-  
+  const { t } = useTranslation();
   const [code, setCode] = useState("YUORCODE15");
   const [showSubmitPromoCode, setShowSubmitPromoCode] = useState(false);
 
@@ -16,7 +12,7 @@ const PromoCodeModal = ({ open = true, onClose = () => {} }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-3">
-      
+
       <div
         className="
           w-full max-w-md
@@ -44,7 +40,7 @@ const PromoCodeModal = ({ open = true, onClose = () => {} }) => {
 
         {/* Title */}
         <div className="text-center mt-3 px-6 text-[var(--text-dim)]">
-          <h2 className="text-xl font-semibold ">Create Promo Code</h2>
+          <h2 className="text-xl font-semibold ">{t('promoCodeModal.create_promo_code')}</h2>
         </div>
 
         {/* Form */}
@@ -53,7 +49,7 @@ const PromoCodeModal = ({ open = true, onClose = () => {} }) => {
           {/* Code Name */}
           <div>
             <label className="text-sm font-medium text-[var(--text-dim)]">
-              Code Name
+              {t('promoCodeModal.code_name')}
             </label>
 
             <div className="relative mt-1">
@@ -65,14 +61,14 @@ const PromoCodeModal = ({ open = true, onClose = () => {} }) => {
 
               <div className="absolute right-3 top-2.5 flex items-center gap-1 text-green-600 text-xs">
                 <CheckCircle size={14} />
-                Available
+                {t('promoCodeModal.available')}
               </div>
             </div>
           </div>
 
           {/* Live Preview */}
           <div>
-            <label className="text-sm  text-[var(--text-dim)]">Live Preview</label>
+            <label className="text-sm  text-[var(--text-dim)]">{t('promoCodeModal.live_preview')}</label>
             <div className="mt-1 w-full border border-[var(--border)] rounded-lg px-3 py-2 text-[var(--text-dim2)] font-semibold">
               {code}
             </div>
@@ -80,29 +76,29 @@ const PromoCodeModal = ({ open = true, onClose = () => {} }) => {
 
           {/* Info Box */}
           <div className=" border border-[var(--border)] rounded-lg p-3 text-sm  text-[var(--text-dim2)]">
-            <div className="font-medium text-[var(--text-dim)] ">Client Discount</div>
-            Commission rates are fixed and applied automatically to your earning dashboard.
+            <div className="font-medium text-[var(--text-dim)] ">{t('promoCodeModal.client_discount')}</div>
+            {t('promoCodeModal.commission_info')}
           </div>
 
           {/* Feature Tags */}
           <div className="flex gap-2 flex-wrap">
             <span className="text-xs px-3 py-1 border border-[var(--border)] text-[var(--text-dim)] rounded-full">
-              Secure Payouts
+              {t('promoCodeModal.secure_payouts')}
             </span>
             <span className="text-xs px-3 py-1  border border-[var(--border)] text-[var(--text-dim)] rounded-full">
-              Real-time analytics
+              {t('promoCodeModal.real_time_analytics')}
             </span>
           </div>
 
           {/* Button */}
-          <button 
+          <button
             onClick={() => setShowSubmitPromoCode(true)}
           className="w-full py-3 rounded-lg text-white font-medium bg-gradient-to-r from-pink-400 to-indigo-500 hover:opacity-90 transition">
-            Submit for Approval
+            {t('promoCodeModal.submit_for_approval')}
           </button>
 
           <p className="text-[10px] text-center text-[var(--text-dim2)] pb-4">
-            By submitting, you agree to our Influencer Partnership Terms. Approved codes usually go live within 24 hours.
+            {t('promoCodeModal.terms_note')}
           </p>
 
         </div>

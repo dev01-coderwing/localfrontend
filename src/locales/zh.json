@@ -626,5 +626,443 @@
     "five_minutes": "5分钟",
     "dismiss": "关闭",
     "extend": "延长"
+  },
+
+  "wallet": {
+    "setting": "设置",
+    "meons_wallet": "MEONS钱包",
+    "meons_balance": "MEONS余额",
+    "earn_meons": "赚取Meons",
+    "spend_meons": "消费Meons",
+    "recent_history": "最近记录",
+    "show_less": "显示更少",
+    "view_all": "查看全部",
+    "disclaimer": "Meons不能提取或兑换为真实货币。使用受条款约束。"
+  },
+
+  "earnMeons": {
+    "setting": "设置",
+    "how_to_earn": "如何赚取Meons",
+    "meons_balance": "MEONS余额",
+    "available_tasks": "可用任务",
+    "task_1_title": "每日登录",
+    "task_1_desc": "明天再来获取更多",
+    "task_2_title": "迷你游戏",
+    "task_2_desc": "挑战他人并赢取奖励。",
+    "task_3_title": "完善个人资料",
+    "task_3_desc": "已完成70%",
+    "play_now": "立即游玩",
+    "finish_setup": "完成设置",
+    "disclaimer": "Meons可用于加速、个人资料高亮和礼物。适用条款和条件。"
+  },
+
+  "spendMeons": {
+    "setting": "设置",
+    "spend_meons": "消费Meons",
+    "meons_balance": "MEONS余额",
+    "buy": "购买",
+    "item_details": "物品详情",
+    "rare_item": "稀有物品",
+    "description": "这是优雅与欣赏的象征。赠送此物品可使接收者的人气分数提升50分，并为其个人资料增添特别的魅力。",
+    "price_per_unit": "每件价格",
+    "your_current_balance": "您当前的余额",
+    "quantity": "数量",
+    "total_cost": "总费用",
+    "confirm_purchase": "确认购买",
+    "purchase_successful": "购买成功",
+    "deducted": "{{amount}}已从您的钱包中扣除",
+    "use_now": "立即使用",
+    "back_to_wallet": "返回钱包",
+    "not_enough_meons": "Meons余额不足",
+    "purchase_failed": "购买失败",
+    "something_went_wrong": "出现错误",
+    "disclaimer": "虚拟物品购买为最终决定，不可退款。适用条款和条件。",
+    "product_0_name": "红玫瑰",
+    "product_1_name": "个人资料加速",
+    "product_2_name": "VIP黄金",
+    "product_3_name": "超级喜欢",
+    "product_4_name": "水晶钻石",
+    "product_5_name": "隐身模式"
+  },
+
+  "verifyModal": {
+    "kyc_verification": "KYC认证",
+    "quick_identity_check": "快速身份验证",
+    "description": "为了保持社区安全，我们需要在您首次提款前验证您的身份。",
+    "only_gov_id": "仅需政府颁发的身份证件 + 自拍",
+    "takes_minutes": "需要1-2分钟。",
+    "start_verification": "开始验证",
+    "may_be_later": "稍后再说"
+  },
+
+  "popupOne": {
+    "kyc_verification": "KYC认证",
+    "quick_identity_check": "快速身份验证",
+    "description": "为了保持社区安全，我们需要在您首次提款前验证您的身份。",
+    "only_gov_id": "仅需政府颁发的身份证件 + 自拍",
+    "takes_minutes": "需要1-2分钟。",
+    "start_verification": "开始验证",
+    "may_be_later": "稍后再说"
+  },
+
+  "popupTwo": {
+    "kyc_verification": "KYC认证",
+    "verify_your_identity": "验证您的身份",
+    "description": "为了保持社区安全，我们需要快速确认您的身份。",
+    "upload_gov_id": "上传政府颁发的证件",
+    "id_types": "驾驶证、护照",
+    "take_selfie": "拍摄自拍",
+    "quick_photo": "与您的证件匹配的快速照片",
+    "continue": "继续",
+    "privacy_note": "继续即表示您同意我们的身份验证流程和隐私政策。"
+  },
+
+  "getVerify": {
+    "kyc_verification": "KYC认证",
+    "upload_document": "上传文件",
+    "verify_your_identity": "验证您的身份",
+    "description": "为了保持社区安全，我们需要快速确认您的身份。",
+    "select_document_type": "选择文件类型",
+    "doc_passport_title": "护照",
+    "doc_passport_desc": "国际旅行证件",
+    "doc_national_title": "居民身份证",
+    "doc_national_desc": "政府颁发的身份证件",
+    "doc_license_title": "驾驶证",
+    "doc_license_desc": "有效驾驶许可证",
+    "upload_document_heading": "上传文件",
+    "upload_gov_id": "上传政府颁发的证件",
+    "formats_supported": "支持高质量JPG、JPEG、PNG或PDF格式",
+    "select_file": "选择文件",
+    "info_note": "确保文件光线充足，四个角都清晰可见。避免阴影和反光以加快验证速度。",
+    "continue": "继续"
+  },
+
+  "selfie": {
+    "kyc_verification": "KYC认证",
+    "take_a_selfie": "拍摄自拍",
+    "step_2_of_3": "第2步/共3步",
+    "identity_verification": "身份验证",
+    "hold_steady": "保持手机稳定，直视摄像头",
+    "ensure_face": "确保面部光线充足并在引导框内。",
+    "open_camera": "打开摄像头",
+    "do_later": "稍后再做",
+    "capture": "拍摄",
+    "retake": "重拍",
+    "re_capture": "重新拍摄",
+    "confirm": "确认"
+  },
+
+  "verificationProgress": {
+    "under_review": "审核中",
+    "verification_in_progress": "验证进行中",
+    "reviewing_note": "我们正在审核您的文件以确保社区安全。",
+    "usually_takes": "通常需要",
+    "business_days": "2-5个工作日。",
+    "withdrawal_funds": "提取资金",
+    "back_to_dashboard": "返回仪表板",
+    "need_help": "需要帮助？",
+    "contact_support": "联系客服"
+  },
+
+  "realCurrencyWallet": {
+    "setting": "设置",
+    "real_currency_wallet": "真实货币钱包",
+    "available_balance": "可用余额",
+    "add_balance": "+ 添加余额",
+    "use_in_store": "在商店使用",
+    "convert_to_meons": "兑换为Meons",
+    "how_to_earn": "如何获得",
+    "where_can_use": "可以在哪里使用",
+    "invite_friends": "邀请朋友",
+    "earn_0_title": "邀请朋友",
+    "earn_0_desc": "分享您的专属推荐链接",
+    "earn_1_title": "朋友订阅",
+    "earn_1_desc": "当他们加入高级社区时",
+    "earn_2_title": "朋友获得10%折扣",
+    "earn_2_desc": "为他们提供的即时欢迎礼物",
+    "earn_3_title": "您获得10%返现",
+    "earn_3_desc": "直接存入此钱包",
+    "use_0_label": "购买Meons",
+    "use_1_label": "升级订阅",
+    "use_2_label": "Lucascope",
+    "use_3_label": "Q奖金 / 卢卡斯时间",
+    "use_4_label": "信件"
+  },
+
+  "getVerified": {
+    "get_verified": "进行认证",
+    "description": "通过验证您的个人资料来提高信任度和安全性。",
+    "step_1_title": "拍摄自拍",
+    "step_1_desc": "快速拍照以验证您的身份",
+    "step_2_title": "AI审核",
+    "step_2_desc": "在2分钟内完成验证",
+    "start_verification": "开始验证",
+    "privacy_note": "您的数据已加密，并按照我们的隐私政策进行处理。"
+  },
+
+  "takeSelfie": {
+    "step_1_of_2": "第1步/共2步",
+    "take_a_selfie": "拍摄自拍",
+    "compare_note": "我们将把这张照片与您的官方证件进行比对。",
+    "face_detection": "● 人脸检测已激活",
+    "center_face": "将您的脸居中于圆圈内",
+    "retake_photo": "重新拍摄",
+    "uploading": "上传中...",
+    "capture": "拍摄",
+    "upload_failed": "上传失败",
+    "focus_note": "等待照片对焦后再拍摄。保持中性表情。"
+  },
+
+  "identify": {
+    "step_2_of_2": "第2步/共2步",
+    "identity_verification": "身份验证",
+    "verifying_details": "正在验证您的详细信息...",
+    "description": "我们的AI正在核对您的照片和证件以进行安全匹配。通常需要不到2分钟。",
+    "scanning_successful": "扫描成功",
+    "scanning_identity": "正在扫描身份",
+    "continue": "继续"
+  },
+
+  "complete": {
+    "verification_complete": "验证完成",
+    "description": "您的个人资料已通过验证。您获得了蓝色认证徽章，帮助他人更放心地与您联系。",
+    "trust_score": "{{score}}% 信任分数",
+    "go_to_profile": "前往个人资料"
+  },
+
+  "introduction": {
+    "setting": "设置",
+    "influencer_program": "网红计划",
+    "register_as_influencer": "注册成为网红",
+    "become_an": "成为",
+    "influencer": "网红",
+    "hero_desc": "加入我们的精英创作者圈子，增长您的被动收入。",
+    "get_approved": "获得批准",
+    "quick_review": "快速审核流程",
+    "create_promo": "创建促销",
+    "your_custom_code": "您的自定义代码",
+    "global_policy": "全球政策",
+    "fixed_discount": "固定折扣",
+    "commission_structure": "佣金结构",
+    "commission": "佣金",
+    "eligibility_0_title": "5个活跃推荐",
+    "eligibility_0_desc": "触发定期付款的每月最低要求。",
+    "eligibility_1_title": "活跃订阅",
+    "eligibility_1_desc": "网红必须维持自己的高级账户。",
+    "eligibility_2_title": "10%年度增长上限",
+    "eligibility_2_desc": "基于您年度基础留存率的年度留存上限。",
+    "eligibility_3_title": "最低提现€30",
+    "eligibility_3_desc": "余额达到€30后支付佣金。",
+    "register_btn": "注册成为网红 →"
+  },
+
+  "registrationPopup": {
+    "influencer_registration": "网红注册",
+    "join_the_elite": "加入精英",
+    "complete_registration": "完成注册即可开始赚取佣金。",
+    "personal_info": "个人信息",
+    "full_name": "全名",
+    "full_name_placeholder": "Neetesh",
+    "email_address": "电子邮件地址",
+    "email_placeholder": "neeteshiuixdesigner@gmail.com",
+    "agreement": "协议",
+    "agreement_0_title": "接受网红条款",
+    "agreement_0_desc": "我已阅读并同意一般服务条款和网红行为准则。",
+    "agreement_1_title": "接受佣金政策",
+    "agreement_1_desc": "我同意付款计划和基于绩效的佣金结构。",
+    "agreement_2_title": "KYC验证要求",
+    "agreement_2_desc": "我理解身份验证是付款的必要条件。",
+    "submit_application": "提交申请"
+  },
+
+  "submitApplication": {
+    "submit_question": "提交申请？",
+    "review_prefix": "您的网红申请将在",
+    "review_hours": "24–48小时",
+    "review_suffix": "内审核完成。状态更新后，我们将通过推送通知告知您。",
+    "confirm": "确认",
+    "cancel": "取消"
+  },
+
+  "influencerDashboard": {
+    "setting": "设置",
+    "influencer_dashboard": "网红仪表板",
+    "stat_0_title": "总推荐数",
+    "stat_1_title": "当前活跃",
+    "stat_2_title": "总收益",
+    "promo_code": "促销码",
+    "your_promo_code": "您的促销码",
+    "view_all": "查看全部",
+    "copied": "已复制！",
+    "copy_code": "复制代码",
+    "share_title": "促销码",
+    "share_text": "使用我的促销码 {{code}} 可获得 {{discount}} 折扣",
+    "eligibility_progress": "资格进度",
+    "needed": "需要3/5",
+    "reach_milestones": "达到里程碑以解锁高级功能。",
+    "unlock_bank_withdrawals": "解锁银行提现",
+    "maintain_referrals": "在30天内维持5个活跃推荐。",
+    "recent_activity": "最近活动"
+  },
+
+  "promoCodeModal": {
+    "create_promo_code": "创建促销码",
+    "code_name": "代码名称",
+    "available": "可用",
+    "live_preview": "实时预览",
+    "client_discount": "客户折扣",
+    "commission_info": "佣金比率是固定的，并自动应用到您的收益仪表板。",
+    "secure_payouts": "安全付款",
+    "real_time_analytics": "实时分析",
+    "submit_for_approval": "提交审批",
+    "terms_note": "提交即表示您同意我们的网红合作条款。已批准的代码通常在24小时内生效。"
+  },
+
+  "deactivatedDashboard": {
+    "setting": "设置",
+    "influencer_dashboard": "网红仪表板",
+    "subscription_inactive": "您的订阅已失效。重新激活以启用您的促销码。",
+    "renew_subscription": "续订",
+    "stat_0_title": "总推荐数",
+    "stat_1_title": "当前活跃",
+    "stat_2_title": "总收益",
+    "promo_code": "促销码",
+    "your_promo_code": "您的促销码",
+    "view_all": "查看全部",
+    "tracking_suspended": "跟踪已暂停",
+    "referrals_not_tracked": "目前没有跟踪推荐",
+    "copy_code": "复制代码",
+    "subscription_active": "订阅活跃",
+    "withdrawal_locked": "提现已锁定",
+    "eligibility_progress": "资格进度",
+    "reach_milestones": "达到里程碑以解锁高级功能。",
+    "active_referrals_progress": "活跃推荐进度",
+    "needed": "需要3/5",
+    "unlock_bank_withdrawals": "解锁银行提现",
+    "maintain_referrals": "在30天内维持5个活跃推荐。",
+    "reactivate_now": "立即重新激活以重启您的盈利潜力。"
+  },
+
+  "walletPopup": {
+    "subscription_active": "订阅活跃",
+    "active_balance": "活跃余额",
+    "available_for_withdrawal": "可提现",
+    "add_bank_details": "添加银行信息",
+    "kyc_verification": "KYC验证",
+    "unlock_withdrawals": "要解锁提现，请完成快速身份验证。",
+    "wallet_details": "钱包详情"
+  },
+
+  "addBankPopup": {
+    "add_bank_details": "添加银行信息",
+    "payout_details": "付款详情",
+    "complete_registration": "完成注册即可开始赚取佣金。",
+    "account_holder_name": "账户持有人姓名",
+    "enter_name": "输入姓名",
+    "account_number": "账户号码",
+    "enter_account_number": "输入账户号码",
+    "bank_name": "银行名称",
+    "enter_bank_name": "输入银行名称",
+    "disclaimer_text": "非欧元货币提现可能产生银行手续费。您的财务数据已加密，并根据我们的",
+    "privacy_policy": "隐私政策进行处理。",
+    "save_bank_account": "保存银行账户",
+    "end_to_end_encrypted": "端对端加密"
+  },
+
+  "submitTwo": {
+    "submit_question": "提交申请？",
+    "review_prefix": "您的网红申请将在",
+    "review_hours": "24–48小时",
+    "review_suffix": "内审核完成。状态更新后，我们将通过推送通知告知您。",
+    "confirm_submission": "确认提交",
+    "cancel": "取消"
+  },
+
+  "influencerWallet": {
+    "my_referrals": "我的推荐",
+    "subscription_active": "• 订阅活跃",
+    "active_balance": "• 活跃余额",
+    "available_balance": "可用余额",
+    "bank_detail": "银行详情",
+    "verified": "已验证",
+    "kyc_verification": "KYC验证",
+    "unlock_withdrawals": "要解锁提现，请完成快速身份验证。",
+    "withdraw": "提现",
+    "currency_information": "货币信息",
+    "currency_info_desc": "非欧元货币提现将产生银行手续费。我们建议以欧元提现以避免手续费。",
+    "total_amount": "总金额：€125.99",
+    "transaction_id": "交易ID：#WB-562-31",
+    "processing": "• 处理中",
+    "progress_0": "请求",
+    "progress_1": "处理中",
+    "progress_2": "已发送至银行",
+    "withdraw_history": "提现记录",
+    "view_all": "查看全部",
+    "commission": "佣金"
+  },
+
+  "withdrawal": {
+    "withdraw_amount": "提现金额",
+    "available_balance": "可用余额",
+    "includes_earnings": "包含截至今日所有已结算收益",
+    "partnership_terms": "提交即表示您同意我们的网红合作条款。已批准的代码通常在{{processingTime}}生效。",
+    "enter_amount": "输入金额",
+    "minimum_withdrawal": "最低提现金额为€{{amount}}。",
+    "verification_required": "需要验证",
+    "verification_desc": "首次提现需要身份验证。KYC批准后，处理需要2-5个工作日。",
+    "continue_to_review": "继续审核",
+    "end_to_end_encrypted": "🔒 端对端加密"
+  },
+
+  "confirmWithdrawal": {
+    "confirm_withdrawal": "确认提现",
+    "review_payout": "在完成交易之前，请仔细检查您的付款详情。",
+    "withdrawal_amount": "提现金额",
+    "confirm_payout": "确认付款",
+    "cancel": "取消"
+  },
+
+  "promoCodeList": {
+    "promo_code_history": "促销码历史",
+    "tab_all": "全部",
+    "tab_active": "活跃",
+    "tab_expired": "已过期",
+    "tab_request": "请求",
+    "usage": "使用量",
+    "total_earned": "总收益",
+    "no_promo_codes": "未找到促销码。"
+  },
+
+  "submitPromoCode": {
+    "submit_promo_code": "提交促销码？",
+    "review_before_activation": "您的代码将在激活前审核。",
+    "usually_takes": "通常需要不到24小时",
+    "submit_now": "立即提交",
+    "cancel": "取消"
+  },
+
+  "referralPopup": {
+    "my_referrals": "我的推荐",
+    "tracking": "正在跟踪{{count}}个活跃推荐",
+    "search_placeholder": "按姓名搜索...",
+    "active_duration": "活跃时长",
+    "total_earned": "总收益",
+    "no_referrals": "未找到推荐"
+  },
+
+  "kycVerified": {
+    "subscription_active": "订阅活跃",
+    "active_balance": "活跃余额",
+    "available_for_withdrawal": "可提现",
+    "verified": "已验证",
+    "kyc_verification": "KYC验证",
+    "unlock_withdrawals": "要解锁提现，请完成快速身份验证。",
+    "wallet_details": "钱包详情"
+  },
+
+  "banner": {
+    "seasonal_offer": "🎉 季节特惠",
+    "learn_more": "了解更多 →",
+    "active_from": "活动开始时间："
   }
 }

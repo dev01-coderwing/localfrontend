@@ -1,22 +1,20 @@
-
-
-
-
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from "react-i18next";
 import AddBankPopup from "./AddBankPopup";
 import InfluencerWallet from './InfluencerWallet';
 import { X } from "lucide-react";
 
-const WalletPopup = ({ 
-  isOpen = true, 
-  onClose = () => {}, 
-  balance = "82.50", 
+const WalletPopup = ({
+  isOpen = true,
+  onClose = () => {},
+  balance = "82.50",
   isSubscriptionActive = true,
   kycStatus = "Pending",
-  onAddBankClick = () => {}, 
+  onAddBankClick = () => {},
   onKycClick = () => {},
   onWalletDetailsClick = () => {}
 }) => {
+  const { t } = useTranslation();
 
   // ONLY ADDED STATE
   const [openBankPopup, setOpenBankPopup] = useState(false);
@@ -60,11 +58,11 @@ const WalletPopup = ({
 
 
   return (
-    <div 
+    <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs transition-opacity duration-200"
       onClick={onClose}
     >
-      <div 
+      <div
         className="relative w-full max-w-[380px] sm:max-w-md bg-[var(--bg-background)]  border border-[var(--border)]  rounded-[32px] p-6 shadow-2xl border border-white/5 transform transition-all flex flex-col gap-5"
         onClick={(e) => e.stopPropagation()}
       >
@@ -75,24 +73,24 @@ const WalletPopup = ({
                 >
                   <X size={18} />
                 </button>
-        
+
         {/* HEADER (UNCHANGED EXACTLY) */}
         <div className="flex flex-wrap items-center gap-2">
           {isSubscriptionActive && (
             <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#283d2c] text-[#4ade80] rounded-full text-xs font-semibold tracking-wide">
               <span className="w-1.5 h-1.5 bg-[#4ade80] rounded-full"></span>
-              Subscription Active
+              {t('walletPopup.subscription_active')}
             </div>
           )}
           <div className="inline-flex items-center px-3 py-1 bg-white/10 text-white/40 rounded-full text-xs font-medium tracking-wide">
-            Active Balance
+            {t('walletPopup.active_balance')}
           </div>
         </div>
 
         {/* BALANCE (UNCHANGED) */}
         <div className="flex flex-col gap-0.5">
           <span className="text-xs sm:text-sm font-medium text-[var(--text-dim2)] tracking-wide">
-            Available for withdrawal
+            {t('walletPopup.available_for_withdrawal')}
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-[var(--text-dim)] tracking-tight mt-1">
             € {balance}
@@ -101,9 +99,9 @@ const WalletPopup = ({
 
         {/* ACTIONS */}
         <div className="flex flex-col gap-3.5">
-          
+
           {/* ADD BANK (ONLY FUNCTION ADDED HERE) */}
-          <button 
+          <button
             onClick={() => setOpenBankPopup(true)}
             className="w-full flex items-center justify-between p-3 bg-[var(--bg-card)]/10  border border-[var(--border)] rounded-2xl shadow-sm  active:scale-[0.99] transition-all duration-150 group text-left focus:outline-none"
           >
@@ -114,7 +112,7 @@ const WalletPopup = ({
                 </svg>
               </div>
               <span className="font-bold text-[var(--text-dim)] tracking-wide text-sm sm:text-base">
-                Add Bank Details
+                {t('walletPopup.add_bank_details')}
               </span>
             </div>
             <svg className="w-4 h-4 text-neutral-400 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -127,8 +125,8 @@ const WalletPopup = ({
             <div className="absolute -top-0.5 left-5 z-10 px-2.5 py-0.5 bg-[#8b5cf6] text-white text-[10px] font-bold rounded-md uppercase tracking-wider shadow-sm">
               {kycStatus}
             </div>
-            
-            <button 
+
+            <button
               onClick={onKycClick}
               className="w-full flex items-center justify-between p-3 bg-[var(--bg-card)]/10  border border-[var(--border)]  rounded-2xl shadow-sm active:scale-[0.99] transition-all duration-150 group text-left focus:outline-none"
             >
@@ -141,10 +139,10 @@ const WalletPopup = ({
 
                 <div className="flex flex-col gap-0.5 pr-2 ">
                   <span className="font-bold text-[var(--text-dim)] tracking-wide text-sm sm:text-base">
-                    KYC Verification
+                    {t('walletPopup.kyc_verification')}
                   </span>
                   <p className="text-[11px] sm:text-xs text-[var(--text-dim2)] font-medium leading-tight max-w-[210px] sm:max-w-xs">
-                    To unlock withdrawals, complete a quick identity check.
+                    {t('walletPopup.unlock_withdrawals')}
                   </p>
                 </div>
               </div>
@@ -159,12 +157,12 @@ const WalletPopup = ({
 
         {/* FOOTER (UNCHANGED) */}
         <div className="mt-1">
-          <button 
+          <button
             // onClick={onWalletDetailsClick}
              onClick={() => setOpenWalletPopup(true)}
             className="w-full py-3.5 text-center text-white font-semibold tracking-wide text-sm md:text-base bg-gradient-to-r from-[#d2909b] via-[#ad89d3] to-[#6676ee] rounded-full border border-white/10 shadow-lg hover:brightness-105 active:scale-[0.98] transition-all duration-150"
           >
-            Wallet Details
+            {t('walletPopup.wallet_details')}
           </button>
         </div>
 
@@ -174,8 +172,3 @@ const WalletPopup = ({
 };
 
 export default WalletPopup;
-
-
-
-
-
