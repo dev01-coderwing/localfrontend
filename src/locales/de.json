@@ -1,4 +1,7 @@
 {
+  "splash": {
+    "tagline": "Anders verbinden"
+  },
   "choose_language": "Wähle deine Sprache",
   "select_preferred_language": "Wähle deine bevorzugte Sprache",
   "select_language": "Sprache auswählen",

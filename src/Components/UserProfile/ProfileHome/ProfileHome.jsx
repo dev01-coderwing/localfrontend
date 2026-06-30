@@ -65,16 +65,16 @@ useEffect(() => {
   const getImageByType = (type) => {
     switch (type) {
       case "MBTI":
-        return "./Image/🧠.png";
+        return "./Image/Heart-logo.png";
 
       case "Love Languages":
-        return "./Image/💕.png";
+        return "./Image/brain-logo.png";
 
       case "Attachment Style":
-        return "./Image/🔗.png";
+        return "./Image/chain.png";
 
       case "Big Five (OCEAN)":
-        return "./Image/⭐.png";
+        return "./Image/star.png";
 
       default:
         return "/Image/default.png";

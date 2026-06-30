@@ -1,4 +1,7 @@
 {
+  "splash": {
+    "tagline": "以不同方式连接"
+  },
   "choose_language": "选择您的语言",
   "select_preferred_language": "选择您偏好的语言",
   "select_language": "选择语言",

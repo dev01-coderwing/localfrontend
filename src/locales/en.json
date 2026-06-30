@@ -1,4 +1,7 @@
 {
+  "splash": {
+    "tagline": "Connected differently"
+  },
   "choose_language": "Choose your language",
   "select_preferred_language": "Select your preferred language",
   "select_language": "Select language",

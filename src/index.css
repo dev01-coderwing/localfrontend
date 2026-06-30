@@ -107,6 +107,8 @@
   --accent: #1D1D1F;
   --accent-soft: #ede9fe;
   --hover: #f3f4f6;
+  --linear-1: #f8f5f0;
+  --linear-2: #fef9f3;
 }
 
 /* ========== DARK MODE ========== */
@@ -126,6 +128,8 @@
   --accent-soft: #1e1b4b;
   --hover: #2a1f4a;
   --text-dim2: #b6aebe;
+  --linear-1: #121850;
+  --linear-2: #1a2366;
 }
 
 /* ========== BROWN MODE ========== */
@@ -134,8 +138,7 @@
   /* deep black brown */
   --card: transparent;
   /* dark card */
-  /* --text: #ffffff; 
-         */
+  --text: #f5e6c8;
   --bg-background: #131006;
   --bg-card: #CD7F33FC  ;
   --text-dim: #DAA53B;
@@ -146,6 +149,8 @@
   /* golden */
   --accent-soft: #160e06;
   --hover: #2b1d0e;
+  --linear-1: #0a0a06;
+  --linear-2: #131006;
 }
 
 /* Noir Bronze Theme */

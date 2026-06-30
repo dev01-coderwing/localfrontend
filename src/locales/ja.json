@@ -1,4 +1,7 @@
 {
+  "splash": {
+    "tagline": "違う形でつながる"
+  },
   "choose_language": "言語を選択してください",
   "select_preferred_language": "希望する言語を選択してください",
   "select_language": "言語を選択",
