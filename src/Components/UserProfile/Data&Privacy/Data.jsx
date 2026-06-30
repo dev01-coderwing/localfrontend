@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import Navbar from "../../Navbar/Navbar";
 import Right from "../layout/Right";
 import { ArrowLeft } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 function Data() {
-
+  const { t } = useTranslation();
   const [selected, setSelected] = useState("");
 
   const settings = [
@@ -58,13 +59,13 @@ function Data() {
               </button>
 
               <h1 className="text-3xl font-semibold text-[var(--text-dim)]">
-                Setting
+                {t('dataPrivacy.title')}
               </h1>
             </div>
 
             {/* Section */}
             <h2 className="text-lg font-semibold mb-4">
-              Data & Privacy
+              {t('dataPrivacy.section_title')}
             </h2>
 
             <div className="space-y-4 mb-8 ">
@@ -78,11 +79,11 @@ function Data() {
 
                   <div>
                     <h3 className="font-semibold ">
-                      {item.title}
+                      {t(`dataPrivacy.${item.id}_title`)}
                     </h3>
 
                     <p className="text-sm text-[var(--text-dim2)] mt-1">
-                      {item.desc}
+                      {t(`dataPrivacy.${item.id}_desc`)}
                     </p>
                   </div>
 
@@ -108,7 +109,7 @@ function Data() {
 
             {/* Privacy Section */}
             <h2 className="text-lg font-semibold mb-4 text-[var(--text-dim)]">
-              Data & Privacy
+              {t('dataPrivacy.section_title')}
             </h2>
 
             <div className="space-y-4">
@@ -122,11 +123,11 @@ function Data() {
 
                   <div>
                     <h3 className="font-semibold">
-                      {item.title}
+                      {t(`dataPrivacy.${item.id}_title`)}
                     </h3>
 
                     <p className="text-sm text-[var(--text-dim2)] mt-1">
-                      {item.desc}
+                      {t(`dataPrivacy.${item.id}_desc`)}
                     </p>
                   </div>
 
@@ -154,13 +155,11 @@ function Data() {
             <div className="flex flex-col items-center mt-12">
 
               <button className="px-8 py-3 rounded-full bg-[#FFD7CB] text-[#FF7A59] text-sm font-semibold">
-                SECURE CONNECTION
+                {t('dataPrivacy.secure_connection')}
               </button>
 
               <p className="text-xs text-center text-gray-500 mt-6 max-w-xl">
-                Your privacy is our priority. Changes take up to 24 hours
-                to sync across all servers globally. IAMeetYou complies
-                with GDPR and CCPA standards.
+                {t('dataPrivacy.privacy_note')}
               </p>
 
             </div>

@@ -5,8 +5,11 @@ import Middle from "./Middle";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserProfile } from "../../Redux/profileSlice";
+import { useTranslation } from "react-i18next";
+
 export default function ProfileLayout() {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const { profile, loading, error } = useSelector((state) => state.profile);
 
  const userId = localStorage.getItem("userId");
@@ -88,20 +91,20 @@ useEffect(() => {
   middle: {
     balance: {
       amount: `€ ${profile?.data?.walletBalance || 0}`,
-      label: "Available Balance",
+      label: t('profile.available_balance'),
     },
 
     usage: {
-      title: "Time Usage",
+      title: t('profile.time_usage'),
       usedPercent: 40,
       usedTime: "2h 30m",
       totalTime: "6h 00m",
-      remaining: "3h remaining",
+      remaining: t('profile.remaining_time'),
     },
 
     buttons: [
-      { label: "Manage Subscription", icon: "crown", style: "gradient" },
-      { label: "Invite Friends", icon: "gift", style: "dark" },
+      { label: t('profile.manage_subscription'), icon: "crown", style: "gradient" },
+      { label: t('profile.invite_friends'), icon: "gift", style: "dark" },
     ],
   },
 };

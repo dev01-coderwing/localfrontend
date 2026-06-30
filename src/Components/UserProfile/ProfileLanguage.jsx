@@ -2,7 +2,8 @@ import React from "react";
 import { ArrowLeft, Check } from "lucide-react";
 import Right from "./layout/Right";
 import Navbar from "../Navbar/Navbar";
- 
+import { useTranslation } from "react-i18next";
+
 // ✅ Production Data
 const LANGUAGES_CONFIG = [
   { id: "english", name: "English", flag: "https://flagcdn.com/w40/us.png", code: "US" },
@@ -12,7 +13,7 @@ const LANGUAGES_CONFIG = [
   { id: "united_arab_emirates", name: "United Arab Emirates", flag: "https://flagcdn.com/w40/ae.png", code: "AE" },
   { id: "france", name: "France", flag: "https://flagcdn.com/w40/fr.png", code: "FR" },
 ];
- 
+
 /**
  * Optimized Language Row Component
  */
@@ -46,38 +47,39 @@ const LanguageRow = ({ lang, isSelected, onSelect }) => (
     </div>
   </button>
 );
- 
+
 export default function ProfileLanguage() {
   const [selectedId, setSelectedId] = React.useState("english");
- 
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-[var(--bg-background)]">
       <Navbar />
- 
+
       <main className="max-w-7xl mx-auto p-4 md:p-8">
         <section className="bg-[var(--bg-card)]/10 rounded-[24px] p-6 md:p-10 shadow-inner">
-         
+
           <header className="flex items-center gap-4 mb-8">
             <button
               type="button"
-              aria-label="Go back"
+              aria-label={t('profileLanguage.go_back')}
               className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm hover:shadow-md hover:bg-gray-50 transition border border-gray-100 group"
               onClick={() => window.history.back()}
             >
               <ArrowLeft className="w-5 h-5 text-gray-700 group-hover:-translate-x-0.5 transition-transform" />
             </button>
-            <h1 className="text-2xl font-black text-[var(--text)] tracking-tight">Setting</h1>
+            <h1 className="text-2xl font-black text-[var(--text)] tracking-tight">{t('profileLanguage.title')}</h1>
           </header>
- 
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-6">
-              <h2 className="text-lg font-black text-[var(--text-dim)] ml-1">Language</h2>
- 
+              <h2 className="text-lg font-black text-[var(--text-dim)] ml-1">{t('profileLanguage.section_title')}</h2>
+
               <div className="bg-[var(--bg)]  p-6 md:p-8 rounded-[32px] border border-[var(--border)] shadow-sm">
                 <div
                   className="grid grid-cols-1 md:grid-cols-2 gap-3  "
                   role="radiogroup"
-                  aria-label="Select application language"
+                  aria-label={t('profileLanguage.select_language_label')}
                 >
                   {LANGUAGES_CONFIG.map((lang) => (
                     <LanguageRow
@@ -88,18 +90,18 @@ export default function ProfileLanguage() {
                     />
                   ))}
                 </div>
- 
+
                 <footer className="mt-16 flex justify-center">
                   <button
                     type="submit"
                     className="w-full max-w-sm h-14 rounded-2xl bg-gradient-to-r from-[#DB96A1] to-[#7C81D3] text-white font-black text-sm shadow-lg hover:opacity-90 hover:scale-[1.01] active:scale-95 transition-all duration-200 uppercase tracking-widest"
                   >
-                    Save Changes
+                    {t('profileLanguage.save_changes')}
                   </button>
                 </footer>
               </div>
             </div>
- 
+
             <aside className="lg:col-span-1">
               <Right />
             </aside>

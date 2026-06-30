@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import {
   GetFaqApi,
@@ -8,6 +9,7 @@ import {
 } from "../../Redux/supportSlice";
 
 const FAQ = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const {
@@ -43,13 +45,13 @@ const FAQ = () => {
     <div className="bg-[var(--card)]/10 p-6 rounded-2xl shadow-md h-full">
 
       <h1 className="text-xl font-semibold mb-4">
-        Frequently Asked Questions
+        {t('help.faq_title')}
       </h1>
 
       {/* Search */}
       <input
         type="text"
-        placeholder="Search FAQ..."
+        placeholder={t('help.search_faq')}
         className="w-full p-3 border rounded-lg mb-4 bg-[var(--bg-card)]/10 outline-none"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
@@ -66,7 +68,7 @@ const FAQ = () => {
               : "bg-[var(--card)]"
           }`}
         >
-          All
+          {t('help.all')}
         </button>
 
         {faqCategories?.map((cat, index) => (
@@ -88,7 +90,7 @@ const FAQ = () => {
       {/* Loading */}
       {loading && (
         <p className="text-center py-4">
-          Loading FAQs...
+          {t('help.loading_faqs')}
         </p>
       )}
 
@@ -119,7 +121,7 @@ const FAQ = () => {
         ) : (
           !loading && (
             <p className="text-center text-gray-500">
-              No FAQs Found
+              {t('help.no_faqs')}
             </p>
           )
         )}
@@ -128,7 +130,7 @@ const FAQ = () => {
 
       {/* Footer */}
       <p className="text-center text-sm mt-6 text-blue-500 cursor-pointer">
-        Still need help? Contact Support
+        {t('help.contact_support_link')}
       </p>
 
     </div>

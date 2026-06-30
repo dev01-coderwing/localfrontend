@@ -3,16 +3,37 @@ import { useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import Right from "./layout/Right";
 import { Check, X ,ArrowLeft,Clock,HatGlasses  } from "lucide-react";
+import { useTranslation } from "react-i18next";
 // import incognito from "/Image/incognito.png";
 
 const ProfileSettingsPage = () => {
-
-     const [showModal, setShowModal] = useState(false);
-     const [mode, setMode] = useState("expired"); 
+  const { t } = useTranslation();
+  const [showModal, setShowModal] = useState(false);
+  const [mode, setMode] = useState("expired");
 // "select" | "active" | "expired"
 const [toast, setToast] = useState(null);
 
 const [selectedPlan, setSelectedPlan] = useState(0);
+
+  const canDoItems = [
+    t('accountSettings.view_profiles'),
+    t('accountSettings.like_profiles'),
+    t('accountSettings.add_to_favorites'),
+    t('accountSettings.send_roses'),
+  ];
+
+  const cannotSeeItems = [
+    t('accountSettings.not_appear'),
+    t('accountSettings.last_seen_hidden'),
+    t('accountSettings.online_status_hidden'),
+  ];
+
+  const planOptions = [
+    { label: t('accountSettings.plan_24h'), price: t('accountSettings.price_24h') },
+    { label: t('accountSettings.plan_7d'), price: t('accountSettings.price_7d') },
+    { label: t('accountSettings.plan_30d'), price: t('accountSettings.price_30d') },
+  ];
+
   return (
     <div className="min-h-screen bg-[var(--bg-background)]">
 
@@ -33,7 +54,7 @@ const [selectedPlan, setSelectedPlan] = useState(0);
   </button>
 
   <h2 className="text-2xl font-semibold text-[var(--text-dim)]">
-    Setting
+    {t('accountSettings.title')}
   </h2>
 </div>
 <div className="bg-[var(--bg-background)] p-5 rounded-[32px]">
@@ -42,7 +63,7 @@ const [selectedPlan, setSelectedPlan] = useState(0);
 
       {/* SECTION TITLE */}
       <h3 className="text-[var(--text-dim2)] font-semibold mb-4">
-        Invisible Mode
+        {t('accountSettings.invisible_mode')}
       </h3>
 
       {/* MAIN CARD */}
@@ -59,12 +80,12 @@ const [selectedPlan, setSelectedPlan] = useState(0);
 
   {/* TITLE */}
   <h3 className="text-xl font-semibold text-[var(--text-dim2)]">
-    Go Incognito
+    {t('accountSettings.go_incognito')}
   </h3>
 
   {/* SUBTEXT */}
   <p className="text-[var(--text-dim2)] text-sm mt-2">
-    Browse profiles completely anonymously
+    {t('accountSettings.go_incognito_desc')}
   </p>
 
 </div>
@@ -75,16 +96,11 @@ const [selectedPlan, setSelectedPlan] = useState(0);
           {/* LEFT BOX */}
           <div className="bg-[var(--bg-background)] rounded-2xl p-5 shadow-sm">
             <h4 className="font-semibold text-[var(--text-dim)] mb-4">
-              What you can do
+              {t('accountSettings.what_you_can_do')}
             </h4>
 
             <div className="space-y-3 text-sm text-[var(--text-dim2)]">
-              {[
-                "View profiles",
-                "Like profiles",
-                "Add to favorites",
-                "Send roses",
-              ].map((item, index) => (
+              {canDoItems.map((item, index) => (
                 <div key={index} className="flex items-center gap-3">
                   <div className="w-5 h-5 flex items-center justify-center rounded-md bg-green-500 text-white">
                     <Check size={14} />
@@ -98,15 +114,11 @@ const [selectedPlan, setSelectedPlan] = useState(0);
           {/* RIGHT BOX */}
           <div className="bg-[var(--bg-background)] rounded-2xl p-5 shadow-sm">
             <h4 className="font-semibold text-[var(--text-dim2)] mb-4">
-              What others cannot see
+              {t('accountSettings.what_others_cannot')}
             </h4>
 
             <div className="space-y-3 text-sm text-[var(--text-dim2)]">
-              {[
-                "You won't appear in 'Who Viewed You'",
-                "Last seen hidden",
-                "Online status hidden",
-              ].map((item, index) => (
+              {cannotSeeItems.map((item, index) => (
                 <div key={index} className="flex items-center gap-3">
                   <div className="w-5 h-5 flex items-center justify-center rounded-md bg-red-500 text-white">
                     <X size={14} />
@@ -121,12 +133,12 @@ const [selectedPlan, setSelectedPlan] = useState(0);
 
         {/* BUTTON */}
         <button  onClick={() => setShowModal(true)} className="mt-8 w-full py-4 rounded-2xl text-white font-semibold bg-gradient-to-r from-[#D79098] to-[#5F7BF4]">
-          Active Invisible Mode
+          {t('accountSettings.active_invisible')}
         </button>
 
       </div>
               </div>
-    
+
 
   </div>
 </div>
@@ -143,17 +155,17 @@ const [selectedPlan, setSelectedPlan] = useState(0);
 
 <div className="
   bg-[var(--bg-background)]
-   text-[var(--text)] 
-  w-[480px] 
-  min-h-[537px] 
+   text-[var(--text)]
+  w-[480px]
+  min-h-[537px]
   max-w-[95%]
-  rounded-[20px] 
-  px-[43px] py-[24px] 
-  border border-gray-200 
-  shadow-[0px_20px_60px_rgba(0,0,0,0.1)] 
+  rounded-[20px]
+  px-[43px] py-[24px]
+  border border-gray-200
+  shadow-[0px_20px_60px_rgba(0,0,0,0.1)]
  flex flex-col justify-between
   relative
-   
+
 ">
 
       {/* CLOSE */}
@@ -174,20 +186,16 @@ const [selectedPlan, setSelectedPlan] = useState(0);
   </div>
 
     <h2 className="text-center text-lg font-semibold text-[var(--text-dim2)]">
-      Unlock Invisible Mode
+      {t('accountSettings.unlock_invisible')}
     </h2>
 
     <p className="text-center text-sm text-[var(--text-dim2)] mb-6">
-      Go invisible and browse profiles privately
+      {t('accountSettings.browse_privately')}
     </p>
 
     {/* OPTIONS */}
     <div className="space-y-4 ">
-     {[
-  { label: "24 Hours", price: "99 Meons" },
-  { label: "7 Days", price: "599 Meons" },
-  { label: "30 Days", price: "1,999 Meons" },
-].map((item, i) => (
+     {planOptions.map((item, i) => (
   <div
     key={i}
     onClick={() => setSelectedPlan(i)}
@@ -233,11 +241,11 @@ const [selectedPlan, setSelectedPlan] = useState(0);
       onClick={() => setMode("active")}
       className="mt-6 w-full py-3 rounded-xl text-white font-semibold bg-gradient-to-r from-pink-400 to-blue-500"
     >
-      Activate Now
+      {t('accountSettings.activate_now')}
     </button>
 
     <p className="text-center text-sm text-gray-400 mt-4">
-      View Meons balance
+      {t('accountSettings.view_meons_balance')}
     </p>
  </div>
 )}
@@ -254,18 +262,18 @@ const [selectedPlan, setSelectedPlan] = useState(0);
 
     {/* TITLE */}
     <h2 className="text-center text-2xl font-semibold text-[var(--text-dim)]">
-      Invisible Mode Activated
+      {t('accountSettings.invisible_activated')}
     </h2>
 
     <p className="text-center text-[var(--text-dim2)]">
-      You are now browsing anonymously
+      {t('accountSettings.browsing_anonymously')}
     </p>
 
     {/* GREEN BADGE */}
     <div className="flex justify-center mt-6">
       <div className="bg-green-100 text-green-600 text-sm px-4 py-2 rounded-full flex items-center gap-2">
         <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-        Active until 28 Feb, 10:45 PM
+        {t('accountSettings.active_until')}
       </div>
     </div>
 
@@ -275,11 +283,11 @@ const [selectedPlan, setSelectedPlan] = useState(0);
         onClick={() => setShowModal(false)}
         className="w-full py-4 rounded-xl text-white font-semibold bg-gradient-to-r from-[#D79098] to-[#5F7BF4]"
       >
-        Continue Browsing
+        {t('accountSettings.continue_browsing')}
       </button>
 
       <p className="text-center text-[var(--text-dim2)] mt-4">
-        Manage Plan
+        {t('accountSettings.manage_plan')}
       </p>
     </div>
      </>
@@ -295,19 +303,19 @@ const [selectedPlan, setSelectedPlan] = useState(0);
 
     {/* TITLE */}
     <h2 className="text-center text-2xl font-semibold text-[var(--text-dim)]">
-      Invisible Mode Expired
+      {t('accountSettings.invisible_expired')}
     </h2>
 
     {/* SUBTEXT */}
     <p className="text-center text-[var(--text-dim2)] mt-2">
-      You are now visible to others.
+      {t('accountSettings.now_visible')}
     </p>
 
     {/* BADGE (same style as active) */}
     <div className="flex justify-center mt-6">
       <div className="bg-green-100 text-green-600 text-sm px-4 py-2 rounded-full flex items-center gap-2">
         <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-        Active until 28 Feb, 10:45 PM
+        {t('accountSettings.active_until')}
       </div>
     </div>
 
@@ -328,18 +336,18 @@ const [selectedPlan, setSelectedPlan] = useState(0);
   }}
   className="w-full py-4 rounded-xl text-white font-semibold bg-gradient-to-r from-[#D79098] to-[#5F7BF4]"
 >
-  Activate Again
+  {t('accountSettings.activate_again')}
 </button>
 
       <p className="text-center text-[var(--text-dim2)] mt-4">
-        Continue Normally
+        {t('accountSettings.continue_normally')}
       </p>
     </div>
- 
+
   </>
 
 
-  
+
 )}
 
     </div>
@@ -358,12 +366,12 @@ const [selectedPlan, setSelectedPlan] = useState(0);
           </div>
 
           <p className="text-sm text-gray-800">
-            Not enough Meons. Please top up.
+            {t('accountSettings.not_enough_meons')}
           </p>
         </div>
 
         <button className="px-3 py-1 text-sm border border-purple-400 text-purple-500 rounded-full">
-          Top Up
+          {t('accountSettings.top_up')}
         </button>
       </div>
     )}
@@ -373,7 +381,7 @@ const [selectedPlan, setSelectedPlan] = useState(0);
       <div className="bg-white p-4 rounded-xl shadow-lg w-[320px]">
 
         <div className="flex items-start gap-3">
-          
+
           {/* ICON */}
           <div className="w-10 h-10 rounded-lg bg-[#EEF1FF] flex items-center justify-center">
             <Clock className="text-[#5470FF]" size={18} />
@@ -381,20 +389,20 @@ const [selectedPlan, setSelectedPlan] = useState(0);
 
           <div className="flex-1">
             <p className="font-semibold text-gray-800">
-              Invisible Mode ending
+              {t('accountSettings.invisible_ending')}
             </p>
 
             <p className="text-sm text-gray-500">
-              Ending in <span className="text-red-500 font-medium">5 Minutes</span>
+              {t('accountSettings.ending_in')} <span className="text-red-500 font-medium">{t('accountSettings.five_minutes')}</span>
             </p>
           </div>
         </div>
 
         <div className="flex justify-between items-center mt-4">
-          <button className="text-gray-400">Dismiss</button>
+          <button className="text-gray-400">{t('accountSettings.dismiss')}</button>
 
           <button className="px-4 py-1 rounded-md text-white bg-gradient-to-r from-[#D79098] to-[#5F7BF4]">
-            Extend
+            {t('accountSettings.extend')}
           </button>
         </div>
       </div>

@@ -1,7 +1,9 @@
 import React from "react";
 import { X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ChatRulesModal = ({ onClose,onContinue }) => {
+  const { t } = useTranslation();
   return (
     <div className="fixed inset-0 bg-[var(--bg-background)] backdrop-blur-sm flex items-center justify-center z-50">
       {/* Modal Container */}
@@ -24,10 +26,10 @@ const ChatRulesModal = ({ onClose,onContinue }) => {
 
         {/* Title */}
         <h2 className="text-center text-lg font-semibold text-[var(--text-dim)] mb-2">
-          Chat invitation Rules
+          {t('chatRules.title')}
         </h2>
         <p className="text-center text-[var(--text-dim2)] text-sm mb-6">
-          Building trust and meaningful connections.
+          {t('chatRules.subtitle')}
         </p>
 
         {/* Cards */}
@@ -35,19 +37,18 @@ const ChatRulesModal = ({ onClose,onContinue }) => {
           {/* Card 1 */}
           <div className="bg-[var(--bg-card)]/10 rounded-xl p-4 text-center">
             <div className="mb-2 text-xl">🛡️</div>
-            <h3 className="font-medium text-sm text-[var(--text-dim)]">Invite to chat</h3>
+            <h3 className="font-medium text-sm text-[var(--text-dim)]">{t('chatRules.invite_title')}</h3>
             <p className="text-xs text-[var(--text-dim2)]    mt-1">
-              Every new chat requires an invitation to ensure meaningful
-              connections.
+              {t('chatRules.invite_desc')}
             </p>
           </div>
 
           {/* Card 2 */}
           <div className="bg-[var(--bg-card)]/10 rounded-xl p-4 text-center">
             <div className="mb-2 text-xl">☝️</div>
-            <h3 className="font-medium text-sm text-[var(--text-dim)]">Recipient's choice</h3>
+            <h3 className="font-medium text-sm text-[var(--text-dim)]">{t('chatRules.recipient_title')}</h3>
             <p className="text-xs text-[var(--text-dim2)] mt-1">
-              The recipient must accept or decline your request before you can chat.
+              {t('chatRules.recipient_desc')}
             </p>
           </div>
         </div>
@@ -56,16 +57,16 @@ const ChatRulesModal = ({ onClose,onContinue }) => {
         <div className="bg-[var(--bg-card)]/10 rounded-xl p-4 mb-4">
           <div className="flex items-center gap-2 mb-1">
             <span>👥</span>
-            <h3 className="font-medium text-sm text-[var(--text-dim)]">Consent First</h3>
+            <h3 className="font-medium text-sm text-[var(--text-dim)]">{t('chatRules.consent_title')}</h3>
           </div>
           <p className="text-xs text-[var(--text-dim2)]    leading-relaxed">
-            Tell us how we can improve your experience.
+            {t('chatRules.consent_desc')}
           </p>
         </div>
 
         {/* Warning */}
         <div className="bg-red-100 text-red-500 text-xs p-3 rounded-lg mb-4">
-          ℹ️ This system prevent harassment and fake profiles.
+          {t('chatRules.warning')}
         </div>
 
         {/* Button */}
@@ -76,7 +77,7 @@ const ChatRulesModal = ({ onClose,onContinue }) => {
   }}
   className="w-full py-3 rounded-xl text-white font-medium bg-gradient-to-r from-pink-400 to-indigo-500 hover:opacity-90"
 >
-  I Understand
+  {t('chatRules.understand')}
 </button>
       </div>
     </div>

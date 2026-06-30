@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../../Navbar/Navbar";
 import Right from "../layout/Right";
+import { useTranslation } from "react-i18next";
 
 import {
   BellOff,
@@ -10,24 +11,25 @@ import {
 } from "lucide-react";
 
 function SafetyTools() {
+  const { t } = useTranslation();
 
   const manageOptions = [
     {
-      title: "Mute User",
-      desc: "Silence notifications from this person",
+      titleKey: "mute_user_title",
+      descKey: "mute_user_desc",
       icon: <BellOff className="w-5 h-5" />,
     },
     {
-      title: "Block User",
-      desc: "You won't see this user again",
+      titleKey: "block_user_title",
+      descKey: "block_user_desc",
       icon: <CircleOff className="w-5 h-5" />,
     },
   ];
 
-  const reportOptions = [
-    "Harassment or Hate Speech",
-    "Fake Account or Spam",
-    "Other",
+  const reportOptionKeys = [
+    "harassment",
+    "fake_account",
+    "other",
   ];
 
   return (
@@ -52,7 +54,7 @@ function SafetyTools() {
               </button>
 
               <h1 className="text-3xl font-semibold">
-                Setting
+                {t('safety.title')}
               </h1>
 
             </div>
@@ -61,11 +63,11 @@ function SafetyTools() {
             <div className="mb-10">
 
               <h2 className="text-xl font-semibold mb-1">
-                Safety Tools
+                {t('safety.section_title')}
               </h2>
 
               <p className="text-sm text-[var(--text-dim2)] mb-5">
-                Manage conversation and user interaction
+                {t('safety.subtitle')}
               </p>
 
               <div className="space-y-4">
@@ -85,11 +87,11 @@ function SafetyTools() {
 
                       <div>
                         <h3 className="font-semibold text-lg">
-                          {item.title}
+                          {t(`safety.${item.titleKey}`)}
                         </h3>
 
                         <p className="text-sm text-[var(--text-dim2)]">
-                          {item.desc}
+                          {t(`safety.${item.descKey}`)}
                         </p>
                       </div>
 
@@ -109,16 +111,16 @@ function SafetyTools() {
             <div>
 
               <h2 className="text-xl font-semibold mb-1">
-                Report an Issue
+                {t('safety.report_section')}
               </h2>
 
               <p className="text-sm text-[var(--text-dim2)] mb-5">
-                Is this user making you uncomfortable? Tell us why.
+                {t('safety.report_subtitle')}
               </p>
 
               <div className="space-y-3">
 
-                {reportOptions.map((item, index) => (
+                {reportOptionKeys.map((key, index) => (
 
                   <div
                     key={index}
@@ -126,7 +128,7 @@ function SafetyTools() {
                   >
 
                     <h3 className="font-medium">
-                      {item}
+                      {t(`safety.${key}`)}
                     </h3>
 
                     <ChevronRight className="text-gray-400 w-5 h-5" />
@@ -141,7 +143,7 @@ function SafetyTools() {
 
             {/* BUTTON */}
             <button className="w-full mt-10 py-3 rounded-2xl text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:opacity-90 transition">
-              Cancel
+              {t('safety.cancel')}
             </button>
 
           </div>

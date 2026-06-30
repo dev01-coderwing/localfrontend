@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Navbar from '../Navbar/Navbar';
 import Session from '../Session/Session';
 import {
@@ -16,6 +17,7 @@ import {
 import logo from '/Image/IAMeetYou.png';
 
 const Lucas = () => {
+  const { t } = useTranslation();
   const [timeLeft, setTimeLeft] = React.useState(305); // Start at 5 mins 5 secs
   const [showSession, setShowSession] = React.useState(null); // 'update', 'critical', 'end'
   const [isTimerPaused, setIsTimerPaused] = React.useState(false);
@@ -80,7 +82,7 @@ const Lucas = () => {
           <div className="w-[30%] flex flex-col border-r border-[var(--border)] p-6">
 
             <div className="flex items-center justify-between mb-6">
-              <h1 className="text-2xl font-bold text-[var(--text-dim)]">Lucas</h1>
+              <h1 className="text-2xl font-bold text-[var(--text-dim)]">{t('lucas.title')}</h1>
               <button className="w-8 h-8 flex items-center justify-center bg-[var(--bg-card)]/10 text-[var(--text-dim)] rounded-lg">
                 <Sparkles className="w-4 h-4" />
               </button>
@@ -93,8 +95,8 @@ const Lucas = () => {
               <div className="flex items-center justify-between p-4 rounded-xl border border-[var(--border)] shadow-sm bg-[var(--bg-card)]/10 group transition-colors">
                 <div>
                   <h3 className="text-[15px] font-semibold text-[var(--text-dim)]">Lynn</h3>
-                  <p className="text-[12px] text-[var(--text-dim2)] mt-0.5">Analyzed: 15/01/2026</p>
-                  <p className="text-[12px] text-[var(--text-dim2)] mt-1 font-medium">Expires in: 6 days</p>
+                  <p className="text-[12px] text-[var(--text-dim2)] mt-0.5">{t('lucas.analyzed', { date: '15/01/2026' })}</p>
+                  <p className="text-[12px] text-[var(--text-dim2)] mt-1 font-medium">{t('lucas.expires_in', { days: 6 })}</p>
                 </div>
                 <button className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--bg)] text-[var(--text-dim)] hover:bg-red-50 hover:text-red-500 transition">
                   <Trash2 className="w-4 h-4" />
@@ -105,8 +107,8 @@ const Lucas = () => {
               <div className="flex items-center justify-between p-4 rounded-xl border border-[var(--border)] shadow-sm bg-[var(--bg-card)]/10 group transition-colors">
                 <div>
                   <h3 className="text-[15px] font-semibold text-[var(--text-dim)]">Olivia</h3>
-                  <p className="text-[12px] text-[var(--text-dim2)] mt-0.5">Analyzed: 12/01/2026</p>
-                  <p className="text-[12px] text-[var(--text-dim2)]    mt-1 font-medium">Expires in: 3 days</p>
+                  <p className="text-[12px] text-[var(--text-dim2)] mt-0.5">{t('lucas.analyzed', { date: '12/01/2026' })}</p>
+                  <p className="text-[12px] text-[var(--text-dim2)]    mt-1 font-medium">{t('lucas.expires_in', { days: 3 })}</p>
                 </div>
                 <button className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--bg-card)]/10 text-[var(--text-dim)] transition">
                   <Trash2 className="w-4 h-4" />
@@ -117,19 +119,19 @@ const Lucas = () => {
 
             {/* Bottom Info Card */}
             <div className="mt-4 p-5 rounded-2xl border border-[var(--border)] bg-[var(--bg-card)]/10">
-              <h4 className="text-sm font-semibold text-[var(--text-dim)] mb-3 opacity-90">Memory duration:</h4>
+              <h4 className="text-sm font-semibold text-[var(--text-dim)] mb-3 opacity-90">{t('lucas.memory_duration')}</h4>
               <ul className="space-y-1.5 font-medium">
                 <li className="text-[13px] text-[var(--text-dim2)] flex gap-2">
-                  <span>•</span> Discovery: No memory
+                  <span>•</span> {t('lucas.memory_discovery')}
                 </li>
                 <li className="text-[13px] text-[var(--text-dim2)] flex gap-2">
-                  <span>•</span> Essential: 2 weeks
+                  <span>•</span> {t('lucas.memory_essential')}
                 </li>
                 <li className="text-[13px] text-[var(--text-dim2)] flex gap-2">
-                  <span>•</span> Serenity: 1 month
+                  <span>•</span> {t('lucas.memory_serenity')}
                 </li>
                 <li className="text-[13px] text-[var(--text-dim2)] flex gap-2">
-                  <span>•</span> Elite: 2 months
+                  <span>•</span> {t('lucas.memory_elite')}
                 </li>
               </ul>
             </div>
@@ -148,8 +150,8 @@ const Lucas = () => {
                 <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-[var(--bg-background)] rounded-full"></div>
               </div>
               <div>
-                <h2 className="text-[15px] font-bold text-[var(--text-dim)] leading-tight">Lucas</h2>
-                <p className="text-[12px] text-[var(--text-dim2)] font-medium">Dating Coach</p>
+                <h2 className="text-[15px] font-bold text-[var(--text-dim)] leading-tight">{t('lucas.title')}</h2>
+                <p className="text-[12px] text-[var(--text-dim2)] font-medium">{t('lucas.dating_coach')}</p>
               </div>
             </div>
 
@@ -160,7 +162,7 @@ const Lucas = () => {
               <div className="flex w-full">
                 <div className="max-w-[60%] flex flex-col">
                   <div className="bg-[var(--bg-card)]/10 text-[var(--text-dim)] px-5 py-4 rounded-2xl rounded-tl-sm text-[15px] leading-relaxed shadow-sm border border-[var(--border)]">
-                    Hey! I'm Lucas, your AI dating coach. I'm here to help you navigate your connections with deeper insights. What would you like to know?
+                    {t('lucas.welcome_message')}
                   </div>
                   <span className="text-[11px] text-[var(--text-dim)] mt-2 px-1">10:30 AM</span>
                 </div>
@@ -170,7 +172,7 @@ const Lucas = () => {
               <div className="flex w-full justify-end">
                 <div className="max-w-[60%] flex flex-col items-end">
                   <div className="bg-[var(--bg-card)]/10      text-[var(--text-dim)] px-5 py-4 rounded-2xl rounded-tr-sm text-[15px] leading-relaxed shadow-sm">
-                    Hi! I'm great, thanks! How about you?
+                    {t('lucas.user_message')}
                   </div>
                   <div className="flex items-center gap-1 mt-2 pr-1">
                     <span className="text-[11px] text-[var(--text-dim)]">10:32 AM</span>
@@ -186,7 +188,7 @@ const Lucas = () => {
               <div className="flex items-center gap-3 border border-[var(--border)] rounded-full pl-5 pr-1.5 py-1.5 shadow-sm focus-within:ring-2 focus-within:ring-[var(--accent)] focus-within:ring-opacity-20 transition-all">
                 <input
                   type="text"
-                  placeholder="Ask Lucas anything..."
+                  placeholder={t('lucas.input_placeholder')}
                   className="flex-1 bg-transparent border-none outline-none text-[var(--text-dim)] placeholder-[var(--text-dim2)] text-[15px]"
                 />
                 <button className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--accent)] hover:opacity-90 text-white transition-all shadow-sm">

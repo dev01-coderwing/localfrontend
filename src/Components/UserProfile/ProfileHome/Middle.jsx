@@ -1,8 +1,10 @@
 import { Crown, Gift } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Middle({ data }) {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const iconMap = {
     crown: <Crown size={16} />,
     gift: <Gift size={16} />,
@@ -49,7 +51,7 @@ function Middle({ data }) {
           </h2>
 
           <span className="text-purple-500 bg-purple-100 px-2 h-[18px] rounded-md text-[10px] flex items-center border border-purple-400">
-            {data.usage.usedPercent}% used
+            {t('profile.used_percent', { percent: data.usage.usedPercent })}
           </span>
         </div>
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../../Navbar/Navbar";
 import Right from "../layout/Right";
+import { useTranslation } from "react-i18next";
 
 import {
   ArrowLeft,
@@ -9,7 +10,7 @@ import {
 } from "lucide-react";
 
 function Report() {
-
+  const { t } = useTranslation();
   const [showPopup, setShowPopup] = useState(false);
 
   return (
@@ -34,7 +35,7 @@ function Report() {
               </button>
 
               <h1 className="text-3xl font-semibold">
-                Setting
+                {t('report.title')}
               </h1>
 
             </div>
@@ -43,16 +44,15 @@ function Report() {
             <div className="mb-8">
 
               <h2 className="text-2xl font-semibold mb-2">
-                Safety Tools
+                {t('report.section_title')}
               </h2>
 
               <h3 className="font-medium text-lg mb-1">
-                Provide more context
+                {t('report.context_title')}
               </h3>
 
               <p className="text-sm text-[var(--text-dim2)] leading-relaxed">
-                Your report is anonymous and helps us keep the
-                community safe.
+                {t('report.anonymous_note')}
               </p>
 
             </div>
@@ -61,11 +61,11 @@ function Report() {
             <div className="mb-8">
 
               <label className="block text-sm font-medium mb-3">
-                Add more details (optional)
+                {t('report.add_details')}
               </label>
 
               <textarea
-                placeholder="Tell us more about the incident..."
+                placeholder={t('report.incident_placeholder')}
                 className="w-full h-32 rounded-2xl border border-[var(--border)] bg-[var(--bg-background)] p-4 resize-none outline-none focus:ring-2 focus:ring-purple-400"
               />
 
@@ -75,7 +75,7 @@ function Report() {
             <div className="mb-10">
 
               <h3 className="text-sm font-medium mb-4">
-                Attach Screenshots
+                {t('report.attach_screenshots')}
               </h3>
 
               <div className="flex gap-4 flex-wrap">
@@ -88,7 +88,7 @@ function Report() {
                   </div>
 
                   <span className="text-xs text-[var(--text-dim2)]">
-                    Upload
+                    {t('report.upload')}
                   </span>
 
                   <input
@@ -114,11 +114,11 @@ function Report() {
                 onClick={() => setShowPopup(true)}
                 className="w-full py-3 rounded-2xl text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:opacity-90 transition"
               >
-                Submit Report
+                {t('report.submit_report')}
               </button>
 
               <button className="w-full py-3 rounded-2xl border border-[#f79174] text-[#f79174] hover:bg-[#f79174]/10 transition">
-                Cancel
+                {t('report.cancel')}
               </button>
 
             </div>
@@ -150,17 +150,16 @@ function Report() {
 
             {/* Title */}
             <h2 className="text-2xl font-bold text-[#1B1B4B] mb-3">
-              Report Received
+              {t('report.modal_title')}
             </h2>
 
             {/* Description */}
             <p className="text-sm text-gray-500 leading-relaxed mb-4">
-              Thank you for helping us keep the community safe.
-              Our team will review this within 24 hours.
+              {t('report.modal_desc')}
             </p>
 
             <p className="text-sm text-purple-500 font-medium mb-6">
-              This user has been muted for you.
+              {t('report.user_muted')}
             </p>
 
             {/* Button */}
@@ -168,7 +167,7 @@ function Report() {
               onClick={() => setShowPopup(false)}
               className="w-full py-3 rounded-2xl text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:opacity-90 transition"
             >
-              Done
+              {t('report.done')}
             </button>
 
           </div>

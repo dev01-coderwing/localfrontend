@@ -2,12 +2,14 @@ import React, { useState, useCallback, memo } from "react";
 import { Plus, X, ArrowLeft } from "lucide-react";
 import Navbar from "../Navbar/Navbar";
 import Right from "./layout/Right";
+import { useTranslation } from "react-i18next";
 
 /**
  * PHOTO SLOT COMPONENT
  * Precise recreation of the design slots.
  */
 const PhotoSlot = memo(({ image, index, onUpload, onRemove }) => {
+  const { t } = useTranslation();
   const isMain = index === 0;
 
   return (
@@ -25,7 +27,7 @@ const PhotoSlot = memo(({ image, index, onUpload, onRemove }) => {
 
           {isMain && (
             <div className="absolute top-4 right-4 px-4 py-1.5 bg-[#7C81D3] text-white text-[10px] font-black rounded-full shadow-lg uppercase tracking-widest z-10 transition-transform active:scale-95">
-              Main
+              {t('profileSettings.main_photo')}
             </div>
           )}
 
@@ -77,6 +79,7 @@ const InterestPill = memo(({ label, onRemove }) => (
  * Achieve 100% Fidelity with the design image.
  */
 export default function ProfileSetting() {
+  const { t } = useTranslation();
   const [profile, setProfile] = useState({
     images: [
       { id: 1, url: "/Image/Man.png", isMain: true },
@@ -112,11 +115,11 @@ export default function ProfileSetting() {
   }, []);
 
   const addInterest = useCallback(() => {
-    const val = window.prompt("Enter interest:");
+    const val = window.prompt(t('profileSettings.enter_interest'));
     if (val && !profile.interests.find(i => i.toLowerCase() === val.toLowerCase())) {
       setProfile(prev => ({ ...prev, interests: [...prev.interests, val] }));
     }
-  }, [profile.interests]);
+  }, [profile.interests, t]);
 
   return (
     <div className="min-h-screen bg-[var(--bg-background)] ">
@@ -134,7 +137,7 @@ export default function ProfileSetting() {
             >
               <ArrowLeft className="w-5 h-5 text-gray-800" />
             </button>
-            <h1 className="text-2xl  text-[var(--text-dim)] tracking-tight">Setting</h1>
+            <h1 className="text-2xl  text-[var(--text-dim)] tracking-tight">{t('profileSettings.title')}</h1>
           </header>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
@@ -172,12 +175,12 @@ export default function ProfileSetting() {
 
                 {/* 2. BIO SECTION */}
                 <div className="space-y-4">
-                  <label htmlFor="bio" className="text-sm font-bold text-[var(--text-dim2)] ml-1">Bio</label>
+                  <label htmlFor="bio" className="text-sm font-bold text-[var(--text-dim2)] ml-1">{t('profileSettings.bio_label')}</label>
                   <textarea
                     id="bio"
                     value={profile.bio}
                     onChange={(e) => setProfile({ ...profile, bio: e.target.value })}
-                    placeholder="Tell us about yourself..."
+                    placeholder={t('profileSettings.bio_placeholder')}
                     className="w-full bg-[var(--bg-card)]/10 border border-[var(--border)] rounded-[32px] p-8 text-sm font-medium text-[var(--text-dim2)] outline-none focus:ring-4 focus:ring-purple-50 transition-all shadow-sm min-h-[160px] resize-none placeholder:text-[var(--text-dim2)]"
                   />
                 </div>
@@ -185,13 +188,13 @@ export default function ProfileSetting() {
                 {/* 3. INTERESTS SECTION */}
                 <div className="space-y-6">
                   <div className="flex items-center justify-between px-2">
-                    <h2 className="text-sm font-bold text-[var(--text-dim2)]">Interests</h2>
+                    <h2 className="text-sm font-bold text-[var(--text-dim2)]">{t('profileSettings.interests')}</h2>
                     <button
                       type="button"
                       onClick={addInterest}
                       className="text-xs font-black text-[var(--text)] border-b-2 border-gray-900 pb-0.5 hover:text-purple-600 hover:border-purple-600 transition-all uppercase tracking-widest"
                     >
-                      Add New +
+                      {t('profileSettings.add_new')}
                     </button>
                   </div>
 
@@ -208,7 +211,7 @@ export default function ProfileSetting() {
                     type="submit"
                     className="w-full max-w-sm h-15 py-5 rounded-[28px] bg-gradient-to-r from-[#DB96A1] to-[#7C81D3] text-white font-black text-sm shadow-xl hover:shadow-2xl hover:scale-[1.01] active:scale-95 transition-all duration-300 uppercase tracking-[0.2em]"
                   >
-                    Update Profile
+                    {t('profileSettings.update_profile')}
                   </button>
                 </footer>
               </div>

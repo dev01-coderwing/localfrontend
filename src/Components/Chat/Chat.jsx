@@ -3,6 +3,7 @@
 // ============================
 
 import { useState, useRef, useEffect, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import Navbar from "../Navbar/Navbar";
 import LucasModal from "./LucasModal";
 import ChatRequest from "./ChatRequest";
@@ -21,6 +22,7 @@ import { getSocket, SOCKET_EVENTS, joinConversationRoom, leaveConversationRoom }
 const apiBaseUrl = "http://35.180.139.208:3000/api/v1";
 
 function Chat() {
+  const { t } = useTranslation();
   const [search, setSearch] = useState("");
   const [input, setInput] = useState("");
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -309,16 +311,16 @@ function Chat() {
         {loading ? (
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[var(--accent)] mx-auto mb-4"></div>
-            <p>Loading chats...</p>
+            <p>{t('chat.loading')}</p>
           </div>
         ) : error ? (
           <div className="text-center">
-            <p className="text-red-500 mb-4">Error: {error}</p>
+            <p className="text-red-500 mb-4">{t('chat.error', { error })}</p>
             <button
               onClick={() => dispatch(getChatRequests())}
               className="px-4 py-2 bg-[var(--accent)] text-white rounded-lg hover:opacity-90"
             >
-              Retry
+              {t('chat.retry')}
             </button>
           </div>
         ) : (

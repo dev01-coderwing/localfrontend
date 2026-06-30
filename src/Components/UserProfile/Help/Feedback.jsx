@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SubmitFeedbackApi } from "../../Redux/supportSlice";
 import {Heart} from "lucide-react";
-const Feedback = ({ onNext }) => {
+import { useTranslation } from "react-i18next";
 
+const Feedback = ({ onNext }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const { loading } = useSelector((state) => state.support);
@@ -12,10 +14,12 @@ const Feedback = ({ onNext }) => {
   const [desc, setDesc] = useState("");
   const [rating, setRating] = useState(0);
 
+  const TABS = ["Suggestion", "Bug", "Experience"];
+
   const handleSubmit = async () => {
 
     if (!desc || !rating) {
-      alert("Please fill all fields");
+      alert(t('help.fill_all_fields'));
       return;
     }
 
@@ -30,10 +34,10 @@ const Feedback = ({ onNext }) => {
     console.log(result);
 
     if (result?.type === "feedback/submit/fulfilled") {
-      alert("Feedback submitted successfully");
+      alert(t('help.feedback_success'));
       onNext();
     } else {
-      alert("Failed to submit feedback");
+      alert(t('help.feedback_failed'));
     }
   };
 
@@ -41,16 +45,16 @@ const Feedback = ({ onNext }) => {
     <div className="bg-[var(--bg-card)]/10 p-6 rounded-2xl shadow-md h-full">
 
       <h1 className="text-xl font-semibold mb-4">
-        Feedback
+        {t('help.feedback')}
       </h1>
 
       <h2 className="text-lg font-semibold mb-2">
-        We Value Your Voice
+        {t('help.we_value_voice')}
       </h2>
 
       {/* Tabs */}
       <div className="flex gap-2 mb-4">
-        {["Suggestion", "Bug", "Experience"].map((item) => (
+        {TABS.map((item) => (
           <button
             key={item}
             onClick={() => setType(item)}
@@ -60,7 +64,7 @@ const Feedback = ({ onNext }) => {
                 : "bg-gray-200 text-gray-700"
             }`}
           >
-            {item}
+            {t(`help.${item.toLowerCase()}`)}
           </button>
         ))}
       </div>
@@ -68,7 +72,7 @@ const Feedback = ({ onNext }) => {
       {/* Textarea */}
       <textarea
         className="w-full p-3 border rounded-lg mb-4"
-        placeholder="Describe..."
+        placeholder={t('help.describe')}
         value={desc}
         onChange={(e) => setDesc(e.target.value)}
       />
@@ -96,7 +100,7 @@ const Feedback = ({ onNext }) => {
         disabled={loading}
         className="w-full py-3 rounded-xl text-white bg-gradient-to-r from-pink-400 to-blue-500 disabled:opacity-50"
       >
-        {loading ? "Sending..." : "Send Feedback"}
+        {loading ? t('help.sending') : t('help.send_feedback')}
       </button>
 
     </div>
