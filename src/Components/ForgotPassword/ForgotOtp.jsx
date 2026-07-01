@@ -3,8 +3,10 @@ import Navbar from "../Navbar/Navbar";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { setverfiy } from "../Redux/authSlice";
+import { useTranslation } from "react-i18next";
 
 function ForgotOtp() {
+  const { t } = useTranslation();
      const [otp, setOtp] = useState(new Array(6).fill(""));
       const inputs = useRef([]);
      
@@ -19,7 +21,7 @@ function ForgotOtp() {
       if (!email) {
         return (
           <div className="text-center mt-20 text-red-500">
-            Email                                                                                                                                                                                                                                                                                                                                                                                                                                   missing, please go back and register again.
+            {t('forgotOtp.email_missing')}
           </div>
         );
       }
@@ -49,7 +51,7 @@ function ForgotOtp() {
         const otpValue = otp.join("");
      
         if (otpValue.length !== 6) {
-          alert("Please enter complete OTP");
+          alert(t('forgotOtp.alert_incomplete'));
           return;
         }
      
@@ -70,7 +72,7 @@ function ForgotOtp() {
         });
         } catch (err) {
           console.error("Verify Error:", err);
-          alert(err?.message || "OTP verification failed");
+          alert(err?.message || t('forgotOtp.alert_failed'));
         }
       };
      
@@ -83,19 +85,19 @@ function ForgotOtp() {
         <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl shadow-lg w-full max-w-lg p-8 text-center">
  
           <h1 className="text-4xl mb-2  text-[var(--text-dim)]">
-            Verification Code
+            {t('forgotOtp.title')}
           </h1>
- 
+
           <p className="text-sm  text-[var(--text-dim2)] mb-6 opacity-70">
-            We've sent a 6-digit verification code to
+            {t('forgotOtp.sent_to')}
             <br />
             <span className="font-semibold underline">
               {email}
             </span>
           </p>
- 
+
           <p className="text-left text-sm mb-2  text-[var(--text-dim)]">
-            Enter OTP
+            {t('forgotOtp.enter_otp')}
           </p>
  
           <div className="flex justify-between gap-2 mb-3">
@@ -114,25 +116,25 @@ function ForgotOtp() {
           </div>
  
           <p className="text-sm mb-6 opacity-70">
-            Didn't receive the code?
+            {t('forgotOtp.resend_prefix')}
             <span className="text-[var(--text-dim2)] cursor-pointer ">
-              Resend OTP
+              {t('forgotOtp.resend')}
             </span>
           </p>
- 
+
           {/* ✅ Submit button */}
           <button
             onClick={handleSubmit}
             className="w-full py-3 rounded-lg text-white font-medium bg-gradient-to-r from-[#D79098] to-[#5F7BF4] hover:opacity-90"
           >
-            Submit
+            {t('forgotOtp.submit')}
           </button>
- 
+
           <p className="text-xs mt-5 opacity-60  text-[var(--text-dim)]">
-            By continuing, you agree to our
-            <span className="text-[var(--text-dim2)] underline"> Terms of Service </span>
-            and
-            <span className="text-[var(--text-dim2)] underline"> Privacy Policy</span>
+            {t('forgotOtp.terms_prefix')}
+            <span className="text-[var(--text-dim2)] underline"> {t('forgotOtp.terms_of_service')} </span>
+            {t('forgotOtp.terms_and')}
+            <span className="text-[var(--text-dim2)] underline"> {t('forgotOtp.privacy_policy')}</span>
           </p>
  
         </div>

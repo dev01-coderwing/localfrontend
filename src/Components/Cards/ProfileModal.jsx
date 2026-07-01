@@ -1,7 +1,9 @@
 import React from "react";
 import { X, MapPin } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ProfileModal = ({ onClose }) => {
+  const { t } = useTranslation();
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
 
@@ -17,7 +19,7 @@ const ProfileModal = ({ onClose }) => {
         </button>
 
         {/* Title */}
-        <h2 className="text-lg font-semibold mb-4">Profile</h2>
+        <h2 className="text-lg font-semibold mb-4">{t('profileModal.title')}</h2>
 
         {/* Content */}
         <div className="flex gap-6">
@@ -61,7 +63,7 @@ const ProfileModal = ({ onClose }) => {
 
             {/* Bio */}
             <div className="mb-4">
-              <h4 className="font-medium mb-1">Bio</h4>
+              <h4 className="font-medium mb-1">{t('profileModal.bio_label')}</h4>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Architect by day, Vinyl collect by night. I'm a firm believer
                 that the best conversations happen over a late-night pasta dinner.
@@ -72,7 +74,7 @@ const ProfileModal = ({ onClose }) => {
 
             {/* Interests */}
             <div>
-              <h4 className="font-medium mb-2">Interests</h4>
+              <h4 className="font-medium mb-2">{t('profileModal.interests_label')}</h4>
 
               <div className="flex flex-wrap gap-2">
                 {["Art", "Travel", "Music", "Fitness", "Cooking", "Reading"].map(
@@ -94,17 +96,17 @@ const ProfileModal = ({ onClose }) => {
         <div className="mt-6 flex gap-4">
 
           <button className="flex-1 bg-red-500 text-white py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg">
-            🌹 Send Rose
+            {t('profileModal.send_rose')}
           </button>
 
           <button className="flex-1 bg-gradient-to-r from-pink-400 to-indigo-500 text-white py-3 rounded-xl shadow-lg">
-            Send Invitation
+            {t('profileModal.send_invitation')}
           </button>
         </div>
 
         {/* Upgrade */}
         <button className="w-full mt-4 border border-orange-300 text-orange-400 py-3 rounded-xl">
-          Upgrade Plan
+          {t('profileModal.upgrade_plan')}
         </button>
 
         {/* Cancel */}
@@ -112,7 +114,7 @@ const ProfileModal = ({ onClose }) => {
           onClick={onClose}
           className="text-center text-gray-500 text-sm mt-3 cursor-pointer"
         >
-          Cancel and Return
+          {t('profileModal.cancel')}
         </p>
 
       </div>

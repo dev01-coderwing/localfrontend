@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // 🔧 Config (fully dynamic)
 const GAME_CONFIG = {
@@ -18,6 +19,12 @@ const GAME_CONFIG = {
 
 export default function HeartMemoryHome() {
     const navigate = useNavigate();
+    const { t } = useTranslation();
+    const ruleTexts = [
+        t('heartMemory.rule_time'),
+        t('heartMemory.rule_cards'),
+        t('heartMemory.rule_goal'),
+    ];
     const previewCards = React.useMemo(
         () => Array.from({ length: GAME_CONFIG.totalCards }),
         []
@@ -33,12 +40,12 @@ export default function HeartMemoryHome() {
                 <div className="text-5xl mb-3">{GAME_CONFIG.previewIcon}</div>
 
                 <h1 className="text-3xl font-semibold text-red-500 mb-2">
-                    {GAME_CONFIG.title}
+                    {t('heartMemory.title')}
                 </h1>
 
                 {/* Subtitle */}
                 <p className="text-sm text-[var(--text-dim2)] mb-8">
-                    {GAME_CONFIG.subtitle}
+                    {t('heartMemory.subtitle')}
                 </p>
 
                 <div className="grid grid-cols-4 gap-4 mb-8">
@@ -57,14 +64,14 @@ export default function HeartMemoryHome() {
                 {/* 📊 Rules (Dynamic) */}
                 <div className="bg-[var(--bg-card)]/10 border border-[var(--border)] rounded-xl p-4 text-left text-sm mb-8 shadow-sm">
                     <p className="font-semibold mb-3 text-[var(--text-dim)]">
-                        Game Rules
+                        {t('heartMemory.game_rules')}
                     </p>
 
                     <div className="space-y-2 text-[var(--text-dim2)]">
                         {GAME_CONFIG.rules.map((rule, index) => (
                             <p key={index} className="flex items-center gap-2">
                                 <span>{rule.icon}</span>
-                                <span>{rule.text}</span>
+                                <span>{ruleTexts[index]}</span>
                             </p>
                         ))}
                     </div>
@@ -79,7 +86,7 @@ export default function HeartMemoryHome() {
                     }
                     className="w-full py-3 rounded-full bg-gradient-to-r from-pink-400 to-blue-500 text-white font-medium hover:opacity-90 active:scale-95 transition"
                 >
-                    Play Memory
+                    {t('heartMemory.play_memory')}
                 </button>
             </div>
         </div>

@@ -1,6 +1,7 @@
 // ============================
 // ChatSidebar.jsx
 // ============================
+import { useTranslation } from "react-i18next";
 
 function Avatar({ src, name, size = "md", active = false }) {
   const sizeMap = {
@@ -34,6 +35,7 @@ function ChatSidebar({
   setSidebarOpen,
   setShowRequest,
 }) {
+  const { t } = useTranslation();
   return (
     <>
       {sidebarOpen && (
@@ -62,7 +64,7 @@ function ChatSidebar({
           <div className="flex items-center justify-between mb-6">
 
             <h1 className="text-2xl font-bold text-[var(--text-dim)]">
-              Chats
+              {t('chatSidebar.title')}
             </h1>
 
             <button
@@ -75,7 +77,7 @@ function ChatSidebar({
 
           <input
             type="text"
-            placeholder="Search..."
+            placeholder={t('chatSidebar.search_placeholder')}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="w-full px-4 py-3 bg-[var(--bg-card)]/10 border border-[var(--border)] rounded-2xl text-sm"

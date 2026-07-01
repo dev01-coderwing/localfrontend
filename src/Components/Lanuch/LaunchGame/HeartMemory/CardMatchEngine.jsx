@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, memo } from "react";
 import { Heart } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 /**
  * Optimized Card Component
@@ -34,6 +35,7 @@ const Card = memo(({ card, onClick }) => {
 });
 
 const CardMatchEngine = ({ onWin, score, setScore, timeLeft, totalTime, targetScore }) => {
+  const { t } = useTranslation();
   const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -117,13 +119,13 @@ const CardMatchEngine = ({ onWin, score, setScore, timeLeft, totalTime, targetSc
     <div className="flex-1 flex flex-col p-6 relative select-none max-w-lg mx-auto w-full bg-[var(--bg-card)]/10">
       {/* Branding */}
       <div className="absolute top-4 left-6">
-        <h2 className="text-[var(--text-dim)] font-bold text-sm uppercase opacity-50">Rush Session</h2>
+        <h2 className="text-[var(--text-dim)] font-bold text-sm uppercase opacity-50">{t('heartMemory.brand_label')}</h2>
       </div>
 
       {/* HUD */}
       <div className="flex justify-between items-start z-10 w-full mb-8 pt-6">
         <div className="bg-[var(--bg-card)]/10 backdrop-blur shadow-sm px-5 py-2 rounded-2xl border border-[var(--border)]">
-          <p className="text-[10px] text-[var(--text-dim)] font-bold uppercase tracking-widest mb-0.5">Pairs Found</p>
+          <p className="text-[10px] text-[var(--text-dim)] font-bold uppercase tracking-widest mb-0.5">{t('heartMemory.pairs_found')}</p>
           <p className="text-lg font-black text-[#E91E63]">
             {score} <span className="text-xs opacity-20">/ {targetScore}</span>
           </p>

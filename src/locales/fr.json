@@ -7,7 +7,7 @@
   "select_language": "Sélectionner une langue",
   "search_language": "Rechercher une langue...",
   "no_languages_found": "Aucune langue trouvée",
-  "confirm": "Confirmer",
+  "confirm": "Confirm",
   "updating": "Mise à jour...",
   "next": "Suivant",
 
@@ -45,7 +45,7 @@
     "emailPlaceholder": "Entrez votre adresse e-mail",
     "sending": "Envoi en cours...",
     "sendVerificationCode": "Envoyer le code de vérification",
-    "confirm": "Confirmer",
+    "confirm": "Confirm",
     "success": "✓ Bienvenue ! Vérifiez votre boîte de réception.",
     "or": "Ou",
     "alreadyHaveAccount": "Vous avez déjà un compte ?",
@@ -212,7 +212,7 @@
     "purchaseTerms": "En finalisant cet achat, vous acceptez nos Conditions d'utilisation. Vos données sont protégées dans le cadre de notre politique de confidentialité.",
     "confirmSubscription": "Confirmer l'abonnement",
     "confirmQuestion": "Êtes-vous sûr de vouloir continuer avec le plan sélectionné ?",
-    "confirm": "Confirmer",
+    "confirm": "Confirm",
     "cancel": "Annuler"
   },
 
@@ -752,7 +752,7 @@
     "capture": "Capturer",
     "retake": "Reprendre",
     "re_capture": "Re-Capturer",
-    "confirm": "Confirmer"
+    "confirm": "Confirm"
   },
 
   "verificationProgress": {
@@ -883,7 +883,7 @@
     "review_prefix": "Votre demande d'Influenceur sera examinée dans",
     "review_hours": "24–48 heures",
     "review_suffix": ". Nous vous notifierons par notification push une fois votre statut mis à jour.",
-    "confirm": "Confirmer",
+    "confirm": "Confirm",
     "cancel": "Annuler"
   },
 
@@ -1067,5 +1067,430 @@
     "seasonal_offer": "🎉 Offre Saisonnière",
     "learn_more": "En Savoir Plus →",
     "active_from": "Actif à partir de :"
+  },
+
+  "navbar": {
+    "home": "Accueil",
+    "soul_map": "Carte de l'Âme",
+    "lucas": "Lucas",
+    "chats": "Chats",
+    "profile": "Profil",
+    "logout": "Déconnexion",
+    "privilege_badge": "Privilège",
+    "sign_up": "S'inscrire",
+    "login": "Connexion"
+  },
+
+  "notification": {
+    "title": "Notifications",
+    "matches": "Correspondances",
+    "time_2m_ago": "Il y a 2m",
+    "new_match": "Nouvelle correspondance : {{name}}",
+    "time_2min_ago": "Il y a 2 minutes",
+    "view": "Voir",
+    "ai_insights": "INSIGHTS IA",
+    "lucas_ai": "Lucas AI",
+    "lucas_ai_msg": "\"Votre compatibilité avec NTR vient d'augmenter ! Elle vient d'ajouter la photographie à ses intérêts.\"",
+    "analyze_profile": "Analyser le profil →",
+    "messages": "Messages",
+    "unread_conversations": "{{n}} conversations non lues",
+    "system": "SYSTÈME",
+    "new_login": "NOUVELLE connexion détectée",
+    "new_login_desc": "Une nouvelle connexion depuis Londres, Royaume-Uni a été détectée...",
+    "invitation": "Invitation",
+    "accepted": "Accepté",
+    "start_chatting": "Commencer à chatter",
+    "decline": "Refuser",
+    "accept_invitation": "Accepter l'invitation",
+    "time_1h_ago": "Il y a 1h"
+  },
+
+  "chatRequest": {
+    "title": "Demandes de chat",
+    "loading": "Chargement...",
+    "no_requests": "Pas de demandes pour l'instant",
+    "accept": "Accepter",
+    "decline": "Refuser"
+  },
+
+  "chatSidebar": {
+    "title": "Chats",
+    "search_placeholder": "Rechercher..."
+  },
+
+  "chatWindow": {
+    "empty_title": "Sélectionnez un chat pour commencer",
+    "empty_desc": "Choisissez une conversation dans la barre latérale",
+    "online": "En ligne",
+    "offline": "Hors ligne",
+    "mute": "Désactiver",
+    "unmute": "Réactiver",
+    "mute_conversation": "Désactiver la conversation",
+    "unmute_conversation": "Réactiver la conversation",
+    "report": "Signaler",
+    "report_user": "Signaler l'utilisateur",
+    "block": "Bloquer",
+    "block_user": "Bloquer l'utilisateur",
+    "cancel": "Annuler",
+    "no_messages": "Pas encore de messages.",
+    "ask_lucas": "Demander à Lucas",
+    "type_message": "Tapez un message..."
+  },
+
+  "lucasModal": {
+    "tone_playful": "Joueur",
+    "tone_curious": "Curieux",
+    "tone_gentle": "Doux",
+    "coach_title": "Lucas",
+    "coach_subtitle": "Coach personnel",
+    "conversation_starter_label": "Amorce de conversation",
+    "regenerate": "Régénérer",
+    "starter_playful": "Ça va bien ! Tu veux prendre un café un de ces jours ? ☕",
+    "starter_curious": "À quoi as-tu récemment réfléchi ?",
+    "starter_gentle": "J'espère que ta journée est paisible — comment vas-tu ?",
+    "suggestion_playful_0": "Vous partagez tous deux une haute intelligence émotionnelle et un style d'écoute active. Lucas détecte une forte résonance dans la façon dont vous exprimez votre vulnérabilité.",
+    "suggestion_playful_1": "Votre humour s'aligne magnifiquement — Lucas voit une dynamique enjouée qui pourrait transformer tout silence gênant en rires.",
+    "suggestion_playful_2": "Vous dégagez la même énergie spontanée. Lucas pense que vous vous épanouiriez dans des aventures qu'aucun de vous n'avait planifiées.",
+    "suggestion_curious_0": "Vous posez des questions que d'autres n'osent pas. Lucas remarque que vous recherchez tous deux la profondeur plutôt que les bavardages.",
+    "suggestion_curious_1": "Il y a une faim partagée de comprendre le 'pourquoi' de tout — Lucas trouve cela rare et passionnant.",
+    "suggestion_curious_2": "Votre curiosité reflète la leur. Lucas sent que vous perdriez la notion du temps à explorer des idées ensemble.",
+    "suggestion_gentle_0": "Vous faites tous deux de la place aux autres avec grâce. Lucas voit une force douce dans votre façon de vous connecter.",
+    "suggestion_gentle_1": "Il y a de la chaleur dans votre façon d'écouter. Lucas détecte un rythme doux qui coule naturellement entre vous.",
+    "suggestion_gentle_2": "Votre patience et votre empathie sont profondément alignées. Lucas croit que cette connexion pourrait être silencieusement profonde."
+  },
+
+  "forgotPassword": {
+    "title": "Mot de passe oublié",
+    "description": "Entrez votre e-mail et nous vous enverrons un code de vérification",
+    "email_label": "Adresse e-mail",
+    "email_placeholder": "Entrez votre e-mail",
+    "email_helper": "Nous enverrons un code à cette adresse",
+    "error_empty": "Veuillez entrer votre e-mail",
+    "error_invalid": "Veuillez entrer un e-mail valide",
+    "error_generic": "Quelque chose a mal tourné, veuillez réessayer",
+    "btn_sending": "Envoi...",
+    "btn_send": "Envoyer le code de vérification",
+    "back_to_signin": "← Retour à la connexion",
+    "terms_prefix": "En continuant, vous acceptez nos",
+    "terms_of_service": "Conditions d'utilisation",
+    "terms_and": "et",
+    "privacy_policy": "Politique de confidentialité"
+  },
+
+  "forgotOtp": {
+    "email_missing": "E-mail manquant, veuillez revenir en arrière et réessayer.",
+    "alert_incomplete": "Veuillez entrer un OTP complet de 6 chiffres",
+    "alert_failed": "Échec de la vérification. Veuillez réessayer.",
+    "title": "Entrer l'OTP",
+    "sent_to": "Nous avons envoyé un code de vérification à",
+    "enter_otp": "Entrer l'OTP",
+    "resend_prefix": "Vous n'avez pas reçu le code ?",
+    "resend": "Renvoyer",
+    "submit": "Soumettre",
+    "terms_prefix": "En continuant, vous acceptez nos",
+    "terms_of_service": "Conditions d'utilisation",
+    "terms_and": "et",
+    "privacy_policy": "Politique de confidentialité"
+  },
+
+  "otp": {
+    "email_missing": "E-mail manquant, veuillez revenir et vous inscrire à nouveau.",
+    "alert_incomplete": "Veuillez entrer un OTP complet de 6 chiffres",
+    "alert_failed": "Échec de la vérification. Veuillez réessayer.",
+    "title": "Code de vérification",
+    "sent_to": "Nous avons envoyé un code de vérification à",
+    "enter_otp": "Entrer l'OTP",
+    "resend_prefix": "Vous n'avez pas reçu le code ?",
+    "resend": "Renvoyer l'OTP",
+    "submit": "Soumettre",
+    "terms_prefix": "En continuant, vous acceptez nos",
+    "terms_of_service": "Conditions d'utilisation",
+    "terms_and": "et",
+    "privacy_policy": "Politique de confidentialité"
+  },
+
+  "password": {
+    "email_missing": "E-mail manquant, veuillez recommencer.",
+    "error_mismatch": "Les mots de passe ne correspondent pas",
+    "error_generic": "Échec de la définition du mot de passe",
+    "title": "Créer un nouveau mot de passe",
+    "description": "Définissez un mot de passe fort pour sécuriser votre compte",
+    "new_password_label": "Nouveau mot de passe",
+    "new_password_placeholder": "Entrer le nouveau mot de passe",
+    "confirm_password_label": "Confirmer le mot de passe",
+    "confirm_password_placeholder": "Entrer la confirmation du mot de passe",
+    "rule_min_length": "Minimum 8 caractères",
+    "rule_uppercase": "Au moins 1 lettre majuscule",
+    "rule_number": "Au moins 1 chiffre",
+    "btn_confirm": "Confirmer le mot de passe"
+  },
+
+  "homepage": {
+    "loading": "Chargement..."
+  },
+
+  "filter": {
+    "header": "Filtre",
+    "location": "LOCALISATION",
+    "relocation_locked": "Relocalisation verrouillée",
+    "relocation_desc": "Voyagez partout et rencontrez des locaux",
+    "upgrade": "Améliorer",
+    "max_distance": "DISTANCE MAXIMALE",
+    "miles": "miles",
+    "age_range": "TRANCHE D'ÂGE",
+    "interested_in": "INTÉRESSÉ PAR",
+    "women": "Femmes",
+    "men": "Hommes",
+    "everyone": "Tout le monde",
+    "apply": "Appliquer le filtre"
+  },
+
+  "lucasLab": {
+    "title": "Aperçu de Lucas Lab",
+    "profile_name": "Nicole Jennifer",
+    "profile_sub": "Analyse psychologique approfondie",
+    "overall_match": "Compatibilité globale",
+    "psychological_insights": "Perspectives psychologiques",
+    "mbti_name": "MBTI",
+    "mbti_sub": "Préférences cognitives",
+    "love_name": "Langages de l'amour",
+    "love_sub": "Expression d'amour principale",
+    "love_badge": "Temps de qualité",
+    "attachment_name": "Style d'attachement",
+    "attachment_sub": "Schémas relationnels",
+    "attachment_badge": "Sécurisé",
+    "ocean_name": "Les Cinq Grands (OCEAN)",
+    "ocean_sub": "Traits de personnalité",
+    "ocean_badge": "Grande ouverture",
+    "potential_challenges": "Défis potentiels",
+    "challenges_desc": "Les styles de communication peuvent différer lors de la résolution de conflits...",
+    "unlock_insights": "Débloquer toutes les perspectives",
+    "cta_button": "En savoir plus avec Lucas"
+  },
+
+  "profilePopup": {
+    "header": "Profil",
+    "bio_label": "Bio",
+    "no_bio": "Aucune bio disponible",
+    "interests_label": "Intérêts",
+    "no_interests": "Aucun intérêt",
+    "rose_sent": "Rose envoyée !",
+    "send_rose": "Envoyer une rose",
+    "invitation_sent": "Invitation envoyée !",
+    "send_invitation": "Envoyer une invitation",
+    "upgrade_plan": "Améliorer le plan",
+    "cancel": "Annuler et retourner",
+    "unknown_city": "Ville inconnue"
+  },
+
+  "alignment": {
+    "title": "Un Alignement Rare",
+    "location": "Paris, France",
+    "description": "Cette connexion transcende la distance géographique. Une rare synchronicité en valeurs et en but de l'âme a été détectée",
+    "astral_match": "Correspondance Astrale",
+    "emotional_match": "Correspondance Émotionnelle",
+    "send_invitation": "Envoyer une Invitation",
+    "view_profile": "Voir le Profil",
+    "maybe_later": "Peut-être Plus Tard"
+  },
+
+  "soulSetting": {
+    "title": "Profil de l'Âme",
+    "astral_line": "70% Astral.",
+    "emotional_line": "70% Émotionnel.",
+    "doubt_line": "0% doute.",
+    "quote": "\"Parce que vous ne cherchez pas un partenaire, mais votre alter ego mondial.\"",
+    "preferences_heading": "Préférences de Découverte",
+    "match_alerts_title": "Alertes de Correspondance",
+    "match_alerts_subtitle": "Notification de résonance de l'âme instantanée",
+    "scan_frequency_title": "Fréquence de Scan",
+    "scan_frequency_subtitle": "Alignement planétaire en temps réel",
+    "timezone_sync_title": "Synchronisation de Fuseau Horaire",
+    "timezone_sync_subtitle": "Harmonisez avec leur aube locale",
+    "auto_detect": "Détection automatique"
+  },
+
+  "soulProfile": {
+    "title": "Profil de l'Âme",
+    "default_match_status": "Correspondance de l'Âme",
+    "default_bio": "Guidée par la lumière des étoiles et l'univers.",
+    "breakdown": "Analyse",
+    "astral_label": "ASTRAL",
+    "emotional_label": "ÉMOTIONNEL",
+    "astral_alignment": "Alignement Astral",
+    "default_alignment_text": "L'alignement Balance & Verseau crée une forte connexion.",
+    "send_invitation": "Envoyer une Invitation",
+    "save_for_later": "Enregistrer pour Plus Tard"
+  },
+
+  "soulmapLocation": {
+    "default_location": "Paris",
+    "soul_alignment_detected": "Alignement d'âme détect",
+    "high_priority": "HAUTE PRIORITÉ",
+    "astral_label": "Astral",
+    "emotional_label": "Émotionnel",
+    "view_profile": "Voir le Profil →"
+  },
+
+  "premiumInvitation": {
+    "title": "Invitation premium",
+    "service_fee": "Frais de service de la plateforme",
+    "policy_title": "Politique d'invitation",
+    "policy_desc": "Nicole Jennifer doit accepter votre invitation avant de chatter.",
+    "learn_more": "En savoir plus →",
+    "response_time": "Délai de réponse de 24 heures",
+    "response_desc": "Les membres doivent répondre dans la journée.",
+    "accepted_charged": "Acceptée → Meons débités",
+    "accepted_desc": "Déverrouille immédiatement les fonctionnalités de chat premium.",
+    "declined_refunded": "Refusée → Meons remboursés",
+    "declined_desc": "Remboursement automatique sur votre portefeuille en cas de refus.",
+    "send_rose": "🌹 Envoyer une rose",
+    "send_invitation": "Envoyer une invitation",
+    "cancel": "Annuler"
+  },
+
+  "profileModal": {
+    "title": "Profil",
+    "bio_label": "Bio",
+    "interests_label": "Intérêts",
+    "send_rose": "🌹 Envoyer une rose",
+    "send_invitation": "Envoyer une invitation",
+    "upgrade_plan": "Améliorer le plan",
+    "cancel": "Annuler et retourner"
+  },
+
+  "boostFlow": {
+    "step1_title": "Prêt à booster ?",
+    "step1_desc": "Augmentez la visibilité de votre profil auprès de plus de personnes dans votre région instantanément.",
+    "plan_name": "Boost de 30 minutes",
+    "plan_priority": "Visibilité prioritaire pour la prochaine heure.",
+    "info_text": "Le boost augmente uniquement la visibilité. Les correspondances nécessitent des likes mutuels.",
+    "confirm_btn": "Confirmer et démarrer le boost",
+    "maybe_later": "Peut-être plus tard",
+    "step2_title": "Vous êtes boosté !",
+    "step2_desc": "Votre profil bénéficie maintenant d'une visibilité prioritaire dans Explorer et Labs.",
+    "live_timer": "● Minuterie en direct",
+    "timer_remaining": "Temps restant",
+    "view_performance": "Voir les performances",
+    "go_to_explorer": "Aller à Explorer"
+  },
+
+  "boost": {
+    "title": "Boostez votre profil",
+    "subtitle": "Obtenez jusqu'à 10x plus de vues sur votre profil instantanément",
+    "stat_views_title": "Vues du profil",
+    "stat_views_desc": "Nombre de personnes ayant visité votre profil pendant le boost.",
+    "stat_likes_title": "J'aime reçus",
+    "stat_likes_desc": "Personnes ayant aimé votre profil pendant que votre boost était actif.",
+    "stat_favorites_title": "Ajouté aux favoris",
+    "stat_favorites_desc": "Utilisateurs ayant sauvegardé votre profil pour plus tard.",
+    "boost_now": "Booster maintenant",
+    "maybe_later": "Peut-être plus tard"
+  },
+
+  "premiumBoost": {
+    "title": "Boost premium",
+    "subtitle": "Faites-vous remarquer",
+    "description": "Jusqu'à 10x plus de vues de profil et des correspondances instantanées.",
+    "single_boosts": "Boosts individuels",
+    "one_time_use": "Usage unique",
+    "value_packs": "Packs avantageux",
+    "best_value": "Meilleur rapport qualité-prix",
+    "boost_unit_min": "Min",
+    "boost_unit_hour": "heure",
+    "pack_3x": "3x 30min Boosts",
+    "pack_5x": "5x 30min Boosts",
+    "pack_10x": "10x 30min Boosts",
+    "save_15": "Économisez 15%",
+    "save_25": "Économisez 25%",
+    "vip_title": "Pass VIP",
+    "vip_name": "Boost illimité",
+    "vip_validity": "Valable 7 jours",
+    "vip_feature_1": "Minimum 8 caractères",
+    "vip_feature_2": "Au moins 1 lettre majuscule",
+    "vip_feature_3": "Au moins 1 chiffre",
+    "go_vip": "Passer VIP",
+    "total_meons": "Total Meons :",
+    "balance": "Solde :",
+    "active_boost": "Boost actif"
+  },
+
+  "bubbleGame": {
+    "title": "Bubble Pop Love",
+    "subtitle": "Associez vite. Éclatez plus vite.",
+    "game_rules": "Règles du jeu",
+    "rule_time": "Défi de 10 secondes",
+    "rule_pairs": "Créer 12 paires correspondantes",
+    "rule_avoid": "Éviter les emojis négatifs",
+    "start_game": "Démarrer le jeu",
+    "matched": "Associés",
+    "match_instruction": "Associer les mêmes couleurs",
+    "time_up": "Temps écoulé !",
+    "you_matched": "Vous avez associé",
+    "out_of_pairs": "sur 12 paires.",
+    "be_faster": "Soyez plus rapide la prochaine fois !",
+    "try_again": "Réessayer",
+    "exit": "Quitter",
+    "get_ready_1": "Prêt",
+    "get_ready_2": "Partez !",
+    "victory": "Victoire !",
+    "perfect_match": "Correspondance parfaite !",
+    "matched_pairs": "Vous avez associé {{score}} paires en",
+    "matched_pairs_2": "temps !",
+    "rewards_unlocked": "Récompenses débloquées",
+    "meons_reward": "15 Meons",
+    "claim_reward": "Réclamer la récompense",
+    "play_again": "Rejouer"
+  },
+
+  "heartMemory": {
+    "title": "Mémoire du cœur",
+    "subtitle": "Trouvez toutes les paires amoureuses",
+    "game_rules": "Règles du jeu",
+    "rule_time": "Défi de 10 secondes",
+    "rule_cards": "12 cartes (6 paires correspondantes)",
+    "rule_goal": "Trouvez toutes les paires avant la fin du temps",
+    "play_memory": "Jouer à la mémoire",
+    "brand_label": "Rush Session",
+    "pairs_found": "Paires trouvées",
+    "ready_text": "Amour !",
+    "time_up": "Temps écoulé !",
+    "found_pairs": "Vous avez trouvé {{score}} paires sur 6",
+    "encouragement": "L'amour prend du temps, mais votre mémoire peut être plus rapide !",
+    "try_again_msg": "Réessayez et affûtez votre mémoire !",
+    "try_again": "Réessayer",
+    "exit": "Quitter",
+    "victory_title": "Maître de l'amour !",
+    "victory_msg": "Vous avez trouvé toutes les paires à temps !",
+    "rewards_unlocked": "Récompenses débloquées",
+    "meons_reward": "15 Meons",
+    "claim_reward": "Réclamer la récompense",
+    "play_again": "Rejouer"
+  },
+
+  "rushSession": {
+    "title": "Rush Session",
+    "subtitle": "Appuyez uniquement sur les emojis positifs",
+    "subtitle_start": "Appuyez uniquement sur les emojis positifs",
+    "game_rules": "Règles du jeu",
+    "rule_time": "Défi de 10 secondes",
+    "rule_tap": "Appuyez sur 20 emojis positifs",
+    "rule_avoid": "Éviter les emojis négatifs",
+    "start_game": "Démarrer le jeu",
+    "positive_taps": "Appuis positifs",
+    "go": "Go !",
+    "time_up": "Temps écoulé !",
+    "you_tapped": "Vous avez appuyé",
+    "beat_clock_1": "Réessayez et battez la",
+    "beat_clock_2": "montre !",
+    "try_again": "Réessayer",
+    "exit": "Quitter",
+    "you_win": "Vous gagnez !",
+    "tapped_success_1": "Vous avez appuyé sur 20 emojis positifs",
+    "tapped_success_2": "à temps !",
+    "rewards_unlocked": "Récompenses débloquées",
+    "meons_reward": "15 Meons",
+    "claim_reward": "Réclamer la récompense",
+    "play_again": "Rejouer"
   }
 }

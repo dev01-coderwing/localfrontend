@@ -1,35 +1,36 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const LucasLabOverview = ({ onClose }) => {
- 
+  const { t } = useTranslation();
 
   const insights = [
     {
       icon: "🧠",
-      name: "MBTI",
-      sub: "Cognitive preferences",
+      name: t('lucasLab.mbti_name'),
+      sub: t('lucasLab.mbti_sub'),
       badge: "ENFP",
       badgeClass: "bg-violet-600 text-white",
     },
     {
       icon: "💗",
-      name: "Love Languages",
-      sub: "Primary love expression",
-      badge: "Quality Time",
+      name: t('lucasLab.love_name'),
+      sub: t('lucasLab.love_sub'),
+      badge: t('lucasLab.love_badge'),
       badgeClass: "bg-gradient-to-r from-pink-500 to-orange-400 text-white",
     },
     {
       icon: "🔗",
-      name: "Attachment Style",
-      sub: "Relationship patterns",
-      badge: "Secure",
+      name: t('lucasLab.attachment_name'),
+      sub: t('lucasLab.attachment_sub'),
+      badge: t('lucasLab.attachment_badge'),
       badgeClass: "bg-purple-500 text-white",
     },
     {
       icon: "⭐",
-      name: "Big Five (OCEAN)",
-      sub: "Personality traits",
-      badge: "High Openness",
+      name: t('lucasLab.ocean_name'),
+      sub: t('lucasLab.ocean_sub'),
+      badge: t('lucasLab.ocean_badge'),
       badgeClass: "bg-amber-400 text-white",
     },
   ];
@@ -52,7 +53,7 @@ const LucasLabOverview = ({ onClose }) => {
 
         {/* Title */}
         <p className="text-center text-[17px] font-semibold text-[var(--text-dim)] mb-4">
-          Lucas Lab Overview
+          {t('lucasLab.title')}
         </p>
 
         {/* Profile Row */}
@@ -61,15 +62,15 @@ const LucasLabOverview = ({ onClose }) => {
             NJ
           </div>
           <div>
-            <p className="text-[16px] font-bold text-[var(--text-dim)]">Nicole Jennifer</p>
-            <p className="text-[12px] text-[var(--text-dim2)] mt-0.5">Deep psychological analysis</p>
+            <p className="text-[16px] font-bold text-[var(--text-dim)]">{t('lucasLab.profile_name')}</p>
+            <p className="text-[12px] text-[var(--text-dim2)] mt-0.5">{t('lucasLab.profile_sub')}</p>
           </div>
         </div>
 
         {/* Match Box */}
         <div className="rounded-[20px] bg-gradient-to-br from-violet-700 via-purple-500 to-pink-500 p-6 mb-4 flex flex-col items-start">
           <span className="text-[13px] font-semibold text-white/90 mb-4">
-            Overall Match
+            {t('lucasLab.overall_match')}
           </span>
           <div className="w-full flex justify-center">
             <svg width="130" height="130" viewBox="0 0 130 130">
@@ -111,7 +112,7 @@ const LucasLabOverview = ({ onClose }) => {
 
         {/* Psychological Insights */}
         <p className="text-[14px] font-semibold text-[var(--text-dim)] mb-3">
-          Psychological Insights
+          {t('lucasLab.psychological_insights')}
         </p>
         <div className="grid grid-cols-2 gap-3 mb-4">
           {insights.map((item, i) => (
@@ -149,21 +150,21 @@ const LucasLabOverview = ({ onClose }) => {
               </svg>
             </div>
             <span className="text-[14px] font-bold text-red-500">
-              Potential Challenges
+              {t('lucasLab.potential_challenges')}
             </span>
           </div>
           <p className="text-[12px] text-red-500 mb-3">
-            Communication styles may differ during conflict resolution...
+            {t('lucasLab.challenges_desc')}
           </p>
           <div className="flex items-center gap-1.5">
             <span className="text-[13px]">🔒</span>
-            <span className="text-[12px] text-[var(--text-dim2)]">Unlock full insights</span>
+            <span className="text-[12px] text-[var(--text-dim2)]">{t('lucasLab.unlock_insights')}</span>
           </div>
         </div>
 
         {/* CTA Button */}
         <button className="w-full py-4 rounded-[16px] bg-gradient-to-r from-violet-600 to-pink-500 text-white text-[15px] font-semibold hover:opacity-90 transition">
-          Learn more with Lucas
+          {t('lucasLab.cta_button')}
         </button>
       </div>
     </div>

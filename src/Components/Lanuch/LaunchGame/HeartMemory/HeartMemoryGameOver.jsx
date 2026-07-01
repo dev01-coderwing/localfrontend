@@ -1,7 +1,9 @@
 import React from "react";
 import { X, HeartOff } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const HeartMemoryGameOver = ({ score, onRestart, onClose }) => {
+  const { t } = useTranslation();
   return (
     <div className="absolute inset-0 bg-[var(--bg-card)]/10 backdrop-blur-md flex items-center justify-center z-50 p-6">
       <div className="w-full max-w-sm bg-[var(--bg-card)]/10 rounded-[32px] shadow-[0_20px_60px_rgba(0,0,0,0.08)] p-8 relative flex flex-col items-center text-center border border-[var(--border)]">
@@ -21,16 +23,16 @@ const HeartMemoryGameOver = ({ score, onRestart, onClose }) => {
         </div>
 
         {/* Text Content */}
-        <h2 className="text-[32px] font-black text-[#E91E63] mb-6">Time Up!</h2>
-        
+        <h2 className="text-[32px] font-black text-[#E91E63] mb-6">{t('heartMemory.time_up')}</h2>
+
         <div className="mb-8">
             <div className="inline-block bg-[var(--bg-card)]/10 px-4 py-1.5 rounded-full border border-[var(--border)] mb-4">
-                <span className="text-[var(--text-dim)] bg-[var(--bg-card)]/10 font-bold text-xs uppercase">You found {score} out of 6 pairs</span>
+                <span className="text-[var(--text-dim)] bg-[var(--bg-card)]/10 font-bold text-xs uppercase">{t('heartMemory.found_pairs', { score })}</span>
             </div>
-            
+
             <p className="text-[var(--text-dim)] font-medium text-sm leading-relaxed px-4">
-                Love takes time, but your memory can be faster!<br />
-                <span className="font-bold text-[var(--text-dim2)]">Try Again and sharpen your memory!</span>
+                {t('heartMemory.encouragement')}<br />
+                <span className="font-bold text-[var(--text-dim2)]">{t('heartMemory.try_again_msg')}</span>
             </p>
         </div>
 
@@ -40,13 +42,13 @@ const HeartMemoryGameOver = ({ score, onRestart, onClose }) => {
             onClick={onRestart}
             className="w-full bg-gradient-to-r from-[#D79098] to-[#5F7BF4] text-white py-4.5 rounded-full font-bold text-lg shadow-[0_10px_25px_rgba(95,123,244,0.3)] hover:opacity-95 transition-all transform active:scale-[0.98]"
           >
-            Try Again
+            {t('heartMemory.try_again')}
           </button>
           <button
             onClick={onClose}
             className="w-full bg-white border border-[#E91E63]/20 text-gray-400 py-4.5 rounded-full font-bold text-lg hover:bg-gray-50 transition-all transform active:scale-[0.98]"
           >
-            Exit
+            {t('heartMemory.exit')}
           </button>
         </div>
       </div>

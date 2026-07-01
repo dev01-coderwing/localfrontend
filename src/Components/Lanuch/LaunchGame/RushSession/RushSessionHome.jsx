@@ -2,6 +2,7 @@ import React from "react";
 import { Clock, Target, XCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../../Navbar/Navbar";
+import { useTranslation } from "react-i18next";
 
 // 🔧 Dynamic Config
 const CONFIG = {
@@ -33,6 +34,12 @@ const CONFIG = {
 export default function RushSession() {
 
     const navigate = useNavigate();
+    const { t } = useTranslation();
+    const ruleTexts = [
+        t('rushSession.rule_time'),
+        t('rushSession.rule_tap'),
+        t('rushSession.rule_avoid'),
+    ];
     return (
         <div className="min-h-screen bg-[var(--bg-background)] border border-[var(--border)] flex flex-col">
 
@@ -45,9 +52,9 @@ export default function RushSession() {
 
                     {/*  Title */}
                     <h2 className="text-4xl font-bold text-red-500 mb-2">
-                        {CONFIG.title}
+                        {t('rushSession.title')}
                     </h2>
-                    <p className="text-[var(--text-dim)] mb-8">{CONFIG.subtitle}</p>
+                    <p className="text-[var(--text-dim)] mb-8">{t('rushSession.subtitle')}</p>
 
                     {/*  Emoji Image */}
                  
@@ -55,7 +62,7 @@ export default function RushSession() {
                     {/* 📦 Rules Card */}
                     <div className="bg-[var(--bg-card)]/10 border border-[var(--border)] rounded-2xl shadow-md px-6 py-5 w-full max-w-sm mb-10">
                         <h3 className="text-[var(--text-dim)] font-semibold mb-4">
-                            Game Rules
+                            {t('rushSession.game_rules')}
                         </h3>
 
                         <div className="space-y-4">
@@ -69,7 +76,7 @@ export default function RushSession() {
                                         </div>
 
                                         <p className={`text-sm font-medium colour-[var(--text-dim2)] ${rule.color}`}>
-                                            {rule.text} 
+                                            {ruleTexts[index]}
                                         </p>
                                     </div>
                                 );
@@ -86,7 +93,7 @@ export default function RushSession() {
                                 navigate('/voiceAnalysis/rushsession')
                             }
                         }>
-                        Start Game
+                        {t('rushSession.start_game')}
                     </button>
 
                 </div>

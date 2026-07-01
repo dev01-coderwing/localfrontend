@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { X, Zap } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const BoostFlowModal = ({ isOpen, onClose }) => {
+  const { t } = useTranslation();
   const [step, setStep] = useState(1);
   const [time, setTime] = useState(30 * 60); // 30 min in seconds
 
@@ -45,11 +47,11 @@ const BoostFlowModal = ({ isOpen, onClose }) => {
         {step === 1 && (
           <>
             <h2 className="text-center text-xl font-semibold">
-              Ready to boost?
+              {t('boostFlow.step1_title')}
             </h2>
 
             <p className="text-center text-gray-500 text-sm mt-1">
-              Increase your profile to more people in your area instantly.
+              {t('boostFlow.step1_desc')}
             </p>
 
             {/* Plan */}
@@ -57,19 +59,19 @@ const BoostFlowModal = ({ isOpen, onClose }) => {
               <div className="w-12 h-12 bg-black rounded-lg"></div>
 
               <div>
-                <p className="font-medium text-sm">30 minutes Boost</p>
+                <p className="font-medium text-sm">{t('boostFlow.plan_name')}</p>
                 <p className="text-purple-600 font-semibold text-sm">
                   349 Meons
                 </p>
                 <p className="text-xs text-gray-500">
-                  Priority visibility for the next hour.
+                  {t('boostFlow.plan_priority')}
                 </p>
               </div>
             </div>
 
             {/* Info */}
             <div className="mt-4 p-3 border rounded-xl text-xs text-gray-500 bg-gray-50">
-              Boost increases visibility only. Matches require mutual likes.
+              {t('boostFlow.info_text')}
             </div>
 
             {/* Button */}
@@ -77,14 +79,14 @@ const BoostFlowModal = ({ isOpen, onClose }) => {
               onClick={() => setStep(2)}
               className="mt-5 w-full py-2.5 rounded-xl bg-gradient-to-r from-pink-400 to-indigo-500 text-white font-medium"
             >
-              Confirm & Start Boost
+              {t('boostFlow.confirm_btn')}
             </button>
 
             <p
               onClick={onClose}
               className="text-center text-sm text-gray-500 mt-3 cursor-pointer"
             >
-              May be Later
+              {t('boostFlow.maybe_later')}
             </p>
           </>
         )}
@@ -93,17 +95,17 @@ const BoostFlowModal = ({ isOpen, onClose }) => {
         {step === 2 && (
           <>
             <h2 className="text-center text-xl font-semibold">
-              You're Boosted!
+              {t('boostFlow.step2_title')}
             </h2>
 
             <p className="text-center text-gray-500 text-sm mt-1">
-              Your profile now has priority visibility in Explorer & Labs.
+              {t('boostFlow.step2_desc')}
             </p>
 
             {/* Timer Card */}
             <div className="mt-4 p-4 rounded-xl bg-purple-100 text-center">
-              <p className="text-xs text-purple-600 mb-1">● Live Timer</p>
-              <p className="text-xs text-gray-500">Timer Remaining</p>
+              <p className="text-xs text-purple-600 mb-1">{t('boostFlow.live_timer')}</p>
+              <p className="text-xs text-gray-500">{t('boostFlow.timer_remaining')}</p>
 
               <h1 className="text-2xl font-bold mt-1">
                 {formatTime()}
@@ -112,11 +114,11 @@ const BoostFlowModal = ({ isOpen, onClose }) => {
 
             {/* Buttons */}
             <button className="mt-5 w-full py-2.5 rounded-xl bg-gradient-to-r from-pink-400 to-indigo-500 text-white font-medium">
-              View Performance
+              {t('boostFlow.view_performance')}
             </button>
 
             <p className="text-center text-sm text-gray-500 mt-3 cursor-pointer">
-              Go to Explorer
+              {t('boostFlow.go_to_explorer')}
             </p>
           </>
         )}
@@ -126,4 +128,3 @@ const BoostFlowModal = ({ isOpen, onClose }) => {
 };
 
 export default BoostFlowModal;
-

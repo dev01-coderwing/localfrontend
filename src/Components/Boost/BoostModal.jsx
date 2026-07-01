@@ -2,37 +2,39 @@ import React from "react";
 import { X, Eye } from "lucide-react";
 import { useState } from "react";
 import PremiumBoostModal from "./PremiumBoostModal";
+import { useTranslation } from "react-i18next";
 const BoostModal = ({
     isOpen,
     onClose,
     onBoost,
     data = {},
 }) => {
+    const { t } = useTranslation();
     if (!isOpen) return null;
 const [open, setOpen] = useState(false);
 
     const {
-        title = "Boost Your Profile",
-        subtitle = "Get up 10x more profile views instantly",
+        title = t('boost.title'),
+        subtitle = t('boost.subtitle'),
         stats = [
             {
                 icon: <Eye />,
-                title: "Profile Views",
-                desc: "Number of people who visited your profile during the boost.",
+                title: t('boost.stat_views_title'),
+                desc: t('boost.stat_views_desc'),
             },
             {
                 icon: "💗",
-                title: "Likes Received",
-                desc: "People who liked your profile while your boost was active.",
+                title: t('boost.stat_likes_title'),
+                desc: t('boost.stat_likes_desc'),
             },
             {
                 icon: "⭐",
-                title: "Added to Favorites",
-                desc: "Users who saved your profile for later.",
+                title: t('boost.stat_favorites_title'),
+                desc: t('boost.stat_favorites_desc'),
             },
         ],
-        buttonText = "Boost Now",
-        secondaryText = "May be Later",
+        buttonText = t('boost.boost_now'),
+        secondaryText = t('boost.maybe_later'),
     } = data;
 
     return (

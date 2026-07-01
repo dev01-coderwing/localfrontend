@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { X, Bell, Orbit, Clock } from 'lucide-react';
- 
+import { useTranslation } from 'react-i18next';
+
 const Setting = ({ isOpen, onClose }) => {
+  const { t } = useTranslation();
   const [matchAlerts, setMatchAlerts] = useState(true);
   const [scanFrequency, setScanFrequency] = useState(false);
   const [timezoneSync, setTimezoneSync] = useState(true);
@@ -21,7 +23,7 @@ const Setting = ({ isOpen, onClose }) => {
        
         {/* Header */}
         <div className="p-8 pb-4 flex items-center justify-between">
-          <h1 className="text-[22px] font-bold text-white tracking-tight">Soul Profile</h1>
+          <h1 className="text-[22px] font-bold text-white tracking-tight">{t('soulSetting.title')}</h1>
           <button
             onClick={onClose}
             className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all active:scale-90"
@@ -52,9 +54,9 @@ const Setting = ({ isOpen, onClose }) => {
             {/* Overlay Text */}
             <div className="absolute bottom-6 left-6 right-6">
               <h2 className="text-[28px] font-bold text-white leading-[1.1] tracking-tight">
-                70% Astral.<br />
-                70% Emotional.<br />
-                0% doubt.
+                {t('soulSetting.astral_line')}<br />
+                {t('soulSetting.emotional_line')}<br />
+                {t('soulSetting.doubt_line')}
               </h2>
             </div>
           </div>
@@ -62,12 +64,12 @@ const Setting = ({ isOpen, onClose }) => {
           {/* Quote Section */}
           <div className="pl-6 border-l-2 border-purple-600/50 mb-10">
             <p className="text-[17px] text-gray-200 leading-relaxed font-medium italic opacity-90">
-              "Because you're not looking for a partner, but your worldwide alter ego."
+              {t('soulSetting.quote')}
             </p>
           </div>
  
           {/* Preferences Heading */}
-          <h3 className="text-[17px] font-bold text-white mb-6 tracking-wide">Discovery Preferences</h3>
+          <h3 className="text-[17px] font-bold text-white mb-6 tracking-wide">{t('soulSetting.preferences_heading')}</h3>
  
           {/* Preferences List */}
           <div className="space-y-4">
@@ -75,8 +77,8 @@ const Setting = ({ isOpen, onClose }) => {
             {/* Match Alerts */}
             <PreferenceItem
               icon={<Bell className="w-5 h-5 text-purple-400" />}
-              title="Match Alerts"
-              subtitle="Instant soul resonance notification"
+              title={t('soulSetting.match_alerts_title')}
+              subtitle={t('soulSetting.match_alerts_subtitle')}
               isActive={matchAlerts}
               onToggle={() => setMatchAlerts(!matchAlerts)}
             />
@@ -84,8 +86,8 @@ const Setting = ({ isOpen, onClose }) => {
             {/* Scan Frequency */}
             <PreferenceItem
               icon={<Orbit className="w-5 h-5 text-purple-400" />}
-              title="Scan Frequency"
-              subtitle="Real-time planetary alignment"
+              title={t('soulSetting.scan_frequency_title')}
+              subtitle={t('soulSetting.scan_frequency_subtitle')}
               isActive={scanFrequency}
               onToggle={() => setScanFrequency(!scanFrequency)}
             />
@@ -93,8 +95,8 @@ const Setting = ({ isOpen, onClose }) => {
             {/* Timezone Sync */}
             <PreferenceItem
               icon={<Clock className="w-5 h-5 " />}
-              title="Timezone Sync"
-              subtitle="Harmonize with their local dawn"
+              title={t('soulSetting.timezone_sync_title')}
+              subtitle={t('soulSetting.timezone_sync_subtitle')}
               isActive={timezoneSync}
               onToggle={() => setTimezoneSync(!timezoneSync)}
               showAutoDetect
@@ -110,6 +112,7 @@ const Setting = ({ isOpen, onClose }) => {
 };
  
 const PreferenceItem = ({ icon, title, subtitle, isActive, onToggle, showAutoDetect }) => {
+  const { t } = useTranslation();
   return (
     <div className="p-5 rounded-[20px] bg-[#1A1424] border border-white/5 flex items-center gap-4 transition-all hover:border-purple-500/20 shadow-xl group">
       {/* Icon Area */}
@@ -137,7 +140,7 @@ const PreferenceItem = ({ icon, title, subtitle, isActive, onToggle, showAutoDet
         </button>
         {showAutoDetect && (
           <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest leading-none mt-1">
-            Auto-detect
+            {t('soulSetting.auto_detect')}
           </span>
         )}
       </div>

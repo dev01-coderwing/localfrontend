@@ -1,4 +1,5 @@
 import React, { memo, useEffect, useState, useCallback, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 const COLORS = [
   { name: "red", class: "bg-red-500", hex: "#EF4444" },
@@ -37,6 +38,7 @@ const InteractiveCircle = memo(({ circle, isSelected, onClick }) => {
 });
 
 const ColorMatchEngine = ({ score = 0, targetScore = 10, timeLeft = 0, totalTime = 0, onMatch = () => {}, onFail = () => {} }) => {
+  const { t } = useTranslation();
   const createCircle = useCallback(() => ({
     id: Math.random().toString(36).substr(2, 9),
     color: COLORS[Math.floor(Math.random() * COLORS.length)],
@@ -99,7 +101,7 @@ const ColorMatchEngine = ({ score = 0, targetScore = 10, timeLeft = 0, totalTime
     <div className="flex-1 flex flex-col p-8 relative select-none overflow-hidden touch-none">
       <div className="flex justify-between items-start z-20 w-full mb-2">
         <div className="bg-[var(--bg-card)]/10 px-6 py-3 rounded-full border border-[var(--border)]">
-          <p className="text-[10px] text-[var(--text-dim)] font-bold uppercase tracking-wider">Matched</p>
+          <p className="text-[10px] text-[var(--text-dim)] font-bold uppercase tracking-wider">{t('bubbleGame.matched')}</p>
           <p className="text-xl font-bold text-[var(--text-dim)]">{scoreLabel}</p>
         </div>
 
@@ -127,7 +129,7 @@ const ColorMatchEngine = ({ score = 0, targetScore = 10, timeLeft = 0, totalTime
       <div className="flex-1 relative">
         <div className="absolute inset-x-0 top-0 flex items-center justify-center pointer-events-none">
           <p className="bg-[var(--bg-card)]/90 px-4 py-2 rounded-full text-xs uppercase tracking-[0.32em] font-bold text-[var(--text-dim)] border border-[var(--border)] shadow-sm">
-            Match Same Colors
+            {t('bubbleGame.match_instruction')}
           </p>
         </div>
 

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { MapPin, LockKeyhole } from "lucide-react";
+import { useTranslation } from "react-i18next";
 const Filter = ({ onClose }) => {
+  const { t } = useTranslation();
   const [distance, setDistance] = useState(50);
   const [ageRange, setAgeRange] = useState([22, 32]);
   
@@ -22,7 +24,7 @@ const Filter = ({ onClose }) => {
       >
         {/* Header */}
         <div className="flex justify-between items-center mb-4">
-          <h2 className="font-semibold text-lg">Filter</h2>
+          <h2 className="font-semibold text-lg">{t('filter.header')}</h2>
           <button onClick={onClose}>✕</button>
         </div>
 
@@ -31,7 +33,7 @@ const Filter = ({ onClose }) => {
           className="p-4 rounded-xl mb-4 bg-[var(--bg-card)]/10 border border-[var(--border)]"
          
         >
-          <p className="text-sm text-[var(--text-dim)]">LOCATION</p>
+          <p className="text-sm text-[var(--text-dim)]">{t('filter.location')}</p>
           <div className="flex text-[var(--text-dim2)]"> <MapPin className="size-6 pt-2" /> <p className="mt-1"> Brooklyn, New York</p></div>
 
         </div>
@@ -42,9 +44,9 @@ const Filter = ({ onClose }) => {
        
         >
           <div>
-            <p className="font-medium"><LockKeyhole /> Relocation locked</p>
+            <p className="font-medium"><LockKeyhole /> {t('filter.relocation_locked')}</p>
             <p className="text-sm text-[var(--text-dim2)]">
-              Travel anywhere and match with locals
+              {t('filter.relocation_desc')}
             </p>
             <button
               className="mt-2 px-4 py-1 rounded-full text-white"
@@ -52,7 +54,7 @@ const Filter = ({ onClose }) => {
                 background: "linear-gradient(90deg, #7133A8, #E4678C, #FC9A86)"
               }}
             >
-              Upgrade
+              {t('filter.upgrade')}
             </button>
           </div>
 
@@ -65,8 +67,8 @@ const Filter = ({ onClose }) => {
         
         >
           <div className="flex justify-between  ">
-            <p className="text-sm">MAX DISTANCE</p>
-            <p className="text-sm">{distance} miles</p>
+            <p className="text-sm">{t('filter.max_distance')}</p>
+            <p className="text-sm">{distance} {t('filter.miles')}</p>
           </div>
 
           <input
@@ -88,7 +90,7 @@ const Filter = ({ onClose }) => {
          
         >
           <div className="flex justify-between">
-            <p className="text-sm">AGE RANGE</p>
+            <p className="text-sm">{t('filter.age_range')}</p>
             <p className="text-sm">
               {ageRange[0]} - {ageRange[1]}
             </p>
@@ -117,7 +119,7 @@ const Filter = ({ onClose }) => {
           className="p-4 rounded-xl mb-4 bg-[var(--bg-card)]/10 border border-[var(--border)]"
           
         >
-          <p className="text-sm mb-2">INTERESTED IN</p>
+          <p className="text-sm mb-2">{t('filter.interested_in')}</p>
 
           {["Women", "Men", "Everyone"].map((item) => (
             <div
@@ -125,7 +127,7 @@ const Filter = ({ onClose }) => {
               className="flex justify-between py-2 border-b last:border-none"
               style={{ borderColor: "var(--border)" }}
             >
-              <span>{item}</span>
+              <span>{item === "Women" ? t('filter.women') : item === "Men" ? t('filter.men') : t('filter.everyone')}</span>
               <input
                 type="radio"
                 checked={interest === item}
@@ -144,7 +146,7 @@ const Filter = ({ onClose }) => {
               "linear-gradient(to right, #f43f5e, #6366f1)",
           }}
         >
-          Apply Filter
+          {t('filter.apply')}
         </button>
       </div>
     </div>

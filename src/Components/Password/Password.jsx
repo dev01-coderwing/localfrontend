@@ -6,8 +6,10 @@ import Navbar from "../Navbar/Navbar";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { setPassword } from "../Redux/authSlice"; // ✅ correct import
- 
+import { useTranslation } from "react-i18next";
+
 function Password() {
+  const { t } = useTranslation();
   const [password, setPasswordInput] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
  
@@ -21,7 +23,7 @@ const email = location.state?.email || localStorage.getItem("email");
   if (!email) {
     return (
       <div className="text-center mt-20 text-red-500">
-        Email missing, please start again.
+        {t('password.email_missing')}
       </div>
     );
   }
@@ -39,7 +41,7 @@ const email = location.state?.email || localStorage.getItem("email");
     e.preventDefault();
  
     if (!passwordsMatch) {
-      alert("Passwords do not match");
+      alert(t('password.error_mismatch'));
       return;
     }
  
@@ -59,7 +61,7 @@ const email = location.state?.email || localStorage.getItem("email");
  
     } catch (err) {
       console.error("Password Error:", err);
-      alert(err?.message || "Failed to set password");
+      alert(err?.message || t('password.error_generic'));
     }
   };
  
@@ -72,24 +74,24 @@ const email = location.state?.email || localStorage.getItem("email");
         <div className="bg-[var(--card)] rounded-2xl shadow-md w-full max-w-md p-7 border border-[var(--border)]">
  
           <h1 className="text-2xl text-center mb-2  text-[var(--text-dim)]">
-            Create new password
+            {t('password.title')}
           </h1>
- 
+
           <p className="text-center text-sm mb-6 opacity-70  text-[var(--text-dim2)]">
-            Set a strong password to secure your account
+            {t('password.description')}
           </p>
  
           <form onSubmit={handleSubmit}>
  
             {/* New Password */}
-            <label className="text-sm mb-1 block  text-[var(--text-dim)]">New Password</label>
+            <label className="text-sm mb-1 block  text-[var(--text-dim)]">{t('password.new_password_label')}</label>
  
             <div className="flex items-center border border-[var(--border)] rounded-lg px-3 py-2 mb-4">
               <FiLock className="opacity-60 mr-2 text-sm" />
  
               <input
                 type="password"
-                placeholder="Enter new password"
+                placeholder={t('password.new_password_placeholder')}
                 className="w-full outline-none text-sm bg-transparent text-[var(--text)]"
                 value={password}
                 onChange={(e) => setPasswordInput(e.target.value)}
@@ -97,14 +99,14 @@ const email = location.state?.email || localStorage.getItem("email");
             </div>
  
             {/* Confirm Password */}
-            <label className="text-sm mb-1 block">Confirm Password</label>
+            <label className="text-sm mb-1 block">{t('password.confirm_password_label')}</label>
  
             <div className="flex items-center border border-[var(--border)] rounded-lg px-3 py-2 mb-2">
               <FiLock className="opacity-60 mr-2 text-sm" />
  
               <input
                 type="password"
-                placeholder="Enter confirm password"
+                placeholder={t('password.confirm_password_placeholder')}
                 className="w-full outline-none text-sm bg-transparent  text-[var(--text-dim)]"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
@@ -113,7 +115,7 @@ const email = location.state?.email || localStorage.getItem("email");
  
             {!passwordsMatch && confirmPassword && (
               <p className="text-red-500 text-xs mb-3">
-                Passwords do not match
+                {t('password.error_mismatch')}
               </p>
             )}
  
@@ -124,21 +126,21 @@ const email = location.state?.email || localStorage.getItem("email");
                 <div className={`w-5 h-5 flex items-center justify-center rounded ${minLength ? "bg-[var(--text)] text-[var(--bg)]" : "bg-[var(--border)]"}`}>
                   {minLength && <IoCheckmark size={14} />}
                 </div>
-                <p className="opacity-70  text-[var(--text-dim2)]">Minimum 8 characters</p>
+                <p className="opacity-70  text-[var(--text-dim2)]">{t('password.rule_min_length')}</p>
               </div>
  
               <div className="flex items-center gap-2">
                 <div className={`w-5 h-5 flex items-center justify-center rounded ${hasUppercase ? "bg-[var(--text)] text-[var(--bg)]" : "bg-[var(--border)]"}`}>
                   {hasUppercase && <IoCheckmark size={14} />}
                 </div>
-                <p className="opacity-70  text-[var(--text-dim2)]">At least 1 uppercase letter</p>
+                <p className="opacity-70  text-[var(--text-dim2)]">{t('password.rule_uppercase')}</p>
               </div>
  
               <div className="flex items-center gap-2">
                 <div className={`w-5 h-5 flex items-center justify-center rounded ${hasNumber ? "bg-[var(--text)] text-[var(--bg)]" : "bg-[var(--border)]"}`}>
                   {hasNumber && <IoCheckmark size={14} />}
                 </div>
-                <p className="opacity-70">At least 1 number</p>
+                <p className="opacity-70">{t('password.rule_number')}</p>
               </div>
  
             </div>
@@ -147,7 +149,7 @@ const email = location.state?.email || localStorage.getItem("email");
               disabled={!(minLength && hasUppercase && hasNumber && passwordsMatch)}
               className="w-full py-3 rounded-lg text-[var(--text)] text-sm font-semibold bg-gradient-to-r from-[#D79098] to-[#5F7BF4] disabled:opacity-50"
             >
-              Confirm Password
+              {t('password.btn_confirm')}
             </button>
  
           </form>

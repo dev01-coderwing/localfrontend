@@ -2,25 +2,27 @@ import React from "react";
 import Navbar from "../../../Navbar/Navbar";
 import { Timer, Target, XCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function BubblePairFound() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const rules = [
     {
       id: 1,
       icon: <Timer className="w-5 h-5 text-[#E91E63]" />,
-      text: "10 second challenge",
+      text: t('bubbleGame.rule_time'),
     },
     {
       id: 2,
       icon: <Target className="w-5 h-5 text-[#E91E63]" />,
-      text: "Create 12 matching pairs",
+      text: t('bubbleGame.rule_pairs'),
     },
     {
       id: 3,
       icon: <XCircle className="w-5 h-5 text-[#E91E63]" />,
-      text: "Avoid negative emojis",
+      text: t('bubbleGame.rule_avoid'),
     },
   ];
 
@@ -32,17 +34,17 @@ function BubblePairFound() {
           {/* Header Section */}
           <div className="mb-12">
             <h1 className="text-4xl font-semibold text-[#E11D48] leading-tight mb-2 tracking-tight">
-              Bubble Pop Love
+              {t('bubbleGame.title')}
             </h1>
             <p className="text-[#E11D48] text-[15px] font-bold tracking-normal opacity-90">
-              Match Fast . Pop Faster.
+              {t('bubbleGame.subtitle')}
             </p>
           </div>
 
           {/* Rules Section */}
           <div className="bg-[var(--bg-card)]/10 rounded-[24px] p-8 max-w-[340px] mx-auto mb-16 text-left border border-[var(--border)]">
             <h2 className="text-[var(--text-dim)] text-[11px] font-bold mb-8 uppercase tracking-[0.1em]">
-              Game Rules
+              {t('bubbleGame.game_rules')}
             </h2>
             <div className="space-y-7">
               {rules.map((rule) => (
@@ -63,7 +65,7 @@ function BubblePairFound() {
             onClick={() => navigate("/voiceAnalysis/colormatch")}
             className="w-full bg-gradient-to-r from-[#D79098] to-[#5F7BF4] text-white py-4.5 rounded-full font-bold text-lg"
           >
-            Start Game
+            {t('bubbleGame.start_game')}
           </button>
         </div>
 

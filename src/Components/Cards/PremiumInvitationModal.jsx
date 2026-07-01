@@ -1,7 +1,9 @@
 import React from "react";
 import { X, Info, Clock, CheckCircle, RotateCcw } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const PremiumInvitationModal = ({ onClose }) => {
+  const { t } = useTranslation();
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
       
@@ -18,7 +20,7 @@ const PremiumInvitationModal = ({ onClose }) => {
 
         {/* Title */}
         <h2 className="text-center text-xl font-semibold mb-4">
-          Premium invitation
+          {t('premiumInvitation.title')}
         </h2>
 
         {/* Profile Card */}
@@ -49,7 +51,7 @@ const PremiumInvitationModal = ({ onClose }) => {
           <h3 className="text-xl font-semibold flex items-center justify-center gap-2">
             🪙 99 Meons
           </h3>
-          <p className="text-gray-500 text-sm">Platform Service Fee</p>
+          <p className="text-gray-500 text-sm">{t('premiumInvitation.service_fee')}</p>
         </div>
 
         {/* Policy */}
@@ -57,12 +59,12 @@ const PremiumInvitationModal = ({ onClose }) => {
           <div className="flex gap-2 items-start">
             <Info size={18} className="text-gray-500 mt-1" />
             <div>
-              <h4 className="font-medium text-sm">Invitation Policy</h4>
+              <h4 className="font-medium text-sm">{t('premiumInvitation.policy_title')}</h4>
               <p className="text-xs text-gray-500">
-                Nicole Jennifer must accept your invitation before chatting.
+                {t('premiumInvitation.policy_desc')}
               </p>
               <span className="text-blue-500 text-xs cursor-pointer">
-                Learn more →
+                {t('premiumInvitation.learn_more')}
               </span>
             </div>
           </div>
@@ -72,17 +74,17 @@ const PremiumInvitationModal = ({ onClose }) => {
         <div className="grid grid-cols-2 gap-3 mb-4">
           <div className="bg-gray-100 p-4 rounded-xl text-center">
             <Clock className="mx-auto mb-2" size={18} />
-            <p className="text-sm font-medium">24-hour response time</p>
+            <p className="text-sm font-medium">{t('premiumInvitation.response_time')}</p>
             <p className="text-xs text-gray-500">
-              members are required to respond within a day.
+              {t('premiumInvitation.response_desc')}
             </p>
           </div>
 
           <div className="bg-gray-100 p-4 rounded-xl text-center">
             <CheckCircle className="mx-auto mb-2" size={18} />
-            <p className="text-sm font-medium">Accepted → Meons Charged</p>
+            <p className="text-sm font-medium">{t('premiumInvitation.accepted_charged')}</p>
             <p className="text-xs text-gray-500">
-              Unlocks immediate premium chat features.
+              {t('premiumInvitation.accepted_desc')}
             </p>
           </div>
         </div>
@@ -92,10 +94,10 @@ const PremiumInvitationModal = ({ onClose }) => {
           <RotateCcw size={18} className="mt-1" />
           <div>
             <p className="text-sm font-medium">
-              Declined → Meons refunded
+              {t('premiumInvitation.declined_refunded')}
             </p>
             <p className="text-xs text-gray-500">
-              Automatic refund to you wallet if declined.
+              {t('premiumInvitation.declined_desc')}
             </p>
           </div>
         </div>
@@ -103,13 +105,13 @@ const PremiumInvitationModal = ({ onClose }) => {
         {/* Send Rose Button */}
         <div className="flex justify-center mb-4">
           <button className="bg-red-500 text-white px-5 py-2 rounded-full shadow-lg flex items-center gap-2 hover:scale-105 transition">
-            🌹 Send Rose
+            {t('premiumInvitation.send_rose')}
           </button>
         </div>
 
         {/* Main Button */}
         <button className="w-full py-3 rounded-xl text-white font-medium bg-gradient-to-r from-pink-400 to-indigo-500 mb-2">
-          Send Invitation
+          {t('premiumInvitation.send_invitation')}
         </button>
 
         {/* Cancel */}
@@ -117,7 +119,7 @@ const PremiumInvitationModal = ({ onClose }) => {
           onClick={onClose}
           className="w-full text-gray-500 text-sm"
         >
-          Cancel
+          {t('premiumInvitation.cancel')}
         </button>
       </div>
     </div>

@@ -1,7 +1,9 @@
 import React from "react";
 import { X, TimerOff } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const GameOverScreen = ({ score, onRestart, onClose }) => {
+  const { t } = useTranslation();
   const handleExit = async () => {
   await dispatch(
     submitBubblePopResultThunk("LOSS")
@@ -28,15 +30,15 @@ const GameOverScreen = ({ score, onRestart, onClose }) => {
         </div>
 
         {/* Text Content */}
-        <h2 className="text-[38px] font-black text-red-500 mb-2">Time Up!</h2>
-        
+        <h2 className="text-[38px] font-black text-red-500 mb-2">{t('bubbleGame.time_up')}</h2>
+
         <div className="mb-8 mt-4">
-            <p className="text-[var(--text-dim2)] font-bold mb-2 italic">You matched</p>
+            <p className="text-[var(--text-dim2)] font-bold mb-2 italic">{t('bubbleGame.you_matched')}</p>
             <div className="flex items-baseline justify-center gap-1">
                 <span className="text-[48px] font-black text-[var(--text-dim)]">{score}</span>
-                <span className="text-[28px] font-bold  text-[var(--text-dim)]">out of 12 pairs.</span>
+                <span className="text-[28px] font-bold  text-[var(--text-dim)]">{t('bubbleGame.out_of_pairs')}</span>
             </div>
-            <p className="text-[var(--text-dim2)] font-medium mt-4">Be faster next time!</p>
+            <p className="text-[var(--text-dim2)] font-medium mt-4">{t('bubbleGame.be_faster')}</p>
         </div>
 
         {/* Buttons */}
@@ -45,13 +47,13 @@ const GameOverScreen = ({ score, onRestart, onClose }) => {
             onClick={onRestart}
             className="w-full bg-gradient-to-r from-red-400 to-purple-500 text-white py-5 rounded-full font-bold text-lg shadow-[0_12px_30px_rgba(239,68,68,0.25)] hover:opacity-95 transition-all transform active:scale-[0.98]"
           >
-            Try Again
+            {t('bubbleGame.try_again')}
           </button>
           <button
- onClick={handleExit}  
+ onClick={handleExit}
            className="w-full bg-[var(--card)] border border-[var(--border)] text-[var(--text-dim)] py-5 rounded-full font-bold text-lg hover:bg-[var(--hover)] transition-all transform active:scale-[0.98]"
           >
-            Exit
+            {t('bubbleGame.exit')}
           </button>
         </div>
       </div>

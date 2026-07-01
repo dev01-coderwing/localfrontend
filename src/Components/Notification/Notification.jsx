@@ -1,7 +1,9 @@
 import React from "react";
 import { X, ChevronDown } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const NotificationsModal = ({ onClose }) => {
+  const { t } = useTranslation();
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
       
@@ -10,7 +12,7 @@ const NotificationsModal = ({ onClose }) => {
 
         {/* Header */}
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-lg font-semibold">Notifications</h2>
+          <h2 className="text-lg font-semibold">{t('notification.title')}</h2>
           <button onClick={onClose} className="bg-white rounded-full p-2">
             <X size={18} />
           </button>
@@ -19,9 +21,9 @@ const NotificationsModal = ({ onClose }) => {
         {/* Matches */}
         <div className="mb-4">
           <div className="flex justify-between items-center mb-2">
-            <h3 className="font-medium">Matches</h3>
+            <h3 className="font-medium">{t('notification.matches')}</h3>
             <span className="text-xs bg-red-100 text-red-500 px-2 py-1 rounded-full">
-              2m ago
+              {t('notification.time_2m_ago')}
             </span>
           </div>
 
@@ -32,20 +34,20 @@ const NotificationsModal = ({ onClose }) => {
                 className="w-12 h-12 rounded-full"
               />
               <div>
-                <p className="font-medium text-sm">New Match : Sarah</p>
-                <p className="text-xs text-gray-500">2 minutes ago</p>
+                <p className="font-medium text-sm">{t('notification.new_match', { name: 'Sarah' })}</p>
+                <p className="text-xs text-gray-500">{t('notification.time_2min_ago')}</p>
               </div>
             </div>
 
             <button className="bg-purple-100 text-purple-500 px-3 py-1 rounded-full text-sm">
-              View
+              {t('notification.view')}
             </button>
           </div>
         </div>
 
         {/* AI Insights */}
         <div className="mb-4">
-          <h3 className="font-medium mb-2">AI INSIGHTS</h3>
+          <h3 className="font-medium mb-2">{t('notification.ai_insights')}</h3>
 
           <div className="bg-white rounded-xl p-3 shadow-sm">
             <div className="flex gap-3">
@@ -54,13 +56,12 @@ const NotificationsModal = ({ onClose }) => {
               </div>
 
               <div>
-                <p className="font-medium text-sm">Lucas AI</p>
+                <p className="font-medium text-sm">{t('notification.lucas_ai')}</p>
                 <p className="text-xs text-gray-500">
-                  "You compatibility with NTR just went up! She just added
-                  photography to her interests."
+                  {t('notification.lucas_ai_msg')}
                 </p>
                 <span className="text-purple-500 text-xs cursor-pointer">
-                  Analyze profile →
+                  {t('notification.analyze_profile')}
                 </span>
               </div>
             </div>
@@ -69,13 +70,13 @@ const NotificationsModal = ({ onClose }) => {
 
         {/* Messages */}
         <div className="mb-4">
-          <h3 className="font-medium mb-2">Messages</h3>
+          <h3 className="font-medium mb-2">{t('notification.messages')}</h3>
 
           <div className="bg-white rounded-xl p-3 flex justify-between items-center shadow-sm">
             <div>
-              <p className="font-medium text-sm">Messages</p>
+              <p className="font-medium text-sm">{t('notification.messages')}</p>
               <p className="text-xs text-gray-500">
-                2 unread conversations
+                {t('notification.unread_conversations', { n: 2 })}
               </p>
             </div>
 
@@ -90,7 +91,7 @@ const NotificationsModal = ({ onClose }) => {
 
         {/* System */}
         <div className="mb-4">
-          <h3 className="font-medium mb-2">SYSTEM</h3>
+          <h3 className="font-medium mb-2">{t('notification.system')}</h3>
 
           <div className="bg-white rounded-xl p-3 flex gap-3 shadow-sm">
             <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
@@ -98,9 +99,9 @@ const NotificationsModal = ({ onClose }) => {
             </div>
 
             <div>
-              <p className="font-medium text-sm">NEW Login detected</p>
+              <p className="font-medium text-sm">{t('notification.new_login')}</p>
               <p className="text-xs text-gray-500">
-                A new login form London, UK was detected...
+                {t('notification.new_login_desc')}
               </p>
             </div>
           </div>
@@ -108,7 +109,7 @@ const NotificationsModal = ({ onClose }) => {
 
         {/* Invitation */}
         <div>
-          <h3 className="font-medium mb-2">Invitation</h3>
+          <h3 className="font-medium mb-2">{t('notification.invitation')}</h3>
 
           {/* Accepted */}
           <div className="bg-white rounded-xl p-3 mb-3 shadow-sm">
@@ -119,15 +120,15 @@ const NotificationsModal = ({ onClose }) => {
               />
               <div className="flex-1">
                 <p className="font-medium text-sm">Elena Gilbert</p>
-                <p className="text-xs text-gray-500">2m ago</p>
+                <p className="text-xs text-gray-500">{t('notification.time_2m_ago')}</p>
               </div>
               <span className="text-green-500 bg-green-100 text-xs px-2 py-1 rounded-full">
-                Accepted
+                {t('notification.accepted')}
               </span>
             </div>
 
             <button className="w-full py-2 rounded-lg bg-gradient-to-r from-pink-400 to-indigo-500 text-white text-sm">
-              Start chatting
+              {t('notification.start_chatting')}
             </button>
           </div>
 
@@ -140,16 +141,16 @@ const NotificationsModal = ({ onClose }) => {
               />
               <div className="flex-1">
                 <p className="font-medium text-sm">Frederick</p>
-                <p className="text-xs text-gray-500">1h ago</p>
+                <p className="text-xs text-gray-500">{t('notification.time_1h_ago')}</p>
               </div>
             </div>
 
             <div className="flex gap-2">
               <button className="flex-1 border border-red-300 text-red-400 py-2 rounded-lg text-sm">
-                Decline
+                {t('notification.decline')}
               </button>
               <button className="flex-1 bg-gradient-to-r from-pink-400 to-indigo-500 text-white py-2 rounded-lg text-sm">
-                Accept Invitation
+                {t('notification.accept_invitation')}
               </button>
             </div>
           </div>

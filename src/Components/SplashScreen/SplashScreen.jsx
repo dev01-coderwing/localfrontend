@@ -1,16 +1,30 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import logo from '/Image/IAMeetYou.png';
+import logo from "/Image/logo-nav.png";
+
+const SUPPORTED_LANGS = ['en', 'es', 'fr', 'de', 'it', 'ja', 'ko', 'pt', 'zh'];
 
 export default function SplashScreen() {
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const timer = setTimeout(() => navigate('/LanguagePage'), 3000);
     return () => clearTimeout(timer);
   }, [navigate]);
+
+  useEffect(() => {
+    fetch('https://ipapi.co/json/')
+      .then(r => r.json())
+      .then(data => {
+        const lang = (data.languages || '').split(',')[0].split('-')[0];
+        if (SUPPORTED_LANGS.includes(lang)) {
+          i18n.changeLanguage(lang);
+        }
+      })
+      .catch(() => {});
+  }, [i18n]);
 
   return (
     <div
@@ -34,13 +48,27 @@ export default function SplashScreen() {
         src={logo}
         alt="IAMeetYou"
         style={{
-          width: '320px',
+          width: '120px',
           height: 'auto',
           animation: 'splashLogoIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards',
         }}
       />
 
-
+<h1
+  style={{
+    marginTop: "16px",
+    marginBottom: "8px",
+    fontSize: "32px",
+    fontWeight: "500",
+    letterSpacing: "0.5px",
+    opacity: 0,
+    animation: "splashFadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+  }}
+>
+  <span style={{ color: "#1d1d1f" }}>IA</span>
+  <span style={{ color: "#E8B4A0" }}>Meet</span>
+  <span style={{ color: "#1d1d1f" }}>You</span>
+</h1>
 
       <p
         style={{

@@ -17,9 +17,11 @@ import { BadgeCheck, MessageCircle, Infinity } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProfiles } from "../../Components/Redux/discoverySlice";
 import Banner from "./Banner";
+import { useTranslation } from "react-i18next";
 
 
 function Homepage() {
+  const { t } = useTranslation();
   const [activeModal, setActiveModal] = useState(null);
   const [selectedProfile, setSelectedProfile] = useState(null);
   const navigate = useNavigate();
@@ -46,7 +48,7 @@ function Homepage() {
   if (loading) {
     return (
       <div className="h-screen flex items-center justify-center">
-        Loading...
+        {t('homepage.loading')}
       </div>
     );
   }

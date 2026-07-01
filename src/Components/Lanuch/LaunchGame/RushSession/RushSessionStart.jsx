@@ -1,13 +1,15 @@
 import React from "react";
 import { Timer, Target, XCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const RushSessionStart = ({ onStart }) => {
+  const { t } = useTranslation();
   return (
     <div className="absolute inset-0 bg-[var(--card)] flex flex-col items-center justify-center p-6 select-none overflow-hidden">
       {/* Game Logo/Header */}
       <div className="text-center mb-10">
-        <h1 className=" font-black text-[var(--text-dim)] leading-tight mb-1">Rush Session</h1>
-        <p className="text-[var(--text-dim2)] font-bold text-sm uppercase tracking-widest opacity-80">Top Only Positive Emojis</p>
+        <h1 className=" font-black text-[var(--text-dim)] leading-tight mb-1">{t('rushSession.title')}</h1>
+        <p className="text-[var(--text-dim2)] font-bold text-sm uppercase tracking-widest opacity-80">{t('rushSession.subtitle_start')}</p>
       </div>
 
       {/* Floating Emojis Decor */}
@@ -34,28 +36,28 @@ const RushSessionStart = ({ onStart }) => {
 
       {/* Game Rules Card */}
       <div className="w-full max-w-sm bg-[var(--bg-card)]/10 rounded-[32px] p-8  border border-[var(--border)] mb-12">
-        <h3 className="text-[var(--text-dim2)]  text-xs uppercase tracking-widest mb-6">Game Rules</h3>
+        <h3 className="text-[var(--text-dim2)]  text-xs uppercase tracking-widest mb-6">{t('rushSession.game_rules')}</h3>
 
         <div className="space-y-6">
           <div className="flex items-center gap-4">
             <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-400">
               <Timer className="w-4 h-4 fill-current" />
             </div>
-            <p className="text-[var(--text-dim2)] font-black text-sm uppercase">10 second challenge</p>
+            <p className="text-[var(--text-dim2)] font-black text-sm uppercase">{t('rushSession.rule_time')}</p>
           </div>
 
           <div className="flex items-center gap-4">
             <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-400">
               <Target className="w-4 h-4" />
             </div>
-            <p className="text-[#EE2B4B] font-black text-sm uppercase">Tap 20 Positive emojis</p>
+            <p className="text-[#EE2B4B] font-black text-sm uppercase">{t('rushSession.rule_tap')}</p>
           </div>
 
           <div className="flex items-center gap-4">
             <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-400">
               <XCircle className="w-4 h-4" />
             </div>
-            <p className="text-[var(--text-dim2)] font-black text-sm uppercase">Avoid negative emojis</p>
+            <p className="text-[var(--text-dim2)] font-black text-sm uppercase">{t('rushSession.rule_avoid')}</p>
           </div>
         </div>
       </div>
@@ -65,7 +67,7 @@ const RushSessionStart = ({ onStart }) => {
         onClick={onStart}
         className="w-full max-w-sm bg-gradient-to-r from-[#D79098] to-[#5F7BF4] text-white py-5 rounded-2xl font-black text-lg "
       >
-        Start Game
+        {t('rushSession.start_game')}
       </button>
     </div>
   );

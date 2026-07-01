@@ -7,6 +7,7 @@ import {
   blockUser,
   reportUser,
 } from "../../Components/Redux/chatRequestSlice";
+import { useTranslation } from "react-i18next";
 function Avatar({ src, name, size = "md", active = false }) {
   const sizeMap = {
     sm: "w-8 h-8",
@@ -53,24 +54,25 @@ function MessageBubble({ msg }) {
 
 const ActionModal = ({ type, onClose, selectedChat }) => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const data = {
     mute: {
       title: selectedChat?.isMuted
-        ? "Unmute Conversation"
-        : "Mute Conversation",
+        ? t('chatWindow.unmute_conversation')
+        : t('chatWindow.mute_conversation'),
 
       btn: selectedChat?.isMuted
-        ? "Unmute"
-        : "Mute",
+        ? t('chatWindow.unmute')
+        : t('chatWindow.mute'),
     },
     report: {
-      title: "Report User",
-      btn: "Report",
+      title: t('chatWindow.report_user'),
+      btn: t('chatWindow.report'),
     },
     block: {
-      title: "Block User",
-      btn: "Block",
+      title: t('chatWindow.block_user'),
+      btn: t('chatWindow.block'),
     },
   };
 
@@ -114,7 +116,7 @@ const ActionModal = ({ type, onClose, selectedChat }) => {
             onClick={onClose}
             className="w-full border py-2 rounded-lg"
           >
-            Cancel
+            {t('chatWindow.cancel')}
           </button>
 
           <button
@@ -157,6 +159,7 @@ function ChatWindow({
   setShowLucas,
 
 }) {
+  const { t } = useTranslation();
   console.log("selectedChat", selectedChat);
   // Handle when no chat is selected
   if (!selectedChat) {
@@ -164,10 +167,10 @@ function ChatWindow({
       <div className="flex-1 flex flex-col items-center justify-center min-w-0">
         <div className="text-center">
           <h3 className="text-xl font-bold text-[var(--text-dim)] mb-2">
-            Select a chat to start
+            {t('chatWindow.empty_title')}
           </h3>
           <p className="text-[var(--text-dim2)]">
-            Choose a conversation from the sidebar
+            {t('chatWindow.empty_desc')}
           </p>
         </div>
       </div>
@@ -202,7 +205,7 @@ function ChatWindow({
             </h2>
 
             <p className="text-xs text-[var(--text-dim2)]">
-              {selectedChat.active ? "Online" : "Offline"}
+              {selectedChat.active ? t('chatWindow.online') : t('chatWindow.offline')}
             </p>
           </div>
         </div>
@@ -223,7 +226,7 @@ function ChatWindow({
                 }}
                 className="w-full text-left px-4 py-2"
               >
-                {selectedChat?.isMuted ? "Unmute" : "Mute"}
+                {selectedChat?.isMuted ? t('chatWindow.unmute') : t('chatWindow.mute')}
               </button>
 
               <button
@@ -233,7 +236,7 @@ function ChatWindow({
                 }}
                 className="w-full text-left px-4 py-2"
               >
-                Report
+                {t('chatWindow.report')}
               </button>
 
               <button
@@ -243,7 +246,7 @@ function ChatWindow({
                 }}
                 className="w-full text-left px-4 py-2 text-red-500"
               >
-                Block
+                {t('chatWindow.block')}
               </button>
             </div>
           )}
@@ -258,7 +261,7 @@ function ChatWindow({
             <MessageBubble key={msg.id} msg={msg} />
           ))
         ) : (
-          <p className="text-sm text-[var(--text-dim2)]">No messages yet.</p>
+          <p className="text-sm text-[var(--text-dim2)]">{t('chatWindow.no_messages')}</p>
         )}
 
         <div ref={bottomRef} />
@@ -272,7 +275,7 @@ function ChatWindow({
           className="flex items-center gap-2 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white px-5 py-2.5 rounded-full"
         >
           <Sparkles className="w-4 h-4" />
-          Ask Lucas
+          {t('chatWindow.ask_lucas')}
         </button>
       </div>
 
@@ -283,7 +286,7 @@ function ChatWindow({
 
           <input
             type="text"
-            placeholder="Type a message..."
+            placeholder={t('chatWindow.type_message')}
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKey}

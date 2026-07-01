@@ -3,9 +3,11 @@ import { X, PartyPopper } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { submitEmojiRushResultThunk } from "../../../Redux/gameSlice";
+import { useTranslation } from "react-i18next";
 const WinScreen = ({ score, onClaim, onRestart, onClose }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const handleClaimReward = async () => {
   try {
     const result = await dispatch(
@@ -38,33 +40,33 @@ const WinScreen = ({ score, onClaim, onRestart, onClose }) => {
         </div>
 
         {/* Text Content */}
-        <h2 className="text-[36px] font-black text-[var(--accent)] mb-2">You Win!</h2>
+        <h2 className="text-[36px] font-black text-[var(--accent)] mb-2">{t('rushSession.you_win')}</h2>
         <p className="text-[var(--text-dim)] font-medium mb-8 leading-tight">
-          You tapped 20 positive<br />emojis in time!
+          {t('rushSession.tapped_success_1')}<br />{t('rushSession.tapped_success_2')}
         </p>
 
         {/* Rewards Section */}
         <div className="w-full bg-[var(--accent-soft)] rounded-[24px] p-6 mb-8 border border-[var(--border)]">
-          <p className="text-[var(--accent)] text-[14px] font-bold mb-4 uppercase tracking-wider">Rewards Unlocked</p>
+          <p className="text-[var(--accent)] text-[14px] font-bold mb-4 uppercase tracking-wider">{t('rushSession.rewards_unlocked')}</p>
           <div className="flex items-center justify-center gap-3">
             <img src="/Image/Coin.png" alt="Coin" className="w-10 h-10 object-contain" />
-            <span className="text-[32px] font-black text-[var(--accent)]">15 Meons</span>
+            <span className="text-[32px] font-black text-[var(--accent)]">{t('rushSession.meons_reward')}</span>
           </div>
         </div>
 
         {/* Buttons */}
         <div className="w-full space-y-3">
           <button
-           onClick={handleClaimReward} 
+           onClick={handleClaimReward}
             className="w-full bg-gradient-to-r from-[#D79098] to-[#5F7BF4] text-white py-4.5 rounded-full font-bold text-lg shadow-[0_10px_25px_rgba(95,123,244,0.3)] hover:opacity-95 transition-all transform active:scale-[0.98]"
           >
-            Claim Reward
+            {t('rushSession.claim_reward')}
           </button>
           <button
             onClick={onRestart}
             className="w-full bg-[var(--card)] border border-[var(--border)] text-[var(--text-dim)] py-4.5 rounded-full font-bold text-lg hover:bg-[var(--hover)] transition-all transform active:scale-[0.98]"
           >
-            Play Again
+            {t('rushSession.play_again')}
           </button>
         </div>
       </div>

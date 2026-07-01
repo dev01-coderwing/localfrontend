@@ -19,8 +19,10 @@ import Filter from "../HomePage/Filter";
 import BoostModal from "../Boost/BoostModal";
 import { LogoutUser } from "../Redux/authSlice";
 import { disconnectSocket } from "../../socket";
- 
+import { useTranslation } from "react-i18next";
+
 function Navbar() {
+  const { t } = useTranslation();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -103,10 +105,10 @@ function Navbar() {
           {/* Links */}
           <nav className="flex items-center gap-2">
             {[
-              { path: "/homepage", label: "Home", icon: Home },
-              { path: "/Soulmap", label: "Soul Map", icon: Globe },
-              { path: "/Lucas", label: "Lucas", icon: Sparkles },
-              { path: "/Chat", label: "Chats", icon: MessageCircle },
+              { path: "/homepage", label: t('navbar.home'), icon: Home },
+              { path: "/Soulmap", label: t('navbar.soul_map'), icon: Globe },
+              { path: "/Lucas", label: t('navbar.lucas'), icon: Sparkles },
+              { path: "/Chat", label: t('navbar.chats'), icon: MessageCircle },
             ].map((nav) => {
               const isActive = location.pathname === nav.path;
               const Icon = nav.icon;
@@ -132,7 +134,7 @@ function Navbar() {
           <div className="flex items-center gap-4">
  
             <button className="flex items-center gap-2 px-5 py-2 rounded-full bg-[#F5F1FF] text-[#6B21A8] font-semibold text-sm">
-              Privilège
+              {t('navbar.privilege_badge')}
               <Shield className="w-4 h-4 fill-yellow-500" />
             </button>
  
@@ -160,9 +162,9 @@ function Navbar() {
                     }}
                     className="w-full text-left px-4 py-2 text-sm text-[var(--text-dim)] hover:bg-[var(--hover)] transition"
                   >
-                    Profile
+                    {t('navbar.profile')}
                   </button>
- 
+
                   <button
                     onClick={async () => {
                       try {
@@ -179,7 +181,7 @@ function Navbar() {
                     }}
                     className="w-full text-left px-4 py-2 text-sm text-red-500 "
                   >
-                    Logout
+                    {t('navbar.logout')}
                   </button>
  
                 </div>
@@ -193,10 +195,10 @@ function Navbar() {
           <div className="md:hidden fixed inset-0 top-[60px] bg-white z-40 p-6">
             <nav className="flex flex-col gap-3">
               {[
-                { path: "/", label: "Home", icon: Home },
-                { path: "/Soulmap", label: "Soul Map", icon: Globe },
-                { path: "/Lucas", label: "Lucas", icon: Sparkles },
-                { path: "/Chat", label: "Chats", icon: MessageCircle },
+                { path: "/", label: t('navbar.home'), icon: Home },
+                { path: "/Soulmap", label: t('navbar.soul_map'), icon: Globe },
+                { path: "/Lucas", label: t('navbar.lucas'), icon: Sparkles },
+                { path: "/Chat", label: t('navbar.chats'), icon: MessageCircle },
               ].map((nav) => {
                 const Icon = nav.icon;
  
@@ -241,13 +243,13 @@ function Navbar() {
  
           <Link to="/signup">
             <button className="px-5 py-2 rounded-full bg-[#FFB4A01A] text-[#FFB4A0]">
-              Sign Up
+              {t('navbar.sign_up')}
             </button>
           </Link>
  
           <Link to="/login">
             <button className="px-5 py-2 rounded-full bg-gray-100 text-gray-700">
-              LogIn
+              {t('navbar.login')}
             </button>
           </Link>
  

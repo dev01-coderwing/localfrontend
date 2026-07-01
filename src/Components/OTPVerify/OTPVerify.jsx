@@ -3,8 +3,10 @@ import Navbar from "../Navbar/Navbar";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { setverfiy } from "../Redux/authSlice";
+import { useTranslation } from "react-i18next";
 
 const OTPVerify = () => {
+  const { t } = useTranslation();
   const [otp, setOtp] = useState(new Array(6).fill(""));
   const inputs = useRef([]);
 
@@ -19,7 +21,7 @@ const OTPVerify = () => {
   if (!email) {
     return (
       <div className="text-center mt-20 text-red-500">
-        Email missing, please go back and register again.
+        {t('otp.email_missing')}
       </div>
     );
   }
@@ -49,7 +51,7 @@ const OTPVerify = () => {
     const otpValue = otp.join("");
 
     if (otpValue.length !== 6) {
-      alert("Please enter complete OTP");
+      alert(t('otp.alert_incomplete'));
       return;
     }
 
@@ -70,7 +72,7 @@ const OTPVerify = () => {
       });
     } catch (err) {
       console.error("Verify Error:", err);
-      alert(err?.message || "OTP verification failed");
+      alert(err?.message || t('otp.alert_failed'));
     }
   };
 
@@ -82,11 +84,11 @@ const OTPVerify = () => {
         <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl shadow-lg w-full max-w-lg p-8 text-center">
 
           <h1 className="text-2xl mb-2 text-[var(--text-dim)]">
-            Verification Code
+            {t('otp.title')}
           </h1>
 
           <p className="text-sm mb-6 opacity-70 text-[var(--text-dim2)]">
-            We've sent a 6-digit verification code to
+            {t('otp.sent_to')}
             <br />
             <span className="font-semibold underline">
               {email}
@@ -94,7 +96,7 @@ const OTPVerify = () => {
           </p>
 
           <p className="text-left text-sm mb-2 text-[var(--text-dim)]">
-            Enter OTP
+            {t('otp.enter_otp')}
           </p>
 
           <div className="flex justify-between gap-2 mb-3  ">
@@ -113,9 +115,9 @@ const OTPVerify = () => {
           </div>
 
           <p className="text-sm mb-6 opacity-70">
-            Didn't receive the code?
+            {t('otp.resend_prefix')}
             <span className="text-blue-500 cursor-pointer ml-1">
-              Resend OTP
+              {t('otp.resend')}
             </span>
           </p>
 
@@ -124,14 +126,14 @@ const OTPVerify = () => {
             onClick={handleSubmit}
             className="w-full py-3 rounded-lg text-[var(--text)] font-medium bg-gradient-to-r from-[#D79098] to-[#5F7BF4] hover:opacity-90"
           >
-            Submit
+            {t('otp.submit')}
           </button>
 
           <p className="text-xs mt-5 opacity-60 text-[var(--text-dim)]">
-            By continuing, you agree to our
-            <span className="text-blue-500 underline"> Terms of Service </span>
-            and
-            <span className="text-blue-500 underline"> Privacy Policy</span>
+            {t('otp.terms_prefix')}
+            <span className="text-blue-500 underline"> {t('otp.terms_of_service')} </span>
+            {t('otp.terms_and')}
+            <span className="text-blue-500 underline"> {t('otp.privacy_policy')}</span>
           </p>
 
         </div>

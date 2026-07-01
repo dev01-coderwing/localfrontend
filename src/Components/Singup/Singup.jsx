@@ -183,12 +183,7 @@ function Singup() {
             </span>
           </p>
 
-          {/* Theme Buttons */}
-          {/* <div className="flex gap-2 mt-4">
-            <button onClick={() => setTheme("light")}>{t("signup.themeLight")}</button>
-            <button onClick={() => setTheme("dark")}>{t("signup.themeDark")}</button>
-            <button onClick={() => setTheme("brown")}>{t("signup.themeBrown")}</button>
-          </div> */}
+
         </div>
       </div>
     </>

@@ -3,9 +3,11 @@ import {
   acceptChatRequest,
   declineChatRequest,
 } from "../../Components/Redux/chatRequestSlice";
+import { useTranslation } from "react-i18next";
 
 const ChatRequest = ({ onClose }) => {
    const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const { requests, loading } = useSelector(
     (state) => state.chatRequests
@@ -23,17 +25,17 @@ const ChatRequest = ({ onClose }) => {
       <div className="w-[380px] bg-[var(--bg-background)] rounded-2xl p-4 shadow-xl max-h-[80vh] overflow-y-auto">
 
         <div className="flex justify-between items-center mb-4">
-          <h2 className="font-bold text-lg text-[var(--text-dim)]">Chat Requests</h2>
+          <h2 className="font-bold text-lg text-[var(--text-dim)]">{t('chatRequest.title')}</h2>
           <button onClick={onClose} className="text-[var(--text-dim)] hover:text-[var(--text-dim2)]">
             ✕
           </button>
         </div>
 
         {loading ? (
-          <p className="text-center py-4">Loading...</p>
+          <p className="text-center py-4">{t('chatRequest.loading')}</p>
         ) : requests.length === 0 ? (
           <p className="text-center py-4 text-[var(--text-dim)]">
-            No more requests for now
+            {t('chatRequest.no_requests')}
           </p>
         ) : (
           <div className="space-y-3">
@@ -70,7 +72,7 @@ const ChatRequest = ({ onClose }) => {
                     disabled={!requestId}
                     className="px-3 py-1 rounded-lg bg-green-500 text-white text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Accept
+                    {t('chatRequest.accept')}
                   </button>
 
                   <button
@@ -78,7 +80,7 @@ const ChatRequest = ({ onClose }) => {
                     disabled={!requestId}
                     className="px-3 py-1 rounded-lg bg-red-500 text-white text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Decline
+                    {t('chatRequest.decline')}
                   </button>
                 </div>
               );

@@ -3,9 +3,11 @@ import { FiMail } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import { useDispatch, useSelector } from "react-redux";
-import { forgotPassword } from "../Redux/authSlice"; //  correct import
+import { forgotPassword } from "../Redux/authSlice"; 
+import { useTranslation } from "react-i18next";
 
 function ForgotPassword() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -20,12 +22,12 @@ function ForgotPassword() {
     e.preventDefault();
 
     if (!email) {
-      setError("Please enter your email");
+      setError(t('forgotPassword.error_empty'));
       return;
     }
 
     if (!email.includes("@")) {
-      setError("Enter a valid email address");
+      setError(t('forgotPassword.error_invalid'));
       return;
     }
 
@@ -48,18 +50,18 @@ function ForgotPassword() {
 
           {/* Heading */}
           <h1 className="text-2xl  text-[var(--text-dim)] font-semibold text-center mb-2">
-            Forgot your password?
+            {t('forgotPassword.title')}
           </h1>
 
           <p className=" text-[var(--text-dim2)] text-center text-sm mb-6">
-            No worries! Enter your registered email and we'll help you reset it.
+            {t('forgotPassword.description')}
           </p>
 
           <form onSubmit={handleSubmit}>
 
             {/* Email */}
             <label className="text-sm font-medium mb-1 block  text-[var(--text-dim)]">
-              Email ID
+              {t('forgotPassword.email_label')}
             </label>
 
             <div className="flex items-center border border-[var(--border)] rounded-lg px-3 py-2 mb-1">
@@ -67,7 +69,7 @@ function ForgotPassword() {
 
               <input
                 type="email"
-                placeholder="Enter email ID"
+                placeholder={t('forgotPassword.email_placeholder')}
                 className="w-full outline-none text-sm  text-[var(--text-dim)]"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -75,7 +77,7 @@ function ForgotPassword() {
             </div>
 
             <p className="text-xs text-[var(--text-dim2)] mb-3">
-              Enter your registered email id
+              {t('forgotPassword.email_helper')}
             </p>
 
             {/* Local validation error */}
@@ -86,7 +88,7 @@ function ForgotPassword() {
             {/* API error */}
             {forgotError && (
               <p className="text-red-500 text-xs mb-3">
-                {forgotError.message || "Something went wrong"}
+                {forgotError.message || t('forgotPassword.error_generic')}
               </p>
             )}
 
@@ -96,7 +98,7 @@ function ForgotPassword() {
               disabled={forgotLoading}
               className="w-full py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-[#D79098] to-[#5F7BF4]"
             >
-              {forgotLoading ? "Sending..." : "Send Verification Code"}
+              {forgotLoading ? t('forgotPassword.btn_sending') : t('forgotPassword.btn_send')}
             </button>
 
           </form>
@@ -107,19 +109,19 @@ function ForgotPassword() {
               onClick={() => navigate("/login")}
               className="text-[var(--text-dim2)]  hover:text-[var(--text-dim)]"
             >
-              Back to Sign In
+              {t('forgotPassword.back_to_signin')}
             </button>
           </div>
 
           {/* Footer */}
           <p className="text-center text-xs  text-[var(--text-dim)] mt-6">
-            By continuing, you agree to our
+            {t('forgotPassword.terms_prefix')}
             <span className=" text-[var(--text-dim2)] underline">
-              {" "}Terms of Service{" "}
+              {" "}{t('forgotPassword.terms_of_service')}{" "}
             </span>
-            and
+            {t('forgotPassword.terms_and')}
             <span className="text-[var(--text-dim2)] underline">
-              {" "}Privacy Policy
+              {" "}{t('forgotPassword.privacy_policy')}
             </span>
           </p>
 

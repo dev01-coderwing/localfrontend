@@ -1,35 +1,37 @@
 import React, { useState } from "react";
 import { X, Zap } from "lucide-react";
 import BoostFlowModal from "./BoostFlowModal";
+import { useTranslation } from "react-i18next";
 const PremiumBoostModal = ({ isOpen, onClose, data = {} }) => {
+    const { t } = useTranslation();
     const [selectedBoost, setSelectedBoost] = useState(null);
     const [showBoostFlow, setShowBoostFlow] = useState(false);
     if (!isOpen) return null;
 
     const {
-        title = "Premium Boost",
-        subtitle = "Get Noticed",
-        description = "Up to 10x more profile views and instant matches.",
+        title = t('premiumBoost.title'),
+        subtitle = t('premiumBoost.subtitle'),
+        description = t('premiumBoost.description'),
         boosts = [
-            { id: 1, time: "30", unit: "Min", price: "199 Meons" },
-            { id: 2, time: "1", unit: "hour", price: "349 Meons" },
-            { id: 3, time: "2", unit: "hour", price: "599 Meons" },
-            { id: 4, time: "4", unit: "hour", price: "999 Meons" },
+            { id: 1, time: "30", unit: t('premiumBoost.boost_unit_min'), price: "199 Meons" },
+            { id: 2, time: "1", unit: t('premiumBoost.boost_unit_hour'), price: "349 Meons" },
+            { id: 3, time: "2", unit: t('premiumBoost.boost_unit_hour'), price: "599 Meons" },
+            { id: 4, time: "4", unit: t('premiumBoost.boost_unit_hour'), price: "999 Meons" },
         ],
         packs = [
-            { id: 1, title: "3x 30min Boosts", save: "Save 15%", price: "499 Meons" },
-            { id: 2, title: "5x 30min Boosts", save: "Save 25%", price: "799 Meons", best: true },
-            { id: 3, title: "10x 30min Boosts", save: "Save 25%", price: "€14.99" },
+            { id: 1, title: t('premiumBoost.pack_3x'), save: t('premiumBoost.save_15'), price: "499 Meons" },
+            { id: 2, title: t('premiumBoost.pack_5x'), save: t('premiumBoost.save_25'), price: "799 Meons", best: true },
+            { id: 3, title: t('premiumBoost.pack_10x'), save: t('premiumBoost.save_25'), price: "€14.99" },
         ],
         vip = {
-            title: "VIP Pass",
-            name: "Unlimited Boost",
-            validity: "Valid for 7 Days",
+            title: t('premiumBoost.vip_title'),
+            name: t('premiumBoost.vip_name'),
+            validity: t('premiumBoost.vip_validity'),
             price: "€ 39.99",
             features: [
-                "Minimum 8 characters",
-                "At least 1 uppercase letter",
-                "At least 1 number",
+                t('premiumBoost.vip_feature_1'),
+                t('premiumBoost.vip_feature_2'),
+                t('premiumBoost.vip_feature_3'),
             ],
         },
         total = "1208",
@@ -53,9 +55,9 @@ const PremiumBoostModal = ({ isOpen, onClose, data = {} }) => {
                 {/* Single Boosts */}
                 <div className="mt-5">
                     <div className="flex justify-between items-center mb-2">
-                        <h3 className="font-medium">Single Boosts</h3>
+                        <h3 className="font-medium">{t('premiumBoost.single_boosts')}</h3>
                         <span className="text-xs bg-purple-100 text-purple-500 px-2 py-1 rounded-full">
-                            One-Time use
+                            {t('premiumBoost.one_time_use')}
                         </span>
                     </div>
 
@@ -83,7 +85,7 @@ const PremiumBoostModal = ({ isOpen, onClose, data = {} }) => {
 
                     {/* Packs */}
                     <div>
-                        <h3 className="font-medium mb-2">Value packs</h3>
+                        <h3 className="font-medium mb-2">{t('premiumBoost.value_packs')}</h3>
 
                         {packs.map((p) => (
 
@@ -96,7 +98,7 @@ const PremiumBoostModal = ({ isOpen, onClose, data = {} }) => {
 
                                 {p.best && (
                                     <span className="absolute ml-[-30px] mt-[-50px] text-[10px] bg-yellow-400 px-2 py-0.5 rounded-full">
-                                        Best Value
+                                        {t('premiumBoost.best_value')}
                                     </span>
                                 )}
                             </div>
@@ -118,7 +120,7 @@ const PremiumBoostModal = ({ isOpen, onClose, data = {} }) => {
                         <div className="flex justify-between items-center">
                             <span className="font-semibold">{vip.price}</span>
                             <button className="bg-white text-black px-3 py-1 rounded-lg text-sm">
-                                Go VIP
+                                {t('premiumBoost.go_vip')}
                             </button>
                         </div>
                     </div>
@@ -126,8 +128,8 @@ const PremiumBoostModal = ({ isOpen, onClose, data = {} }) => {
 
                 {/* Footer */}
                 <div className="flex justify-between mt-6 text-sm">
-                    <p>Total Meons: <span className="font-semibold">{total}</span></p>
-                    <p>Balance: <span className="font-semibold">{balance}</span></p>
+                    <p>{t('premiumBoost.total_meons')} <span className="font-semibold">{total}</span></p>
+                    <p>{t('premiumBoost.balance')} <span className="font-semibold">{balance}</span></p>
                 </div>
 
                 {/* Button */}
@@ -136,7 +138,7 @@ const PremiumBoostModal = ({ isOpen, onClose, data = {} }) => {
                     className="mt-4 w-full py-3 rounded-xl bg-gradient-to-r from-pink-400 to-indigo-500 text-white font-medium flex items-center justify-center gap-2"
                 >
                     <Zap className="w-4 h-4" />
-                    Active Boost
+                    {t('premiumBoost.active_boost')}
                 </button>
             </div>
             <BoostFlowModal

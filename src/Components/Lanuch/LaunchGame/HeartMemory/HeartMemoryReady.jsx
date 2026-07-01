@@ -1,12 +1,14 @@
 import React from "react";
 import { Heart } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const HeartMemoryReady = ({ onStart }) => {
+  const { t } = useTranslation();
   return (
     <div className="absolute inset-0 flex flex-col bg-[var(--bg-card)]/10">
       {/* Brand Header */}
       <div className="p-8 text-left">
-        <h2 className="text-[var(--text-dim)] font-bold text-lg">Rush Session</h2>
+        <h2 className="text-[var(--text-dim)] font-bold text-lg">{t('heartMemory.brand_label')}</h2>
       </div>
       <div className="flex-1 flex items-center justify-center">
         <button
@@ -20,7 +22,7 @@ const HeartMemoryReady = ({ onStart }) => {
               fill="none"
             />
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-[32px] font-black text-[#E91E63] mt-[-4px]">Love!</span>
+              <span className="text-[32px] font-black text-[#E91E63] mt-[-4px]">{t('heartMemory.ready_text')}</span>
             </div>
           </div>
 

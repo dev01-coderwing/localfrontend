@@ -1,7 +1,9 @@
 import React from "react";
 import { X, TimerOff } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const TimeUpScreen = ({ score, onRestart, onClose }) => {
+  const { t } = useTranslation();
   return (
     <div className="absolute inset-0 bg-[var(--bg)]/10 backdrop-blur-sm flex items-center justify-center z-50 p-6">
       <div className="w-full max-w-sm bg-[var(--card)] rounded-[32px] shadow-[0_20px_60px_rgba(0,0,0,0.1)] p-8 relative flex flex-col items-center text-center border border-[var(--border)]">
@@ -21,13 +23,13 @@ const TimeUpScreen = ({ score, onRestart, onClose }) => {
         </div>
 
         {/* Text Content */}
-        <h2 className="text-[36px] font-black text-[var(--text-dim)] mb-2">Time Up!</h2>
-        <p className="text-[var(--text-dim2)] font-bold mb-8 italic">You tapped</p>
+        <h2 className="text-[36px] font-black text-[var(--text-dim)] mb-2">{t('rushSession.time_up')}</h2>
+        <p className="text-[var(--text-dim2)] font-bold mb-8 italic">{t('rushSession.you_tapped')}</p>
 
         <div className="mb-8">
           <span className="text-[44px] font-black text-[var(--text-dim)]">{score}</span>
           <span className="text-[32px] font-bold opacity-30 text-[var(--text-dim)]">/20</span>
-          <p className="text-[var(--text-dim2)] font-medium mt-2">Try again and beat the<br />clock!</p>
+          <p className="text-[var(--text-dim2)] font-medium mt-2">{t('rushSession.beat_clock_1')}<br />{t('rushSession.beat_clock_2')}</p>
         </div>
 
         {/* Buttons */}
@@ -36,13 +38,13 @@ const TimeUpScreen = ({ score, onRestart, onClose }) => {
             onClick={onRestart}
             className="w-full bg-gradient-to-r from-[#D79098] to-[#5F7BF4] text-white py-4.5 rounded-full font-bold text-lg "
           >
-            Try Again
+            {t('rushSession.try_again')}
           </button>
           <button
             onClick={onClose}
             className="w-full bg-[var(--card)] border border-[var(--border)] text-[var(--text-dim)] py-4.5 rounded-full "
           >
-            Exit
+            {t('rushSession.exit')}
           </button>
         </div>
       </div>

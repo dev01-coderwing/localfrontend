@@ -1,4 +1,5 @@
 import React, { memo, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const EmojiButton = memo(({ emoji, onClick }) => {
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -40,12 +41,13 @@ const EmojiButton = memo(({ emoji, onClick }) => {
 });
 
 const GamePlay = ({ score, targetScore, timeLeft, totalTime, emojis, onEmojiClick, feedback }) => {
+  const { t } = useTranslation();
   return (
     <div className="flex-1 flex flex-col p-8 relative select-none overflow-hidden touch-none">
       {/* HUD */}
       <div className="flex justify-between items-start z-10 w-full mb-2">
         <div className="bg-[var(--bg-card)]/10 shadow-[0_5px_15px_rgba(0,0,0,0.04)] px-6 py-3 rounded-full border border-[var(--border)]">
-          <p className="text-[10px] text-[var(--text-dim)] font-bold uppercase tracking-wider">Positive Taps</p>
+          <p className="text-[10px] text-[var(--text-dim)] font-bold uppercase tracking-wider">{t('rushSession.positive_taps')}</p>
           <p className="text-xl font-bold text-[var(--text-dim2)]">
             {score} <span className="opacity-40 font-medium  ">/ {targetScore}</span>
           </p>

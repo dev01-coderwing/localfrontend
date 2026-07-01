@@ -1,6 +1,7 @@
  import { MapPin, CheckCircle2, ArrowRight, X } from 'lucide-react';
- 
- 
+import { useTranslation } from 'react-i18next';
+
+
 const users = [
   {
     name: "Lisa",
@@ -21,6 +22,7 @@ const users = [
 ];
  
 const SoulmapLocation = ({ onClose, locationName, onViewProfile }) => {
+  const { t } = useTranslation();
   return (
     <div className="relative min-h-[600px] w-full max-w-md bg-[#0b0014] rounded-[32px] border border-white/5 flex flex-col p-6 overflow-hidden">
      
@@ -41,16 +43,16 @@ const SoulmapLocation = ({ onClose, locationName, onViewProfile }) => {
             <div className="flex items-center gap-2">
               <span className="text-xl">📍</span>
               <h1 className="text-white text-2xl font-bold tracking-tight">
-                {locationName || "Paris"}
+                {locationName || t('soulmapLocation.default_location')}
               </h1>
             </div>
             <p className="text-gray-400 text-sm mt-1 ml-7">
-              Soul-level alignment detecte
+              {t('soulmapLocation.soul_alignment_detected')}
             </p>
           </div>
  
           <span className="text-[10px] font-black px-3 py-1 rounded-full border border-purple-500/50 text-purple-300 tracking-widest bg-purple-500/5">
-            HIGH PRIORITY
+            {t('soulmapLocation.high_priority')}
           </span>
         </div>
  
@@ -87,11 +89,11 @@ const SoulmapLocation = ({ onClose, locationName, onViewProfile }) => {
                   {/* Badges */}
                   <div className="flex gap-2">
                     <div className="px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/5 flex items-center gap-1.5">
-                      <span className="text-[9px] font-bold text-gray-500 uppercase tracking-tighter">Astral</span>
+                      <span className="text-[9px] font-bold text-gray-500 uppercase tracking-tighter">{t('soulmapLocation.astral_label')}</span>
                       <span className="text-[12px] font-bold text-white">{user.astral}%</span>
                     </div>
                     <div className="px-3 py-1 rounded-full border border-gray-500/30 bg-white/5 flex items-center gap-1.5">
-                      <span className="text-[9px] font-bold text-gray-500 uppercase tracking-tighter">Emotional</span>
+                      <span className="text-[9px] font-bold text-gray-500 uppercase tracking-tighter">{t('soulmapLocation.emotional_label')}</span>
                       <span className="text-[12px] font-bold text-white">{user.emotional}%</span>
                     </div>
                   </div>
@@ -101,7 +103,7 @@ const SoulmapLocation = ({ onClose, locationName, onViewProfile }) => {
                     onClick={() => onViewProfile && onViewProfile(user)}
                     className="mt-4 w-full py-2.5 rounded-full bg-gradient-to-r from-[#D5989F] via-[#A888E2] to-[#769AF7] text-white text-sm font-bold shadow-lg hover:brightness-110 transition active:scale-[0.98]"
                   >
-                    View Profile →
+                    {t('soulmapLocation.view_profile')}
                   </button>
                 </div>
               </div>

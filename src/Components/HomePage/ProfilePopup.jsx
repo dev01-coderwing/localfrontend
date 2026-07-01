@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BadgeCheck } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import Voice from "/Image/Voice-coin.png";
 import noto from "/Image/noto-icon.png";
 import Heart from "/Image/Heart-icon.png";
@@ -10,6 +11,7 @@ const interests = ["Art", "Travel", "Music", "Fitness", "Cooking", "Reading"];
 
 
 function ProfilePopup({ profile, onClose }) {
+  const { t } = useTranslation();
   const [currentPhoto, setCurrentPhoto] = useState(0);
   const [roseSent, setRoseSent] = useState(false);
   const [inviteSent, setInviteSent] = useState(false);
@@ -34,7 +36,7 @@ function ProfilePopup({ profile, onClose }) {
 
         {/* Header */}
         <div className="flex items-center justify-between px-6 pt-5 pb-3">
-          <span className="text-xl font-bold text-[var(--text-dim)] tracking-tight">Profile</span>
+          <span className="text-xl font-bold text-[var(--text-dim)] tracking-tight">{t('profilePopup.header')}</span>
           <button
             onClick={onClose}
             className="w-9 h-9 rounded-full bg-[var(--bg-card)]/10 flex items-center justify-center hover:bg-[var(--hover)] transition-colors"
@@ -112,7 +114,7 @@ function ProfilePopup({ profile, onClose }) {
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                 </svg>
                 <span className="text-[var(--text-dim2)] text-xs">
-                  {profile?.city || "Unknown City"}
+                  {profile?.city || t('profilePopup.unknown_city')}
                   {profile?.country ? `, ${profile.country}` : ""}
                 </span>
               </div>
@@ -136,13 +138,13 @@ function ProfilePopup({ profile, onClose }) {
 
             {/* Bio */}
             <div className="mb-4">
-              <p className="text-xs font-semibold text-[var(--text-dim)] uppercase tracking-wider mb-1.5">Bio</p>
-              <p className="text-[var(--text-dim2)] text-sm leading-relaxed"> {profile?.bio || "No bio available"}</p>
+              <p className="text-xs font-semibold text-[var(--text-dim)] uppercase tracking-wider mb-1.5">{t('profilePopup.bio_label')}</p>
+              <p className="text-[var(--text-dim2)] text-sm leading-relaxed"> {profile?.bio || t('profilePopup.no_bio')}</p>
             </div>
 
             {/* Interests */}
             <div>
-              <p className="text-xs font-semibold text-[var(--text-dim)]  uppercase tracking-wider mb-2">Interests</p>
+              <p className="text-xs font-semibold text-[var(--text-dim)]  uppercase tracking-wider mb-2">{t('profilePopup.interests_label')}</p>
               <div className="flex flex-wrap gap-2">
                 {profile?.interests?.length > 0 ? (
                   profile.interests.map((tag) => (
@@ -154,7 +156,7 @@ function ProfilePopup({ profile, onClose }) {
                     </span>
                   ))
                 ) : (
-                  <span>No Interests</span>
+                  <span>{t('profilePopup.no_interests')}</span>
                 )}
               </div>
             </div>
@@ -173,7 +175,7 @@ function ProfilePopup({ profile, onClose }) {
                 }`}
             >
               <span className="text-base">🌹</span>
-              {roseSent ? "Rose Sent!" : "Send Rose"}
+              {roseSent ? t('profilePopup.rose_sent') : t('profilePopup.send_rose')}
             </button>
 
             <button
@@ -183,13 +185,13 @@ function ProfilePopup({ profile, onClose }) {
                 : "bg-gradient-to-r from-pink-400 to-indigo-500 text-white hover:from-pink-500 hover:to-indigo-600 hover:shadow-lg active:scale-95"
                 }`}
             >
-              {inviteSent ? "Invitation Sent!" : "Send Invitation"}
+              {inviteSent ? t('profilePopup.invitation_sent') : t('profilePopup.send_invitation')}
             </button>
           </div>
 
           {/* Upgrade Plan */}
           <button className="w-full py-3 rounded-2xl border border-[var(--border)] text-rose-500 font-semibold text-sm hover:bg-rose-50 transition-colors">
-            Upgrade Plan
+            {t('profilePopup.upgrade_plan')}
           </button>
         </div>
 
@@ -199,7 +201,7 @@ function ProfilePopup({ profile, onClose }) {
             onClick={onClose}
             className="text-gray-500 text-sm hover:text-gray-700 transition-colors font-medium"
           >
-            Cancel and Return
+            {t('profilePopup.cancel')}
           </button>
         </div>
       </div>

@@ -1,35 +1,37 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const tones = ["Playful", "Curious", "Gentle"];
 
-const suggestions = {
-  Playful: [
-    "You both share high emotional intelligence and active listening style. Lucas detects a strong resonance in how you express vulnerability.",
-    "Your humor aligns beautifully — Lucas sees a playful dynamic that could turn any awkward silence into laughter.",
-    "You radiate the same spontaneous energy. Lucas thinks you'd thrive in adventures neither of you planned.",
-  ],
-  Curious: [
-    "You ask questions others don't dare to. Lucas notices you both seek depth over small talk.",
-    "There's a shared hunger for understanding the 'why' behind everything — Lucas finds that rare and exciting.",
-    "Your curiosity mirrors theirs. Lucas senses you'd lose track of time exploring ideas together.",
-  ],
-  Gentle: [
-    "You both hold space for others with grace. Lucas sees a soft strength in how you connect.",
-    "There's warmth in how you listen. Lucas detects a gentle rhythm that flows naturally between you.",
-    "Your patience and empathy are deeply aligned. Lucas believes this connection could be quietly profound.",
-  ],
-};
-
-const starters = {
-  Playful: "Doing well! Want to grab coffee sometime? ☕",
-  Curious: "What's something you've been thinking about lately?",
-  Gentle: "Hope you're having a peaceful day — how are you?",
-};
-
 function LucasModal({ onClose }) {
+  const { t } = useTranslation();
   const [activeTone, setActiveTone] = useState("Playful");
   const [isRegenerating, setIsRegenerating] = useState(false);
   const [visibleCards, setVisibleCards] = useState([0, 1, 2]);
+
+  const suggestions = {
+    Playful: [
+      t('lucasModal.suggestion_playful_0'),
+      t('lucasModal.suggestion_playful_1'),
+      t('lucasModal.suggestion_playful_2'),
+    ],
+    Curious: [
+      t('lucasModal.suggestion_curious_0'),
+      t('lucasModal.suggestion_curious_1'),
+      t('lucasModal.suggestion_curious_2'),
+    ],
+    Gentle: [
+      t('lucasModal.suggestion_gentle_0'),
+      t('lucasModal.suggestion_gentle_1'),
+      t('lucasModal.suggestion_gentle_2'),
+    ],
+  };
+
+  const starters = {
+    Playful: t('lucasModal.starter_playful'),
+    Curious: t('lucasModal.starter_curious'),
+    Gentle: t('lucasModal.starter_gentle'),
+  };
 
   const handleRegenerate = () => {
     setIsRegenerating(true);
@@ -65,8 +67,8 @@ function LucasModal({ onClose }) {
                 <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-green-400 border-2 border-white rounded-full"></span>
               </div>
               <div>
-                <p className="text-[var(--text-dim)] font-semibold text-sm leading-tight">Lucas</p>
-                <p className="text-[var(--text-dim2)] text-xs">Personal coach</p>
+                <p className="text-[var(--text-dim)] font-semibold text-sm leading-tight">{t('lucasModal.coach_title')}</p>
+                <p className="text-[var(--text-dim2)] text-xs">{t('lucasModal.coach_subtitle')}</p>
               </div>
             </div>
             <button
@@ -97,7 +99,7 @@ function LucasModal({ onClose }) {
                     : "bg-[var(--bg-card)]/10 text-[var(--text-dim)] "
                   }`}
               >
-                {tone}
+                {t('lucasModal.tone_' + tone.toLowerCase())}
               </button>
             ))}
           </div>
@@ -106,7 +108,7 @@ function LucasModal({ onClose }) {
           <div className="mx-4 mb-3 bg-[var(--bg-card)]/10 rounded-2xl px-4 py-3 flex items-start gap-2.5">
             <span className="mt-0.5 text-base">💬</span>
             <div>
-              <p className="text-[var(--text-dim)] text-xs font-bold mb-0.5 tracking-wide uppercase">Conversation Starter</p>
+              <p className="text-[var(--text-dim)] text-xs font-bold mb-0.5 tracking-wide uppercase">{t('lucasModal.conversation_starter_label')}</p>
               <p className="text-[var(--text-dim2)] text-sm leading-snug">{starters[activeTone]}</p>
             </div>
           </div>
@@ -143,7 +145,7 @@ function LucasModal({ onClose }) {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
               </svg>
-              Regenerate
+              {t('lucasModal.regenerate')}
             </button>
           </div>
         </div>

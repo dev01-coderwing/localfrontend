@@ -3,8 +3,10 @@ import { X, Heart } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { submitBubblePopResultThunk } from "../../../Redux/AllgameSclice";
+import { useTranslation } from "react-i18next";
 
 const VictoryScreen = ({ score, onClaim, onRestart, onClose }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 const handleClaimReward = async () => {
@@ -36,18 +38,18 @@ const handleClaimReward = async () => {
         </div>
 
         {/* Text Content */}
-        <h2 className="text-[38px] font-black text-red-500 mb-2">Victory!</h2>
-        <p className="text-[18px] font-bold text-gray-800 mb-1">Perfect Match!</p>
+        <h2 className="text-[38px] font-black text-red-500 mb-2">{t('bubbleGame.victory')}</h2>
+        <p className="text-[18px] font-bold text-gray-800 mb-1">{t('bubbleGame.perfect_match')}</p>
         <p className="text-[var(--text-dim)] font-medium mb-8 leading-tight">
-          You matched {score} pairs in<br />time!
+          {t('bubbleGame.matched_pairs', { score })}<br />{t('bubbleGame.matched_pairs_2')}
         </p>
 
         {/* Rewards Section */}
         <div className="w-full bg-purple-50 rounded-[30px] p-6 mb-8 border border-purple-100">
-          <p className="text-purple-500 text-[14px] font-bold mb-4 uppercase tracking-widest">Rewards Unlocked</p>
+          <p className="text-purple-500 text-[14px] font-bold mb-4 uppercase tracking-widest">{t('bubbleGame.rewards_unlocked')}</p>
           <div className="flex items-center justify-center gap-4">
             <img src="/Image/Coin.png" alt="Coin" className="w-10 h-10 object-contain" />
-            <span className="text-[34px] font-black text-purple-600">15 Meons</span>
+            <span className="text-[34px] font-black text-purple-600">{t('bubbleGame.meons_reward')}</span>
           </div>
         </div>
 
@@ -57,13 +59,13 @@ const handleClaimReward = async () => {
           onClick={handleClaimReward}
             className="w-full bg-gradient-to-r from-red-400 to-purple-500 text-white py-5 rounded-full font-bold text-lg shadow-[0_12px_30px_rgba(239,68,68,0.25)] hover:opacity-95 transition-all transform active:scale-[0.98]"
           >
-            Claim Reward
+            {t('bubbleGame.claim_reward')}
           </button>
           <button
             onClick={onRestart}
             className="w-full bg-[var(--card)] border border-[var(--border)] text-[var(--text-dim)] py-5 rounded-full font-bold text-lg hover:bg-[var(--hover)] transition-all transform active:scale-[0.98]"
           >
-            Play Again
+            {t('bubbleGame.play_again')}
           </button>
         </div>
       </div>
