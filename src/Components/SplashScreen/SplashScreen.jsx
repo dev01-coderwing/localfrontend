@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import logo from "/Image/logo-nav.png";
-
+import mainlogo from "/Image/main-logo.png";
 const SUPPORTED_LANGS = ['en', 'es', 'fr', 'de', 'it', 'ja', 'ko', 'pt', 'zh'];
 
 export default function SplashScreen() {
@@ -53,8 +53,17 @@ export default function SplashScreen() {
           animation: 'splashLogoIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards',
         }}
       />
-
-<h1
+ <img
+        src={mainlogo}
+        alt="IAMeetYou"
+        style={{
+          width: '220px',
+          height: 'auto',
+          animation: 'splashLogoIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+        }}
+        className='pt-5'
+      />
+{/* <h1
   style={{
     marginTop: "16px",
     marginBottom: "8px",
@@ -68,9 +77,9 @@ export default function SplashScreen() {
   <span style={{ color: "#1d1d1f" }}>IA</span>
   <span style={{ color: "#E8B4A0" }}>Meet</span>
   <span style={{ color: "#1d1d1f" }}>You</span>
-</h1>
+</h1> */}
 
-      <p
+      {/* <p
         style={{
           color: 'var(--text-dim)',
           marginTop: '8px',
@@ -84,7 +93,7 @@ export default function SplashScreen() {
         }}
       >
         {t('splash.tagline')}
-      </p>
+      </p> */}
     </div>
   );
 }

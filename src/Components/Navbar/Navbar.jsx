@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import logo from "/Image/logo-nav.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { getUserProfile } from "../Redux/profileSlice";
 import {
   Globe,
   Home,
@@ -34,6 +35,17 @@ function Navbar() {
   const dispatch = useDispatch();
   const dropdownRef = useRef();
  
+
+const { profile } = useSelector((state) => state.profile);
+const userId = useSelector((state) => state.auth.user?.id);
+
+const IMAGE_BASE_URL = "http://35.180.139.208:3000";
+
+useEffect(() => {
+  if (userId && !profile) {
+    dispatch(getUserProfile(userId));
+  }
+}, [dispatch, userId, profile]);
   // ✅ Sync login state from localStorage
   useEffect(() => {
     const status = localStorage.getItem("isLoggedIn");
@@ -51,6 +63,7 @@ function Navbar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+  
  
   // =============================
   // 🔐 LOGGED IN NAVBAR
@@ -144,11 +157,15 @@ function Navbar() {
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className="w-10 h-10 rounded-full overflow-hidden border cursor-pointer"
               >
-                <img
-                  src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1"
-                  alt="user"
-                  className="w-full h-full object-cover"
-                />
+        <img
+  src={
+    profile?.data?.profileImage
+      ? `${IMAGE_BASE_URL}/${profile.data.profileImage}`
+      : "/Image/default-avatar.png"
+  }
+  alt={profile?.data?.fullName || "User"}
+  className="w-full h-full object-cover"
+/>
               </div>
  
               {/* Dropdown */}

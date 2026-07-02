@@ -6,27 +6,29 @@ export const getUserProfile = createAsyncThunk(
   "profile/getUserProfile",
   async (userId, { rejectWithValue }) => {
     try {
+      console.log("Thunk Called", userId);
+
       const token = localStorage.getItem("token");
 
-      const response = await api.get(
-        `/profile/user/${userId}`,
-        {
-          headers: {
-            "API-KEY": "iameetyou",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await api.get(`/profile/user/${userId}`, {
+        headers: {
+          "API-KEY": "iameetyou",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      console.log("API Response:", response.data);
 
       return response.data;
     } catch (error) {
+      console.log("API Error:", error);
+
       return rejectWithValue(
         error.response?.data || "Failed to fetch profile"
       );
     }
   }
 );
-
 const profileSlice = createSlice({
   name: "profile",
   initialState: {

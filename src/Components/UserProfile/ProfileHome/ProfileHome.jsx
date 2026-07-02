@@ -11,12 +11,23 @@ export default function ProfileLayout() {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const { profile, loading, error } = useSelector((state) => state.profile);
+  const userId = useSelector((state) => state.auth.user?.id);
 
- const userId = localStorage.getItem("userId");
+console.log("Profile State:", profile);
+console.log("Loading:", loading);
+console.log("Error:", error);
+
+
+console.log("UserId:", userId);
 
 useEffect(() => {
+  console.log("useEffect Running");
+
   if (userId) {
+    console.log("Dispatching API...");
     dispatch(getUserProfile(userId));
+  } else {
+    console.log("No UserId Found");
   }
 }, [dispatch, userId]);
 
@@ -81,11 +92,17 @@ useEffect(() => {
     }
   };
   // ✅ TRANSFORM DATA (backend → UI)
+ const IMAGE_BASE_URL = "http://35.180.139.208:3000";
+
  const transformedData = {
   profile: {
-    name: profile?.data?.name || "",
-    avatar: profile?.data?.profilePicture || "",
-    verified: profile?.data?.verified || false,
+    name: profile?.data?.fullName || "",
+    avatar: profile?.data?.profileImage
+      ? `${IMAGE_BASE_URL}/${profile.data.profileImage}`
+      : "",
+verified: profile?.data?.isVerified || false,
+    stats: profile?.data?.stats || [],
+    compatibility: profile?.data?.compatibility || [],
   },
 
   middle: {
