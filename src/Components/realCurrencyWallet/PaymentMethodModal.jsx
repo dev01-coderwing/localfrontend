@@ -6,11 +6,13 @@ import {
   CreditCard,
   Wallet,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const PaymentMethodModal = ({
   onClose,
   onContinue,
 }) => {
+  const { t } = useTranslation();
 
   const [selectedMethod, setSelectedMethod] =
     useState("card");
@@ -31,18 +33,18 @@ const PaymentMethodModal = ({
 
     {/* TOP TITLE */}
     <h2 className="text-[18px] font-bold text-[var(--text)]">
-      Payment Method
+      {t('payment.method.top_title')}
     </h2>
 
     {/* CENTER TEXT */}
     <div className="text-center mt-8">
 
       <h3 className="text-[20px] font-bold text-[var(--text)]">
-        Payment Method
+        {t('payment.method.title')}
       </h3>
 
       <p className="text-[var(--text-dim)] text-sm mt-2">
-        Select Your Preferred way
+        {t('payment.method.subtitle')}
       </p>
     </div>
 
@@ -59,12 +61,12 @@ const PaymentMethodModal = ({
           </div>
 
           <h4 className="text-[15px] font-medium text-[var(--text)]">
-            Add New Card
+            {t('payment.method.add_new_card')}
           </h4>
         </div>
 
         <button className="px-3 py-1 rounded-full bg-purple-100 text-purple-500 font-semibold text-xs">
-          Add
+          {t('payment.method.add')}
         </button>
       </div>
 
@@ -92,11 +94,11 @@ const PaymentMethodModal = ({
 
           <div>
             <h4 className="text-[15px] font-medium text-[var(--text)]">
-              Credit/ Debit card
+              {t('payment.method.credit_debit_card')}
             </h4>
 
             <p className="text-[var(--text-dim)] text-xs mt-1">
-              Visa ending in....1234
+              {t('payment.method.visa_ending')}
             </p>
           </div>
         </div>
@@ -141,11 +143,11 @@ const PaymentMethodModal = ({
 
           <div>
             <h4 className="text-[15px] font-medium text-[var(--text)]">
-              PayPal
+              {t('payment.method.paypal')}
             </h4>
 
             <p className="text-[var(--text-dim)] text-xs mt-1">
-              Secure checkout via PayPal
+              {t('payment.method.paypal_desc')}
             </p>
           </div>
         </div>
@@ -172,7 +174,7 @@ const PaymentMethodModal = ({
   onClick={onContinue}
   className="w-full mt-10 py-3 rounded-[14px] text-white text-base font-semibold bg-gradient-to-r from-[#D79098] to-[#5F7BF4]"
 >
-  Pay Now
+  {t('payment.method.pay_now')}
 </button>
   </div>
 </div>

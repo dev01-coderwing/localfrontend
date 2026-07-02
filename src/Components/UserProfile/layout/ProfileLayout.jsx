@@ -169,8 +169,11 @@
 import Navbar from "../../Navbar/Navbar";
 import Right from "./Right";
 import { Outlet } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function ProfileLayout() {
+  const { t } = useTranslation();
+
   //  MAIN DATA (SINGLE SOURCE OF TRUTH)
   const profileData = {
     profile: {
@@ -181,38 +184,45 @@ export default function ProfileLayout() {
       tick: "/Image/tick.png",
 
       stats: [
-        { value: "87%", label: "Avg Match" },
-        { value: 12, label: "Matches" },
-        { value: 5, label: "In Lab's" },
+        { value: "87%", label: t('profileLayout.avg_match') },
+        { value: 12, label: t('profileLayout.matches') },
+        { value: 5, label: t('profileLayout.in_labs') },
       ],
 
       compatibility: [
         {
-          title: "MBTI",
-          desc: "ENFP - The Campaigner",
+          title: t('profileLayout.mbti'),
+          desc: t('profileLayout.mbti_desc'),
           status: "done",
           img: "/Image/Brain2.png",
         },
         {
-          title: "Love Languages",
-          desc: "Quality Time",
+          title: t('profileLayout.love_languages'),
+          desc: t('profileLayout.love_languages_desc'),
           status: "done",
           img: "/Image/heart2.png",
         },
         {
-          title: "Attachment Style",
-          desc: "Secure",
+          title: t('profileLayout.attachment_style'),
+          desc: t('profileLayout.attachment_style_desc'),
           status: "done",
           img: "/Image/pin.png",
         },
         {
-          title: "Big Five (OCEAN)",
-          desc: "Not completed",
+          title: t('profileLayout.big_five'),
+          desc: t('profileLayout.big_five_desc'),
           status: "pending",
           img: "/Image/star.png",
         },
       ],
-      interests: ["Art", "Travel", "Music", "Fitness", "Cooking", "Reading"],
+      interests: [
+        t('profileLayout.interest_art'),
+        t('profileLayout.interest_travel'),
+        t('profileLayout.interest_music'),
+        t('profileLayout.interest_fitness'),
+        t('profileLayout.interest_cooking'),
+        t('profileLayout.interest_reading'),
+      ],
       bio: "",
       images: [
         {
@@ -230,21 +240,21 @@ export default function ProfileLayout() {
     middle: {
       balance: {
         amount: "€ 18.96",
-        label: "Available Balance",
+        label: t('profileLayout.available_balance'),
         img: "/Image/Balance.png",
       },
 
       usage: {
-        title: "Time Usage",
+        title: t('profileLayout.time_usage'),
         usedPercent: 40,
         usedTime: "2h 30m",
         totalTime: "6h 00m",
-        remaining: "3h remaining",
+        remaining: t('profileLayout.remaining', { time: '3h' }),
       },
 
       buttons: [
-        { label: "Manage Subscription", icon: "crown", style: "gradient" },
-        { label: "Invite Friends", icon: "gift", style: "dark" },
+        { label: t('profileLayout.manage_subscription'), icon: "crown", style: "gradient" },
+        { label: t('profileLayout.invite_friends'), icon: "gift", style: "dark" },
       ],
     },
   };

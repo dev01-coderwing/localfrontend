@@ -1,100 +1,108 @@
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import infinet from '/Image/infinet.png'
 import lucascope from '/Image/lucascope.png'
 import badge from '/Image/badge.png'
-import noto from '/Image/noto.png'  
-const pricingData = {
-  freeplan: {
-    name: "L'Apéritif",
-    badge: "Free",
-    features: [
-      "20 questions",
-      "2 Mode Acting®",
-      "Unlimited swipes",
-      "Compatibility: 0–35% max",
-      "1 Meon/day (connection)",
-      "Mini-games included",
+import noto from '/Image/noto.png'
+
+function buildPricingData(t) {
+  return {
+    freeplan: {
+      name: t("addons.freeplan.name"),
+      badge: t("addons.freeplan.badge"),
+      features: [
+        t("addons.freeplan.feature_questions"),
+        t("addons.freeplan.feature_mode_acting"),
+        t("addons.freeplan.feature_unlimited_swipes"),
+        t("addons.freeplan.feature_compatibility"),
+        t("addons.freeplan.feature_meon_day"),
+        t("addons.freeplan.feature_mini_games"),
+      ],
+      cta: t("addons.freeplan.cta"),
+    },
+    addons: [
+      {
+        id: "lucascope-guide",
+        icon: lucascope,
+        name: t("addons.lucascope_guide.name"),
+        subtitle: t("addons.lucascope_guide.subtitle"),
+        badge: t("addons.badge_save_17"),
+        defaultPlan: "annual",
+        plans: [
+          {
+            id: "annual",
+            label: t("addons.plan_annual"),
+            price: 7.99,
+            total: 79.9,
+            originalTotal: 95.88,
+            note: t("addons.note_two_months_free"),
+          },
+          { id: "monthly", label: t("addons.plan_monthly"), price: 7.99, total: null, note: null },
+        ],
+        features: [
+          t("addons.lucascope_guide.feature_time"),
+          t("addons.lucascope_guide.feature_personal_astro"),
+          t("addons.lucascope_guide.feature_no_synastry"),
+          t("addons.feature_icon"),
+        ],
+      },
+      {
+        id: "lucascope-infinity",
+        icon: infinet,
+        name: t("addons.lucascope_infinity.name"),
+        subtitle: t("addons.lucascope_infinity.subtitle"),
+        badge: t("addons.badge_save_17"),
+        defaultPlan: "annual",
+        plans: [
+          {
+            id: "annual",
+            label: t("addons.plan_annual"),
+            price: 19.99,
+            total: 79.9,
+            originalTotal: 239.88,
+            note: t("addons.note_two_months_free"),
+          },
+          { id: "monthly", label: t("addons.plan_monthly"), price: 19.99, total: null, note: null },
+        ],
+        features: [
+          t("addons.lucascope_infinity.feature_time"),
+          t("addons.lucascope_infinity.feature_personal_astro_synastry"),
+          {
+            text: t("addons.feature_icon"),
+            image: infinet,
+          },
+        ],
+      },
+      {
+        id: "le-digestif",
+        icon: badge,
+        name: t("addons.le_digestif.name"),
+        subtitle: t("addons.le_digestif.subtitle"),
+        badge: null,
+        defaultPlan: "onetime",
+        plans: [{ id: "onetime", label: t("addons.plan_onetime"), price: 9.99, total: null, note: null }],
+        features: [
+          t("addons.le_digestif.feature_questions"),
+          t("addons.le_digestif.feature_compatibility"),
+          t("addons.le_digestif.feature_mode_acting"),
+          {
+            text: t("addons.feature_icon"),
+            image: noto,
+          },
+          t("addons.le_digestif.feature_permanent_access"),
+        ],
+        headerPrice: t("addons.le_digestif.header_price"),
+      },
     ],
-    cta: "Continue in free mode →",
-  },
-  addons: [
-    {
-      id: "lucascope-guide",
-      icon: lucascope,
-      name: "Lucascope Guide",
-      subtitle: "+1h/month of astrology and compatibility",
-      badge: "Save 17%",
-      defaultPlan: "annual",
-      plans: [
-        {
-          id: "annual",
-          label: "Annual",
-          price: 7.99,
-          total: 79.9,
-          originalTotal: 95.88,
-          note: "2 months free",
-        },
-        { id: "monthly", label: "Monthly", price: 7.99, total: null, note: null },
-      ],
-      features: [
-        "+1h/month Lucas time",
-        "Personal astro (birth chart, horoscope)",
-        "No synastry",
-        "Icon",
-      ],
-    },
-    {
-      id: "lucascope-infinity",
-      icon: infinet,
-      name: "Lucascope Infinity",
-      subtitle: "Save 2 months on yearly plan",
-      badge: "Save 17%",
-      defaultPlan: "annual",
-      plans: [
-        {
-          id: "annual",
-          label: "Annual",
-          price: 19.99,
-          total: 79.9,
-          originalTotal: 239.88,
-          note: "2 months free",
-        },
-        { id: "monthly", label: "Monthly", price: 19.99, total: null, note: null },
-      ],
-      features: ["+4h/month Lucas time", "Personal astro + Synastry",    {
-    text: "Icon",
-    image: infinet,
-  },],
-    },
-    {
-      id: "le-digestif",
-      icon:badge,
-      name: "Le Digestif",
-      subtitle: "(one-time purchase)",
-      badge: null,
-      defaultPlan: "onetime",
-      plans: [{ id: "onetime", label: "One-time", price: 9.99, total: null, note: null }],
-      features: [
-        "50 intimate questions",
-        "+5% compatibility",
-        "5 Mode Acting®",
-   {
-    text: "Icon",
-    image: noto,
-  },
-        "Permanent access",
-      ],
-      headerPrice: "€9.99",
-    },
-  ],
-  footnotes: [
-    "COP1 (Lucascope Guide): the basic version, with simple guidance: solar/lunar compatibility, daily horoscope, small relationship tips.",
-    "COP2 (Lucascope Infinity +): the advanced version, with complete synastry, karmic analysis, couple cycles, future projections.",
-    "Relocation Filter: Display your profile in your current and future city to connect before you even arrive (e.g., job relocation, studying abroad). Limits: Serenity (same country), Elite (Worldwide). Subject to country availability on IAMeetYou.",
-  ],
-};
+    footnotes: [
+      t("addons.footnote_cop1"),
+      t("addons.footnote_cop2"),
+      t("addons.footnote_relocation"),
+    ],
+  };
+}
 
 function CheckIcon({ checked }) {
   return (
@@ -128,7 +136,7 @@ function AddonCard({ addon, selected, onToggle, selectedPlan, onPlanChange }) {
       <div className="flex items-start justify-between gap-2 ">
         <div className="flex items-center gap-2">
           <span className="size-8 "><img src={addon.icon} alt="" /></span>
-        
+
           <div>
             <h3 className="font-bold text-[var(--text-dim1)] text-sm leading-tight">{addon.name}</h3>
             <p className="text-xs text-[var(--text-dim2)]">{addon.subtitle}</p>
@@ -231,6 +239,9 @@ function AddonCard({ addon, selected, onToggle, selectedPlan, onPlanChange }) {
 }
 
 export default function Addons() {
+  const { t } = useTranslation();
+  const pricingData = buildPricingData(t);
+
   const [selectedAddons, setSelectedAddons] = useState({});
 
   const [selectedPlans, setSelectedPlans] = useState(
@@ -291,8 +302,8 @@ export default function Addons() {
         {/* Enhance Section */}
         <div className="rounded-2xl px-6 py-6 w-full">
           <div className="text-center mb-6">
-            <h2 className="display-font text-2xl text-[var(--text-dim)]">Enhance your experience</h2>
-            <p className="text-sm text-[var(--text-dim2)] mt-1">Add options to maximize your chances.</p>
+            <h2 className="display-font text-2xl text-[var(--text-dim)]">{t("addons.title")}</h2>
+            <p className="text-sm text-[var(--text-dim2)] mt-1">{t("addons.subtitle")}</p>
           </div>
 
           {/* Addon Cards Grid */}
@@ -324,14 +335,14 @@ export default function Addons() {
         <div className=" bottom-4 bg-[var(--bg-card)]/10 rounded-2xl border border-[var(--border)] shadow-lg px-6 py-4 flex items-center justify-between">
           <div className="flex gap-8">
             <div>
-              <p className="text-xs text-[var(--text-dim)] font-medium uppercase tracking-wider">Total (EUR)</p>
+              <p className="text-xs text-[var(--text-dim)] font-medium uppercase tracking-wider">{t("addons.total")}</p>
               <p className="text-2xl font-bold text-[var(--text-dim2)]">
                 €{totalEUR.toFixed(2)}
-                <span className="text-sm font-normal text-[var(--text-dim2)]">/mo</span>
+                <span className="text-sm font-normal text-[var(--text-dim2)]">{t("addons.per_month")}</span>
               </p>
             </div>
             <div>
-              <p className="text-xs text-[var(--text)] font-medium uppercase tracking-wider">Total Meons</p>
+              <p className="text-xs text-[var(--text)] font-medium uppercase tracking-wider">{t("addons.total_meons")}</p>
               <p className="text-2xl font-bold text-[var(--text)]">{totalMeons.toFixed(2)}</p>
             </div>
           </div>
@@ -341,9 +352,9 @@ export default function Addons() {
                 ? "bg-gradient-to-r from-[#D79098] to-[#5F7BF4]"
                 : "bg-gradient-to-r from-[#D79098] to-[#5F7BF4]"
               }`}
-              
+
           >
-            Continue
+            {t("addons.continue")}
           </button>
         </div>
       </div>

@@ -4,8 +4,10 @@ import {
   X,
   AlertCircle,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const PaymentFailedModal = ({ onClose }) => {
+  const { t } = useTranslation();
 
   return (
     <div className="fixed inset-0 bg-[var(--bg)] backdrop-blur-md flex items-center justify-center z-50 p-4 animate-fadeIn">
@@ -23,7 +25,7 @@ const PaymentFailedModal = ({ onClose }) => {
 
         {/* TOP TITLE */}
         <h2 className="text-[15px] font-semibold text-[var(--text)]">
-          Payment
+          {t('payment.failed.top_title')}
         </h2>
 
         {/* ERROR ICON */}
@@ -44,12 +46,11 @@ const PaymentFailedModal = ({ onClose }) => {
         <div className="text-center mt-5">
 
           <h3 className="text-[28px] font-bold text-[var(--text)]">
-            Payment Failed
+            {t('payment.failed.title')}
           </h3>
 
           <p className="text-[var(--text-dim)] text-sm leading-6 mt-3 px-4">
-            Your payment was declined. Please try a different
-            method or contact your bank.
+            {t('payment.failed.description')}
           </p>
         </div>
 
@@ -58,12 +59,12 @@ const PaymentFailedModal = ({ onClose }) => {
 
         {/* RETRY BUTTON */}
         <button className="w-full mt-8 py-3 rounded-[12px] text-white font-semibold text-sm bg-gradient-to-r from-[#D79098] to-[#5F7BF4] hover:opacity-95 transition">
-          Retry
+          {t('payment.failed.retry')}
         </button>
 
         {/* CHANGE PAYMENT */}
         <button className="w-full mt-5 text-center text-sm text-[var(--text-dim)] font-medium">
-          Change Payment Method
+          {t('payment.failed.change_method')}
         </button>
       </div>
     </div>

@@ -144,6 +144,7 @@ import { useState, useEffect } from "react";
 // Verification Component
 import VerifyModal from "../verification/VerifyModal";
 import { useTheme } from "../../../ThemeContext";
+import { useTranslation } from "react-i18next";
 const iconMap = {
   user: User,
   card: CreditCard,
@@ -157,6 +158,7 @@ const iconMap = {
 };
 
 function Right() {
+  const { t } = useTranslation();
   const [verifyStep, setVerifyStep] = useState(0);
   const [invisibleMode, setInvisibleMode] = useState(false);
   const [showThemeModal, setShowThemeModal] = useState(false);
@@ -164,33 +166,35 @@ function Right() {
 
   const rightSidebarData = {
     influencer: {
-      title: "Become an Influencer",
-      desc: "Earn rewards for sharing",
+      title: t('profileSidebar.become_influencer'),
+      desc: t('profileSidebar.earn_rewards_desc'),
       img: "/Image/Star2.png",
     },
 
     sections: [
       {
-        title: "ACCOUNT",
+        key: "account",
+        title: t('profileSidebar.account'),
         items: [
-          { name: "Edit Profile", icon: "user", route: "edit-profile" },
-          { name: "Subscription", icon: "card", route: "/subscription" },
-          { name: "Get Verified", icon: "shield", route: "verify" },
-          { name: "Language", icon: "globe", route: "language" },
-          { name: "Settings", icon: "settings", route: "settings" },
+          { name: t('profileSidebar.edit_profile'), icon: "user", route: "edit-profile" },
+          { name: t('profileSidebar.subscription'), icon: "card", route: "/subscription" },
+          { name: t('profileSidebar.get_verified'), icon: "shield", route: "verify" },
+          { name: t('profileSidebar.language'), icon: "globe", route: "language" },
+          { name: t('profileSidebar.settings'), icon: "settings", route: "settings" },
         ],
       },
       {
-        title: "PREFERENCES",
+        key: "preferences",
+        title: t('profileSidebar.preferences'),
         items: [
-          { name: "Privacy & Security", icon: "lock", route: "privacy" },
+          { name: t('profileSidebar.privacy_security'), icon: "lock", route: "privacy" },
           {
-            name: "Display Mode",
+            name: t('profileSidebar.display_mode'),
             icon: "sun",
             route: "display",
           },
-          { name: "Notifications", icon: "bell", route: "notifications" },
-          { name: "Apply Promo Code", icon: "gift", route: "promo" },
+          { name: t('profileSidebar.notifications'), icon: "bell", route: "notifications" },
+          { name: t('profileSidebar.apply_promo_code'), icon: "gift", route: "promo" },
         ],
       },
     ],
@@ -320,7 +324,7 @@ function Right() {
             </div>
 
             {/* Invisible Mode Card */}
-            {section.title === "PREFERENCES" && (
+            {section.key === "preferences" && (
               <div className="mt-4">
                 <div
                   className="
@@ -335,11 +339,11 @@ function Right() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 flex-wrap">
                       <h4 className="text-sm font-semibold text-[#2D1B45] ">
-                        Invisible Mode
+                        {t('profileSidebar.invisible_mode')}
                       </h4>
 
                       <span className="text-[10px] bg-[#7B3FF2] text-white px-2 py-1 rounded-full">
-                        Premium
+                        {t('profileSidebar.premium_badge')}
                       </span>
                     </div>
 
@@ -379,12 +383,11 @@ function Right() {
 
                   {/* Description */}
                   <p className="text-xs text-[#4A3563] mt-3 font-medium">
-                    Browse profiles anonymously
+                    {t('profileSidebar.invisible_mode_desc1')}
                   </p>
 
                   <p className="text-[11px] text-[#6E5A85] mt-1 leading-relaxed">
-                    Hide your activity & online status from others
-                    while browsing.
+                    {t('profileSidebar.invisible_mode_desc2')}
                   </p>
                 </div>
               </div>
@@ -407,7 +410,7 @@ function Right() {
                     : "border-[var(--border)] text-[var(--text-dim2)]"
                   }`}
               >
-                ☀️ Light Mode
+                {t('profileSidebar.light_mode')}
               </button>
 
               <button
@@ -421,7 +424,7 @@ function Right() {
                     : "border-[var(--border)] text-[var(--text-dim2)]"
                   }`}
               >
-                🌙 Dark Mode
+                {t('profileSidebar.dark_mode')}
               </button>
 
               <button
@@ -435,7 +438,7 @@ function Right() {
                     : "border-[var(--border)] text-[var(--text-dim2)]"
                   }`}
               >
-                🟤 Bronze Mode
+                {t('profileSidebar.bronze_mode')}
               </button>
             </div>
           </div>

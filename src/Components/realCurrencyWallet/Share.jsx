@@ -17,8 +17,10 @@ import {
 import {
   SiSnapchat,
 } from "react-icons/si";
+import { useTranslation } from "react-i18next";
 
 const ShareInviteLinkModal = ({ onClose }) => {
+  const { t } = useTranslation();
 
   const socials = [
     {
@@ -52,12 +54,12 @@ const ShareInviteLinkModal = ({ onClose }) => {
       bg: "bg-blue-600",
     },
     {
-      name: "Messaging",
+      name: t('share.link_modal.messaging'),
       icon: <FaFacebookMessenger size={24} />,
       bg: "bg-gradient-to-r from-pink-500 to-blue-500",
     },
     {
-      name: "More",
+      name: t('share.link_modal.more'),
       icon: <MoreHorizontal size={22} />,
       bg: "bg-gray-200 text-black",
     },
@@ -79,7 +81,7 @@ const ShareInviteLinkModal = ({ onClose }) => {
 
         {/* TITLE */}
         <h2 className="text-[18px] font-semibold text-[var(--text)]">
-          Share Invite
+          {t('share.link_modal.title')}
         </h2>
 
         {/* CARD */}
@@ -89,12 +91,12 @@ const ShareInviteLinkModal = ({ onClose }) => {
           <div className="text-center">
 
             <h3 className="text-[24px] font-bold text-[var(--text)]">
-              Share Invite Link
+              {t('share.link_modal.heading')}
             </h3>
 
             <p className="text-sm text-[var(--text-dim)] mt-2 leading-6">
-              Your friend gets <span className="font-semibold">10% off</span>.
-              {" "}You earn <span className="font-semibold">10% cashback</span>.
+              {t('share.link_modal.friend_gets')} <span className="font-semibold">{t('share.link_modal.ten_percent_off')}</span>.
+              {" "}{t('share.link_modal.you_earn')} <span className="font-semibold">{t('share.link_modal.ten_percent_cashback')}</span>.
             </p>
           </div>
 
@@ -102,7 +104,7 @@ const ShareInviteLinkModal = ({ onClose }) => {
           <div className="mt-5 bg-gray-100 rounded-[18px] p-4 relative">
 
             <p className="text-[10px] text-gray-500 font-medium uppercase tracking-wide">
-              Your Referral Link
+              {t('share.link_modal.referral_link_label')}
             </p>
 
             <div className="flex items-center justify-between mt-2">

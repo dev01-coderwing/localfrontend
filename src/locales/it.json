@@ -640,7 +640,15 @@
     "recent_history": "Cronologia Recente",
     "show_less": "Mostra Meno",
     "view_all": "Vedi Tutto",
-    "disclaimer": "I Meons non possono essere prelevati o convertiti in denaro reale. Utilizzo soggetto ai termini."
+    "disclaimer": "I Meons non possono essere prelevati o convertiti in denaro reale. Utilizzo soggetto ai termini.",
+    "convert_to_meons": "Converti in Meons",
+    "rate_display": "€1.00 = 100",
+    "live_conversion_rate": "Tasso di conversione in tempo reale",
+    "enter_amount": "Inserisci importo",
+    "store_credit": "Credito negozio (€)",
+    "you_will_receive": "Riceverai",
+    "important_notice": "Avviso importante",
+    "meons_notice": "I Meons sono solo una valuta virtuale. Si tratta di una conversione a senso unico. I Meons non possono essere riconvertiti in denaro contante una volta completata."
   },
 
   "earnMeons": {
@@ -1492,5 +1500,243 @@
     "meons_reward": "15 Meons",
     "claim_reward": "Riscatta il premio",
     "play_again": "Gioca ancora"
+  },
+
+  "addons": {
+    "title": "Migliora la tua esperienza",
+    "subtitle": "Aggiungi opzioni per massimizzare le tue possibilità.",
+    "total": "Totale (EUR)",
+    "total_meons": "Totale Meons",
+    "continue": "Continua",
+    "per_month": "/mese",
+    "badge_save_17": "Risparmia il 17%",
+    "plan_annual": "Annuale",
+    "plan_monthly": "Mensile",
+    "plan_onetime": "Pagamento unico",
+    "note_two_months_free": "2 mesi gratis",
+    "feature_icon": "Icona",
+    "freeplan": {
+      "name": "L'Apéritif",
+      "badge": "Gratis",
+      "feature_questions": "20 domande",
+      "feature_mode_acting": "2 Modalità Acting®",
+      "feature_unlimited_swipes": "Swipe illimitati",
+      "feature_compatibility": "Compatibilità: 0–35% max",
+      "feature_meon_day": "1 Meon/giorno (connessione)",
+      "feature_mini_games": "Minigiochi inclusi",
+      "cta": "Continua in modalità gratuita →"
+    },
+    "lucascope_guide": {
+      "name": "Lucascope Guide",
+      "subtitle": "+1h/mese di astrologia e compatibilità",
+      "feature_time": "+1h/mese di tempo Lucas",
+      "feature_personal_astro": "Astro personale (tema natale, oroscopo)",
+      "feature_no_synastry": "Nessuna sinastria"
+    },
+    "lucascope_infinity": {
+      "name": "Lucascope Infinity",
+      "subtitle": "Risparmia 2 mesi con il piano annuale",
+      "feature_time": "+4h/mese di tempo Lucas",
+      "feature_personal_astro_synastry": "Astro personale + Sinastria"
+    },
+    "le_digestif": {
+      "name": "Le Digestif",
+      "subtitle": "(acquisto singolo)",
+      "feature_questions": "50 domande intime",
+      "feature_compatibility": "+5% compatibilità",
+      "feature_mode_acting": "5 Modalità Acting®",
+      "feature_permanent_access": "Accesso permanente",
+      "header_price": "€9.99"
+    },
+    "footnote_cop1": "COP1 (Lucascope Guide): la versione base, con indicazioni semplici: compatibilità solare/lunare, oroscopo giornaliero, piccoli consigli di coppia.",
+    "footnote_cop2": "COP2 (Lucascope Infinity +): la versione avanzata, con sinastria completa, analisi karmica, cicli di coppia, proiezioni future.",
+    "footnote_relocation": "Filtro di trasferimento: mostra il tuo profilo nella tua città attuale e futura per connetterti ancor prima di arrivare (es. trasferimento di lavoro, studio all'estero). Limiti: Serenity (stesso paese), Elite (in tutto il mondo). Soggetto alla disponibilità per paese su IAMeetYou."
+  },
+
+  "cards": {
+    "mute_title": "Silenzia conversazione",
+    "mute_desc": "Silenziare le notifiche di Sophia? Puoi riattivarle in qualsiasi momento.",
+    "mute_button": "Silenzia",
+    "report_title": "Segnala utente",
+    "report_desc": "Segnalare Sophia per comportamento inappropriato? Il nostro team esaminerà la segnalazione.",
+    "report_button": "Segnala",
+    "block_title": "Blocca utente",
+    "block_desc": "Sei sicuro di voler bloccare Sophia? Non potrà più inviarti messaggi.",
+    "block_button": "Blocca",
+    "cancel": "Annulla"
+  },
+
+  "share": {
+    "invite_connections": {
+      "title": "Invita connessioni",
+      "search_placeholder": "Cerca messaggi...",
+      "invite_sent": "Invito inviato con successo",
+      "invite_button": "Invita",
+      "message_review": "Rivedi messaggio",
+      "message_preview": "Unisciti a me su IAMeetYou. Esploriamo di più insieme!",
+      "send_invite": "Invia invito",
+      "active_now": "Attivo ora",
+      "active_5m": "Attivo 5 min fa",
+      "active_1h": "Attivo 1 h fa",
+      "active_20m": "Attivo 20 min fa"
+    },
+    "invite_friends": {
+      "title": "Amplia la tua cerchia",
+      "heading": "Le connessioni vere vengono premiate",
+      "description": "Invita un amico su IAMeetYou e sblocca vantaggi premium esclusivi per entrambi.",
+      "special_offer": "OFFERTA SPECIALE",
+      "you": "Voi",
+      "both": "ENTRAMBI",
+      "get": "ricevete",
+      "benefit": "vantaggio",
+      "on_premium": "sul premium",
+      "applied_note": "Applicato automaticamente al tuo prossimo livello di abbonamento crediti.",
+      "quick_invite": "Invito rapido",
+      "share_link": "Condividi link di invito",
+      "chat_invite": "Invita tramite chat in-app",
+      "invite_button": "Invita amici",
+      "footer": "Completando questo acquisto accetti i nostri Termini di servizio. I tuoi dati sono protetti dall'informativa sulla privacy di IAMeetYou."
+    },
+    "link_modal": {
+      "title": "Condividi invito",
+      "heading": "Condividi link di invito",
+      "friend_gets": "Il tuo amico riceve",
+      "ten_percent_off": "10% di sconto",
+      "you_earn": "Tu guadagni",
+      "ten_percent_cashback": "10% di cashback",
+      "referral_link_label": "Il tuo link di riferimento",
+      "messaging": "Messaggistica",
+      "more": "Altro"
+    },
+    "invite_preview": {
+      "title": "Condividi invito",
+      "heading": "Pronto a invitare?",
+      "description": "Rivedi il tuo messaggio prima di condividere l'amore con i tuoi amici.",
+      "preview_message": "Anteprima messaggio",
+      "to_contacts": "Ai tuoi contatti",
+      "join_me_on": "Unisciti a me su",
+      "first_sub_offer": "Riceverai il 10% di sconto sul tuo primo abbonamento.",
+      "send_invite": "Invia invito"
+    }
+  },
+
+  "payment": {
+    "failed": {
+      "top_title": "Pagamento",
+      "title": "Pagamento non riuscito",
+      "description": "Il tuo pagamento è stato rifiutato. Prova un metodo diverso o contatta la tua banca.",
+      "retry": "Riprova",
+      "change_method": "Cambia metodo di pagamento"
+    },
+    "method": {
+      "top_title": "Metodo di pagamento",
+      "title": "Metodo di pagamento",
+      "subtitle": "Seleziona il tuo metodo preferito",
+      "add_new_card": "Aggiungi nuova carta",
+      "add": "Aggiungi",
+      "credit_debit_card": "Carta di credito/debito",
+      "visa_ending": "Visa che termina con....1234",
+      "paypal": "PayPal",
+      "paypal_desc": "Checkout sicuro tramite PayPal",
+      "pay_now": "Paga ora"
+    },
+    "success": {
+      "top_title": "Pagamento riuscito",
+      "title_line1": "Credito aggiunto",
+      "title_line2": "con successo",
+      "added_amount": "Importo aggiunto",
+      "updated_balance": "Saldo aggiornato",
+      "transaction_id": "ID transazione",
+      "back_to_wallet": "Torna al portafoglio",
+      "download_receipt": "Scarica ricevuta"
+    },
+    "checkout": {
+      "top_title": "Checkout sicuro",
+      "title": "Metodo di pagamento",
+      "subtitle": "Seleziona il tuo metodo preferito per l'accesso premium",
+      "tab_card": "Carta",
+      "tab_apple_pay": "Apple Pay",
+      "card_number_label": "Numero carta",
+      "card_number_placeholder": "XXXX XXXX XXXX XXXX",
+      "expiry_placeholder": "MM/AA",
+      "cvc_placeholder": "CVC",
+      "pay_button": "Paga {{amount}}",
+      "secure_stripe": "Checkout sicuro Stripe",
+      "encryption_active": "crittografia attiva",
+      "pci_compliant": "CONFORME PCI",
+      "encrypted": "CRITTOGRAFATO",
+      "bank_grade": "LIVELLO BANCARIO",
+      "private": "PRIVATO",
+      "footer": "Completando questo acquisto accetti i nostri Termini di servizio. I tuoi dati sono protetti dall'informativa sulla privacy di IAMeetYou."
+    }
+  },
+
+  "profileLayout": {
+    "avg_match": "Compatibilità media",
+    "matches": "Corrispondenze",
+    "in_labs": "Nei Lab",
+    "mbti": "MBTI",
+    "mbti_desc": "ENFP - L'Attivista",
+    "love_languages": "Linguaggi dell'amore",
+    "love_languages_desc": "Tempo di qualità",
+    "attachment_style": "Stile di attaccamento",
+    "attachment_style_desc": "Sicuro",
+    "big_five": "Big Five (OCEAN)",
+    "big_five_desc": "Non completato",
+    "interest_art": "Arte",
+    "interest_travel": "Viaggi",
+    "interest_music": "Musica",
+    "interest_fitness": "Fitness",
+    "interest_cooking": "Cucina",
+    "interest_reading": "Lettura",
+    "available_balance": "Saldo disponibile",
+    "time_usage": "Utilizzo del tempo",
+    "remaining": "{{time}} rimanenti",
+    "manage_subscription": "Gestisci abbonamento",
+    "invite_friends": "Invita amici"
+  },
+
+  "profileSidebar": {
+    "become_influencer": "Diventa un influencer",
+    "earn_rewards_desc": "Guadagna premi condividendo",
+    "account": "ACCOUNT",
+    "preferences": "PREFERENZE",
+    "edit_profile": "Modifica profilo",
+    "subscription": "Abbonamento",
+    "get_verified": "Verifica il tuo account",
+    "language": "Lingua",
+    "settings": "Impostazioni",
+    "privacy_security": "Privacy e sicurezza",
+    "display_mode": "Modalità di visualizzazione",
+    "notifications": "Notifiche",
+    "apply_promo_code": "Applica codice promozionale",
+    "invisible_mode": "Modalità invisibile",
+    "premium_badge": "Premium",
+    "invisible_mode_desc1": "Sfoglia i profili in modo anonimo",
+    "invisible_mode_desc2": "Nascondi la tua attività e lo stato online agli altri durante la navigazione.",
+    "light_mode": "☀️ Modalità chiara",
+    "dark_mode": "🌙 Modalità scura",
+    "bronze_mode": "🟤 Modalità bronzo"
+  },
+
+  "verification": {
+    "title": "Verifica KYC",
+    "step": "Passaggio {{step}} di {{total}}",
+    "heading": "Verifica la tua identità",
+    "description": "Per mantenere sicura la nostra community, dobbiamo verificare rapidamente la tua identità.",
+    "upload_id": "Carica un documento d'identità",
+    "passport": "Passaporto",
+    "upload_your_id": "Carica il tuo documento",
+    "no_file_selected": "Nessun file selezionato",
+    "size_placeholder": "0 MB",
+    "replace": "Sostituisci",
+    "upload": "Carica",
+    "take_selfie": "Scatta un selfie",
+    "selfie_desc": "Una foto veloce per confrontarla con il tuo documento",
+    "upload_selfie": "Carica il tuo selfie",
+    "retake": "Rifai",
+    "submit": "Invia verifica →",
+    "agreement_prefix": "Inviando, accetti i nostri",
+    "terms_of_service": "Termini di servizio"
   }
 }

@@ -4,8 +4,10 @@ import {
   X,
   User,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ShareInviteModal = ({ onClose }) => {
+  const { t } = useTranslation();
 
   return (
     <div className="fixed inset-0 bg-[var(--bg)] backdrop-blur-md flex items-center justify-center z-50 p-4">
@@ -23,19 +25,18 @@ const ShareInviteModal = ({ onClose }) => {
 
         {/* TITLE */}
         <h2 className="text-[18px] font-semibold text-[var(--text)]">
-          Share Invite
+          {t('share.invite_preview.title')}
         </h2>
 
         {/* CENTER TEXT */}
         <div className="text-center mt-10">
 
           <h3 className="text-[28px] font-bold text-[var(--text)]">
-            Ready to invite?
+            {t('share.invite_preview.heading')}
           </h3>
 
           <p className="text-sm text-[var(--text-dim)] leading-6 mt-3 px-2">
-            Review your message before sharing the love
-            with your friends.
+            {t('share.invite_preview.description')}
           </p>
         </div>
 
@@ -55,11 +56,11 @@ const ShareInviteModal = ({ onClose }) => {
             <div>
 
               <h4 className="text-sm font-semibold text-[var(--text)]">
-                Preview Message
+                {t('share.invite_preview.preview_message')}
               </h4>
 
               <p className="text-xs text-[var(--text-dim)]">
-                To your contacts
+                {t('share.invite_preview.to_contacts')}
               </p>
             </div>
           </div>
@@ -68,8 +69,8 @@ const ShareInviteModal = ({ onClose }) => {
           <div className="mt-5 rounded-[16px] bg-gradient-to-r from-[#D79098] to-[#F7D5C8] p-5">
 
             <p className="text-[16px] leading-8 text-black font-medium">
-              Join me on <span className="font-bold">IAMeetYou</span>
-              {" "}You'll get 10% off your first subscription.
+              {t('share.invite_preview.join_me_on')} <span className="font-bold">IAMeetYou</span>
+              {" "}{t('share.invite_preview.first_sub_offer')}
             </p>
           </div>
 
@@ -97,7 +98,7 @@ const ShareInviteModal = ({ onClose }) => {
 
         {/* BUTTON */}
         <button className="w-full mt-7 h-[54px] rounded-full text-white font-medium bg-gradient-to-r from-[#D79098] to-[#5F7BF4]">
-          Send Invite
+          {t('share.invite_preview.send_invite')}
         </button>
       </div>
     </div>

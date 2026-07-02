@@ -6,8 +6,10 @@ import {
   CheckCircle2,
   MessageSquare,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const InviteConnectionsModal = ({ onClose }) => {
+  const { t } = useTranslation();
 
   const [search, setSearch] = useState("");
 
@@ -15,25 +17,25 @@ const InviteConnectionsModal = ({ onClose }) => {
     {
       id: 1,
       name: "Sarah",
-      time: "Active now",
+      time: t('share.invite_connections.active_now'),
       img: "https://i.pravatar.cc/100?img=1",
     },
     {
       id: 2,
       name: "Mark Johnson",
-      time: "Active 5m ago",
+      time: t('share.invite_connections.active_5m'),
       img: "https://i.pravatar.cc/100?img=2",
     },
     {
       id: 3,
       name: "Elena Rodriguez",
-      time: "Active 1h ago",
+      time: t('share.invite_connections.active_1h'),
       img: "https://i.pravatar.cc/100?img=3",
     },
     {
       id: 4,
       name: "David Chen",
-      time: "Active 20m ago",
+      time: t('share.invite_connections.active_20m'),
       img: "https://i.pravatar.cc/100?img=4",
     },
   ];
@@ -54,7 +56,7 @@ const InviteConnectionsModal = ({ onClose }) => {
 
         {/* TITLE */}
         <h2 className="text-[18px] font-semibold text-[var(--text)]">
-          Invite Connections
+          {t('share.invite_connections.title')}
         </h2>
 
         {/* SEARCH */}
@@ -67,7 +69,7 @@ const InviteConnectionsModal = ({ onClose }) => {
 
           <input
             type="text"
-            placeholder="Search messages..."
+            placeholder={t('share.invite_connections.search_placeholder')}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="w-full h-[48px] rounded-[14px] border border-gray-200 pl-12 pr-4 outline-none text-sm"
@@ -85,7 +87,7 @@ const InviteConnectionsModal = ({ onClose }) => {
             />
 
             <span className="text-sm text-[var(--text)]">
-              Invite sent successfully
+              {t('share.invite_connections.invite_sent')}
             </span>
           </div>
 
@@ -132,7 +134,7 @@ const InviteConnectionsModal = ({ onClose }) => {
 
               {/* BUTTON */}
               <button className="px-6 h-[38px] rounded-full border border-gray-200 text-sm text-[var(--text-dim)] hover:bg-gray-50 transition">
-                Invite
+                {t('share.invite_connections.invite_button')}
               </button>
             </div>
           ))}
@@ -153,12 +155,11 @@ const InviteConnectionsModal = ({ onClose }) => {
             <div>
 
               <h4 className="text-sm font-semibold text-[var(--text)]">
-                Message Review
+                {t('share.invite_connections.message_review')}
               </h4>
 
               <p className="text-sm text-[var(--text-dim)] mt-1 leading-6">
-                Join me on IAMeetYou . Let's explore more
-                together!
+                {t('share.invite_connections.message_preview')}
               </p>
             </div>
           </div>
@@ -166,7 +167,7 @@ const InviteConnectionsModal = ({ onClose }) => {
 
         {/* BUTTON */}
         <button className="w-full mt-5 h-[52px] rounded-full text-white font-medium bg-gradient-to-r from-[#D79098] to-[#5F7BF4]">
-          Send Invite
+          {t('share.invite_connections.send_invite')}
         </button>
       </div>
     </div>

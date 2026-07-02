@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { X, Minus, Plus, Info } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import coin from "/Image/coin.png";
 
@@ -7,6 +8,7 @@ const ConvertToMeonsModal = ({
   onClose,
   onContinue,
 }) => {
+  const { t } = useTranslation();
 
   const [amount, setAmount] = useState(10);
 
@@ -28,7 +30,7 @@ const ConvertToMeonsModal = ({
 
     {/* TITLE */}
     <h2 className="text-[18px] font-semibold text-[var(--text)] mb-4">
-      Convert to Meons
+      {t('wallet.convert_to_meons')}
     </h2>
 
     {/* TOP CARD */}
@@ -46,7 +48,7 @@ const ConvertToMeonsModal = ({
       <div className="absolute bottom-4 left-4 text-white">
 
         <h3 className="text-[22px] font-bold flex items-center gap-1">
-          €1.00 = 100
+          {t('wallet.rate_display')}
           <img
             src={coin}
             className="w-5 h-5 object-contain"
@@ -54,7 +56,7 @@ const ConvertToMeonsModal = ({
         </h3>
 
         <p className="text-xs text-white/80 mt-1">
-          Live Conversion Rate
+          {t('wallet.live_conversion_rate')}
         </p>
       </div>
     </div>
@@ -63,7 +65,7 @@ const ConvertToMeonsModal = ({
     <div className="mt-5">
 
       <p className="text-sm font-medium text-[var(--text)] mb-2">
-        Enter Amount
+        {t('wallet.enter_amount')}
       </p>
 
       <div className="border border-gray-200 rounded-[18px] p-5 flex items-center justify-center gap-6">
@@ -84,7 +86,7 @@ const ConvertToMeonsModal = ({
         <div className="text-center">
 
           <p className="text-xs text-[var(--text-dim)]">
-            Store credit (€)
+            {t('wallet.store_credit')}
           </p>
 
           <h2 className="text-[28px] font-bold text-[var(--text)] leading-none mt-1">
@@ -106,7 +108,7 @@ const ConvertToMeonsModal = ({
     <div className="mt-4 border border-gray-200 rounded-[18px] p-4">
 
       <p className="text-xs text-[var(--text-dim)] text-center mb-2">
-        You will receive
+        {t('wallet.you_will_receive')}
       </p>
 
       <div className="flex items-center justify-center gap-2">
@@ -132,12 +134,11 @@ const ConvertToMeonsModal = ({
 
       <div>
         <h4 className="text-xs font-semibold text-[var(--text)]">
-          Important Notice
+          {t('wallet.important_notice')}
         </h4>
 
         <p className="text-[11px] text-[var(--text-dim)] leading-4 mt-1">
-          Meons are virtual currency only. This is one-way conversion.
-          Meons cannot be converted back to cash once completed.
+          {t('wallet.meons_notice')}
         </p>
       </div>
     </div>
@@ -147,7 +148,7 @@ const ConvertToMeonsModal = ({
   onClick={onContinue}
   className="w-full mt-6 py-3 rounded-[14px] text-white font-medium text-base bg-gradient-to-r from-[#D79098] to-[#5F7BF4]"
 >
-  Convert to Meons
+  {t('wallet.convert_to_meons')}
 </button>
   </div>
 

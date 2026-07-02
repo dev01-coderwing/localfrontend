@@ -640,7 +640,15 @@
     "recent_history": "Recent History",
     "show_less": "Show Less",
     "view_all": "View All",
-    "disclaimer": "Meons cannot be withdrawn or converted to real money. Usage subject to terms."
+    "disclaimer": "Meons cannot be withdrawn or converted to real money. Usage subject to terms.",
+    "convert_to_meons": "Convert to Meons",
+    "rate_display": "€1.00 = 100",
+    "live_conversion_rate": "Live Conversion Rate",
+    "enter_amount": "Enter Amount",
+    "store_credit": "Store credit (€)",
+    "you_will_receive": "You will receive",
+    "important_notice": "Important Notice",
+    "meons_notice": "Meons are virtual currency only. This is one-way conversion. Meons cannot be converted back to cash once completed."
   },
 
   "earnMeons": {
@@ -1492,5 +1500,243 @@
     "meons_reward": "15 Meons",
     "claim_reward": "Claim Reward",
     "play_again": "Play Again"
+  },
+
+  "addons": {
+    "title": "Enhance your experience",
+    "subtitle": "Add options to maximize your chances.",
+    "total": "Total (EUR)",
+    "total_meons": "Total Meons",
+    "continue": "Continue",
+    "per_month": "/mo",
+    "badge_save_17": "Save 17%",
+    "plan_annual": "Annual",
+    "plan_monthly": "Monthly",
+    "plan_onetime": "One-time",
+    "note_two_months_free": "2 months free",
+    "feature_icon": "Icon",
+    "freeplan": {
+      "name": "L'Apéritif",
+      "badge": "Free",
+      "feature_questions": "20 questions",
+      "feature_mode_acting": "2 Mode Acting®",
+      "feature_unlimited_swipes": "Unlimited swipes",
+      "feature_compatibility": "Compatibility: 0–35% max",
+      "feature_meon_day": "1 Meon/day (connection)",
+      "feature_mini_games": "Mini-games included",
+      "cta": "Continue in free mode →"
+    },
+    "lucascope_guide": {
+      "name": "Lucascope Guide",
+      "subtitle": "+1h/month of astrology and compatibility",
+      "feature_time": "+1h/month Lucas time",
+      "feature_personal_astro": "Personal astro (birth chart, horoscope)",
+      "feature_no_synastry": "No synastry"
+    },
+    "lucascope_infinity": {
+      "name": "Lucascope Infinity",
+      "subtitle": "Save 2 months on yearly plan",
+      "feature_time": "+4h/month Lucas time",
+      "feature_personal_astro_synastry": "Personal astro + Synastry"
+    },
+    "le_digestif": {
+      "name": "Le Digestif",
+      "subtitle": "(one-time purchase)",
+      "feature_questions": "50 intimate questions",
+      "feature_compatibility": "+5% compatibility",
+      "feature_mode_acting": "5 Mode Acting®",
+      "feature_permanent_access": "Permanent access",
+      "header_price": "€9.99"
+    },
+    "footnote_cop1": "COP1 (Lucascope Guide): the basic version, with simple guidance: solar/lunar compatibility, daily horoscope, small relationship tips.",
+    "footnote_cop2": "COP2 (Lucascope Infinity +): the advanced version, with complete synastry, karmic analysis, couple cycles, future projections.",
+    "footnote_relocation": "Relocation Filter: Display your profile in your current and future city to connect before you even arrive (e.g., job relocation, studying abroad). Limits: Serenity (same country), Elite (Worldwide). Subject to country availability on IAMeetYou."
+  },
+
+  "cards": {
+    "mute_title": "Mute Conversation",
+    "mute_desc": "Mute notifications from Sophia? You can unmute anytime.",
+    "mute_button": "Mute",
+    "report_title": "Report User",
+    "report_desc": "Report Sophia for inappropriate behavior? Our team will review.",
+    "report_button": "Report",
+    "block_title": "Block User",
+    "block_desc": "Are you sure you want to block Sophia? They won't be able to message you.",
+    "block_button": "Block",
+    "cancel": "Cancel"
+  },
+
+  "share": {
+    "invite_connections": {
+      "title": "Invite Connections",
+      "search_placeholder": "Search messages...",
+      "invite_sent": "Invite sent successfully",
+      "invite_button": "Invite",
+      "message_review": "Message Review",
+      "message_preview": "Join me on IAMeetYou . Let's explore more together!",
+      "send_invite": "Send Invite",
+      "active_now": "Active now",
+      "active_5m": "Active 5m ago",
+      "active_1h": "Active 1h ago",
+      "active_20m": "Active 20m ago"
+    },
+    "invite_friends": {
+      "title": "Expand Your Circle",
+      "heading": "True Connections are Rewarded",
+      "description": "Invite a friend to IAMeetYou and Unlock exclusive premium benefits for both.",
+      "special_offer": "SPECIAL OFFER",
+      "you": "You",
+      "both": "BOTH",
+      "get": "get",
+      "benefit": "benefit",
+      "on_premium": "on premium",
+      "applied_note": "Applied automatically to your next matching credit subscription tier.",
+      "quick_invite": "Quick Invite",
+      "share_link": "Share Invite Link",
+      "chat_invite": "Invite Vai In-App Chat",
+      "invite_button": "Invite Friends",
+      "footer": "By completing this purchase you agree to our Terms of Service. Your data is protected under IAMeetYou's privacy framework."
+    },
+    "link_modal": {
+      "title": "Share Invite",
+      "heading": "Share Invite Link",
+      "friend_gets": "Your friend gets",
+      "ten_percent_off": "10% off",
+      "you_earn": "You earn",
+      "ten_percent_cashback": "10% cashback",
+      "referral_link_label": "Your Referral Link",
+      "messaging": "Messaging",
+      "more": "More"
+    },
+    "invite_preview": {
+      "title": "Share Invite",
+      "heading": "Ready to invite?",
+      "description": "Review your message before sharing the love with your friends.",
+      "preview_message": "Preview Message",
+      "to_contacts": "To your contacts",
+      "join_me_on": "Join me on",
+      "first_sub_offer": "You'll get 10% off your first subscription.",
+      "send_invite": "Send Invite"
+    }
+  },
+
+  "payment": {
+    "failed": {
+      "top_title": "Payment",
+      "title": "Payment Failed",
+      "description": "Your payment was declined. Please try a different method or contact your bank.",
+      "retry": "Retry",
+      "change_method": "Change Payment Method"
+    },
+    "method": {
+      "top_title": "Payment Method",
+      "title": "Payment Method",
+      "subtitle": "Select Your Preferred way",
+      "add_new_card": "Add New Card",
+      "add": "Add",
+      "credit_debit_card": "Credit/ Debit card",
+      "visa_ending": "Visa ending in....1234",
+      "paypal": "PayPal",
+      "paypal_desc": "Secure checkout via PayPal",
+      "pay_now": "Pay Now"
+    },
+    "success": {
+      "top_title": "Payment Success",
+      "title_line1": "Credit Added",
+      "title_line2": "Successfully",
+      "added_amount": "Added Amount",
+      "updated_balance": "Updated Balance",
+      "transaction_id": "Transaction ID",
+      "back_to_wallet": "Back to wallet",
+      "download_receipt": "Download Receipt"
+    },
+    "checkout": {
+      "top_title": "Secure Checkout",
+      "title": "Payment Method",
+      "subtitle": "Select your preferred method for premium access",
+      "tab_card": "Card",
+      "tab_apple_pay": "Apple Pay",
+      "card_number_label": "Card Number",
+      "card_number_placeholder": "XXXX XXXX XXXX XXXX",
+      "expiry_placeholder": "MM/YY",
+      "cvc_placeholder": "CVC",
+      "pay_button": "Pay {{amount}}",
+      "secure_stripe": "Secure Stripe Checkout",
+      "encryption_active": "encryption active",
+      "pci_compliant": "PCI COMPLIANT",
+      "encrypted": "ENCRYPTED",
+      "bank_grade": "BANK GRADE",
+      "private": "PRIVATE",
+      "footer": "By completing this purchase you agree to our Terms of Service. Your data is protected under IAMeetYou's privacy framework."
+    }
+  },
+
+  "profileLayout": {
+    "avg_match": "Avg Match",
+    "matches": "Matches",
+    "in_labs": "In Lab's",
+    "mbti": "MBTI",
+    "mbti_desc": "ENFP - The Campaigner",
+    "love_languages": "Love Languages",
+    "love_languages_desc": "Quality Time",
+    "attachment_style": "Attachment Style",
+    "attachment_style_desc": "Secure",
+    "big_five": "Big Five (OCEAN)",
+    "big_five_desc": "Not completed",
+    "interest_art": "Art",
+    "interest_travel": "Travel",
+    "interest_music": "Music",
+    "interest_fitness": "Fitness",
+    "interest_cooking": "Cooking",
+    "interest_reading": "Reading",
+    "available_balance": "Available Balance",
+    "time_usage": "Time Usage",
+    "remaining": "{{time}} remaining",
+    "manage_subscription": "Manage Subscription",
+    "invite_friends": "Invite Friends"
+  },
+
+  "profileSidebar": {
+    "become_influencer": "Become an Influencer",
+    "earn_rewards_desc": "Earn rewards for sharing",
+    "account": "ACCOUNT",
+    "preferences": "PREFERENCES",
+    "edit_profile": "Edit Profile",
+    "subscription": "Subscription",
+    "get_verified": "Get Verified",
+    "language": "Language",
+    "settings": "Settings",
+    "privacy_security": "Privacy & Security",
+    "display_mode": "Display Mode",
+    "notifications": "Notifications",
+    "apply_promo_code": "Apply Promo Code",
+    "invisible_mode": "Invisible Mode",
+    "premium_badge": "Premium",
+    "invisible_mode_desc1": "Browse profiles anonymously",
+    "invisible_mode_desc2": "Hide your activity & online status from others while browsing.",
+    "light_mode": "☀️ Light Mode",
+    "dark_mode": "🌙 Dark Mode",
+    "bronze_mode": "🟤 Bronze Mode"
+  },
+
+  "verification": {
+    "title": "KYC Verification",
+    "step": "Step {{step}} of {{total}}",
+    "heading": "Verify Your Identity",
+    "description": "To keep our community safe, we need to quickly verify who you are.",
+    "upload_id": "Upload Government ID",
+    "passport": "Passport",
+    "upload_your_id": "Upload your ID",
+    "no_file_selected": "No file selected",
+    "size_placeholder": "0 MB",
+    "replace": "Replace",
+    "upload": "Upload",
+    "take_selfie": "Take a Selfie",
+    "selfie_desc": "A quick photo to match your ID",
+    "upload_selfie": "Upload your selfie",
+    "retake": "Retake",
+    "submit": "Submit Verification →",
+    "agreement_prefix": "By submitting, you agree to our",
+    "terms_of_service": "Terms of Service"
   }
 }

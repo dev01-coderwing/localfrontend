@@ -4,8 +4,10 @@ import {
   X,
   Check,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const PaymentSuccessModal = ({ onClose }) => {
+  const { t } = useTranslation();
 
   return (
     <div className="fixed inset-0 bg-[var(--bg)] backdrop-blur-md flex items-center justify-center z-50 p-4 animate-fadeIn">
@@ -23,7 +25,7 @@ const PaymentSuccessModal = ({ onClose }) => {
 
         {/* TITLE */}
         <h2 className="text-[15px] font-semibold text-[var(--text)]">
-          Payment Success
+          {t('payment.success.top_title')}
         </h2>
 
         {/* SUCCESS ICON */}
@@ -44,9 +46,9 @@ const PaymentSuccessModal = ({ onClose }) => {
         <div className="text-center mt-5">
 
           <h3 className="text-[28px] font-bold text-[var(--text)] leading-tight">
-            Credit Added
+            {t('payment.success.title_line1')}
             <br />
-            Successfully
+            {t('payment.success.title_line2')}
           </h3>
         </div>
 
@@ -57,7 +59,7 @@ const PaymentSuccessModal = ({ onClose }) => {
           <div className="flex items-center justify-between pb-3 border-b border-gray-200">
 
             <p className="text-[var(--text-dim2)] text-sm">
-              Added Amount
+              {t('payment.success.added_amount')}
             </p>
 
             <p className="text-black font-semibold text-sm">
@@ -69,7 +71,7 @@ const PaymentSuccessModal = ({ onClose }) => {
           <div className="flex items-center justify-between py-3 border-b border-gray-200">
 
             <p className="text-[var(--text-dim2)] text-sm">
-              Updated Balance
+              {t('payment.success.updated_balance')}
             </p>
 
             <p className="text-black font-semibold text-sm">
@@ -81,7 +83,7 @@ const PaymentSuccessModal = ({ onClose }) => {
           <div className="flex items-center justify-between pt-3">
 
             <p className="text-[var(--text-dim2)] text-sm">
-              Transaction ID
+              {t('payment.success.transaction_id')}
             </p>
 
             <p className="text-black text-xs font-medium">
@@ -95,12 +97,12 @@ const PaymentSuccessModal = ({ onClose }) => {
 
         {/* BUTTON */}
         <button className="w-full mt-5 py-3 rounded-[12px] text-white font-semibold text-sm bg-gradient-to-r from-[#D79098] to-[#5F7BF4] hover:opacity-95 transition">
-          Back to wallet
+          {t('payment.success.back_to_wallet')}
         </button>
 
         {/* DOWNLOAD */}
         <button className="w-full mt-4 text-center text-sm text-[var(--text-dim)] font-medium">
-          Download Receipt
+          {t('payment.success.download_receipt')}
         </button>
       </div>
     </div>

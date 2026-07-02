@@ -10,8 +10,10 @@ import {
   ChevronRight,
   Copy,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const InviteFriendsModal = ({ onClose }) => {
+  const { t } = useTranslation();
 
   return (
     <div className="fixed inset-0 bg-[var(--bg)] backdrop-blur-md flex items-center justify-center z-50 p-4">
@@ -29,7 +31,7 @@ const InviteFriendsModal = ({ onClose }) => {
 
         {/* TITLE */}
         <h2 className="text-[18px] font-semibold text-[var(--text)]">
-          Expand Your Circle
+          {t('share.invite_friends.title')}
         </h2>
 
         {/* HERO CARD */}
@@ -58,12 +60,11 @@ const InviteFriendsModal = ({ onClose }) => {
         <div className="text-center mt-5">
 
           <h3 className="text-[20px] font-bold text-[var(--text)]">
-            True Connections are Rewarded
+            {t('share.invite_friends.heading')}
           </h3>
 
           <p className="text-sm text-[var(--text-dim)] mt-2">
-            Invite a friend to IAMeetYou and Unlock exclusive
-            premium benefits for both.
+            {t('share.invite_friends.description')}
           </p>
         </div>
 
@@ -71,11 +72,11 @@ const InviteFriendsModal = ({ onClose }) => {
         <div className="mt-5 border border-gray-200 rounded-[22px] p-6 text-center">
 
           <p className="text-xs font-semibold tracking-wide text-[var(--text)]">
-            SPECIAL OFFER
+            {t('share.invite_friends.special_offer')}
           </p>
 
           <h2 className="mt-4 text-[20px] font-bold text-[var(--text)]">
-            You <span className="text-[#7C3AED]">BOTH</span> get
+            {t('share.invite_friends.you')} <span className="text-[#7C3AED]">{t('share.invite_friends.both')}</span> {t('share.invite_friends.get')}
           </h2>
 
           <div className="flex items-center justify-center gap-2 mt-1">
@@ -86,18 +87,17 @@ const InviteFriendsModal = ({ onClose }) => {
 
             <div className="text-left leading-5">
               <p className="text-[30px] font-bold text-[var(--text)]">
-                benefit
+                {t('share.invite_friends.benefit')}
               </p>
 
               <p className="text-[30px] font-bold text-[var(--text)]">
-                on premium
+                {t('share.invite_friends.on_premium')}
               </p>
             </div>
           </div>
 
           <p className="text-sm text-[var(--text-dim)] mt-4">
-            Applied automatically to your next matching
-            credit subscription tier.
+            {t('share.invite_friends.applied_note')}
           </p>
         </div>
 
@@ -105,7 +105,7 @@ const InviteFriendsModal = ({ onClose }) => {
         <div className="mt-5">
 
           <h4 className="text-sm font-semibold text-[var(--text)] mb-3">
-            Quick Invite
+            {t('share.invite_friends.quick_invite')}
           </h4>
 
           <div className="grid grid-cols-2 gap-4">
@@ -120,7 +120,7 @@ const InviteFriendsModal = ({ onClose }) => {
                 </div>
 
                 <span className="text-sm font-semibold text-[var(--text-dim)]">
-                  Share Invite Link
+                  {t('share.invite_friends.share_link')}
                 </span>
               </div>
 
@@ -140,7 +140,7 @@ const InviteFriendsModal = ({ onClose }) => {
                 </div>
 
                 <span className="text-sm font-semibold text-[var(--text-dim)]">
-                  Invite Vai In-App Chat
+                  {t('share.invite_friends.chat_invite')}
                 </span>
               </div>
 
@@ -173,15 +173,13 @@ const InviteFriendsModal = ({ onClose }) => {
   onClick={() => setShowInviteFriends(true)}
   className="flex-1 h-[54px]  py-3 rounded-full bg-gradient-to-r from-[#D79098] to-[#5F7BF4] text-white font-medium"
 >
-  Invite Friends
+  {t('share.invite_friends.invite_button')}
 </button>
         </div>
 
         {/* FOOTER */}
         <p className="text-[11px] text-gray-400 text-center mt-8 leading-5">
-          By completing this purchase you agree to our Terms of
-          Service. Your data is protected under IAMeetYou's
-          privacy framework.
+          {t('share.invite_friends.footer')}
         </p>
       </div>
     </div>

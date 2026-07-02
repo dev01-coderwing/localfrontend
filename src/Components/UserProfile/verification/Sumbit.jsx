@@ -290,10 +290,12 @@ import {
   Check,
   Image as ImageIcon,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import VerificationProgress from "./VerificationProgress";
 
 function Submit({ closeModal }) {
+  const { t } = useTranslation();
   const [documentFile, setDocumentFile] = useState(null);
   const [selfieFile, setSelfieFile] = useState(null);
 
@@ -344,7 +346,7 @@ function Submit({ closeModal }) {
           <div className="flex items-start justify-between gap-4">
             <div>
               <h2 className="text-[19px] sm:text-[23px] font-semibold text-[var(--text-dim)]">
-                KYC Verification
+                {t('verification.title')}
               </h2>
             </div>
 
@@ -360,11 +362,11 @@ function Submit({ closeModal }) {
           <div className="mt-4">
             <div className="flex items-center justify-between text-[13px] sm:text-sm text-[var(--text-dim2)] mb-2 gap-2">
               <span className="font-medium sm:text-[16px]">
-                Take a Selfie
+                {t('verification.take_selfie')}
               </span>
 
               <span className="font-medium whitespace-nowrap">
-                Step 2 of 3
+                {t('verification.step', { step: 2, total: 3 })}
               </span>
             </div>
 
@@ -378,11 +380,11 @@ function Submit({ closeModal }) {
           {/* Heading */}
           <div className="text-center mt-8">
             <h1 className="text-[24px] sm:text-[27px] leading-snug font-bold text-[var(--text-dim)]">
-              Verify Your Identity
+              {t('verification.heading')}
             </h1>
 
             <p className="text-[13px] sm:text-[15px] text-[var(--text-dim2)] mt-3 leading-6">
-              To keep our community safe, we need to quickly verify who you are.
+              {t('verification.description')}
             </p>
           </div>
 
@@ -403,11 +405,11 @@ function Submit({ closeModal }) {
 
                   <div>
                     <h3 className="font-semibold text-[15px] sm:text-[17px] text-[var(--text-dim)]">
-                      Upload Government ID
+                      {t('verification.upload_id')}
                     </h3>
 
                     <p className="text-[13px] sm:text-sm text-[var(--text-dim2)] mt-1">
-                      Passport
+                      {t('verification.passport')}
                     </p>
                   </div>
                 </div>
@@ -430,7 +432,7 @@ function Submit({ closeModal }) {
                     />
 
                     <p className="mt-4 text-[14px] sm:text-[15px] text-[var(--text-dim2)] font-medium">
-                      Upload your ID
+                      {t('verification.upload_your_id')}
                     </p>
                   </div>
                 )}
@@ -456,19 +458,19 @@ function Submit({ closeModal }) {
                     <p className="font-semibold text-[var(--text-dim)] text-sm truncate">
                       {documentFile
                         ? documentFile.file.name
-                        : "No file selected"}
+                        : t('verification.no_file_selected')}
                     </p>
 
                     <p className="text-xs text-[var(--text-dim2)] mt-1">
                       {documentFile
                         ? formatFileSize(documentFile.file.size)
-                        : "0 MB"}
+                        : t('verification.size_placeholder')}
                     </p>
                   </div>
                 </div>
 
                 <label className="text-[var(--text-dim)] font-semibold cursor-pointer whitespace-nowrap">
-                  {documentFile ? "Replace" : "Upload"}
+                  {documentFile ? t('verification.replace') : t('verification.upload')}
 
                   <input
                     type="file"
@@ -494,11 +496,11 @@ function Submit({ closeModal }) {
 
                   <div>
                     <h3 className="font-semibold text-[15px] sm:text-[17px] text-[var(--text-dim)]">
-                      Take a Selfie
+                      {t('verification.take_selfie')}
                     </h3>
 
                     <p className="text-[13px] sm:text-sm text-[var(--text-dim2)] mt-1">
-                      A quick photo to match your ID
+                      {t('verification.selfie_desc')}
                     </p>
                   </div>
                 </div>
@@ -521,7 +523,7 @@ function Submit({ closeModal }) {
                     />
 
                     <p className="mt-4 text-[14px] sm:text-[15px] text-[var(--text-dim2)] font-medium">
-                      Upload your selfie
+                      {t('verification.upload_selfie')}
                     </p>
                   </div>
                 )}
@@ -547,19 +549,19 @@ function Submit({ closeModal }) {
                     <p className="font-semibold text-[var(--text-dim)] text-sm truncate">
                       {selfieFile
                         ? selfieFile.file.name
-                        : "No file selected"}
+                        : t('verification.no_file_selected')}
                     </p>
 
                     <p className="text-xs text-[var(--text-dim2)] mt-1">
                       {selfieFile
                         ? formatFileSize(selfieFile.file.size)
-                        : "0 MB"}
+                        : t('verification.size_placeholder')}
                     </p>
                   </div>
                 </div>
 
                 <label className="text-[var(--text-dim)] font-semibold cursor-pointer whitespace-nowrap">
-                  {selfieFile ? "Retake" : "Upload"}
+                  {selfieFile ? t('verification.retake') : t('verification.upload')}
 
                   <input
                     type="file"
@@ -577,14 +579,14 @@ function Submit({ closeModal }) {
             onClick={() => setShowProgress(true)}
             className="w-full min-h-[48px] rounded-2xl bg-gradient-to-r from-[#d9a5b3] to-[#5f7cff] text-white font-semibold text-[15px] sm:text-lg mt-10 hover:opacity-90 transition"
           >
-            Submit Verification →
+            {t('verification.submit')}
           </button>
 
           {/* Footer */}
           <p className="text-center text-[12px] sm:text-sm text-[var(--text-dim2)] mt-5 leading-6">
-            By submitting, you agree to our{" "}
+            {t('verification.agreement_prefix')}{" "}
             <span className="text-blue-500 cursor-pointer">
-              Terms of Service
+              {t('verification.terms_of_service')}
             </span>
             .
           </p>

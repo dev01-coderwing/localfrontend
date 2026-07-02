@@ -7,11 +7,13 @@ import {
   Landmark,
   EyeOff,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const SecureCheckoutModal = ({
   onClose,
   onSuccess,
 }) => {
+  const { t } = useTranslation();
 
   const [paymentMethod, setPaymentMethod] =
     useState("card");
@@ -32,18 +34,18 @@ const SecureCheckoutModal = ({
 
         {/* TOP */}
         <h3 className="text-[15px] font-semibold text-[var(--text)] ">
-          Secure Checkout
+          {t('payment.checkout.top_title')}
         </h3>
 
         {/* TITLE */}
         <div className="mt-4">
 
           <h2 className="text-[24px] font-bold text-[var(--text)]">
-            Payment Method
+            {t('payment.checkout.title')}
           </h2>
 
           <p className="text-xs text-[var(--text-dim)] mt-1">
-            Select your preferred method for premium access
+            {t('payment.checkout.subtitle')}
           </p>
         </div>
 
@@ -61,7 +63,7 @@ const SecureCheckoutModal = ({
               }
             `}
           >
-            Card
+            {t('payment.checkout.tab_card')}
           </button>
 
           <button
@@ -75,7 +77,7 @@ const SecureCheckoutModal = ({
               }
             `}
           >
-            Apple Pay
+            {t('payment.checkout.tab_apple_pay')}
           </button>
         </div>
 
@@ -98,12 +100,12 @@ const SecureCheckoutModal = ({
           <div className="mt-4">
 
             <label className="text-xs font-medium text-[var(--text)]">
-              Card Number
+              {t('payment.checkout.card_number_label')}
             </label>
 
             <input
               type="text"
-              placeholder="XXXX XXXX XXXX XXXX"
+              placeholder={t('payment.checkout.card_number_placeholder')}
               className="w-full mt-2 h-[42px] rounded-[12px] border border-gray-200 px-4 outline-none text-sm"
             />
           </div>
@@ -114,13 +116,13 @@ const SecureCheckoutModal = ({
 
   <input
     type="text"
-    placeholder="MM/YY"
+    placeholder={t('payment.checkout.expiry_placeholder')}
     className="w-full h-[42px] rounded-[12px] border border-gray-200 px-4 outline-none text-sm"
   />
 
   <input
     type="text"
-    placeholder="CVC"
+    placeholder={t('payment.checkout.cvc_placeholder')}
     className="w-full h-[42px] rounded-[12px] border border-gray-200 px-4 outline-none text-sm"
   />
 </div>
@@ -129,7 +131,7 @@ const SecureCheckoutModal = ({
   onClick={onSuccess}
   className="w-full mt-4 py-3 rounded-[12px] text-white font-semibold text-sm bg-gradient-to-r from-[#D79098] to-[#5F7BF4] hover:opacity-95 transition"
 >
-  Pay €44.99
+  {t('payment.checkout.pay_button', { amount: '€44.99' })}
 </button>
         </div>
 
@@ -145,17 +147,17 @@ const SecureCheckoutModal = ({
 
             <div>
               <h4 className="text-xs font-semibold text-[var(--text)]">
-                Secure Stripe Checkout
+                {t('payment.checkout.secure_stripe')}
               </h4>
 
               <p className="text-[10px] text-[var(--text-dim)]">
-                encryption active
+                {t('payment.checkout.encryption_active')}
               </p>
             </div>
           </div>
 
           <div className="px-2 py-1 rounded-full bg-green-100 text-green-600 text-[9px] font-semibold">
-            PCI COMPLIANT
+            {t('payment.checkout.pci_compliant')}
           </div>
         </div>
 
@@ -170,7 +172,7 @@ const SecureCheckoutModal = ({
             </div>
 
             <p className="text-[10px] font-semibold text-[var(--text-dim)]">
-              ENCRYPTED
+              {t('payment.checkout.encrypted')}
             </p>
           </div>
 
@@ -182,7 +184,7 @@ const SecureCheckoutModal = ({
             </div>
 
             <p className="text-[10px] font-semibold text-[var(--text-dim)]">
-              BANK GRADE
+              {t('payment.checkout.bank_grade')}
             </p>
           </div>
 
@@ -194,15 +196,14 @@ const SecureCheckoutModal = ({
             </div>
 
             <p className="text-[10px] font-semibold text-[var(--text-dim)]">
-              PRIVATE
+              {t('payment.checkout.private')}
             </p>
           </div>
         </div>
 
         {/* FOOTER */}
         <p className="text-[10px] text-[var(--text-dim)] text-center leading-5 mt-5 px-2">
-          By completing this purchase you agree to our Terms of Service.
-          Your data is protected under IAMeetYou's privacy framework.
+          {t('payment.checkout.footer')}
         </p>
       </div>
     </div>

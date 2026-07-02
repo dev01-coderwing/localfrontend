@@ -640,7 +640,15 @@
     "recent_history": "最近の履歴",
     "show_less": "少なく表示",
     "view_all": "すべて表示",
-    "disclaimer": "Meonsは現金への引き出しや換金はできません。利用は利用規約に従います。"
+    "disclaimer": "Meonsは現金への引き出しや換金はできません。利用は利用規約に従います。",
+    "convert_to_meons": "Meonsに変換",
+    "rate_display": "€1.00 = 100",
+    "live_conversion_rate": "リアルタイム換算レート",
+    "enter_amount": "金額を入力",
+    "store_credit": "ストアクレジット（€）",
+    "you_will_receive": "受け取れる金額",
+    "important_notice": "重要なお知らせ",
+    "meons_notice": "Meonsは仮想通貨専用です。これは一方向の変換であり、完了後は現金に戻すことはできません。"
   },
 
   "earnMeons": {
@@ -1492,5 +1500,243 @@
     "meons_reward": "15 Meons",
     "claim_reward": "報酬を受け取る",
     "play_again": "もう一度プレイ"
+  },
+
+  "addons": {
+    "title": "体験をさらに充実させる",
+    "subtitle": "オプションを追加してチャンスを最大化しましょう。",
+    "total": "合計（EUR）",
+    "total_meons": "合計 Meons",
+    "continue": "続ける",
+    "per_month": "/月",
+    "badge_save_17": "17%お得",
+    "plan_annual": "年間",
+    "plan_monthly": "月間",
+    "plan_onetime": "一回払い",
+    "note_two_months_free": "2ヶ月無料",
+    "feature_icon": "アイコン",
+    "freeplan": {
+      "name": "L'Apéritif",
+      "badge": "無料",
+      "feature_questions": "20の質問",
+      "feature_mode_acting": "2 モード Acting®",
+      "feature_unlimited_swipes": "無制限スワイプ",
+      "feature_compatibility": "相性：最大0〜35%",
+      "feature_meon_day": "1日1 Meon（接続）",
+      "feature_mini_games": "ミニゲーム付き",
+      "cta": "無料モードで続ける →"
+    },
+    "lucascope_guide": {
+      "name": "Lucascope Guide",
+      "subtitle": "占星術と相性診断が月+1時間",
+      "feature_time": "月+1時間のLucasタイム",
+      "feature_personal_astro": "パーソナル占星術（出生図、ホロスコープ）",
+      "feature_no_synastry": "シナストリーなし"
+    },
+    "lucascope_infinity": {
+      "name": "Lucascope Infinity",
+      "subtitle": "年間プランで2ヶ月お得",
+      "feature_time": "月+4時間のLucasタイム",
+      "feature_personal_astro_synastry": "パーソナル占星術＋シナストリー"
+    },
+    "le_digestif": {
+      "name": "Le Digestif",
+      "subtitle": "（一回限りの購入）",
+      "feature_questions": "50の親密な質問",
+      "feature_compatibility": "相性+5%",
+      "feature_mode_acting": "5 モード Acting®",
+      "feature_permanent_access": "永久アクセス",
+      "header_price": "€9.99"
+    },
+    "footnote_cop1": "COP1（Lucascope Guide）：シンプルなガイダンスを提供する基本版。太陽/月の相性、毎日のホロスコープ、簡単な関係のアドバイス。",
+    "footnote_cop2": "COP2（Lucascope Infinity +）：完全なシナストリー、カルマ分析、カップルサイクル、将来予測を含む上級版。",
+    "footnote_relocation": "移転フィルター：現在および将来の都市にプロフィールを表示し、到着前からつながることができます（例：転勤、海外留学）。制限：Serenity（同一国内）、Elite（世界中）。国によって利用可否が異なります（IAMeetYou）。"
+  },
+
+  "cards": {
+    "mute_title": "会話をミュート",
+    "mute_desc": "Sophiaからの通知をミュートしますか？いつでも解除できます。",
+    "mute_button": "ミュート",
+    "report_title": "ユーザーを報告",
+    "report_desc": "不適切な行動についてSophiaを報告しますか？サポートチームが確認します。",
+    "report_button": "報告",
+    "block_title": "ユーザーをブロック",
+    "block_desc": "Sophiaを本当にブロックしますか？相手はあなたにメッセージを送れなくなります。",
+    "block_button": "ブロック",
+    "cancel": "キャンセル"
+  },
+
+  "share": {
+    "invite_connections": {
+      "title": "つながりを招待",
+      "search_placeholder": "メッセージを検索...",
+      "invite_sent": "招待が正常に送信されました",
+      "invite_button": "招待",
+      "message_review": "メッセージを確認",
+      "message_preview": "IAMeetYouで一緒に。もっと一緒に探検しましょう！",
+      "send_invite": "招待を送る",
+      "active_now": "現在アクティブ",
+      "active_5m": "5分前にアクティブ",
+      "active_1h": "1時間前にアクティブ",
+      "active_20m": "20分前にアクティブ"
+    },
+    "invite_friends": {
+      "title": "つながりを広げよう",
+      "heading": "本当のつながりは報われる",
+      "description": "友達をIAMeetYouに招待して、二人ともに限定プレミアム特典をアンロックしましょう。",
+      "special_offer": "特別オファー",
+      "you": "あなたたち",
+      "both": "両方",
+      "get": "が受け取れます",
+      "benefit": "特典を",
+      "on_premium": "プレミアムで",
+      "applied_note": "次回のマッチングクレジットのサブスクリプション階層に自動的に適用されます。",
+      "quick_invite": "クイック招待",
+      "share_link": "招待リンクを共有",
+      "chat_invite": "アプリ内チャットで招待",
+      "invite_button": "友達を招待",
+      "footer": "この購入を完了すると、利用規約に同意したことになります。あなたのデータはIAMeetYouのプライバシーポリシーによって保護されています。"
+    },
+    "link_modal": {
+      "title": "招待を共有",
+      "heading": "招待リンクを共有",
+      "friend_gets": "友達は",
+      "ten_percent_off": "10%オフ",
+      "you_earn": "あなたは",
+      "ten_percent_cashback": "10%キャッシュバック",
+      "referral_link_label": "あなたの紹介リンク",
+      "messaging": "メッセージ",
+      "more": "その他"
+    },
+    "invite_preview": {
+      "title": "招待を共有",
+      "heading": "招待する準備はできましたか？",
+      "description": "友達に愛をシェアする前にメッセージを確認しましょう。",
+      "preview_message": "メッセージプレビュー",
+      "to_contacts": "連絡先へ",
+      "join_me_on": "一緒に参加しよう",
+      "first_sub_offer": "最初のサブスクリプションが10%オフになります。",
+      "send_invite": "招待を送る"
+    }
+  },
+
+  "payment": {
+    "failed": {
+      "top_title": "お支払い",
+      "title": "お支払いに失敗しました",
+      "description": "お支払いが拒否されました。別の方法をお試しいただくか、銀行にお問い合わせください。",
+      "retry": "再試行",
+      "change_method": "お支払い方法を変更"
+    },
+    "method": {
+      "top_title": "お支払い方法",
+      "title": "お支払い方法",
+      "subtitle": "ご希望の方法を選択してください",
+      "add_new_card": "新しいカードを追加",
+      "add": "追加",
+      "credit_debit_card": "クレジット／デビットカード",
+      "visa_ending": "末尾1234のVisa",
+      "paypal": "PayPal",
+      "paypal_desc": "PayPalでの安全なチェックアウト",
+      "pay_now": "今すぐ支払う"
+    },
+    "success": {
+      "top_title": "支払い成功",
+      "title_line1": "クレジットが",
+      "title_line2": "追加されました",
+      "added_amount": "追加された金額",
+      "updated_balance": "更新後の残高",
+      "transaction_id": "取引ID",
+      "back_to_wallet": "ウォレットに戻る",
+      "download_receipt": "領収書をダウンロード"
+    },
+    "checkout": {
+      "top_title": "安全なチェックアウト",
+      "title": "お支払い方法",
+      "subtitle": "プレミアムアクセスのご希望の方法を選択してください",
+      "tab_card": "カード",
+      "tab_apple_pay": "Apple Pay",
+      "card_number_label": "カード番号",
+      "card_number_placeholder": "XXXX XXXX XXXX XXXX",
+      "expiry_placeholder": "MM/YY",
+      "cvc_placeholder": "CVC",
+      "pay_button": "{{amount}}を支払う",
+      "secure_stripe": "安全なStripeチェックアウト",
+      "encryption_active": "暗号化が有効",
+      "pci_compliant": "PCI準拠",
+      "encrypted": "暗号化済み",
+      "bank_grade": "銀行レベル",
+      "private": "プライベート",
+      "footer": "この購入を完了すると、利用規約に同意したことになります。あなたのデータはIAMeetYouのプライバシーポリシーによって保護されています。"
+    }
+  },
+
+  "profileLayout": {
+    "avg_match": "平均マッチ度",
+    "matches": "マッチ数",
+    "in_labs": "ラボ参加数",
+    "mbti": "MBTI",
+    "mbti_desc": "ENFP - 運動家",
+    "love_languages": "愛の言語",
+    "love_languages_desc": "クオリティタイム",
+    "attachment_style": "アタッチメントスタイル",
+    "attachment_style_desc": "安定型",
+    "big_five": "ビッグファイブ（OCEAN）",
+    "big_five_desc": "未完了",
+    "interest_art": "アート",
+    "interest_travel": "旅行",
+    "interest_music": "音楽",
+    "interest_fitness": "フィットネス",
+    "interest_cooking": "料理",
+    "interest_reading": "読書",
+    "available_balance": "利用可能残高",
+    "time_usage": "利用時間",
+    "remaining": "残り{{time}}",
+    "manage_subscription": "サブスクリプション管理",
+    "invite_friends": "友達を招待"
+  },
+
+  "profileSidebar": {
+    "become_influencer": "インフルエンサーになる",
+    "earn_rewards_desc": "シェアして報酬を獲得",
+    "account": "アカウント",
+    "preferences": "設定",
+    "edit_profile": "プロフィールを編集",
+    "subscription": "サブスクリプション",
+    "get_verified": "本人確認をする",
+    "language": "言語",
+    "settings": "設定",
+    "privacy_security": "プライバシーとセキュリティ",
+    "display_mode": "表示モード",
+    "notifications": "通知",
+    "apply_promo_code": "プロモコードを適用",
+    "invisible_mode": "非表示モード",
+    "premium_badge": "プレミアム",
+    "invisible_mode_desc1": "匿名でプロフィールを閲覧",
+    "invisible_mode_desc2": "閲覧中、あなたの活動やオンライン状況を他の人から隠します。",
+    "light_mode": "☀️ ライトモード",
+    "dark_mode": "🌙 ダークモード",
+    "bronze_mode": "🟤 ブロンズモード"
+  },
+
+  "verification": {
+    "title": "KYC認証",
+    "step": "ステップ {{step}} / {{total}}",
+    "heading": "本人確認を行う",
+    "description": "コミュニティの安全を守るため、あなたの身元を迅速に確認する必要があります。",
+    "upload_id": "政府発行IDをアップロード",
+    "passport": "パスポート",
+    "upload_your_id": "身分証明書をアップロード",
+    "no_file_selected": "ファイルが選択されていません",
+    "size_placeholder": "0 MB",
+    "replace": "差し替え",
+    "upload": "アップロード",
+    "take_selfie": "自撮りを撮る",
+    "selfie_desc": "IDと照合するための簡単な写真",
+    "upload_selfie": "自撮りをアップロード",
+    "retake": "撮り直す",
+    "submit": "認証を送信 →",
+    "agreement_prefix": "送信することで、当社の",
+    "terms_of_service": "利用規約"
   }
 }

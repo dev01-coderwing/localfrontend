@@ -640,7 +640,15 @@
     "recent_history": "最近记录",
     "show_less": "显示更少",
     "view_all": "查看全部",
-    "disclaimer": "Meons不能提取或兑换为真实货币。使用受条款约束。"
+    "disclaimer": "Meons不能提取或兑换为真实货币。使用受条款约束。",
+    "convert_to_meons": "转换为 Meons",
+    "rate_display": "€1.00 = 100",
+    "live_conversion_rate": "实时兑换汇率",
+    "enter_amount": "输入金额",
+    "store_credit": "商店余额（€）",
+    "you_will_receive": "您将获得",
+    "important_notice": "重要提示",
+    "meons_notice": "Meons仅为虚拟货币。此为单向转换，完成后Meons无法兑换回现金。"
   },
 
   "earnMeons": {
@@ -1492,5 +1500,243 @@
     "meons_reward": "15 Meons",
     "claim_reward": "领取奖励",
     "play_again": "再玩一次"
+  },
+
+  "addons": {
+    "title": "提升您的体验",
+    "subtitle": "添加选项以最大化您的机会。",
+    "total": "总计（欧元）",
+    "total_meons": "Meons 总数",
+    "continue": "继续",
+    "per_month": "/月",
+    "badge_save_17": "节省17%",
+    "plan_annual": "年付",
+    "plan_monthly": "月付",
+    "plan_onetime": "一次性付款",
+    "note_two_months_free": "免费2个月",
+    "feature_icon": "图标",
+    "freeplan": {
+      "name": "L'Apéritif",
+      "badge": "免费",
+      "feature_questions": "20个问题",
+      "feature_mode_acting": "2次 Mode Acting®",
+      "feature_unlimited_swipes": "无限滑动",
+      "feature_compatibility": "匹配度：最高0–35%",
+      "feature_meon_day": "每天1个Meon（连接）",
+      "feature_mini_games": "包含小游戏",
+      "cta": "以免费模式继续 →"
+    },
+    "lucascope_guide": {
+      "name": "Lucascope Guide",
+      "subtitle": "每月+1小时占星与匹配度分析",
+      "feature_time": "每月+1小时Lucas时间",
+      "feature_personal_astro": "个人占星（出生图、星座运势）",
+      "feature_no_synastry": "不含合盘分析"
+    },
+    "lucascope_infinity": {
+      "name": "Lucascope Infinity",
+      "subtitle": "年付方案节省2个月",
+      "feature_time": "每月+4小时Lucas时间",
+      "feature_personal_astro_synastry": "个人占星 + 合盘分析"
+    },
+    "le_digestif": {
+      "name": "Le Digestif",
+      "subtitle": "（一次性购买）",
+      "feature_questions": "50个私密问题",
+      "feature_compatibility": "匹配度+5%",
+      "feature_mode_acting": "5次 Mode Acting®",
+      "feature_permanent_access": "永久访问",
+      "header_price": "€9.99"
+    },
+    "footnote_cop1": "COP1（Lucascope Guide）：基础版，提供简单指导：日/月匹配度、每日星座运势、简短的关系建议。",
+    "footnote_cop2": "COP2（Lucascope Infinity +）：进阶版，提供完整合盘分析、业力分析、伴侣周期、未来预测。",
+    "footnote_relocation": "搬迁筛选：在您当前和未来所在的城市展示您的资料，以便在到达之前就能建立联系（例如工作调动、海外留学）。限制：Serenity（同一国家）、Elite（全球）。是否可用取决于 IAMeetYou 在各国的开放情况。"
+  },
+
+  "cards": {
+    "mute_title": "静音对话",
+    "mute_desc": "静音Sophia的通知？您可以随时取消静音。",
+    "mute_button": "静音",
+    "report_title": "举报用户",
+    "report_desc": "因不当行为举报Sophia？我们的团队将进行审核。",
+    "report_button": "举报",
+    "block_title": "屏蔽用户",
+    "block_desc": "您确定要屏蔽Sophia吗？对方将无法再给您发消息。",
+    "block_button": "屏蔽",
+    "cancel": "取消"
+  },
+
+  "share": {
+    "invite_connections": {
+      "title": "邀请联系人",
+      "search_placeholder": "搜索消息...",
+      "invite_sent": "邀请发送成功",
+      "invite_button": "邀请",
+      "message_review": "查看消息",
+      "message_preview": "和我一起加入 IAMeetYou，一起探索更多精彩！",
+      "send_invite": "发送邀请",
+      "active_now": "当前在线",
+      "active_5m": "5分钟前活跃",
+      "active_1h": "1小时前活跃",
+      "active_20m": "20分钟前活跃"
+    },
+    "invite_friends": {
+      "title": "扩展你的社交圈",
+      "heading": "真挚的关系值得被奖励",
+      "description": "邀请朋友加入IAMeetYou，双方都可解锁专属高级福利。",
+      "special_offer": "特别优惠",
+      "you": "你们",
+      "both": "两人都",
+      "get": "获得",
+      "benefit": "福利",
+      "on_premium": "高级会员",
+      "applied_note": "将自动应用于您下一个匹配点数订阅等级。",
+      "quick_invite": "快速邀请",
+      "share_link": "分享邀请链接",
+      "chat_invite": "通过应用内聊天邀请",
+      "invite_button": "邀请朋友",
+      "footer": "完成此购买即表示您同意我们的服务条款。您的数据受IAMeetYou隐私政策保护。"
+    },
+    "link_modal": {
+      "title": "分享邀请",
+      "heading": "分享邀请链接",
+      "friend_gets": "您的朋友获得",
+      "ten_percent_off": "9折优惠",
+      "you_earn": "您将获得",
+      "ten_percent_cashback": "10%返现",
+      "referral_link_label": "您的推荐链接",
+      "messaging": "短信",
+      "more": "更多"
+    },
+    "invite_preview": {
+      "title": "分享邀请",
+      "heading": "准备好邀请了吗？",
+      "description": "在与朋友分享这份心意之前，请先查看您的消息。",
+      "preview_message": "消息预览",
+      "to_contacts": "发送给您的联系人",
+      "join_me_on": "和我一起加入",
+      "first_sub_offer": "您将获得首次订阅9折优惠。",
+      "send_invite": "发送邀请"
+    }
+  },
+
+  "payment": {
+    "failed": {
+      "top_title": "支付",
+      "title": "支付失败",
+      "description": "您的付款被拒绝。请尝试其他支付方式或联系您的银行。",
+      "retry": "重试",
+      "change_method": "更改支付方式"
+    },
+    "method": {
+      "top_title": "支付方式",
+      "title": "支付方式",
+      "subtitle": "选择您偏好的方式",
+      "add_new_card": "添加新卡",
+      "add": "添加",
+      "credit_debit_card": "信用卡/借记卡",
+      "visa_ending": "尾号为....1234的Visa卡",
+      "paypal": "PayPal",
+      "paypal_desc": "通过PayPal安全结账",
+      "pay_now": "立即支付"
+    },
+    "success": {
+      "top_title": "支付成功",
+      "title_line1": "余额已",
+      "title_line2": "成功添加",
+      "added_amount": "已添加金额",
+      "updated_balance": "更新后余额",
+      "transaction_id": "交易编号",
+      "back_to_wallet": "返回钱包",
+      "download_receipt": "下载收据"
+    },
+    "checkout": {
+      "top_title": "安全结账",
+      "title": "支付方式",
+      "subtitle": "选择您偏好的高级权限支付方式",
+      "tab_card": "银行卡",
+      "tab_apple_pay": "Apple Pay",
+      "card_number_label": "卡号",
+      "card_number_placeholder": "XXXX XXXX XXXX XXXX",
+      "expiry_placeholder": "MM/YY",
+      "cvc_placeholder": "CVC",
+      "pay_button": "支付 {{amount}}",
+      "secure_stripe": "安全的Stripe结账",
+      "encryption_active": "加密已启用",
+      "pci_compliant": "符合PCI标准",
+      "encrypted": "已加密",
+      "bank_grade": "银行级别",
+      "private": "隐私保护",
+      "footer": "完成此购买即表示您同意我们的服务条款。您的数据受IAMeetYou隐私政策保护。"
+    }
+  },
+
+  "profileLayout": {
+    "avg_match": "平均匹配度",
+    "matches": "匹配数",
+    "in_labs": "实验室参与",
+    "mbti": "MBTI",
+    "mbti_desc": "ENFP - 竞选者",
+    "love_languages": "爱的语言",
+    "love_languages_desc": "高质量陪伴时间",
+    "attachment_style": "依恋类型",
+    "attachment_style_desc": "安全型",
+    "big_five": "大五人格（OCEAN）",
+    "big_five_desc": "未完成",
+    "interest_art": "艺术",
+    "interest_travel": "旅行",
+    "interest_music": "音乐",
+    "interest_fitness": "健身",
+    "interest_cooking": "烹饪",
+    "interest_reading": "阅读",
+    "available_balance": "可用余额",
+    "time_usage": "时间使用情况",
+    "remaining": "剩余{{time}}",
+    "manage_subscription": "管理订阅",
+    "invite_friends": "邀请朋友"
+  },
+
+  "profileSidebar": {
+    "become_influencer": "成为网红达人",
+    "earn_rewards_desc": "分享即可赚取奖励",
+    "account": "账户",
+    "preferences": "偏好设置",
+    "edit_profile": "编辑资料",
+    "subscription": "订阅",
+    "get_verified": "进行认证",
+    "language": "语言",
+    "settings": "设置",
+    "privacy_security": "隐私与安全",
+    "display_mode": "显示模式",
+    "notifications": "通知",
+    "apply_promo_code": "使用促销码",
+    "invisible_mode": "隐身模式",
+    "premium_badge": "高级会员",
+    "invisible_mode_desc1": "匿名浏览个人资料",
+    "invisible_mode_desc2": "浏览时对他人隐藏您的活动和在线状态。",
+    "light_mode": "☀️ 浅色模式",
+    "dark_mode": "🌙 深色模式",
+    "bronze_mode": "🟤 青铜模式"
+  },
+
+  "verification": {
+    "title": "KYC 认证",
+    "step": "第 {{step}} 步，共 {{total}} 步",
+    "heading": "验证您的身份",
+    "description": "为了保障社区安全，我们需要快速验证您的身份。",
+    "upload_id": "上传政府颁发的身份证件",
+    "passport": "护照",
+    "upload_your_id": "上传您的证件",
+    "no_file_selected": "未选择文件",
+    "size_placeholder": "0 MB",
+    "replace": "替换",
+    "upload": "上传",
+    "take_selfie": "拍摄自拍照",
+    "selfie_desc": "拍摄一张快照以匹配您的证件",
+    "upload_selfie": "上传您的自拍照",
+    "retake": "重新拍摄",
+    "submit": "提交认证 →",
+    "agreement_prefix": "提交即表示您同意我们的",
+    "terms_of_service": "服务条款"
   }
 }
