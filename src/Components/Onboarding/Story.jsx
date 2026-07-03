@@ -5,11 +5,11 @@ import { useDispatch } from "react-redux";
 import { updateStoryThunk } from "../Redux/onboardingSlice";
 import { useTranslation } from "react-i18next";
 
-const interestsList = [
-  "Travel", "Music", "Fitness", "Cooking",
-  "Reading", "Gaming", "Yoga", "Movies",
-  "Photography", "Dancing", "Nature"
-];
+// const interestsList = [
+//   "Travel", "Music", "Fitness", "Cooking",
+//   "Reading", "Gaming", "Yoga", "Movies",
+//   "Photography", "Dancing", "Nature"
+// ];
 
 
 const Story = () => {
@@ -18,15 +18,15 @@ const Story = () => {
   const dispatch = useDispatch();
 
   const [bio, setBio] = useState("");
-  const [interests, setInterests] = useState([]);
+  // const [interests, setInterests] = useState([]);
 
-  const toggleInterest = (item) => {
-    if (interests.includes(item)) {
-      setInterests(interests.filter(i => i !== item));
-    } else {
-      setInterests([...interests, item]);
-    }
-  };
+  // const toggleInterest = (item) => {
+  //   if (interests.includes(item)) {
+  //     setInterests(interests.filter(i => i !== item));
+  //   } else {
+  //     setInterests([...interests, item]);
+  //   }
+  // };
 
 
 
@@ -94,7 +94,7 @@ const Story = () => {
 />
 
 {/* Interests */}
-<div className="flex flex-wrap gap-2 mb-6">
+{/* <div className="flex flex-wrap gap-2 mb-6">
   {interestsList.map((item) => (
     <button
       type="button"
@@ -110,7 +110,7 @@ const Story = () => {
       {t(`story.interests.${item.toLowerCase()}`)}
     </button>
   ))}
-</div>
+</div> */}
 
 {/* Button */}
 <button
