@@ -79,7 +79,7 @@ export default function SplashScreen() {
   <span style={{ color: "#1d1d1f" }}>You</span>
 </h1> */}
 
-      {/* <p
+      <p
         style={{
           color: 'var(--text-dim)',
           marginTop: '8px',
@@ -93,7 +93,7 @@ export default function SplashScreen() {
         }}
       >
         {t('splash.tagline')}
-      </p> */}
+      </p>
     </div>
   );
 }
