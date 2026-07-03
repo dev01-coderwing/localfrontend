@@ -169,9 +169,9 @@
       "feature2": "5 Mode Acting",
       "feature3": "无限滑动",
       "feature4": "兼容度：0-50% 最高",
-      "feature5": "2个月 Iucasope",
+      "feature5": "2个月 Lucascope",
       "feature6": "2次移动/天",
-      "feature7": "赠品：1本 Iucasope 指南",
+      "feature7": "赠品：1本 Lucascope 指南",
       "feature8": "基础徽章"
     },
     "plan2": {
@@ -181,9 +181,9 @@
       "feature2": "9 Mode Acting",
       "feature3": "无限滑动",
       "feature4": "兼容度：0-65% 最高",
-      "feature5": "4个月 Iucasope",
+      "feature5": "4个月 Lucascope",
       "feature6": "3次移动/天",
-      "feature7": "赠品：2本 Iucasope 指南",
+      "feature7": "赠品：2本 Lucascope 指南",
       "feature8": "特权徽章"
     },
     "plan3": {
@@ -193,9 +193,9 @@
       "feature2": "13 Mode Acting",
       "feature3": "无限滑动",
       "feature4": "兼容度：0-100% 最高",
-      "feature5": "6个月 Iucasope",
+      "feature5": "6个月 Lucascope",
       "feature6": "4次移动/天",
-      "feature7": "赠品：3本 Iucasope 指南",
+      "feature7": "赠品：3本 Lucascope 指南",
       "feature8": "精英徽章"
     },
     "secureCheckout": "安全结账",
@@ -483,7 +483,7 @@
     "used_percent": "已使用 {{percent}}%",
     "plan_allocation": "方案分配",
     "allocation_1_title": "订阅时间",
-    "allocation_1_subtitle": "2025年3月15日重置",
+    "allocation_1_subtitle": "{{date}}重置",
     "allocation_1_label": "月度方案",
     "allocation_2_title": "购买的额外时间",
     "allocation_2_subtitle": "永不过期",
