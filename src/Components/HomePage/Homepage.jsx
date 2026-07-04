@@ -175,7 +175,7 @@ function Homepage() {
               onClick={() => setActiveModal("profile")}
               className="   w-14 h-14  rounded-full   bg-gradient-to-r from-[#A000F0] to-[#8A38F5]   flex items-center justify-center  hover:scale-105 transition-all duration-300 "
             >
-              <img src={Heart} alt="" />
+              <img src={RedHeart} alt="" />
 
             </button>
           </div>
