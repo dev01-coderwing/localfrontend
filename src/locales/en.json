@@ -152,9 +152,9 @@
       "feature3": "Unlimited swipes",
       "feature4": "Compatibility: 0-50% max",
       "feature5": "2 months Lucascope",
-      "feature6": "2 Moves/day",
+      "feature6": "Bonus: 2 Meons/day upon login",
       "feature7": "Bonus: 1 Lucascope Guide",
-      "feature8": "Essential Badge"
+      "feature8": "Dégustation Badge"
     },
     "plan2": {
       "name": "Privilège",
@@ -164,9 +164,9 @@
       "feature3": "Unlimited swipes",
       "feature4": "Compatibility: 0-65% max",
       "feature5": "4 months Lucascope",
-      "feature6": "3 Moves/day",
+      "feature6": "Bonus: 3 Meons/day upon login",
       "feature7": "Bonus: 2 Lucascope Guides",
-      "feature8": "Privilege Badge"
+      "feature8": "Privilège Badge"
     },
     "plan3": {
       "name": "Cercle Privé",
@@ -176,9 +176,26 @@
       "feature3": "Unlimited swipes",
       "feature4": "Compatibility: 0-100% max",
       "feature5": "6 months Lucascope",
-      "feature6": "4 Moves/day",
+      "feature6": "Bonus: 4 Meons/day upon login",
       "feature7": "Bonus: 3 Lucascope Guides",
-      "feature8": "Elite Badge"
+      "feature8": "Cercle Privé Badge"
+    },
+    "secureCheckout": "Secure Checkout",
+    "paymentMethod": "Payment Method",
+    "paymentSubtitle": "Select your preferred method for premium access",
+    "cardTab": "Card",
+    "applePayTab": "Apple Pay",
+    "pay": "Pay",
+    "secureStripe": "Secure Stripe Checkout",
+    "encryptionActive": "encryption active",
+    "encrypted": "ENCRYPTED",
+    "bankGrade": "BANK GRADE",
+    "private": "PRIVATE",
+    "purchaseTerms": "By completing this purchase you agree to our Terms of Service. Your data is protected under privacy framework.",
+    "confirmSubscription": "Confirm Subscription",
+    "confirmQuestion": "Are you sure you want to proceed with your selected plan?",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
     },
     "secureCheckout": "Secure Checkout",
     "paymentMethod": "Payment Method",
