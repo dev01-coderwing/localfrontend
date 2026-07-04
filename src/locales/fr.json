@@ -323,11 +323,16 @@
     "title": "Invitation L'Apéritif",
     "badge": "L'Apéritif 🪙",
     "policy_title": "Politique d'invitation",
-    "policy_desc": "20 Meons seront mis en attente. Le destinataire dispose de 48 heures pour accepter votre invitation. En cas de refus ou d'expiration, vous serez intégralement remboursé.",
+    "policy_desc_free_to_free": "La discussion avec ce membre est totalement gratuite car vous partagez le même statut.",
+    "policy_desc_free_to_premium": "Pour initier une connexion avec un membre de niveau supérieur, une caution de 20 Meons est requise. Le destinataire dispose de 48 heures pour accepter. En cas de refus ou d'expiration, vous serez intégralement remboursé.",
     "learn_more": "En savoir plus →",
     "send_rose": "🌹 Envoyer une Rose",
-    "send_invitation": "Envoyer l'invitation (20 Meons)",
-    "cancel": "Annuler"
+    "send_invitation_free": "Discuter gratuitement",
+    "send_invitation_premium": "Envoyer l'invitation (20 Meons)",
+    "cancel": "Annuler",
+    "upgrade_modal_title": "Débloquez les connexions supérieures",
+    "upgrade_modal_desc": "Vous n'avez pas assez de Meons ou vous ne souhaitez pas les dépenser ? En passant à l'abonnement Dégustation, Privilège ou Cercle Privé, vos outils de compatibilité s'élargissent et vos opportunités se multiplient instantanément.",
+    "upgrade_modal_btn": "Voir les abonnements →"
   },
 
   "chatRules": {
