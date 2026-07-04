@@ -28,6 +28,13 @@ i18n
       zh: { translation: zh },
     },
 
+    // Priorise le localStorage pour garder la langue choisie
+    detection: {
+      order: ['localStorage', 'navigator'],
+      lookupLocalStorage: 'i18nextLng',
+      caches: ['localStorage'],
+    },
+
     fallbackLng: "en",
 
     interpolation: {
