@@ -124,3 +124,4 @@ const [open, setOpen] = useState(false);
 };
 
 export default BoostModal;
+
