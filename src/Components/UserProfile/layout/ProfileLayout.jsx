@@ -47,7 +47,7 @@
 //         return "/Image/pin.png";
 
 //       case "Big Five (OCEAN)":
-//         return "/Image/star.png";
+//         return "/Image/Star.png";
 
 //       default:
 //         return "/Image/default.png";
@@ -122,7 +122,7 @@
 //         return "/Image/pin.png";
 
 //       case "Big Five (OCEAN)":
-//         return "/Image/star.png";
+//         return "/Image/Star.png";
 
 //       default:
 //         return "/Image/default.png";
@@ -212,7 +212,7 @@ export default function ProfileLayout() {
           title: t('profileLayout.big_five'),
           desc: t('profileLayout.big_five_desc'),
           status: "pending",
-          img: "/Image/star.png",
+          img: "/Image/Star.png",
         },
       ],
       interests: [
