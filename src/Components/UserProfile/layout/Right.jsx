@@ -31,7 +31,7 @@
 //     influencer: {
 //       title: "Become an Influencer",
 //       desc: "Earn rewards for sharing",
-//       img: "/Image/Star2.png",
+//       img: "/Image/Star.png",
 //     },
 
 //     sections: [
@@ -168,7 +168,7 @@ function Right() {
     influencer: {
       title: t('profileSidebar.become_influencer'),
       desc: t('profileSidebar.earn_rewards_desc'),
-      img: "/Image/Star2.png",
+      img: "/Image/Star.png",
     },
 
     sections: [
