@@ -59,7 +59,7 @@
     "privacyPolicy": "Politique de confidentialité",
     "themeLight": "Clair",
     "themeDark": "Sombre",
-    "themeBrown": "Marron"
+    "themeBrown": "Bronze"
   },
 
   "location": {
@@ -122,13 +122,19 @@
     "continue": "Continuer"
   },
 
-  "religionOptions": {
+ "religionOptions": {
     "title": "Religion",
     "subtitle": "C'est facultatif et aide à la compatibilité",
+    "preferNotToSpecify": "Je ne souhaite pas le préciser",
     "christian": "Chrétien",
     "muslim": "Musulman",
     "hindu": "Hindou",
     "buddhist": "Bouddhiste",
+    "jewish": "Juif",
+    "sikh": "Sikh",
+    "atheist_agnostic": "Athée / Agnostique",
+    "spiritual": "Spirituel mais non religieux",
+    "other": "Autre",
     "skip": "Non, ignorer cette étape",
     "continue": "Continuer"
   },
@@ -169,9 +175,9 @@
       "feature2": "5 Mode Acting",
       "feature3": "Swipes illimités",
       "feature4": "Compatibilité: 0-50% max",
-      "feature5": "2 mois Iucasope",
+      "feature5": "2 mois Lucascope",
       "feature6": "2 Déplacements/jour",
-      "feature7": "Bonus: 1 Guide Iucasope",
+      "feature7": "Bonus: 1 Guide Lucascope",
       "feature8": "Badge Essentiel"
     },
     "plan2": {
@@ -181,9 +187,9 @@
       "feature2": "9 Mode Acting",
       "feature3": "Swipes illimités",
       "feature4": "Compatibilité: 0-65% max",
-      "feature5": "4 mois Iucasope",
+      "feature5": "4 mois Lucascope",
       "feature6": "3 Déplacements/jour",
-      "feature7": "Bonus: 2 Guides Iucasope",
+      "feature7": "Bonus: 2 Guides Lucascope",
       "feature8": "Badge Privilège"
     },
     "plan3": {
@@ -193,9 +199,9 @@
       "feature2": "13 Mode Acting",
       "feature3": "Swipes illimités",
       "feature4": "Compatibilité: 0-100% max",
-      "feature5": "6 mois Iucasope",
+      "feature5": "6 mois Lucascope",
       "feature6": "4 Déplacements/jour",
-      "feature7": "Bonus: 3 Guides Iucasope",
+      "feature7": "Bonus: 3 Guides Lucascope",
       "feature8": "Badge Élite"
     },
     "secureCheckout": "Paiement sécurisé",
@@ -212,12 +218,12 @@
     "purchaseTerms": "En finalisant cet achat, vous acceptez nos Conditions d'utilisation. Vos données sont protégées dans le cadre de notre politique de confidentialité.",
     "confirmSubscription": "Confirmer l'abonnement",
     "confirmQuestion": "Êtes-vous sûr de vouloir continuer avec le plan sélectionné ?",
-    "confirm": "Confirm",
+    "confirm": "Confirmer",
     "cancel": "Annuler"
   },
 
   "launch": {
-    "badge": "Lucas Personal AI",
+    "badge": "Lucas Coach ",
     "voiceSyncLabel": "Sync Vocale",
     "voiceSyncValue": "100% Compatible",
     "emotionalToneLabel": "Ton Émotionnel",
@@ -254,7 +260,7 @@
     "progressText": "10 sur 230",
     "sampleQuestion": "\"Quelle est votre façon idéale de passer un week-end ?\"",
     "tapToRecord": "Appuyez pour enregistrer",
-    "minimumSeconds": "Minimum 5 secondes requises"
+    "minimumSeconds": "Minimum 7 secondes requises"
   },
 
   "subscription2": {
@@ -269,8 +275,8 @@
       "mini": "Mini",
       "small": "Petit",
       "medium": "Moyen",
-      "xl": "XL",
-      "large": "Grand"
+      "large": "Grand",
+      "XL": "Max"
     },
     "visibilityBoosts": "Boosts de Visibilité",
     "singleBoosts": "Boosts Individuels",
@@ -319,7 +325,7 @@
     "lucasTime2h": "2 Heures",
     "lucasTime5h": "5 Heures",
     "lucasTime10h": "10 Heures",
-    "lucascopeGuide": "Guide Lucascope",
+    "lucascopeGuide": "Lucascope Guide",
     "lucascopeGuideDesc": "+1h/mois d'astrologie et compatibilité",
     "lucascopeInfinity": "Lucascope Infinity",
     "lucascopeInfinityDesc": "Économisez 2 mois sur le plan annuel",
@@ -369,15 +375,15 @@
     "satellite_linked": "SATELLITE CONNECTÉ",
     "search_placeholder": "Rechercher des coordonnées...",
     "back_to_soulmap": "Retour à Soulmap",
-    "live_scan": "Scan en Direct",
-    "scan_title": "Recherche de votre égal sur la planète",
-    "scan_desc": "Synchronisation de fréquence globale en cours",
+    "live_scan": "Scan planétaire en cours",
+    "scan_title": "Synchronisation des fréquences",
+    "scan_desc": "Cartographie globale en cours",
     "premium_badge": "Synchronisation Astra-Émotionnelle Requise",
     "premium_title": "Moins de 0,1 % des personnes sur Terre peuvent vous atteindre.",
     "premium_desc_before": "Pour maintenir le plus haut standard de connexion, la Soul Map n'est visible qu'aux personnes partageant un score de compatibilité",
     "premium_desc_highlight": "+70% Astrale et Émotionnelle",
     "premium_desc_after": ".",
-    "premium_italic": "*Êtes-vous prêt à voir où bat votre cœur sur cette planète ?*",
+    "premium_italic": "*Où se trouve votre résonance vibratoire sur cette Terre ?*",
     "upgrade_btn": "Passer à Elite +",
     "what_is": "Qu'est-ce que Soul Map ?",
     "geo_not_supported": "La géolocalisation n'est pas prise en charge par votre navigateur.",
@@ -418,7 +424,7 @@
     "memory_serenity": "Serenity : 1 mois",
     "memory_elite": "Elite : 2 mois",
     "dating_coach": "Coach Rencontres",
-    "welcome_message": "Salut ! Je suis Lucas, votre coach IA pour les rencontres. Je suis là pour vous aider à naviguer vos connexions avec des insights plus profonds. Que souhaitez-vous savoir ?",
+    "welcome_message": "Salut ! Je suis Lucas, votre coach IA pour les rencontres. Je suis là pour vous accompagner dans vos rencontres avec des éclairages plus profonds. Que souhaitez-vous savoir ?",
     "user_message": "Bonjour ! Je vais très bien, merci ! Et vous ?",
     "input_placeholder": "Demandez n'importe quoi à Lucas..."
   },
@@ -483,7 +489,7 @@
     "used_percent": "{{percent}}% Utilisé",
     "plan_allocation": "Allocation du Plan",
     "allocation_1_title": "Temps d'Abonnement",
-    "allocation_1_subtitle": "Réinitialise le 15 mars 2025",
+    "allocation_1_subtitle": "Réinitialisation le {{date}}",
     "allocation_1_label": "Plan Mensuel",
     "allocation_2_title": "Temps Extra Acheté",
     "allocation_2_subtitle": "N'expire jamais",
@@ -1451,6 +1457,7 @@
     "play_again": "Rejouer"
   },
 
+
   "heartMemory": {
     "title": "Mémoire du cœur",
     "subtitle": "Trouvez toutes les paires amoureuses",
@@ -1674,7 +1681,7 @@
   "profileLayout": {
     "avg_match": "Compatibilité moy.",
     "matches": "Correspondances",
-    "in_labs": "Dans les Labs",
+    "in_labs": "Dans Labs",
     "mbti": "MBTI",
     "mbti_desc": "ENFP - L'Inspirateur",
     "love_languages": "Langages de l'amour",
@@ -1682,13 +1689,7 @@
     "attachment_style": "Style d'attachement",
     "attachment_style_desc": "Sécurisé",
     "big_five": "Big Five (OCEAN)",
-    "big_five_desc": "Non terminé",
-    "interest_art": "Art",
-    "interest_travel": "Voyage",
-    "interest_music": "Musique",
-    "interest_fitness": "Fitness",
-    "interest_cooking": "Cuisine",
-    "interest_reading": "Lecture",
+    "big_five_desc": "{{status}}",
     "available_balance": "Solde disponible",
     "time_usage": "Utilisation du temps",
     "remaining": "{{time}} restant",
