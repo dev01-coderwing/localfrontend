@@ -111,8 +111,8 @@
   },
 
   "religionOptions": {
-    "title": "宗派・宗教",
-    "subtitle": "（任意項目）相性の算出に役立ちます",
+    "title": "宗教・宗派",
+    "subtitle": "（任意）相性の算出に役立ちます",
     "preferNotToSpecify": "回答しない",
     "christian": "キリスト教",
     "muslim": "イスラム教",
@@ -123,7 +123,7 @@
     "atheist_agnostic": "無神論者 / 不可知論者",
     "spiritual": "スピリチュアル（特定の宗教は信仰していない）",
     "other": "その他",
-    "skip": "いいえ、このステップをスキップする",
+    "skip": "このステップをスキップ",
     "continue": "続ける"
   },
 
