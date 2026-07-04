@@ -148,18 +148,6 @@
     "skip": "Skip for now"
   },
 
-  "religion": {
-    "title": "Religion",
-    "subtitle": "This is optional and helps with compatibility",
-    "preferNotToSpecify": "Prefer not to specify",
-    "christian": "Christian",
-    "muslim": "Muslim",
-    "hindu": "Hindu",
-    "buddhist": "Buddhist",
-    "skip": "No, skip this step",
-    "continue": "Continue"
-  },
-
   "subscription": {
     "title": "Reveal your perfect match",
     "subtitle": "Choose a subscription to unlock more accurate compatibility and exclusive features.",
@@ -257,10 +245,10 @@
   "voice": {
     "title": "Voice Analysis",
     "questionProgress": "Question progress",
-    "progressText": "10 of 230",
+    "progressText": "{{current}} of {{total}}",
     "sampleQuestion": "\"What's your ideal way to spend a weekend?\"",
     "tapToRecord": "Tap to record",
-    "minimumSeconds": "Minimum 5 seconds required"
+    "minimumSeconds": "Minimum 7 seconds required"
   },
 
   "subscription2": {
@@ -1105,13 +1093,13 @@
     "view": "View",
     "ai_insights": "AI INSIGHTS",
     "lucas_ai": "Lucas AI",
-    "lucas_ai_msg": "\"You compatibility with NTR just went up! She just added photography to her interests.\"",
+    "lucas_ai_msg": "\"Your compatibility with {{name}} just went up!\"",
     "analyze_profile": "Analyze profile →",
     "messages": "Messages",
     "unread_conversations": "{{n}} unread conversations",
     "system": "SYSTEM",
     "new_login": "NEW Login detected",
-    "new_login_desc": "A new login form London, UK was detected...",
+    "new_login_desc": "A new login from {{location}} was detected...",
     "invitation": "Invitation",
     "accepted": "Accepted",
     "start_chatting": "Start chatting",
@@ -1262,7 +1250,7 @@
 
   "lucasLab": {
     "title": "Lucas Lab Overview",
-    "profile_name": "Nicole Jennifer",
+    "profile_name": "{{name}}",
     "profile_sub": "Deep psychological analysis",
     "overall_match": "Overall Match",
     "psychological_insights": "Psychological Insights",
@@ -1270,13 +1258,13 @@
     "mbti_sub": "Cognitive preferences",
     "love_name": "Love Languages",
     "love_sub": "Primary love expression",
-    "love_badge": "Quality Time",
+    "love_badge": "{{love_language_badge}}",
     "attachment_name": "Attachment Style",
     "attachment_sub": "Relationship patterns",
-    "attachment_badge": "Secure",
+    "attachment_badge": "{{attachment_badge}}",
     "ocean_name": "Big Five (OCEAN)",
     "ocean_sub": "Personality traits",
-    "ocean_badge": "High Openness",
+    "ocean_badge": "{{ocean_badge}}",
     "potential_challenges": "Potential Challenges",
     "challenges_desc": "Communication styles may differ during conflict resolution...",
     "unlock_insights": "Unlock full insights",
@@ -1421,9 +1409,9 @@
     "vip_title": "VIP Pass",
     "vip_name": "Unlimited Boost",
     "vip_validity": "Valid for 7 Days",
-    "vip_feature_1": "Minimum 8 characters",
-    "vip_feature_2": "At least 1 uppercase letter",
-    "vip_feature_3": "At least 1 number",
+    "vip_feature_1": "Priority visibility in Explorer",
+    "vip_feature_2": "Highlighted profile badge",
+    "vip_feature_3": "Anonymous profile browsing",
     "go_vip": "Go VIP",
     "total_meons": "Total Meons:",
     "balance": "Balance:",
@@ -1679,15 +1667,15 @@
   },
 
   "profileLayout": {
-    "avg_match": "Avg. Match",
+    "avg_match": "Avg Match",
     "matches": "Matches",
     "in_labs": "In Labs",
     "mbti": "MBTI",
-    "mbti_desc": "ENFP - The Campaigner",
+    "mbti_desc": "{{mbti_result}}",
     "love_languages": "Love Languages",
-    "love_languages_desc": "Quality Time",
+    "love_languages_desc": "{{love_language_result}}",
     "attachment_style": "Attachment Style",
-    "attachment_style_desc": "Secure",
+    "attachment_style_desc": "{{attachment_result}}",
     "big_five": "Big Five (OCEAN)",
     "big_five_desc": "{{status}}",
     "available_balance": "Available Balance",
