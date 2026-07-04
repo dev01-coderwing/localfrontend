@@ -28,9 +28,9 @@ i18n
       zh: { translation: zh },
     },
 
-    // Priorise le localStorage pour garder la langue choisie
+    // Détection forcée sur le localStorage uniquement pour éviter les conflits
     detection: {
-      order: ['localStorage', 'navigator'],
+      order: ['localStorage'], 
       lookupLocalStorage: 'i18nextLng',
       caches: ['localStorage'],
     },
