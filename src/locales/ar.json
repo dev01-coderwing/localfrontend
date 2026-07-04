@@ -71,21 +71,21 @@
 
   "identity": {
     "title": "اختر هويتك",
-    "subtitle": "حدد خيارك المفضل",
+    "subtitle": "حدد الخيار الذي يناسبك",
     "selectPlaceholder": "اختر الهوية",
-    "male": "ذكر",
-    "female": "أنثى",
-    "couple": "زوجان",
+    "male": "رجل",
+    "female": "امرأة",
     "continue": "متابعة"
   },
 
   "basicInfo": {
-    "title": "المعلومات الأساسية",
-    "subtitle": "دعنا نتعرف عليك أكثر",
-    "namePlaceholder": "أدخل اسمك",
-    "pronounsPlaceholder": "هو/هو، هي/هي",
-    "men": "رجال",
-    "women": "نساء",
+    "title": "معلومات أساسية",
+    "subtitle": "دعنا نتعرف عليك",
+    "namePlaceholder": "الاسم الأول",
+    "pronounsPlaceholder": "الضمائر (مثال: هو، هي...)",
+    "searchPreference": "من تود أن تقابل؟",
+    "men": "الرجال",
+    "women": "النساء",
     "everyone": "الجميع",
     "continue": "متابعة"
   },
@@ -120,12 +120,18 @@
   },
 
   "religionOptions": {
-    "title": "الدين",
-    "subtitle": "هذا اختياري ويساعد في التوافق",
+    "title": "الديانة",
+    "subtitle": "هذا الاختيار اختياري ويساعد في تحديد نسبة التوافق",
+    "preferNotToSpecify": "أفضل عدم التحديد",
     "christian": "مسيحي",
     "muslim": "مسلم",
     "hindu": "هندوسي",
     "buddhist": "بوذي",
+    "jewish": "يهودي",
+    "sikh": "سيخي",
+    "atheist_agnostic": "ملحد / لا أدري",
+    "spiritual": "روحاني ولكن غير متدين",
+    "other": "أخرى",
     "skip": "لا، تخطَّ هذه الخطوة",
     "continue": "متابعة"
   },
@@ -166,9 +172,9 @@
       "feature2": "5 Mode Acting",
       "feature3": "تمريرات غير محدودة",
       "feature4": "التوافق: 0-50% كحد أقصى",
-      "feature5": "شهران Iucasope",
+      "feature5": "شهران Lucascope",
       "feature6": "2 حركة/يوم",
-      "feature7": "مكافأة: دليل Iucasope 1",
+      "feature7": "مكافأة: دليل Lucascope 1",
       "feature8": "شارة الأساسيات"
     },
     "plan2": {
@@ -178,9 +184,9 @@
       "feature2": "9 Mode Acting",
       "feature3": "تمريرات غير محدودة",
       "feature4": "التوافق: 0-65% كحد أقصى",
-      "feature5": "4 أشهر Iucasope",
+      "feature5": "4 أشهر Lucascope",
       "feature6": "3 حركات/يوم",
-      "feature7": "مكافأة: 2 دليل Iucasope",
+      "feature7": "مكافأة: 2 دليل Lucascope",
       "feature8": "شارة الامتياز"
     },
     "plan3": {
@@ -190,9 +196,9 @@
       "feature2": "13 Mode Acting",
       "feature3": "تمريرات غير محدودة",
       "feature4": "التوافق: 0-100% كحد أقصى",
-      "feature5": "6 أشهر Iucasope",
+      "feature5": "6 أشهر Lucascope",
       "feature6": "4 حركات/يوم",
-      "feature7": "مكافأة: 3 أدلة Iucasope",
+      "feature7": "مكافأة: 3 أدلة Lucascope",
       "feature8": "شارة النخبة"
     },
     "secureCheckout": "دفع آمن",
