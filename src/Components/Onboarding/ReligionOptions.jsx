@@ -84,5 +84,4 @@ const ReligionOptions = () => {
 </div>
   );
 };
-
 export default ReligionOptions;
