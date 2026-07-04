@@ -319,28 +319,28 @@
     "retry": "Réessayer"
   },
 
-  "chatInvitation": {
-    "title": "Invitation à discuter gratuite",
+ "chatInvitation": {
+    "title": "Invitation L'Apéritif",
     "badge": "L'Apéritif 🪙",
     "policy_title": "Politique d'invitation",
-    "policy_desc": "Le destinataire doit accepter votre invitation avant de pouvoir discuter.",
+    "policy_desc": "20 Meons seront mis en attente. Le destinataire dispose de 48 heures pour accepter votre invitation. En cas de refus ou d'expiration, vous serez intégralement remboursé.",
     "learn_more": "En savoir plus →",
     "send_rose": "🌹 Envoyer une Rose",
-    "send_invitation": "Envoyer l'invitation",
+    "send_invitation": "Envoyer l'invitation (20 Meons)",
     "cancel": "Annuler"
   },
 
   "chatRules": {
-    "title": "Règles d'invitation à discuter",
-    "subtitle": "Bâtir la confiance et des connexions significatives.",
-    "invite_title": "Inviter à discuter",
-    "invite_desc": "Chaque nouvelle discussion nécessite une invitation pour garantir des échanges de qualité.",
-    "recipient_title": "Le choix du destinataire",
-    "recipient_desc": "Le destinataire doit accepter ou refuser votre demande avant que vous ne puissiez échanger.",
-    "consent_title": "Le consentement d'abord",
-    "consent_desc": "Dites-nous comment nous pouvons améliorer votre expérience.",
-    "warning": "ℹ️ Ce système prévient le harcèlement et les faux profils.",
-    "understand": "Je comprends"
+    "title": "Règles d'invitation",
+    "subtitle": "Bâtir la confiance et bloquer les profils malveillants.",
+    "invite_title": "Invitation sécurisée",
+    "invite_desc": "Chaque ouverture de discussion bloque 20 Meons temporairement pour garantir des échanges sérieux.",
+    "recipient_title": "Délai limite de 48 heures",
+    "recipient_desc": "Le destinataire doit accepter ou refuser sous 48h. Si l'invitation expire ou est refusée, vos 20 Meons vous sont instantanément restitués.",
+    "consent_title": "Protection anti-spam",
+    "consent_desc": "Ce système protège la communauté et empêche les faux profils de vous harceler.",
+    "warning": "ℹ️ Vos Meons ne sont débités définitivement que si l'invitation est acceptée.",
+    "understand": "Je comprends et j'accepte"
   },
 
   "soulmap": {
