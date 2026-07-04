@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "/Image/IAMeetYou.png";
+import logo from "/Image/IAMeetYou-logo2.png";
 import { useTranslation } from "react-i18next";
 
 const Identity = () => {
