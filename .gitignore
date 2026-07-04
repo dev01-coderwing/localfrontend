@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
+# ... (tes lignes existantes)
+*.sw?
+dist.zip
