@@ -6,7 +6,7 @@ import infinite from "/Image/infinet.png"
 import Heart from "/Image/heart-icon.png";
 import noto from "/Image/noto.png"
 import icon from "/Image/icon.png"
-// import { RedHeart } from 'lucide-react';
+// import { Heart } from 'lucide-react';
 import chatImg from "/Image/chatIcon.png";
 import ChatRulesModal from "../Cards/ChatRulesModal";
 import LucasLabOverview from "./LucasLabOverview";
@@ -175,7 +175,7 @@ function Homepage() {
               onClick={() => setActiveModal("profile")}
               className="   w-14 h-14  rounded-full   bg-gradient-to-r from-[#A000F0] to-[#8A38F5]   flex items-center justify-center  hover:scale-105 transition-all duration-300 "
             >
-              <img src={RedHeart} alt="" />
+              <img src={Heart} alt="" />
 
             </button>
           </div>
