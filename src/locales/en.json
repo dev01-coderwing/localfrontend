@@ -319,28 +319,33 @@
     "retry": "Retry"
   },
 
-  "chatInvitation": {
-    "title": "Free Chat Invitation",
+ "chatInvitation": {
+    "title": "L'Apéritif Invitation",
     "badge": "L'Apéritif 🪙",
     "policy_title": "Invitation Policy",
-    "policy_desc": "The recipient must accept your invitation before chatting.",
+    "policy_desc_free_to_free": "Chatting with this member is completely free since you share the same profile tier.",
+    "policy_desc_free_to_premium": "To connect with a higher-tier member, a 20 Meons escrow fee is required. The recipient has 48 hours to accept. If declined or expired, you will be fully refunded.",
     "learn_more": "Learn more →",
     "send_rose": "🌹 Send Rose",
-    "send_invitation": "Send Invitation",
-    "cancel": "Cancel"
+    "send_invitation_free": "Chat for Free",
+    "send_invitation_premium": "Send Invitation (20 Meons)",
+    "cancel": "Cancel",
+    "upgrade_modal_title": "Unlock Higher Connections",
+    "upgrade_modal_desc": "Out of Meons or prefer not to spend them? Upgrade to Dégustation, Privilège, or Cercle Privé to expand your compatibility tools and unlock immediate premium features.",
+    "upgrade_modal_btn": "View Subscription Plans →"
   },
 
   "chatRules": {
-    "title": "Chat invitation Rules",
-    "subtitle": "Building trust and meaningful connections.",
-    "invite_title": "Invite to chat",
-    "invite_desc": "Every new chat requires an invitation to ensure meaningful connections.",
-    "recipient_title": "Recipient's choice",
-    "recipient_desc": "The recipient must accept or decline your request before you can chat.",
-    "consent_title": "Consent First",
-    "consent_desc": "Tell us how we can improve your experience.",
-    "warning": "ℹ️ This system prevents harassment and fake profiles.",
-    "understand": "I Understand"
+    "title": "Invitation Rules",
+    "subtitle": "Building trust and blocking malicious profiles.",
+    "invite_title": "Secure Invitation",
+    "invite_desc": "Every new chat safely holds 20 Meons temporarily to ensure meaningful and authentic connections.",
+    "recipient_title": "48-Hour Expiration",
+    "recipient_desc": "The recipient must act within 48 hours. If the request is declined or ignored past this limit, your 20 Meons are instantly returned to your wallet.",
+    "consent_title": "Anti-Scam Protection",
+    "consent_desc": "This friction system protects our curated community from spammers, scammers, and fake profiles.",
+    "warning": "ℹ️ Your Meons are only permanently charged once the invitation is accepted.",
+    "understand": "I Understand & Accept"
   },
 
   "soulmap": {
