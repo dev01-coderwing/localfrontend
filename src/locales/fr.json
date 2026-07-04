@@ -338,7 +338,7 @@
     "recipient_title": "Délai limite de 48 heures",
     "recipient_desc": "Le destinataire doit accepter ou refuser sous 48h. Si l'invitation expire ou est refusée, vos 20 Meons vous sont instantanément restitués.",
     "consent_title": "Protection anti-spam",
-    "consent_desc": "Ce système protège la communauté et empêche les faux profils de vous harceler.",
+    "consent_desc": "Ce système protège la communauté et empêche les démarchages abusifs et les faux profils de vous harceler.",
     "warning": "ℹ️ Vos Meons ne sont débités définitivement que si l'invitation est acceptée.",
     "understand": "Je comprends et j'accepte"
   },
