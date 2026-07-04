@@ -196,23 +196,6 @@
     "confirmQuestion": "Are you sure you want to proceed with your selected plan?",
     "confirm": "Confirm",
     "cancel": "Cancel"
-    },
-    "secureCheckout": "Secure Checkout",
-    "paymentMethod": "Payment Method",
-    "paymentSubtitle": "Select your preferred method for premium access",
-    "cardTab": "Card",
-    "applePayTab": "Apple Pay",
-    "pay": "Pay",
-    "secureStripe": "Secure Stripe Checkout",
-    "encryptionActive": "encryption active",
-    "encrypted": "ENCRYPTED",
-    "bankGrade": "BANK GRADE",
-    "private": "PRIVATE",
-    "purchaseTerms": "By completing this purchase you agree to our Terms of Service. Your data is protected under privacy framework.",
-    "confirmSubscription": "Confirm Subscription",
-    "confirmQuestion": "Are you sure you want to proceed with your selected plan?",
-    "confirm": "Confirm",
-    "cancel": "Cancel"
   },
 
   "launch": {
