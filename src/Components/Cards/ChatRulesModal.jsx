@@ -85,3 +85,4 @@ const ChatRulesModal = ({ onClose,onContinue }) => {
 };
 
 export default ChatRulesModal;
+
