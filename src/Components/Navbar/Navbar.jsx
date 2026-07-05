@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import logo from "/Image/logo-nav.png";
+const logo = "/Image/logo-nav.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getUserProfile } from "../Redux/profileSlice";
-import i18n from "../../i18n"; // Assure-toi que le chemin est correct vers ton fichier i18n.js
 import {
   Globe,
   Home,
@@ -13,6 +12,7 @@ import {
   Bell,
   SlidersHorizontal,
   Shield,
+  CircleUser,
   Menu,
   X
 } from "lucide-react";
@@ -23,13 +23,22 @@ import { LogoutUser } from "../Redux/authSlice";
 import { disconnectSocket } from "../../socket";
 import { useTranslation } from "react-i18next";
 
+// Fichier renommé côté dépôt le 05/07/2026 : privilece.png -> privilege.png (faute corrigée)
+const TIER_BADGE_IMAGES = {
+  "Dégustation": "/Image/Degusta.png",
+  "Privilège": "/Image/privilege.png",
+  "Cercle Privé": "/Image/prive.png",
+  "L'Apéritif (Free)": "/Image/silver-icon.png",
+};
+
 function Navbar() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isBoostOpen, setIsBoostOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [avatarError, setAvatarError] = useState(false);
  
   const location = useLocation();
   const navigate = useNavigate();
@@ -40,6 +49,9 @@ function Navbar() {
   const userId = useSelector((state) => state.auth.user?.id);
 
   const IMAGE_BASE_URL = "http://35.180.139.208:3000";
+
+  const tierName = profile?.data?.tier_name || "L'Apéritif (Free)";
+  const tierBadgeImage = TIER_BADGE_IMAGES[tierName];
 
   useEffect(() => {
     if (userId && !profile) {
@@ -128,40 +140,37 @@ function Navbar() {
             })}
           </nav>
 
-          {/* SECTION RIGHT SIDE MODIFIÉE */}
           <div className="flex items-center gap-4">
-            <button 
+            <Link
+              to="/profile/language"
               className="flex items-center gap-1 px-3 py-1 rounded-full border border-[var(--border)] hover:bg-[var(--hover)] transition"
-              onClick={() => {
-                const nextLang = i18n.language === 'fr' ? 'es' : 'fr'; 
-                i18n.changeLanguage(nextLang);
-                localStorage.setItem("i18nextLng", nextLang);
-                window.location.reload(); 
-              }}
             >
               <Globe className="w-4 h-4 text-gray-500" />
               <span className="text-xs font-bold uppercase">{i18n.language}</span>
-            </button>
+            </Link>
 
             <button className="flex items-center gap-2 px-5 py-2 rounded-full bg-[#F5F1FF] text-[#6B21A8] font-semibold text-sm">
-              {t('navbar.privilege_badge')}
-              <Shield className="w-4 h-4 fill-yellow-500" />
+              {tierBadgeImage && (
+                <img src={tierBadgeImage} alt={tierName} className="w-4 h-4 object-contain" />
+              )}
+              {tierName}
             </button>
 
             <div className="relative" ref={dropdownRef}>
               <div
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="w-10 h-10 rounded-full overflow-hidden border cursor-pointer"
+                className="w-10 h-10 rounded-full overflow-hidden border cursor-pointer flex items-center justify-center bg-gray-100"
               >
-                <img
-                  src={
-                    profile?.data?.profileImage
-                      ? `${IMAGE_BASE_URL}/${profile.data.profileImage}`
-                      : "/Image/default-avatar.png"
-                  }
-                  alt={profile?.data?.fullName || "User"}
-                  className="w-full h-full object-cover"
-                />
+                {profile?.data?.profileImage && !avatarError ? (
+                  <img
+                    src={`${IMAGE_BASE_URL}/${profile.data.profileImage}`}
+                    alt={profile?.data?.fullName || "User"}
+                    className="w-full h-full object-cover"
+                    onError={() => setAvatarError(true)}
+                  />
+                ) : (
+                  <CircleUser className="w-7 h-7 text-gray-400" />
+                )}
               </div>
 
               {isDropdownOpen && (
