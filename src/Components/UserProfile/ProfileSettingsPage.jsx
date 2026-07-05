@@ -410,4 +410,3 @@ const ProfileSettingsPage = () => {
 };
 
 export default ProfileSettingsPage;
-export default ProfileSettingsPage;
