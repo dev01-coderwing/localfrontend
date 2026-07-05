@@ -42,7 +42,7 @@ function Left({ data = {} }) {
 
             {data?.verified && (
               <img
-                src="/Image/BlueTick.png"
+                src="/Image/tick.png"
                 alt="Verified"
                 className="w-4 h-4"
               />
