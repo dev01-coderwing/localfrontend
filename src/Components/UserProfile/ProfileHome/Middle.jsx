@@ -24,7 +24,7 @@ function Middle({ data }) {
 
         {/* Content */}
         <div className="relative z-10 flex flex-col justify-center h-full px-5">
-          <img src="/Image/wallet.png" className="w-8 mb-2" />
+          <img src="/Image/meonsImg.png" className="w-8 mb-2" alt="Wallet" />
 
           <p className="text-sm text-[var(--text-dim2)] leading-none">
             {data.balance.label}
