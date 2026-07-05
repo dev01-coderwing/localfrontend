@@ -4,6 +4,8 @@ import Navbar from "../Navbar/Navbar";
 import Right from "./layout/Right";
 import { useTranslation } from "react-i18next";
 
+const MOOD_QUOTE_MAX_LENGTH = 300;
+
 /**
  * PHOTO SLOT COMPONENT
  * Precise recreation of the design slots.
@@ -59,22 +61,6 @@ const PhotoSlot = memo(({ image, index, onUpload, onRemove }) => {
 });
 
 /**
- * INTEREST PILL COMPONENT
- */
-const InterestPill = memo(({ label, onRemove }) => (
-  <div className="flex items-center gap-2 px-5 py-2.5 bg-[var(--bg-card)]/10 text-[var(--text-dim2)] rounded-full text-[11px] font-black uppercase tracking-tight transition-all hover:bg-[#FFB4A0]/40 group">
-    {label}
-    <button
-      type="button"
-      onClick={() => onRemove(label)}
-      className="flex items-center justify-center w-5 h-5 bg-white/40 rounded-full hover:bg-white hover:text-red-500 transition-colors"
-    >
-      <X size={12} className="stroke-[4]" />
-    </button>
-  </div>
-));
-
-/**
  * PROFILE SETTING PAGE
  * Achieve 100% Fidelity with the design image.
  */
@@ -86,7 +72,6 @@ export default function ProfileSetting() {
       null, null, null, null, null
     ],
     bio: "",
-    interests: ["Art", "Travel", "Music", "Fitness", "Cooking", "Reading"],
   });
 
   const handleUpload = useCallback((e, index) => {
@@ -107,19 +92,6 @@ export default function ProfileSetting() {
       return { ...prev, images: next };
     });
   }, []);
-
-  const removeInterest = useCallback((name) => {
-    setProfile((prev) => ({
-      ...prev, interests: prev.interests.filter((i) => i !== name)
-    }));
-  }, []);
-
-  const addInterest = useCallback(() => {
-    const val = window.prompt(t('profileSettings.enter_interest'));
-    if (val && !profile.interests.find(i => i.toLowerCase() === val.toLowerCase())) {
-      setProfile(prev => ({ ...prev, interests: [...prev.interests, val] }));
-    }
-  }, [profile.interests, t]);
 
   return (
     <div className="min-h-screen bg-[var(--bg-background)] ">
@@ -173,36 +145,20 @@ export default function ProfileSetting() {
                   </div>
                 </div>
 
-                {/* 2. BIO SECTION */}
-                <div className="space-y-4">
+                {/* 2. MOOD & QUOTE SECTION (remplace l'ancienne bio libre) */}
+                <div className="space-y-2">
                   <label htmlFor="bio" className="text-sm font-bold text-[var(--text-dim2)] ml-1">{t('profileSettings.bio_label')}</label>
                   <textarea
                     id="bio"
                     value={profile.bio}
+                    maxLength={MOOD_QUOTE_MAX_LENGTH}
                     onChange={(e) => setProfile({ ...profile, bio: e.target.value })}
                     placeholder={t('profileSettings.bio_placeholder')}
                     className="w-full bg-[var(--bg-card)]/10 border border-[var(--border)] rounded-[32px] p-8 text-sm font-medium text-[var(--text-dim2)] outline-none focus:ring-4 focus:ring-purple-50 transition-all shadow-sm min-h-[160px] resize-none placeholder:text-[var(--text-dim2)]"
                   />
-                </div>
-
-                {/* 3. INTERESTS SECTION */}
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between px-2">
-                    <h2 className="text-sm font-bold text-[var(--text-dim2)]">{t('profileSettings.interests')}</h2>
-                    <button
-                      type="button"
-                      onClick={addInterest}
-                      className="text-xs font-black text-[var(--text)] border-b-2 border-gray-900 pb-0.5 hover:text-purple-600 hover:border-purple-600 transition-all uppercase tracking-widest"
-                    >
-                      {t('profileSettings.add_new')}
-                    </button>
-                  </div>
-
-                  <div className="flex flex-wrap gap-3 ">
-                    {profile.interests.map((item) => (
-                      <InterestPill key={item} label={item} onRemove={removeInterest} />
-                    ))}
-                  </div>
+                  <p className="text-xs text-[var(--text-dim2)] text-right pr-2">
+                    {profile.bio.length}/{MOOD_QUOTE_MAX_LENGTH}
+                  </p>
                 </div>
 
                 {/* SAVE ACTION */}
