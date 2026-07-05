@@ -1,6 +1,6 @@
 {
   "splash": {
-    "tagline": "Connecté différemment"
+    "tagline": "Connectez différemment"
   },
   "choose_language": "Choisissez votre langue",
   "select_preferred_language": "Sélectionnez votre langue préférée",
@@ -86,7 +86,7 @@
     "title": "Informations de base",
     "subtitle": "Faisons connaissance",
     "namePlaceholder": "Entrez votre prénom",
-    "pronounsPlaceholder": "il, elle, ils...",
+    "pronounsPlaceholder": "il, elle, iel, ille...",
     "searchPreference": "Qui souhaitez-vous rencontrer ?",
     "men": "Hommes",
     "women": "Femmes",
@@ -153,7 +153,7 @@
       "feature4": "Compatibilité : 0-50% max",
       "feature5": "2 mois de Lucascope",
       "feature6": "Bonus : 2 Meons/jour de connexion",
-      "feature7": "Bonus : 1 Guide Lucascope",
+      "feature7": "Bonus : 1 Lucascope Guide",
       "feature8": "Badge Dégustation"
     },
     "plan2": {
@@ -165,7 +165,7 @@
       "feature4": "Compatibilité : 0-65% max",
       "feature5": "4 mois de Lucascope",
       "feature6": "Bonus : 3 Meons/jour de connexion",
-      "feature7": "Bonus : 2 Guides Lucascope",
+      "feature7": "Bonus : 2 Lucascope Guide",
       "feature8": "Badge Privilège"
     },
     "plan3": {
@@ -177,7 +177,7 @@
       "feature4": "Compatibilité : 0-100% max",
       "feature5": "6 months de Lucascope",
       "feature6": "Bonus : 4 Meons/jour de connexion",
-      "feature7": "Bonus : 3 Guides Lucascope",
+      "feature7": "Bonus : 3 Lucascope Guide",
       "feature8": "Badge Cercle Privé"
     },
     "secureCheckout": "Paiement sécurisé",
@@ -236,7 +236,7 @@
     "progressText": "{{current}} sur {{total}}",
     "sampleQuestion": "\"Quelle est votre façon idéale de passer un week-end ?\"",
     "tapToRecord": "Appuyez pour enregistrer",
-    "minimumSeconds": "Minimum 5 secondes requises"
+    "minimumSeconds": "Minimum 7 secondes requises"
   },
 
   "subscription2": {
@@ -301,7 +301,7 @@
     "lucasTime2h": "2 Heures",
     "lucasTime5h": "5 Heures",
     "lucasTime10h": "10 Heures",
-    "lucascopeGuide": "Guide Lucascope",
+    "lucascopeGuide": "Lucascope Guide",
     "lucascopeGuideDesc": "+1h/mois d'astrologie et de compatibilité",
     "lucascopeInfinity": "Lucascope Infinity",
     "lucascopeInfinityDesc": "Économisez 2 mois sur le plan annuel",
