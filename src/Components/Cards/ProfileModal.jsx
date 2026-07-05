@@ -123,3 +123,4 @@ const ProfileModal = ({ onClose }) => {
 };
 
 export default ProfileModal;
+
