@@ -6,8 +6,6 @@ export const getUserProfile = createAsyncThunk(
   "profile/getUserProfile",
   async (userId, { rejectWithValue }) => {
     try {
-      console.log("Thunk Called", userId);
-
       const token = localStorage.getItem("token");
 
       const response = await api.get(`/profile/user/${userId}`, {
@@ -17,24 +15,44 @@ export const getUserProfile = createAsyncThunk(
         },
       });
 
-      console.log("API Response:", response.data);
-
       return response.data;
     } catch (error) {
-      console.log("API Error:", error);
-
       return rejectWithValue(
         error.response?.data || "Failed to fetch profile"
       );
     }
   }
 );
+export const getPsychologicalProfile = createAsyncThunk(
+  "profile/getPsychologicalProfile",
+  async (_, { rejectWithValue }) => {
+    try {
+      const token = localStorage.getItem("token");
+
+      const response = await api.get("/profile/psychological", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data || "Failed to fetch psychological profile"
+      );
+    }
+  }
+);
+
 const profileSlice = createSlice({
   name: "profile",
   initialState: {
     profile: null,
     loading: false,
     error: null,
+    psychological: null,
+    psychologicalLoading: false,
+    psychologicalError: null,
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -49,6 +67,17 @@ const profileSlice = createSlice({
       .addCase(getUserProfile.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
+      })
+      .addCase(getPsychologicalProfile.pending, (state) => {
+        state.psychologicalLoading = true;
+      })
+      .addCase(getPsychologicalProfile.fulfilled, (state, action) => {
+        state.psychologicalLoading = false;
+        state.psychological = action.payload?.data || action.payload;
+      })
+      .addCase(getPsychologicalProfile.rejected, (state, action) => {
+        state.psychologicalLoading = false;
+        state.psychologicalError = action.payload;
       });
   },
 });

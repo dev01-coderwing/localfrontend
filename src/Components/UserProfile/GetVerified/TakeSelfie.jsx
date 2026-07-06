@@ -104,7 +104,6 @@ const stopCamera = () => {
 
       navigate("/identify");
     } catch (error) {
-      console.log("Upload Error:", error);
     }
   };
 

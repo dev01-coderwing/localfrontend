@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { initializeAuth } from "./Components/Redux/authSlice";
 import { connectSocket, joinUserRoom } from "./socket";
+import { useDailyMeonsReward } from "./hooks/useDailyMeonsReward";
 
 import LanguagePage from "./Components/languagePage/LanguagePage";
 import Singup from "./Components/Singup/Singup";
@@ -22,7 +23,7 @@ import Astrology from "./Components/Onboarding/Astrology";
 import Religion from "./Components/Onboarding/Religion";
 import Subscription from "./Components/Subscription/Subscription";
 import PaymentModal from "./Components/Subscription/Checkout/PaymentModal";
-import ConfirmModal from "./Components/Subscription/Checkout/ConfirmModal.jsx"
+import ConfirmModal from "./Components/Subscription/Checkout/ConfirmModal.jsx";
 import Lanuch from "./Components/Lanuch/Lanuch";
 import CompatibilityTest from "./Components/Lanuch/CompatibilityTest";
 import VoiceConsentModal from "./Components/Lanuch/VoiceConsentModal/VoiceConsentModal";
@@ -67,12 +68,12 @@ import ChatRulesModal from "./Components/Cards/ChatRulesModal.jsx";
 import VerifyModal from "./Components/UserProfile/verification/VerifyModal.jsx";
 import PopupOne from "./Components/UserProfile/verification/PopupOne.jsx";
 import PopupTwo from "./Components/UserProfile/verification/PopupTwo.jsx";
-import GetVerify from "./Components/UserProfile/verification/GetVerify.jsx"
-import Selfie from "./Components/UserProfile/verification/Selfie.jsx"
+import GetVerify from "./Components/UserProfile/verification/GetVerify.jsx";
+import Selfie from "./Components/UserProfile/verification/Selfie.jsx";
 import Submit from "./Components/UserProfile/verification/Sumbit.jsx";
 import VerificationProgress from "./Components/UserProfile/verification/VerificationProgress.jsx";
 
-import RealCurrencyWallet from "./Components/realCurrencyWallet/RealCurrencyWallet.jsx"
+import RealCurrencyWallet from "./Components/realCurrencyWallet/RealCurrencyWallet.jsx";
 import ConvertToMeonsModal from "./Components/realCurrencyWallet/ConvertToMeonsModal.jsx";
 import PaymentMethodModal from "./Components/realCurrencyWallet/PaymentMethodModal.jsx";
 import SecureCheckoutModal from "./Components/realCurrencyWallet/SecureCheckoutModal.jsx";
@@ -89,31 +90,32 @@ import Complete from "./Components/UserProfile/GetVerified/Complete.jsx";
 // import InfluencerDashborad from "./Components/UserProfile/verification/InfluencerDashboard.jsx"
 import SplashScreen from "./Components/SplashScreen/SplashScreen.jsx";
 
-
-
-
-import Introduction from "./Components/UserProfile/InfluencerPage/Introduction"
-import RegistrationPopup from "./Components/UserProfile/InfluencerPage/RegistrationPopup.jsx"
-import SubmitApplication from "./Components/UserProfile/InfluencerPage/SubmitApplication.jsx"
-import InfluencerDashborad from "./Components/UserProfile/InfluencerPage/InfluencerDashborad.jsx"
-import PromoCodeModal from "./Components/UserProfile/InfluencerPage/PromoCodeModal.jsx"
-import DeactivatedDashboard  from "./Components/UserProfile/InfluencerPage/DeactivatedDashboard.jsx"
+import Introduction from "./Components/UserProfile/InfluencerPage/Introduction";
+import RegistrationPopup from "./Components/UserProfile/InfluencerPage/RegistrationPopup.jsx";
+import SubmitApplication from "./Components/UserProfile/InfluencerPage/SubmitApplication.jsx";
+import InfluencerDashborad from "./Components/UserProfile/InfluencerPage/InfluencerDashborad.jsx";
+import PromoCodeModal from "./Components/UserProfile/InfluencerPage/PromoCodeModal.jsx";
+import DeactivatedDashboard from "./Components/UserProfile/InfluencerPage/DeactivatedDashboard.jsx";
 import WalletPopup from "./Components/UserProfile/InfluencerPage/WalletPopup.jsx";
-import AddBankPopup from "./Components/UserProfile/InfluencerPage/AddBankPopup.jsx"
+import AddBankPopup from "./Components/UserProfile/InfluencerPage/AddBankPopup.jsx";
 import SubmitTwo from "./Components/UserProfile/InfluencerPage/SubmitTwo.jsx";
-import InfluencerWallet from "./Components/UserProfile/InfluencerPage/InfluencerWallet.jsx"
-import Withdrawal from "./Components/UserProfile/InfluencerPage/Withdrawal.jsx"
-import ConfirmWithdrawal from "./Components/UserProfile/InfluencerPage/ConfirmWithdrawal.jsx"
-import PromoCodeList from "./Components/UserProfile/InfluencerPage/PromoCodeList.jsx"
-import ReferralPopup from "./Components/UserProfile/InfluencerPage/ReferralPopup.jsx"
+import InfluencerWallet from "./Components/UserProfile/InfluencerPage/InfluencerWallet.jsx";
+import Withdrawal from "./Components/UserProfile/InfluencerPage/Withdrawal.jsx";
+import ConfirmWithdrawal from "./Components/UserProfile/InfluencerPage/ConfirmWithdrawal.jsx";
+import PromoCodeList from "./Components/UserProfile/InfluencerPage/PromoCodeList.jsx";
+import ReferralPopup from "./Components/UserProfile/InfluencerPage/ReferralPopup.jsx";
 import SubmitPromoCode from "./Components/UserProfile/InfluencerPage/SubmitPromoCode.jsx";
-import Kycverified from "./Components/UserProfile/InfluencerPage/Kycverified.jsx"
-import Banner from "./Components/HomePage/Banner.jsx"
+import Kycverified from "./Components/UserProfile/InfluencerPage/Kycverified.jsx";
+import Banner from "./Components/HomePage/Banner.jsx";
 
 function App() {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.auth.token);
   const user = useSelector((state) => state.auth.user);
+
+  // Frontend-only hook: resolves the Daily Meons Reward for the logged-in
+  // user's subscription plan on session launch (see hooks/useDailyMeonsReward.js)
+  useDailyMeonsReward();
 
   useEffect(() => {
     // Initialize authentication state from localStorage on app start
@@ -134,30 +136,146 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/LanguagePage" element={<Animation><LanguagePage /></Animation>} />
+        <Route
+          path="/LanguagePage"
+          element={
+            <Animation>
+              <LanguagePage />
+            </Animation>
+          }
+        />
         <Route path="/" element={<SplashScreen />} />
-        <Route path="/intro" element={<Animation><Intro /></Animation>} />
-        <Route path="/homepage" element={<Animation><Homepage /></Animation>} />
-        <Route path="/forgot-otp" element={<Animation><ForgotOtp /></Animation>} />
-        <Route path="/signup" element={<Animation><Singup /></Animation>} />
-        <Route path="/otp" element={<Animation><OTPVerify /></Animation>} />
-        <Route path="/create-password" element={<Animation><Password /></Animation>} />
-        <Route path="/login" element={<Animation><Login /></Animation>} />
-        <Route path="/forgot" element={<Animation><ForgotPassword /></Animation>} />
-
-        <Route path="/Location" element={<Animation><Location /></Animation>} />
-        <Route path="/Identity" element={<Animation><Identity /></Animation>} />
-        <Route path="/BasicInfo" element={<Animation><BasicInfo /></Animation>} />
-        <Route path="/Story" element={<Animation><Story /></Animation>} />
-        <Route path="/Photos" element={<Animation><Photos /></Animation>} />
-        <Route path="/religion-options" element={<Animation><ReligionOptions /></Animation>} />
-        <Route path="/astrology" element={<Animation><Astrology /></Animation>} />
-        <Route path="/religion" element={<Animation><Religion /></Animation>} />
-
+        <Route
+          path="/intro"
+          element={
+            <Animation>
+              <Intro />
+            </Animation>
+          }
+        />
+        <Route
+          path="/homepage"
+          element={
+            <Animation>
+              <Homepage />
+            </Animation>
+          }
+        />
+        <Route
+          path="/forgot-otp"
+          element={
+            <Animation>
+              <ForgotOtp />
+            </Animation>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <Animation>
+              <Singup />
+            </Animation>
+          }
+        />
+        <Route
+          path="/otp"
+          element={
+            <Animation>
+              <OTPVerify />
+            </Animation>
+          }
+        />
+        <Route
+          path="/create-password"
+          element={
+            <Animation>
+              <Password />
+            </Animation>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <Animation>
+              <Login />
+            </Animation>
+          }
+        />
+        <Route
+          path="/forgot"
+          element={
+            <Animation>
+              <ForgotPassword />
+            </Animation>
+          }
+        />
+        <Route
+          path="/Location"
+          element={
+            <Animation>
+              <Location />
+            </Animation>
+          }
+        />
+        <Route
+          path="/Identity"
+          element={
+            <Animation>
+              <Identity />
+            </Animation>
+          }
+        />
+        <Route
+          path="/BasicInfo"
+          element={
+            <Animation>
+              <BasicInfo />
+            </Animation>
+          }
+        />
+        <Route
+          path="/Story"
+          element={
+            <Animation>
+              <Story />
+            </Animation>
+          }
+        />
+        <Route
+          path="/Photos"
+          element={
+            <Animation>
+              <Photos />
+            </Animation>
+          }
+        />
+        <Route
+          path="/religion-options"
+          element={
+            <Animation>
+              <ReligionOptions />
+            </Animation>
+          }
+        />
+        <Route
+          path="/astrology"
+          element={
+            <Animation>
+              <Astrology />
+            </Animation>
+          }
+        />
+        <Route
+          path="/religion"
+          element={
+            <Animation>
+              <Religion />
+            </Animation>
+          }
+        />
         <Route path="/Subscription" element={<Subscription />} />
         <Route path="/PaymentModal" element={<PaymentModal />} />
         <Route path="/ConfirmModal" element={<ConfirmModal />} />
-
         <Route path="/Lanuch" element={<Lanuch />} />
         <Route path="/CompatibilityTest" element={<CompatibilityTest />} />
         <Route path="/VoiceConsentModal" element={<VoiceConsentModal />} />
@@ -165,38 +283,53 @@ function App() {
         <Route path="/VoiceAnalysis" element={<VoiceAnalysis />} />
         <Route path="/Subscription2" element={<Subscription2 />} />
         <Route path="/Chat" element={<Chat />} />
-
         <Route path="/ChatInvitation" element={<FreeChatModal />} />
         <Route path="/ChatRules" element={<ChatRulesModal />} />
-
         <Route path="/Soulmap" element={<Soulmap />} />
         <Route path="/Session" element={<Session />} />
         <Route path="/Lucas" element={<Lucas />} />
-
         {/* rush session routes */}
         <Route path="/voiceAnalysis/rushsession" element={<RushSession />} />
-        <Route path="/voiceAnalysis/rushsessionhome" element={<RushSessionHome />} />
-
+        <Route
+          path="/voiceAnalysis/rushsessionhome"
+          element={<RushSessionHome />}
+        />
         {/* bubble pop up routes */}
-        <Route path='/VoiceAnalysis/colormatchhome' element={< BubblePairFound />} />
+        <Route
+          path="/VoiceAnalysis/colormatchhome"
+          element={<BubblePairFound />}
+        />
         <Route path="/voiceAnalysis/colormatch" element={<BubblePopUpGame />} />
-
         {/* heart memory routes */}
-        <Route path="/voiceAnalysis/heartmemory" element={<HeartMemoryGame />} />
-        <Route path="/voiceAnalysis/heartmemoryhome" element={<HeartMemoryHome />} />
-
+        <Route
+          path="/voiceAnalysis/heartmemory"
+          element={<HeartMemoryGame />}
+        />
+        <Route
+          path="/voiceAnalysis/heartmemoryhome"
+          element={<HeartMemoryHome />}
+        />
         <Route path="/profile" element={<ProfileHome />} />
         <Route path="/profile/language" element={<ProfileLanguage />} />
         <Route path="/profile/subscription" element={<ProfileSubscription />} />
         <Route path="/profile/settings" element={<ProfileSettings />} />
-        <Route path="/profile/lucas_details" element={<ProfileLucasDetails />} />
-        <Route path="/profile/notifications" element={<ProfileNotification />} />
+        <Route
+          path="/profile/lucas_details"
+          element={<ProfileLucasDetails />}
+        />
+        <Route
+          path="/profile/notifications"
+          element={<ProfileNotification />}
+        />
         <Route path="/profile/Help" element={<Help />} />
-        <Route path="/profile/userprofile/data" element={<Data />} />//
+        <Route path="/profile/userprofile/data" element={<Data />} />
+        //
         <Route path="/userprofile/safety" element={<SafetyTools />} />
         <Route path="/userprofile/report" element={<Report />} />
-        <Route path="/profile/account-settings" element={<ProfileSettingsPage />} />
-
+        <Route
+          path="/profile/account-settings"
+          element={<ProfileSettingsPage />}
+        />
         <Route path="/wallet" element={<WalletPage />} />
         <Route path="/earn-meons" element={<EarnMeons />} />
         <Route path="/spend-meons" element={<SpendMeons />} />
@@ -222,25 +355,27 @@ function App() {
         <Route path="/inviteConnectionsModal" element={<InviteConnectionsModal/>}/>
         <Route path="/ShareInviteModal" element={<ShareInviteModal/>}/>
         <Route path="/share" element={<Share/>}/> */}
-{/* /////////////////////////////////////////////////////////////////////// */}
-
-<Route path="/introduction" element={<Introduction/>}/>
-        <Route path="/registrationpopup"element={<RegistrationPopup/>}/>
-        <Route path="/submitapplication" element={<SubmitApplication/>}/>
-        <Route path="/influencerdashborad" element={<InfluencerDashborad/>}/>
-        <Route path="/promocodemodal" element={<PromoCodeModal/>}/>
-        <Route path ="/deactivateddashboard" element={<DeactivatedDashboard/>}/>
-        <Route path ="/walletpopup" element={<WalletPopup/>}/>
-        <Route path ="/addbankpopup" element={<AddBankPopup/>}/>
-        <Route path="/submittwo" element={<SubmitTwo/>}/>
-        <Route path="/influencerwallet" element={<InfluencerWallet/>}/>
-        <Route path="/withdrawal" element={<Withdrawal/>}/>
-        <Route path="/confirmwithdrawal" element={<ConfirmWithdrawal/>}/>
-         <Route path="/promocodelist" element={<PromoCodeList/>}/>
-           <Route path="/submitpromocode" element={<SubmitPromoCode/>}/>
-          <Route path="/referralpopup" element={<ReferralPopup/>}/>
-          <Route path="kycverified" element={<Kycverified/>}/>
-         <Route path="/banner" element={<Banner />} />
+        {/* /////////////////////////////////////////////////////////////////////// */}
+        <Route path="/introduction" element={<Introduction />} />
+        <Route path="/registrationpopup" element={<RegistrationPopup />} />
+        <Route path="/submitapplication" element={<SubmitApplication />} />
+        <Route path="/influencerdashborad" element={<InfluencerDashborad />} />
+        <Route path="/promocodemodal" element={<PromoCodeModal />} />
+        <Route
+          path="/deactivateddashboard"
+          element={<DeactivatedDashboard />}
+        />
+        <Route path="/walletpopup" element={<WalletPopup />} />
+        <Route path="/addbankpopup" element={<AddBankPopup />} />
+        <Route path="/submittwo" element={<SubmitTwo />} />
+        <Route path="/influencerwallet" element={<InfluencerWallet />} />
+        <Route path="/withdrawal" element={<Withdrawal />} />
+        <Route path="/confirmwithdrawal" element={<ConfirmWithdrawal />} />
+        <Route path="/promocodelist" element={<PromoCodeList />} />
+        <Route path="/submitpromocode" element={<SubmitPromoCode />} />
+        <Route path="/referralpopup" element={<ReferralPopup />} />
+        <Route path="/kycverified" element={<Kycverified />} />
+        <Route path="/banner" element={<Banner />} />
         {/* <Route path="/influencerdashborad" element={<InfluencerDashborad />} /> */}
       </Routes>
     </Router>

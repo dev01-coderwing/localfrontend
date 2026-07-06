@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "/Image/iameetyou.png";
+import logo from "/Image/IAMeetYou.png";
 import { useDispatch } from "react-redux";
 import { updateLocationThunk } from "../Redux/onboardingSlice";
 import { useTranslation } from "react-i18next";
@@ -27,22 +27,13 @@ const handleContinue = async (e) => {
 
   try {
 
-    console.log("Sending Location:", formData);
-
-   const result = await dispatch(
+   await dispatch(
   updateLocationThunk(formData)
 );
-
-console.log(result);
 
     navigate("/identity");
 
   } catch (error) {
-
-    console.log("LOCATION API ERROR:", error);
-
-    console.log(error.response);
-
   }
 };
 

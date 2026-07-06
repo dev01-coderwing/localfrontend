@@ -1,10 +1,55 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { ArrowLeft, Calendar, Zap, Info } from "lucide-react";
 import Right from "./layout/Right";
 import Navbar from "../Navbar/Navbar";
 import { useTranslation } from "react-i18next";
-import api from "../../api";
 
+// ✅ Production Data Object
+const LUCAS_DETAILS_DATA = {
+  headerTitle: "Lucas Details",
+  usage: {
+    used: "2h 30m",
+    total: "6h 00m",
+    percent: 41,
+    remaining: "3h 30m remaining this month"
+  },
+  allocations: [
+    {
+      id: 1,
+      title: "Subscription Time",
+      subtitle: "Resets on March 15, 2025",
+      value: "3h 30m",
+      label: "Monthly Plan",
+      icon: Calendar,
+      bgColor: "bg-purple-50",
+      iconColor: "text-purple-600"
+    },
+    {
+      id: 2,
+      title: "Purchased Extra Time",
+      subtitle: "Never expires",
+      value: "2h 00m",
+      label: "Add-on Balance",
+      icon: Zap,
+      bgColor: "bg-orange-50",
+      iconColor: "text-orange-500",
+      isPremium: true
+    }
+  ],
+  rules: [
+    "Purchased time never expires.",
+    "Subscription resets every billing cycle.",
+    "Extra time is used only after subscription is depleted."
+  ],
+  actions: {
+    primary: "Got it",
+    secondary: "Buy more time"
+  }
+};
+
+/**
+ * Progress Bar Sub-component
+ */
 const UsageMeter = ({ used, total, percent, remaining }) => {
   const { t } = useTranslation();
   return (
@@ -33,6 +78,9 @@ const UsageMeter = ({ used, total, percent, remaining }) => {
   );
 };
 
+/**
+ * Allocation Row Component
+ */
 const AllocationRow = ({ item }) => {
   const { t } = useTranslation();
   const Icon = item.icon;
@@ -44,7 +92,7 @@ const AllocationRow = ({ item }) => {
         </div>
         <div>
           <p className="font-bold text-gray-800 text-sm leading-tight">{t(`profileLucasDetails.allocation_${item.id}_title`)}</p>
-          <p className="text-[11px] text-gray-400 font-medium mt-0.5">{item.subtitle}</p>
+          <p className="text-[11px] text-gray-400 font-medium mt-0.5">{t(`profileLucasDetails.allocation_${item.id}_subtitle`)}</p>
         </div>
       </div>
       <div className="text-right">
@@ -61,69 +109,7 @@ const AllocationRow = ({ item }) => {
 
 export default function ProfileLucasDetails() {
   const { t } = useTranslation();
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchDetails = async () => {
-      try {
-        const response = await api.get("/lucas/details");
-        setData(response.data?.data || null);
-      } catch (err) {
-        console.log("Lucas details error:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchDetails();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-[var(--bg-background)]">
-        <Navbar />
-        <p className="text-center text-sm text-[var(--text-dim2)] py-20">Loading...</p>
-      </div>
-    );
-  }
-
-  if (!data) {
-    return (
-      <div className="min-h-screen bg-[var(--bg-background)]">
-        <Navbar />
-        <p className="text-center text-sm text-[var(--text-dim2)] py-20">Unable to load Lucas time details.</p>
-      </div>
-    );
-  }
-
-  const usage = {
-    used: data.timeUsage.usedFormatted,
-    total: data.timeUsage.totalFormatted,
-    percent: data.timeUsage.percentUsed,
-    remaining: `${data.timeUsage.remainingThisMonthFormatted} remaining this month`,
-  };
-
-  const allocations = [
-    {
-      id: 1,
-      subtitle: `Resets on ${data.planAllocation.subscriptionTime.resetsOnFormatted}`,
-      value: data.planAllocation.subscriptionTime.remainingFormatted,
-      icon: Calendar,
-      bgColor: "bg-purple-50",
-      iconColor: "text-purple-600",
-    },
-    {
-      id: 2,
-      subtitle: "Never expires",
-      value: data.planAllocation.purchasedExtraTime.remainingFormatted,
-      icon: Zap,
-      bgColor: "bg-orange-50",
-      iconColor: "text-orange-500",
-      isPremium: true,
-    },
-  ];
-
-  const buyMoreTimeEnabled = data.actions?.buyMoreTime?.enabled ?? false;
+  const { usage, allocations, rules } = LUCAS_DETAILS_DATA;
 
   return (
     <div className="min-h-screen bg-[var(--bg-background)]">
@@ -165,10 +151,10 @@ export default function ProfileLucasDetails() {
                    <div className="flex gap-4">
                       <Info className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
                       <ul className="text-[11px] text-[var(--text-dim2)] space-y-2 font-bold leading-relaxed">
-                        {[1, 2, 3].map((idx) => (
+                        {rules.map((rule, idx) => (
                           <li key={idx} className="flex gap-2">
                             <span className="text-[var(--text-dim2)]">•</span>
-                            <span>{t(`profileLucasDetails.rule_${idx}`)}</span>
+                            <span>{t(`profileLucasDetails.rule_${idx + 1}`)}</span>
                           </li>
                         ))}
                       </ul>
@@ -178,20 +164,13 @@ export default function ProfileLucasDetails() {
                 <footer className="flex flex-col items-center gap-4 pt-6">
                   <button
                     type="button"
-                    onClick={() => window.history.back()}
                     className="w-full max-w-sm h-14 rounded-2xl bg-gradient-to-r from-[#DB96A1] to-[#7C81D3] text-white font-black text-sm shadow-lg hover:opacity-90 hover:scale-[1.01] active:scale-95 transition-all duration-200 uppercase tracking-widest"
                   >
                     {t('profileLucasDetails.got_it')}
                   </button>
                   <button
                     type="button"
-                    disabled={!buyMoreTimeEnabled}
-                    title={!buyMoreTimeEnabled ? data.actions?.buyMoreTime?.message : undefined}
-                    className={`text-xs font-black uppercase tracking-widest transition-colors py-2 ${
-                      buyMoreTimeEnabled
-                        ? "text-[var(--text-dim2)] hover:text-gray-600 cursor-pointer"
-                        : "text-gray-300 cursor-not-allowed"
-                    }`}
+                    className="text-xs font-black text-[var(--text-dim2)] hover:text-gray-600 uppercase tracking-widest transition-colors py-2"
                   >
                     {t('profileLucasDetails.buy_more_time')}
                   </button>

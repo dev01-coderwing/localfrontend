@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "/Image/iameetyou.png";
+import logo from "/Image/IAMeetYou.png";
 import { useDispatch } from "react-redux";
 import { uploadPhotosThunk } from "../Redux/onboardingSlice";
 import { useTranslation } from "react-i18next";
@@ -47,17 +47,9 @@ const Photos = () => {
   formData.append("photos", photo);
 });
 
-      console.log("Uploading Photos:", photos);
-
-      for (let pair of formData.entries()) {
-        console.log(pair[0], pair[1]);
-      }
-
       const result = await dispatch(
         uploadPhotosThunk(formData)
       );
-
-      console.log("RESULT:", result);
 
       // SUCCESS
       if (result.meta.requestStatus === "fulfilled") {
@@ -70,16 +62,10 @@ const Photos = () => {
       // ERROR
       else {
 
-        console.log("UPLOAD FAILED");
-
-        console.log(result.payload);
-
         alert(t("photos.alertFailed"));
       }
 
     } catch (error) {
-
-      console.log("PHOTO API ERROR:", error);
 
       alert(t("photos.alertError"));
     }

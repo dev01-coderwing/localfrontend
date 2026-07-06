@@ -1,71 +1,75 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Navbar from "../../Navbar/Navbar";
 import Right from "./Right";
 import { Outlet } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import api from "../../../api";
-
-const COMPAT_ICON_MAP = {
-  mbti: "/Image/Brain2.png",
-  love_language: "/Image/heart2.png",
-  attachment_style: "/Image/pin.png",
-  ocean: "/Image/Star.png",
-};
+import { useDispatch, useSelector } from "react-redux";
+import { getPsychologicalProfile } from "../../Redux/profileSlice";
 
 export default function ProfileLayout() {
   const { t } = useTranslation();
-  const [psych, setPsych] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.auth.user);
+  const psychological = useSelector((state) => state.profile.psychological);
 
   useEffect(() => {
-    const fetchPsychProfile = async () => {
-      try {
-        const response = await api.get("/profile/psychological");
-        setPsych(response.data?.data || null);
-      } catch (err) {
-        console.log("Psychological profile error:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchPsychProfile();
-  }, []);
+    dispatch(getPsychologicalProfile());
+  }, [dispatch]);
 
-  const compatibility = (psych?.psychologicalInsights || []).map((item) => ({
-    title: item.title,
-    desc: item.description || item.value,
-    status: "done",
-    img: COMPAT_ICON_MAP[item.id] || "/Image/badge.png",
-  }));
+  const noResult = t('profileLayout.no_result');
+  const mbtiResult = psychological?.mbti || noResult;
+  const loveLanguageResult = psychological?.loveLanguage || noResult;
+  const attachmentStyleResult = psychological?.attachmentStyle || noResult;
+  const bigFiveResult = psychological?.bigFive || noResult;
 
-  // NOTE: pas d'endpoint identifié dans le backend pour avg_match / matches / in_labs
-  // à ce jour — reste en placeholder tant que Meera ne confirme pas la source.
+  const IMAGE_BASE_URL = "http://35.180.139.208:3000";
+  const avatarUrl = user?.profileImage ? `${IMAGE_BASE_URL}/${user.profileImage}` : "";
+
+  //  MAIN DATA (SINGLE SOURCE OF TRUTH)
   const profileData = {
     profile: {
-      name: psych?.user?.fullName || "",
-      avatar: psych?.user?.profileImage
-        ? `http://35.180.139.208:3000/${psych.user.profileImage}`
-        : "https://i.pravatar.cc/150",
+      name: user?.fullName || "",
+      avatar: avatarUrl,
       verified: true,
-      badge: "/Image/badge.png",
+      badge: "/Image/Badge.png",
       tick: "/Image/tick.png",
 
       stats: [
-        { value: "—", label: t('profileLayout.avg_match') },
-        { value: "—", label: t('profileLayout.matches') },
-        { value: "—", label: t('profileLayout.in_labs') },
+        { value: "87%", label: t('profileLayout.avg_match') },
+        { value: 12, label: t('profileLayout.matches') },
+        { value: 5, label: t('profileLayout.in_labs') },
       ],
 
-      compatibility,
-      compatibilityMessage: !loading && psych?.hasData === false ? psych.message : null,
-
-      bio: psych?.user?.bio || "",
+      compatibility: [
+        {
+          title: t('profileLayout.mbti'),
+          desc: t('profileLayout.mbti_desc', { mbti_result: mbtiResult }),
+          status: psychological?.mbti ? "done" : "pending",
+          img: "/Image/Brain2.png",
+        },
+        {
+          title: t('profileLayout.love_languages'),
+          desc: t('profileLayout.love_languages_desc', { love_language_result: loveLanguageResult }),
+          status: psychological?.loveLanguage ? "done" : "pending",
+          img: "/Image/heart2.png",
+        },
+        {
+          title: t('profileLayout.attachment_style'),
+          desc: t('profileLayout.attachment_style_desc', { attachment_style_result: attachmentStyleResult }),
+          status: psychological?.attachmentStyle ? "done" : "pending",
+          img: "/Image/pin.png",
+        },
+        {
+          title: t('profileLayout.big_five'),
+          desc: t('profileLayout.big_five_desc', { big_five_result: bigFiveResult }),
+          status: psychological?.bigFive ? "done" : "pending",
+          img: "/Image/star.png",
+        },
+      ],
       images: [
         {
           id: 1,
-          url: psych?.user?.profileImage
-            ? `http://35.180.139.208:3000/${psych.user.profileImage}`
-            : "",
+          url: avatarUrl,
           isMain: true,
         },
         { id: 2, url: "", isMain: false },
@@ -76,19 +80,20 @@ export default function ProfileLayout() {
     },
 
     middle: {
-      // NOTE: pas d'endpoint identifié pour le solde/temps Lucas à ce jour — placeholder.
       balance: {
-        amount: "—",
+        amount: "€ 18.96",
         label: t('profileLayout.available_balance'),
-        img: "/Image/coin.png",
+        img: "/Image/Balance.png",
       },
+
       usage: {
         title: t('profileLayout.time_usage'),
-        usedPercent: 0,
-        usedTime: "—",
-        totalTime: "—",
-        remaining: t('profileLayout.remaining', { time: '—' }),
+        usedPercent: 40,
+        usedTime: "2h 30m",
+        totalTime: "6h 00m",
+        remaining: t('profileLayout.remaining', { time: '3h' }),
       },
+
       buttons: [
         { label: t('profileLayout.manage_subscription'), icon: "crown", style: "gradient" },
         { label: t('profileLayout.invite_friends'), icon: "gift", style: "dark" },
@@ -99,18 +104,19 @@ export default function ProfileLayout() {
   return (
     <div>
       <Navbar />
+
       <div className="min-h-screen bg-[var(--bg-background)] p-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2 bg-red-100">
-            {loading ? (
-              <p className="text-center text-sm text-[var(--text-dim2)] py-10">Loading...</p>
-            ) : (
-              <Outlet context={profileData} />
-            )}
+          {/* 🔥 LEFT + MIDDLE (DYNAMIC via Outlet) */}
+          <div className="lg:col-span-2  bg-red-100">
+            <Outlet context={profileData} />
           </div>
+
+          {/* 🔥 RIGHT SIDEBAR (FIXED) */}
           <Right />
         </div>
       </div>
     </div>
   );
 }
+

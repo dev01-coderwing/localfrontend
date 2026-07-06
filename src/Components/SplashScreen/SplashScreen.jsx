@@ -213,18 +213,6 @@ export default function SplashScreen() {
 //   }, []);
 
 //   // Handle Space key simulation for redirect
-//   useEffect(() => {
-//     const handleKeyDown = (e) => {
-//       if (e.code === 'Space') {
-//         e.preventDefault();
-//         setIsFadingOut(true);
-//         console.log("Simulated home redirection triggered...");
-//       }
-//     };
-//     window.addEventListener('keydown', handleKeyDown);
-//     return () => window.removeEventListener('keydown', handleKeyDown);
-//   }, []);
-
 //   // Handle Visibility API to pause loops when window loses focus
 //   useEffect(() => {
 //     const handleVisibilityChange = () => {

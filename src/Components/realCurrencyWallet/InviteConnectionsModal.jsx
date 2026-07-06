@@ -8,37 +8,10 @@ import {
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const InviteConnectionsModal = ({ onClose }) => {
+const InviteConnectionsModal = ({ onClose, users = [] }) => {
   const { t } = useTranslation();
 
   const [search, setSearch] = useState("");
-
-  const users = [
-    {
-      id: 1,
-      name: "Sarah",
-      time: t('share.invite_connections.active_now'),
-      img: "https://i.pravatar.cc/100?img=1",
-    },
-    {
-      id: 2,
-      name: "Mark Johnson",
-      time: t('share.invite_connections.active_5m'),
-      img: "https://i.pravatar.cc/100?img=2",
-    },
-    {
-      id: 3,
-      name: "Elena Rodriguez",
-      time: t('share.invite_connections.active_1h'),
-      img: "https://i.pravatar.cc/100?img=3",
-    },
-    {
-      id: 4,
-      name: "David Chen",
-      time: t('share.invite_connections.active_20m'),
-      img: "https://i.pravatar.cc/100?img=4",
-    },
-  ];
 
   return (
     <div className="fixed inset-0 bg-[var(--bg)] backdrop-blur-md flex items-center justify-center z-50 p-4">

@@ -26,9 +26,7 @@ function Singup() {
             });
           }, 1000);
         })
-        .catch((err) => {
-          console.log(err);
-        });
+        .catch(() => {});
     } else {
       setShowEmail(true);
     }

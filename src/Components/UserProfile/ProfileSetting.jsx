@@ -4,8 +4,6 @@ import Navbar from "../Navbar/Navbar";
 import Right from "./layout/Right";
 import { useTranslation } from "react-i18next";
 
-const MOOD_QUOTE_MAX_LENGTH = 300;
-
 /**
  * PHOTO SLOT COMPONENT
  * Precise recreation of the design slots.
@@ -67,10 +65,7 @@ const PhotoSlot = memo(({ image, index, onUpload, onRemove }) => {
 export default function ProfileSetting() {
   const { t } = useTranslation();
   const [profile, setProfile] = useState({
-    images: [
-      { id: 1, url: "/Image/Man.png", isMain: true },
-      null, null, null, null, null
-    ],
+    images: [null, null, null, null, null, null],
     bio: "",
   });
 
@@ -145,20 +140,17 @@ export default function ProfileSetting() {
                   </div>
                 </div>
 
-                {/* 2. MOOD & QUOTE SECTION (remplace l'ancienne bio libre) */}
-                <div className="space-y-2">
+                {/* 2. MOOD & QUOTE SECTION */}
+                <div className="space-y-4">
                   <label htmlFor="bio" className="text-sm font-bold text-[var(--text-dim2)] ml-1">{t('profileSettings.bio_label')}</label>
                   <textarea
                     id="bio"
                     value={profile.bio}
-                    maxLength={MOOD_QUOTE_MAX_LENGTH}
                     onChange={(e) => setProfile({ ...profile, bio: e.target.value })}
                     placeholder={t('profileSettings.bio_placeholder')}
+                    maxLength={300}
                     className="w-full bg-[var(--bg-card)]/10 border border-[var(--border)] rounded-[32px] p-8 text-sm font-medium text-[var(--text-dim2)] outline-none focus:ring-4 focus:ring-purple-50 transition-all shadow-sm min-h-[160px] resize-none placeholder:text-[var(--text-dim2)]"
                   />
-                  <p className="text-xs text-[var(--text-dim2)] text-right pr-2">
-                    {profile.bio.length}/{MOOD_QUOTE_MAX_LENGTH}
-                  </p>
                 </div>
 
                 {/* SAVE ACTION */}

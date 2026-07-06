@@ -107,7 +107,7 @@ import { getSeasonalBanners } from "../Redux/bannerSlice";
 export default function Banner() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-const BASE_URL = "http://35.180.139.208:3000";
+const BASE_URL = import.meta.env.VITE_API_URL?.trim()?.replace(/\/api\/v1\/?$/, "");
   const { banners, loading } = useSelector((state) => state.banner);
 
   useEffect(() => {

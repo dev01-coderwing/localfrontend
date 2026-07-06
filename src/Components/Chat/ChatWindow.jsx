@@ -99,11 +99,8 @@ const ActionModal = ({ type, onClose, selectedChat }) => {
         })
       );
     }
-    console.log("selectedChat =>", selectedChat);
     onClose();
   };
-  console.log("ChatWindow Rendered");
-  console.log(selectedChat);
   return (
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
       <div className="bg-[var(--bg-background)] rounded-2xl p-6 w-[320px]">
@@ -160,7 +157,6 @@ function ChatWindow({
 
 }) {
   const { t } = useTranslation();
-  console.log("selectedChat", selectedChat);
   // Handle when no chat is selected
   if (!selectedChat) {
     return (

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "/Image/iameetyou.png";
+import logo from "/Image/IAMeetYou.png";
 import { useDispatch } from "react-redux";
 import { updateBasicInfoThunk } from "../Redux/onboardingSlice";
 import { useTranslation } from "react-i18next";
@@ -25,18 +25,13 @@ const BasicInfo = () => {
 
     try {
 
-      const result = await dispatch(
+      await dispatch(
         updateBasicInfoThunk(formData)
       );
-
-      console.log(result);
 
       navigate("/story");
 
     } catch (error) {
-
-      console.log(error);
-
     }
   };
   return (

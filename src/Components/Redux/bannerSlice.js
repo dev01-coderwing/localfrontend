@@ -8,7 +8,7 @@ export const getSeasonalBanners = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        "http://35.180.139.208:3000/api/v1/banner/seasonal"
+        `${import.meta.env.VITE_API_URL?.trim()}/banner/seasonal`
       );
 
       return response.data;

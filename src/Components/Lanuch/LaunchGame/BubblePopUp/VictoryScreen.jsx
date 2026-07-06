@@ -10,11 +10,9 @@ const VictoryScreen = ({ score, onClaim, onRestart, onClose }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 const handleClaimReward = async () => {
-  const result = await dispatch(
+  await dispatch(
     submitBubblePopResultThunk("WIN")
   );
-
-  console.log(result);
 
   navigate("/homepage");
 };

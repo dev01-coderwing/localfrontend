@@ -4,18 +4,19 @@ import Right from "./layout/Right";
 import Navbar from "../Navbar/Navbar";
 import { useTranslation } from "react-i18next";
 
+// ✅ Production Data
 const LANGUAGES_CONFIG = [
-  { id: "en", name: "English", flag: "https://flagcdn.com/w40/gb.png" },
-  { id: "fr", name: "Français", flag: "https://flagcdn.com/w40/fr.png" },
-  { id: "es", name: "Español", flag: "https://flagcdn.com/w40/es.png" },
-  { id: "de", name: "Deutsch", flag: "https://flagcdn.com/w40/de.png" },
-  { id: "it", name: "Italiano", flag: "https://flagcdn.com/w40/it.png" },
-  { id: "pt", name: "Português", flag: "https://flagcdn.com/w40/pt.png" },
-  { id: "ja", name: "日本語", flag: "https://flagcdn.com/w40/jp.png" },
-  { id: "ko", name: "한국어", flag: "https://flagcdn.com/w40/kr.png" },
-  { id: "zh", name: "中文", flag: "https://flagcdn.com/w40/cn.png" },
+  { id: "english", name: "English", flag: "https://flagcdn.com/w40/us.png", code: "US" },
+  { id: "china", name: "China", flag: "https://flagcdn.com/w40/cn.png", code: "CN" },
+  { id: "india", name: "India", flag: "https://flagcdn.com/w40/in.png", code: "IN" },
+  { id: "spain", name: "Spain", flag: "https://flagcdn.com/w40/es.png", code: "ES" },
+  { id: "united_arab_emirates", name: "United Arab Emirates", flag: "https://flagcdn.com/w40/ae.png", code: "AE" },
+  { id: "france", name: "France", flag: "https://flagcdn.com/w40/fr.png", code: "FR" },
 ];
 
+/**
+ * Optimized Language Row Component
+ */
 const LanguageRow = ({ lang, isSelected, onSelect }) => (
   <button
     type="button"
@@ -36,7 +37,7 @@ const LanguageRow = ({ lang, isSelected, onSelect }) => (
           className="w-full h-full object-cover"
         />
       </div>
-      <span className="font-bold text-sm text-[var(--text-dim)]">        {lang.name}
+<span className="font-bold text-sm text-[var(--text-dim)]">        {lang.name}
       </span>
     </div>
     <div className={`w-6 h-6 rounded-full flex items-center justify-center transition-all ${
@@ -48,15 +49,8 @@ const LanguageRow = ({ lang, isSelected, onSelect }) => (
 );
 
 export default function ProfileLanguage() {
-  const { t, i18n } = useTranslation();
-  const [selectedId, setSelectedId] = React.useState(i18n.language || "en");
-  const [saved, setSaved] = React.useState(false);
-
-  const handleSave = () => {
-    i18n.changeLanguage(selectedId);
-    setSaved(true);
-    setTimeout(() => setSaved(false), 2000);
-  };
+  const [selectedId, setSelectedId] = React.useState("english");
+  const { t } = useTranslation();
 
   return (
     <div className="min-h-screen bg-[var(--bg-background)]">
@@ -99,11 +93,10 @@ export default function ProfileLanguage() {
 
                 <footer className="mt-16 flex justify-center">
                   <button
-                    type="button"
-                    onClick={handleSave}
+                    type="submit"
                     className="w-full max-w-sm h-14 rounded-2xl bg-gradient-to-r from-[#DB96A1] to-[#7C81D3] text-white font-black text-sm shadow-lg hover:opacity-90 hover:scale-[1.01] active:scale-95 transition-all duration-200 uppercase tracking-widest"
                   >
-                    {saved ? "✓" : t('profileLanguage.save_changes')}
+                    {t('profileLanguage.save_changes')}
                   </button>
                 </footer>
               </div>

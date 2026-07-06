@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import one from "/Image/ai-guide.png";
-import two from "/Image/ai-brain.png";
+import two from "/Image/brain.png";
 import three from "/Image/assistant-rafiki.png";
 import four from "/Image/as.png";
 import five from "/Image/data.png";

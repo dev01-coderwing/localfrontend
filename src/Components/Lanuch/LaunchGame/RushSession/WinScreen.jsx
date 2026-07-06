@@ -16,11 +16,8 @@ const WinScreen = ({ score, onClaim, onRestart, onClose }) => {
       })
     ).unwrap();
 
-    console.log("API Success:", result);
-
     navigate("/homepage");
   } catch (error) {
-    console.log("API Error:", error);
   }
 };
   return (

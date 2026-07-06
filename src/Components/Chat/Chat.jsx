@@ -19,7 +19,8 @@ import {
 } from "../../Components/Redux/chatRequestSlice";
 import api from "../../api";
 import { getSocket, SOCKET_EVENTS, joinConversationRoom, leaveConversationRoom } from "../../socket";
-const apiBaseUrl = "http://35.180.139.208:3000/api/v1";
+const apiBaseUrl = import.meta.env.VITE_API_URL?.trim();
+const IMAGE_BASE_URL = apiBaseUrl?.replace(/\/api\/v1\/?$/, "");
 
 function Chat() {
   const { t } = useTranslation();
@@ -58,8 +59,6 @@ function Chat() {
     if (!socket) return;
 
     const handleNewMessage = (message) => {
-      console.log("newMessage event received:", message);
-
       if (Number(message.conversationId) === Number(selectedId)) {
         dispatch(getConversationMessages(selectedId));
       }
@@ -81,8 +80,6 @@ function Chat() {
     socket.on(
       SOCKET_EVENTS.ACTIVE_USERS,
       ({ users }) => {
-        console.log("ACTIVE_USERS", users);
-
         dispatch(
           setOnlineUsers(users)
         );
@@ -169,7 +166,7 @@ function Chat() {
       sidebarConversations.map((item) => {
         const user = item.frontUser;
         const avatar = user?.profileImage
-          ? `http://35.180.139.208:3000/${user.profileImage}`
+          ? `${IMAGE_BASE_URL}/${user.profileImage}`
           : "https://i.pravatar.cc/150";
         const userId = user?.id;
         return {
@@ -189,9 +186,6 @@ function Chat() {
       }),
     [sidebarConversations, onlineUsers]
   );
-  useEffect(() => {
-    console.log("onlineUsers", onlineUsers);
-  }, [onlineUsers]);
   useEffect(() => {
     if (sidebarChats.length && !selectedId) {
       setSelectedId(sidebarChats[0].id);
@@ -215,7 +209,7 @@ function Chat() {
       selectedConversation.frontUser;
 
     const avatar = user?.profileImage
-      ? `http://35.180.139.208:3000/${user.profileImage}`
+      ? `${IMAGE_BASE_URL}/${user.profileImage}`
       : "https://i.pravatar.cc/150";
 
     return {
@@ -262,24 +256,17 @@ function Chat() {
   }, [selectedChat?.messages, selectedId]);
 
   const sendMessage = async () => {
-    console.log("Button Clicked");
-
     const text = input.trim();
-
-    console.log("Text:", text);
-    console.log("SelectedChat:", selectedChat);
 
     if (!text || !selectedChat) return;
 
     try {
-      const res = await dispatch(
+      await dispatch(
         sendMessageApi({
           conversationId: selectedChat.id,
           content: text,
         })
       ).unwrap();
-
-      console.log("Sent:", res);
 
       dispatch(
         getConversationMessages(
@@ -289,9 +276,6 @@ function Chat() {
 
       setInput("");
     } catch (error) {
-      console.log("Status:", error.response?.status);
-      console.log("Data:", error.response?.data);
-      console.log("Error:", error);
     }
   };
 
@@ -301,7 +285,6 @@ function Chat() {
       sendMessage();
     }
   };
-  // console.log(JSON.stringify(sidebarConversations, null, 2));
   return (
     <>
       <Navbar />

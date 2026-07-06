@@ -42,7 +42,7 @@ function Left({ data = {} }) {
 
             {data?.verified && (
               <img
-                src="/Image/tick.png"
+                src="/Image/BlueTick.png"
                 alt="Verified"
                 className="w-4 h-4"
               />
@@ -124,13 +124,11 @@ function Item({ item = {}, tick }) {
       border-gray-100 shadow-sm"
     >
       <div className="flex items-center gap-3">
-        <div className="w-9 h-9 rounded-full flex items-center justify-center text-lg">
-  {item?.icon ? (
-    <span>{item.icon}</span>
-  ) : item?.img ? (
-    <img src={item.img} alt={item?.title} className="w-5 h-5" />
-  ) : (
-    <Star size={18} className="text-yellow-500" />
+        <div className="w-9 h-9 rounded-full flex items-center justify-center">
+          {item?.img ? (
+            <img src={item.img} alt={item?.title} className="w-5 h-5" />
+          ) : (
+            <Star size={18} className="text-yellow-500" />
           )}
         </div>
 
@@ -158,5 +156,4 @@ function Item({ item = {}, tick }) {
 }
 
 export default Left;
-
 

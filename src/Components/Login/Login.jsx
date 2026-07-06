@@ -42,16 +42,11 @@ function Login() {
       );
 
       if (LoginUser.fulfilled.match(resultAction)) {
-        console.log("Login Success:", resultAction.payload);
-
         connectSocket(resultAction.payload.token);
 
         navigate("/homepage");
-      } else {
-        console.log("Login Failed:", resultAction.payload);
       }
     } catch (err) {
-      console.log("Error:", err);
     }
   };
  

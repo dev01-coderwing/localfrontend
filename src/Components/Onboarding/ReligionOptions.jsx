@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "/Image/iameetyou.png";
+import logo from "/Image/IAMeetYou.png";
 import { useTranslation } from "react-i18next";
 
 const religions = [
@@ -84,4 +84,5 @@ const ReligionOptions = () => {
 </div>
   );
 };
+
 export default ReligionOptions;

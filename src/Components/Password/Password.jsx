@@ -53,9 +53,7 @@ const email = location.state?.email || localStorage.getItem("email");
           confirmPassword,
         })
       ).unwrap();
- 
-      console.log("Password Set Success:", res);
- 
+
       // ✅ redirect after success
       navigate("/login");
  

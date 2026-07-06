@@ -99,4 +99,3 @@ const FreeChatModal = ({ onClose }) => {
 };
 
 export default FreeChatModal;
-

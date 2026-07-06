@@ -10,15 +10,28 @@
   "confirm": "Confirm",
   "updating": "Updating...",
   "next": "Next",
-
   "intro": {
-    "slide1": { "title": "Meet Lucas — your AI dating guide", "description": "Lucas helps you understand real compatibility — beyond photos and first impressions." },
-    "slide2": { "title": "The Science Behind IAMeetYou", "description": "Lucas detects the harmony between your choices and your voice to ensure authentic connections." },
-    "slide3": { "title": "Beyond words, the frequency of truth.", "description": "Big Five • MBTI • Love Languages • Attachment Styles — Real compatibility, not just swiping." },
-    "slide4": { "title": "Your emotional DNA", "description": "Like a compass for the soul, we use your birth data to map how you navigate love and time." },
-    "slide5": { "title": "A Sanctuary of Authenticity", "description": "A curated community where every voice is real and every match is intentional." }
+    "slide1": {
+      "title": "Meet Lucas — your AI dating guide",
+      "description": "Lucas helps you understand real compatibility — beyond photos and first impressions."
+    },
+    "slide2": {
+      "title": "The Science Behind IAMeetYou",
+      "description": "Lucas detects the harmony between your choices and your voice to ensure authentic connections."
+    },
+    "slide3": {
+      "title": "Beyond words, the frequency of truth.",
+      "description": "Big Five • MBTI • Love Languages • Attachment Styles — Real compatibility, not just swiping."
+    },
+    "slide4": {
+      "title": "Your emotional DNA",
+      "description": "Like a compass for the soul, we use your birth data to map how you navigate love and time."
+    },
+    "slide5": {
+      "title": "A Sanctuary of Authenticity",
+      "description": "A curated community where every voice is real and every match is intentional."
+    }
   },
-
   "login": {
     "title": "Login your account",
     "description": "Join IAMeetYou and find the connection you've been looking for.",
@@ -37,7 +50,6 @@
       "valid_email": "Enter valid email"
     }
   },
-
   "signup": {
     "headingLine1": "Find connections that",
     "headingLine2": "truly align",
@@ -61,45 +73,39 @@
     "themeDark": "Dark",
     "themeBrown": "Brown"
   },
-
   "location": {
     "title": "Your location",
     "subtitle": "Help us find matches near you",
     "country": "Country",
     "countryPlaceholder": "Select your country",
     "city": "City",
-    "cityPlaceholder": "e.g. London",
+    "cityPlaceholder": "e.g London",
     "continue": "Continue"
   },
-
   "identity": {
-    "title": "Your Identity",
-    "subtitle": "Select the option that matches you",
-    "selectPlaceholder": "Select an identity",
-    "male": "Man",
-    "female": "Woman",
-    "non_binary": "Non-binary",
+    "title": "Choose your identity",
+    "subtitle": "Select your preferred choice",
+    "selectPlaceholder": "Select identity",
+    "male": "Male",
+    "female": "Female",
+    "couple": "Couple",
     "continue": "Continue"
   },
-
   "basicInfo": {
     "title": "Basic Information",
     "subtitle": "Let's get to know you better",
     "namePlaceholder": "Enter your name",
     "pronounsPlaceholder": "he/him, she/her",
-    "searchPreference": "Who do you want to meet?",
     "men": "Men",
     "women": "Women",
     "everyone": "Everyone",
     "continue": "Continue"
   },
-
   "story": {
-    "title": "Your Inner Voice",
-    "bioPlaceholder": "Share a favorite quote or your mood today (max 300 characters)...",
+    "title": "Tell your story",
+    "bioPlaceholder": "Share your mood and a quote that defines you right now (max 300 characters)...",
     "continue": "Continue"
   },
-
   "photos": {
     "title": "Add your photos",
     "subtitle": "Upload at least 3 photos",
@@ -109,24 +115,16 @@
     "alertError": "Something went wrong",
     "continue": "Continue"
   },
-
   "religionOptions": {
     "title": "Religion",
     "subtitle": "This is optional and helps with compatibility",
-    "preferNotToSpecify": "Prefer not to say",
     "christian": "Christian",
     "muslim": "Muslim",
     "hindu": "Hindu",
     "buddhist": "Buddhist",
-    "jewish": "Jewish",
-    "sikh": "Sikh",
-    "atheist_agnostic": "Atheist / Agnostic",
-    "spiritual": "Spiritual but not religious",
-    "other": "Other",
     "skip": "No, skip this step",
     "continue": "Continue"
   },
-
   "astrology": {
     "title": "Astrology (Optional)",
     "subtitle": "Get better matches based on astrology",
@@ -135,7 +133,17 @@
     "continue": "Continue",
     "skip": "Skip for now"
   },
-
+  "religion": {
+    "title": "Religion",
+    "subtitle": "This is optional and helps with compatibility",
+    "preferNotToSpecify": "Prefer not to specify",
+    "christian": "Christian",
+    "muslim": "Muslim",
+    "hindu": "Hindu",
+    "buddhist": "Buddhist",
+    "skip": "No, skip this step",
+    "continue": "Continue"
+  },
   "subscription": {
     "title": "Reveal your perfect match",
     "subtitle": "Choose a subscription to unlock more accurate compatibility and exclusive features.",
@@ -151,10 +159,10 @@
       "feature2": "5 Mode Acting",
       "feature3": "Unlimited swipes",
       "feature4": "Compatibility: 0-50% max",
-      "feature5": "2 months Lucascope",
-      "feature6": "Bonus: 2 Meons/day upon login",
-      "feature7": "Bonus: 1 Lucascope Guide",
-      "feature8": "Dégustation Badge"
+      "feature5": "2 months Iucasope",
+      "feature6": "+2 Daily Meons Reward",
+      "feature7": "Bonus: 1 Iucasope Guide",
+      "feature8": "Essential Badge"
     },
     "plan2": {
       "name": "Privilège",
@@ -163,10 +171,10 @@
       "feature2": "9 Mode Acting",
       "feature3": "Unlimited swipes",
       "feature4": "Compatibility: 0-65% max",
-      "feature5": "4 months Lucascope",
-      "feature6": "Bonus: 3 Meons/day upon login",
-      "feature7": "Bonus: 2 Lucascope Guides",
-      "feature8": "Privilège Badge"
+      "feature5": "4 months Iucasope",
+      "feature6": "+3 Daily Meons Reward",
+      "feature7": "Bonus: 2 Iucasope Guides",
+      "feature8": "Privilege Badge"
     },
     "plan3": {
       "name": "Cercle Privé",
@@ -175,10 +183,10 @@
       "feature2": "13 Mode Acting",
       "feature3": "Unlimited swipes",
       "feature4": "Compatibility: 0-100% max",
-      "feature5": "6 months Lucascope",
-      "feature6": "Bonus: 4 Meons/day upon login",
-      "feature7": "Bonus: 3 Lucascope Guides",
-      "feature8": "Cercle Privé Badge"
+      "feature5": "6 months Iucasope",
+      "feature6": "+4 Daily Meons Reward",
+      "feature7": "Bonus: 3 Iucasope Guides",
+      "feature8": "Elite Badge"
     },
     "secureCheckout": "Secure Checkout",
     "paymentMethod": "Payment Method",
@@ -197,7 +205,6 @@
     "confirm": "Confirm",
     "cancel": "Cancel"
   },
-
   "launch": {
     "badge": "Lucas Personal AI",
     "voiceSyncLabel": "Voice Sync",
@@ -205,11 +212,10 @@
     "emotionalToneLabel": "Emotional Tone",
     "emotionalToneValue": "Highly Compatible",
     "title": "The Launch",
-    "descriptionPart1": "Hello! I am Lucas, your personal AI guide. I'm here to help you find deep, meaningful connections through our unique emotional and voice analysis technology.",
+    "descriptionPart1": "Hello! I am Lucas, your personal Ai guide. I'm here to help you find deep, meaningful connections through our unique emotional and voice analysis technology.",
     "descriptionPart2": "Welcome to the future of dating.",
     "begin": "Begin the Experience"
   },
-
   "compatibility": {
     "title": "Compatibility Test",
     "questionProgress": "Question progress",
@@ -217,10 +223,9 @@
     "previous": "Previous",
     "next": "Next"
   },
-
   "voiceConsent": {
     "title": "Voice Analysis Consent",
-    "description": "We analyze emotional tone from your voice to improve compatibility matching. Audio is processed securely and deleted immediately after analysis. Only your anonymous compatibility score is stored in our secure database.",
+    "description": "We analyze emotional tone form your voice to improve compatibility matching. Audio is processed securely and deleted immediately after analysis. Only your anonymous compatibility score is stored in our secure database.",
     "secureProcessing": "Secure processing",
     "autoDeletion": "Auto-deletion",
     "endToEnd": "End-to-end encryption",
@@ -229,16 +234,14 @@
     "textModeButton": "Use text mode instead",
     "cancel": "Cancel"
   },
-
   "voice": {
     "title": "Voice Analysis",
     "questionProgress": "Question progress",
-    "progressText": "{{current}} of {{total}}",
+    "progressText": "10 of 230",
     "sampleQuestion": "\"What's your ideal way to spend a weekend?\"",
     "tapToRecord": "Tap to record",
     "minimumSeconds": "Minimum 5 seconds required"
   },
-
   "subscription2": {
     "title": "La Carte",
     "heading": "Amuse-Bouches (Add-ons)",
@@ -312,42 +315,33 @@
     "totalMeons": "Total Meons",
     "continue": "Continue"
   },
-
   "chat": {
     "loading": "Loading chats...",
     "error": "Error: {{error}}",
     "retry": "Retry"
   },
-
- "chatInvitation": {
-    "title": "L'Apéritif Invitation",
+  "chatInvitation": {
+    "title": "Free Chat Invitation",
     "badge": "L'Apéritif 🪙",
     "policy_title": "Invitation Policy",
-    "policy_desc_free_to_free": "Chatting with this member is completely free since you share the same profile tier.",
-    "policy_desc_free_to_premium": "To connect with a higher-tier member, a 20 Meons escrow fee is required. The recipient has 48 hours to accept. If declined or expired, you will be fully refunded.",
+    "policy_desc": "Nicole Jennifer must accepted your invitation before chatting.",
     "learn_more": "Learn more →",
     "send_rose": "🌹 Send Rose",
-    "send_invitation_free": "Chat for Free",
-    "send_invitation_premium": "Send Invitation (20 Meons)",
-    "cancel": "Cancel",
-    "upgrade_modal_title": "Unlock Higher Connections",
-    "upgrade_modal_desc": "Out of Meons or prefer not to spend them? Upgrade to Dégustation, Privilège, or Cercle Privé to expand your compatibility tools and unlock immediate premium features.",
-    "upgrade_modal_btn": "View Subscription Plans →"
+    "send_invitation": "Send Invitation",
+    "cancel": "Cancel"
   },
-
   "chatRules": {
-    "title": "Invitation Rules",
-    "subtitle": "Building trust and blocking malicious profiles.",
-    "invite_title": "Secure Invitation",
-    "invite_desc": "Every new chat safely holds 20 Meons temporarily to ensure meaningful and authentic connections.",
-    "recipient_title": "48-Hour Expiration",
-    "recipient_desc": "The recipient must act within 48 hours. If the request is declined or ignored past this limit, your 20 Meons are instantly returned to your wallet.",
-    "consent_title": "Anti-Scam Protection",
-    "consent_desc": "This friction system protects our curated community from spammers, scammers, and fake profiles.",
-    "warning": "ℹ️ Your Meons are only permanently charged once the invitation is accepted.",
-    "understand": "I Understand & Accept"
+    "title": "Chat invitation Rules",
+    "subtitle": "Building trust and meaningful connections.",
+    "invite_title": "Invite to chat",
+    "invite_desc": "Every new chat requires an invitation to ensure meaningful connections.",
+    "recipient_title": "Recipient's choice",
+    "recipient_desc": "The recipient must accept or decline your request before you can chat.",
+    "consent_title": "Consent First",
+    "consent_desc": "Tell us how we can improve your experience.",
+    "warning": "ℹ️ This system prevent harassment and fake profiles.",
+    "understand": "I Understand"
   },
-
   "soulmap": {
     "detecting": "Detecting...",
     "unknown_location": "Unknown Location",
@@ -355,16 +349,16 @@
     "new_york_fallback": "New York",
     "satellite_linked": "SATELLITE LINKED",
     "search_placeholder": "Search coordinates...",
-    "back_to_soulmap": "Back to Soul Map",
+    "back_to_soulmap": "Back to Soulmap",
     "live_scan": "Live Scan",
-    "scan_title": "Frequency Synchronization",
-    "scan_desc": "Global mapping in progress",
+    "scan_title": "Scanning the planet for your equal",
+    "scan_desc": "Globe frequency synchronization in progress",
     "premium_badge": "Astra-Emotional Sync Required",
     "premium_title": "Less than 0.1% of people on Earth can reach you.",
-    "premium_desc_before": "To maintain the highest standard of connection, the Soul Map is only visible to those who share an",
+    "premium_desc_before": "To maintain the highest standard of connect, the Soul Map is only visible to those who share an",
     "premium_desc_highlight": "+70% Astral and Emotional",
     "premium_desc_after": "compatibility score.",
-    "premium_italic": "*Are you ready to see where your heart beats on this planet?*",
+    "premium_italic": "*Are you ready to see where you heart beats on this planets?*",
     "upgrade_btn": "Upgrade to Elite +",
     "what_is": "What is Soul Map ?",
     "geo_not_supported": "Geolocation is not supported by your browser.",
@@ -373,14 +367,13 @@
     "zoom_out": "Zoom Out",
     "my_location": "My current location"
   },
-
   "session": {
     "update_title": "Session Update",
     "update_desc_before": "You have",
     "update_desc_highlight": "5 minutes remaining",
     "update_desc_after": "in your premium session. Extend now to keep chatting.",
     "buy_1h": "Buy 1h",
-    "maybe_later": "Maybe Later",
+    "maybe_later": "May be Later",
     "critical_badge": "Critical Alert",
     "critical_title": "Session Expiring",
     "critical_desc": "Your premium AI chat session is about to end. Continue now to save your progress and maintain high-speed responses.",
@@ -390,11 +383,10 @@
     "remaining": "0:00 Remaining",
     "lucas_name": "Lucas",
     "end_title": "That's all for now – I loved our chat!",
-    "end_desc": "You've reached the end of your session. Want to pick up where we left off?",
+    "end_desc": "You've reached the end of your session. want to pick up where we left off?",
     "continue_chat": "Continue Chat",
     "exit_session": "Exit Session"
   },
-
   "lucas": {
     "title": "Lucas",
     "analyzed": "Analyzed: {{date}}",
@@ -405,16 +397,15 @@
     "memory_serenity": "Serenity: 1 month",
     "memory_elite": "Elite: 2 months",
     "dating_coach": "Dating Coach",
-    "welcome_message": "Hello! I'm Lucas, your AI dating coach. I'm here to help you navigate your connections with deeper insights. What would you like to know?",
+    "welcome_message": "Hey! I'm Lucas, your AI dating coach. I'm here to help you navigate your connections with deeper insights. What would you like to know?",
     "user_message": "Hi! I'm great, thanks! How about you?",
     "input_placeholder": "Ask Lucas anything..."
   },
-
   "profile": {
     "my_profile": "My Profile",
     "avg_match": "Avg Match",
     "matches": "Matches",
-    "in_labs": "In Labs",
+    "in_labs": "In Lab's",
     "compatibility_systems": "Compatibility Systems",
     "no_compatibility": "No compatibility data available",
     "done": "Done",
@@ -426,7 +417,6 @@
     "manage_subscription": "Manage Subscription",
     "invite_friends": "Invite Friends"
   },
-
   "profileLanguage": {
     "title": "Setting",
     "section_title": "Language",
@@ -434,7 +424,6 @@
     "go_back": "Go back",
     "select_language_label": "Select your language"
   },
-
   "profileSubscription": {
     "title": "Setting",
     "section_title": "Subscription",
@@ -451,15 +440,13 @@
     "feature_3_title": "See Who Likes You",
     "feature_3_desc": "Reveal everyone who's already swiped right on you."
   },
-
   "profileSettings": {
     "title": "Setting",
-    "bio_label": "Mood / Quote",
-    "bio_placeholder": "Update your current mood or quote...",
+    "bio_label": "Mood & Quote",
+    "bio_placeholder": "Share your mood and a quote that defines you right now (max 300 characters)...",
     "update_profile": "Update Profile",
     "main_photo": "Main"
   },
-
   "profileLucasDetails": {
     "title": "Setting",
     "section_title": "Lucas Details",
@@ -467,7 +454,7 @@
     "used_percent": "{{percent}}% Used",
     "plan_allocation": "Plan Allocation",
     "allocation_1_title": "Subscription Time",
-    "allocation_1_subtitle": "Resets on {{date}}",
+    "allocation_1_subtitle": "Resets on March 15, 2025",
     "allocation_1_label": "Monthly Plan",
     "allocation_2_title": "Purchased Extra Time",
     "allocation_2_subtitle": "Never expires",
@@ -478,7 +465,6 @@
     "got_it": "Got it",
     "buy_more_time": "Buy more time"
   },
-
   "profileNotification": {
     "title": "Notifications",
     "header_title": "Manage Notifications",
@@ -493,7 +479,6 @@
     "messages_desc": "Direct messages from your connections",
     "footer_note": "We only send notifications that matter to you."
   },
-
   "help": {
     "fill_all_fields": "Please fill all fields",
     "contact_support": "Contact Support",
@@ -521,7 +506,6 @@
     "no_faqs": "No FAQs found.",
     "contact_support_link": "Contact Support →"
   },
-
   "dataPrivacy": {
     "title": "Data & Privacy",
     "section_title": "Data Settings",
@@ -538,7 +522,6 @@
     "secure_connection": "🔒 Secure Connection",
     "privacy_note": "Your data is encrypted and protected under our Privacy Policy. You can request deletion anytime."
   },
-
   "safety": {
     "title": "Safety Tools",
     "section_title": "Manage User",
@@ -554,7 +537,6 @@
     "other": "Other",
     "cancel": "Cancel"
   },
-
   "report": {
     "title": "Report",
     "section_title": "Report Harassment",
@@ -571,7 +553,6 @@
     "user_muted": "The user has been temporarily muted.",
     "done": "Done"
   },
-
   "accountSettings": {
     "title": "Account Settings",
     "invisible_mode": "Invisible Mode",
@@ -614,7 +595,6 @@
     "dismiss": "Dismiss",
     "extend": "Extend"
   },
-
   "wallet": {
     "setting": "Setting",
     "meons_wallet": "MEONS Wallet",
@@ -634,7 +614,6 @@
     "important_notice": "Important Notice",
     "meons_notice": "Meons are virtual currency only. This is one-way conversion. Meons cannot be converted back to cash once completed."
   },
-
   "earnMeons": {
     "setting": "Setting",
     "how_to_earn": "How to Earn Meons",
@@ -650,7 +629,6 @@
     "finish_setup": "Finish Setup",
     "disclaimer": "Meons can be used for boosts, profile highlights, and gifts. Terms and Conditions apply."
   },
-
   "spendMeons": {
     "setting": "Setting",
     "spend_meons": "Spend Meons",
@@ -658,7 +636,7 @@
     "buy": "Buy",
     "item_details": "Item Details",
     "rare_item": "RARE ITEM",
-    "description": "A symbol of elegance and appreciation. Sending this item boosts the recipient's popularity score by 50 points and adds a special flair to their profile.",
+    "description": "A symbol of elegance and appreciation sending this item boosts the recipient's popularity score by 50 points and adds a special flair to their profile.",
     "price_per_unit": "Price per unit",
     "your_current_balance": "Your Current Balance",
     "quantity": "Quantity",
@@ -679,7 +657,6 @@
     "product_4_name": "Crystal Diamond",
     "product_5_name": "Invisible Mode"
   },
-
   "verifyModal": {
     "kyc_verification": "KYC Verification",
     "quick_identity_check": "Quick Identity Check",
@@ -689,7 +666,6 @@
     "start_verification": "Start Verification",
     "may_be_later": "May Be Later"
   },
-
   "popupOne": {
     "kyc_verification": "KYC Verification",
     "quick_identity_check": "Quick Identity Check",
@@ -699,19 +675,17 @@
     "start_verification": "Start Verification",
     "may_be_later": "May Be Later"
   },
-
   "popupTwo": {
     "kyc_verification": "KYC Verification",
     "verify_your_identity": "Verify Your Identity",
     "description": "To keep our community safe, we need to quickly verify who you are.",
-    "upload_gov_id": "Upload Government ID",
+    "upload_gov_id": "Upload Government-ID",
     "id_types": "Driver's license, Passport",
     "take_selfie": "Take a Selfie",
     "quick_photo": "A quick photo to match your ID",
     "continue": "Continue",
     "privacy_note": "By continuing, you agree to our identity verification process and privacy policy."
   },
-
   "getVerify": {
     "kyc_verification": "KYC Verification",
     "upload_document": "Upload document",
@@ -731,7 +705,6 @@
     "info_note": "Ensure the document is well-lit and all four corners are visible. Avoid shadows and glare for faster verification.",
     "continue": "Continue"
   },
-
   "selfie": {
     "kyc_verification": "KYC Verification",
     "take_a_selfie": "Take a Selfie",
@@ -746,7 +719,6 @@
     "re_capture": "Re-Capture",
     "confirm": "Confirm"
   },
-
   "verificationProgress": {
     "under_review": "Under Review",
     "verification_in_progress": "Verification in Progress",
@@ -758,7 +730,6 @@
     "need_help": "Need help?",
     "contact_support": "Contact Support"
   },
-
   "realCurrencyWallet": {
     "setting": "Setting",
     "real_currency_wallet": "Real Currency Wallet",
@@ -777,13 +748,12 @@
     "earn_2_desc": "An instant welcome gift for them",
     "earn_3_title": "You earn 10% cashback",
     "earn_3_desc": "Credited directly to this wallet",
-    "use_0_label": "Buy Meons",
+    "use_0_label": "buy Meons",
     "use_1_label": "Upgrade Subscription",
     "use_2_label": "Lucascope",
     "use_3_label": "Q-Bonus / Lucas Time",
     "use_4_label": "Letters"
   },
-
   "getVerified": {
     "get_verified": "Get Verified",
     "description": "Increase trust and security by verifying your profile.",
@@ -794,7 +764,6 @@
     "start_verification": "Start Verification",
     "privacy_note": "Your data is encrypted and handled according to our privacy policy."
   },
-
   "takeSelfie": {
     "step_1_of_2": "Step 1 of 2",
     "take_a_selfie": "Take a Selfie",
@@ -807,7 +776,6 @@
     "upload_failed": "Upload Failed",
     "focus_note": "Wait for your photo to focus. Keep a neutral expression."
   },
-
   "identify": {
     "step_2_of_2": "Step 2 of 2",
     "identity_verification": "Identity Verification",
@@ -817,14 +785,12 @@
     "scanning_identity": "Scanning Identity",
     "continue": "Continue"
   },
-
   "complete": {
     "verification_complete": "Verification Complete",
     "description": "Your profile is now verified. You've earned your blue badge, helping others feel safer connecting with you.",
     "trust_score": "{{score}}% Trust Score",
     "go_to_profile": "Go to Profile"
   },
-
   "introduction": {
     "setting": "Setting",
     "influencer_program": "Influencer Program",
@@ -850,7 +816,6 @@
     "eligibility_3_desc": "Commissions are paid once your balance reaches €30.",
     "register_btn": "Register as Influencer →"
   },
-
   "registrationPopup": {
     "influencer_registration": "Influencer Registration",
     "join_the_elite": "Join the Elite",
@@ -861,7 +826,7 @@
     "email_address": "Email Address",
     "email_placeholder": "example@email.com",
     "agreement": "Agreement",
-    "agreement_0_title": "Accept Influencer Terms",
+    "agreement_0_title": "Accept Influencer Term",
     "agreement_0_desc": "I have read and agree to the general terms of service and influencer conduct guidelines.",
     "agreement_1_title": "Accept Commission Policy",
     "agreement_1_desc": "I agree to the payout schedule and performance-based commission structure.",
@@ -869,7 +834,6 @@
     "agreement_2_desc": "I understand identity verification is mandatory for payouts.",
     "submit_application": "Submit Application"
   },
-
   "submitApplication": {
     "submit_question": "Submit Application?",
     "review_prefix": "Your Influencer request will be reviewed within",
@@ -878,7 +842,6 @@
     "confirm": "Confirm",
     "cancel": "Cancel"
   },
-
   "influencerDashboard": {
     "setting": "Setting",
     "influencer_dashboard": "Influencer Dashboard",
@@ -899,7 +862,6 @@
     "maintain_referrals": "Maintain 5 active referrals for 30 days.",
     "recent_activity": "Recent Activity"
   },
-
   "promoCodeModal": {
     "create_promo_code": "Create Promo Code",
     "code_name": "Code Name",
@@ -912,7 +874,6 @@
     "submit_for_approval": "Submit for Approval",
     "terms_note": "By submitting, you agree to our Influencer Partnership Terms. Approved codes usually go live within 24 hours."
   },
-
   "deactivatedDashboard": {
     "setting": "Setting",
     "influencer_dashboard": "Influencer Dashboard",
@@ -937,7 +898,6 @@
     "maintain_referrals": "Maintain 5 active referrals for 30 days.",
     "reactivate_now": "Reactivate now to restart your earning potential."
   },
-
   "walletPopup": {
     "subscription_active": "Subscription Active",
     "active_balance": "Active Balance",
@@ -947,7 +907,6 @@
     "unlock_withdrawals": "To unlock withdrawals, complete a quick identity check.",
     "wallet_details": "Wallet Details"
   },
-
   "addBankPopup": {
     "add_bank_details": "Add Bank Details",
     "payout_details": "Payout Details",
@@ -963,7 +922,6 @@
     "save_bank_account": "Save Bank Account",
     "end_to_end_encrypted": "End-to-end encrypted"
   },
-
   "submitTwo": {
     "submit_question": "Submit Application?",
     "review_prefix": "Your Influencer request will be reviewed within",
@@ -972,7 +930,6 @@
     "confirm_submission": "Confirm Submission",
     "cancel": "Cancel"
   },
-
   "influencerWallet": {
     "my_referrals": "My Referrals",
     "subscription_active": "• Subscription Active",
@@ -985,8 +942,8 @@
     "withdraw": "Withdraw",
     "currency_information": "Currency information",
     "currency_info_desc": "Withdrawals in currencies other than EUR will incur bank amount. We recommend withdrawing in EUR to avoid fees.",
-    "total_amount": "Total Amount: €125.99",
-    "transaction_id": "Transaction ID: #WB-562-31",
+    "total_amount": "Total Amount",
+    "transaction_id": "Transaction ID",
     "processing": "• Processing",
     "progress_0": "Request",
     "progress_1": "Processing",
@@ -995,7 +952,6 @@
     "view_all": "View All",
     "commission": "Commission"
   },
-
   "withdrawal": {
     "withdraw_amount": "Withdraw Amount",
     "available_balance": "Available Balance",
@@ -1008,7 +964,6 @@
     "continue_to_review": "Continue to Review",
     "end_to_end_encrypted": "🔒 End-to-end encrypted"
   },
-
   "confirmWithdrawal": {
     "confirm_withdrawal": "Confirm Withdrawal",
     "review_payout": "Please review your payout details carefully before finalizing the transaction.",
@@ -1016,7 +971,6 @@
     "confirm_payout": "Confirm Payout",
     "cancel": "Cancel"
   },
-
   "promoCodeList": {
     "promo_code_history": "Promo Code History",
     "tab_all": "All",
@@ -1027,7 +981,6 @@
     "total_earned": "Total Earned",
     "no_promo_codes": "No promo codes found."
   },
-
   "submitPromoCode": {
     "submit_promo_code": "Submit Promo Code?",
     "review_before_activation": "Your code will be reviewed before activation.",
@@ -1035,7 +988,6 @@
     "submit_now": "Submit Now",
     "cancel": "Cancel"
   },
-
   "referralPopup": {
     "my_referrals": "My Referrals",
     "tracking": "Tracking {{count}} active referrals",
@@ -1044,7 +996,6 @@
     "total_earned": "Total Earned",
     "no_referrals": "No referrals found"
   },
-
   "kycVerified": {
     "subscription_active": "Subscription Active",
     "active_balance": "Active Balance",
@@ -1054,13 +1005,11 @@
     "unlock_withdrawals": "To unlock withdrawals, complete a quick identity check.",
     "wallet_details": "Wallet Details"
   },
-
   "banner": {
     "seasonal_offer": "🎉 Seasonal Offer",
     "learn_more": "Learn More →",
     "active_from": "Active From:"
   },
-
   "navbar": {
     "home": "Home",
     "soul_map": "Soul Map",
@@ -1072,7 +1021,6 @@
     "sign_up": "Sign Up",
     "login": "LogIn"
   },
-
   "notification": {
     "title": "Notifications",
     "matches": "Matches",
@@ -1082,13 +1030,13 @@
     "view": "View",
     "ai_insights": "AI INSIGHTS",
     "lucas_ai": "Lucas AI",
-    "lucas_ai_msg": "\"Your compatibility with {{name}} just went up!\"",
+    "lucas_ai_msg": "\"You compatibility with NTR just went up! She just added photography to her interests.\"",
     "analyze_profile": "Analyze profile →",
     "messages": "Messages",
     "unread_conversations": "{{n}} unread conversations",
     "system": "SYSTEM",
     "new_login": "NEW Login detected",
-    "new_login_desc": "A new login from {{location}} was detected...",
+    "new_login_desc": "A new login form London, UK was detected...",
     "invitation": "Invitation",
     "accepted": "Accepted",
     "start_chatting": "Start chatting",
@@ -1096,20 +1044,22 @@
     "accept_invitation": "Accept Invitation",
     "time_1h_ago": "1h ago"
   },
-
   "chatRequest": {
     "title": "Chat Requests",
     "loading": "Loading...",
     "no_requests": "No more requests for now",
     "accept": "Accept",
-    "decline": "Decline"
+    "decline": "Decline",
+    "status_pending": "Pending",
+    "status_accepted": "Accepted",
+    "status_declined": "Declined",
+    "status_expired": "Expired · Meons refunded",
+    "expires_in": "Expires in {{time}}"
   },
-
   "chatSidebar": {
     "title": "Chats",
     "search_placeholder": "Search..."
   },
-
   "chatWindow": {
     "empty_title": "Select a chat to start",
     "empty_desc": "Choose a conversation from the sidebar",
@@ -1128,7 +1078,6 @@
     "ask_lucas": "Ask Lucas",
     "type_message": "Type a message..."
   },
-
   "lucasModal": {
     "tone_playful": "Playful",
     "tone_curious": "Curious",
@@ -1150,7 +1099,6 @@
     "suggestion_gentle_1": "There's warmth in how you listen. Lucas detects a gentle rhythm that flows naturally between you.",
     "suggestion_gentle_2": "Your patience and empathy are deeply aligned. Lucas believes this connection could be quietly profound."
   },
-
   "forgotPassword": {
     "title": "Forgot Password",
     "description": "Enter your email and we'll send you a verification code",
@@ -1168,7 +1116,6 @@
     "terms_and": "and",
     "privacy_policy": "Privacy Policy"
   },
-
   "forgotOtp": {
     "email_missing": "Email missing, please go back and try again.",
     "alert_incomplete": "Please enter a complete 6-digit OTP",
@@ -1184,7 +1131,6 @@
     "terms_and": "and",
     "privacy_policy": "Privacy Policy"
   },
-
   "otp": {
     "email_missing": "Email missing, please go back and register again.",
     "alert_incomplete": "Please enter a complete 6-digit OTP",
@@ -1200,7 +1146,6 @@
     "terms_and": "and",
     "privacy_policy": "Privacy Policy"
   },
-
   "password": {
     "email_missing": "Email missing, please start again.",
     "error_mismatch": "Passwords do not match",
@@ -1216,11 +1161,9 @@
     "rule_number": "At least 1 number",
     "btn_confirm": "Confirm Password"
   },
-
   "homepage": {
     "loading": "Loading..."
   },
-
   "filter": {
     "header": "Filter",
     "location": "LOCATION",
@@ -1236,10 +1179,9 @@
     "everyone": "Everyone",
     "apply": "Apply Filter"
   },
-
   "lucasLab": {
     "title": "Lucas Lab Overview",
-    "profile_name": "{{name}}",
+    "profile_name": "Nicole Jennifer",
     "profile_sub": "Deep psychological analysis",
     "overall_match": "Overall Match",
     "psychological_insights": "Psychological Insights",
@@ -1247,23 +1189,23 @@
     "mbti_sub": "Cognitive preferences",
     "love_name": "Love Languages",
     "love_sub": "Primary love expression",
-    "love_badge": "{{love_language_badge}}",
+    "love_badge": "Quality Time",
     "attachment_name": "Attachment Style",
     "attachment_sub": "Relationship patterns",
-    "attachment_badge": "{{attachment_badge}}",
+    "attachment_badge": "Secure",
     "ocean_name": "Big Five (OCEAN)",
     "ocean_sub": "Personality traits",
-    "ocean_badge": "{{ocean_badge}}",
+    "ocean_badge": "High Openness",
+    "no_result": "Not completed",
     "potential_challenges": "Potential Challenges",
     "challenges_desc": "Communication styles may differ during conflict resolution...",
     "unlock_insights": "Unlock full insights",
     "cta_button": "Learn more with Lucas"
   },
-
   "profilePopup": {
     "header": "Profile",
     "bio_label": "Mood & Quote",
-    "no_bio": "No mood shared yet",
+    "no_bio": "No mood or quote shared yet",
     "rose_sent": "Rose Sent!",
     "send_rose": "Send Rose",
     "invitation_sent": "Invitation Sent!",
@@ -1272,10 +1214,9 @@
     "cancel": "Cancel and Return",
     "unknown_city": "Unknown City"
   },
-
   "alignment": {
     "title": "A Rare Alignment",
-    "location": "{{location}}",
+    "location": "Paris, France",
     "description": "This connection transcends geographical distance. A rare synchronicity in values and soul purpose has been detected",
     "astral_match": "Astral Match",
     "emotional_match": "Emotional Match",
@@ -1283,7 +1224,6 @@
     "view_profile": "View Profile",
     "maybe_later": "Maybe Later"
   },
-
   "soulSetting": {
     "title": "Soul Profile",
     "astral_line": "70% Astral.",
@@ -1299,55 +1239,63 @@
     "timezone_sync_subtitle": "Harmonize with their local dawn",
     "auto_detect": "Auto-detect"
   },
-
   "soulProfile": {
     "title": "Soul Profile",
     "default_match_status": "Soul Match",
-    "default_bio": "Guided by starlight and the universe.",
     "breakdown": "Breakdown",
     "astral_label": "ASTRAL",
     "emotional_label": "EMOTIONAL",
     "astral_alignment": "Astral Alignment",
-    "default_alignment_text": "{{astral_alignment_details}}",
+    "default_alignment_text": "Libra & Aquarius alignment creates strong connection.",
     "send_invitation": "Send Invitation",
-    "save_for_later": "Save for Later"
+    "save_for_later": "Save for Later",
+    "no_bio": "No mood or quote shared yet",
+    "unknown_name": "Someone New"
   },
-
   "soulmapLocation": {
-    "default_location": "Location",
-    "soul_alignment_detected": "Soul-level alignment detected",
+    "default_location": "Paris",
+    "soul_alignment_detected": "Soul-level alignment detecte",
     "high_priority": "HIGH PRIORITY",
     "astral_label": "Astral",
     "emotional_label": "Emotional",
-    "view_profile": "View Profile →"
+    "view_profile": "View Profile →",
+    "no_matches": "No soul matches found nearby yet."
   },
-
   "premiumInvitation": {
     "title": "Premium invitation",
     "service_fee": "Platform Service Fee",
     "policy_title": "Invitation Policy",
-    "policy_desc": "The recipient must accept your invitation before chatting.",
+    "policy_desc": "{{name}} must accept your invitation before chatting.",
+    "policy_desc_fallback": "This member",
     "learn_more": "Learn more →",
-    "response_time": "24-hour response time",
-    "response_desc": "Members are required to respond within a day.",
+    "response_time": "48-hour response time",
+    "response_desc": "members are required to respond within 48 hours.",
     "accepted_charged": "Accepted → Meons Charged",
     "accepted_desc": "Unlocks immediate premium chat features.",
     "declined_refunded": "Declined → Meons refunded",
-    "declined_desc": "Automatic refund to your wallet if declined.",
+    "declined_desc": "Automatic refund to your wallet if declined or expired.",
     "send_rose": "🌹 Send Rose",
+    "rose_sent": "Rose Sent",
     "send_invitation": "Send Invitation",
+    "sending": "Sending...",
     "cancel": "Cancel"
   },
-
   "profileModal": {
     "title": "Profile",
     "bio_label": "Mood & Quote",
     "send_rose": "🌹 Send Rose",
     "send_invitation": "Send Invitation",
     "upgrade_plan": "Upgrade Plan",
-    "cancel": "Cancel and Return"
+    "cancel": "Cancel and Return",
+    "no_bio": "No mood or quote shared yet",
+    "unknown_city": "Unknown City"
   },
-
+  "upgradeModal": {
+    "title": "You need more Meons",
+    "description": "Messaging this member requires 20 Meons. Upgrade your plan to continue.",
+    "cta": "Upgrade Plan",
+    "cancel": "Maybe Later"
+  },
   "boostFlow": {
     "step1_title": "Ready to boost?",
     "step1_desc": "Increase your profile to more people in your area instantly.",
@@ -1355,7 +1303,7 @@
     "plan_priority": "Priority visibility for the next hour.",
     "info_text": "Boost increases visibility only. Matches require mutual likes.",
     "confirm_btn": "Confirm & Start Boost",
-    "maybe_later": "Maybe Later",
+    "maybe_later": "May be Later",
     "step2_title": "You're Boosted!",
     "step2_desc": "Your profile now has priority visibility in Explorer & Labs.",
     "live_timer": "● Live Timer",
@@ -1363,10 +1311,9 @@
     "view_performance": "View Performance",
     "go_to_explorer": "Go to Explorer"
   },
-
   "boost": {
     "title": "Boost Your Profile",
-    "subtitle": "Get up to 10x more profile views instantly",
+    "subtitle": "Get up 10x more profile views instantly",
     "stat_views_title": "Profile Views",
     "stat_views_desc": "Number of people who visited your profile during the boost.",
     "stat_likes_title": "Likes Received",
@@ -1374,9 +1321,8 @@
     "stat_favorites_title": "Added to Favorites",
     "stat_favorites_desc": "Users who saved your profile for later.",
     "boost_now": "Boost Now",
-    "maybe_later": "Maybe Later"
+    "maybe_later": "May be Later"
   },
-
   "premiumBoost": {
     "title": "Premium Boost",
     "subtitle": "Get Noticed",
@@ -1395,15 +1341,14 @@
     "vip_title": "VIP Pass",
     "vip_name": "Unlimited Boost",
     "vip_validity": "Valid for 7 Days",
-    "vip_feature_1": "Priority visibility in Explorer",
-    "vip_feature_2": "Highlighted profile badge",
-    "vip_feature_3": "Anonymous profile browsing",
+    "vip_feature_1": "Minimum 8 characters",
+    "vip_feature_2": "At least 1 uppercase letter",
+    "vip_feature_3": "At least 1 number",
     "go_vip": "Go VIP",
     "total_meons": "Total Meons:",
     "balance": "Balance:",
     "active_boost": "Active Boost"
   },
-
   "bubbleGame": {
     "title": "Bubble Pop Love",
     "subtitle": "Match Fast . Pop Faster.",
@@ -1431,7 +1376,6 @@
     "claim_reward": "Claim Reward",
     "play_again": "Play Again"
   },
-
   "heartMemory": {
     "title": "Heart Memory",
     "subtitle": "Find All Matching Love Pairs",
@@ -1456,7 +1400,6 @@
     "claim_reward": "Claim Reward",
     "play_again": "Play Again"
   },
-
   "rushSession": {
     "title": "Rush Session",
     "subtitle": "Tap Only Positive Emojis",
@@ -1482,7 +1425,6 @@
     "claim_reward": "Claim Reward",
     "play_again": "Play Again"
   },
-
   "addons": {
     "title": "Enhance your experience",
     "subtitle": "Add options to maximize your chances.",
@@ -1533,20 +1475,18 @@
     "footnote_cop2": "COP2 (Lucascope Infinity +): the advanced version, with complete synastry, karmic analysis, couple cycles, future projections.",
     "footnote_relocation": "Relocation Filter: Display your profile in your current and future city to connect before you even arrive (e.g., job relocation, studying abroad). Limits: Serenity (same country), Elite (Worldwide). Subject to country availability on IAMeetYou."
   },
-
   "cards": {
     "mute_title": "Mute Conversation",
-    "mute_desc": "Mute notifications from {{name}}? You can unmute anytime.",
+    "mute_desc": "Mute notifications from Sophia? You can unmute anytime.",
     "mute_button": "Mute",
     "report_title": "Report User",
-    "report_desc": "Report {{name}} for inappropriate behavior? Our team will review.",
+    "report_desc": "Report Sophia for inappropriate behavior? Our team will review.",
     "report_button": "Report",
     "block_title": "Block User",
-    "block_desc": "Are you sure you want to block {{name}}? They won't be able to message you.",
+    "block_desc": "Are you sure you want to block Sophia? They won't be able to message you.",
     "block_button": "Block",
     "cancel": "Cancel"
   },
-
   "share": {
     "invite_connections": {
       "title": "Invite Connections",
@@ -1554,7 +1494,7 @@
       "invite_sent": "Invite sent successfully",
       "invite_button": "Invite",
       "message_review": "Message Review",
-      "message_preview": "Join me on IAMeetYou. Let's explore more together!",
+      "message_preview": "Join me on IAMeetYou . Let's explore more together!",
       "send_invite": "Send Invite",
       "active_now": "Active now",
       "active_5m": "Active 5m ago",
@@ -1574,7 +1514,7 @@
       "applied_note": "Applied automatically to your next matching credit subscription tier.",
       "quick_invite": "Quick Invite",
       "share_link": "Share Invite Link",
-      "chat_invite": "Invite Via In-App Chat",
+      "chat_invite": "Invite Vai In-App Chat",
       "invite_button": "Invite Friends",
       "footer": "By completing this purchase you agree to our Terms of Service. Your data is protected under IAMeetYou's privacy framework."
     },
@@ -1600,7 +1540,6 @@
       "send_invite": "Send Invite"
     }
   },
-
   "payment": {
     "failed": {
       "top_title": "Payment",
@@ -1651,26 +1590,25 @@
       "footer": "By completing this purchase you agree to our Terms of Service. Your data is protected under IAMeetYou's privacy framework."
     }
   },
-
   "profileLayout": {
     "avg_match": "Avg Match",
     "matches": "Matches",
-    "in_labs": "In Labs",
+    "in_labs": "In Lab's",
     "mbti": "MBTI",
     "mbti_desc": "{{mbti_result}}",
     "love_languages": "Love Languages",
     "love_languages_desc": "{{love_language_result}}",
     "attachment_style": "Attachment Style",
-    "attachment_style_desc": "{{attachment_result}}",
+    "attachment_style_desc": "{{attachment_style_result}}",
     "big_five": "Big Five (OCEAN)",
-    "big_five_desc": "{{status}}",
+    "big_five_desc": "{{big_five_result}}",
+    "no_result": "Not completed",
     "available_balance": "Available Balance",
     "time_usage": "Time Usage",
     "remaining": "{{time}} remaining",
     "manage_subscription": "Manage Subscription",
     "invite_friends": "Invite Friends"
   },
-
   "profileSidebar": {
     "become_influencer": "Become an Influencer",
     "earn_rewards_desc": "Earn rewards for sharing",
@@ -1693,7 +1631,6 @@
     "dark_mode": "🌙 Dark Mode",
     "bronze_mode": "🟤 Bronze Mode"
   },
-
   "verification": {
     "title": "KYC Verification",
     "step": "Step {{step}} of {{total}}",

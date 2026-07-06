@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "/Image/iameetyou.png";
+import logo from "/Image/IAMeetYou.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { updateAstrologyThunk } from "../Redux/onboardingSlice";
@@ -26,22 +26,13 @@ const dispatch = useDispatch();
 
   try {
 
-    console.log("Sending Astrology:", astro);
-
-  const result = await dispatch(
+  await dispatch(
   updateAstrologyThunk(astro)
 );
-
-console.log(result);
 
     navigate("/subscription");
 
   } catch (error) {
-
-    console.log("ASTROLOGY API ERROR:", error);
-
-    console.log(error.response);
-
   }
 };
 

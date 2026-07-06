@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "/Image/iameetyou.png";
+import logo from "/Image/IAMeetYou.png";
 import { useTranslation } from "react-i18next";
 
 const Identity = () => {
@@ -10,7 +10,6 @@ const Identity = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(identity);
     navigate("/BasicInfo");
   };
 
@@ -84,4 +83,3 @@ const Identity = () => {
 };
 
 export default Identity;
-

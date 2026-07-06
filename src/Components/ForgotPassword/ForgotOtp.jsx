@@ -62,10 +62,8 @@ function ForgotOtp() {
               otp: otpValue,
             })
           ).unwrap();
-     
-          console.log("Verify Success:", res);
-     
-    localStorage.setItem("email", email); // ✅ add this    
+
+    localStorage.setItem("email", email); // ✅ add this
   
               navigate("/otp", {
           state: { email }

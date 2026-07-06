@@ -1,8 +1,39 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import api from "../../api/";
+import { getMeonBalanceThunk } from "./meonsSlice";
+
+export const sendChatRequest = createAsyncThunk(
+    "chat/sendRequest",
+    async (receiverId, { rejectWithValue, dispatch }) => {
+        try {
+            const token = localStorage.getItem("token");
+
+            const response = await api.post(
+                "/chat/requests",
+                { receiverId },
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
+
+            // Escrow/tier checks happen server-side; refresh the wallet so the
+            // UI reflects whatever balance the backend actually applied.
+            dispatch(getMeonBalanceThunk());
+
+            return response.data;
+        } catch (error) {
+            return rejectWithValue(
+                error.response?.data || { message: "Failed to send invitation" }
+            );
+        }
+    }
+);
+
 export const getChatRequests = createAsyncThunk(
     "chat/getRequests",
-    async (_, { rejectWithValue }) => {
+    async (_, { rejectWithValue, dispatch }) => {
         try {
             const token = localStorage.getItem("token");
 
@@ -16,6 +47,10 @@ export const getChatRequests = createAsyncThunk(
                 }
             );
 
+            // Requests may have auto-expired (and been refunded) server-side
+            // since the last fetch, so keep the wallet balance in sync too.
+            dispatch(getMeonBalanceThunk());
+
             return response.data.data;
         } catch (error) {
             return rejectWithValue(
@@ -26,7 +61,7 @@ export const getChatRequests = createAsyncThunk(
 );
 export const acceptChatRequest = createAsyncThunk(
     "chat/acceptRequest",
-    async (requestId, { rejectWithValue }) => {
+    async (requestId, { rejectWithValue, dispatch }) => {
         try {
             const token = localStorage.getItem("token");
 
@@ -40,6 +75,9 @@ export const acceptChatRequest = createAsyncThunk(
                 }
             );
 
+            // Reflect the permanent deduction the backend applies on accept.
+            dispatch(getMeonBalanceThunk());
+
             return requestId;
         } catch (error) {
             return rejectWithValue(
@@ -51,7 +89,7 @@ export const acceptChatRequest = createAsyncThunk(
 
 export const declineChatRequest = createAsyncThunk(
     "chat/declineRequest",
-    async (requestId, { rejectWithValue }) => {
+    async (requestId, { rejectWithValue, dispatch }) => {
         try {
             const token = localStorage.getItem("token");
 
@@ -64,6 +102,9 @@ export const declineChatRequest = createAsyncThunk(
                     },
                 }
             );
+
+            // Reflect the escrow refund the backend applies on decline.
+            dispatch(getMeonBalanceThunk());
 
             return requestId;
         } catch (error) {
@@ -237,6 +278,8 @@ const chatRequestSlice = createSlice({
         onlineUsers: [],
         loading: false,
         error: null,
+        sending: false,
+        sendError: null,
     },
     reducers: {
         resetChatState: (state) => {
@@ -272,6 +315,18 @@ const chatRequestSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
+            .addCase(sendChatRequest.pending, (state) => {
+                state.sending = true;
+                state.sendError = null;
+            })
+            .addCase(sendChatRequest.fulfilled, (state) => {
+                state.sending = false;
+            })
+            .addCase(sendChatRequest.rejected, (state, action) => {
+                state.sending = false;
+                state.sendError = action.payload;
+            })
+
             .addCase(getChatRequests.pending, (state) => {
                 state.loading = true;
                 state.error = null;
@@ -319,7 +374,6 @@ const chatRequestSlice = createSlice({
             })
 
             .addCase(sendMessageApi.fulfilled, (state, action) => {
-                console.log("Message Sent", action.payload);
             })
 
             .addCase(getSidebarConversations.pending, (state) => {

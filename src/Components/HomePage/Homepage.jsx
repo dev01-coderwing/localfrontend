@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import Navbar from "../Navbar/Navbar";
 import infinite from "/Image/infinet.png"
-import Heart from "/Image/heart-icon.png";
+import Heart from "/Image/Heart-icon.png";
 import noto from "/Image/noto.png"
 import icon from "/Image/icon.png"
 // import { Heart } from 'lucide-react';
@@ -19,6 +19,7 @@ import { getProfiles } from "../../Components/Redux/discoverySlice";
 import Banner from "./Banner";
 import { useTranslation } from "react-i18next";
 
+const IMAGE_BASE_URL = import.meta.env.VITE_API_URL?.trim()?.replace(/\/api\/v1\/?$/, "");
 
 function Homepage() {
   const { t } = useTranslation();
@@ -43,8 +44,6 @@ function Homepage() {
   useEffect(() => {
     dispatch(getProfiles());
   }, [dispatch]);
-  console.log("Profiles:", profiles);
-  console.log("Loading:", loading);
   if (loading) {
     return (
       <div className="h-screen flex items-center justify-center">
@@ -95,7 +94,7 @@ function Homepage() {
                   <img
                     src={
                       item.profileImage
-                        ? `http://35.180.139.208:3000/${item.profileImage}`
+                        ? `${IMAGE_BASE_URL}/${item.profileImage}`
                         : "https://i.pravatar.cc/150"
                     }
                     alt={item.fullName}

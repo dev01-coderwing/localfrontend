@@ -28,13 +28,6 @@ i18n
       zh: { translation: zh },
     },
 
-    // Détection forcée sur le localStorage uniquement pour éviter les conflits
-    detection: {
-      order: ['localStorage'], 
-      lookupLocalStorage: 'i18nextLng',
-      caches: ['localStorage'],
-    },
-
     fallbackLng: "en",
 
     interpolation: {

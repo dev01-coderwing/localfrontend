@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from "react-i18next";
+import { useSelector } from 'react-redux';
 import SubmitTwo from './SubmitTwo';
 import Kycverified from './Kycverified';
 
@@ -8,12 +9,13 @@ const AddBankPopup = ({
   isOpen = true,
   onClose = () => {},
   onSubmit = () => {},
-  initialName = "Neetesh lodhi"
+  initialName
 }) => {
   const { t } = useTranslation();
+  const user = useSelector((state) => state.auth.user);
 
   // Local Form States
-  const [accountHolder, setAccountHolder] = useState(initialName);
+  const [accountHolder, setAccountHolder] = useState(initialName ?? user?.fullName ?? '');
   const [accountNumber, setAccountNumber] = useState('');
   const [bankName, setBankName] = useState('');
 

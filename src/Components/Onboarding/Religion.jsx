@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "/Image/iameetyou.png";
+import logo from "/Image/IAMeetYou.png";
 import { useDispatch } from "react-redux";
 import { updateReligionThunk } from "../Redux/onboardingSlice";
 import { useTranslation } from "react-i18next";
@@ -20,22 +20,13 @@ const handleContinue = async () => {
       religion,
     };
 
-    console.log("Sending Religion:", religionData);
-
-    const result = await dispatch(
+    await dispatch(
   updateReligionThunk(religionData)
 );
-
-console.log(result);
 
     navigate("/astrology");
 
   } catch (error) {
-
-    console.log("RELIGION API ERROR:", error);
-
-    console.log(error.response);
-
   }
 };
 

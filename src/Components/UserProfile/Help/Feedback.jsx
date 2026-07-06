@@ -31,8 +31,6 @@ const Feedback = ({ onNext }) => {
       })
     );
 
-    console.log(result);
-
     if (result?.type === "feedback/submit/fulfilled") {
       alert(t('help.feedback_success'));
       onNext();

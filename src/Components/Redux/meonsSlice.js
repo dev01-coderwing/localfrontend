@@ -7,7 +7,6 @@ export const getMeonBalanceThunk = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await api.get("/meons/balance");
-      console.log(response.data);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response?.data || "Something went wrong");
@@ -91,8 +90,6 @@ export const spendMeonsThunk = createAsyncThunk(
     try {
       const response = await api.post("/meons/spend", spendData);
 
-      console.log(response.data);
-
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response?.data || "Something went wrong");
@@ -113,4 +110,29 @@ export const getTransactionsThunk = createAsyncThunk(
     }
   },
 );
+
+// TODO(backend): Daily Login reward endpoint does not exist yet.
+// Requested contract (to confirm with backend team):
+//   POST /meons/daily-reward/claim
+//     body:     { planName: string }               // e.g. "Privilège"
+//     response: { data: { meons: number, amount: number, claimedAt: string } }
+//   Server should be the source of truth for "already claimed today" (e.g.
+//   reject with 409 / a specific error code if the user already claimed),
+//   since the frontend no longer tracks this via localStorage.
+// Until this route exists in the backend, calls to this thunk will 404 and
+// useDailyMeonsReward will simply stay in a non-eligible state.
+export const claimDailyMeonsRewardThunk = createAsyncThunk(
+  "meons/claimDailyReward",
+
+  async (rewardData, { rejectWithValue }) => {
+    try {
+      const response = await api.post("/meons/daily-reward/claim", rewardData);
+
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response?.data || "Something went wrong");
+    }
+  },
+);
+
 export default meonSlice.reducer;

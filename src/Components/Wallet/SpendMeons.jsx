@@ -72,8 +72,6 @@ const SpendMeons = () => {
         })
       );
 
-      console.log(result);
-
       // SUCCESS
       if (result.meta.requestStatus === "fulfilled") {
 
@@ -91,14 +89,10 @@ const SpendMeons = () => {
 
       } else {
 
-        console.log(result.payload);
-
         alert(t('spendMeons.purchase_failed'));
       }
 
     } catch (error) {
-
-      console.log(error);
 
       alert(t('spendMeons.something_went_wrong'));
     }
