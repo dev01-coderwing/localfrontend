@@ -4,7 +4,9 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { initializeAuth } from "./Components/Redux/authSlice";
 import { connectSocket, joinUserRoom } from "./socket";
-import { useDailyMeonsReward } from "./hooks/useDailyMeonsReward";
+import { useSessionStart } from "./hooks/useSessionStart";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import LanguagePage from "./Components/languagePage/LanguagePage";
 import Singup from "./Components/Singup/Singup";
@@ -113,9 +115,9 @@ function App() {
   const token = useSelector((state) => state.auth.token);
   const user = useSelector((state) => state.auth.user);
 
-  // Frontend-only hook: resolves the Daily Meons Reward for the logged-in
-  // user's subscription plan on session launch (see hooks/useDailyMeonsReward.js)
-  useDailyMeonsReward();
+  // Fires POST /user/session-start once per app launch when a token already
+  // exists, and surfaces the daily Meon check-in reward (see hooks/useSessionStart.js)
+  useSessionStart();
 
   useEffect(() => {
     // Initialize authentication state from localStorage on app start
@@ -135,6 +137,7 @@ function App() {
 
   return (
     <Router>
+      <ToastContainer position="top-right" />
       <Routes>
         <Route
           path="/LanguagePage"

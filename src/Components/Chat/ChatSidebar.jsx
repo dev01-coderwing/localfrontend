@@ -91,6 +91,8 @@ function ChatSidebar({
             <button
               key={c.id}
               onClick={() => {
+                    console.log("Clicked:", c);
+
                 setSelectedId(c.id);
                 setSidebarOpen(false);
               }}

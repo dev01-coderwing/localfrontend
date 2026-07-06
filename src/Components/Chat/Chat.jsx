@@ -60,6 +60,8 @@ function Chat() {
 
     const handleNewMessage = (message) => {
       if (Number(message.conversationId) === Number(selectedId)) {
+                console.log("Fetching conversation:", selectedId);
+
         dispatch(getConversationMessages(selectedId));
       }
     };
@@ -285,6 +287,12 @@ function Chat() {
       sendMessage();
     }
   };
+//   console.log({
+//     selectedId,
+//     conversationId: selectedChat.id,
+//     userId: selectedChat.userId,
+//     name: selectedChat.name,
+// });
   return (
     <>
       <Navbar />

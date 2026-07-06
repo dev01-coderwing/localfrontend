@@ -5,13 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../Navbar/Navbar";
 import Animation from "../Animation/Animation";
 import { LoginUser } from "../Redux/authSlice";
+import { setMeonsBalance } from "../Redux/meonsSlice";
 import { connectSocket } from "../../socket";
+import { toast } from "react-toastify";
  import { useTranslation } from "react-i18next";
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
  
-  // ✅ Redux state
+  //  Redux state
   const { loading, error: reduxError } = useSelector((state) => state.auth);
  
   const [email, setEmail] = useState("");
@@ -22,7 +24,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
  
-    // ✅ Validation
+    //  Validation
     if (!email || !password) {
         setError(t("login.validation.fill_fields"));
       return;
@@ -43,6 +45,12 @@ function Login() {
 
       if (LoginUser.fulfilled.match(resultAction)) {
         connectSocket(resultAction.payload.token);
+
+        const dailyCheckIn = resultAction.payload.dailyCheckIn;
+        if (dailyCheckIn?.rewarded) {
+          dispatch(setMeonsBalance(dailyCheckIn.newBalance));
+          toast.success(`+${dailyCheckIn.meonsEarned} Meons earned today! 🎉`);
+        }
 
         navigate("/homepage");
       }

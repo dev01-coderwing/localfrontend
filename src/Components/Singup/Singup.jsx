@@ -157,6 +157,11 @@ function Singup() {
           </p>
 
           {/* Social Buttons */}
+          {/* NOTE: These buttons are decorative placeholders (no onClick/OAuth
+              wiring yet). Once Google Login is implemented, its success
+              handler should read response.dailyCheckIn and apply it the same
+              way Login.jsx does: dispatch(setMeonsBalance(dailyCheckIn.newBalance))
+              and toast.success on dailyCheckIn.rewarded === true. */}
           <div className="flex flex-col gap-3 mb-5">
             {[
               {
