@@ -54,6 +54,7 @@ function Login() {
     <>
 
       <Animation>
+      <Navbar/>
         <div className="min-h-screen flex items-center justify-center  px-4">
           <div className="bg-[var(--card)] w-full max-w-md rounded-2xl shadow-2xl p-7 border border-[var(--border)]">
  

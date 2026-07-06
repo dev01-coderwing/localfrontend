@@ -56,6 +56,10 @@ function ProfilePopup({ profile, onClose }) {
   const prevPhoto = () =>
     setCurrentPhoto((p) => (p - 1 + photos.length) % photos.length);
   const nextPhoto = () => setCurrentPhoto((p) => (p + 1) % photos.length);
+  console.log("Profile:", profile);
+console.log("profile.id:", profile.id);
+console.log("profile.userId:", profile.userId);
+console.log("profile.targetUserId:", profile.targetUserId);
   return (
     <div className="fixed inset-0  flex items-center justify-center p-4 z-50">
       {/* Modal backdrop */}

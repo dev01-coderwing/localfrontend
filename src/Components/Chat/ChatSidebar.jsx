@@ -36,6 +36,7 @@ function ChatSidebar({
   setShowRequest,
 }) {
   const { t } = useTranslation();
+  console.log("Sidebar Chats:", chats);
   return (
     <>
       {sidebarOpen && (
