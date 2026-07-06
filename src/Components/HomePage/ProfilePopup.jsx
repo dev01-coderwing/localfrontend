@@ -16,7 +16,10 @@ import { sendChatRequest } from "../Redux/chatRequestSlice";
 import UpgradeModal from "../Cards/UpgradeModal";
 import PremiumInvitationModal from "../Cards/PremiumInvitationModal";
 
-const IMAGE_BASE_URL = import.meta.env.VITE_API_URL?.trim()?.replace(/\/api\/v1\/?$/, "");
+const IMAGE_BASE_URL = import.meta.env.VITE_API_URL?.trim()?.replace(
+  /\/api\/v1\/?$/,
+  "",
+);
 
 const MotionButton = motion.button;
 
@@ -37,10 +40,10 @@ function ProfilePopup({ profile, onClose }) {
   // Falls back across the common field names until the API contract is confirmed.
   const isPremiumTarget = Boolean(
     profile?.isPremium ||
-      profile?.premium ||
-      profile?.subscriptionTier === "premium" ||
-      profile?.accountType === "premium" ||
-      profile?.tier === "premium"
+    profile?.premium ||
+    profile?.subscriptionTier === "premium" ||
+    profile?.accountType === "premium" ||
+    profile?.tier === "premium",
   );
   const photos =
     profile?.photos?.length > 0
@@ -231,13 +234,15 @@ function ProfilePopup({ profile, onClose }) {
                   await dispatch(sendRose(profile.id)).unwrap();
 
                   setRoseSent(true);
-
+                  console.log("Clicked");
                   const rect = roseButtonRef.current?.getBoundingClientRect();
+                  console.log("Rect:", rect);
+
+                  console.log("roseAnimId", roseAnimId);
                   if (rect) setRoseOrigin(rect);
 
                   setRoseAnimId(Date.now());
-                } catch (error) {
-                }
+                } catch (error) {}
               }}
               whileTap={{ scale: 0.94 }}
               whileHover={{ scale: 1.02 }}
@@ -278,10 +283,15 @@ function ProfilePopup({ profile, onClose }) {
                 } catch (error) {
                   const code = error?.code || error?.error;
                   const message = (error?.message || "").toLowerCase();
-                  if (code === "INSUFFICIENT_MEONS" || message.includes("meon")) {
+                  if (
+                    code === "INSUFFICIENT_MEONS" ||
+                    message.includes("meon")
+                  ) {
                     setShowUpgradeModal(true);
                   } else {
-                    setInviteError(error?.message || "Failed to send invitation");
+                    setInviteError(
+                      error?.message || "Failed to send invitation",
+                    );
                   }
                 }
               }}

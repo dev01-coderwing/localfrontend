@@ -442,7 +442,7 @@
   },
   "profileSettings": {
     "title": "Setting",
-    "bio_label": "Mood & Quote",
+    "bio_label": "Bio",
     "bio_placeholder": "Share your mood and a quote that defines you right now (max 300 characters)...",
     "update_profile": "Update Profile",
     "main_photo": "Main"
@@ -1204,7 +1204,7 @@
   },
   "profilePopup": {
     "header": "Profile",
-    "bio_label": "Mood & Quote",
+    "bio_label": "Bio",
     "no_bio": "No mood or quote shared yet",
     "rose_sent": "Rose Sent!",
     "send_rose": "Send Rose",
@@ -1282,7 +1282,7 @@
   },
   "profileModal": {
     "title": "Profile",
-    "bio_label": "Mood & Quote",
+    "bio_label": "Bio",
     "send_rose": "🌹 Send Rose",
     "send_invitation": "Send Invitation",
     "upgrade_plan": "Upgrade Plan",
