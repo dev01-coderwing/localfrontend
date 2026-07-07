@@ -101,7 +101,7 @@ export default function SplashScreen() {
 
 // import React, { useState, useEffect, useRef } from 'react';
 // import { useNavigate } from "react-router-dom";
-// import logo from '/Image/IAMeetYou.png'
+// import logo from '/Image/iameetyou.png'
 // export default function SplashScreen() {
 //   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 //   const [currentPos, setCurrentPos] = useState({ x: 0, y: 0 });

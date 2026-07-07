@@ -9,7 +9,7 @@ import medium from '/Image/medium.png'
 import XL from '/Image/XL.png'
 import lucascope from '/Image/lucascope.png'
 import lucascopeInfinity from '/Image/lucascopeInfinity.png'
-import leDigestif from '/Image/Le Digestif.png'
+import leDigestif from '/Image/Le Digestifif.png'
 import coin from '/Image/coin.png'
 import lucas from '/Image/lucasTime.png'
 

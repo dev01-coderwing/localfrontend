@@ -305,7 +305,7 @@
     "lucascopeGuideDesc": "+1h/mês de astrologia e compatibilidade",
     "lucascopeInfinity": "Lucascope Infinity",
     "lucascopeInfinityDesc": "Poupe 2 meses no plano anual",
-    "leDigestif": "Le Digestif",
+    "leDigestif": "Le Digestifif",
     "leDigestifDesc": "(compra única)",
     "totalEur": "Total (EUR)",
     "perMonth": "/mês",
@@ -1521,7 +1521,7 @@
       "feature_personal_astro_synastry": "Astrologia pessoal + Sinastria"
     },
     "le_digestif": {
-      "name": "Le Digestif",
+      "name": "Le Digestifif",
       "subtitle": "(compra única)",
       "feature_questions": "50 perguntas íntimas",
       "feature_compatibility": "+5% de compatibilidade",

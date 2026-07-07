@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import one from "/Image/AI-guide.png";
-import two from "/Image/Brain.png";
-import three from "/Image/Assistant-rafiki.png";
-import four from "/Image/As.png";
-import five from "/Image/Data.png";
+import one from "/Image/ai-guide.png";
+import two from "/Image/ai-brain.png";
+import three from "/Image/assistant-rafiki.png";
+import four from "/Image/as.png";
+import five from "/Image/data.png";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 const slides = [

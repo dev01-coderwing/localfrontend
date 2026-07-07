@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import Navbar from "../Navbar/Navbar";
-import infinite from "/Image/infinity.png"
-import Heart from "/Image/Heart-icon.png";
+import infinite from "/Image/infinet.png"
+import Heart from "/Image/heart-icon.png";
 import noto from "/Image/noto.png"
-import icon from "/Image/icon.png"
+import icon from "/Image/Icon.png"
 // import { Heart } from 'lucide-react';
 import chatImg from "/Image/chatIcon.png";
 import ChatRulesModal from "../Cards/ChatRulesModal";

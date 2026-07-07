@@ -305,7 +305,7 @@
     "lucascopeGuideDesc": "+1 ч/месяц астрологии и совместимости",
     "lucascopeInfinity": "Lucascope Infinity",
     "lucascopeInfinityDesc": "Сэкономьте 2 месяца на годовом плане",
-    "leDigestif": "Le Digestif",
+    "leDigestif": "Le Digestifif",
     "leDigestifDesc": "(разовая покупка)",
     "totalEur": "Итого (EUR)",
     "perMonth": "/мес",
@@ -1521,7 +1521,7 @@
       "feature_personal_astro_synastry": "Персональное астро + Синастрия"
     },
     "le_digestif": {
-      "name": "Le Digestif",
+      "name": "Le Digestifif",
       "subtitle": "(разовая покупка)",
       "feature_questions": "50 интимных вопросов",
       "feature_compatibility": "+5% к совместимости",
