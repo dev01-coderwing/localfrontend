@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { BadgeCheck } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import Voice from "/Image/Voice-coin.png";
-import noto from "/Image/noto-icon.png";
-import Heart from "/Image/heart-icon.png";
+
+
+
 import infinite from "/Image/infinet.png"
 import { Infinity } from "lucide-react";
 import silver from "/Image/silver-icon.png"

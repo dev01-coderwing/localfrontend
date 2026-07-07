@@ -2,8 +2,8 @@ import React from "react";
 import Navbar from "../Navbar/Navbar";
 import Right from "../../Components/UserProfile/layout/Right"; // adjust path
 import { ArrowLeft, CalendarDays } from "lucide-react";
-import coins from "/Image/coins.png"; // use your coin stack image
-import coin from "/Image/coin.png";
+ // use your coin stack image
+
 
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { X, Minus, Plus, Info } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-import coin from "/Image/coin.png";
+
 
 const ConvertToMeonsModal = ({
   onClose,

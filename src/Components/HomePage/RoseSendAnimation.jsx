@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
-import rose from "/Image/rose.png";
+
 
 const MotionDiv = motion.div;
 const MotionSpan = motion.span;

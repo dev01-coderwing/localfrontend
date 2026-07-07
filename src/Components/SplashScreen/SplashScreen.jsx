@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import logo from "/Image/logo-nav.png";
-import mainlogo from "/Image/main-logo.png";
+
+
 const SUPPORTED_LANGS = ['en', 'es', 'fr', 'de', 'it', 'ja', 'ko', 'pt', 'zh'];
 
 export default function SplashScreen() {

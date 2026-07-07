@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import Navbar from "../Navbar/Navbar";
+
 import ChatRulesModal from "../Cards/ChatRulesModal";
 import LucasLabOverview from "./LucasLabOverview";
 import FreeChatModal from "../Cards/FreeChatModal";

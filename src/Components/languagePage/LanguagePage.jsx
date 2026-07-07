@@ -4,13 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import i18n from "../../i18n";
 import { updateLanguage } from "../../Components/Redux/bordingSlice";
 import { useTranslation } from "react-i18next";
-import china from "/Image/china.png";
-import french from "/Image/french.png";
-import italian from "/Image/italian.png";
-import Portugal from "/Image/Portugal.png";
-import Us from "/Image/Us.png";
+
+
+
+
+
 import japanese from "/Image/japanese.png"
-import korea from "/Image/korea.png";
+
 import german from "/Image/german.png"
 import spain from "/Image/spain.png"
 const languages = [
