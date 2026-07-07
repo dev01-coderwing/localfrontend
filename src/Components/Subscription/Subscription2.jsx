@@ -85,9 +85,32 @@ const Subscription2 = () => {
               ))}
             </div>
           </section>
+
+          {/* ... suite des sections ... */}
           
-          {/* ... (Garde le reste de tes sections de la même manière en remplaçant les variables d'images par les chemins "/Image/...") */}
-          
+          <div className="flex-1 flex flex-col justify-center space-y-3 bg-[var(--bg)]">
+            {[
+              { title: 'subscription2.lucascopeGuide', desc: 'subscription2.lucascopeGuideDesc', price: '7.99', image: '/Image/lucascope.png' },
+              { title: 'subscription2.lucascopeInfinity', desc: 'subscription2.lucascopeInfinityDesc', price: '19.99', image: '/Image/lucascopeInfinity.png' },
+              { title: 'subscription2.leDigestif', desc: 'subscription2.leDigestifDesc', price: '9.99', image: '/Image/Le Digestifif.png' },
+            ].map((svc) => (
+              <div key={svc.title} className="flex items-center justify-between p-4 rounded-xl border border-[var(--border)] bg-[var(--bg-card)]/10">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full overflow-hidden bg-[var(--hover)] flex items-center justify-center">
+                    <img src={svc.image} alt={t(svc.title)} className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-sm text-[var(--text-dim)]">{t(svc.title)}</h5>
+                    <p className="text-[10px] text-[var(--text-dim2)]">{t(svc.desc)}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-sm text-[var(--text-dim2)]">€{svc.price}</span>
+                  <ChevronDown size={16} className="text-[var(--text-dim2)]" />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
