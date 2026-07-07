@@ -3,13 +3,36 @@ import { useNavigate } from "react-router-dom";
 import logo from "/Image/IAMeetYou.png";
 import { useTranslation } from "react-i18next";
 
+const VALID_IDENTITIES = ["male", "female", "other"];
+
 const Identity = () => {
   const { t } = useTranslation();
   const [identity, setIdentity] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  const isValidIdentity = VALID_IDENTITIES.includes(identity);
+
+  console.log("[Identity] initial identity value:", identity);
+  console.log("[Identity] continue button enabled:", isValidIdentity);
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setIdentity(value);
+    setError("");
+    console.log("[Identity] selected identity on change:", value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    console.log("[Identity] identity value before navigation:", identity);
+
+    if (!isValidIdentity) {
+      setError(t("identity.validationError"));
+      return;
+    }
+
     navigate("/BasicInfo");
   };
 
@@ -47,10 +70,10 @@ const Identity = () => {
 
             <select
               value={identity}
-              onChange={(e) => setIdentity(e.target.value)}
+              onChange={handleChange}
               className="w-full border border-[var(--border)] rounded-lg px-3 py-2 bg-[var(--bg)] text-[var(--text-dim)]"
             >
-              <option className="bg-[var(--bg)] text-[var(--text-dim)]" value="">
+              <option className="bg-[var(--bg)] text-[var(--text-dim)]" value="" disabled hidden>
                 {t("identity.selectPlaceholder")}
               </option>
 
@@ -62,14 +85,19 @@ const Identity = () => {
                 {t("identity.female")}
               </option>
 
-              <option className="bg-[var(--bg)] text-[var(--text-dim)]" value="couple">
-                {t("identity.couple")}
+              <option className="bg-[var(--bg)] text-[var(--text-dim)]" value="other">
+                {t("identity.other")}
               </option>
             </select>
 
+            {error && (
+              <p className="text-red-500 text-sm">{error}</p>
+            )}
+
             <button
               type="submit"
-              className="w-full mt-4 py-2 rounded-lg text-white font-medium bg-gradient-to-r from-[#D79098] to-[#5F7BF4] hover:opacity-90"
+              disabled={!isValidIdentity}
+              className="w-full mt-4 py-2 rounded-lg text-white font-medium bg-gradient-to-r from-[#D79098] to-[#5F7BF4] hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:opacity-50"
             >
               {t("identity.continue")}
             </button>

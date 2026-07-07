@@ -88,8 +88,9 @@
     "selectPlaceholder": "Sélectionner une identité",
     "male": "Homme",
     "female": "Femme",
-    "couple": "Couple",
-    "continue": "Continuer"
+    "other": "Autre",
+    "continue": "Continuer",
+    "validationError": "Veuillez sélectionner une identité pour continuer."
   },
   "basicInfo": {
     "title": "Informations de base",

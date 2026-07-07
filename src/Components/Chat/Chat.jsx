@@ -34,6 +34,7 @@ function Chat() {
   const [selectedId, setSelectedId] = useState(null);
   const [messages, setMessages] = useState([]);
   const bottomRef = useRef(null);
+  const selectedIdRef = useRef(null);
 
   const dispatch = useDispatch();
 
@@ -55,14 +56,17 @@ function Chat() {
   const selectedConversationIdRef = useRef(null);
 
   useEffect(() => {
+    selectedIdRef.current = selectedId;
+  }, [selectedId]);
+
+  useEffect(() => {
     const socket = getSocket();
     if (!socket) return;
 
     const handleNewMessage = (message) => {
-      if (Number(message.conversationId) === Number(selectedId)) {
-                console.log("Fetching conversation:", selectedId);
-
-        dispatch(getConversationMessages(selectedId));
+      const activeConversationId = selectedIdRef.current;
+      if (Number(message.conversationId) === Number(activeConversationId)) {
+        dispatch(getConversationMessages(activeConversationId));
       }
     };
 
@@ -70,31 +74,16 @@ function Chat() {
       dispatch(setOnlineUsers(users));
     };
 
-    // const handleUserOnline = ({ userId }) => {
-    //   dispatch(addOnlineUser(userId));
-    // };
-
-    // const handleUserOffline = ({ userId }) => {
-    //   dispatch(removeOnlineUser(userId));
-    // };
-
+    socket.on(SOCKET_EVENTS.NEW_MESSAGE, handleNewMessage);
     socket.on("newMessage", handleNewMessage);
-    socket.on(
-      SOCKET_EVENTS.ACTIVE_USERS,
-      ({ users }) => {
-        dispatch(
-          setOnlineUsers(users)
-        );
-      }
-    );
+    socket.on(SOCKET_EVENTS.ACTIVE_USERS, handleActiveUsers);
 
-    // return () => {
-    //   socket.off("newMessage", handleNewMessage);
-    //   socket.off(SOCKET_EVENTS.ACTIVE_USERS, handleActiveUsers);
-    //   socket.off(SOCKET_EVENTS.USER_ONLINE, handleUserOnline);
-    //   socket.off(SOCKET_EVENTS.USER_OFFLINE, handleUserOffline);
-    // };
-  }, [selectedId, dispatch]);
+    return () => {
+      socket.off(SOCKET_EVENTS.NEW_MESSAGE, handleNewMessage);
+      socket.off("newMessage", handleNewMessage);
+      socket.off(SOCKET_EVENTS.ACTIVE_USERS, handleActiveUsers);
+    };
+  }, [dispatch]);
 
   useEffect(() => {
     if (!selectedConversation) return;

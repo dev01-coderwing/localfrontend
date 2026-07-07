@@ -88,8 +88,9 @@
     "selectPlaceholder": "पहचान चुनें",
     "male": "पुरुष",
     "female": "महिला",
-    "couple": "जोड़ा",
-    "continue": "जारी रखें"
+    "other": "अन्य",
+    "continue": "जारी रखें",
+    "validationError": "जारी रखने के लिए कृपया एक पहचान चुनें।"
   },
   "basicInfo": {
     "title": "बुनियादी जानकारी",

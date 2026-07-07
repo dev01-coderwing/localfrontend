@@ -88,8 +88,9 @@
     "selectPlaceholder": "アイデンティティを選択",
     "male": "男性",
     "female": "女性",
-    "couple": "カップル",
-    "continue": "続ける"
+    "other": "その他",
+    "continue": "続ける",
+    "validationError": "続けるにはアイデンティティを選択してください。"
   },
   "basicInfo": {
     "title": "基本情報",

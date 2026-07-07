@@ -88,8 +88,9 @@
     "selectPlaceholder": "정체성 선택",
     "male": "남성",
     "female": "여성",
-    "couple": "커플",
-    "continue": "계속"
+    "other": "기타",
+    "continue": "계속",
+    "validationError": "계속하려면 정체성을 선택하세요."
   },
   "basicInfo": {
     "title": "기본 정보",

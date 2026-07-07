@@ -88,8 +88,9 @@
     "selectPlaceholder": "اختر الهوية",
     "male": "ذكر",
     "female": "أنثى",
-    "couple": "زوجان",
-    "continue": "متابعة"
+    "other": "آخر",
+    "continue": "متابعة",
+    "validationError": "يرجى اختيار الهوية للمتابعة."
   },
   "basicInfo": {
     "title": "المعلومات الأساسية",
