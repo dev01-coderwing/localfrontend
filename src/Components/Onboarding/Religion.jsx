@@ -20,22 +20,13 @@ const handleContinue = async () => {
       religion,
     };
 
-    console.log("Sending Religion:", religionData);
-
-    const result = await dispatch(
+    await dispatch(
   updateReligionThunk(religionData)
 );
-
-console.log(result);
 
     navigate("/astrology");
 
   } catch (error) {
-
-    console.log("RELIGION API ERROR:", error);
-
-    console.log(error.response);
-
   }
 };
 

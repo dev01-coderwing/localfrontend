@@ -2,8 +2,13 @@ import React from "react";
 import { X, MapPin } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const ProfileModal = ({ onClose }) => {
+const ProfileModal = ({ profile, onClose }) => {
   const { t } = useTranslation();
+  const image =
+    profile?.photos?.[0] ||
+    profile?.profileImage ||
+    "https://via.placeholder.com/300x380?text=No+Image";
+
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
 
@@ -27,20 +32,17 @@ const ProfileModal = ({ onClose }) => {
           {/* Left Image */}
           <div className="relative w-[300px] rounded-2xl overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+              src={image}
               alt="profile"
               className="w-full h-[380px] object-cover"
             />
 
             {/* Overlay */}
             <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white">
-              <h3 className="text-lg font-semibold flex items-center gap-2">
-                Nicole Jennifer
-                <span className="text-blue-400">✔</span>
-              </h3>
-
               <div className="flex items-center gap-1 text-sm text-gray-200">
-                <MapPin size={14} /> 2.3 km away
+                <MapPin size={14} />
+                {profile?.city || t('profileModal.unknown_city')}
+                {profile?.country ? `, ${profile.country}` : ""}
               </div>
             </div>
           </div>
@@ -61,33 +63,12 @@ const ProfileModal = ({ onClose }) => {
               </span>
             </div>
 
-            {/* Bio */}
+            {/* Mood & Quote */}
             <div className="mb-4">
               <h4 className="font-medium mb-1">{t('profileModal.bio_label')}</h4>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Architect by day, Vinyl collect by night. I'm a firm believer
-                that the best conversations happen over a late-night pasta dinner.
-                Looking for someone who can appreciate a good building and an
-                even better sense of humor.
+                {profile?.bio || t('profileModal.no_bio')}
               </p>
-            </div>
-
-            {/* Interests */}
-            <div>
-              <h4 className="font-medium mb-2">{t('profileModal.interests_label')}</h4>
-
-              <div className="flex flex-wrap gap-2">
-                {["Art", "Travel", "Music", "Fitness", "Cooking", "Reading"].map(
-                  (item, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 border rounded-full text-sm text-gray-600"
-                    >
-                      {item}
-                    </span>
-                  )
-                )}
-              </div>
             </div>
           </div>
         </div>

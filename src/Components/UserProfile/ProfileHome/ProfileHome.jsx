@@ -10,89 +10,16 @@ import { useTranslation } from "react-i18next";
 export default function ProfileLayout() {
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const { profile, loading, error } = useSelector((state) => state.profile);
+  const { profile } = useSelector((state) => state.profile);
   const userId = useSelector((state) => state.auth.user?.id);
 
-console.log("Profile State:", profile);
-console.log("Loading:", loading);
-console.log("Error:", error);
-
-
-console.log("UserId:", userId);
-
 useEffect(() => {
-  console.log("useEffect Running");
-
   if (userId) {
-    console.log("Dispatching API...");
     dispatch(getUserProfile(userId));
-  } else {
-    console.log("No UserId Found");
   }
 }, [dispatch, userId]);
 
-  // ✅ DUMMY API DATA (replace later with real API)
-  const apiData = {
-    user: {
-      name: "Neetesh Lodhi",
-      avatar: "https://i.pravatar.cc/100",
-      verified: true,
-    },
-
-    stats: {
-      avgMatch: "87%",
-      matches: 12,
-      labs: 5,
-    },
-
-    compatibility: [
-      { type: "MBTI", result: "ENFP - The Campaigner", status: "done" },
-      { type: "Love Languages", result: "Quality Time", status: "done" },
-      { type: "Attachment Style", result: "Secure", status: "done" },
-      { type: "Big Five (OCEAN)", result: "Not completed", status: "pending" },
-    ],
-
-    wallet: {
-      balance: 18.96,
-    },
-
-    usage: {
-      used: 150,
-      total: 360,
-    },
-
-    settings: [
-      { name: "Edit Profile", icon: "user" },
-      { name: "Subscription", icon: "card" },
-      { name: "Get Verified", icon: "shield" },
-      { name: "Language", icon: "globe" },
-      { name: "Settings", icon: "settings" },
-      { name: "Privacy & Security", icon: "lock" },
-      { name: "Display Mode", icon: "sun" },
-      { name: "Notifications", icon: "bell" },
-      { name: "Apply Promo Code", icon: "gift" },
-    ],
-  };
-  const getImageByType = (type) => {
-    switch (type) {
-      case "MBTI":
-        return "./Image/Heart-logo.png";
-
-      case "Love Languages":
-        return "./Image/brain-logo.png";
-
-      case "Attachment Style":
-        return "./Image/chain.png";
-
-      case "Big Five (OCEAN)":
-        return "./Image/star.png";
-
-      default:
-        return "/Image/default.png";
-    }
-  };
-  // ✅ TRANSFORM DATA (backend → UI)
- const IMAGE_BASE_URL = "http://35.180.139.208:3000";
+ const IMAGE_BASE_URL = import.meta.env.VITE_API_URL?.trim()?.replace(/\/api\/v1\/?$/, "");
 
  const transformedData = {
   profile: {

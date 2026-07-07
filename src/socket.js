@@ -26,8 +26,9 @@ const SOCKET_URL = (() => {
 
 const EVENTS = {
   JOIN_USER_ROOM: "join-user-room",
-  JOIN_CONVERSATION_ROOM: "join-conversation-room",
-  LEAVE_CONVERSATION_ROOM: "leave-conversation-room",
+  JOIN_CONVERSATION_ROOM: "join_conversation",
+  LEAVE_CONVERSATION_ROOM: "leave_conversation",
+  NEW_MESSAGE: "new_message",
   USER_ONLINE: "user-online",
   USER_OFFLINE: "user-offline",
   ACTIVE_USERS: "active-users",

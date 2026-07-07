@@ -63,9 +63,7 @@ const OTPVerify = () => {
         })
       ).unwrap();
 
-      console.log("Verify Success:", res);
-
-      localStorage.setItem("email", email); //  add this    
+      localStorage.setItem("email", email); //  add this
       //   navigate("/create-password");
       navigate("/create-password", {
         state: { email }

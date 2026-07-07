@@ -5,28 +5,9 @@ import { useTranslation } from "react-i18next";
 const ReferralPopup = ({
   isOpen = true,
   onClose = () => {},
-  totalReferrals = 42,
-  totalEarnings = "€ 1,240.00",
-  referrals = [
-    {
-      id: 1,
-      name: "Mark Johnson",
-      plan: "Privilège Plan",
-      since: "Since jan 2025",
-      status: "Active",
-      duration: "6 Months",
-      earned: "€ 82.50",
-    },
-    {
-      id: 2,
-      name: "Marcus Sterling",
-      plan: "Cercle Privé Plan",
-      since: "Since jan 2026",
-      status: "Cancelled",
-      duration: "2 Months",
-      earned: "€ 12.00",
-    },
-  ],
+  totalReferrals = 0,
+  totalEarnings = "€ 0.00",
+  referrals = [],
 }) => {
   const { t } = useTranslation();
   const [search, setSearch] = useState("");
@@ -77,7 +58,6 @@ const ReferralPopup = ({
               <Search className="h-5 w-5 text-[var(--text-dim)]" />
 
               <input
-              onClick={() => console.log("input clicked")}
                 type="text"
                 placeholder={t('referralPopup.search_placeholder')}
                 value={search}

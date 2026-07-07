@@ -32,8 +32,6 @@ export const updateLanguage = createAsyncThunk(
 
     } catch (error) {
 
-      console.log(error.response);
-
       return rejectWithValue(error.response?.data);
     }
   }

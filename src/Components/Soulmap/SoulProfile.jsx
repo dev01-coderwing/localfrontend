@@ -36,20 +36,26 @@ const SoulProfile = ({ onClose, user, onInvite }) => {
                         {/* Avatar */}
                         <div className="flex justify-center mb-3">
                             <div className="p-[2px] rounded-full bg-gradient-to-r from-purple-500 to-pink-500 shadow-lg">
-                                <img
-                                    src={user?.img || "https://randomuser.me/api/portraits/women/44.jpg"}
-                                    className="w-16 h-16 rounded-full border-2 border-[#120021] object-cover"
-                                    alt="avatar"
-                                />
+                                {user?.img ? (
+                                    <img
+                                        src={user.img}
+                                        className="w-16 h-16 rounded-full border-2 border-[#120021] object-cover"
+                                        alt="avatar"
+                                    />
+                                ) : (
+                                    <div className="w-16 h-16 rounded-full border-2 border-[#120021] bg-purple-900/40 flex items-center justify-center text-purple-200 text-lg font-bold">
+                                        {(user?.name || t('soulProfile.unknown_name')).charAt(0).toUpperCase()}
+                                    </div>
+                                )}
                             </div>
                         </div>
- 
+
                         <h3 className="text-white text-xl font-bold">
-                            {user?.name || "Aria"} <span className="text-blue-400 ml-1">✔</span>
+                            {user?.name || t('soulProfile.unknown_name')} <span className="text-blue-400 ml-1">✔</span>
                         </h3>
- 
+
                         <p className="text-gray-400 text-[13px] mt-1 opacity-80 leading-snug">
-                            {user?.bio || t('soulProfile.default_bio')}
+                            {user?.bio || t('soulProfile.no_bio')}
                         </p>
                     </div>
  

@@ -1,43 +1,63 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
+import { getLucasLabOverview } from "../Redux/lucasSlice";
 
 const LucasLabOverview = ({ onClose }) => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const overview = useSelector((state) => state.lucas.overview);
+  const authUser = useSelector((state) => state.auth.user);
+
+  useEffect(() => {
+    dispatch(getLucasLabOverview());
+  }, [dispatch]);
+
+  const noResult = t('lucasLab.no_result');
 
   const insights = [
     {
       icon: "🧠",
       name: t('lucasLab.mbti_name'),
       sub: t('lucasLab.mbti_sub'),
-      badge: "ENFP",
+      badge: overview?.insights?.mbti || noResult,
       badgeClass: "bg-violet-600 text-white",
     },
     {
       icon: "💗",
       name: t('lucasLab.love_name'),
       sub: t('lucasLab.love_sub'),
-      badge: t('lucasLab.love_badge'),
+      badge: overview?.insights?.loveLanguage || noResult,
       badgeClass: "bg-gradient-to-r from-pink-500 to-orange-400 text-white",
     },
     {
       icon: "🔗",
       name: t('lucasLab.attachment_name'),
       sub: t('lucasLab.attachment_sub'),
-      badge: t('lucasLab.attachment_badge'),
+      badge: overview?.insights?.attachmentStyle || noResult,
       badgeClass: "bg-purple-500 text-white",
     },
     {
       icon: "⭐",
       name: t('lucasLab.ocean_name'),
       sub: t('lucasLab.ocean_sub'),
-      badge: t('lucasLab.ocean_badge'),
+      badge: overview?.insights?.bigFive || noResult,
       badgeClass: "bg-amber-400 text-white",
     },
   ];
 
+  const profileName = overview?.fullName || authUser?.fullName || "";
+  const initials = profileName
+    .split(" ")
+    .filter(Boolean)
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
   const radius = 52;
   const circumference = 2 * Math.PI * radius;
-  const matchPercent = 92;
+  const matchPercent = overview?.matchPercent ?? 0;
   const offset = circumference - (matchPercent / 100) * circumference;
 
   return (
@@ -59,10 +79,10 @@ const LucasLabOverview = ({ onClose }) => {
         {/* Profile Row */}
         <div className="flex items-center gap-3 bg-[var(--bg-card)]/10 border border-[var(--border)] rounded-[14px] px-4 py-3 mb-4">
           <div className="w-13 h-13 rounded-[12px] bg-gradient-to-br from-blue-200 to-blue-400 flex items-center justify-center text-white font-bold text-lg shrink-0">
-            NJ
+            {initials}
           </div>
           <div>
-            <p className="text-[16px] font-bold text-[var(--text-dim)]">{t('lucasLab.profile_name')}</p>
+            <p className="text-[16px] font-bold text-[var(--text-dim)]">{profileName}</p>
             <p className="text-[12px] text-[var(--text-dim2)] mt-0.5">{t('lucasLab.profile_sub')}</p>
           </div>
         </div>
@@ -104,7 +124,7 @@ const LucasLabOverview = ({ onClose }) => {
                 fill="white"
                 fontFamily="system-ui"
               >
-                92%
+                {matchPercent}%
               </text>
             </svg>
           </div>

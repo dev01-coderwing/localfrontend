@@ -145,6 +145,12 @@ import { useState, useEffect } from "react";
 import VerifyModal from "../verification/VerifyModal";
 import { useTheme } from "../../../ThemeContext";
 import { useTranslation } from "react-i18next";
+import star2 from "/Image/Black-star.png"
+import { useNavigate } from "react-router-dom";
+
+
+
+
 const iconMap = {
   user: User,
   card: CreditCard,
@@ -163,12 +169,12 @@ function Right() {
   const [invisibleMode, setInvisibleMode] = useState(false);
   const [showThemeModal, setShowThemeModal] = useState(false);
   const { theme, setTheme } = useTheme();
-
+const navigate = useNavigate();
   const rightSidebarData = {
     influencer: {
       title: t('profileSidebar.become_influencer'),
       desc: t('profileSidebar.earn_rewards_desc'),
-      img: "/Image/Star2.png",
+      img: star2,
     },
 
     sections: [
@@ -176,11 +182,11 @@ function Right() {
         key: "account",
         title: t('profileSidebar.account'),
         items: [
-          { name: t('profileSidebar.edit_profile'), icon: "user", route: "edit-profile" },
+          { name: t('profileSidebar.edit_profile'), icon: "user", route: "/edit-profile" },
           { name: t('profileSidebar.subscription'), icon: "card", route: "/subscription" },
-          { name: t('profileSidebar.get_verified'), icon: "shield", route: "verify" },
-          { name: t('profileSidebar.language'), icon: "globe", route: "language" },
-          { name: t('profileSidebar.settings'), icon: "settings", route: "settings" },
+          { name: t('profileSidebar.get_verified'), icon: "shield", route: "/verify" },
+          { name: t('profileSidebar.language'), icon: "globe", route: "/languagePage" },
+          { name: t('profileSidebar.settings'), icon: "settings", route: "/settings" },
         ],
       },
       {
@@ -235,6 +241,7 @@ function Right() {
       >
         {/* Influencer Card */}
         <div
+        onClick={() => navigate("/introduction")}
           className="
             flex items-center justify-between
             rounded-2xl

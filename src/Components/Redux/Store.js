@@ -12,6 +12,8 @@ import chatRequestReducer from "./chatRequestSlice";
 import discoveryReducer from "./discoverySlice";
 import bannerReducer from "./bannerSlice";
 import lucasReducer from "./lucasSlice";
+import filterReducer from "./filterSlice";
+
 export const store = configureStore({
   reducer: {
     auth: authReducer,
@@ -27,6 +29,7 @@ export const store = configureStore({
     discovery: discoveryReducer,
     banner: bannerReducer,
     lucas: lucasReducer,
+    filter: filterReducer,
 
   },
 });

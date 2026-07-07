@@ -1,12 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import { X, Info, Clock, CheckCircle, RotateCcw } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { sendChatRequest } from "../Redux/chatRequestSlice";
+import { sendRose } from "../Redux/discoverySlice";
 
-const PremiumInvitationModal = ({ onClose }) => {
+const IMAGE_BASE_URL = import.meta.env.VITE_API_URL?.trim()?.replace(/\/api\/v1\/?$/, "");
+
+// Flat platform policy for escrowed premium invitations (see upgradeModal.description).
+// This is a fixed display label, not a frontend-computed value.
+const ESCROW_MEONS = 20;
+
+const PremiumInvitationModal = ({ profile, onClose, onSent, onInsufficientMeons }) => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(null);
+  const [roseSending, setRoseSending] = useState(false);
+  const [roseSent, setRoseSent] = useState(false);
+
+  const photo = profile?.photos?.length > 0
+    ? `${IMAGE_BASE_URL}/${profile.photos[0]}`
+    : profile?.profileImage
+    ? `${IMAGE_BASE_URL}/${profile.profileImage}`
+    : "https://via.placeholder.com/400x520?text=No+Image";
+
+  const handleSendRose = async () => {
+    if (roseSending || roseSent || !profile?.id) return;
+    setRoseSending(true);
+    try {
+      await dispatch(sendRose(profile.id)).unwrap();
+      setRoseSent(true);
+    } catch (err) {
+      // Rose failures are non-blocking for the invitation flow.
+    } finally {
+      setRoseSending(false);
+    }
+  };
+
+  const handleSendInvitation = async () => {
+    if (sending || !profile?.id) return;
+    setError(null);
+    setSending(true);
+    try {
+      await dispatch(sendChatRequest(profile.id)).unwrap();
+      onSent?.();
+      onClose?.();
+    } catch (err) {
+      const code = err?.code || err?.error;
+      const message = (err?.message || "").toLowerCase();
+      if (code === "INSUFFICIENT_MEONS" || message.includes("meon")) {
+        onClose?.();
+        onInsufficientMeons?.();
+      } else {
+        setError(err?.message || "Failed to send invitation");
+      }
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
-      
+
       {/* Modal */}
       <div className="bg-[var(--bg)] w-full max-w-md rounded-3xl p-5 shadow-xl relative border border-purple-200">
 
@@ -26,15 +83,15 @@ const PremiumInvitationModal = ({ onClose }) => {
         {/* Profile Card */}
         <div className="rounded-2xl overflow-hidden border-4 border-green-400 mb-4 relative">
           <img
-            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2"
-            alt="profile"
+            src={photo}
+            alt={profile?.fullName}
             className="w-full h-72 object-cover"
           />
 
           {/* Name Overlay */}
           <div className="absolute bottom-3 left-3 text-white">
             <div className="flex items-center gap-2">
-              <h3 className="font-semibold text-lg">Elena</h3>
+              <h3 className="font-semibold text-lg">{profile?.fullName}</h3>
               <span className="bg-blue-500 text-white text-xs px-1 rounded">
                 ✔
               </span>
@@ -49,7 +106,7 @@ const PremiumInvitationModal = ({ onClose }) => {
           </div>
 
           <h3 className="text-xl font-semibold flex items-center justify-center gap-2">
-            🪙 99 Meons
+            🪙 {ESCROW_MEONS} Meons
           </h3>
           <p className="text-gray-500 text-sm">{t('premiumInvitation.service_fee')}</p>
         </div>
@@ -61,7 +118,9 @@ const PremiumInvitationModal = ({ onClose }) => {
             <div>
               <h4 className="font-medium text-sm">{t('premiumInvitation.policy_title')}</h4>
               <p className="text-xs text-gray-500">
-                {t('premiumInvitation.policy_desc')}
+                {t('premiumInvitation.policy_desc', {
+                  name: profile?.fullName || t('premiumInvitation.policy_desc_fallback'),
+                })}
               </p>
               <span className="text-blue-500 text-xs cursor-pointer">
                 {t('premiumInvitation.learn_more')}
@@ -102,16 +161,28 @@ const PremiumInvitationModal = ({ onClose }) => {
           </div>
         </div>
 
+        {error && (
+          <p className="text-xs text-red-500 text-center mb-3">{error}</p>
+        )}
+
         {/* Send Rose Button */}
         <div className="flex justify-center mb-4">
-          <button className="bg-red-500 text-white px-5 py-2 rounded-full shadow-lg flex items-center gap-2 hover:scale-105 transition">
-            {t('premiumInvitation.send_rose')}
+          <button
+            onClick={handleSendRose}
+            disabled={roseSending || roseSent}
+            className="bg-red-500 text-white px-5 py-2 rounded-full shadow-lg flex items-center gap-2 hover:scale-105 transition disabled:opacity-60 disabled:hover:scale-100"
+          >
+            {roseSent ? t('premiumInvitation.rose_sent') : t('premiumInvitation.send_rose')}
           </button>
         </div>
 
         {/* Main Button */}
-        <button className="w-full py-3 rounded-xl text-white font-medium bg-gradient-to-r from-pink-400 to-indigo-500 mb-2">
-          {t('premiumInvitation.send_invitation')}
+        <button
+          onClick={handleSendInvitation}
+          disabled={sending}
+          className="w-full py-3 rounded-xl text-white font-medium bg-gradient-to-r from-pink-400 to-indigo-500 mb-2 disabled:opacity-60"
+        >
+          {sending ? t('premiumInvitation.sending') : t('premiumInvitation.send_invitation')}
         </button>
 
         {/* Cancel */}

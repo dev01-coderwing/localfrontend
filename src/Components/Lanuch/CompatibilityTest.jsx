@@ -66,8 +66,6 @@ const next = async () => {
     })
   );
 
-  console.log(result);
-
   const nextIndex = current + 1;
 
   // Last Question
@@ -227,4 +225,3 @@ const next = async () => {
     </>
   );
 }
-

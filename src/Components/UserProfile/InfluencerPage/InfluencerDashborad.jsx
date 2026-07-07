@@ -10,7 +10,7 @@ import Navbar from "../../Navbar/Navbar";
 import Right from "../layout/Right";
 import WalletPopup from "./WalletPopup";
 
-function InfluencerDashboard() {
+function InfluencerDashboard({ promoData = { code: "", discount: "", commission: "" }, statsData = [], activityData = [] }) {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [copied, setCopied] = useState(false);
@@ -19,30 +19,12 @@ function InfluencerDashboard() {
   const [showReferralPopup, setShowReferralPopup] = useState(false);
   const [showPromoModal, setShowPromoModal] = useState(false);
 
-  const promoData = {
-    code: "YOURCODE15",
-    discount: "15%",
-    commission: "10%",
-  };
-
-  const statsData = [
-    { title: "Total Referrals", value: "124", growth: "+18% this month" },
-    { title: "Active Now", value: "42", growth: "+3% this month" },
-    { title: "Total Earnings", value: "€608", growth: "+24%" },
-  ];
-
-  const activityData = [
-    { name: "John Dawson", time: "2 hours ago", amount: "+€14.99" },
-    { name: "NTR Patel", time: "5 hours ago", amount: "+€18.00" },
-  ];
-
   const handleCopyCode = async () => {
     try {
       await navigator.clipboard.writeText(promoData.code);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.log(err);
     }
   };
 

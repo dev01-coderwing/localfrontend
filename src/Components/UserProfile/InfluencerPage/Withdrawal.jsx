@@ -341,13 +341,8 @@ const Withdrawal = ({
 
 
               <button
-              //    onClick={() => {
-              //  console.log("Continue clicked");
-              //      setShowConfirmWithdrawal(true);
-              //       }} 
                 onClick={(e) => {
                e.stopPropagation();
-                 console.log("Continue clicked");
                   setShowConfirmWithdrawal(true);
                       }}
 
@@ -379,13 +374,10 @@ const Withdrawal = ({
       </div>
 
       {/* Confirm Withdrawal Popup */}
-      {showConfirmWithdrawal && console.log("Rendering ConfirmWithdrawal")}
-
       {showConfirmWithdrawal && (
         <ConfirmWithdrawal
           onCancel={() => setShowConfirmWithdrawal(false)}
           onConfirm={() => {
-            console.log("Withdrawal Confirmed");
             setShowConfirmWithdrawal(false);
             onClose?.();
           }}

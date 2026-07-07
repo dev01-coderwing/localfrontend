@@ -1,27 +1,7 @@
  import { MapPin, CheckCircle2, ArrowRight, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-
-const users = [
-  {
-    name: "Lisa",
-    img: "https://randomuser.me/api/portraits/women/44.jpg",
-    astral: 84,
-    emotional: 93,
-    bio: "Adventurous soul exploring the depths of the universe.",
-    alignmentText: "Lisa's fiery energy perfectly complements your grounded nature, creating a dynamic balance of passion and stability."
-  },
-  {
-    name: "Archie",
-    img: "https://randomuser.me/api/portraits/women/68.jpg",
-    astral: 87,
-    emotional: 82,
-    bio: "Looking for a soul connection that transcends time.",
-    alignmentText: "Your shared values and intellectual curiosity form a strong foundation for a deep and lasting spiritual bond."
-  },
-];
- 
-const SoulmapLocation = ({ onClose, locationName, onViewProfile }) => {
+const SoulmapLocation = ({ onClose, locationName, onViewProfile, matches = [] }) => {
   const { t } = useTranslation();
   return (
     <div className="relative min-h-[600px] w-full max-w-md bg-[#0b0014] rounded-[32px] border border-white/5 flex flex-col p-6 overflow-hidden">
@@ -58,21 +38,32 @@ const SoulmapLocation = ({ onClose, locationName, onViewProfile }) => {
  
         {/* Cards */}
         <div className="flex flex-col gap-4">
-          {users.map((user, index) => (
+          {matches.length === 0 ? (
+            <p className="text-gray-400 text-sm text-center py-8">
+              {t('soulmapLocation.no_matches')}
+            </p>
+          ) : (
+          matches.map((user, index) => (
             <div
               key={index}
               className="p-[1px] rounded-2xl bg-gradient-to-r from-purple-500/30 to-blue-500/30 shadow-xl"
             >
               <div className="bg-[#120021]/80 rounded-2xl p-5 flex items-center gap-4 border border-white/5">
-               
+
                 {/* Avatar */}
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-tr from-pink-500 to-blue-500 rounded-full opacity-20"></div>
-                  <img
-                    src={user.img}
-                    alt=""
-                    className="relative w-16 h-16 rounded-full border-2 border-purple-500/50 object-cover"
-                  />
+                  {user.img ? (
+                    <img
+                      src={user.img}
+                      alt=""
+                      className="relative w-16 h-16 rounded-full border-2 border-purple-500/50 object-cover"
+                    />
+                  ) : (
+                    <div className="relative w-16 h-16 rounded-full border-2 border-purple-500/50 bg-purple-900/40 flex items-center justify-center text-purple-200 font-bold">
+                      {user.name?.charAt(0)?.toUpperCase()}
+                    </div>
+                  )}
                 </div>
  
                 {/* Content */}
@@ -108,12 +99,13 @@ const SoulmapLocation = ({ onClose, locationName, onViewProfile }) => {
                 </div>
               </div>
             </div>
-          ))}
+          ))
+          )}
         </div>
       </div>
     </div>
   );
 };
- 
+
 export default SoulmapLocation;
  

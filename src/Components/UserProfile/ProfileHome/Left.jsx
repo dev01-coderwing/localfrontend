@@ -1,6 +1,9 @@
 import { Star, CircleUser } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import Voice from "/Image/Voice-coin.png";
+import { BadgeCheck } from "lucide-react";
+
 function Left({ data = {} }) {
   const { t } = useTranslation();
   const stats = data?.stats || [];
@@ -41,11 +44,12 @@ function Left({ data = {} }) {
             {data?.name || "User"}
 
             {data?.verified && (
-              <img
-                src="/Image/BlueTick.png"
-                alt="Verified"
-                className="w-4 h-4"
-              />
+                    <span className="text-base flex items-center  ">
+                  <span className="text-blue-500">
+                    <BadgeCheck />
+                  </span>
+                  <img src={Voice} alt="Voice Coin" className="w-12" />
+                </span>
             )}
 
             {data?.badge && (
@@ -156,5 +160,4 @@ function Item({ item = {}, tick }) {
 }
 
 export default Left;
-
 

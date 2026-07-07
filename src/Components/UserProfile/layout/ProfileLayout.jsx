@@ -1,184 +1,35 @@
-// import Navbar from "../Navbar/Navbar";
-// import Left from "./Left";
-// import Right from "./Right";
-// import Middle from "./Middle";
-// import { Outlet } from "react-router-dom";
-
-// export default function ProfileLayout() {
-//   // ✅ DUMMY API DATA (replace later with real API)
-//   const rightSidebarData = {
-//     influencer: {
-//       title: "Become an Influencer",
-//       desc: "Earn rewards for sharing",
-//       img: "/Image/Star2.png",
-//     },
-
-//     sections: [
-//       {
-//         title: "ACCOUNT",
-//         items: [
-//           { name: "Edit Profile", icon: "user", route: "edit-profile" },
-//           { name: "Subscription", icon: "card", route: "subscription" },
-//           { name: "Get Verified", icon: "shield", route: "verify" },
-//           { name: "Language", icon: "globe", route: "language" },
-//           { name: "Settings", icon: "settings", route: "settings" },
-//         ],
-//       },
-//       {
-//         title: "PREFERENCES",
-//         items: [
-//           { name: "Privacy & Security", icon: "lock", route: "privacy" },
-//           { name: "Display Mode", icon: "sun", route: "display" },
-//           { name: "Notifications", icon: "bell", route: "notifications" },
-//           { name: "Apply Promo Code", icon: "gift", route: "promo" },
-//         ],
-//       },
-//     ],
-//   };
-//   const getImageByType = (type) => {
-//     switch (type) {
-//       case "MBTI":
-//         return "/Image/Brain2.png";
-
-//       case "Love Languages":
-//         return "/Image/heart2.png";
-
-//       case "Attachment Style":
-//         return "/Image/pin.png";
-
-//       case "Big Five (OCEAN)":
-//         return "/Image/star.png";
-
-//       default:
-//         return "/Image/default.png";
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <Navbar />
-
-//       <div className="min-h-screen bg-[#f6f1eb] p-6">
-//         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 rounded-3xl p-5 shadow-inner">
-//           {/* ✅ PASS DATA */}
-
-//           {/* ✅ DYNAMIC CONTENT */}
-//           <div className="lg:col-span-2">
-//             <Outlet />
-//           </div>
-//           <Right data={rightSidebarData} />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// import Navbar from "../../Navbar/Navbar";
-// import Left from "../ProfileHome/Left";
-// import Right from "../Right";
-// import Middle from "../ProfileHome/Middle";
-// import { Outlet } from "react-router-dom";
-// import { useOutletContext } from "react-router-dom";
-// export default function ProfileLayout() {
-//   // ✅ DUMMY API DATA (replace later with real API)
-//   const rightSidebarData = {
-//     influencer: {
-//       title: "Become an Influencer",
-//       desc: "Earn rewards for sharing",
-//       img: "/Image/Star2.png",
-//     },
-
-//     sections: [
-//       {
-//         title: "ACCOUNT",
-//         items: [
-//           { name: "Edit Profile", icon: "user", route: "edit-profile" },
-//           { name: "Subscription", icon: "card", route: "subscription" },
-//           { name: "Get Verified", icon: "shield", route: "verify" },
-//           { name: "Language", icon: "globe", route: "language" },
-//           { name: "Settings", icon: "settings", route: "settings" },
-//         ],
-//       },
-//       {
-//         title: "PREFERENCES",
-//         items: [
-//           { name: "Privacy & Security", icon: "lock", route: "privacy" },
-//           { name: "Display Mode", icon: "sun", route: "display" },
-//           { name: "Notifications", icon: "bell", route: "notifications" },
-//           { name: "Apply Promo Code", icon: "gift", route: "promo" },
-//         ],
-//       },
-//     ],
-//   };
-//   const getImageByType = (type) => {
-//     switch (type) {
-//       case "MBTI":
-//         return "/Image/Brain2.png";
-
-//       case "Love Languages":
-//         return "/Image/heart2.png";
-
-//       case "Attachment Style":
-//         return "/Image/pin.png";
-
-//       case "Big Five (OCEAN)":
-//         return "/Image/star.png";
-
-//       default:
-//         return "/Image/default.png";
-//     }
-//   };
-//   // 🔥 THIS WILL BE REPLACED WITH API LATER
-//   const getProfileData = () => {
-//     return {
-//       images: [
-//         {
-//           id: 1,
-//           url: "https://i.pravatar.cc/300",
-//           isMain: true,
-//         },
-//       ],
-
-//       bio: "",
-
-//       interests: ["Art", "Travel", "Music", "Fitness", "Cooking", "Reading"],
-//     };
-//   };
-
-//   const profileData = getProfileData();
-
-//   return (
-//     <div>
-//       <Navbar />
-
-//       <div className="min-h-screen bg-[#f6f1eb] p-6">
-//         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 rounded-3xl p-5 shadow-inner">
-//           {/* ✅ PASS DATA */}
-
-//           {/* ✅ DYNAMIC CONTENT */}
-//           <div className="lg:col-span-2">
-//             <Outlet context={profileData} />
-//           </div>
-//           <Right data={rightSidebarData} />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
+import { useEffect } from "react";
 import Navbar from "../../Navbar/Navbar";
 import Right from "./Right";
 import { Outlet } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
+import { getPsychologicalProfile } from "../../Redux/profileSlice";
 
 export default function ProfileLayout() {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.auth.user);
+  const psychological = useSelector((state) => state.profile.psychological);
+
+  useEffect(() => {
+    dispatch(getPsychologicalProfile());
+  }, [dispatch]);
+
+  const noResult = t('profileLayout.no_result');
+  const mbtiResult = psychological?.mbti || noResult;
+  const loveLanguageResult = psychological?.loveLanguage || noResult;
+  const attachmentStyleResult = psychological?.attachmentStyle || noResult;
+  const bigFiveResult = psychological?.bigFive || noResult;
+
+  const IMAGE_BASE_URL = "http://35.180.139.208:3000";
+  const avatarUrl = user?.profileImage ? `${IMAGE_BASE_URL}/${user.profileImage}` : "";
 
   //  MAIN DATA (SINGLE SOURCE OF TRUTH)
   const profileData = {
     profile: {
-      name: "Neetesh Lodhi",
-      avatar: "https://i.pravatar.cc/100",
+      name: user?.fullName || "",
+      avatar: avatarUrl,
       verified: true,
       badge: "/Image/Badge.png",
       tick: "/Image/tick.png",
@@ -192,42 +43,33 @@ export default function ProfileLayout() {
       compatibility: [
         {
           title: t('profileLayout.mbti'),
-          desc: t('profileLayout.mbti_desc'),
-          status: "done",
+          desc: t('profileLayout.mbti_desc', { mbti_result: mbtiResult }),
+          status: psychological?.mbti ? "done" : "pending",
           img: "/Image/Brain2.png",
         },
         {
           title: t('profileLayout.love_languages'),
-          desc: t('profileLayout.love_languages_desc'),
-          status: "done",
+          desc: t('profileLayout.love_languages_desc', { love_language_result: loveLanguageResult }),
+          status: psychological?.loveLanguage ? "done" : "pending",
           img: "/Image/heart2.png",
         },
         {
           title: t('profileLayout.attachment_style'),
-          desc: t('profileLayout.attachment_style_desc'),
-          status: "done",
+          desc: t('profileLayout.attachment_style_desc', { attachment_style_result: attachmentStyleResult }),
+          status: psychological?.attachmentStyle ? "done" : "pending",
           img: "/Image/pin.png",
         },
         {
           title: t('profileLayout.big_five'),
-          desc: t('profileLayout.big_five_desc'),
-          status: "pending",
+          desc: t('profileLayout.big_five_desc', { big_five_result: bigFiveResult }),
+          status: psychological?.bigFive ? "done" : "pending",
           img: "/Image/star.png",
         },
       ],
-      interests: [
-        t('profileLayout.interest_art'),
-        t('profileLayout.interest_travel'),
-        t('profileLayout.interest_music'),
-        t('profileLayout.interest_fitness'),
-        t('profileLayout.interest_cooking'),
-        t('profileLayout.interest_reading'),
-      ],
-      bio: "",
       images: [
         {
           id: 1,
-          url: "https://i.pravatar.cc/300",
+          url: avatarUrl,
           isMain: true,
         },
         { id: 2, url: "", isMain: false },

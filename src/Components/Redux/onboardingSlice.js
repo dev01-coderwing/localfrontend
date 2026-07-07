@@ -90,8 +90,6 @@ export const uploadPhotosThunk = createAsyncThunk(
 
     } catch (err) {
 
-      console.log(err);
-
       return rejectWithValue(
         err.response?.data || "Error"
       );

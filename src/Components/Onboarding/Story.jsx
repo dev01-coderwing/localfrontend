@@ -5,30 +5,12 @@ import { useDispatch } from "react-redux";
 import { updateStoryThunk } from "../Redux/onboardingSlice";
 import { useTranslation } from "react-i18next";
 
-// const interestsList = [
-//   "Travel", "Music", "Fitness", "Cooking",
-//   "Reading", "Gaming", "Yoga", "Movies",
-//   "Photography", "Dancing", "Nature"
-// ];
-
-
 const Story = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [bio, setBio] = useState("");
-  // const [interests, setInterests] = useState([]);
-
-  // const toggleInterest = (item) => {
-  //   if (interests.includes(item)) {
-  //     setInterests(interests.filter(i => i !== item));
-  //   } else {
-  //     setInterests([...interests, item]);
-  //   }
-  // };
-
-
 
   const handleContinue = async () => {
 
@@ -36,25 +18,15 @@ const Story = () => {
 
       const storyData = {
         bio,
-        interests,
       };
 
-      console.log("Sending Story:", storyData);
-
-      const result = await dispatch(
+      await dispatch(
         updateStoryThunk(storyData)
       );
-
-      console.log(result);
 
       navigate("/Photos");
 
     } catch (error) {
-
-      console.log("STORY API ERROR:", error);
-
-      console.log(error.response);
-
     }
   };
 
@@ -85,32 +57,14 @@ const Story = () => {
           </h2>
 
           {/* Textarea */}
-         {/* Bio */}
+         {/* Mood & Quote */}
 <textarea
   placeholder={t("story.bioPlaceholder")}
   value={bio}
   onChange={(e) => setBio(e.target.value)}
+  maxLength={300}
   className="w-full border border-[var(--border)] rounded-lg px-3 py-2 h-24 mb-4 bg-[var(--card)] text-[var(--text-dim)] placeholder:text-[var(--text-dim2)]"
 />
-
-{/* Interests */}
-{/* <div className="flex flex-wrap gap-2 mb-6">
-  {interestsList.map((item) => (
-    <button
-      type="button"
-      key={item}
-      onClick={() => toggleInterest(item)}
-      className={`px-3 py-1 border border-[var(--border)] rounded-full text-sm transition
-      ${
-        interests.includes(item)
-          ? "bg-orange-500 text-white"
-          : "bg-[var(--card)] text-[var(--text-dim)]"
-      }`}
-    >
-      {t(`story.interests.${item.toLowerCase()}`)}
-    </button>
-  ))}
-</div> */}
 
 {/* Button */}
 <button

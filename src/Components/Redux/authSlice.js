@@ -124,6 +124,19 @@ export const LoginUser = createAsyncThunk(
   }
 );
 
+export const sessionStartThunk = createAsyncThunk(
+  "auth/sessionStart",
+  async (_, { rejectWithValue }) => {
+    try {
+      const res = await api.post("/user/session-start");
+
+      return res.data;
+    } catch (err) {
+      return rejectWithValue(err.response?.data || "Error");
+    }
+  }
+);
+
 export const forgotPassword = createAsyncThunk(
   "auth/forgotPassword",
   async (email, { rejectWithValue }) => {

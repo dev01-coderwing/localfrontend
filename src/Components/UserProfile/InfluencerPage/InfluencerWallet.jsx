@@ -10,26 +10,10 @@ import {
   User
 } from "lucide-react";
 
-const withdrawHistory = [
-  {
-    id: 1,
-    name: "John Dawson",
-    time: "2 hours ago",
-    amount: "+€14.99",
-  },
-  {
-    id: 2,
-    name: "NTR Patel",
-    time: "5 hours ago",
-    amount: "+€18.00",
-  },
-];
-
-function InfluencerWallet({onClose}) {
+function InfluencerWallet({ onClose, withdrawHistory = [] }) {
   const { t } = useTranslation();
   const [showWithdrawal, setShowWithdrawal] = useState(false);
   return (
-    // <div className="min-h-screen bg-[#1f1f1f] flex items-center justify-center p-2 sm:p-4 md:p-6">
     <div
   className="fixed inset-0 z-[9999] bg-black/60 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 md:p-6"
   onClick={onClose}

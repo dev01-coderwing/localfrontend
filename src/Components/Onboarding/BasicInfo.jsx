@@ -25,18 +25,13 @@ const BasicInfo = () => {
 
     try {
 
-      const result = await dispatch(
+      await dispatch(
         updateBasicInfoThunk(formData)
       );
-
-      console.log(result);
 
       navigate("/story");
 
     } catch (error) {
-
-      console.log(error);
-
     }
   };
   return (

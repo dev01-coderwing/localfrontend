@@ -1,15 +1,18 @@
 import React from "react";
 import { Check, Heart } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 function Complete({
-  userName = "Neetesh",
+  userName,
   age = 25,
   trustScore = 100,
   profileImage,
   onGoToProfile,
 }) {
   const { t } = useTranslation();
+  const user = useSelector((state) => state.auth.user);
+  const displayName = userName ?? user?.fullName ?? "";
   return (
     <div className="min-h-dvh bg-[var(--bg-background)] overflow-hidden">
       <div className="max-w-md mx-auto h-dvh flex flex-col px-4 py-4">
@@ -54,7 +57,7 @@ function Complete({
 
             <div className="mt-2 flex items-center gap-1">
               <span className="text-[var(--text-dim)] text-sm font-semibold truncate">
-                {userName}, {age}
+                {displayName}, {age}
               </span>
 
               <div className="w-4 h-4 rounded-full bg-[#4F7DF3] flex items-center justify-center shrink-0">

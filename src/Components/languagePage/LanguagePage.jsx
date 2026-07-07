@@ -4,116 +4,113 @@ import { useDispatch, useSelector } from "react-redux";
 import i18n from "../../i18n";
 import { updateLanguage } from "../../Components/Redux/bordingSlice";
 import { useTranslation } from "react-i18next";
+import china from "/Image/china.png";
+import french from "/Image/french.png";
+import italian from "/Image/italian.png";
+import Portugal from "/Image/Portugal.png";
+import Us from "/Image/Us.png";
+import japanese from "/Image/japanese.png"
+import korea from "/Image/korea.png";
+import german from "/Image/german.png"
+import spain from "/Image/spain.png"
 const languages = [
-    { code: "en", name: "English", flag: "🇺🇸", native: "English" },
-    { code: "es", name: "Spanish", flag: "🇪🇸", native: "Español" },
-    { code: "fr", name: "French", flag: "🇫🇷", native: "Français" },
-    { code: "de", name: "German", flag: "🇩🇪", native: "Deutsch" },
-    { code: "it", name: "Italian", flag: "🇮🇹", native: "Italiano" },
-    { code: "ja", name: "Japanese", flag: "🇯🇵", native: "日本語" },
-    { code: "ko", name: "Korean", flag: "🇰🇷", native: "한국어" },
-    { code: "pt", name: "Portuguese", flag: "🇧🇷", native: "Português" },
-    { code: "zh", name: "Chinese", flag: "🇨🇳", native: "中文" },
+  { code: "en", name: "English", flag: Us, native: "English" },
+  { code: "es", name: "Spanish", flag: spain, native: "Español" },
+  { code: "fr", name: "French", flag: french, native: "Français" },
+  { code: "de", name: "German", flag: german, native: "Deutsch" },
+  { code: "it", name: "Italian", flag: italian, native: "Italiano" },
+  { code: "ja", name: "Japanese", flag: japanese, native: "日本語" },
+  { code: "ko", name: "Korean", flag: korea, native: "한국어" },
+  { code: "pt", name: "Portuguese", flag: Portugal, native: "Português" },
+  { code: "zh", name: "Chinese", flag: china, native: "中文" },
 ];
-import Navbar from '../Navbar/Navbar'
+import Navbar from "../Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
 function LanguagePage() {
-    const [selected, setSelected] = useState(null);
-    const [isOpen, setIsOpen] = useState(false);
-    const [confirmed, setConfirmed] = useState(false);
-    const [search, setSearch] = useState("");
-    const [mounted, setMounted] = useState(false);
-    const dropdownRef = useRef(null);
-    const searchRef = useRef(null);
-    const dispatch = useDispatch();
-const navigate = useNavigate();
-    const { loading } = useSelector((state) => state.language);
-    const { user } = useSelector((state) => state.auth);
-    const { t } = useTranslation();
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+  const [selected, setSelected] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [confirmed, setConfirmed] = useState(false);
+  const [search, setSearch] = useState("");
+  const [mounted, setMounted] = useState(false);
+  const dropdownRef = useRef(null);
+  const searchRef = useRef(null);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { loading } = useSelector((state) => state.language);
+  const { user } = useSelector((state) => state.auth);
+  const { t } = useTranslation();
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-    useEffect(() => {
-        if (isOpen && searchRef.current) {
-            searchRef.current.focus();
-        }
-    }, [isOpen]);
-    useEffect(() => {
-        const handleClickOutside = (e) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-                setIsOpen(false);
-                setSearch("");
-            }
-        };
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
+  useEffect(() => {
+    if (isOpen && searchRef.current) {
+      searchRef.current.focus();
+    }
+  }, [isOpen]);
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsOpen(false);
+        setSearch("");
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
-    const filtered = languages.filter(
-        (l) =>
-            l.name.toLowerCase().includes(search.toLowerCase()) ||
-            l.native.toLowerCase().includes(search.toLowerCase())
-    );
+  const filtered = languages.filter(
+    (l) =>
+      l.name.toLowerCase().includes(search.toLowerCase()) ||
+      l.native.toLowerCase().includes(search.toLowerCase()),
+  );
   const handleConfirm = async () => {
     if (!selected) return;
 
     try {
-        // Get user ID from Redux state
-        const userId = user?.id;
+      // Get user ID from Redux state
+      const userId = user?.id;
 
-        console.log("USER ID =", userId);
+      // Agar login nahi hai
+      if (!userId) {
+        navigate("/login");
+        return;
+      }
 
-        // Agar login nahi hai
-        if (!userId) {
-            navigate("/login");
-            return;
-        }
+      const result = await dispatch(
+        updateLanguage({
+          userId,
+          language: selected.code,
+        }),
+      );
 
-        const result = await dispatch(
-            updateLanguage({
-                userId,
-                language: selected.code,
-            })
-        );
+      if (updateLanguage.fulfilled.match(result)) {
+        // i18next language change
+        i18n.changeLanguage(selected.code);
 
-        console.log(result);
+        // optional
+        localStorage.setItem("i18nextLng", selected.code);
 
-        if (updateLanguage.fulfilled.match(result)) {
+        setConfirmed(true);
 
-   // i18next language change
-            i18n.changeLanguage(selected.code);
+        setTimeout(() => {
+          setConfirmed(false);
 
-    // optional
-            localStorage.setItem("i18nextLng", selected.code);
-
-            setConfirmed(true);
-
-            setTimeout(() => {
-                setConfirmed(false);
-
-                navigate("/intro");
-
-            }, 1000);
-
-            console.log("Language Updated");
-        }
-
+          navigate("/intro");
+        }, 1000);
+      }
     } catch (error) {
-        console.log(error);
     }
-};
-    return (
-        <>
-            <Navbar />
-            <div className='bg-[var(--bg)] text-[var(--text)] min-h-screen w-full '>
-
-                <div
-                    style={{ fontFamily: "Poppins, sans-serif" }}
-                    className="min-h-screen flex items-center justify-center p-4"
-
-                >
-                    <style>{`
+  };
+  return (
+    <>
+      <Navbar />
+      <div className="bg-[var(--bg)] text-[var(--text)] min-h-screen w-full ">
+        <div
+          style={{ fontFamily: "Poppins, sans-serif" }}
+          className="min-h-screen flex items-center justify-center p-4"
+        >
+          <style>{`
 
         * { box-sizing: border border-gray-300-box; }
 
@@ -226,141 +223,230 @@ border: 1px solid var(--border);
         }
       `}</style>
 
-                    <div
-                        className={`card rounded-3xl p-10 w-full max-w-md relative ${mounted ? "fade-in" : "opacity-0"}`}
-                        style={{ maxWidth: "480px" }}
-                    >
-                        {/* Globe Icon */}
-                        <div className="flex justify-center mb-8">
-                            <div className="globe-icon w-20 h-20 rounded-2xl flex items-center justify-center">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-                                    <circle cx="12" cy="12" r="10" stroke="#e05a40" strokeWidth="1.8" />
-                                    <path d="M12 2C12 2 8 7 8 12C8 17 12 22 12 22" stroke="#e05a40" strokeWidth="1.8" strokeLinecap="round" />
-                                    <path d="M12 2C12 2 16 7 16 12C16 17 12 22 12 22" stroke="#e05a40" strokeWidth="1.8" strokeLinecap="round" />
-                                    <path d="M2 12H22" stroke="#e05a40" strokeWidth="1.8" strokeLinecap="round" />
-                                    <path d="M3.5 7H20.5M3.5 17H20.5" stroke="#e05a40" strokeWidth="1.8" strokeLinecap="round" />
-                                </svg>
-                            </div>
-                        </div>
-
-                        {/* Title */}
-                        <div className="text-center mb-8">
-                            <h1
-                                style={{ fontFamily: "Poppins", fontSize: "2.1rem", letterSpacing: "-0.02em" }}
-                                className="font-medium text-[var(--text-dim)]"
-                            >
-                              {t("choose_language")}
-                            </h1>
-                            <p style={{ fontSize: "1rem" }} className="font-medium opacity-70 text-[var(--text-dim2)]">
-                              {t("select_preferred_language")}
-                            </p>
-                        </div>
-
-                        {/* Dropdown */}
-                        <div className={`relative ${isOpen ? "mb-12" : "mb-8"}`} ref={dropdownRef}>
-                            <button
-                                onClick={() => { setIsOpen(!isOpen); setSearch(""); }}
-                                className={`dropdown-trigger w-full rounded-2xl px-5 py-4 flex items-center justify-between bg-[var(--bg)] cursor-pointer ${isOpen ? "open" : ""}`}
-                            >
-                                {selected ? (
-                                    <span className="flex items-center gap-3">
-                                        <span className="text-[var(--text-dim)]" style={{ fontSize: "1.4rem" }}>{selected.flag}</span>
-                                        <span   className="text-[var(--text-dim)]" style={{ fontWeight: 600, fontSize: "0.95rem" }} >
-                                            {selected.name}
-                                            <span className="text-[var(--text-dim2)]"  style={{ marginLeft: "6px", fontWeight: 400 }}>— {selected.native}</span>
-                                        </span>
-                                    </span>
-                                ) : (
-                                    <span style={{ fontWeight: 500, fontSize: "" }} className="text-[var(--text-dim2)]">
-                                     {t("select_language")}
-                                    </span>
-                                )}
-                                <svg
-                                    className={`chevron ${isOpen ? "rotated" : ""}`}
-                                    width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                >
-                                    <path d="M6 9L12 15L18 9" stroke="#9b7fe8" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </button>
-
-                            {isOpen && (
-                                <div className="dropdown-list mt-2 bg-[var(--bg)] rounded-2xl overflow-hidden">
-                                    {/* Search */}
-                                    <div className="px-4 pt-3 pb-2">
-                                        <input
-                                            ref={searchRef}
-                                            type="text"
-                                            value={search}
-                                            onChange={(e) => setSearch(e.target.value)}
-                                          placeholder={t("search_language")}
-                                            className="search-input  text-[var(--text-dim2)] w-full bg-transparent px-1 py-2 text-sm"
-                                            style={{ fontFamily: "'DM Sans', sans-serif" }}
-                                        />
-                                    </div>
-
-                                    {/* List */}
-                                    <div style={{ maxHeight: "240px", overflowY: "auto" }}>
-                                        {filtered.length === 0 ? (
-                                            <div className="px-5 py-4 text-center" style={{ color: "#b0a0c8", fontSize: "0.9rem" }}>
-                                         {t("no_languages_found")}
-                                            </div>
-                                        ) : (
-                                            filtered.map((lang) => (
-                                                <button
-                                                    key={lang.code}
-                                                    onClick={() => { setSelected(lang); setIsOpen(false); setSearch(""); }}
-                                                    className={`lang-item w-full px-5 py-3 flex items-center gap-3 text-left ${selected?.code === lang.code ? "active" : ""}`}
-                                                >
-                                                    <span style={{ fontSize: "1.3rem" }} className="text-[var(--text-dim2)]">{lang.flag}</span>
-                                                    <span>
-                                                        <span style={{ fontWeight: 600, fontSize: "0.92rem", display: "block" }} className="text-[var(--text-dim2)]">{lang.name}</span>
-                                                        <span style={{ fontSize: "0.8rem" }} className="text-[var(--text-dim)]">{lang.native}</span>
-                                                    </span>
-                                                    {selected?.code === lang.code && (
-                                                        <span className="ml-auto text-[var(--text-dim)]" >
-                                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                                                <path d="M5 12L10 17L20 7" stroke="#9b7fe8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                                                            </svg>
-                                                        </span>
-                                                    )}
-                                                </button>
-                                            ))
-                                        )}
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-
-                        {/* Confirm Button */}
-                        <button
-                            className="confirm-btn w-full py-4 rounded-2xl text-white font-semibold text-base tracking-wide"
-                            onClick={handleConfirm}
-                            disabled={!selected || loading}
-                        >
-                            {
-                                loading
-                                    ? t("updating")
-                                    : confirmed
-                                        ? `✓ ${selected?.name} confirmed!`
-                                        : t("confirm")
-                            }
-                            </button>
-                    </div>
-                </div>
-
+          <div
+            className={`card rounded-3xl p-10 w-full max-w-md relative ${mounted ? "fade-in" : "opacity-0"}`}
+            style={{ maxWidth: "480px" }}
+          >
+            {/* Globe Icon */}
+            <div className="flex justify-center mb-8">
+              <div className="globe-icon w-20 h-20 rounded-2xl flex items-center justify-center">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="#e05a40"
+                    strokeWidth="1.8"
+                  />
+                  <path
+                    d="M12 2C12 2 8 7 8 12C8 17 12 22 12 22"
+                    stroke="#e05a40"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M12 2C12 2 16 7 16 12C16 17 12 22 12 22"
+                    stroke="#e05a40"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M2 12H22"
+                    stroke="#e05a40"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M3.5 7H20.5M3.5 17H20.5"
+                    stroke="#e05a40"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
             </div>
 
+            {/* Title */}
+            <div className="text-center mb-8">
+              <h1
+                style={{
+                  fontFamily: "Poppins",
+                  fontSize: "2.1rem",
+                  letterSpacing: "-0.02em",
+                }}
+                className="font-medium text-[var(--text-dim)]"
+              >
+                {t("choose_language")}
+              </h1>
+              <p
+                style={{ fontSize: "1rem" }}
+                className="font-medium opacity-70 text-[var(--text-dim2)]"
+              >
+                {t("select_preferred_language")}
+              </p>
+            </div>
 
-        </>
-    )
+            {/* Dropdown */}
+            <div
+              className={`relative ${isOpen ? "mb-12" : "mb-8"}`}
+              ref={dropdownRef}
+            >
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  setSearch("");
+                }}
+                className={`dropdown-trigger w-full rounded-2xl px-5 py-4 flex items-center justify-between bg-[var(--bg)] cursor-pointer ${isOpen ? "open" : ""}`}
+              >
+                {selected ? (
+                  <span className="flex items-center gap-3">
+                    <img
+                      src={selected.flag}
+                      alt={selected.name}
+                      className="w-7 h-7 rounded-full object-cover"
+                    />
+                    <span
+                      className="text-[var(--text-dim)]"
+                      style={{ fontWeight: 600, fontSize: "0.95rem" }}
+                    >
+                      {selected.name}
+                      <span
+                        className="text-[var(--text-dim2)]"
+                        style={{ marginLeft: "6px", fontWeight: 400 }}
+                      >
+                        — {selected.native}
+                      </span>
+                    </span>
+                  </span>
+                ) : (
+                  <span
+                    style={{ fontWeight: 500, fontSize: "" }}
+                    className="text-[var(--text-dim2)]"
+                  >
+                    {t("select_language")}
+                  </span>
+                )}
+                <svg
+                  className={`chevron ${isOpen ? "rotated" : ""}`}
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9L12 15L18 9"
+                    stroke="#9b7fe8"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+
+              {isOpen && (
+                <div className="dropdown-list mt-2 bg-[var(--bg)] rounded-2xl overflow-hidden">
+                  {/* Search */}
+                  <div className="px-4 pt-3 pb-2">
+                    <input
+                      ref={searchRef}
+                      type="text"
+                      value={search}
+                      onChange={(e) => setSearch(e.target.value)}
+                      placeholder={t("search_language")}
+                      className="search-input  text-[var(--text-dim2)] w-full bg-transparent px-1 py-2 text-sm"
+                      style={{ fontFamily: "'DM Sans', sans-serif" }}
+                    />
+                  </div>
+
+                  {/* List */}
+                  <div style={{ maxHeight: "240px", overflowY: "auto" }}>
+                    {filtered.length === 0 ? (
+                      <div
+                        className="px-5 py-4 text-center"
+                        style={{ color: "#b0a0c8", fontSize: "0.9rem" }}
+                      >
+                        {t("no_languages_found")}
+                      </div>
+                    ) : (
+                      filtered.map((lang) => (
+                        <button
+                          key={lang.code}
+                          onClick={() => {
+                            setSelected(lang);
+                            setIsOpen(false);
+                            setSearch("");
+                          }}
+                          className={`lang-item w-full px-5 py-3 flex items-center gap-3 text-left ${selected?.code === lang.code ? "active" : ""}`}
+                        >
+                          <img
+                            src={lang.flag}
+                            alt={lang.name}
+                            className="w-10 h-6  object-cover"
+                          />
+                          <span>
+                            <span
+                              style={{
+                                fontWeight: 600,
+                                fontSize: "0.92rem",
+                                display: "block",
+                              }}
+                              className="text-[var(--text-dim2)]"
+                            >
+                              {lang.name}
+                            </span>
+                            <span
+                              style={{ fontSize: "0.8rem" }}
+                              className="text-[var(--text-dim)]"
+                            >
+                              {lang.native}
+                            </span>
+                          </span>
+                          {selected?.code === lang.code && (
+                            <span className="ml-auto text-[var(--text-dim)]">
+                              <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                              >
+                                <path
+                                  d="M5 12L10 17L20 7"
+                                  stroke="#9b7fe8"
+                                  strokeWidth="2.5"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                            </span>
+                          )}
+                        </button>
+                      ))
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Confirm Button */}
+            <button
+              className="confirm-btn w-full py-4 rounded-2xl text-white font-semibold text-base tracking-wide"
+              onClick={handleConfirm}
+              disabled={!selected || loading}
+            >
+              {loading
+                ? t("updating")
+                : confirmed
+                  ? `✓ ${selected?.name} confirmed!`
+                  : t("confirm")}
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default LanguagePage
-
-
-
-
-
+export default LanguagePage;
 
 // import { useState, useRef, useEffect } from "react";
 
@@ -662,11 +748,9 @@ export default LanguagePage
 //                             {confirmed ? `✓ ${selected?.name} confirmed!` : "Confirm"}
 //                         </button>
 
-
 //                     </div>
 //                 </div>
 //             </div>
-
 
 //         </>
 //     )

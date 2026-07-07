@@ -36,6 +36,7 @@ function ChatSidebar({
   setShowRequest,
 }) {
   const { t } = useTranslation();
+  console.log("Sidebar Chats:", chats);
   return (
     <>
       {sidebarOpen && (
@@ -90,6 +91,8 @@ function ChatSidebar({
             <button
               key={c.id}
               onClick={() => {
+                    console.log("Clicked:", c);
+
                 setSelectedId(c.id);
                 setSidebarOpen(false);
               }}

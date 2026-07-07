@@ -24,10 +24,6 @@ useEffect(() => {
         ).unwrap();
       }
     } catch (error) {
-      console.log(
-        "Face Detection Error:",
-        error
-      );
     }
   };
 

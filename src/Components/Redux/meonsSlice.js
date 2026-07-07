@@ -7,7 +7,6 @@ export const getMeonBalanceThunk = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await api.get("/meons/balance");
-      console.log(response.data);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response?.data || "Something went wrong");
@@ -25,7 +24,19 @@ const meonSlice = createSlice({
     transactions: [],
   },
 
-  reducers: {},
+  reducers: {
+    // Applies a newBalance value (e.g. from a login/session-start
+    // dailyCheckIn response) directly to the store, without refetching.
+    setMeonsBalance: (state, action) => {
+      state.balance = {
+        ...state.balance,
+        data: {
+          ...state.balance?.data,
+          meons: action.payload,
+        },
+      };
+    },
+  },
 
   extraReducers: (builder) => {
     builder
@@ -91,8 +102,6 @@ export const spendMeonsThunk = createAsyncThunk(
     try {
       const response = await api.post("/meons/spend", spendData);
 
-      console.log(response.data);
-
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response?.data || "Something went wrong");
@@ -113,4 +122,7 @@ export const getTransactionsThunk = createAsyncThunk(
     }
   },
 );
+
+export const { setMeonsBalance } = meonSlice.actions;
+
 export default meonSlice.reducer;

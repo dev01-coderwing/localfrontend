@@ -26,22 +26,13 @@ const dispatch = useDispatch();
 
   try {
 
-    console.log("Sending Astrology:", astro);
-
-  const result = await dispatch(
+  await dispatch(
   updateAstrologyThunk(astro)
 );
-
-console.log(result);
 
     navigate("/subscription");
 
   } catch (error) {
-
-    console.log("ASTROLOGY API ERROR:", error);
-
-    console.log(error.response);
-
   }
 };
 

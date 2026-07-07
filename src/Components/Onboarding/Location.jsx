@@ -27,22 +27,13 @@ const handleContinue = async (e) => {
 
   try {
 
-    console.log("Sending Location:", formData);
-
-   const result = await dispatch(
+   await dispatch(
   updateLocationThunk(formData)
 );
-
-console.log(result);
 
     navigate("/identity");
 
   } catch (error) {
-
-    console.log("LOCATION API ERROR:", error);
-
-    console.log(error.response);
-
   }
 };
 
