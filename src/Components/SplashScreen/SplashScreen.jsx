@@ -43,7 +43,6 @@ export default function SplashScreen() {
         }
       `}</style>
 
-      {/* Remplace 'logo.png' et 'mainlogo.png' par les vrais noms de fichiers présents dans ton dossier public/Image */}
       <img
         src="/Image/iameetyou.png" 
         alt="IAMeetYou Logo"
@@ -79,19 +78,7 @@ export default function SplashScreen() {
       >
         {t('splash.tagline')}
       </p>
-      <p style={{
-          color: 'var(--text-dim)',
-          marginTop: '8px',
-          fontSize: '12px',
-          letterSpacing: '3px',
-          fontFamily: 'sans-serif',
-          fontWeight: '300',
-          textTransform: 'uppercase',
-          opacity: 0,
-          animation: 'splashFadeIn 0.7s ease-out 1.3s forwards',
-        }}>
-        {t('splash.tagline')}
-      </p>
+
       <p style={{
           color: 'white',
           fontFamily: 'sans-serif',
