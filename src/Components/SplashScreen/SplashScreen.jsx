@@ -47,7 +47,7 @@ export default function SplashScreen() {
         src="/Image/iameetyou.png" 
         alt="IAMeetYou Logo"
         style={{
-          width: '120px',
+          width: '130px',
           height: 'auto',
           animation: 'splashLogoIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards',
         }}
