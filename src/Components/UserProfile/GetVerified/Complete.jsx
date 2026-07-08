@@ -31,6 +31,8 @@ function Complete({
             </div>
           </div>
 
+
+          
           {/* Heading */}
           <h1 className="text-[28px] font-bold text-[var(--text-dim)] mt-4 text-center whitespace-nowrap">
             {t('complete.verification_complete')}
