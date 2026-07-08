@@ -72,3 +72,5 @@ const handleClaimReward = async () => {
 };
 
 export default VictoryScreen;
+
+
