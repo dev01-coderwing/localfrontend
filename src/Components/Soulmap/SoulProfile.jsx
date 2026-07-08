@@ -112,4 +112,5 @@ const SoulProfile = ({ onClose, user, onInvite }) => {
 };
  
 export default SoulProfile;
- 
+
+
