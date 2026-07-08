@@ -123,3 +123,5 @@ const dispatch = useDispatch();
 };
 
 export default Astrology;
+
+
