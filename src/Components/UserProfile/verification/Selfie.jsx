@@ -246,3 +246,5 @@ function Selfie({ closeModal, nextStep }) {
 }
 
 export default Selfie;
+
+
