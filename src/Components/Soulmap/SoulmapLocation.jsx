@@ -108,4 +108,7 @@ const SoulmapLocation = ({ onClose, locationName, onViewProfile, matches = [] })
 };
 
 export default SoulmapLocation;
+
+
+
  
