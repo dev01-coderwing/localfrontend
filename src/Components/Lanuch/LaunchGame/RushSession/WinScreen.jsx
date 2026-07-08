@@ -72,3 +72,5 @@ const WinScreen = ({ score, onClaim, onRestart, onClose }) => {
 };
 
 export default WinScreen;
+
+
