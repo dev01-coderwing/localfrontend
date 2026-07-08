@@ -162,3 +162,4 @@ const NotificationsModal = ({ onClose }) => {
 };
 
 export default NotificationsModal;
+
