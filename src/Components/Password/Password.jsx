@@ -159,5 +159,3 @@ const email = location.state?.email || localStorage.getItem("email");
 }
  
 export default Password;
-
-

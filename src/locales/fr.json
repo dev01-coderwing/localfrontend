@@ -7,7 +7,7 @@
   "select_language": "Sélectionner une langue",
   "search_language": "Rechercher une langue...",
   "no_languages_found": "Aucune langue trouvée",
-  "confirm": "Confirmer",
+  "confirm": "Confirm",
   "updating": "Mise à jour...",
   "next": "Suivant",
   "intro": {
@@ -309,7 +309,7 @@
     "lucascopeGuideDesc": "+1h/mois d'astrologie et compatibilité",
     "lucascopeInfinity": "Lucascope Infinity",
     "lucascopeInfinityDesc": "Économisez 2 mois sur le plan annuel",
-    "leDigestif": "Le Digestifif",
+    "leDigestif": "Le Digestif",
     "leDigestifDesc": "(achat unique)",
     "totalEur": "Total (EUR)",
     "perMonth": "/mois",
@@ -1456,7 +1456,7 @@
       "feature_personal_astro_synastry": "Astro personnelle + Synastrie"
     },
     "le_digestif": {
-      "name": "Le Digestifif",
+      "name": "Le Digestif",
       "subtitle": "(achat unique)",
       "feature_questions": "50 questions intimes",
       "feature_compatibility": "+5% de compatibilité",

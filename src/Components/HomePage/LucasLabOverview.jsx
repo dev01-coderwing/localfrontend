@@ -192,4 +192,3 @@ const LucasLabOverview = ({ onClose }) => {
 };
 
 export default LucasLabOverview;
-

@@ -31,7 +31,7 @@ export default function ProfileLayout() {
       name: user?.fullName || "",
       avatar: avatarUrl,
       verified: true,
-      badge: "/Image/Badge.png",
+      badge: "/Image/badge.png",
       tick: "/Image/tick.png",
 
       stats: [
@@ -63,7 +63,7 @@ export default function ProfileLayout() {
           title: t('profileLayout.big_five'),
           desc: t('profileLayout.big_five_desc', { big_five_result: bigFiveResult }),
           status: psychological?.bigFive ? "done" : "pending",
-          img: "/Image/star.png",
+          img: "/Image/Star.png",
         },
       ],
       images: [

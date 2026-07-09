@@ -125,7 +125,7 @@ const ShareInviteLinkModal = ({ onClose }) => {
             <div className="mt-5 h-[115px] rounded-[18px] bg-gradient-to-r from-[#D8B4FE] to-[#FFD6C9] flex flex-col items-center justify-center">
 
               <img
-                src="/Image/iameetyou.png"
+                src="/Image/IAMeetYou.png"
                 alt="logo"
                 className="w-[90px] object-contain"
               />

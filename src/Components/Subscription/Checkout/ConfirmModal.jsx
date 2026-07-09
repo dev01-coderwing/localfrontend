@@ -49,5 +49,3 @@ const ConfirmModal = ({ isOpen, onConfirm, onCancel }) => {
 };
 
 export default ConfirmModal;
-
-

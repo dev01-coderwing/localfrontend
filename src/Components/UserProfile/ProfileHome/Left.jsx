@@ -1,7 +1,7 @@
 import { Star, CircleUser } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
-import Voice from "/Image/Voice-coin.png";
+const Voice = "/Image/Voice-coin.png";
 import { BadgeCheck } from "lucide-react";
 
 function Left({ data = {} }) {

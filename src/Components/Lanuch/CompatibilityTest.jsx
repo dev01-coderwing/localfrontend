@@ -225,5 +225,3 @@ const next = async () => {
     </>
   );
 }
-
-

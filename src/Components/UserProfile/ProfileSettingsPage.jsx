@@ -4,7 +4,7 @@ import Navbar from "../Navbar/Navbar";
 import Right from "./layout/Right";
 import { Check, X ,ArrowLeft,Clock,HatGlasses  } from "lucide-react";
 import { useTranslation } from "react-i18next";
-// 
+// import incognito from "/Image/incognito.png";
 
 const ProfileSettingsPage = () => {
   const { t } = useTranslation();

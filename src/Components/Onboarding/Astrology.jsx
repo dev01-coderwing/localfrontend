@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+const logo = "/Image/IAMeetYou.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { updateAstrologyThunk } from "../Redux/onboardingSlice";

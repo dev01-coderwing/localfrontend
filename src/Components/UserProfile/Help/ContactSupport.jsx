@@ -74,5 +74,3 @@ const ContactSupport = ({ onNext }) => {
 };
 
 export default ContactSupport;
-
-

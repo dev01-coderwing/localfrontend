@@ -4,16 +4,16 @@ import Right from "../../Components/UserProfile/layout/Right";
 import { ArrowLeft, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-
-
+const coins = "/Image/coins.png";
+const coin = "/Image/coin.png";
 
 // product images
-
-
-
-
-
-
+const rose = "/Image/rose.png";
+const boost = "/Image/boost.png";
+const crown = "/Image/crown.png";
+const heart = "/Image/heart1.png";
+const diamond = "/Image/diamond.png";
+const ghost = "/Image/ghost.png";
 import { useSelector } from "react-redux";
 import { getMeonBalanceThunk } from "../Redux/meonsSlice";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
-
+const Brain1 = "/Image/Brain1.png";
 import { BadgeCheck } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -81,5 +81,3 @@ function Lanuch() {
 }
 
 export default Lanuch;
-
-

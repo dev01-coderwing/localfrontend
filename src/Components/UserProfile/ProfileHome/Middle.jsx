@@ -1,7 +1,7 @@
 import { Crown, Gift } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import Wallet from "/Image/Wallet.png";
+const Wallet = "/Image/Wallet.png";
 function Middle({ data }) {
   const navigate = useNavigate();
   const { t } = useTranslation();

@@ -23,13 +23,13 @@
 //   const [showPopup, setShowPopup] = useState(false);
 
 //   const commissionData = [
-//     { name: "Dégustation", value: "18%" },
+//     { name: "Degustation", value: "18%" },
 //     { name: "Privilege", value: "12%" },
 //     { name: "Circle Privé", value: "10%" },
 //     { name: "Luxescape Guide", value: "10%" },
 //     { name: "Luxescape Infinity", value: "16%" },
-//     { name: "Le Digestif", value: "10%" },
-//     { name: "Saveur d'Orient", value: "10%" },
+//     { name: "Le Digest", value: "10%" },
+//     { name: "Sovous Orient", value: "10%" },
 //   ];
 
 //   const eligibilityData = [
@@ -266,13 +266,13 @@ const Introduction = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   const commissionData = [
-    { name: "Dégustation", value: "18%" },
-    { name: "Privilège", value: "12%" },
+    { name: "Degustation", value: "18%" },
+    { name: "Privilege", value: "12%" },
     { name: "Circle Privé", value: "10%" },
-    { name: "Lucascope Guide", value: "10%" },
-    { name: "Lucascope Infinity", value: "16%" },
-    { name: "Le Digestif", value: "10%" },
-    { name: "Saveur d'Orient", value: "10%" },
+    { name: "Luxescape Guide", value: "10%" },
+    { name: "Luxescape Infinity", value: "16%" },
+    { name: "Le Digest", value: "10%" },
+    { name: "Sovous Orient", value: "10%" },
   ];
 
   const eligibilityData = [

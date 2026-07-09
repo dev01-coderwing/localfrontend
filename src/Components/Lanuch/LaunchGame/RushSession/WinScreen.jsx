@@ -46,7 +46,7 @@ const WinScreen = ({ score, onClaim, onRestart, onClose }) => {
         <div className="w-full bg-[var(--accent-soft)] rounded-[24px] p-6 mb-8 border border-[var(--border)]">
           <p className="text-[var(--accent)] text-[14px] font-bold mb-4 uppercase tracking-wider">{t('rushSession.rewards_unlocked')}</p>
           <div className="flex items-center justify-center gap-3">
-            <img src="/Image/Coin.png" alt="Coin" className="w-10 h-10 object-contain" />
+            <img src="/Image/coin.png" alt="Coin" className="w-10 h-10 object-contain" />
             <span className="text-[32px] font-black text-[var(--accent)]">{t('rushSession.meons_reward')}</span>
           </div>
         </div>

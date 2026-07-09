@@ -1,5 +1,5 @@
 import { useState } from "react";
-import voice from "/Image/voice.png?url";
+const voice = "/Image/voice.png";
 import { useTranslation } from "react-i18next";
 export default function VoiceConsentModal({ onClose, onAgree }) {
     const { t } = useTranslation();

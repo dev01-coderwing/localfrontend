@@ -240,5 +240,3 @@ setShowKycVerified(true);
 };
 
 export default AddBankPopup;
-
-

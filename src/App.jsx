@@ -109,7 +109,7 @@ import ReferralPopup from "./Components/UserProfile/InfluencerPage/ReferralPopup
 import SubmitPromoCode from "./Components/UserProfile/InfluencerPage/SubmitPromoCode.jsx";
 import Kycverified from "./Components/UserProfile/InfluencerPage/Kycverified.jsx";
 import Banner from "./Components/HomePage/Banner.jsx";
-
+import UpdateProfile from "./Components/UserProfile/UpdateuserProfile/Updateprofile.jsx";
 function App() {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.auth.token);
@@ -379,6 +379,8 @@ function App() {
         <Route path="/referralpopup" element={<ReferralPopup />} />
         <Route path="/kycverified" element={<Kycverified />} />
         <Route path="/banner" element={<Banner />} />
+        <Route path="/UpdateProfile" element={<UpdateProfile />} />
+
         {/* <Route path="/influencerdashborad" element={<InfluencerDashborad />} /> */}
       </Routes>
     </Router>

@@ -32,7 +32,7 @@ const PromoCodeModal = ({ open = true, onClose = () => {} }) => {
         {/* Header Image */}
         <div className="w-full flex justify-center pt-5">
           <img
-            src="./Image/promo.png"
+            src="/Image/promo.png"
             alt="Promo Code"
             className="w-40 sm:w-52 object-contain"
           />

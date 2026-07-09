@@ -5,12 +5,12 @@ import GamePlay from "./GamePlay";
 import WinScreen from "./WinScreen";
 import TimeUpScreen from "./TimeUpScreen";
 import { useNavigate } from "react-router-dom";
-import p1ng from "/Image/p1.png";
-import p2ng from "/Image/p2.png";
-import p3ng from "/Image/p3.png";
-import n1ng from "/Image/n1.png";
-import n2ng from "/Image/n2.png";
-import n3ng from "/Image/n3.png";
+const p1ng = "/Image/p1.png";
+const p2ng = "/Image/p2.png";
+const p3ng = "/Image/p3.png";
+const n1ng = "/Image/n1.png";
+const n2ng = "/Image/n2.png";
+const n3ng = "/Image/n3.png";
 const DEFAULT_CONFIG = {
   duration: 15,
   targetScore: 20,

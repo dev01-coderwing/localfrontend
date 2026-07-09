@@ -2,8 +2,8 @@ import React from "react";
 import Navbar from "../Navbar/Navbar";
 import Right from "../../Components/UserProfile/layout/Right";
 import { ArrowLeft, CalendarDays, Gamepad2, UserCheck } from "lucide-react";
- // your coins image
-import coin from "/Image/coin.png"
+const coins = "/Image/coins.png"; // your coins image
+const coin = "/Image/coin.png"
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 

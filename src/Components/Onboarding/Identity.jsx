@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+const logo = "/Image/IAMeetYou.png";
 import { useTranslation } from "react-i18next";
 
 const VALID_IDENTITIES = ["male", "female", "other"];

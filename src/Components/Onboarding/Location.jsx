@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+const logo = "/Image/IAMeetYou.png";
 import { useDispatch } from "react-redux";
 import { updateLocationThunk } from "../Redux/onboardingSlice";
 import { useTranslation } from "react-i18next";

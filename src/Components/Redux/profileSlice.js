@@ -43,6 +43,31 @@ export const getPsychologicalProfile = createAsyncThunk(
     }
   }
 );
+export const updateUserProfile = createAsyncThunk(
+  "profile/updateUserProfile",
+  async ({ userId, payload }, { rejectWithValue }) => {
+    try {
+      const token = localStorage.getItem("token");
+
+      const response = await api.put(
+        `/profile/user/update/${userId}`,
+        payload,
+        {
+          headers: {
+            "API-KEY": "iameetyou",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data || "Failed to update profile"
+      );
+    }
+  }
+);
 
 const profileSlice = createSlice({
   name: "profile",
@@ -53,6 +78,10 @@ const profileSlice = createSlice({
     psychological: null,
     psychologicalLoading: false,
     psychologicalError: null,
+
+    updateLoading: false,
+  updateSuccess: false,
+  updateError: null,
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -78,7 +107,25 @@ const profileSlice = createSlice({
       .addCase(getPsychologicalProfile.rejected, (state, action) => {
         state.psychologicalLoading = false;
         state.psychologicalError = action.payload;
-      });
+      })
+      .addCase(updateUserProfile.pending, (state) => {
+  state.updateLoading = true;
+  state.updateSuccess = false;
+  state.updateError = null;
+})
+
+.addCase(updateUserProfile.fulfilled, (state, action) => {
+  state.updateLoading = false;
+  state.updateSuccess = true;
+
+  // agar backend updated profile return karta hai
+  state.profile = action.payload?.data || action.payload;
+})
+
+.addCase(updateUserProfile.rejected, (state, action) => {
+  state.updateLoading = false;
+  state.updateError = action.payload;
+});
   },
 });
 

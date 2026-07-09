@@ -46,7 +46,7 @@ const handleClaimReward = async () => {
         <div className="w-full bg-purple-50 rounded-[30px] p-6 mb-8 border border-purple-100">
           <p className="text-purple-500 text-[14px] font-bold mb-4 uppercase tracking-widest">{t('bubbleGame.rewards_unlocked')}</p>
           <div className="flex items-center justify-center gap-4">
-            <img src="/Image/Coin.png" alt="Coin" className="w-10 h-10 object-contain" />
+            <img src="/Image/coin.png" alt="Coin" className="w-10 h-10 object-contain" />
             <span className="text-[34px] font-black text-purple-600">{t('bubbleGame.meons_reward')}</span>
           </div>
         </div>
@@ -72,5 +72,3 @@ const handleClaimReward = async () => {
 };
 
 export default VictoryScreen;
-
-

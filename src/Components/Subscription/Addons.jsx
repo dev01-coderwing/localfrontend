@@ -2,10 +2,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import infinet from '/Image/infinet.png'
-import lucascope from '/Image/lucascope.png'
-import badge from '/Image/badge.png'
-import noto from '/Image/noto.png'
+const infinet = '/Image/infinet.png'
+const lucascope = '/Image/lucascope.png'
+const badge = '/Image/badge.png'
+const noto = '/Image/noto.png'
 
 function buildPricingData(t) {
   return {

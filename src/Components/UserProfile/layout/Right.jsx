@@ -145,7 +145,7 @@ import { useState, useEffect } from "react";
 import VerifyModal from "../verification/VerifyModal";
 import { useTheme } from "../../../ThemeContext";
 import { useTranslation } from "react-i18next";
-import star2 from "/Image/Black-star.png"
+const star2 = "/Image/Black-star.png"
 import { useNavigate } from "react-router-dom";
 
 
@@ -182,7 +182,7 @@ const navigate = useNavigate();
         key: "account",
         title: t('profileSidebar.account'),
         items: [
-          { name: t('profileSidebar.edit_profile'), icon: "user", route: "/edit-profile" },
+          { name: t('profileSidebar.edit_profile'), icon: "user", route: "/UpdateProfile" },
           { name: t('profileSidebar.subscription'), icon: "card", route: "/subscription" },
           { name: t('profileSidebar.get_verified'), icon: "shield", route: "/verify" },
           { name: t('profileSidebar.language'), icon: "globe", route: "/languagePage" },
@@ -462,5 +462,3 @@ const navigate = useNavigate();
 }
 
 export default Right;
-
-

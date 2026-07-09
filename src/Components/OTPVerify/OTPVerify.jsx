@@ -141,5 +141,3 @@ const OTPVerify = () => {
 };
 
 export default OTPVerify;
-
-

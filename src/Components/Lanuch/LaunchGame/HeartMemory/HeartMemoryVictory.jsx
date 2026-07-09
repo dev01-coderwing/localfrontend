@@ -32,7 +32,7 @@ const HeartMemoryVictory = ({ score, onClaim, onRestart, onClose }) => {
         <div className="w-full bg-pink-50/50 rounded-[24px] p-6 mb-8 border border-pink-100/50">
           <p className="text-[#E91E63] text-[12px] font-bold mb-3 uppercase tracking-widest">{t('heartMemory.rewards_unlocked')}</p>
           <div className="flex items-center justify-center gap-3">
-            <img src="/Image/Coin.png" alt="Coin" className="w-8 h-8 object-contain" />
+            <img src="/Image/coin.png" alt="Coin" className="w-8 h-8 object-contain" />
             <span className="text-[28px] font-black text-gray-800">{t('heartMemory.meons_reward')}</span>
           </div>
         </div>
@@ -58,5 +58,3 @@ const HeartMemoryVictory = ({ score, onClaim, onRestart, onClose }) => {
 };
 
 export default HeartMemoryVictory;
-
-

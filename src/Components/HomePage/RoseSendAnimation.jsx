@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
-
+const rose = "/Image/rose.png";
 
 const MotionDiv = motion.div;
 const MotionSpan = motion.span;
@@ -93,5 +93,3 @@ export default function RoseSendAnimation({ origin, onComplete }) {
     document.body
   );
 }
-
-

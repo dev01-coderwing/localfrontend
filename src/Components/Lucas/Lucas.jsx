@@ -14,7 +14,7 @@ import {
   Send,
   CheckCheck,
 } from "lucide-react";
-
+const logo = "/Image/IAMeetYou.png";
 import { useDispatch, useSelector } from "react-redux";
 import { getLucasHistory } from "../Redux/lucasSlice";
 const Lucas = () => {
@@ -226,3 +226,4 @@ const Lucas = () => {
 };
 
 export default Lucas;
+

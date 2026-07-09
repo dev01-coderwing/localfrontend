@@ -141,5 +141,3 @@ if (!isOpen || !type) return null;
 };
 
 export default Session;
-
-

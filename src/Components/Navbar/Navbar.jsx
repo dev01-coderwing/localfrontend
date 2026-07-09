@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-
+const logo = "/Image/logo-nav.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getUserProfile } from "../Redux/profileSlice";
@@ -270,5 +270,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-
