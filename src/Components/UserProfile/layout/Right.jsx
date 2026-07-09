@@ -1,4 +1,3 @@
-
 // import {
 //   User,
 //   CreditCard,
@@ -145,11 +144,8 @@ import { useState, useEffect } from "react";
 import VerifyModal from "../verification/VerifyModal";
 import { useTheme } from "../../../ThemeContext";
 import { useTranslation } from "react-i18next";
-const star2 = "/Image/Black-star.png"
+const star2 = "/Image/Black-star.png";
 import { useNavigate } from "react-router-dom";
-
-
-
 
 const iconMap = {
   user: User,
@@ -169,38 +165,70 @@ function Right() {
   const [invisibleMode, setInvisibleMode] = useState(false);
   const [showThemeModal, setShowThemeModal] = useState(false);
   const { theme, setTheme } = useTheme();
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const rightSidebarData = {
     influencer: {
-      title: t('profileSidebar.become_influencer'),
-      desc: t('profileSidebar.earn_rewards_desc'),
+      title: t("profileSidebar.become_influencer"),
+      desc: t("profileSidebar.earn_rewards_desc"),
       img: star2,
     },
 
     sections: [
       {
         key: "account",
-        title: t('profileSidebar.account'),
+        title: t("profileSidebar.account"),
         items: [
-          { name: t('profileSidebar.edit_profile'), icon: "user", route: "/UpdateProfile" },
-          { name: t('profileSidebar.subscription'), icon: "card", route: "/subscription" },
-          { name: t('profileSidebar.get_verified'), icon: "shield", route: "/verify" },
-          { name: t('profileSidebar.language'), icon: "globe", route: "/languagePage" },
-          { name: t('profileSidebar.settings'), icon: "settings", route: "/settings" },
+          {
+            name: t("profileSidebar.edit_profile"),
+            icon: "user",
+            route: "/UpdateProfile",
+          },
+          {
+            name: t("profileSidebar.subscription"),
+            icon: "card",
+            route: "/subscription",
+          },
+          {
+            name: t("profileSidebar.get_verified"),
+            icon: "shield",
+            route: "/verify",
+          },
+          {
+            name: t("profileSidebar.language"),
+            icon: "globe",
+            route: "/profile/language",
+          },
+          {
+            name: t("profileSidebar.settings"),
+            icon: "settings",
+            route: "/settings",
+          },
         ],
       },
       {
         key: "preferences",
-        title: t('profileSidebar.preferences'),
+        title: t("profileSidebar.preferences"),
         items: [
-          { name: t('profileSidebar.privacy_security'), icon: "lock", route: "privacy" },
           {
-            name: t('profileSidebar.display_mode'),
+            name: t("profileSidebar.privacy_security"),
+            icon: "lock",
+            route: "privacy",
+          },
+          {
+            name: t("profileSidebar.display_mode"),
             icon: "sun",
             route: "display",
           },
-          { name: t('profileSidebar.notifications'), icon: "bell", route: "notifications" },
-          { name: t('profileSidebar.apply_promo_code'), icon: "gift", route: "promo" },
+          {
+            name: t("profileSidebar.notifications"),
+            icon: "bell",
+            route: "notifications",
+          },
+          {
+            name: t("profileSidebar.apply_promo_code"),
+            icon: "gift",
+            route: "promo",
+          },
         ],
       },
     ],
@@ -241,7 +269,7 @@ const navigate = useNavigate();
       >
         {/* Influencer Card */}
         <div
-        onClick={() => navigate("/introduction")}
+          onClick={() => navigate("/introduction")}
           className="
             flex items-center justify-between
             rounded-2xl
@@ -281,7 +309,7 @@ const navigate = useNavigate();
               bg-[var(--card)]
               rounded-2xl sm:rounded-3xl
               p-3 sm:p-4
-            "
+"
           >
             <h3 className="text-xs sm:text-sm font-semibold text-[var(--text-dim)] mb-2 sm:mb-3 ml-1">
               {section.title}
@@ -295,10 +323,17 @@ const navigate = useNavigate();
                   <div
                     key={i}
                     onClick={() => {
-                      if (item.route === "verify") {
-                        setVerifyStep(1);
-                      } else if (item.route === "display") {
-                        setShowThemeModal(true);
+                      switch (item.route) {
+                        case "/verify":
+                          setVerifyStep(1);
+                          break;
+
+                        case "display":
+                          setShowThemeModal(true);
+                          break;
+
+                        default:
+                          navigate(item.route);
                       }
                     }}
                     className="
@@ -313,15 +348,10 @@ const navigate = useNavigate();
                   >
                     <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium">
                       {Icon && (
-                        <Icon
-                          size={14}
-                          className="text-gray-700 sm:size-4"
-                        />
+                        <Icon size={14} className="text-gray-700 sm:size-4" />
                       )}
 
-                      <span className="text-gray-700">
-                        {item.name}
-                      </span>
+                      <span className="text-gray-700">{item.name}</span>
                     </div>
 
                     <FiChevronRight className="text-gray-400 text-sm" />
@@ -346,11 +376,11 @@ const navigate = useNavigate();
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 flex-wrap">
                       <h4 className="text-sm font-semibold text-[#2D1B45] ">
-                        {t('profileSidebar.invisible_mode')}
+                        {t("profileSidebar.invisible_mode")}
                       </h4>
 
                       <span className="text-[10px] bg-[#7B3FF2] text-white px-2 py-1 rounded-full">
-                        {t('profileSidebar.premium_badge')}
+                        {t("profileSidebar.premium_badge")}
                       </span>
                     </div>
 
@@ -360,9 +390,7 @@ const navigate = useNavigate();
                         type="checkbox"
                         className="sr-only peer"
                         checked={invisibleMode}
-                        onChange={() =>
-                          setInvisibleMode(!invisibleMode)
-                        }
+                        onChange={() => setInvisibleMode(!invisibleMode)}
                       />
 
                       <div
@@ -390,11 +418,11 @@ const navigate = useNavigate();
 
                   {/* Description */}
                   <p className="text-xs text-[#4A3563] mt-3 font-medium">
-                    {t('profileSidebar.invisible_mode_desc1')}
+                    {t("profileSidebar.invisible_mode_desc1")}
                   </p>
 
                   <p className="text-[11px] text-[#6E5A85] mt-1 leading-relaxed">
-                    {t('profileSidebar.invisible_mode_desc2')}
+                    {t("profileSidebar.invisible_mode_desc2")}
                   </p>
                 </div>
               </div>
@@ -412,12 +440,13 @@ const navigate = useNavigate();
                   setShowThemeModal(false);
                 }}
                 className={`w-full p-3 rounded-xl border transition-all
-      ${theme === "light"
-                    ? "border-blue-500 bg-blue-50 text-blue-600"
-                    : "border-[var(--border)] text-[var(--text-dim2)]"
-                  }`}
+      ${
+        theme === "light"
+          ? "border-blue-500 bg-blue-50 text-blue-600"
+          : "border-[var(--border)] text-[var(--text-dim2)]"
+      }`}
               >
-                {t('profileSidebar.light_mode')}
+                {t("profileSidebar.light_mode")}
               </button>
 
               <button
@@ -426,12 +455,13 @@ const navigate = useNavigate();
                   setShowThemeModal(false);
                 }}
                 className={`w-full p-3 rounded-xl border transition-all
-      ${theme === "deep-blue-theme"
-                    ? "border-blue-500 bg-blue-50 text-blue-600"
-                    : "border-[var(--border)] text-[var(--text-dim2)]"
-                  }`}
+      ${
+        theme === "deep-blue-theme"
+          ? "border-blue-500 bg-blue-50 text-blue-600"
+          : "border-[var(--border)] text-[var(--text-dim2)]"
+      }`}
               >
-                {t('profileSidebar.dark_mode')}
+                {t("profileSidebar.dark_mode")}
               </button>
 
               <button
@@ -440,23 +470,20 @@ const navigate = useNavigate();
                   setShowThemeModal(false);
                 }}
                 className={`w-full p-3 rounded-xl border transition-all
-      ${theme === "noir-bronze-theme"
-                    ? "border-amber-600 bg-amber-50 text-amber-700"
-                    : "border-[var(--border)] text-[var(--text-dim2)]"
-                  }`}
+      ${
+        theme === "noir-bronze-theme"
+          ? "border-amber-600 bg-amber-50 text-amber-700"
+          : "border-[var(--border)] text-[var(--text-dim2)]"
+      }`}
               >
-                {t('profileSidebar.bronze_mode')}
+                {t("profileSidebar.bronze_mode")}
               </button>
             </div>
           </div>
         </div>
       )}
       {/* ONLY VERIFY MODAL CONNECTED */}
-      {verifyStep === 1 && (
-        <VerifyModal
-          closeModal={() => setVerifyStep(0)}
-        />
-      )}
+      {verifyStep === 1 && <VerifyModal closeModal={() => setVerifyStep(0)} />}
     </>
   );
 }

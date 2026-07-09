@@ -207,37 +207,30 @@ function Updateprofile() {
   return (
     <>
     <Navbar/>
-    <div className="flex w-full justify-around  ">
-    <div className="min-h-screen bg-[#FAF3EA] py-8 px-4 mt-6">
-      <input
-        ref={fileInputRef}
-        type="file"
-        accept="image/*"
-        className="hidden"
-        onChange={handleFileChosen}
-      />
+    <div className="flex w-full justify-around bg-[var(--bg-background)]  ">
+   
 
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-2xl mx-auto mt-6">
         {/* Header */}
         <div className="flex items-center gap-4 mb-5">
           <button
             type="button"
             aria-label="Go back"
-            className="w-9 h-9 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-gray-50 transition-colors"
+            className="w-9 h-9 rounded-full bg-[var(--bg-card)]/10 shadow-sm flex items-center justify-center hover:bg-gray-50 transition-colors"
           >
-            <ArrowLeft className="w-5 h-5 text-gray-800" />
+            <ArrowLeft className="w-5 h-5 text-[var(--text-dim)]" />
           </button>
-          <h1 className="text-2xl font-bold text-gray-900">Setting</h1>
+          <h1 className="text-2xl font-bold text-[var(--text-dim)]">Setting</h1>
         </div>
 
         {/* Card */}
-        <div className="bg-[#EFE9E1] rounded-3xl p-5 space-y-6">
+        <div className="bg-[var(--bg-card)]/10 rounded-3xl p-5 space-y-6">
           {/* Photos grid */}
           <div className="grid grid-cols-4 gap-3">
             {photos.map((photo, index) => (
               <div
                 key={photo.id}
-                className={`relative rounded-2xl overflow-hidden ${
+                className={`relative rounded-2xl overflow-hidden  ${
                   index === 0 ? "row-span-2 col-span-1" : ""
                 }`}
                 style={{ aspectRatio: index === 0 ? "3/4" : "1/1" }}
@@ -245,10 +238,10 @@ function Updateprofile() {
                 <img
                   src={photo.url}
                   alt={index === 0 ? "Main profile photo" : `Profile photo ${index + 1}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover "
                 />
                 {index === 0 && (
-                  <span className="absolute top-2 left-2 bg-violet-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                  <span className="absolute top-2 left-2 bg-[var(--bg-card)]/10 text-[var(--text-dim2)] text-xs font-semibold px-3 py-1 rounded-full">
                     Main
                   </span>
                 )}
@@ -279,7 +272,7 @@ function Updateprofile() {
 
           {/* Bio */}
           <div>
-            <label htmlFor="bio" className="block text-sm text-gray-700 mb-2">
+            <label htmlFor="bio" className="block text-sm text-[var(--text-dim2)] mb-2">
               Bio
             </label>
             <textarea
@@ -288,69 +281,20 @@ function Updateprofile() {
               onChange={(e) => setBio(e.target.value)}
               placeholder="Tell us about yourself..."
               rows={4}
-              className="w-full rounded-2xl bg-white px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none focus:ring-2 focus:ring-violet-400 resize-none"
+              className="w-full rounded-2xl bg-[var(--bg-card)]/10 px-4 py-3 text-sm text-[var(--text-dim2)] placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-violet-400 resize-none"
             />
           </div>
 
           {/* Interests */}
-          <div>
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-sm text-gray-700">Interests</span>
-              {!isAddingInterest && (
-                <button
-                  type="button"
-                  onClick={() => setIsAddingInterest(true)}
-                  className="text-sm font-semibold text-gray-900 hover:text-violet-600 transition-colors"
-                >
-                  Add New +
-                </button>
-              )}
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {interests.map((interest) => (
-                <span
-                  key={interest}
-                  className="flex items-center gap-2 bg-orange-300/80 text-white text-sm font-semibold pl-4 pr-2 py-1.5 rounded-full"
-                >
-                  {interest}
-                  <button
-                    type="button"
-                    onClick={() => removeInterest(interest)}
-                    aria-label={`Remove ${interest}`}
-                    className="w-4 h-4 rounded-full bg-white/40 flex items-center justify-center hover:bg-white/70 transition-colors"
-                  >
-                    <X className="w-2.5 h-2.5" strokeWidth={3} />
-                  </button>
-                </span>
-              ))}
-
-              {isAddingInterest && (
-                <input
-                  autoFocus
-                  value={newInterest}
-                  onChange={(e) => setNewInterest(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") commitNewInterest();
-                    if (e.key === "Escape") {
-                      setNewInterest("");
-                      setIsAddingInterest(false);
-                    }
-                  }}
-                  onBlur={commitNewInterest}
-                  placeholder="New interest"
-                  className="bg-white text-sm rounded-full px-4 py-1.5 outline-none focus:ring-2 focus:ring-violet-400 w-32"
-                />
-              )}
-            </div>
-          </div>
+        
 
           {/* Basic Info */}
-          <div className="bg-white rounded-2xl p-5">
-            <h2 className="text-sm text-gray-500 mb-4">Basic Info</h2>
+          <div className="bg-[var(--bg-card)]/10 rounded-2xl p-5">
+            <h2 className="text-sm text-[var(--text-dim2)] mb-4">Basic Info</h2>
 
             <label
               htmlFor="fullName"
-              className="block text-xs font-bold tracking-wide text-gray-800 mb-1"
+              className="block text-xs font-bold tracking-wide text-[var(--text-dim2)]  mb-1"
             >
               FULL NAME
             </label>
@@ -358,14 +302,14 @@ function Updateprofile() {
               id="fullName"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
-              className="w-full rounded-xl bg-gray-100 px-4 py-2.5 text-sm text-gray-800 outline-none focus:ring-2 focus:ring-violet-400 mb-4"
+              className="w-full rounded-xl bg-[var(--bg-card)]/10 px-4 py-2.5 text-sm text-[var(--text-dim2)] outline-none focus:ring-2 focus:ring-violet-400 mb-4"
             />
 
             <div className="grid grid-cols-2 gap-4 mb-5">
               <div>
                 <label
                   htmlFor="gender"
-                  className="block text-xs font-bold tracking-wide text-gray-800 mb-1"
+                  className="block text-xs font-bold tracking-wide text-[var(--text-dim2)]  mb-1"
                 >
                   GENDER
                 </label>
@@ -373,7 +317,7 @@ function Updateprofile() {
                   id="gender"
                   value={gender}
                   onChange={(e) => setGender(e.target.value)}
-                  className="w-full rounded-xl bg-gray-100 px-4 py-2.5 text-sm text-gray-800 outline-none focus:ring-2 focus:ring-violet-400 appearance-none"
+                  className="w-full rounded-xl bg-[var(--bg-card)]/10 px-4 py-2.5 text-sm text-[var(--text-dim2)] outline-none focus:ring-2 focus:ring-violet-400 appearance-none"
                 >
                   {genderOptions.map((option) => (
                     <option key={option} value={option}>
@@ -385,7 +329,7 @@ function Updateprofile() {
               <div>
                 <label
                   htmlFor="location"
-                  className="block text-xs font-bold tracking-wide text-gray-800 mb-1"
+                  className="block text-xs font-bold tracking-wide text-[var(--text-dim2)]  mb-1"
                 >
                   LOCATION
                 </label>
@@ -393,13 +337,13 @@ function Updateprofile() {
                   id="location"
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
-                  className="w-full rounded-xl bg-gray-100 px-4 py-2.5 text-sm text-gray-800 outline-none focus:ring-2 focus:ring-violet-400"
+                  className="w-full rounded-xl bg-[var(--bg-card)]/10 px-4 py-2.5 text-sm text-[var(--text-dim2)] outline-none focus:ring-2 focus:ring-violet-400"
                 />
               </div>
             </div>
 
-            <p className="text-sm text-gray-500 mb-3">What are you looking for</p>
-            <div className="border border-violet-200 rounded-2xl p-4">
+            <p className="text-sm text-[var(--text-dim2)] mb-3">What are you looking for</p>
+            <div className="border border-[var(--border)] rounded-2xl p-4">
               <div className="flex flex-wrap gap-3">
                 {lookingForOptions.map((option) => {
                   const selected = lookingFor.includes(option);
@@ -410,8 +354,8 @@ function Updateprofile() {
                       onClick={() => toggleLookingFor(option)}
                       className={`px-5 py-2.5 rounded-full text-sm font-bold border transition-colors ${
                         selected
-                          ? "bg-violet-600 border-violet-600 text-white"
-                          : "bg-white border-gray-300 text-violet-700 hover:border-violet-400"
+                          ? "bg-[var(--primary)] border border-[var(--border)] text-[var(--text-dim2)]"
+                          : "bg-[var(--bg-card)]/10 border border-[var(--border)] text-[var(--text-dim)]"
                       }`}
                     >
                       {option}
@@ -423,8 +367,8 @@ function Updateprofile() {
           </div>
 
           {/* Social links */}
-          <div className="bg-white rounded-2xl p-5">
-            <h2 className="text-xs font-bold tracking-wide text-gray-800 mb-3">
+          <div className="bg-[var(--bg-card)]/10 rounded-2xl p-5">
+            <h2 className="text-xs font-bold tracking-wide text-[var(--text-dim2)] mb-3">
               SOCIAL LINKS
             </h2>
 
@@ -432,14 +376,14 @@ function Updateprofile() {
               {socialLinks.map((link) => (
                 <div
                   key={link.id}
-                  className="flex items-center gap-3 bg-gray-100 rounded-xl px-4 py-2.5"
+                  className="flex items-center gap-3 bg-[var(--bg-card)]/10 rounded-xl px-4 py-2.5"
                 >
-                  <Link2 className="w-4 h-4 text-violet-600 shrink-0" />
+                  <Link2 className="w-4 h-4 text-[var(--text-dim)] shrink-0" />
                   <input
                     value={link.url}
                     onChange={(e) => updateSocialLink(link.id, e.target.value)}
                     placeholder="yourprofile.com/username"
-                    className="flex-1 bg-transparent text-sm text-gray-800 outline-none placeholder-gray-400"
+                    className="flex-1 bg-transparent text-sm text-[var(--text-dim)] outline-none placeholder:text-[var(--text-dim2)]"
                   />
                   <button
                     type="button"
@@ -456,7 +400,7 @@ function Updateprofile() {
             <button
               type="button"
               onClick={addSocialLink}
-              className="w-full flex items-center justify-center gap-1.5 text-sm font-semibold text-violet-700 mt-4 py-1 hover:text-violet-900 transition-colors"
+              className="w-full flex items-center justify-center gap-1.5 text-sm font-semibold text-[var(--text-dim)] mt-4 py-1 hover:text-[var(--text-dim2)] transition-colors"
             >
               <Plus className="w-4 h-4" strokeWidth={2.5} />
               Link another account
@@ -468,13 +412,12 @@ function Updateprofile() {
             type="button"
             onClick={handleUpdateProfile}
             disabled={updateLoading}
-            className="w-full py-3 rounded-2xl bg-violet-600 text-white text-sm font-bold hover:bg-violet-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+            className="w-full py-3 rounded-2xl bg-gradient-to-r from-[#D79098] to-[#5F7BF4] text-white text-sm font-bold  transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {updateLoading ? "Saving..." : "Save Changes"}
           </button>
         </div>
       </div>
-    </div>
 
    <div className="mt-6">
     <Right />

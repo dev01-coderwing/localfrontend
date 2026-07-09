@@ -14,6 +14,7 @@ import {
   Shield,
   Menu,
   X,
+  CircleUser,
 } from "lucide-react";
 
 import Filter from "../HomePage/Filter";
@@ -29,6 +30,7 @@ function Navbar() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isBoostOpen, setIsBoostOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [avatarError, setAvatarError] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -151,17 +153,18 @@ function Navbar() {
             <div className="relative" ref={dropdownRef}>
               <div
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="w-10 h-10 rounded-full overflow-hidden border cursor-pointer"
+                className="w-10 h-10 rounded-full overflow-hidden border cursor-pointer flex items-center justify-center bg-gray-100"
               >
-                <img
-                  src={
-                    profile?.data?.profileImage
-                      ? `${IMAGE_BASE_URL}/${profile.data.profileImage}`
-                      : "/Image/default-avatar.png"
-                  }
-                  alt={profile?.data?.fullName || "User"}
-                  className="w-full h-full object-cover"
-                />
+                {profile?.data?.profileImage && !avatarError ? (
+                  <img
+                    src={`${IMAGE_BASE_URL}/${profile.data.profileImage}`}
+                    alt={profile?.data?.fullName || "User"}
+                    className="w-full h-full object-cover"
+                    onError={() => setAvatarError(true)}
+                  />
+                ) : (
+                  <CircleUser className="w-full h-full text-gray-500" />
+                )}
               </div>
 
               {/* Dropdown */}

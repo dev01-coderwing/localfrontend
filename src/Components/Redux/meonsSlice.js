@@ -14,6 +14,34 @@ export const getMeonBalanceThunk = createAsyncThunk(
   },
 );
 
+export const spendMeonsThunk = createAsyncThunk(
+  "meons/spendMeons",
+
+  async (spendData, { rejectWithValue }) => {
+    try {
+      const response = await api.post("/meons/spend", spendData);
+
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response?.data || "Something went wrong");
+    }
+  },
+);
+
+export const getTransactionsThunk = createAsyncThunk(
+  "meons/getTransactions",
+
+  async (_, thunkAPI) => {
+    try {
+      const response = await api.get("/meons/transactions");
+
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+  },
+);
+
 const meonSlice = createSlice({
   name: "meon",
 
@@ -94,34 +122,6 @@ const meonSlice = createSlice({
       });
   },
 });
-
-export const spendMeonsThunk = createAsyncThunk(
-  "meons/spendMeons",
-
-  async (spendData, { rejectWithValue }) => {
-    try {
-      const response = await api.post("/meons/spend", spendData);
-
-      return response.data;
-    } catch (error) {
-      return rejectWithValue(error.response?.data || "Something went wrong");
-    }
-  },
-);
-
-export const getTransactionsThunk = createAsyncThunk(
-  "meons/getTransactions",
-
-  async (_, thunkAPI) => {
-    try {
-      const response = await api.get("/meons/transactions");
-
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data);
-    }
-  },
-);
 
 export const { setMeonsBalance } = meonSlice.actions;
 

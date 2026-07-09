@@ -3,15 +3,22 @@ import { ArrowLeft, Check } from "lucide-react";
 import Right from "./layout/Right";
 import Navbar from "../Navbar/Navbar";
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import i18n from "../../i18n";
+import { updateLanguage } from "../Redux/bordingSlice";
 
-// ✅ Production Data
+// ✅ Production Data — must stay in sync with the languages registered in src/i18n.js
 const LANGUAGES_CONFIG = [
-  { id: "english", name: "English", flag: "https://flagcdn.com/w40/us.png", code: "US" },
-  { id: "china", name: "China", flag: "https://flagcdn.com/w40/cn.png", code: "CN" },
-  { id: "india", name: "India", flag: "https://flagcdn.com/w40/in.png", code: "IN" },
-  { id: "spain", name: "Spain", flag: "https://flagcdn.com/w40/es.png", code: "ES" },
-  { id: "united_arab_emirates", name: "United Arab Emirates", flag: "https://flagcdn.com/w40/ae.png", code: "AE" },
-  { id: "france", name: "France", flag: "https://flagcdn.com/w40/fr.png", code: "FR" },
+  { id: "en", name: "English", flag: "https://flagcdn.com/w40/us.png", code: "US" },
+  { id: "es", name: "Spanish", flag: "https://flagcdn.com/w40/es.png", code: "ES" },
+  { id: "fr", name: "French", flag: "https://flagcdn.com/w40/fr.png", code: "FR" },
+  { id: "de", name: "German", flag: "https://flagcdn.com/w40/de.png", code: "DE" },
+  { id: "it", name: "Italian", flag: "https://flagcdn.com/w40/it.png", code: "IT" },
+  { id: "ja", name: "Japanese", flag: "https://flagcdn.com/w40/jp.png", code: "JP" },
+  { id: "ko", name: "Korean", flag: "https://flagcdn.com/w40/kr.png", code: "KR" },
+  { id: "pt", name: "Portuguese", flag: "https://flagcdn.com/w40/pt.png", code: "PT" },
+  { id: "zh", name: "Chinese", flag: "https://flagcdn.com/w40/cn.png", code: "CN" },
 ];
 
 /**
@@ -49,8 +56,34 @@ const LanguageRow = ({ lang, isSelected, onSelect }) => (
 );
 
 export default function ProfileLanguage() {
-  const [selectedId, setSelectedId] = React.useState("english");
+  const [selectedId, setSelectedId] = React.useState(
+    LANGUAGES_CONFIG.some((lang) => lang.id === i18n.language) ? i18n.language : "en",
+  );
+  const [saved, setSaved] = React.useState(false);
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { loading } = useSelector((state) => state.language);
+  const { user } = useSelector((state) => state.auth);
+
+  const handleSave = async () => {
+    const userId = user?.id;
+
+    if (!userId) {
+      navigate("/login");
+      return;
+    }
+
+    const result = await dispatch(updateLanguage({ userId, language: selectedId }));
+
+    if (updateLanguage.fulfilled.match(result)) {
+      i18n.changeLanguage(selectedId);
+      localStorage.setItem("i18nextLng", selectedId);
+
+      setSaved(true);
+      setTimeout(() => setSaved(false), 2000);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[var(--bg-background)]">
@@ -93,10 +126,16 @@ export default function ProfileLanguage() {
 
                 <footer className="mt-16 flex justify-center">
                   <button
-                    type="submit"
-                    className="w-full max-w-sm h-14 rounded-2xl bg-gradient-to-r from-[#DB96A1] to-[#7C81D3] text-white font-black text-sm shadow-lg hover:opacity-90 hover:scale-[1.01] active:scale-95 transition-all duration-200 uppercase tracking-widest"
+                    type="button"
+                    onClick={handleSave}
+                    disabled={loading}
+                    className="w-full max-w-sm h-14 rounded-2xl bg-gradient-to-r from-[#DB96A1] to-[#7C81D3] text-white font-black text-sm shadow-lg hover:opacity-90 hover:scale-[1.01] active:scale-95 transition-all duration-200 uppercase tracking-widest disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
-                    {t('profileLanguage.save_changes')}
+                    {loading
+                      ? t('updating')
+                      : saved
+                        ? `✓ ${t('profileLanguage.save_changes')}`
+                        : t('profileLanguage.save_changes')}
                   </button>
                 </footer>
               </div>
