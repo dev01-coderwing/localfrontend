@@ -10,64 +10,84 @@ import { useTranslation } from "react-i18next";
 export default function ProfileLayout() {
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const { profile } = useSelector((state) => state.profile);
+  const { profile, loading } = useSelector((state) => state.profile);
   const userId = useSelector((state) => state.auth.user?.id);
 
-useEffect(() => {
-  if (userId) {
-    dispatch(getUserProfile(userId));
-  }
-}, [dispatch, userId]);
+  useEffect(() => {
+    if (userId) {
+      dispatch(getUserProfile(userId));
+    }
+  }, [dispatch, userId]);
 
- const IMAGE_BASE_URL = import.meta.env.VITE_API_URL?.trim()?.replace(/\/api\/v1\/?$/, "");
+  // Kept from the latest version: derives the image host from the env variable
+  // instead of a hardcoded IP — better than what we had before.
+  const IMAGE_BASE_URL = import.meta.env.VITE_API_URL?.trim()?.replace(/\/api\/v1\/?$/, "");
 
- const transformedData = {
-  profile: {
-    name: profile?.data?.fullName || "",
-    avatar: profile?.data?.profileImage
-      ? `${IMAGE_BASE_URL}/${profile.data.profileImage}`
-      : "",
-verified: profile?.data?.isVerified || false,
-    stats: profile?.data?.stats || [],
-    compatibility: profile?.data?.compatibility || [],
-  },
+  const data = profile?.data || {};
 
-  middle: {
-    balance: {
-      amount: `€ ${profile?.data?.walletBalance || 0}`,
-      label: t('profile.available_balance'),
+  // Formats raw minutes (from timeUsage.usedMinutes / totalMinutes) into "Xh Ym"
+  const formatMinutes = (mins) => {
+    if (mins == null) return "—";
+    const h = Math.floor(mins / 60);
+    const m = mins % 60;
+    return `${h}h ${m.toString().padStart(2, "0")}m`;
+  };
+
+  const transformedData = {
+    profile: {
+      name: data.fullName || "",
+      avatar: data.profileImage ? `${IMAGE_BASE_URL}/${data.profileImage}` : "",
+      verified: data.isVerified || false,
+      stats: [
+        { value: `${data.avgMatchPercentage ?? 0}%`, label: t('profile.avg_match') },
+        { value: data.totalMatches ?? 0, label: t('profile.matches') },
+        { value: data.inLabsCount ?? 0, label: t('profile.in_labs') },
+      ],
+      compatibility: (data.assessments || []).map((item) => ({
+        title: item.title,
+        desc: item.description || item.result || item.subtitle,
+        status: item.status === "completed" ? "done" : "pending",
+        icon: item.icon,
+      })),
     },
-
-    usage: {
-      title: t('profile.time_usage'),
-      usedPercent: 40,
-      usedTime: "2h 30m",
-      totalTime: "6h 00m",
-      remaining: t('profile.remaining_time'),
+    middle: {
+      balance: {
+        amount: `€ ${data.availableBalance ?? 0}`,
+        label: t('profile.available_balance'),
+      },
+      usage: {
+        title: t('profile.time_usage'),
+        usedPercent: data.timeUsage?.totalMinutes
+          ? Math.round((data.timeUsage.usedMinutes / data.timeUsage.totalMinutes) * 100)
+          : 0,
+        usedTime: formatMinutes(data.timeUsage?.usedMinutes),
+        totalTime: formatMinutes(data.timeUsage?.totalMinutes),
+        remaining: t('profile.remaining_time'),
+      },
+      buttons: [
+        { label: t('profile.manage_subscription'), icon: "crown", style: "gradient" },
+        { label: t('profile.invite_friends'), icon: "gift", style: "dark" },
+      ],
     },
-
-    buttons: [
-      { label: t('profile.manage_subscription'), icon: "crown", style: "gradient" },
-      { label: t('profile.invite_friends'), icon: "gift", style: "dark" },
-    ],
-  },
-};
+  };
 
   return (
     <div>
       <Navbar />
-
       <div className="min-h-screen bg-[var(--bg-background)] p-6 lg:p-10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1">
-             <Left data={transformedData.profile} />
+            {loading ? (
+              <p className="text-center text-sm text-[var(--text-dim2)] py-10">Loading...</p>
+            ) : (
+              <Left data={transformedData.profile} />
+            )}
           </div>
-          {/* Middle and Right columns start after the heading height (approx pt-28) */}
           <div className="lg:col-span-1 lg:pt-28">
-             <Middle data={transformedData.middle} />
+            <Middle data={transformedData.middle} />
           </div>
           <div className="lg:col-span-1 lg:pt-28">
-             <Right />
+            <Right />
           </div>
         </div>
       </div>
